@@ -1,4 +1,5 @@
 //
+//  ExtKIT
 //  Ext_NavBar.swift
 //  MemoryInMap
 //
@@ -65,7 +66,5 @@ extension UINavigationBar {
 			objc_setAssociatedObject(self, &kStatusBarMaskKey, newValue, .OBJC_ASSOCIATION_RETAIN)
 		}
 	}
-    
-    
     
 }

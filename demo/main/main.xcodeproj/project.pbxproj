@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		441F02751D2153DF00035E2C /* Ext_UITableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 441F02741D2153DF00035E2C /* Ext_UITableView.swift */; };
+		441F027C1D21564900035E2C /* KBNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 441F02791D21564900035E2C /* KBNavigationController.swift */; };
+		441F027D1D21564900035E2C /* KBTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 441F027A1D21564900035E2C /* KBTabBarController.swift */; };
+		441F027E1D21564900035E2C /* KBTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 441F027B1D21564900035E2C /* KBTableView.swift */; };
+		441F02801D21577E00035E2C /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 441F027F1D21577E00035E2C /* DetailViewController.swift */; };
+		441F02821D21579B00035E2C /* MasterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 441F02811D21579B00035E2C /* MasterViewController.swift */; };
 		446E48901D1ECE5300BF3D5B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 446E488F1D1ECE5300BF3D5B /* AppDelegate.swift */; };
 		446E48921D1ECE5300BF3D5B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 446E48911D1ECE5300BF3D5B /* ViewController.swift */; };
 		446E48951D1ECE5300BF3D5B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 446E48931D1ECE5300BF3D5B /* Main.storyboard */; };
@@ -63,6 +69,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		441F02741D2153DF00035E2C /* Ext_UITableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Ext_UITableView.swift; sourceTree = "<group>"; };
+		441F02791D21564900035E2C /* KBNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KBNavigationController.swift; sourceTree = "<group>"; };
+		441F027A1D21564900035E2C /* KBTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KBTabBarController.swift; sourceTree = "<group>"; };
+		441F027B1D21564900035E2C /* KBTableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KBTableView.swift; sourceTree = "<group>"; };
+		441F027F1D21577E00035E2C /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		441F02811D21579B00035E2C /* MasterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MasterViewController.swift; sourceTree = "<group>"; };
 		446E488C1D1ECE5300BF3D5B /* main.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = main.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		446E488F1D1ECE5300BF3D5B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		446E48911D1ECE5300BF3D5B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -133,6 +145,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		441F02781D21564900035E2C /* KBKit */ = {
+			isa = PBXGroup;
+			children = (
+				441F02791D21564900035E2C /* KBNavigationController.swift */,
+				441F027A1D21564900035E2C /* KBTabBarController.swift */,
+				441F027B1D21564900035E2C /* KBTableView.swift */,
+			);
+			path = KBKit;
+			sourceTree = "<group>";
+		};
 		446E48831D1ECE5300BF3D5B = {
 			isa = PBXGroup;
 			children = (
@@ -157,6 +179,8 @@
 		446E488E1D1ECE5300BF3D5B /* main */ = {
 			isa = PBXGroup;
 			children = (
+				441F02811D21579B00035E2C /* MasterViewController.swift */,
+				441F027F1D21577E00035E2C /* DetailViewController.swift */,
 				446E48FC1D1ECF9C00BF3D5B /* MyTableViewController.swift */,
 				446E48FD1D1ECF9C00BF3D5B /* MyScrollViewController.swift */,
 				446E48FA1D1ECF9100BF3D5B /* RootViewController.swift */,
@@ -191,6 +215,7 @@
 		446E48BD1D1ECF3D00BF3D5B /* SimpleLib */ = {
 			isa = PBXGroup;
 			children = (
+				441F02781D21564900035E2C /* KBKit */,
 				446E48BE1D1ECF3D00BF3D5B /* Ext */,
 				446E48C51D1ECF3D00BF3D5B /* KMNavigationBarTransition */,
 				446E48C81D1ECF3D00BF3D5B /* Model */,
@@ -212,6 +237,7 @@
 				446E48C21D1ECF3D00BF3D5B /* Ext_UINavigationBar.swift */,
 				446E48C31D1ECF3D00BF3D5B /* Ext_UINavigationController.swift */,
 				446E48C41D1ECF3D00BF3D5B /* Ext_UIViewController.swift */,
+				441F02741D2153DF00035E2C /* Ext_UITableView.swift */,
 			);
 			path = Ext;
 			sourceTree = "<group>";
@@ -419,8 +445,10 @@
 				446E48E21D1ECF3D00BF3D5B /* Ext_UIImage.swift in Sources */,
 				446E48F21D1ECF3D00BF3D5B /* RainbowPopAnimator.swift in Sources */,
 				446E48921D1ECE5300BF3D5B /* ViewController.swift in Sources */,
+				441F027E1D21564900035E2C /* KBTableView.swift in Sources */,
 				446E48E91D1ECF3D00BF3D5B /* Refresh.swift in Sources */,
 				446E48EB1D1ECF3D00BF3D5B /* RefreshFooterView.swift in Sources */,
+				441F02751D2153DF00035E2C /* Ext_UITableView.swift in Sources */,
 				446E48FB1D1ECF9100BF3D5B /* RootViewController.swift in Sources */,
 				446E48FE1D1ECF9C00BF3D5B /* MyTableViewController.swift in Sources */,
 				446E48E51D1ECF3D00BF3D5B /* Ext_UIViewController.swift in Sources */,
@@ -434,10 +462,14 @@
 				446E48E71D1ECF3D00BF3D5B /* MethodSwizzling.swift in Sources */,
 				446E48F01D1ECF3D00BF3D5B /* RainbowDragPop.swift in Sources */,
 				446E48901D1ECE5300BF3D5B /* AppDelegate.swift in Sources */,
+				441F027C1D21564900035E2C /* KBNavigationController.swift in Sources */,
 				446E48FF1D1ECF9C00BF3D5B /* MyScrollViewController.swift in Sources */,
+				441F02801D21577E00035E2C /* DetailViewController.swift in Sources */,
 				446E48F91D1ECF3D00BF3D5B /* NavigationBarColorSource.swift in Sources */,
+				441F027D1D21564900035E2C /* KBTabBarController.swift in Sources */,
 				446E48F11D1ECF3D00BF3D5B /* RainbowNavigation.swift in Sources */,
 				446E48F41D1ECF3D00BF3D5B /* ICanHas.swift in Sources */,
+				441F02821D21579B00035E2C /* MasterViewController.swift in Sources */,
 				446E48F61D1ECF3D00BF3D5B /* LocationMethods.swift in Sources */,
 				446E48EC1D1ECF3D00BF3D5B /* RefreshHeaderView.swift in Sources */,
 				446E48EF1D1ECF3D00BF3D5B /* RainbowColorSource.swift in Sources */,
