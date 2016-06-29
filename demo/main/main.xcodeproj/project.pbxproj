@@ -49,6 +49,7 @@
 		446E48FB1D1ECF9100BF3D5B /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 446E48FA1D1ECF9100BF3D5B /* RootViewController.swift */; };
 		446E48FE1D1ECF9C00BF3D5B /* MyTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 446E48FC1D1ECF9C00BF3D5B /* MyTableViewController.swift */; };
 		446E48FF1D1ECF9C00BF3D5B /* MyScrollViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 446E48FD1D1ECF9C00BF3D5B /* MyScrollViewController.swift */; };
+		4471E9DC1D240B98003A2C46 /* CustomCollectionLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4471E9DB1D240B98003A2C46 /* CustomCollectionLayout.swift */; };
 		44F34C761D216CFC00899064 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44F34C751D216CFC00899064 /* MenuViewController.swift */; };
 		44F34C781D216D0A00899064 /* MenuTransitionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44F34C771D216D0A00899064 /* MenuTransitionManager.swift */; };
 /* End PBXBuildFile section */
@@ -120,6 +121,7 @@
 		446E48FA1D1ECF9100BF3D5B /* RootViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
 		446E48FC1D1ECF9C00BF3D5B /* MyTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyTableViewController.swift; sourceTree = "<group>"; };
 		446E48FD1D1ECF9C00BF3D5B /* MyScrollViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyScrollViewController.swift; sourceTree = "<group>"; };
+		4471E9DB1D240B98003A2C46 /* CustomCollectionLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomCollectionLayout.swift; sourceTree = "<group>"; };
 		44F34C751D216CFC00899064 /* MenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
 		44F34C771D216D0A00899064 /* MenuTransitionManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuTransitionManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -196,6 +198,7 @@
 				446E48961D1ECE5300BF3D5B /* Assets.xcassets */,
 				446E48981D1ECE5300BF3D5B /* LaunchScreen.storyboard */,
 				446E489B1D1ECE5300BF3D5B /* Info.plist */,
+				4471E9DB1D240B98003A2C46 /* CustomCollectionLayout.swift */,
 			);
 			path = main;
 			sourceTree = "<group>";
@@ -470,6 +473,7 @@
 				446E48F01D1ECF3D00BF3D5B /* RainbowDragPop.swift in Sources */,
 				446E48901D1ECE5300BF3D5B /* AppDelegate.swift in Sources */,
 				441F027C1D21564900035E2C /* KBNavigationController.swift in Sources */,
+				4471E9DC1D240B98003A2C46 /* CustomCollectionLayout.swift in Sources */,
 				44F34C761D216CFC00899064 /* MenuViewController.swift in Sources */,
 				446E48FF1D1ECF9C00BF3D5B /* MyScrollViewController.swift in Sources */,
 				441F02801D21577E00035E2C /* DetailViewController.swift in Sources */,
