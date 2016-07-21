@@ -32,6 +32,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         UINavigationBar.appearance().titleTextAttributes = [NSForegroundColorAttributeName: UIColor.whiteColor()]
 
         UIStatusBarStyle.LightContent
+        UIApplication.sharedApplication().statusBarHidden = true
 
         return true
     }

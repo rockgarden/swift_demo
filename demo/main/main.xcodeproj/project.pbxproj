@@ -52,6 +52,9 @@
 		4471E9DC1D240B98003A2C46 /* CustomCollectionLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4471E9DB1D240B98003A2C46 /* CustomCollectionLayout.swift */; };
 		44F34C761D216CFC00899064 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44F34C751D216CFC00899064 /* MenuViewController.swift */; };
 		44F34C781D216D0A00899064 /* MenuTransitionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44F34C771D216D0A00899064 /* MenuTransitionManager.swift */; };
+		C2FE76351D40B62200E482C9 /* BaseTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2FE76341D40B62200E482C9 /* BaseTableView.swift */; };
+		C2FE76371D40B9B500E482C9 /* BaseTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2FE76361D40B9B500E482C9 /* BaseTableViewCell.swift */; };
+		C2FE76391D40BFE500E482C9 /* greetings.json in Resources */ = {isa = PBXBuildFile; fileRef = C2FE76381D40BFE500E482C9 /* greetings.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -124,6 +127,9 @@
 		4471E9DB1D240B98003A2C46 /* CustomCollectionLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomCollectionLayout.swift; sourceTree = "<group>"; };
 		44F34C751D216CFC00899064 /* MenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
 		44F34C771D216D0A00899064 /* MenuTransitionManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuTransitionManager.swift; sourceTree = "<group>"; };
+		C2FE76341D40B62200E482C9 /* BaseTableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseTableView.swift; sourceTree = "<group>"; };
+		C2FE76361D40B9B500E482C9 /* BaseTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseTableViewCell.swift; sourceTree = "<group>"; };
+		C2FE76381D40BFE500E482C9 /* greetings.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = greetings.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -185,6 +191,7 @@
 		446E488E1D1ECE5300BF3D5B /* main */ = {
 			isa = PBXGroup;
 			children = (
+				446E488F1D1ECE5300BF3D5B /* AppDelegate.swift */,
 				441F02811D21579B00035E2C /* MasterViewController.swift */,
 				441F027F1D21577E00035E2C /* DetailViewController.swift */,
 				44F34C751D216CFC00899064 /* MenuViewController.swift */,
@@ -192,9 +199,9 @@
 				446E48FC1D1ECF9C00BF3D5B /* MyTableViewController.swift */,
 				446E48FD1D1ECF9C00BF3D5B /* MyScrollViewController.swift */,
 				446E48FA1D1ECF9100BF3D5B /* RootViewController.swift */,
-				446E488F1D1ECE5300BF3D5B /* AppDelegate.swift */,
 				446E48911D1ECE5300BF3D5B /* ViewController.swift */,
 				446E48931D1ECE5300BF3D5B /* Main.storyboard */,
+				C2FE76381D40BFE500E482C9 /* greetings.json */,
 				446E48961D1ECE5300BF3D5B /* Assets.xcassets */,
 				446E48981D1ECE5300BF3D5B /* LaunchScreen.storyboard */,
 				446E489B1D1ECE5300BF3D5B /* Info.plist */,
@@ -307,9 +314,11 @@
 		446E48DC1D1ECF3D00BF3D5B /* Widget */ = {
 			isa = PBXGroup;
 			children = (
+				C2FE76361D40B9B500E482C9 /* BaseTableViewCell.swift */,
 				446E48DD1D1ECF3D00BF3D5B /* FoldingCell.swift */,
 				446E48DE1D1ECF3D00BF3D5B /* KDInteractiveNavigationController.swift */,
 				446E48DF1D1ECF3D00BF3D5B /* NavigationBarColorSource.swift */,
+				C2FE76341D40B62200E482C9 /* BaseTableView.swift */,
 			);
 			path = Widget;
 			sourceTree = "<group>";
@@ -382,6 +391,7 @@
 				TargetAttributes = {
 					446E488B1D1ECE5300BF3D5B = {
 						CreatedOnToolsVersion = 7.3.1;
+						DevelopmentTeam = UR7J67T5FK;
 					};
 					446E489F1D1ECE5300BF3D5B = {
 						CreatedOnToolsVersion = 7.3.1;
@@ -421,6 +431,7 @@
 				446E48EE1D1ECF3D00BF3D5B /* Info.plist in Resources */,
 				446E489A1D1ECE5300BF3D5B /* LaunchScreen.storyboard in Resources */,
 				446E48971D1ECE5300BF3D5B /* Assets.xcassets in Resources */,
+				C2FE76391D40BFE500E482C9 /* greetings.json in Resources */,
 				446E48951D1ECE5300BF3D5B /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -450,6 +461,7 @@
 				446E48F81D1ECF3D00BF3D5B /* KDInteractiveNavigationController.swift in Sources */,
 				446E48F51D1ECF3D00BF3D5B /* ImageResizingMethods.swift in Sources */,
 				446E48EA1D1ECF3D00BF3D5B /* RefreshBaseView.swift in Sources */,
+				C2FE76351D40B62200E482C9 /* BaseTableView.swift in Sources */,
 				446E48E81D1ECF3D00BF3D5B /* NavigationBarData.swift in Sources */,
 				44F34C781D216D0A00899064 /* MenuTransitionManager.swift in Sources */,
 				446E48E21D1ECF3D00BF3D5B /* Ext_UIImage.swift in Sources */,
@@ -458,6 +470,7 @@
 				441F027E1D21564900035E2C /* KBTableView.swift in Sources */,
 				446E48E91D1ECF3D00BF3D5B /* Refresh.swift in Sources */,
 				446E48EB1D1ECF3D00BF3D5B /* RefreshFooterView.swift in Sources */,
+				C2FE76371D40B9B500E482C9 /* BaseTableViewCell.swift in Sources */,
 				441F02751D2153DF00035E2C /* Ext_UITableView.swift in Sources */,
 				446E48FB1D1ECF9100BF3D5B /* RootViewController.swift in Sources */,
 				446E48FE1D1ECF9C00BF3D5B /* MyTableViewController.swift in Sources */,
@@ -576,7 +589,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -615,7 +628,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
@@ -626,10 +639,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = main/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.rockgarden.main;
+				PRODUCT_BUNDLE_IDENTIFIER = com.rockgarden.demo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -638,10 +652,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = main/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.rockgarden.main;
+				PRODUCT_BUNDLE_IDENTIFIER = com.rockgarden.demo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;

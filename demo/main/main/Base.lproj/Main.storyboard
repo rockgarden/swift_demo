@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BOI-5a-ruf">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BOI-5a-ruf">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
         <capability name="Alignment constraints to the first baseline" minToolsVersion="6.0"/>
@@ -9,7 +9,7 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="main" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="BYZ-38-t0r" customClass="ViewController" customModule="main" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -27,7 +27,7 @@
         <!--Master-->
         <scene sceneID="TCm-gT-q8s">
             <objects>
-                <navigationController title="Master" id="lT7-lG-dwS" customClass="KBNavigationController" customModule="main" customModuleProvider="target" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="Master" title="Master" useStoryboardIdentifierAsRestorationIdentifier="YES" id="lT7-lG-dwS" customClass="KBNavigationController" customModule="main" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Home" image="tabbarHomeHighlighted" id="uNe-i4-7Qn"/>
                     <navigationBar key="navigationBar" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="guG-d8-ZLF">
                         <autoresizingMask key="autoresizingMask"/>
@@ -43,7 +43,7 @@
         <!--Navigation Controller-->
         <scene sceneID="uqX-7A-Ujt">
             <objects>
-                <viewController id="y3u-if-HIi" customClass="KBNavigationController" customModule="main" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="NavigationController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="y3u-if-HIi" customClass="KBNavigationController" customModule="main" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="PHd-Nk-89X"/>
                         <viewControllerLayoutGuide type="bottom" id="a5p-DQ-wIO"/>
@@ -62,7 +62,7 @@
         <!--Item-->
         <scene sceneID="dcR-AO-zZl">
             <objects>
-                <viewController id="UEv-iZ-I4w" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Item" useStoryboardIdentifierAsRestorationIdentifier="YES" id="UEv-iZ-I4w" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="OID-gM-H2W"/>
                         <viewControllerLayoutGuide type="bottom" id="p9o-45-Hfb"/>
@@ -81,7 +81,7 @@
         <!--Detail-->
         <scene sceneID="fhb-jZ-eoW">
             <objects>
-                <viewController title="Detail" id="trn-kB-bTd" customClass="DetailViewController" customModule="main" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Detail" title="Detail" useStoryboardIdentifierAsRestorationIdentifier="YES" id="trn-kB-bTd" customClass="DetailViewController" customModule="main" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="u3r-4i-Rga"/>
                         <viewControllerLayoutGuide type="bottom" id="pSg-Ks-F4i"/>
@@ -118,13 +118,13 @@
         <!--Master-->
         <scene sceneID="Hpn-Wt-Jfq">
             <objects>
-                <tableViewController title="Master" clearsSelectionOnViewWillAppear="NO" id="nL3-t4-XG2" customClass="MasterViewController" customModule="main" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="Master1" title="Master" useStoryboardIdentifierAsRestorationIdentifier="YES" clearsSelectionOnViewWillAppear="NO" id="nL3-t4-XG2" customClass="MasterViewController" customModule="main" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="Js5-82-MEm" customClass="KBTableView" customModule="main" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" textLabel="PeK-gI-XRc" style="IBUITableViewCellStyleDefault" id="5JC-la-dwS">
+                            <tableViewCell contentMode="scaleToFill" restorationIdentifier="temp" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" textLabel="PeK-gI-XRc" style="IBUITableViewCellStyleDefault" id="5JC-la-dwS">
                                 <rect key="frame" x="0.0" y="86" width="600" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="5JC-la-dwS" id="Y7n-Gh-DO0">
@@ -163,13 +163,13 @@
         <!--Root View Controller-->
         <scene sceneID="WqZ-zt-aBT">
             <objects>
-                <tableViewController id="KuO-AM-4xG" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="RootViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="KuO-AM-4xG" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="wbf-ng-tv9">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="dKr-ez-8mw">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="temp" id="dKr-ez-8mw">
                                 <rect key="frame" x="0.0" y="92" width="600" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="dKr-ez-8mw" id="Qi8-n9-Wk4">
@@ -192,7 +192,7 @@
         <!--Explore-->
         <scene sceneID="QrB-Lh-9mb">
             <objects>
-                <navigationController id="zHX-kB-ipA" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="test" useStoryboardIdentifierAsRestorationIdentifier="YES" id="zHX-kB-ipA" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Explore" image="tabbarExploreHighlighted" id="szo-hy-KlM"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="13R-28-2Cz">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -209,7 +209,7 @@
         <!--Tab Bar Controller-->
         <scene sceneID="Wfe-e0-WHd">
             <objects>
-                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="BOI-5a-ruf" customClass="KBTabBarController" customModule="main" customModuleProvider="target" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="initVC" automaticallyAdjustsScrollViewInsets="NO" useStoryboardIdentifierAsRestorationIdentifier="YES" id="BOI-5a-ruf" customClass="KBTabBarController" customModule="main" customModuleProvider="target" sceneMemberID="viewController">
                     <toolbarItems/>
                     <tabBar key="tabBar" contentMode="scaleToFill" id="pWz-KJ-34X">
                         <autoresizingMask key="autoresizingMask"/>
@@ -229,7 +229,7 @@
         <!--Menu View Controller-->
         <scene sceneID="IuP-xn-X0l">
             <objects>
-                <viewController id="HP7-X0-Ser" customClass="MenuViewController" customModule="main" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="menuVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="HP7-X0-Ser" customClass="MenuViewController" customModule="main" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="riA-Vb-u3M"/>
                         <viewControllerLayoutGuide type="bottom" id="yjS-6Q-4MP"/>
@@ -421,7 +421,7 @@
         <!--Collection View Controller-->
         <scene sceneID="zaN-iB-moM">
             <objects>
-                <collectionViewController id="F4q-0f-cZ7" sceneMemberID="viewController">
+                <collectionViewController storyboardIdentifier="collectionVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="F4q-0f-cZ7" sceneMemberID="viewController">
                     <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="wzB-Ek-HIu">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -432,7 +432,7 @@
                             <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                         </collectionViewFlowLayout>
                         <cells/>
-                        <collectionReusableView key="sectionFooterView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="r85-Ou-NNL">
+                        <collectionReusableView key="sectionFooterView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" restorationIdentifier="test" reuseIdentifier="test" id="r85-Ou-NNL">
                             <rect key="frame" x="0.0" y="0.0" width="600" height="50"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         </collectionReusableView>
@@ -449,7 +449,7 @@
         <!--ReadLater-->
         <scene sceneID="Ypn-Yw-XEr">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="WZF-ub-hqM" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="readLaterVC" automaticallyAdjustsScrollViewInsets="NO" useStoryboardIdentifierAsRestorationIdentifier="YES" id="WZF-ub-hqM" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="ReadLater" image="tabbarProfileHighlighted" id="1Mf-NJ-0Av"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" barStyle="black" id="vZp-F2-s9C">
