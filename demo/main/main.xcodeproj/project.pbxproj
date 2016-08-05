@@ -52,6 +52,12 @@
 		4471E9DC1D240B98003A2C46 /* CustomCollectionLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4471E9DB1D240B98003A2C46 /* CustomCollectionLayout.swift */; };
 		44F34C761D216CFC00899064 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44F34C751D216CFC00899064 /* MenuViewController.swift */; };
 		44F34C781D216D0A00899064 /* MenuTransitionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44F34C771D216D0A00899064 /* MenuTransitionManager.swift */; };
+		C20A0AF01D54727F007A575A /* UITableViewCell_photo_1.swift in Sources */ = {isa = PBXBuildFile; fileRef = C20A0AEE1D54727F007A575A /* UITableViewCell_photo_1.swift */; };
+		C20A0AF11D54727F007A575A /* UIViewController_table_1.swift in Sources */ = {isa = PBXBuildFile; fileRef = C20A0AEF1D54727F007A575A /* UIViewController_table_1.swift */; };
+		C20A0AF41D547315007A575A /* Macro.swift in Sources */ = {isa = PBXBuildFile; fileRef = C20A0AF31D547315007A575A /* Macro.swift */; };
+		C25832B81D54655700C93E75 /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C25832B71D54655700C93E75 /* LoginController.swift */; };
+		C25832BA1D5465D800C93E75 /* SignupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C25832B91D5465D800C93E75 /* SignupViewController.swift */; };
+		C25832BC1D5466A600C93E75 /* AuthcodeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C25832BB1D5466A600C93E75 /* AuthcodeView.swift */; };
 		C2FE76351D40B62200E482C9 /* BaseTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2FE76341D40B62200E482C9 /* BaseTableView.swift */; };
 		C2FE76371D40B9B500E482C9 /* BaseTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2FE76361D40B9B500E482C9 /* BaseTableViewCell.swift */; };
 		C2FE76391D40BFE500E482C9 /* greetings.json in Resources */ = {isa = PBXBuildFile; fileRef = C2FE76381D40BFE500E482C9 /* greetings.json */; };
@@ -127,6 +133,12 @@
 		4471E9DB1D240B98003A2C46 /* CustomCollectionLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomCollectionLayout.swift; sourceTree = "<group>"; };
 		44F34C751D216CFC00899064 /* MenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
 		44F34C771D216D0A00899064 /* MenuTransitionManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuTransitionManager.swift; sourceTree = "<group>"; };
+		C20A0AEE1D54727F007A575A /* UITableViewCell_photo_1.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UITableViewCell_photo_1.swift; sourceTree = "<group>"; };
+		C20A0AEF1D54727F007A575A /* UIViewController_table_1.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewController_table_1.swift; sourceTree = "<group>"; };
+		C20A0AF31D547315007A575A /* Macro.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Macro.swift; sourceTree = "<group>"; };
+		C25832B71D54655700C93E75 /* LoginController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginController.swift; sourceTree = "<group>"; };
+		C25832B91D5465D800C93E75 /* SignupViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignupViewController.swift; sourceTree = "<group>"; };
+		C25832BB1D5466A600C93E75 /* AuthcodeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthcodeView.swift; sourceTree = "<group>"; };
 		C2FE76341D40B62200E482C9 /* BaseTableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseTableView.swift; sourceTree = "<group>"; };
 		C2FE76361D40B9B500E482C9 /* BaseTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseTableViewCell.swift; sourceTree = "<group>"; };
 		C2FE76381D40BFE500E482C9 /* greetings.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = greetings.json; sourceTree = "<group>"; };
@@ -193,6 +205,8 @@
 			children = (
 				446E488F1D1ECE5300BF3D5B /* AppDelegate.swift */,
 				441F02811D21579B00035E2C /* MasterViewController.swift */,
+				C25832B71D54655700C93E75 /* LoginController.swift */,
+				C25832B91D5465D800C93E75 /* SignupViewController.swift */,
 				441F027F1D21577E00035E2C /* DetailViewController.swift */,
 				44F34C751D216CFC00899064 /* MenuViewController.swift */,
 				44F34C771D216D0A00899064 /* MenuTransitionManager.swift */,
@@ -200,6 +214,7 @@
 				446E48FD1D1ECF9C00BF3D5B /* MyScrollViewController.swift */,
 				446E48FA1D1ECF9100BF3D5B /* RootViewController.swift */,
 				446E48911D1ECE5300BF3D5B /* ViewController.swift */,
+				C20A0AF21D5472D6007A575A /* Temp */,
 				446E48931D1ECE5300BF3D5B /* Main.storyboard */,
 				C2FE76381D40BFE500E482C9 /* greetings.json */,
 				446E48961D1ECE5300BF3D5B /* Assets.xcassets */,
@@ -304,6 +319,7 @@
 		446E48D81D1ECF3D00BF3D5B /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				C25832BB1D5466A600C93E75 /* AuthcodeView.swift */,
 				446E48D91D1ECF3D00BF3D5B /* ICanHas.swift */,
 				446E48DA1D1ECF3D00BF3D5B /* ImageResizingMethods.swift */,
 				446E48DB1D1ECF3D00BF3D5B /* LocationMethods.swift */,
@@ -321,6 +337,16 @@
 				C2FE76341D40B62200E482C9 /* BaseTableView.swift */,
 			);
 			path = Widget;
+			sourceTree = "<group>";
+		};
+		C20A0AF21D5472D6007A575A /* Temp */ = {
+			isa = PBXGroup;
+			children = (
+				C20A0AF31D547315007A575A /* Macro.swift */,
+				C20A0AEE1D54727F007A575A /* UITableViewCell_photo_1.swift */,
+				C20A0AEF1D54727F007A575A /* UIViewController_table_1.swift */,
+			);
+			name = Temp;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -457,7 +483,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C25832BA1D5465D800C93E75 /* SignupViewController.swift in Sources */,
 				446E48F31D1ECF3D00BF3D5B /* RainbowPushAnimator.swift in Sources */,
+				C20A0AF01D54727F007A575A /* UITableViewCell_photo_1.swift in Sources */,
+				C20A0AF11D54727F007A575A /* UIViewController_table_1.swift in Sources */,
 				446E48F81D1ECF3D00BF3D5B /* KDInteractiveNavigationController.swift in Sources */,
 				446E48F51D1ECF3D00BF3D5B /* ImageResizingMethods.swift in Sources */,
 				446E48EA1D1ECF3D00BF3D5B /* RefreshBaseView.swift in Sources */,
@@ -470,6 +499,7 @@
 				441F027E1D21564900035E2C /* KBTableView.swift in Sources */,
 				446E48E91D1ECF3D00BF3D5B /* Refresh.swift in Sources */,
 				446E48EB1D1ECF3D00BF3D5B /* RefreshFooterView.swift in Sources */,
+				C25832B81D54655700C93E75 /* LoginController.swift in Sources */,
 				C2FE76371D40B9B500E482C9 /* BaseTableViewCell.swift in Sources */,
 				441F02751D2153DF00035E2C /* Ext_UITableView.swift in Sources */,
 				446E48FB1D1ECF9100BF3D5B /* RootViewController.swift in Sources */,
@@ -483,7 +513,9 @@
 				446E48E61D1ECF3D00BF3D5B /* KMWeakObjectContainer.swift in Sources */,
 				446E48F71D1ECF3D00BF3D5B /* FoldingCell.swift in Sources */,
 				446E48E71D1ECF3D00BF3D5B /* MethodSwizzling.swift in Sources */,
+				C20A0AF41D547315007A575A /* Macro.swift in Sources */,
 				446E48F01D1ECF3D00BF3D5B /* RainbowDragPop.swift in Sources */,
+				C25832BC1D5466A600C93E75 /* AuthcodeView.swift in Sources */,
 				446E48901D1ECE5300BF3D5B /* AppDelegate.swift in Sources */,
 				441F027C1D21564900035E2C /* KBNavigationController.swift in Sources */,
 				4471E9DC1D240B98003A2C46 /* CustomCollectionLayout.swift in Sources */,
