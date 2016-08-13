@@ -50,6 +50,7 @@
 		446E48FE1D1ECF9C00BF3D5B /* MyTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 446E48FC1D1ECF9C00BF3D5B /* MyTableViewController.swift */; };
 		446E48FF1D1ECF9C00BF3D5B /* MyScrollViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 446E48FD1D1ECF9C00BF3D5B /* MyScrollViewController.swift */; };
 		4471E9DC1D240B98003A2C46 /* CustomCollectionLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4471E9DB1D240B98003A2C46 /* CustomCollectionLayout.swift */; };
+		44A409241D5F6F2600E1AC68 /* Ext_NSTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44A409231D5F6F2600E1AC68 /* Ext_NSTimer.swift */; };
 		44F34C761D216CFC00899064 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44F34C751D216CFC00899064 /* MenuViewController.swift */; };
 		44F34C781D216D0A00899064 /* MenuTransitionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44F34C771D216D0A00899064 /* MenuTransitionManager.swift */; };
 		C20A0AF01D54727F007A575A /* UITableViewCell_photo_1.swift in Sources */ = {isa = PBXBuildFile; fileRef = C20A0AEE1D54727F007A575A /* UITableViewCell_photo_1.swift */; };
@@ -131,6 +132,7 @@
 		446E48FC1D1ECF9C00BF3D5B /* MyTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyTableViewController.swift; sourceTree = "<group>"; };
 		446E48FD1D1ECF9C00BF3D5B /* MyScrollViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyScrollViewController.swift; sourceTree = "<group>"; };
 		4471E9DB1D240B98003A2C46 /* CustomCollectionLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomCollectionLayout.swift; sourceTree = "<group>"; };
+		44A409231D5F6F2600E1AC68 /* Ext_NSTimer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Ext_NSTimer.swift; sourceTree = "<group>"; };
 		44F34C751D216CFC00899064 /* MenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
 		44F34C771D216D0A00899064 /* MenuTransitionManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuTransitionManager.swift; sourceTree = "<group>"; };
 		C20A0AEE1D54727F007A575A /* UITableViewCell_photo_1.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UITableViewCell_photo_1.swift; sourceTree = "<group>"; };
@@ -262,6 +264,7 @@
 		446E48BE1D1ECF3D00BF3D5B /* Ext */ = {
 			isa = PBXGroup;
 			children = (
+				44A409231D5F6F2600E1AC68 /* Ext_NSTimer.swift */,
 				446E48BF1D1ECF3D00BF3D5B /* Ext_CCLocation.swift */,
 				446E48C01D1ECF3D00BF3D5B /* Ext_NSCoding.swift */,
 				446E48C11D1ECF3D00BF3D5B /* Ext_UIImage.swift */,
@@ -529,6 +532,7 @@
 				441F02821D21579B00035E2C /* MasterViewController.swift in Sources */,
 				446E48F61D1ECF3D00BF3D5B /* LocationMethods.swift in Sources */,
 				446E48EC1D1ECF3D00BF3D5B /* RefreshHeaderView.swift in Sources */,
+				44A409241D5F6F2600E1AC68 /* Ext_NSTimer.swift in Sources */,
 				446E48EF1D1ECF3D00BF3D5B /* RainbowColorSource.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

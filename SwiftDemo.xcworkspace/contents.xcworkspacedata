@@ -2,6 +2,9 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:demo/NSURLSession_NSOperationQueue_GDC/NSURLSession_NSOperationQueue_GDC.xcodeproj">
+   </FileRef>
+   <FileRef
       location = "group:demo/test/test.xcodeproj">
    </FileRef>
    <FileRef
