@@ -12,34 +12,35 @@ import DHURLSessionStub
 @testable import DHURLSessionStub_Example
 
 class APIClientTests: XCTestCase {
-  
+
 //  var apiClient: APIClient!
-  
-  override func setUp() {
-    super.setUp()
-    
+
+	override func setUp() {
+		super.setUp()
+
 //    apiClient = APIClient()
-  }
-  
-  func testFetchingProfile_ReturnsPopulatedUser() {
-    let responseExpectation = expectationWithDescription("User")
-    // Arrage
-    let apiClient = APIClient()
-    apiClient.session = URLSessionMock(jsonDict: ["login": "dasdom", "id": 1234567])!
-    
-    // Act
-    var catchedUser: User? = nil
-    apiClient.fetchProfileWithName("Foo") { (user, error) in
-      catchedUser = user
-      responseExpectation.fulfill()
-    }
-    
-    // Assert
-    waitForExpectationsWithTimeout(1) { (error) in
-      let expectedUser = User(name: "dasdom", id: 1234567)
-      XCTAssertEqual(catchedUser, expectedUser)
-    }
-  }
-  
+	}
+
+	func testFetchingProfile_ReturnsPopulatedUser() {
+		let responseExpectation = expectationWithDescription("User")
+		// Arrage
+		let apiClient = APIClient()
+		apiClient.session = URLSessionMock(jsonDict: ["login": "dasdom", "id": 1234567])!
+
+		// Act
+		var catchedUser: User? = nil
+		apiClient.fetchProfileWithName("Foo") { (user, error) in
+			catchedUser = user
+			responseExpectation.fulfill()
+		}
+
+		// Assert
+		waitForExpectationsWithTimeout(1) { (error) in
+			let expectedUser = User(name: "dasdom", id: 1234567)
+            debugPrint(catchedUser,expectedUser)
+			XCTAssertEqual(catchedUser, expectedUser)
+		}
+	}
+
 }
 
