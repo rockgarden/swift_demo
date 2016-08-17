@@ -8,6 +8,7 @@ class NSOperationVC: UIViewController {
     
     @IBAction func doButton (sender:AnyObject!) {
         self.mv.drawThatPuppy()
+        sampleNSOperationQueue()
     }
 
     /**
@@ -28,12 +29,7 @@ class NSOperationVC: UIViewController {
     }
     
     func loadWebs() {
-        let urls = NSMutableArray (object:
-            NSURL(string: "http://www.google.es")!,
-            NSURL(string: "http://www.apple.com")!,
-            NSURL(string: "http://carlosbutron.es")!,
-            NSURL(string: "http://www.bing.com")!,
-            NSURL(string: "http://www.yahoo.com")!)
+        let urls = NSMutableArray (objects:NSURL(string:"http://www.google.es")!,NSURL(string: "http://www.apple.com")!,NSURL(string: "http://carlosbutron.es")!,NSURL(string: "http://www.bing.com")!,NSURL(string: "http://www.yahoo.com")!)
         urls.addObjectsFromArray(googlewebs as [AnyObject])
         for iterator: AnyObject in urls {
             /// NSData(contentsOfURL:iterator as! NSURL)

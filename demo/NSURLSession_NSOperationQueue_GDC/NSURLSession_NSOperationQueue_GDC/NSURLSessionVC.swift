@@ -14,7 +14,6 @@ class NSURLSessionVC: UIViewController, NSURLSessionDownloadDelegate {
 
 	@IBOutlet weak var imagen: UIImageView!
 	@IBOutlet weak var progreso: UIProgressView!
-
 	@IBAction func cargar(sender: UIButton) {
 		let imageUrl: NSString = "http://c.hiphotos.baidu.com/image/pic/item/8cb1cb13495409235fa14adf9158d109b2de4942.jpg"
 		let getImageTask: NSURLSessionDownloadTask = session.downloadTaskWithURL(NSURL(string: imageUrl as String)!)
