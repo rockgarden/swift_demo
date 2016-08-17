@@ -39,13 +39,6 @@
 			remoteGlobalIDString = 44A409301D5F73BC00E1AC68;
 			remoteInfo = NSURLSession_NSOperationQueue_GDC;
 		};
-		C2F3A3CA1D6436A800DA66CB /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = C2F3A3C61D6436A600DA66CB /* CoreLocation_MapKit.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = C2F3A3B11D6436A600DA66CB;
-			remoteInfo = CoreLocation_MapKit;
-		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
@@ -70,7 +63,6 @@
 		44A409691D5F779800E1AC68 /* APIClientTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIClientTests.swift; sourceTree = "<group>"; };
 		C292A6381D63059D00AA30C3 /* NSURLSessionVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSURLSessionVC.swift; sourceTree = "<group>"; };
 		C292A63B1D63070B00AA30C3 /* NSURLSession.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = NSURLSession.storyboard; sourceTree = "<group>"; };
-		C2F3A3C61D6436A600DA66CB /* CoreLocation_MapKit.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = CoreLocation_MapKit.xcodeproj; path = ../CoreLocation_MapKit/CoreLocation_MapKit.xcodeproj; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,7 +104,6 @@
 		44A409281D5F73BC00E1AC68 = {
 			isa = PBXGroup;
 			children = (
-				C2F3A3C61D6436A600DA66CB /* CoreLocation_MapKit.xcodeproj */,
 				44A409331D5F73BC00E1AC68 /* NSURLSession_NSOperationQueue_GDC */,
 				44A409481D5F73BC00E1AC68 /* NSURLSession_NSOperationQueue_GDCTests */,
 				44A409531D5F73BC00E1AC68 /* NSURLSession_NSOperationQueue_GDCUITests */,
@@ -180,14 +171,6 @@
 				C292A63B1D63070B00AA30C3 /* NSURLSession.storyboard */,
 			);
 			name = NSURLSession;
-			sourceTree = "<group>";
-		};
-		C2F3A3C71D6436A600DA66CB /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				C2F3A3CB1D6436A800DA66CB /* CoreLocation_MapKit.app */,
-			);
-			name = Products;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -280,12 +263,6 @@
 			mainGroup = 44A409281D5F73BC00E1AC68;
 			productRefGroup = 44A409321D5F73BC00E1AC68 /* Products */;
 			projectDirPath = "";
-			projectReferences = (
-				{
-					ProductGroup = C2F3A3C71D6436A600DA66CB /* Products */;
-					ProjectRef = C2F3A3C61D6436A600DA66CB /* CoreLocation_MapKit.xcodeproj */;
-				},
-			);
 			projectRoot = "";
 			targets = (
 				44A409301D5F73BC00E1AC68 /* NSURLSession_NSOperationQueue_GDC */,
@@ -294,16 +271,6 @@
 			);
 		};
 /* End PBXProject section */
-
-/* Begin PBXReferenceProxy section */
-		C2F3A3CB1D6436A800DA66CB /* CoreLocation_MapKit.app */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.application;
-			path = CoreLocation_MapKit.app;
-			remoteRef = C2F3A3CA1D6436A800DA66CB /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		44A4092F1D5F73BC00E1AC68 /* Resources */ = {

@@ -1,24 +1,77 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="HSo-Gy-wtv">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
-        <scene sceneID="tne-QT-ifu">
+        <scene sceneID="DjG-jy-T1n">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="HSo-Gy-wtv" customClass="ViewController" customModule="CoreLocation_MapKit" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
-                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                        <viewControllerLayoutGuide type="top" id="d8h-QB-D3n"/>
+                        <viewControllerLayoutGuide type="bottom" id="0zg-jm-VIp"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                    <view key="view" contentMode="scaleToFill" id="eTc-p4-t4e">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4eN-Ko-nrk">
+                                <rect key="frame" x="0.0" y="556" width="600" height="44"/>
+                                <items>
+                                    <barButtonItem style="plain" systemItem="add" id="g1e-AX-Dp4"/>
+                                    <barButtonItem width="62" style="plain" systemItem="fixedSpace" id="kZl-Px-7E1"/>
+                                    <barButtonItem style="plain" systemItem="trash" id="91V-HP-DmY"/>
+                                    <barButtonItem width="421" style="plain" systemItem="fixedSpace" id="nKd-Dh-0rn"/>
+                                    <barButtonItem style="plain" systemItem="refresh" id="FLx-PK-zig"/>
+                                </items>
+                                <color key="barTintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                            </toolbar>
+                            <view alpha="0.69999998807907104" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Pr2-uO-Tma">
+                                <rect key="frame" x="0.0" y="20" width="600" height="40"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Latitude:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="P15-wO-FuC">
+                                        <rect key="frame" x="8" y="19" width="216" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Longitude:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TvW-Hv-anr">
+                                        <rect key="frame" x="334" y="18" width="231" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="ta7-t7-4vO"/>
+                                </constraints>
+                            </view>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" showsUserLocation="YES" translatesAutoresizingMaskIntoConstraints="NO" id="vZa-Dd-DS4">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                            </mapView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="vZa-Dd-DS4" firstAttribute="centerX" secondItem="eTc-p4-t4e" secondAttribute="centerX" id="07Z-Zr-8rA"/>
+                            <constraint firstItem="0zg-jm-VIp" firstAttribute="top" secondItem="4eN-Ko-nrk" secondAttribute="bottom" id="GdM-MR-jkJ"/>
+                            <constraint firstItem="vZa-Dd-DS4" firstAttribute="height" secondItem="eTc-p4-t4e" secondAttribute="height" id="KRq-nO-V4V"/>
+                            <constraint firstItem="vZa-Dd-DS4" firstAttribute="centerY" secondItem="eTc-p4-t4e" secondAttribute="centerY" id="ZaE-so-v2g"/>
+                            <constraint firstItem="Pr2-uO-Tma" firstAttribute="centerX" secondItem="eTc-p4-t4e" secondAttribute="centerX" id="c5O-sd-P3y"/>
+                            <constraint firstItem="4eN-Ko-nrk" firstAttribute="width" secondItem="eTc-p4-t4e" secondAttribute="width" id="cvp-o3-XfP"/>
+                            <constraint firstItem="vZa-Dd-DS4" firstAttribute="width" secondItem="eTc-p4-t4e" secondAttribute="width" id="jyN-MY-NA8"/>
+                            <constraint firstItem="Pr2-uO-Tma" firstAttribute="width" secondItem="eTc-p4-t4e" secondAttribute="width" id="pSC-It-hDu"/>
+                            <constraint firstItem="4eN-Ko-nrk" firstAttribute="centerX" secondItem="eTc-p4-t4e" secondAttribute="centerX" id="sjm-2X-T6r"/>
+                            <constraint firstItem="Pr2-uO-Tma" firstAttribute="top" secondItem="d8h-QB-D3n" secondAttribute="bottom" id="zof-aF-kpc"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="myMap" destination="vZa-Dd-DS4" id="4Z7-WM-qJK"/>
+                    </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="uXG-JJ-xGU" sceneMemberID="firstResponder"/>
             </objects>
         </scene>
     </scenes>
