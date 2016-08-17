@@ -4,7 +4,7 @@ import UIKit
 
 class NSOperationVC: UIViewController {
 
-    @IBOutlet var mv : MyMandelbrotView!
+    @IBOutlet var mv : MandelbrotView!
     
     @IBAction func doButton (sender:AnyObject!) {
         self.mv.drawThatPuppy()

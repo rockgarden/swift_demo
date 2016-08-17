@@ -7,9 +7,9 @@
 //
 
 import Foundation
-//import DHURLSessionStub
-
-class APIClient {
+/// API Mock
+class APIClientMock {
+    /// 通过延迟加载属性注入依赖
     lazy var session: DHURLSession = NSURLSession.sharedSession()
     
     func fetchProfileWithName(name: String, completion: (user: User?, error: ErrorType?) -> Void) {

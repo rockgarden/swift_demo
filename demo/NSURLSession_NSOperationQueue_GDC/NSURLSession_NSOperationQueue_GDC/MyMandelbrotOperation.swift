@@ -2,7 +2,7 @@
 
 import UIKit
 
-class MyMandelbrotOperation: NSOperation {
+class MandelbrotOperation: NSOperation {
 	private let size: CGSize
 	private let center: CGPoint
 	private let zoom: CGFloat

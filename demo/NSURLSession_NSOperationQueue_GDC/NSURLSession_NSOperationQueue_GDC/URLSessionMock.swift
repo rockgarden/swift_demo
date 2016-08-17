@@ -5,9 +5,12 @@
 //  Created by dasdom on 05.01.16.
 //  Copyright © 2016 dasdom. All rights reserved.
 //
+//  伪造 web API 的响应
 
 import Foundation
-
+/**
+ *  NSURLSession协议
+ */
 public protocol DHURLSession {
     func dataTaskWithURL(url: NSURL,
                          completionHandler: (NSData?, NSURLResponse?, NSError?) -> Void) -> NSURLSessionDataTask
@@ -17,8 +20,8 @@ public protocol DHURLSession {
 
 extension NSURLSession: DHURLSession { }
 
+/// NSURLSession替换类
 public final class URLSessionMock: DHURLSession {
-    
     var url: NSURL?
     var request: NSURLRequest?
     private let dataTaskMock: URLSessionDataTaskMock
