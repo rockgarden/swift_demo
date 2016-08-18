@@ -24,6 +24,7 @@ class MandelbrotView: UIView {
     // warning! called on background thread
     func operationFinished(n: NSNotification) {
         if let op = n.object as? MandelbrotOperation {
+            // 在主派发队列中更新UI
             dispatch_async(dispatch_get_main_queue()) {
                 NSNotificationCenter.defaultCenter().removeObserver(self, name: "MyMandelbrotOperationFinished", object: op)
                 self.bitmapContext = op.bitmapContext

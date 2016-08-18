@@ -23,6 +23,9 @@
 		44A409661D5F772E00E1AC68 /* APIClientMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44A409651D5F772E00E1AC68 /* APIClientMock.swift */; };
 		44A409681D5F774B00E1AC68 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44A409671D5F774B00E1AC68 /* User.swift */; };
 		44A4096A1D5F779800E1AC68 /* APIClientTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44A409691D5F779800E1AC68 /* APIClientTests.swift */; };
+		C25DAA201D658A7D005D60C6 /* MADispatchQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = C25DAA1C1D658A7D005D60C6 /* MADispatchQueue.m */; };
+		C25DAA211D658A7D005D60C6 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C25DAA1D1D658A7D005D60C6 /* main.m */; };
+		C25DAA221D658A7D005D60C6 /* MAThreadPool.m in Sources */ = {isa = PBXBuildFile; fileRef = C25DAA1F1D658A7D005D60C6 /* MAThreadPool.m */; };
 		C292A6391D63059D00AA30C3 /* NSURLSessionVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C292A6381D63059D00AA30C3 /* NSURLSessionVC.swift */; };
 		C292A63C1D63070B00AA30C3 /* NSURLSession.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C292A63B1D63070B00AA30C3 /* NSURLSession.storyboard */; };
 /* End PBXBuildFile section */
@@ -67,6 +70,11 @@
 		44A409651D5F772E00E1AC68 /* APIClientMock.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIClientMock.swift; sourceTree = "<group>"; };
 		44A409671D5F774B00E1AC68 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		44A409691D5F779800E1AC68 /* APIClientTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIClientTests.swift; sourceTree = "<group>"; };
+		C25DAA1B1D658A7D005D60C6 /* MADispatchQueue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MADispatchQueue.h; sourceTree = "<group>"; };
+		C25DAA1C1D658A7D005D60C6 /* MADispatchQueue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MADispatchQueue.m; sourceTree = "<group>"; };
+		C25DAA1D1D658A7D005D60C6 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		C25DAA1E1D658A7D005D60C6 /* MAThreadPool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MAThreadPool.h; sourceTree = "<group>"; };
+		C25DAA1F1D658A7D005D60C6 /* MAThreadPool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MAThreadPool.m; sourceTree = "<group>"; };
 		C292A6381D63059D00AA30C3 /* NSURLSessionVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSURLSessionVC.swift; sourceTree = "<group>"; };
 		C292A63B1D63070B00AA30C3 /* NSURLSession.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = NSURLSession.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -110,6 +118,7 @@
 		446B95951D649EB5003EC727 /* GCD */ = {
 			isa = PBXGroup;
 			children = (
+				C25DAA1A1D658A7D005D60C6 /* MADispatch */,
 				446B95961D649F0E003EC727 /* GCD_MandelbrotView.swift */,
 				446B95981D64A139003EC727 /* GCDVC.swift */,
 			);
@@ -178,6 +187,18 @@
 				446B959A1D64A3AE003EC727 /* URLSessionMockVC.swift */,
 			);
 			name = DHURLSession;
+			sourceTree = "<group>";
+		};
+		C25DAA1A1D658A7D005D60C6 /* MADispatch */ = {
+			isa = PBXGroup;
+			children = (
+				C25DAA1D1D658A7D005D60C6 /* main.m */,
+				C25DAA1B1D658A7D005D60C6 /* MADispatchQueue.h */,
+				C25DAA1C1D658A7D005D60C6 /* MADispatchQueue.m */,
+				C25DAA1E1D658A7D005D60C6 /* MAThreadPool.h */,
+				C25DAA1F1D658A7D005D60C6 /* MAThreadPool.m */,
+			);
+			path = MADispatch;
 			sourceTree = "<group>";
 		};
 		C292A63A1D6305A700AA30C3 /* NSURLSession */ = {
@@ -322,6 +343,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C25DAA211D658A7D005D60C6 /* main.m in Sources */,
 				446B95921D6203E1003EC727 /* NSOperationVC.swift in Sources */,
 				446B958D1D62034E003EC727 /* MyMandelbrotOperation.swift in Sources */,
 				44A409631D5F763300E1AC68 /* URLSessionMock.swift in Sources */,
@@ -329,8 +351,10 @@
 				446B95971D649F0E003EC727 /* GCD_MandelbrotView.swift in Sources */,
 				C292A6391D63059D00AA30C3 /* NSURLSessionVC.swift in Sources */,
 				44A409681D5F774B00E1AC68 /* User.swift in Sources */,
+				C25DAA201D658A7D005D60C6 /* MADispatchQueue.m in Sources */,
 				446B95991D64A139003EC727 /* GCDVC.swift in Sources */,
 				44A409661D5F772E00E1AC68 /* APIClientMock.swift in Sources */,
+				C25DAA221D658A7D005D60C6 /* MAThreadPool.m in Sources */,
 				446B959B1D64A3AE003EC727 /* URLSessionMockVC.swift in Sources */,
 				446B95901D620391003EC727 /* MyMandelbrotView.swift in Sources */,
 			);
