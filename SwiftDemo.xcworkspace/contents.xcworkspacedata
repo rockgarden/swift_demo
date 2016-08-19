@@ -2,6 +2,12 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:demo/UIAlertController/UIAlertController.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:demo/Notification/Notification.xcodeproj">
+   </FileRef>
+   <FileRef
       location = "group:demo/animate/animate.xcodeproj">
    </FileRef>
    <FileRef

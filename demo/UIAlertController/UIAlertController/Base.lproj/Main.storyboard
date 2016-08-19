@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="rzv-JC-O2o">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="kau-uY-Lqz">
+            <objects>
+                <viewController id="rzv-JC-O2o" customClass="ViewController" customModule="UIAlertController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="XQP-bg-p63"/>
+                        <viewControllerLayoutGuide type="bottom" id="Tid-Yz-iZ2"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="wYL-Db-TmJ">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8ys-xS-oAI">
+                                <rect key="frame" x="123" y="141" width="75" height="30"/>
+                                <state key="normal" title="Show Alert"/>
+                                <connections>
+                                    <action selector="actionAlert:" destination="rzv-JC-O2o" eventType="touchUpInside" id="Qcp-iE-lWs"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aMv-sL-a82">
+                                <rect key="frame" x="95" y="232" width="130" height="30"/>
+                                <state key="normal" title="Show Action Sheet"/>
+                                <connections>
+                                    <action selector="actionSheet:" destination="rzv-JC-O2o" eventType="touchUpInside" id="Fd3-he-RhX"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3Uf-q1-aaj">
+                                <rect key="frame" x="109" y="319" width="102" height="30"/>
+                                <state key="normal" title="Alert with form"/>
+                                <connections>
+                                    <action selector="actionAlertWithForm:" destination="rzv-JC-O2o" eventType="touchUpInside" id="ws1-OP-Aj2"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gCw-An-ZdC" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="162.66666666666666" y="368.72666666666669"/>
+        </scene>
+    </scenes>
+</document>
