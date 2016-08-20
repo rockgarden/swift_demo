@@ -88,6 +88,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDele
 
 			// get data from placemark
 			let locality = (containsPlacemark.locality != nil) ? containsPlacemark.locality : ""
+            @IBOutlet var lg: UILongPressGestureRecognizer!
 			let postalCode = (containsPlacemark.postalCode != nil) ? containsPlacemark.postalCode : ""
 			let administrativeArea = (containsPlacemark.administrativeArea != nil) ? containsPlacemark.administrativeArea : ""
 			let country = (containsPlacemark.country != nil) ? containsPlacemark.country : ""

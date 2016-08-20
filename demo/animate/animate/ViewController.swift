@@ -46,3 +46,4 @@ class ViewController: UIViewController {
     
 }
 
+@IBOutlet weak var log: UILongPressGestureRecognizer!

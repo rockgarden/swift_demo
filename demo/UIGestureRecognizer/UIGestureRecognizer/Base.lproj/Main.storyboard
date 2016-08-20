@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="zH4-KR-HTP">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="Rff-rk-DlA">
+            <objects>
+                <viewController id="zH4-KR-HTP" customClass="ViewController" customModule="UIGestureRecognizer" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="H53-Qe-KsS"/>
+                        <viewControllerLayoutGuide type="bottom" id="JkN-p2-nYe"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="uuX-7U-0Ys">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="image1" translatesAutoresizingMaskIntoConstraints="NO" id="HcF-z5-CPo">
+                                <rect key="frame" x="250" y="250" width="100" height="100"/>
+                                <gestureRecognizers/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="100" id="27d-xb-ueV"/>
+                                    <constraint firstAttribute="height" constant="100" id="W9R-4g-Kf9"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="HcF-z5-CPo" firstAttribute="centerX" secondItem="uuX-7U-0Ys" secondAttribute="centerX" id="0bo-8s-5UY"/>
+                            <constraint firstItem="HcF-z5-CPo" firstAttribute="centerY" secondItem="uuX-7U-0Ys" secondAttribute="centerY" id="ccx-gZ-3is"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="image" destination="HcF-z5-CPo" id="sSj-a8-KBg"/>
+                        <outlet property="longPresser" destination="PrA-ig-C9j" id="Suj-cy-fjp"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="NpO-Yo-Wzm" sceneMemberID="firstResponder"/>
+                <pongPressGestureRecognizer allowableMovement="10" minimumPressDuration="0.5" id="PrA-ig-C9j"/>
+            </objects>
+            <point key="canvasLocation" x="162" y="366"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="image1" width="800" height="800"/>
+    </resources>
+</document>

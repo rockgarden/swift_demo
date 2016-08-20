@@ -74,3 +74,4 @@ class ViewController: UIViewController {
 
 }
 
+@IBOutlet var lg: UILongPressGestureRecognizer!

@@ -15,6 +15,7 @@ class ViewController: UIViewController {
     }
 
     /*
+     @IBOutlet weak var log: UILongPressGestureRecognizer!
      UIAlertController 要去掉 title view 需要传入两个: nil title: nil, message: nil
      */
     
