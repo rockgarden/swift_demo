@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4454EE241D69E7EB00DC3F04 /* GCD_Func.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4454EE231D69E7EB00DC3F04 /* GCD_Func.swift */; };
 		446B958D1D62034E003EC727 /* MyMandelbrotOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 446B958C1D62034D003EC727 /* MyMandelbrotOperation.swift */; };
 		446B95901D620391003EC727 /* MyMandelbrotView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 446B958F1D620391003EC727 /* MyMandelbrotView.swift */; };
 		446B95921D6203E1003EC727 /* NSOperationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 446B95911D6203E1003EC727 /* NSOperationVC.swift */; };
@@ -48,6 +49,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		4454EE231D69E7EB00DC3F04 /* GCD_Func.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GCD_Func.swift; sourceTree = "<group>"; };
 		446B958C1D62034D003EC727 /* MyMandelbrotOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyMandelbrotOperation.swift; sourceTree = "<group>"; };
 		446B958F1D620391003EC727 /* MyMandelbrotView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyMandelbrotView.swift; sourceTree = "<group>"; };
 		446B95911D6203E1003EC727 /* NSOperationVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSOperationVC.swift; sourceTree = "<group>"; };
@@ -121,6 +123,7 @@
 				C25DAA1A1D658A7D005D60C6 /* MADispatch */,
 				446B95961D649F0E003EC727 /* GCD_MandelbrotView.swift */,
 				446B95981D64A139003EC727 /* GCDVC.swift */,
+				4454EE231D69E7EB00DC3F04 /* GCD_Func.swift */,
 			);
 			name = GCD;
 			sourceTree = "<group>";
@@ -344,6 +347,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C25DAA211D658A7D005D60C6 /* main.m in Sources */,
+				4454EE241D69E7EB00DC3F04 /* GCD_Func.swift in Sources */,
 				446B95921D6203E1003EC727 /* NSOperationVC.swift in Sources */,
 				446B958D1D62034E003EC727 /* MyMandelbrotOperation.swift in Sources */,
 				44A409631D5F763300E1AC68 /* URLSessionMock.swift in Sources */,

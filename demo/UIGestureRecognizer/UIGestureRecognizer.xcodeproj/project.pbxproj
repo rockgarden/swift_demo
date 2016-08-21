@@ -12,6 +12,17 @@
 		442F31271D6831D60060942F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 442F31251D6831D60060942F /* Main.storyboard */; };
 		442F31291D6831D60060942F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 442F31281D6831D60060942F /* Assets.xcassets */; };
 		442F312C1D6831D60060942F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 442F312A1D6831D60060942F /* LaunchScreen.storyboard */; };
+		4454EE301D69F33800DC3F04 /* CircleDrawView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4454EE261D69F33800DC3F04 /* CircleDrawView.swift */; };
+		4454EE311D69F33800DC3F04 /* CircleFit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4454EE271D69F33800DC3F04 /* CircleFit.swift */; };
+		4454EE321D69F33800DC3F04 /* CircleGestureRecognizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4454EE281D69F33800DC3F04 /* CircleGestureRecognizer.swift */; };
+		4454EE331D69F33800DC3F04 /* GameOverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4454EE291D69F33800DC3F04 /* GameOverViewController.swift */; };
+		4454EE341D69F33800DC3F04 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4454EE2A1D69F33800DC3F04 /* GameViewController.swift */; };
+		4454EE351D69F33800DC3F04 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4454EE2B1D69F33800DC3F04 /* Images.xcassets */; };
+		4454EE361D69F33800DC3F04 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4454EE2C1D69F33800DC3F04 /* Info.plist */; };
+		4454EE371D69F33800DC3F04 /* Lobster-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4454EE2D1D69F33800DC3F04 /* Lobster-Regular.ttf */; };
+		4454EE381D69F33800DC3F04 /* MatchingGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4454EE2E1D69F33800DC3F04 /* MatchingGame.swift */; };
+		4454EE391D69F33800DC3F04 /* RoundedImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4454EE2F1D69F33800DC3F04 /* RoundedImageView.swift */; };
+		4454EE3B1D69F3A800DC3F04 /* MatchItUp.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4454EE3A1D69F3A800DC3F04 /* MatchItUp.storyboard */; };
 		449B13CA1D683DE400795F70 /* HorizVertPanGestureRecognizers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 449B13C91D683DE400795F70 /* HorizVertPanGestureRecognizers.swift */; };
 /* End PBXBuildFile section */
 
@@ -23,6 +34,17 @@
 		442F31281D6831D60060942F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		442F312B1D6831D60060942F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		442F312D1D6831D60060942F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4454EE261D69F33800DC3F04 /* CircleDrawView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircleDrawView.swift; sourceTree = "<group>"; };
+		4454EE271D69F33800DC3F04 /* CircleFit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircleFit.swift; sourceTree = "<group>"; };
+		4454EE281D69F33800DC3F04 /* CircleGestureRecognizer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircleGestureRecognizer.swift; sourceTree = "<group>"; };
+		4454EE291D69F33800DC3F04 /* GameOverViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameOverViewController.swift; sourceTree = "<group>"; };
+		4454EE2A1D69F33800DC3F04 /* GameViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
+		4454EE2B1D69F33800DC3F04 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		4454EE2C1D69F33800DC3F04 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4454EE2D1D69F33800DC3F04 /* Lobster-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lobster-Regular.ttf"; sourceTree = "<group>"; };
+		4454EE2E1D69F33800DC3F04 /* MatchingGame.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MatchingGame.swift; sourceTree = "<group>"; };
+		4454EE2F1D69F33800DC3F04 /* RoundedImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoundedImageView.swift; sourceTree = "<group>"; };
+		4454EE3A1D69F3A800DC3F04 /* MatchItUp.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MatchItUp.storyboard; sourceTree = "<group>"; };
 		449B13C91D683DE400795F70 /* HorizVertPanGestureRecognizers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HorizVertPanGestureRecognizers.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -56,6 +78,7 @@
 		442F31201D6831D60060942F /* UIGestureRecognizer */ = {
 			isa = PBXGroup;
 			children = (
+				4454EE251D69F33800DC3F04 /* MatchItUp */,
 				442F31211D6831D60060942F /* AppDelegate.swift */,
 				442F31231D6831D60060942F /* ViewController.swift */,
 				442F31251D6831D60060942F /* Main.storyboard */,
@@ -65,6 +88,24 @@
 				449B13C91D683DE400795F70 /* HorizVertPanGestureRecognizers.swift */,
 			);
 			path = UIGestureRecognizer;
+			sourceTree = "<group>";
+		};
+		4454EE251D69F33800DC3F04 /* MatchItUp */ = {
+			isa = PBXGroup;
+			children = (
+				4454EE261D69F33800DC3F04 /* CircleDrawView.swift */,
+				4454EE271D69F33800DC3F04 /* CircleFit.swift */,
+				4454EE281D69F33800DC3F04 /* CircleGestureRecognizer.swift */,
+				4454EE291D69F33800DC3F04 /* GameOverViewController.swift */,
+				4454EE2A1D69F33800DC3F04 /* GameViewController.swift */,
+				4454EE2B1D69F33800DC3F04 /* Images.xcassets */,
+				4454EE3A1D69F3A800DC3F04 /* MatchItUp.storyboard */,
+				4454EE2C1D69F33800DC3F04 /* Info.plist */,
+				4454EE2D1D69F33800DC3F04 /* Lobster-Regular.ttf */,
+				4454EE2E1D69F33800DC3F04 /* MatchingGame.swift */,
+				4454EE2F1D69F33800DC3F04 /* RoundedImageView.swift */,
+			);
+			path = MatchItUp;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -126,7 +167,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				442F312C1D6831D60060942F /* LaunchScreen.storyboard in Resources */,
+				4454EE3B1D69F3A800DC3F04 /* MatchItUp.storyboard in Resources */,
+				4454EE371D69F33800DC3F04 /* Lobster-Regular.ttf in Resources */,
+				4454EE351D69F33800DC3F04 /* Images.xcassets in Resources */,
 				442F31291D6831D60060942F /* Assets.xcassets in Resources */,
+				4454EE361D69F33800DC3F04 /* Info.plist in Resources */,
 				442F31271D6831D60060942F /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -140,7 +185,14 @@
 			files = (
 				442F31241D6831D60060942F /* ViewController.swift in Sources */,
 				449B13CA1D683DE400795F70 /* HorizVertPanGestureRecognizers.swift in Sources */,
+				4454EE301D69F33800DC3F04 /* CircleDrawView.swift in Sources */,
+				4454EE321D69F33800DC3F04 /* CircleGestureRecognizer.swift in Sources */,
+				4454EE341D69F33800DC3F04 /* GameViewController.swift in Sources */,
+				4454EE331D69F33800DC3F04 /* GameOverViewController.swift in Sources */,
+				4454EE391D69F33800DC3F04 /* RoundedImageView.swift in Sources */,
+				4454EE311D69F33800DC3F04 /* CircleFit.swift in Sources */,
 				442F31221D6831D60060942F /* AppDelegate.swift in Sources */,
+				4454EE381D69F33800DC3F04 /* MatchingGame.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
