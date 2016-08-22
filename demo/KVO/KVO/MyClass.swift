@@ -20,13 +20,12 @@ import Foundation
  OC 中要观察的属性通常可分为三类：attributes, to-one relationships, to-many relationships。
  对于attributes, to-one relationships而言，观察这两类属性，在 Swift 中除了要遵守规则A外，与在 OC 中无异。OC 中实例变量和属性是两种东西，后者通过KVC 方法来访问前者并可以触发 KVO，在 Swift 将实例变量和属性这两种概念合并了，直接改变属性或是通过 KVC 方法都可以触发 KVO。
  对于to-many relationships，通常我们需要更加细致的信息，比如希望在添加、删除或是替换了成员时也能得到 KVO 通知，在 OC 中我们需要通过实现Collection Accessor Patterns for To-Many Properties 并使用对应的方法才能触发对应的 KVO。但在 Swift 中，这些方法都无法触发 KVO ：Key-Value Observe in Swift not showing insertions and removals in arrays，对于 NSMutableArray, NSMutableSet 一类的属性，在 Swift 中，需要通过以下 KVC 方法来获取观察属性的集合代理(collection proxy)，通过该代理，直接使用常规的添加、删除和替换方法就能触发 KVO，这正是我们需要的结果。
- - mutableArrayValueForKey:
- - mutableArrayValueForKeyPath:
- - mutableSetValueForKey:
- - mutableSetValueForKeyPath:
- - mutableOrderedSetValueForKey:
- - mutableOrderedSetValueForKeyPath:
-
+        - mutableArrayValueForKey:
+        - mutableArrayValueForKeyPath:
+        - mutableSetValueForKey:
+        - mutableSetValueForKeyPath:
+        - mutableOrderedSetValueForKey:
+        - mutableOrderedSetValueForKeyPath:
  KVO 中的其他特征，如属性依赖(Registering Dependent Keys)，自动/手动通知，在 Swift 中都是支持的。
  */
 
@@ -34,12 +33,12 @@ import Foundation
 /// 声明全局的用来辨别是哪一个被视察属性的变量
 public var con = "ObserveValue"
 
-class MyClass1: NSObject {
+class ObjectToObserve: NSObject {
 	// absolutely crucial to say "dynamic" or this won't work
 	dynamic var value: Bool = false
 }
 
-class MyClass2: NSObject {
+class Observer: NSObject {
 	override func observeValueForKeyPath(keyPath: String?, ofObject object: AnyObject?, change: [String: AnyObject]?, context: UnsafeMutablePointer<Void>) {
 		print("I heard about the change!")
 		if let keyPath = keyPath {
@@ -54,7 +53,7 @@ class MyClass2: NSObject {
 }
 
 //MARK: - 案例2
-class MyObjectToObserve: NSObject {
+class ObjectToObserve1: NSObject {
 	dynamic var myDate = NSDate()
     override init() {
         super.init()
@@ -69,9 +68,9 @@ class MyObjectToObserve: NSObject {
 /// 声明1个全局的用来辨别是哪一个被视察属性的变量
 private var myContext = 0
 
-class MyObserver: NSObject {
+class Observer1: NSObject {
 
-	var objectToObserve = MyObjectToObserve()
+	var objectToObserve = ObjectToObserve1()
 
 	override init() {
 		super.init()
