@@ -107,7 +107,7 @@ class ArrayToObserve: NSObject {
     dynamic var children: NSMutableArray = NSMutableArray()
     // Get the KVO/KVC compatible array
     var childrenProxy = mutableArrayValueForKey("children")
-    
+    //FIXME: this class is not key value coding-compliant for the key children.
     func changeArray() {
         childrenProxy.addObject(NSNumber(integer: 20)) // .Insertion
         childrenProxy.addObject(NSNumber(integer: 30)) // .Insertion
@@ -131,7 +131,7 @@ class ArrayObserver: NSObject {
             print(object?.valueForKeyPath?(keyPath))
         }
         print(change)
-        print(context == &con) // aha
+        print(context == &Update)
         let c = UnsafeMutablePointer<String>(context) // context 为 string 而非 Int
         let s = c.memory
         print(s)
