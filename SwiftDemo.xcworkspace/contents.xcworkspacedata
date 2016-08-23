@@ -2,6 +2,9 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:../SimpleLib/SimpleLib.xcodeproj">
+   </FileRef>
+   <FileRef
       location = "group:demo/KVO/KVO.xcodeproj">
    </FileRef>
    <FileRef
