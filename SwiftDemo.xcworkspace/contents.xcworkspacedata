@@ -2,6 +2,12 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:demo/Delegate_Protocol/Delegate_Protocol.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:demo/TableView/TableView.xcodeproj">
+   </FileRef>
+   <FileRef
       location = "group:../SimpleLib/SimpleLib.xcodeproj">
    </FileRef>
    <FileRef
