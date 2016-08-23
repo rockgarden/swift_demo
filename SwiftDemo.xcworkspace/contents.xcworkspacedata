@@ -11,7 +11,7 @@
       location = "group:../SimpleLib/SimpleLib.xcodeproj">
    </FileRef>
    <FileRef
-      location = "group:demo/KVO/KVO.xcodeproj">
+      location = "group:/Users/rockgarden/GitHub/swift_demo/demo/KVO/KVO_KVC.xcodeproj">
    </FileRef>
    <FileRef
       location = "group:demo/UIGestureRecognizer/UIGestureRecognizer.xcodeproj">
