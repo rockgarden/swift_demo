@@ -9,7 +9,7 @@
 import UIKit
 
 class BasicKVOUIViewController: UIViewController {
-	var obj: Class!
+	var obj: testClass!
 
 	deinit {
 
@@ -17,7 +17,7 @@ class BasicKVOUIViewController: UIViewController {
 
 	override func viewDidLoad() {
 		super.viewDidLoad()
-		self.obj = Class()
+		self.obj = testClass()
 	}
 
 	override func didReceiveMemoryWarning() {
@@ -48,7 +48,7 @@ class MyChildClass: MyClass1 {
 
 private var myContext = 0
 
-class Class: NSObject {
+class testClass: NSObject {
 
 	var myObject: MyClass!
 

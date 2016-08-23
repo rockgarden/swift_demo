@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		44574A181D6B207500754EE6 /* Examples.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44574A171D6B207500754EE6 /* Examples.swift */; };
+		449789AF1D6C916B00A607A9 /* MyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 449789AC1D6C916B00A607A9 /* MyView.swift */; };
+		449789B01D6C916B00A607A9 /* Thing.m in Sources */ = {isa = PBXBuildFile; fileRef = 449789AE1D6C916B00A607A9 /* Thing.m */; };
+		449789B21D6C91AA00A607A9 /* KVC_VC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 449789B11D6C91AA00A607A9 /* KVC_VC.swift */; };
+		449789B41D6C91E800A607A9 /* KVC.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 449789B31D6C91E800A607A9 /* KVC.storyboard */; };
 		C20B83D41D6AEA0500C12286 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = C20B83D31D6AEA0500C12286 /* Model.swift */; };
 		C20B83D61D6AEAD100C12286 /* BasicKVOUIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C20B83D51D6AEAD100C12286 /* BasicKVOUIViewController.swift */; };
 		C20B83D81D6AEADD00C12286 /* PrincipleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C20B83D71D6AEADD00C12286 /* PrincipleViewController.swift */; };
@@ -31,6 +35,12 @@
 
 /* Begin PBXFileReference section */
 		44574A171D6B207500754EE6 /* Examples.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Examples.swift; sourceTree = "<group>"; };
+		449789AC1D6C916B00A607A9 /* MyView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyView.swift; sourceTree = "<group>"; };
+		449789AD1D6C916B00A607A9 /* Thing.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Thing.h; sourceTree = "<group>"; };
+		449789AE1D6C916B00A607A9 /* Thing.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Thing.m; sourceTree = "<group>"; };
+		449789B11D6C91AA00A607A9 /* KVC_VC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KVC_VC.swift; sourceTree = "<group>"; };
+		449789B31D6C91E800A607A9 /* KVC.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = KVC.storyboard; sourceTree = "<group>"; };
+		449789B51D6C930E00A607A9 /* KVO-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "KVO-Bridging-Header.h"; path = "KVC/KVO-Bridging-Header.h"; sourceTree = "<group>"; };
 		C20B83D31D6AEA0500C12286 /* Model.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 		C20B83D51D6AEAD100C12286 /* BasicKVOUIViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BasicKVOUIViewController.swift; sourceTree = "<group>"; };
 		C20B83D71D6AEADD00C12286 /* PrincipleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PrincipleViewController.swift; sourceTree = "<group>"; };
@@ -66,6 +76,18 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		449789AB1D6C916B00A607A9 /* KVC */ = {
+			isa = PBXGroup;
+			children = (
+				449789AC1D6C916B00A607A9 /* MyView.swift */,
+				449789AD1D6C916B00A607A9 /* Thing.h */,
+				449789AE1D6C916B00A607A9 /* Thing.m */,
+				449789B11D6C91AA00A607A9 /* KVC_VC.swift */,
+				449789B31D6C91E800A607A9 /* KVC.storyboard */,
+			);
+			path = KVC;
+			sourceTree = "<group>";
+		};
 		C20B83DB1D6AF02800C12286 /* Observable-Swift */ = {
 			isa = PBXGroup;
 			children = (
@@ -88,6 +110,8 @@
 		C2B5648D1D6ABB78003E2E7E = {
 			isa = PBXGroup;
 			children = (
+				449789B51D6C930E00A607A9 /* KVO-Bridging-Header.h */,
+				449789AB1D6C916B00A607A9 /* KVC */,
 				C2B564981D6ABB78003E2E7E /* KVO */,
 				C2B564971D6ABB78003E2E7E /* Products */,
 			);
@@ -178,6 +202,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C2B564A41D6ABB78003E2E7E /* LaunchScreen.storyboard in Resources */,
+				449789B41D6C91E800A607A9 /* KVC.storyboard in Resources */,
 				C2B564A11D6ABB78003E2E7E /* Assets.xcassets in Resources */,
 				C2B5649F1D6ABB78003E2E7E /* Main.storyboard in Resources */,
 			);
@@ -191,17 +216,20 @@
 			buildActionMask = 2147483647;
 			files = (
 				C20B83ED1D6AF02800C12286 /* ObservableChainingProxy.swift in Sources */,
+				449789B01D6C916B00A607A9 /* Thing.m in Sources */,
 				C20B83EC1D6AF02800C12286 /* Observable.swift in Sources */,
 				C20B83E91D6AF02800C12286 /* EventReference.swift in Sources */,
 				C20B83F01D6AF02800C12286 /* OwningEventReference.swift in Sources */,
 				C20B83E81D6AF02800C12286 /* Event.swift in Sources */,
 				C2B564AC1D6ABBA6003E2E7E /* MyClass.swift in Sources */,
+				449789B21D6C91AA00A607A9 /* KVC_VC.swift in Sources */,
 				C20B83D61D6AEAD100C12286 /* BasicKVOUIViewController.swift in Sources */,
 				C20B83EF1D6AF02800C12286 /* ObservableReference.swift in Sources */,
 				C20B83EE1D6AF02800C12286 /* ObservableProxy.swift in Sources */,
 				C20B83DA1D6AEAE900C12286 /* RootTableViewController.swift in Sources */,
 				C20B83D81D6AEADD00C12286 /* PrincipleViewController.swift in Sources */,
 				C2B5649A1D6ABB78003E2E7E /* AppDelegate.swift in Sources */,
+				449789AF1D6C916B00A607A9 /* MyView.swift in Sources */,
 				C20B83D41D6AEA0500C12286 /* Model.swift in Sources */,
 				C20B83F21D6AF02800C12286 /* TupleObservable.swift in Sources */,
 				C20B83EA1D6AF02800C12286 /* EventSubscription.swift in Sources */,
@@ -322,9 +350,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = KVO/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.rockgarden.KVO;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "KVC/KVO-Bridging-Header.h";
 			};
 			name = Debug;
 		};
@@ -333,9 +363,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = KVO/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.rockgarden.KVO;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "KVC/KVO-Bridging-Header.h";
 			};
 			name = Release;
 		};
