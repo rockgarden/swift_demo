@@ -14,6 +14,8 @@
 		C20EACFE1D6D3EAD0092905C /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C20EACFD1D6D3EAD0092905C /* MainViewController.swift */; };
 		C20EAD001D6D3EB80092905C /* FlipsideViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C20EACFF1D6D3EB80092905C /* FlipsideViewController.swift */; };
 		C20EAD051D6D3F4D0092905C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C20EAD031D6D3F4D0092905C /* Main.storyboard */; };
+		C20EAD071D6D40EA0092905C /* MyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C20EAD061D6D40EA0092905C /* MyView.swift */; };
+		C20EAD091D6D41870092905C /* CancelableTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = C20EAD081D6D41870092905C /* CancelableTimer.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +28,8 @@
 		C20EACFD1D6D3EAD0092905C /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		C20EACFF1D6D3EB80092905C /* FlipsideViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlipsideViewController.swift; sourceTree = "<group>"; };
 		C20EAD041D6D3F4D0092905C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		C20EAD061D6D40EA0092905C /* MyView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyView.swift; sourceTree = "<group>"; };
+		C20EAD081D6D41870092905C /* CancelableTimer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CancelableTimer.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +66,8 @@
 				C20EACED1D6D3DCF0092905C /* ViewController.swift */,
 				C20EACFD1D6D3EAD0092905C /* MainViewController.swift */,
 				C20EACFF1D6D3EB80092905C /* FlipsideViewController.swift */,
+				C20EAD061D6D40EA0092905C /* MyView.swift */,
+				C20EAD081D6D41870092905C /* CancelableTimer.swift */,
 				C20EACF21D6D3DCF0092905C /* Assets.xcassets */,
 				C20EAD031D6D3F4D0092905C /* Main.storyboard */,
 				C20EACF41D6D3DCF0092905C /* LaunchScreen.storyboard */,
@@ -142,7 +148,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				C20EACFE1D6D3EAD0092905C /* MainViewController.swift in Sources */,
+				C20EAD091D6D41870092905C /* CancelableTimer.swift in Sources */,
 				C20EACEE1D6D3DCF0092905C /* ViewController.swift in Sources */,
+				C20EAD071D6D40EA0092905C /* MyView.swift in Sources */,
 				C20EAD001D6D3EB80092905C /* FlipsideViewController.swift in Sources */,
 				C20EACEC1D6D3DCF0092905C /* AppDelegate.swift in Sources */,
 			);
