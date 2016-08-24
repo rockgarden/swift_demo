@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C20EAD0B1D6D49700092905C /* FlipsideViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C20EAD0A1D6D49700092905C /* FlipsideViewController.swift */; };
 		C25DAA341D66EEC4005D60C6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C25DAA331D66EEC4005D60C6 /* AppDelegate.swift */; };
 		C25DAA361D66EEC5005D60C6 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C25DAA351D66EEC5005D60C6 /* ViewController.swift */; };
 		C25DAA391D66EEC5005D60C6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C25DAA371D66EEC5005D60C6 /* Main.storyboard */; };
@@ -15,6 +16,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		C20EAD0A1D6D49700092905C /* FlipsideViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlipsideViewController.swift; sourceTree = "<group>"; };
 		C25DAA301D66EEC2005D60C6 /* Notification.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Notification.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C25DAA331D66EEC4005D60C6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C25DAA351D66EEC5005D60C6 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -56,6 +58,7 @@
 			children = (
 				C25DAA331D66EEC4005D60C6 /* AppDelegate.swift */,
 				C25DAA351D66EEC5005D60C6 /* ViewController.swift */,
+				C20EAD0A1D6D49700092905C /* FlipsideViewController.swift */,
 				C25DAA371D66EEC5005D60C6 /* Main.storyboard */,
 				C25DAA3A1D66EEC5005D60C6 /* Assets.xcassets */,
 				C25DAA3C1D66EEC5005D60C6 /* LaunchScreen.storyboard */,
@@ -136,6 +139,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C25DAA361D66EEC5005D60C6 /* ViewController.swift in Sources */,
+				C20EAD0B1D6D49700092905C /* FlipsideViewController.swift in Sources */,
 				C25DAA341D66EEC4005D60C6 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -288,6 +292,7 @@
 				C25DAA441D66EEC5005D60C6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

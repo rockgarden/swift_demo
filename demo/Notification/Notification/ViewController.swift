@@ -8,8 +8,8 @@
 
 import UIKit
 
-class ViewController: UIViewController {
-
+class ViewController: UIViewController, FlipsideViewControllerDelegate {
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -42,6 +42,18 @@ class ViewController: UIViewController {
     
     func keyboardWillDisappear(notification:NSNotification){
         print("Hide Keyboard")
+    }
+    
+    func flipsideViewControllerDidFinish(controller:FlipsideViewController) {
+        self.dismissViewControllerAnimated(true, completion: nil)
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "showAlternate" {
+            if let dest = segue.destinationViewController as? FlipsideViewController {
+                dest.delegate = self
+            }
+        }
     }
 }
 
