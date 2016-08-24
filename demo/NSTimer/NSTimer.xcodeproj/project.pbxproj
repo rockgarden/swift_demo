@@ -13,6 +13,7 @@
 		C20EACF61D6D3DCF0092905C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C20EACF41D6D3DCF0092905C /* LaunchScreen.storyboard */; };
 		C20EACFE1D6D3EAD0092905C /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C20EACFD1D6D3EAD0092905C /* MainViewController.swift */; };
 		C20EAD001D6D3EB80092905C /* FlipsideViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C20EACFF1D6D3EB80092905C /* FlipsideViewController.swift */; };
+		C20EAD051D6D3F4D0092905C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C20EAD031D6D3F4D0092905C /* Main.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		C20EACF71D6D3DCF0092905C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C20EACFD1D6D3EAD0092905C /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		C20EACFF1D6D3EB80092905C /* FlipsideViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlipsideViewController.swift; sourceTree = "<group>"; };
+		C20EAD041D6D3F4D0092905C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,6 +63,7 @@
 				C20EACFD1D6D3EAD0092905C /* MainViewController.swift */,
 				C20EACFF1D6D3EB80092905C /* FlipsideViewController.swift */,
 				C20EACF21D6D3DCF0092905C /* Assets.xcassets */,
+				C20EAD031D6D3F4D0092905C /* Main.storyboard */,
 				C20EACF41D6D3DCF0092905C /* LaunchScreen.storyboard */,
 				C20EACF71D6D3DCF0092905C /* Info.plist */,
 			);
@@ -125,6 +128,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C20EAD051D6D3F4D0092905C /* Main.storyboard in Resources */,
 				C20EACF61D6D3DCF0092905C /* LaunchScreen.storyboard in Resources */,
 				C20EACF31D6D3DCF0092905C /* Assets.xcassets in Resources */,
 			);
@@ -153,6 +157,14 @@
 				C20EACF51D6D3DCF0092905C /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		C20EAD031D6D3F4D0092905C /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C20EAD041D6D3F4D0092905C /* Base */,
+			);
+			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
