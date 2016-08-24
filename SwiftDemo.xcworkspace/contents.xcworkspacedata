@@ -2,6 +2,9 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:demo/NSTimer/NSTimer.xcodeproj">
+   </FileRef>
+   <FileRef
       location = "group:demo/Delegate_Protocol/Delegate_Protocol.xcodeproj">
    </FileRef>
    <FileRef
@@ -11,7 +14,7 @@
       location = "group:../SimpleLib/SimpleLib.xcodeproj">
    </FileRef>
    <FileRef
-      location = "group:/Users/rockgarden/GitHub/swift_demo/demo/KVO/KVO_KVC.xcodeproj">
+      location = "group:demo/KVO/KVO_KVC.xcodeproj">
    </FileRef>
    <FileRef
       location = "group:demo/UIGestureRecognizer/UIGestureRecognizer.xcodeproj">
