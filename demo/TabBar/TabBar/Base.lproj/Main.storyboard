@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+    </dependencies>
+    <scenes>
+        <!--Tab View Controller-->
+        <scene sceneID="Zyp-pB-6cg">
+            <objects>
+                <viewController id="4Rz-Ao-D2A" customClass="TabViewController" customModule="TabBar" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Nbw-ml-yfQ"/>
+                        <viewControllerLayoutGuide type="bottom" id="yno-su-FqA"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="5re-H0-wzZ">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <tabBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="r45-zu-ofc">
+                                <rect key="frame" x="0.0" y="551" width="600" height="49"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <items>
+                                    <tabBarItem systemItem="favorites" id="Zpg-T6-hyk"/>
+                                    <tabBarItem systemItem="more" id="79y-3B-Rd5"/>
+                                </items>
+                                <connections>
+                                    <outlet property="delegate" destination="4Rz-Ao-D2A" id="u0S-sp-azH"/>
+                                </connections>
+                            </tabBar>
+                        </subviews>
+                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="r45-zu-ofc" firstAttribute="leading" secondItem="5re-H0-wzZ" secondAttribute="leading" id="7Sh-C9-J7U"/>
+                            <constraint firstItem="yno-su-FqA" firstAttribute="top" secondItem="r45-zu-ofc" secondAttribute="bottom" id="Kxk-mr-4IR"/>
+                            <constraint firstAttribute="trailing" secondItem="r45-zu-ofc" secondAttribute="trailing" id="uhV-PH-zqP"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="tabbar" destination="r45-zu-ofc" id="gDb-fz-s3y"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ibW-uk-bZQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+        </scene>
+    </scenes>
+</document>

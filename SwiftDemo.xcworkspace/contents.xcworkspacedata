@@ -2,6 +2,9 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:demo/TabBar/TabBar.xcodeproj">
+   </FileRef>
+   <FileRef
       location = "group:demo/NSTimer/NSTimer.xcodeproj">
    </FileRef>
    <FileRef
