@@ -14,6 +14,12 @@
 		C22758DA1D6C29C6008C1F18 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C22758D81D6C29C6008C1F18 /* LaunchScreen.storyboard */; };
 		C22758E51D6C29C7008C1F18 /* TableViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C22758E41D6C29C7008C1F18 /* TableViewTests.swift */; };
 		C22758F01D6C29C7008C1F18 /* TableViewUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C22758EF1D6C29C7008C1F18 /* TableViewUITests.swift */; };
+		C2F3DE161D6EBF5500F0A9D5 /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2F3DE151D6EBF5500F0A9D5 /* Person.swift */; };
+		C2F3DE181D6EC2D800F0A9D5 /* team_dictionary.plist in Resources */ = {isa = PBXBuildFile; fileRef = C2F3DE171D6EC2D800F0A9D5 /* team_dictionary.plist */; };
+		C2F3DE1E1D6EC65F00F0A9D5 /* readme.md in Sources */ = {isa = PBXBuildFile; fileRef = C2F3DE1A1D6EC65F00F0A9D5 /* readme.md */; };
+		C2F3DE1F1D6EC65F00F0A9D5 /* TableViewIconIndex.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2F3DE1B1D6EC65F00F0A9D5 /* TableViewIconIndex.swift */; };
+		C2F3DE201D6EC65F00F0A9D5 /* TableViewIconIndexGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2F3DE1C1D6EC65F00F0A9D5 /* TableViewIconIndexGroup.swift */; };
+		C2F3DE211D6EC65F00F0A9D5 /* TableViewIconIndexItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2F3DE1D1D6EC65F00F0A9D5 /* TableViewIconIndexItem.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +53,12 @@
 		C22758EB1D6C29C7008C1F18 /* TableViewUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TableViewUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C22758EF1D6C29C7008C1F18 /* TableViewUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewUITests.swift; sourceTree = "<group>"; };
 		C22758F11D6C29C7008C1F18 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C2F3DE151D6EBF5500F0A9D5 /* Person.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Person.swift; sourceTree = "<group>"; };
+		C2F3DE171D6EC2D800F0A9D5 /* team_dictionary.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = team_dictionary.plist; sourceTree = "<group>"; };
+		C2F3DE1A1D6EC65F00F0A9D5 /* readme.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = readme.md; sourceTree = "<group>"; };
+		C2F3DE1B1D6EC65F00F0A9D5 /* TableViewIconIndex.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewIconIndex.swift; sourceTree = "<group>"; };
+		C2F3DE1C1D6EC65F00F0A9D5 /* TableViewIconIndexGroup.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewIconIndexGroup.swift; sourceTree = "<group>"; };
+		C2F3DE1D1D6EC65F00F0A9D5 /* TableViewIconIndexItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewIconIndexItem.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,12 +109,15 @@
 		C22758CE1D6C29C6008C1F18 /* TableView */ = {
 			isa = PBXGroup;
 			children = (
+				C2F3DE191D6EC65F00F0A9D5 /* TableViewIconIndex */,
 				C22758CF1D6C29C6008C1F18 /* AppDelegate.swift */,
 				C22758D11D6C29C6008C1F18 /* ViewController.swift */,
 				C22758D31D6C29C6008C1F18 /* Main.storyboard */,
 				C22758D61D6C29C6008C1F18 /* Assets.xcassets */,
 				C22758D81D6C29C6008C1F18 /* LaunchScreen.storyboard */,
 				C22758DB1D6C29C6008C1F18 /* Info.plist */,
+				C2F3DE171D6EC2D800F0A9D5 /* team_dictionary.plist */,
+				C2F3DE151D6EBF5500F0A9D5 /* Person.swift */,
 			);
 			path = TableView;
 			sourceTree = "<group>";
@@ -123,6 +138,17 @@
 				C22758F11D6C29C7008C1F18 /* Info.plist */,
 			);
 			path = TableViewUITests;
+			sourceTree = "<group>";
+		};
+		C2F3DE191D6EC65F00F0A9D5 /* TableViewIconIndex */ = {
+			isa = PBXGroup;
+			children = (
+				C2F3DE1A1D6EC65F00F0A9D5 /* readme.md */,
+				C2F3DE1B1D6EC65F00F0A9D5 /* TableViewIconIndex.swift */,
+				C2F3DE1C1D6EC65F00F0A9D5 /* TableViewIconIndexGroup.swift */,
+				C2F3DE1D1D6EC65F00F0A9D5 /* TableViewIconIndexItem.swift */,
+			);
+			path = TableViewIconIndex;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -232,6 +258,7 @@
 				C22758DA1D6C29C6008C1F18 /* LaunchScreen.storyboard in Resources */,
 				C22758D71D6C29C6008C1F18 /* Assets.xcassets in Resources */,
 				C22758D51D6C29C6008C1F18 /* Main.storyboard in Resources */,
+				C2F3DE181D6EC2D800F0A9D5 /* team_dictionary.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -256,8 +283,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C2F3DE161D6EBF5500F0A9D5 /* Person.swift in Sources */,
 				C22758D21D6C29C6008C1F18 /* ViewController.swift in Sources */,
+				C2F3DE1E1D6EC65F00F0A9D5 /* readme.md in Sources */,
+				C2F3DE211D6EC65F00F0A9D5 /* TableViewIconIndexItem.swift in Sources */,
+				C2F3DE1F1D6EC65F00F0A9D5 /* TableViewIconIndex.swift in Sources */,
 				C22758D01D6C29C6008C1F18 /* AppDelegate.swift in Sources */,
+				C2F3DE201D6EC65F00F0A9D5 /* TableViewIconIndexGroup.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -484,6 +516,7 @@
 				C22758F61D6C29C7008C1F18 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		C22758F71D6C29C7008C1F18 /* Build configuration list for PBXNativeTarget "TableViewTests" */ = {
 			isa = XCConfigurationList;
@@ -492,6 +525,7 @@
 				C22758F91D6C29C7008C1F18 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		C22758FA1D6C29C7008C1F18 /* Build configuration list for PBXNativeTarget "TableViewUITests" */ = {
 			isa = XCConfigurationList;
@@ -500,6 +534,7 @@
 				C22758FC1D6C29C7008C1F18 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
