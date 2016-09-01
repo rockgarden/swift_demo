@@ -10,6 +10,7 @@ import UIKit
 import MapKit
 import CoreLocation
 
+@IBOutlet weak var horizontalStackView: UIStackView!
 class ViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDelegate {
 
     @IBOutlet weak var latitude: UILabel!

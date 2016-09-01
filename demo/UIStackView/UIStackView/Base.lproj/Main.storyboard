@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="2wV-Vx-F4l">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+    </dependencies>
+    <scenes>
+        <!--Stack ViewVC-->
+        <scene sceneID="iBX-8B-lXk">
+            <objects>
+                <viewController id="2wV-Vx-F4l" customClass="StackViewVC" customModule="UIStackView" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="bGQ-Aa-IxU"/>
+                        <viewControllerLayoutGuide type="bottom" id="XcN-k9-Nf2"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="z8V-3i-A6u">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" alignment="center" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="ifD-yI-Fhe">
+                                <rect key="frame" x="0.0" y="20" width="600" height="469"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="How do you like our app" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zO0-OF-8NM">
+                                        <rect key="frame" x="208" y="0.0" width="184" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="fiy-o3-Mga">
+                                        <rect key="frame" x="114" y="70" width="373" height="321"/>
+                                        <subviews>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="j98-2c-SFk">
+                                                <rect key="frame" x="0.0" y="0.0" width="55" height="321"/>
+                                                <subviews>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yht-pC-uPf">
+                                                        <rect key="frame" x="1" y="0.0" width="52" height="30"/>
+                                                        <state key="normal" title="Button1"/>
+                                                    </button>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nJ3-5M-IWS">
+                                                        <rect key="frame" x="0.0" y="145" width="55" height="30"/>
+                                                        <state key="normal" title="Button2"/>
+                                                    </button>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nXz-JO-M7D">
+                                                        <rect key="frame" x="0.0" y="291" width="55" height="30"/>
+                                                        <state key="normal" title="Button3"/>
+                                                    </button>
+                                                </subviews>
+                                            </stackView>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="540-6I-sdr">
+                                                <rect key="frame" x="65" y="0.0" width="308" height="321"/>
+                                            </imageView>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="I6y-8a-tg5">
+                                        <rect key="frame" x="177" y="439" width="247" height="30"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zea-ad-KJD">
+                                                <rect key="frame" x="0.0" y="0.0" width="64" height="30"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="64" id="6Hi-T2-ONK"/>
+                                                    <constraint firstAttribute="height" constant="30" id="tbS-2j-Iye"/>
+                                                </constraints>
+                                                <state key="normal" title="Add Star!"/>
+                                                <connections>
+                                                    <action selector="addStar:" destination="2wV-Vx-F4l" eventType="touchUpInside" id="M2S-kB-cMW"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ol4-NP-XwB">
+                                                <rect key="frame" x="74" y="0.0" width="91" height="30"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="30" id="EWZ-eU-pED"/>
+                                                    <constraint firstAttribute="width" constant="91" id="ra3-3s-PQA"/>
+                                                </constraints>
+                                                <state key="normal" title="Remove Star."/>
+                                                <connections>
+                                                    <action selector="removeStar:" destination="2wV-Vx-F4l" eventType="touchUpInside" id="7ah-vT-z0d"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="m5T-Wn-1Z1">
+                                                <rect key="frame" x="175" y="0.0" width="72" height="30"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="72" id="dOP-KH-IAN"/>
+                                                    <constraint firstAttribute="height" constant="30" id="oIZ-DS-cyf"/>
+                                                </constraints>
+                                                <state key="normal" title="Show/hide"/>
+                                                <connections>
+                                                    <action selector="onSettingsButtonTap:" destination="2wV-Vx-F4l" eventType="touchUpInside" id="HiK-aH-B0a"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                            </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="center" spacing="6" translatesAutoresizingMaskIntoConstraints="NO" id="v3h-uF-5sS">
+                                <rect key="frame" x="0.0" y="490" width="600" height="110"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="110" id="mxp-y2-79S"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="ifD-yI-Fhe" firstAttribute="top" secondItem="bGQ-Aa-IxU" secondAttribute="bottom" id="06N-pX-wG0"/>
+                            <constraint firstItem="v3h-uF-5sS" firstAttribute="leading" secondItem="z8V-3i-A6u" secondAttribute="leading" id="18M-25-Enx"/>
+                            <constraint firstItem="v3h-uF-5sS" firstAttribute="top" secondItem="ifD-yI-Fhe" secondAttribute="bottom" constant="1" id="1Re-en-YEo"/>
+                            <constraint firstItem="XcN-k9-Nf2" firstAttribute="top" secondItem="v3h-uF-5sS" secondAttribute="bottom" id="H9M-No-PLM"/>
+                            <constraint firstAttribute="trailing" secondItem="v3h-uF-5sS" secondAttribute="trailing" id="JbM-jE-ccq"/>
+                            <constraint firstItem="ifD-yI-Fhe" firstAttribute="leading" secondItem="z8V-3i-A6u" secondAttribute="leading" id="YG2-hy-HB3"/>
+                            <constraint firstAttribute="trailing" secondItem="ifD-yI-Fhe" secondAttribute="trailing" id="kZ0-oz-WDn"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="horizontalStackView" destination="v3h-uF-5sS" id="HCe-48-viG"/>
+                        <outletCollection property="emojiButtons" destination="yht-pC-uPf" collectionClass="NSMutableArray" id="h7A-wA-uCT"/>
+                        <outletCollection property="emojiButtons" destination="nJ3-5M-IWS" collectionClass="NSMutableArray" id="es2-rH-EF1"/>
+                        <outletCollection property="emojiButtons" destination="nXz-JO-M7D" collectionClass="NSMutableArray" id="5l8-No-mpj"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="YiH-D7-3YO" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="341" y="372"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="logo" width="308" height="321"/>
+    </resources>
+</document>

@@ -16,6 +16,7 @@ class ViewController: UIViewController {
 	let which = 1
 
     @IBOutlet var longPresser : UILongPressGestureRecognizer!
+    @IBOutlet weak var horizontalStackView: UIStackView!
 
 	@IBOutlet weak var image: UIImageView!
 

@@ -10,6 +10,7 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    @IBOutlet weak var horizontalStackView: UIStackView!
     override func viewDidLoad() {
         super.viewDidLoad()
     }

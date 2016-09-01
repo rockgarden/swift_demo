@@ -13,6 +13,7 @@ func imageOfSize(size:CGSize, _ whatToDraw:() -> ()) -> UIImage {
 class ViewController: UIViewController {
     
     @IBOutlet weak var myButton2: UIButton!
+    @IBOutlet weak var horizontalStackView: UIStackView!
     @IBOutlet weak var myButton: UIButton!
     
     override func viewDidLoad() {
