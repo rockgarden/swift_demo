@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4483B2DB1D7FFF780077E75C /* RJExpandableTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4483B2DA1D7FFF780077E75C /* RJExpandableTableView.swift */; };
+		4483B2DD1D7FFF890077E75C /* RJExpandableTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4483B2DC1D7FFF890077E75C /* RJExpandableTableViewCell.swift */; };
+		4483B2DF1D7FFF9C0077E75C /* ExpandTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4483B2DE1D7FFF9C0077E75C /* ExpandTableViewCell.swift */; };
+		4483B2E11D7FFFA80077E75C /* ExpandTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4483B2E01D7FFFA80077E75C /* ExpandTableViewCell.xib */; };
+		4483B2E31D8000BB0077E75C /* RJExpandTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4483B2E21D8000BB0077E75C /* RJExpandTable.swift */; };
 		449BC2A11D6F3F9200B63FC4 /* SearchResultsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 449BC2A01D6F3F9200B63FC4 /* SearchResultsController.swift */; };
 		449BC2A31D6F427700B63FC4 /* states.txt in Resources */ = {isa = PBXBuildFile; fileRef = 449BC2A21D6F427700B63FC4 /* states.txt */; };
 		C22758D01D6C29C6008C1F18 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C22758CF1D6C29C6008C1F18 /* AppDelegate.swift */; };
@@ -38,6 +43,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		4483B2DA1D7FFF780077E75C /* RJExpandableTableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RJExpandableTableView.swift; sourceTree = "<group>"; };
+		4483B2DC1D7FFF890077E75C /* RJExpandableTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RJExpandableTableViewCell.swift; sourceTree = "<group>"; };
+		4483B2DE1D7FFF9C0077E75C /* ExpandTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExpandTableViewCell.swift; sourceTree = "<group>"; };
+		4483B2E01D7FFFA80077E75C /* ExpandTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ExpandTableViewCell.xib; sourceTree = "<group>"; };
+		4483B2E21D8000BB0077E75C /* RJExpandTable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RJExpandTable.swift; sourceTree = "<group>"; };
 		449BC2A01D6F3F9200B63FC4 /* SearchResultsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchResultsController.swift; sourceTree = "<group>"; };
 		449BC2A21D6F427700B63FC4 /* states.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = states.txt; sourceTree = "<group>"; };
 		C22758CC1D6C29C6008C1F18 /* TableView.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TableView.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -82,9 +92,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4483B2D91D7FFF460077E75C /* RJExpandableTable */ = {
+			isa = PBXGroup;
+			children = (
+				4483B2E01D7FFFA80077E75C /* ExpandTableViewCell.xib */,
+				4483B2DE1D7FFF9C0077E75C /* ExpandTableViewCell.swift */,
+				4483B2DC1D7FFF890077E75C /* RJExpandableTableViewCell.swift */,
+				4483B2DA1D7FFF780077E75C /* RJExpandableTableView.swift */,
+			);
+			name = RJExpandableTable;
+			path = TableView/RJExpandableTable;
+			sourceTree = "<group>";
+		};
 		C22758C31D6C29C6008C1F18 = {
 			isa = PBXGroup;
 			children = (
+				4483B2D91D7FFF460077E75C /* RJExpandableTable */,
 				C22758CE1D6C29C6008C1F18 /* TableView */,
 				C22758E31D6C29C7008C1F18 /* TableViewTests */,
 				C22758EE1D6C29C7008C1F18 /* TableViewUITests */,
@@ -110,6 +133,7 @@
 				449BC2A01D6F3F9200B63FC4 /* SearchResultsController.swift */,
 				C2F3DE151D6EBF5500F0A9D5 /* Person.swift */,
 				C22758D31D6C29C6008C1F18 /* Main.storyboard */,
+				4483B2E21D8000BB0077E75C /* RJExpandTable.swift */,
 				C22758D61D6C29C6008C1F18 /* Assets.xcassets */,
 				C22758D81D6C29C6008C1F18 /* LaunchScreen.storyboard */,
 				C22758DB1D6C29C6008C1F18 /* Info.plist */,
@@ -246,6 +270,7 @@
 				C22758D51D6C29C6008C1F18 /* Main.storyboard in Resources */,
 				C2F3DE181D6EC2D800F0A9D5 /* team_dictionary.plist in Resources */,
 				449BC2A31D6F427700B63FC4 /* states.txt in Resources */,
+				4483B2E11D7FFFA80077E75C /* ExpandTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -273,7 +298,11 @@
 				449BC2A11D6F3F9200B63FC4 /* SearchResultsController.swift in Sources */,
 				C2F3DE161D6EBF5500F0A9D5 /* Person.swift in Sources */,
 				C22758D21D6C29C6008C1F18 /* ViewController.swift in Sources */,
+				4483B2DB1D7FFF780077E75C /* RJExpandableTableView.swift in Sources */,
+				4483B2E31D8000BB0077E75C /* RJExpandTable.swift in Sources */,
+				4483B2DF1D7FFF9C0077E75C /* ExpandTableViewCell.swift in Sources */,
 				C22758D01D6C29C6008C1F18 /* AppDelegate.swift in Sources */,
+				4483B2DD1D7FFF890077E75C /* RJExpandableTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -418,6 +447,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = TableView/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.rockgarden.TableView;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -429,6 +459,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = TableView/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.rockgarden.TableView;
 				PRODUCT_NAME = "$(TARGET_NAME)";
