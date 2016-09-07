@@ -15,15 +15,41 @@ class RJExpandTable: UIViewController {
     @IBOutlet weak var tableView: RJExpandableTableView! {
         didSet {
             tableView.registerNib(UINib(nibName: expandCellId, bundle: nil), forCellReuseIdentifier: expandCellId)
+            tableView.registerClass(SubCell.self, forCellReuseIdentifier: "SubCell")
+            tableView.separatorStyle = UITableViewCellSeparatorStyle.None
+            tableView.tableFooterView = UIView(frame: CGRectZero)
         }
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        UIApplication.sharedApplication().statusBarHidden = true
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        animateTable()
     }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
+    }
+    
+    func animateTable() {
+        self.tableView.reloadData()
+        let cells = tableView.visibleCells
+        let tableHeight: CGFloat = tableView.bounds.size.height
+        for i in cells {
+            let cell: UITableViewCell = i as UITableViewCell
+            cell.transform = CGAffineTransformMakeTranslation(0, tableHeight)
+        }
+        var index = 0
+        for a in cells {
+            let cell: UITableViewCell = a as UITableViewCell
+            UIView.animateWithDuration(1.5, delay: 0.05 * Double(index), usingSpringWithDamping: 0.8, initialSpringVelocity: 0, options: [], animations: {
+                cell.transform = CGAffineTransformMakeTranslation(0, 0);
+                }, completion: nil)
+            index += 1
+        }
     }
     
 }
@@ -52,11 +78,15 @@ extension RJExpandTable: RJExpandableTableViewDataSource {
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = UITableViewCell(style: .Default, reuseIdentifier: "subCell")
+        let cell = tableView.dequeueReusableCellWithIdentifier("SubCell", forIndexPath: indexPath)
+        cell.textLabel?.textColor = UIColor.whiteColor()
+        cell.textLabel?.backgroundColor = UIColor.clearColor()
         cell.textLabel?.text = "subcell\(indexPath.section)-\(indexPath.row)"
+        cell.selectionStyle = UITableViewCellSelectionStyle.None
         cell.backgroundColor = UIColor.lightGrayColor()
         return cell
     }
+    
 }
 
 extension RJExpandTable: RJExpandableTableViewDelegate {
@@ -70,7 +100,6 @@ extension RJExpandTable: RJExpandableTableViewDelegate {
     }
     
     func tableView(tableView: RJExpandableTableView, downloadDataForExpandableSection section: Int) {
-        
         delay(2) {
             if section % 2 == 0 {
                 tableView.expandSection(section, animated: true)
@@ -80,7 +109,19 @@ extension RJExpandTable: RJExpandableTableViewDelegate {
             }
         }
     }
+    
+    func tableView(tableView: UITableView, willDisplayCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath) {
+        cell.backgroundColor =  colorforIndex(indexPath.section)
+    }
+    
+    func colorforIndex(index: Int) -> UIColor {
+        let itemCount = 10 - 1
+        let color = (CGFloat(index) / CGFloat(itemCount))
+        return UIColor(red: color, green: color, blue: 0.3, alpha: 1.0)
+    }
+    
 }
+
 
 /**
  Helper for delay
