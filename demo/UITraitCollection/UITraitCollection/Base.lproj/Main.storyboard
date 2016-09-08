@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15G1004" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="bej-Sn-Yy5">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <scenes>
+        <!--Compact HorizontalVC-->
+        <scene sceneID="csd-uo-xAy">
+            <objects>
+                <viewController storyboardIdentifier="CompactHorizontalVC" id="fI7-DL-aeG" customClass="CompactHorizontalVC" customModule="UITraitCollection" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Pfh-kG-V3K"/>
+                        <viewControllerLayoutGuide type="bottom" id="SZl-E9-e5h"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="k2Q-gK-Ohk">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HOu-7k-wmO">
+                                <rect key="frame" x="60" y="68" width="54" height="30"/>
+                                <state key="normal" title="Dismiss">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="doDismiss:" destination="fI7-DL-aeG" eventType="touchUpInside" id="7PD-2j-RGU"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Well, howdy there!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="f5t-Yc-ohG">
+                                <rect key="frame" x="20" y="134" width="560" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="0.50076308140000003" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="f5t-Yc-ohG" firstAttribute="top" secondItem="Pfh-kG-V3K" secondAttribute="bottom" constant="114" id="aDG-Ju-GXj"/>
+                            <constraint firstItem="f5t-Yc-ohG" firstAttribute="trailing" secondItem="k2Q-gK-Ohk" secondAttribute="trailingMargin" id="cWs-2j-dUr"/>
+                            <constraint firstItem="HOu-7k-wmO" firstAttribute="top" secondItem="Pfh-kG-V3K" secondAttribute="bottom" constant="48" id="rY3-BW-Jrc"/>
+                            <constraint firstItem="HOu-7k-wmO" firstAttribute="leading" secondItem="k2Q-gK-Ohk" secondAttribute="leadingMargin" constant="40" id="vPE-jP-sqy"/>
+                            <constraint firstItem="f5t-Yc-ohG" firstAttribute="leading" secondItem="k2Q-gK-Ohk" secondAttribute="leadingMargin" id="zWH-sv-IDH"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="HOu-7k-wmO"/>
+                            </mask>
+                        </variation>
+                        <variation key="heightClass=compact">
+                            <mask key="subviews">
+                                <exclude reference="HOu-7k-wmO"/>
+                            </mask>
+                        </variation>
+                        <variation key="widthClass=compact">
+                            <mask key="subviews">
+                                <exclude reference="HOu-7k-wmO"/>
+                            </mask>
+                        </variation>
+                        <variation key="widthClass=regular">
+                            <mask key="subviews">
+                                <include reference="HOu-7k-wmO"/>
+                            </mask>
+                        </variation>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vlh-9s-sVP" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="971" y="250"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="t44-DY-EVF">
+            <objects>
+                <viewController id="bej-Sn-Yy5" customClass="ViewController" customModule="UITraitCollection" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="oVg-P9-mKP"/>
+                        <viewControllerLayoutGuide type="bottom" id="Ier-k1-htQ"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="jfv-d2-UsM">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ixj-WK-Dnf">
+                                <rect key="frame" x="50" y="51" width="53" height="30"/>
+                                <state key="normal" title="Present">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="fI7-DL-aeG" kind="presentation" id="9MO-vg-BKR"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Ixj-WK-Dnf" firstAttribute="top" secondItem="oVg-P9-mKP" secondAttribute="bottom" constant="31" id="7Qq-Pl-FxQ"/>
+                            <constraint firstItem="Ixj-WK-Dnf" firstAttribute="leading" secondItem="jfv-d2-UsM" secondAttribute="leadingMargin" constant="30" id="OL3-vc-fP1"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="XaI-2c-VK3" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+        </scene>
+    </scenes>
+</document>
