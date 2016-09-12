@@ -65,7 +65,7 @@ extension RJExpandTable: RJExpandableTableViewDataSource {
     }
     
     func tableView(tableView: RJExpandableTableView, needsToDownloadDataForExpandSection section: Int) -> Bool {
-        return true
+        return false
     }
     
     func tableView(tableView: RJExpandableTableView, expandingCellForSection section: Int) -> RJExpandingTableViewCell {
@@ -100,7 +100,7 @@ extension RJExpandTable: RJExpandableTableViewDelegate {
     }
     
     func tableView(tableView: RJExpandableTableView, downloadDataForExpandableSection section: Int) {
-        delay(2) {
+        delay(0) {
             if section % 2 == 0 {
                 tableView.expandSection(section, animated: true)
             } else {

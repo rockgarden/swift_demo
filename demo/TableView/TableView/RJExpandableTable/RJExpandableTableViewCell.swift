@@ -10,7 +10,7 @@ import Foundation
 
 /**
  Expand Status
- 
+
  - Collapsed: The cell is collapsed
  - Expanded:  The cell is expanded
  */

@@ -16,7 +16,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         self.window = UIWindow()
         let sBoard = UIStoryboard(name: "Main", bundle: nil)
-        let vController: UIViewController = sBoard.instantiateViewControllerWithIdentifier("RJExpandTable")
+        // "TableSimple" -- table search simaple
+        // "RJExpandTable" -- expand table simple
+        let vController: UIViewController = sBoard.instantiateViewControllerWithIdentifier("DynamicTable")
         self.window!.rootViewController = UINavigationController(rootViewController: vController)
         self.window!.backgroundColor = UIColor.whiteColor()
         self.window!.makeKeyAndVisible()

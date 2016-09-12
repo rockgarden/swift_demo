@@ -14,11 +14,11 @@ class StackViewVC: UIViewController {
     @IBOutlet var emojiButtons: [UIButton]! {
         didSet {
             emojiButtons.forEach {
-                $0.hidden = false
+                $0.hidden = true
             }
         }
     }
-    
+
     //    @IBOutlet var emojiButtonsAutolayout: [UIButton]! {
     //        didSet {
     //            emojiButtonsAutolayout.forEach {
