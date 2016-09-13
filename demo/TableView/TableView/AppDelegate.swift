@@ -18,6 +18,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let sBoard = UIStoryboard(name: "Main", bundle: nil)
         // "TableSimple" -- table search simaple
         // "RJExpandTable" -- expand table simple
+        // "DynamicTable" -- sections expand
+        // "MasterViewController" -- Table With Dynamic Type
         let vController: UIViewController = sBoard.instantiateViewControllerWithIdentifier("DynamicTable")
         self.window!.rootViewController = UINavigationController(rootViewController: vController)
         self.window!.backgroundColor = UIColor.whiteColor()

@@ -2,6 +2,9 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:demo/TextView/TextView.xcodeproj">
+   </FileRef>
+   <FileRef
       location = "group:demo/UITraitCollection/UITraitCollection.xcodeproj">
    </FileRef>
    <FileRef

@@ -60,6 +60,8 @@
 		442849901D86F5930044DCF5 /* flag_wyoming.gif in Resources */ = {isa = PBXBuildFile; fileRef = 4428495D1D86F5930044DCF5 /* flag_wyoming.gif */; };
 		442849911D86F5930044DCF5 /* us_flag_small.gif in Resources */ = {isa = PBXBuildFile; fileRef = 4428495E1D86F5930044DCF5 /* us_flag_small.gif */; };
 		442849931D86FF280044DCF5 /* ExpandTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 442849921D86FF280044DCF5 /* ExpandTable.swift */; };
+		442849981D8833660044DCF5 /* MasterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 442849961D8833650044DCF5 /* MasterViewController.swift */; };
+		442849991D8833660044DCF5 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 442849971D8833650044DCF5 /* DetailViewController.swift */; };
 		4483B2DB1D7FFF780077E75C /* RJExpandableTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4483B2DA1D7FFF780077E75C /* RJExpandableTableView.swift */; };
 		4483B2DD1D7FFF890077E75C /* RJExpandableTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4483B2DC1D7FFF890077E75C /* RJExpandableTableViewCell.swift */; };
 		4483B2DF1D7FFF9C0077E75C /* ExpandTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4483B2DE1D7FFF9C0077E75C /* ExpandTableViewCell.swift */; };
@@ -150,6 +152,8 @@
 		4428495D1D86F5930044DCF5 /* flag_wyoming.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = flag_wyoming.gif; sourceTree = "<group>"; };
 		4428495E1D86F5930044DCF5 /* us_flag_small.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = us_flag_small.gif; sourceTree = "<group>"; };
 		442849921D86FF280044DCF5 /* ExpandTable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExpandTable.swift; sourceTree = "<group>"; };
+		442849961D8833650044DCF5 /* MasterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MasterViewController.swift; sourceTree = "<group>"; };
+		442849971D8833650044DCF5 /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		4483B2DA1D7FFF780077E75C /* RJExpandableTableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RJExpandableTableView.swift; sourceTree = "<group>"; };
 		4483B2DC1D7FFF890077E75C /* RJExpandableTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RJExpandableTableViewCell.swift; sourceTree = "<group>"; };
 		4483B2DE1D7FFF9C0077E75C /* ExpandTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExpandTableViewCell.swift; sourceTree = "<group>"; };
@@ -301,6 +305,8 @@
 				C22758D31D6C29C6008C1F18 /* Main.storyboard */,
 				4483B2E21D8000BB0077E75C /* RJExpandTable.swift */,
 				4483B2E41D80165A0077E75C /* SubCell.swift */,
+				442849961D8833650044DCF5 /* MasterViewController.swift */,
+				442849971D8833650044DCF5 /* DetailViewController.swift */,
 				C22758D61D6C29C6008C1F18 /* Assets.xcassets */,
 				4428492B1D86F5930044DCF5 /* gif */,
 				C22758D81D6C29C6008C1F18 /* LaunchScreen.storyboard */,
@@ -516,6 +522,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				442849991D8833660044DCF5 /* DetailViewController.swift in Sources */,
 				442849281D86EB840044DCF5 /* DynamicTable.swift in Sources */,
 				449BC2A11D6F3F9200B63FC4 /* SearchResultsController.swift in Sources */,
 				4483B2E51D80165A0077E75C /* SubCell.swift in Sources */,
@@ -524,6 +531,7 @@
 				4483B2DB1D7FFF780077E75C /* RJExpandableTableView.swift in Sources */,
 				442849931D86FF280044DCF5 /* ExpandTable.swift in Sources */,
 				4483B2E31D8000BB0077E75C /* RJExpandTable.swift in Sources */,
+				442849981D8833660044DCF5 /* MasterViewController.swift in Sources */,
 				4483B2DF1D7FFF9C0077E75C /* ExpandTableViewCell.swift in Sources */,
 				C22758D01D6C29C6008C1F18 /* AppDelegate.swift in Sources */,
 				4483B2DD1D7FFF890077E75C /* RJExpandableTableViewCell.swift in Sources */,
