@@ -15,6 +15,7 @@ func lend<T where T: NSObject> (closure: (T) -> ()) -> T {
     return orig
 }
 
+/// tabStops 示例 NSTextTab 的用法
 class ViewController: UIViewController {
     
     @IBOutlet var tv: UITextView!

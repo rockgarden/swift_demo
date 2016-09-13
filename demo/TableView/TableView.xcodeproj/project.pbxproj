@@ -307,14 +307,14 @@
 				4483B2E41D80165A0077E75C /* SubCell.swift */,
 				442849961D8833650044DCF5 /* MasterViewController.swift */,
 				442849971D8833650044DCF5 /* DetailViewController.swift */,
+				442849271D86EB840044DCF5 /* DynamicTable.swift */,
+				442849921D86FF280044DCF5 /* ExpandTable.swift */,
 				C22758D61D6C29C6008C1F18 /* Assets.xcassets */,
 				4428492B1D86F5930044DCF5 /* gif */,
 				C22758D81D6C29C6008C1F18 /* LaunchScreen.storyboard */,
 				C22758DB1D6C29C6008C1F18 /* Info.plist */,
 				C2F3DE171D6EC2D800F0A9D5 /* team_dictionary.plist */,
 				449BC2A21D6F427700B63FC4 /* states.txt */,
-				442849271D86EB840044DCF5 /* DynamicTable.swift */,
-				442849921D86FF280044DCF5 /* ExpandTable.swift */,
 			);
 			path = TableView;
 			sourceTree = "<group>";
