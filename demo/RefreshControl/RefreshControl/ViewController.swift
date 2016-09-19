@@ -12,13 +12,18 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
 
 	let cellIdentifer = "NewCellIdentifier"
 
-	let favoriteEmoji = ["🤗🤗🤗🤗🤗", "😅😅😅😅😅", "😆😆😆😆😆"]
+	let favoriteEmoji = ["🤗🤗🤗🤗🤗", "😅😅😅😅😅", "😆😆😆😆😆","🏃🏃🏃🏃🏃", "💩💩💩💩💩", "👸👸👸👸👸", "🤗🤗🤗🤗🤗", "😅😅😅😅😅", "😆😆😆😆😆"]
 	let newFavoriteEmoji = ["🏃🏃🏃🏃🏃", "💩💩💩💩💩", "👸👸👸👸👸", "🤗🤗🤗🤗🤗", "😅😅😅😅😅", "😆😆😆😆😆"]
 	var emojiData = [String]()
-	var tableViewController = UITableViewController(style: .Plain)
-
+    var emojiTableView: UITableView!
+    var tableViewController = UITableViewController(style: .Grouped)
 	var refreshControl = UIRefreshControl()
 	// var navBar: UINavigationBar = UINavigationBar(frame: CGRect(x: 0, y: 0, width: 375, height: 64))
+
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        emojiTableView = tableViewController.tableView
+    }
 
 	override func viewDidLoad() {
 		super.viewDidLoad()
@@ -27,7 +32,6 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
 		// self.view.addSubview(navBar)
 
 		emojiData = favoriteEmoji
-		let emojiTableView = tableViewController.tableView
 
 		emojiTableView.backgroundColor = UIColor(red: 0.092, green: 0.096, blue: 0.116, alpha: 1)
 		emojiTableView.dataSource = self
@@ -63,7 +67,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
 	}
 
 	func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-		return 1
+		return 2
 	}
 
 	func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
@@ -81,13 +85,32 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
 
 	func didRoadEmoji() {
 		self.emojiData = newFavoriteEmoji
-		self.tableViewController.tableView.reloadData()
+		animateTable(emojiTableView)
 		self.refreshControl.endRefreshing()
 	}
 
 	override func preferredStatusBarStyle() -> UIStatusBarStyle {
 		return UIStatusBarStyle.LightContent
 	}
+
+    func animateTable(table: UITableView) {
+        table.reloadData()
+        let cells = table.visibleCells
+        let tableHeight: CGFloat = table.bounds.size.height
+        for i in cells {
+            let cell = i as UITableViewCell
+            cell.transform = CGAffineTransformMakeTranslation(0, tableHeight)
+        }
+        var index = 0
+        for a in cells {
+            let cell = a as UITableViewCell
+            UIView.animateWithDuration(1.0, delay: 0.05 * Double(index), usingSpringWithDamping: 0.8, initialSpringVelocity: 0, options: [], animations: {
+                cell.transform = CGAffineTransformMakeTranslation(0, 0);
+                }, completion: nil)
+            
+            index += 1
+        }
+    }
 
 }
 
