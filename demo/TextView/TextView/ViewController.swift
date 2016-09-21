@@ -86,6 +86,22 @@ class ViewController: UIViewController {
         self.tv.selectable = true
         self.tv.editable = false
         self.tv.delegate = self
+        
+    }
+    
+    func initMenu() {
+        let mail = UIMenuItem(title: "邮件", action: #selector(ViewController.onMail))
+        let weixin = UIMenuItem(title: "微信", action: #selector(ViewController.onWeiXin))
+        let menu = UIMenuController()
+        menu.menuItems = [mail,weixin]
+    }
+    
+    func onMail(){
+        print("mail")
+    }
+    
+    func onWeiXin(){
+        print("weixin")
     }
     
     //TODO: public func classNamed(className: String) -> AnyClass?
@@ -120,4 +136,5 @@ extension ViewController: UITextViewDelegate {
         print((textView.text as NSString).substringWithRange(characterRange))
         return true
     }
+
 }

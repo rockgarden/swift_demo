@@ -8,7 +8,7 @@
 
 import UIKit
 
-class Timeline: UIViewController {
+class TimelineQuotes: UIViewController {
     
     let tableViewController = TwitterTableViewController()
     

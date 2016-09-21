@@ -10,10 +10,13 @@
 		44461D5E1D9180DB0088ABB0 /* MailInbox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44461D5D1D9180DB0088ABB0 /* MailInbox.swift */; };
 		44461D601D9183070088ABB0 /* SizeClasses.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44461D5F1D9183070088ABB0 /* SizeClasses.swift */; };
 		44461D631D9184F90088ABB0 /* TwiiterProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44461D621D9184F90088ABB0 /* TwiiterProfile.swift */; };
+		444BA4501D92B52E00BBF1E4 /* Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 444BA44F1D92B52E00BBF1E4 /* Profile.swift */; };
+		444BA4521D92B7EC00BBF1E4 /* Timelines.swift in Sources */ = {isa = PBXBuildFile; fileRef = 444BA4511D92B7EC00BBF1E4 /* Timelines.swift */; };
+		444BA4541D92C47F00BBF1E4 /* AppStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 444BA4531D92C47F00BBF1E4 /* AppStore.swift */; };
 		4488CFC11D917E8D00DF48EC /* Springboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4488CFC01D917E8D00DF48EC /* Springboard.swift */; };
 		44A72C8E1D91604E00A85977 /* Calculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44A72C8D1D91604E00A85977 /* Calculator.swift */; };
 		44A72C901D9166CA00A85977 /* StoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44A72C8F1D9166CA00A85977 /* StoryView.swift */; };
-		44B584C21D916A3F005F62B8 /* Timeline.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44B584C11D916A3F005F62B8 /* Timeline.swift */; };
+		44B584C21D916A3F005F62B8 /* TimelineQuotes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44B584C11D916A3F005F62B8 /* TimelineQuotes.swift */; };
 		44F7E5F01D7879EF00D0900C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44F7E5EF1D7879EF00D0900C /* AppDelegate.swift */; };
 		44F7E5F21D7879EF00D0900C /* StackViewVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44F7E5F11D7879EF00D0900C /* StackViewVC.swift */; };
 		44F7E5F51D7879EF00D0900C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 44F7E5F31D7879EF00D0900C /* Main.storyboard */; };
@@ -25,10 +28,13 @@
 		44461D5D1D9180DB0088ABB0 /* MailInbox.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MailInbox.swift; sourceTree = "<group>"; };
 		44461D5F1D9183070088ABB0 /* SizeClasses.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SizeClasses.swift; sourceTree = "<group>"; };
 		44461D621D9184F90088ABB0 /* TwiiterProfile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TwiiterProfile.swift; sourceTree = "<group>"; };
+		444BA44F1D92B52E00BBF1E4 /* Profile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Profile.swift; sourceTree = "<group>"; };
+		444BA4511D92B7EC00BBF1E4 /* Timelines.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Timelines.swift; sourceTree = "<group>"; };
+		444BA4531D92C47F00BBF1E4 /* AppStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppStore.swift; sourceTree = "<group>"; };
 		4488CFC01D917E8D00DF48EC /* Springboard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Springboard.swift; sourceTree = "<group>"; };
 		44A72C8D1D91604E00A85977 /* Calculator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Calculator.swift; sourceTree = "<group>"; };
 		44A72C8F1D9166CA00A85977 /* StoryView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StoryView.swift; sourceTree = "<group>"; };
-		44B584C11D916A3F005F62B8 /* Timeline.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Timeline.swift; sourceTree = "<group>"; };
+		44B584C11D916A3F005F62B8 /* TimelineQuotes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimelineQuotes.swift; sourceTree = "<group>"; };
 		44F7E5EC1D7879EF00D0900C /* UIStackView.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UIStackView.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		44F7E5EF1D7879EF00D0900C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		44F7E5F11D7879EF00D0900C /* StackViewVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StackViewVC.swift; sourceTree = "<group>"; };
@@ -73,7 +79,7 @@
 				44461D5D1D9180DB0088ABB0 /* MailInbox.swift */,
 				44A72C8D1D91604E00A85977 /* Calculator.swift */,
 				44A72C8F1D9166CA00A85977 /* StoryView.swift */,
-				44B584C11D916A3F005F62B8 /* Timeline.swift */,
+				44B584C11D916A3F005F62B8 /* TimelineQuotes.swift */,
 				4488CFC01D917E8D00DF48EC /* Springboard.swift */,
 				44461D5F1D9183070088ABB0 /* SizeClasses.swift */,
 				44461D621D9184F90088ABB0 /* TwiiterProfile.swift */,
@@ -81,6 +87,9 @@
 				44F7E5F61D7879EF00D0900C /* Assets.xcassets */,
 				44F7E5F81D7879EF00D0900C /* LaunchScreen.storyboard */,
 				44F7E5FB1D7879EF00D0900C /* Info.plist */,
+				444BA44F1D92B52E00BBF1E4 /* Profile.swift */,
+				444BA4511D92B7EC00BBF1E4 /* Timelines.swift */,
+				444BA4531D92C47F00BBF1E4 /* AppStore.swift */,
 			);
 			path = UIStackView;
 			sourceTree = "<group>";
@@ -157,14 +166,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				44F7E5F21D7879EF00D0900C /* StackViewVC.swift in Sources */,
+				444BA4501D92B52E00BBF1E4 /* Profile.swift in Sources */,
 				44F7E5F01D7879EF00D0900C /* AppDelegate.swift in Sources */,
+				444BA4541D92C47F00BBF1E4 /* AppStore.swift in Sources */,
 				44A72C901D9166CA00A85977 /* StoryView.swift in Sources */,
-				44B584C21D916A3F005F62B8 /* Timeline.swift in Sources */,
+				44B584C21D916A3F005F62B8 /* TimelineQuotes.swift in Sources */,
 				44A72C8E1D91604E00A85977 /* Calculator.swift in Sources */,
 				44461D631D9184F90088ABB0 /* TwiiterProfile.swift in Sources */,
 				44461D601D9183070088ABB0 /* SizeClasses.swift in Sources */,
 				44461D5E1D9180DB0088ABB0 /* MailInbox.swift in Sources */,
 				4488CFC11D917E8D00DF48EC /* Springboard.swift in Sources */,
+				444BA4521D92B7EC00BBF1E4 /* Timelines.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
