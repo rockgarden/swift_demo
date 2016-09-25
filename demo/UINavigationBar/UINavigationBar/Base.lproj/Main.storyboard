@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="3Xj-n6-vJH">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="nGe-re-OE4">
+            <objects>
+                <viewController id="3Xj-n6-vJH" customClass="ViewController" customModule="UINavigationBar" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Efq-Fg-9SW"/>
+                        <viewControllerLayoutGuide type="bottom" id="h7V-aC-b02"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="sz7-bM-sPU">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="P3S-Bm-9aJ">
+                                <rect key="frame" x="0.0" y="20" width="600" height="44"/>
+                                <items>
+                                    <navigationItem title="Title" id="ZfK-SV-ILv"/>
+                                </items>
+                                <connections>
+                                    <outlet property="delegate" destination="3Xj-n6-vJH" id="a6A-5g-LAU"/>
+                                </connections>
+                            </navigationBar>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Hkf-28-Lwd">
+                                <rect key="frame" x="150" y="126" width="300" height="128"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="128" id="oOb-eQ-a1d"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Hkf-28-Lwd" firstAttribute="width" secondItem="sz7-bM-sPU" secondAttribute="width" multiplier="1/2" id="EkD-7p-wgv"/>
+                            <constraint firstAttribute="trailing" secondItem="P3S-Bm-9aJ" secondAttribute="trailing" id="O1r-KH-ef8"/>
+                            <constraint firstItem="Hkf-28-Lwd" firstAttribute="centerX" secondItem="sz7-bM-sPU" secondAttribute="centerX" id="V2r-ej-WyI"/>
+                            <constraint firstItem="h7V-aC-b02" firstAttribute="top" secondItem="Hkf-28-Lwd" secondAttribute="bottom" constant="346" id="dOZ-zP-ZNh"/>
+                            <constraint firstItem="P3S-Bm-9aJ" firstAttribute="leading" secondItem="sz7-bM-sPU" secondAttribute="leading" id="flt-EQ-NDC"/>
+                            <constraint firstItem="Hkf-28-Lwd" firstAttribute="leading" secondItem="sz7-bM-sPU" secondAttribute="leading" constant="222" id="gpA-WW-4RE"/>
+                            <constraint firstItem="Hkf-28-Lwd" firstAttribute="top" secondItem="Efq-Fg-9SW" secondAttribute="bottom" constant="106" id="hbE-kd-kDI"/>
+                            <constraint firstItem="Hkf-28-Lwd" firstAttribute="leading" secondItem="sz7-bM-sPU" secondAttribute="leading" constant="222" id="kHV-ea-2qv"/>
+                            <constraint firstItem="Hkf-28-Lwd" firstAttribute="top" secondItem="P3S-Bm-9aJ" secondAttribute="bottom" constant="62" id="lbH-04-qK8"/>
+                            <constraint firstItem="P3S-Bm-9aJ" firstAttribute="top" secondItem="Efq-Fg-9SW" secondAttribute="bottom" id="tgZ-5H-Tg0"/>
+                            <constraint firstItem="Hkf-28-Lwd" firstAttribute="centerX" secondItem="P3S-Bm-9aJ" secondAttribute="centerX" id="z8H-eg-Hir"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="V2r-ej-WyI"/>
+                                <exclude reference="gpA-WW-4RE"/>
+                                <exclude reference="kHV-ea-2qv"/>
+                                <exclude reference="lbH-04-qK8"/>
+                                <exclude reference="dOZ-zP-ZNh"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <connections>
+                        <outlet property="navbar" destination="P3S-Bm-9aJ" id="YIs-fv-EbW"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="euH-EK-4Lj" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="258" y="414"/>
+        </scene>
+    </scenes>
+</document>

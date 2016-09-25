@@ -14,6 +14,8 @@
 		446B95B71D66096C003EC727 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 446B95B51D66096C003EC727 /* LaunchScreen.storyboard */; };
 		446B95C21D66096D003EC727 /* animateTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 446B95C11D66096D003EC727 /* animateTests.swift */; };
 		446B95CD1D66096D003EC727 /* animateUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 446B95CC1D66096D003EC727 /* animateUITests.swift */; };
+		44A9C4331D96BB7600F09E6A /* ExpandableByConstraint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44A9C4321D96BB7600F09E6A /* ExpandableByConstraint.swift */; };
+		44A9C4711D96C5F300F09E6A /* CancelAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44A9C4701D96C5F300F09E6A /* CancelAnimation.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +49,8 @@
 		446B95C81D66096D003EC727 /* animateUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = animateUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		446B95CC1D66096D003EC727 /* animateUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = animateUITests.swift; sourceTree = "<group>"; };
 		446B95CE1D66096D003EC727 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		44A9C4321D96BB7600F09E6A /* ExpandableByConstraint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExpandableByConstraint.swift; sourceTree = "<group>"; };
+		44A9C4701D96C5F300F09E6A /* CancelAnimation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CancelAnimation.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,10 +103,12 @@
 			children = (
 				446B95AC1D66096C003EC727 /* AppDelegate.swift */,
 				446B95AE1D66096C003EC727 /* AnimateWithDurationVC.swift */,
+				44A9C4321D96BB7600F09E6A /* ExpandableByConstraint.swift */,
 				446B95B01D66096C003EC727 /* Main.storyboard */,
 				446B95B31D66096C003EC727 /* Assets.xcassets */,
 				446B95B51D66096C003EC727 /* LaunchScreen.storyboard */,
 				446B95B81D66096C003EC727 /* Info.plist */,
+				44A9C4701D96C5F300F09E6A /* CancelAnimation.swift */,
 			);
 			path = animate;
 			sourceTree = "<group>";
@@ -258,6 +264,8 @@
 			files = (
 				446B95AF1D66096C003EC727 /* AnimateWithDurationVC.swift in Sources */,
 				446B95AD1D66096C003EC727 /* AppDelegate.swift in Sources */,
+				44A9C4711D96C5F300F09E6A /* CancelAnimation.swift in Sources */,
+				44A9C4331D96BB7600F09E6A /* ExpandableByConstraint.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -2,6 +2,21 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:demo/CALayer/CALayer.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:demo/UIVisualEffectView/UIVisualEffectView.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:demo/UINavigationBar/UINavigationBar.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:demo/UILabel/UILabel.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:demo/UISearchBar/UISearchBar.xcodeproj">
+   </FileRef>
+   <FileRef
       location = "group:demo/Constraint/Constraint.xcodeproj">
    </FileRef>
    <FileRef
