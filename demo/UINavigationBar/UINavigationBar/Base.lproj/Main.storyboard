@@ -34,6 +34,12 @@
                                     <constraint firstAttribute="height" constant="128" id="oOb-eQ-a1d"/>
                                 </constraints>
                             </view>
+                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="LYA-TP-eLf">
+                                <rect key="frame" x="0.0" y="64" width="600" height="44"/>
+                                <items>
+                                    <navigationItem title="Title" id="gxD-yA-r53"/>
+                                </items>
+                            </navigationBar>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
@@ -61,6 +67,7 @@
                     </view>
                     <connections>
                         <outlet property="navbar" destination="P3S-Bm-9aJ" id="YIs-fv-EbW"/>
+                        <outlet property="navbarA" destination="LYA-TP-eLf" id="Mzc-R5-Wys"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="euH-EK-4Lj" sceneMemberID="firstResponder"/>

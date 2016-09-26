@@ -2,6 +2,9 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:demo/UINavigationController/UINavigationController.xcodeproj">
+   </FileRef>
+   <FileRef
       location = "group:demo/CALayer/CALayer.xcodeproj">
    </FileRef>
    <FileRef
