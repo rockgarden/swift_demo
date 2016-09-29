@@ -1,0 +1,297 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		4412119C1D9D577A009C2046 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4412119B1D9D577A009C2046 /* AppDelegate.swift */; };
+		4412119E1D9D577A009C2046 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4412119D1D9D577A009C2046 /* ViewController.swift */; };
+		441211A11D9D577A009C2046 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4412119F1D9D577A009C2046 /* Main.storyboard */; };
+		441211A31D9D577A009C2046 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 441211A21D9D577A009C2046 /* Assets.xcassets */; };
+		441211A61D9D577A009C2046 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 441211A41D9D577A009C2046 /* LaunchScreen.storyboard */; };
+		441211AE1D9D57BD009C2046 /* RedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 441211AD1D9D57BD009C2046 /* RedButton.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		441211981D9D577A009C2046 /* IBInspectable.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = IBInspectable.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		4412119B1D9D577A009C2046 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		4412119D1D9D577A009C2046 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		441211A01D9D577A009C2046 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		441211A21D9D577A009C2046 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		441211A51D9D577A009C2046 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		441211A71D9D577A009C2046 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		441211AD1D9D57BD009C2046 /* RedButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RedButton.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		441211951D9D577A009C2046 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		4412118F1D9D577A009C2046 = {
+			isa = PBXGroup;
+			children = (
+				4412119A1D9D577A009C2046 /* IBInspectable */,
+				441211991D9D577A009C2046 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		441211991D9D577A009C2046 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				441211981D9D577A009C2046 /* IBInspectable.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		4412119A1D9D577A009C2046 /* IBInspectable */ = {
+			isa = PBXGroup;
+			children = (
+				4412119B1D9D577A009C2046 /* AppDelegate.swift */,
+				4412119D1D9D577A009C2046 /* ViewController.swift */,
+				441211AD1D9D57BD009C2046 /* RedButton.swift */,
+				4412119F1D9D577A009C2046 /* Main.storyboard */,
+				441211A21D9D577A009C2046 /* Assets.xcassets */,
+				441211A41D9D577A009C2046 /* LaunchScreen.storyboard */,
+				441211A71D9D577A009C2046 /* Info.plist */,
+			);
+			path = IBInspectable;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		441211971D9D577A009C2046 /* IBInspectable */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 441211AA1D9D577A009C2046 /* Build configuration list for PBXNativeTarget "IBInspectable" */;
+			buildPhases = (
+				441211941D9D577A009C2046 /* Sources */,
+				441211951D9D577A009C2046 /* Frameworks */,
+				441211961D9D577A009C2046 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = IBInspectable;
+			productName = IBInspectable;
+			productReference = 441211981D9D577A009C2046 /* IBInspectable.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		441211901D9D577A009C2046 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0730;
+				LastUpgradeCheck = 0730;
+				ORGANIZATIONNAME = rockgarden;
+				TargetAttributes = {
+					441211971D9D577A009C2046 = {
+						CreatedOnToolsVersion = 7.3.1;
+					};
+				};
+			};
+			buildConfigurationList = 441211931D9D577A009C2046 /* Build configuration list for PBXProject "IBInspectable" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 4412118F1D9D577A009C2046;
+			productRefGroup = 441211991D9D577A009C2046 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				441211971D9D577A009C2046 /* IBInspectable */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		441211961D9D577A009C2046 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				441211A61D9D577A009C2046 /* LaunchScreen.storyboard in Resources */,
+				441211A31D9D577A009C2046 /* Assets.xcassets in Resources */,
+				441211A11D9D577A009C2046 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		441211941D9D577A009C2046 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4412119E1D9D577A009C2046 /* ViewController.swift in Sources */,
+				4412119C1D9D577A009C2046 /* AppDelegate.swift in Sources */,
+				441211AE1D9D57BD009C2046 /* RedButton.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		4412119F1D9D577A009C2046 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				441211A01D9D577A009C2046 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		441211A41D9D577A009C2046 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				441211A51D9D577A009C2046 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		441211A81D9D577A009C2046 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		441211A91D9D577A009C2046 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		441211AB1D9D577A009C2046 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = IBInspectable/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.rockgarden.IBInspectable;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		441211AC1D9D577A009C2046 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = IBInspectable/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.rockgarden.IBInspectable;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		441211931D9D577A009C2046 /* Build configuration list for PBXProject "IBInspectable" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				441211A81D9D577A009C2046 /* Debug */,
+				441211A91D9D577A009C2046 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		441211AA1D9D577A009C2046 /* Build configuration list for PBXNativeTarget "IBInspectable" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				441211AB1D9D577A009C2046 /* Debug */,
+				441211AC1D9D577A009C2046 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 441211901D9D577A009C2046 /* Project object */;
+}

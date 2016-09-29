@@ -2,6 +2,12 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:demo/IBInspectable/IBInspectable.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:demo/Init/Init.xcodeproj">
+   </FileRef>
+   <FileRef
       location = "group:demo/UINavigationController/UINavigationController.xcodeproj">
    </FileRef>
    <FileRef
