@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController, UITableViewDelegate {
+class UISearchControllerVC: UIViewController, UITableViewDelegate {
     
     var myTableView = UITableView()
     var searcher: UISearchController!
@@ -166,7 +166,7 @@ class ViewController: UIViewController, UITableViewDelegate {
     
 }
 
-extension ViewController: UITableViewDataSource {
+extension UISearchControllerVC: UITableViewDataSource {
     
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         // return self.listGroupName.count
