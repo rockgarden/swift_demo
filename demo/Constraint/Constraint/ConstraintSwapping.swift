@@ -10,6 +10,8 @@ import UIKit
 
 class ConstraintSwapping: UIViewController {
 
+	let v = UIView()
+	var v0: UIView!
 	var v1: UIView!
 	var v2: UIView!
 	var v3: UIView!
@@ -23,7 +25,22 @@ class ConstraintSwapping: UIViewController {
 
 	override func viewDidLoad() {
 		super.viewDidLoad()
-		let mainview = self.view
+		let mainView = self.view
+
+		v.backgroundColor = UIColor.redColor()
+		v.translatesAutoresizingMaskIntoConstraints = false
+		mainView.addSubview(v)
+		NSLayoutConstraint.activateConstraints([
+			NSLayoutConstraint.constraintsWithVisualFormat("H:|-(60)-[v]-(0)-|", options: [], metrics: nil, views: ["v": v]),
+			NSLayoutConstraint.constraintsWithVisualFormat("V:|-(20)-[v]-(0)-|", options: [], metrics: nil, views: ["v": v])
+			].flatten().map { $0 })
+		// experiment by commenting out this line
+		v.preservesSuperviewLayoutMargins = true
+
+		let v0 = UIView()
+		v0.backgroundColor = UIColor.greenColor()
+		v0.translatesAutoresizingMaskIntoConstraints = false
+		v.addSubview(v0)
 
 		let v1 = UIView()
 		v1.backgroundColor = UIColor.redColor()
@@ -34,17 +51,44 @@ class ConstraintSwapping: UIViewController {
 		let v3 = UIView()
 		v3.backgroundColor = UIColor.blueColor()
 		v3.translatesAutoresizingMaskIntoConstraints = false
+		v0.addSubview(v1)
+		v0.addSubview(v2)
+		v0.addSubview(v3)
 
-		mainview.addSubview(v1)
-		mainview.addSubview(v2)
-		mainview.addSubview(v3)
-
+		self.v0 = v0
 		self.v1 = v1
 		self.v2 = v2
 		self.v3 = v3
 
-		// construct constraints
+		var which0: Int { return 1 }
+		switch which0 {
+		case 1:
+			// no longer need delayed performance here
+			NSLayoutConstraint.activateConstraints([
+				NSLayoutConstraint.constraintsWithVisualFormat("H:|-[v1]-|", options: [], metrics: nil, views: ["v1": v0]),
+				NSLayoutConstraint.constraintsWithVisualFormat("V:|-[v1]-|", options: [], metrics: nil, views: ["v1": v0])
+				].flatten().map { $0 })
+		case 2:
+			// new notation treats margins as a pseudoview (UILayoutGuide)
+			NSLayoutConstraint.activateConstraints([
+				v0.topAnchor.constraintEqualToAnchor(v.layoutMarginsGuide.topAnchor),
+				v0.bottomAnchor.constraintEqualToAnchor(v.layoutMarginsGuide.bottomAnchor),
+				v0.trailingAnchor.constraintEqualToAnchor(v.layoutMarginsGuide.trailingAnchor),
+				v0.leadingAnchor.constraintEqualToAnchor(v.layoutMarginsGuide.leadingAnchor)
+			])
+		case 3:
+			// new kind of margin, "readable content"
+			// particularly dramatic on iPad in landscape
+			NSLayoutConstraint.activateConstraints([
+				v0.topAnchor.constraintEqualToAnchor(v.readableContentGuide.topAnchor),
+				v0.bottomAnchor.constraintEqualToAnchor(v.readableContentGuide.bottomAnchor),
+				v0.trailingAnchor.constraintEqualToAnchor(v.readableContentGuide.trailingAnchor),
+				v0.leadingAnchor.constraintEqualToAnchor(v.readableContentGuide.leadingAnchor)
+			])
+			default: break
+		}
 
+		// construct constraints
 		let c1 = NSLayoutConstraint.constraintsWithVisualFormat("H:|-(20)-[v(100)]", options: [], metrics: nil, views: ["v": v1])
 		let c2 = NSLayoutConstraint.constraintsWithVisualFormat("H:|-(20)-[v(100)]", options: [], metrics: nil, views: ["v": v2])
 		let c3 = NSLayoutConstraint.constraintsWithVisualFormat("H:|-(20)-[v(100)]", options: [], metrics: nil, views: ["v": v3])
@@ -53,7 +97,6 @@ class ConstraintSwapping: UIViewController {
 		let c5without = NSLayoutConstraint.constraintsWithVisualFormat("V:[v1]-(20)-[v3(20)]", options: [], metrics: nil, views: ["v1": v1, "v3": v3])
 
 		// first set of constraints
-
 		self.constraintsWith.appendContentsOf(c1)
 		self.constraintsWith.appendContentsOf(c2)
 		self.constraintsWith.appendContentsOf(c3)
@@ -61,18 +104,15 @@ class ConstraintSwapping: UIViewController {
 		self.constraintsWith.appendContentsOf(c5with)
 
 		// second set of constraints
-
 		self.constraintsWithout.appendContentsOf(c1)
 		self.constraintsWithout.appendContentsOf(c3)
 		self.constraintsWithout.appendContentsOf(c4)
 		self.constraintsWithout.appendContentsOf(c5without)
 
 		// apply first set
-
 		NSLayoutConstraint.activateConstraints(self.constraintsWith)
 
 		/*
-
 		 // just experimenting, pay no attention
 		 let g = UILayoutGuide()
 		 self.view.addLayoutGuide(g)
@@ -96,7 +136,6 @@ class ConstraintSwapping: UIViewController {
 		 NSLayoutConstraint.constraintsWithVisualFormat(
 		 "V:|-0-[v]", options: [], metrics: nil, views: ["v":v])
 		 )
-
 		 */
 
 		let v4 = UIView(frame: CGRectMake(100, 250, 132, 194))
@@ -107,7 +146,7 @@ class ConstraintSwapping: UIViewController {
 		v6.backgroundColor = UIColor(red: 1, green: 0, blue: 0, alpha: 1)
 		v6.layer.setValue("littleRedSquare", forKey: "identifier")
 
-		mainview.addSubview(v4)
+		v0.addSubview(v4)
 		v4.addSubview(v5)
 		v4.addSubview(v6)
 
@@ -227,33 +266,32 @@ class ConstraintSwapping: UIViewController {
 
 	}
 
-    func doSwap() {
-        let mainview = self.view
-        if self.v2.superview != nil {
-            self.v2.removeFromSuperview()
-            NSLayoutConstraint.deactivateConstraints(self.constraintsWith)
-            NSLayoutConstraint.activateConstraints(self.constraintsWithout)
-        } else {
-            mainview.addSubview(v2)
-            NSLayoutConstraint.deactivateConstraints(self.constraintsWithout)
-            NSLayoutConstraint.activateConstraints(self.constraintsWith)
-        }
-    }
-
+	func doSwap() {
+		let mainview = self.view
+		if self.v2.superview != nil {
+			self.v2.removeFromSuperview()
+			NSLayoutConstraint.deactivateConstraints(self.constraintsWith)
+			NSLayoutConstraint.activateConstraints(self.constraintsWithout)
+		} else {
+			mainview.addSubview(v2)
+			NSLayoutConstraint.deactivateConstraints(self.constraintsWithout)
+			NSLayoutConstraint.activateConstraints(self.constraintsWith)
+		}
+	}
 
 	@IBAction func doSwap(sender: AnyObject) {
 		doSwap()
 	}
 
-    override func traitCollectionDidChange(previousTraitCollection: UITraitCollection?) {
-        let prev = previousTraitCollection
-        let tc = self.traitCollection
-        if prev == nil && tc.verticalSizeClass == .Compact {
-            self.doSwap()
-        } else if prev != nil && tc.verticalSizeClass != prev!.verticalSizeClass {
-            self.doSwap()
-        }
-    }
+	override func traitCollectionDidChange(previousTraitCollection: UITraitCollection?) {
+		let prev = previousTraitCollection
+		let tc = self.traitCollection
+		if prev == nil && tc.verticalSizeClass == .Compact {
+			self.doSwap()
+		} else if prev != nil && tc.verticalSizeClass != prev!.verticalSizeClass {
+			self.doSwap()
+		}
+	}
 
 }
 
