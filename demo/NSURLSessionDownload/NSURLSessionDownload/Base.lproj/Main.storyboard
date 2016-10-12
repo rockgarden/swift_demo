@@ -29,7 +29,7 @@
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Push" id="PL6-V5-fY3">
                             <connections>
-                                <segue destination="qme-iY-0lG" kind="push" id="Pez-cA-dYe"/>
+                                <segue destination="qme-iY-0lG" kind="show" id="IMD-35-BgP"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -80,7 +80,7 @@
                         </button>
                         <barButtonItem key="rightBarButtonItem" title="Push" id="zfX-t5-dZc">
                             <connections>
-                                <segue destination="bhc-77-PzJ" kind="push" id="RMv-3S-hOv"/>
+                                <segue destination="bhc-77-PzJ" kind="show" id="gR9-TE-BmR"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>

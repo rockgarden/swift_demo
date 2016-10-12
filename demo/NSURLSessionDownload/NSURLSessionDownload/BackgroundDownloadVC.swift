@@ -21,7 +21,6 @@ class BackgroundDownloadVC: UIViewController {
     
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
-        NSLog("%@", "view did appear")
         self.grabPicture()
     }
     
