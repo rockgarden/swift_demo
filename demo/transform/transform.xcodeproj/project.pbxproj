@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		44E1C3F11DAFD85100C75C7B /* TransformAndConstraintVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44E1C3F01DAFD85100C75C7B /* TransformAndConstraintVC.swift */; };
+		44E1C3F41DAFD88700C75C7B /* LoggingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44E1C3F21DAFD88700C75C7B /* LoggingView.swift */; };
+		44E1C3F51DAFD88700C75C7B /* MyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44E1C3F31DAFD88700C75C7B /* MyView.swift */; };
+		44E1C3F71DAFE62C00C75C7B /* TransformAnimate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44E1C3F61DAFE62C00C75C7B /* TransformAnimate.swift */; };
 		C21183AA1DACC6BA00C268E1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C21183A91DACC6BA00C268E1 /* AppDelegate.swift */; };
 		C21183AC1DACC6BA00C268E1 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C21183AB1DACC6BA00C268E1 /* ViewController.swift */; };
 		C21183AF1DACC6BA00C268E1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C21183AD1DACC6BA00C268E1 /* Main.storyboard */; };
@@ -15,6 +19,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		44E1C3F01DAFD85100C75C7B /* TransformAndConstraintVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransformAndConstraintVC.swift; sourceTree = "<group>"; };
+		44E1C3F21DAFD88700C75C7B /* LoggingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoggingView.swift; sourceTree = "<group>"; };
+		44E1C3F31DAFD88700C75C7B /* MyView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyView.swift; sourceTree = "<group>"; };
+		44E1C3F61DAFE62C00C75C7B /* TransformAnimate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransformAnimate.swift; sourceTree = "<group>"; };
 		C21183A61DACC6B900C268E1 /* transform.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = transform.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C21183A91DACC6BA00C268E1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C21183AB1DACC6BA00C268E1 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -60,6 +68,10 @@
 				C21183B01DACC6BA00C268E1 /* Assets.xcassets */,
 				C21183B21DACC6BA00C268E1 /* LaunchScreen.storyboard */,
 				C21183B51DACC6BA00C268E1 /* Info.plist */,
+				44E1C3F01DAFD85100C75C7B /* TransformAndConstraintVC.swift */,
+				44E1C3F61DAFE62C00C75C7B /* TransformAnimate.swift */,
+				44E1C3F21DAFD88700C75C7B /* LoggingView.swift */,
+				44E1C3F31DAFD88700C75C7B /* MyView.swift */,
 			);
 			path = transform;
 			sourceTree = "<group>";
@@ -137,7 +149,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				44E1C3F71DAFE62C00C75C7B /* TransformAnimate.swift in Sources */,
 				C21183AC1DACC6BA00C268E1 /* ViewController.swift in Sources */,
+				44E1C3F11DAFD85100C75C7B /* TransformAndConstraintVC.swift in Sources */,
+				44E1C3F51DAFD88700C75C7B /* MyView.swift in Sources */,
+				44E1C3F41DAFD88700C75C7B /* LoggingView.swift in Sources */,
 				C21183AA1DACC6BA00C268E1 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
