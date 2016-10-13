@@ -4,10 +4,10 @@ import UIKit
 
 class MyTableViewController: UITableViewController {
 
-	lazy var configuration: NSURLSessionConfiguration = {
-		let config = NSURLSessionConfiguration.ephemeralSessionConfiguration()
+	lazy var configuration: URLSessionConfiguration = {
+		let config = URLSessionConfiguration.ephemeral
 		config.allowsCellularAccess = false
-		config.URLCache = nil
+		config.urlCache = nil
 		return config
 	}()
 
@@ -41,17 +41,17 @@ class MyTableViewController: UITableViewController {
 		return arr
 	}()
 
-	override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+	override func numberOfSections(in tableView: UITableView) -> Int {
 		return 1
 	}
 
-	override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+	override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
 		return self.model.count
 	}
 
-	override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-		let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath)
-		let m = self.model[indexPath.row]
+	override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+		let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
+		let m = self.model[(indexPath as NSIndexPath).row]
 		cell.textLabel!.text = m.text
 		// have we got a picture?
 		if let im = m.im {
@@ -65,11 +65,11 @@ class MyTableViewController: UITableViewController {
 					if url == nil {
 						return
 					}
-					let data = NSData(contentsOfURL: url)!
+					let data = try! Data(contentsOf: url)
 					let im = UIImage(data: data)
 					m.im = im
-					dispatch_async(dispatch_get_main_queue()) {
-						self!.tableView.reloadRowsAtIndexPaths([indexPath], withRowAnimation: .None)
+					DispatchQueue.main.async {
+						self!.tableView.reloadRows(at: [indexPath], with: .none)
 					}
 				}
 			}
@@ -77,12 +77,12 @@ class MyTableViewController: UITableViewController {
 		return cell
 	}
 
-	override func tableView(tableView: UITableView, didEndDisplayingCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath) {
-		let m = self.model[indexPath.row]
+	override func tableView(_ tableView: UITableView, didEndDisplaying cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+		let m = self.model[(indexPath as NSIndexPath).row]
 		if let task = m.task {
-			if task.state == .Running {
+			if task.state == .running {
 				task.cancel()
-				print("cancel task for row \(indexPath.row)")
+				print("cancel task for row \((indexPath as NSIndexPath).row)")
 				m.task = nil
 			}
 		}
@@ -104,5 +104,5 @@ class Model {
 	var text: String!
 	var im: UIImage!
 	var picurl: String!
-	var task: NSURLSessionTask!
+	var task: URLSessionTask!
 }

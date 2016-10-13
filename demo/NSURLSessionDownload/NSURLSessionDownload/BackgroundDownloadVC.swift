@@ -15,25 +15,25 @@ class BackgroundDownloadVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(gotPicture), name: "GotPicture", object: nil)
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(gotProgress), name: "GotProgress", object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(gotPicture), name: NSNotification.Name(rawValue: "GotPicture"), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(gotProgress), name: NSNotification.Name(rawValue: "GotProgress"), object: nil)
     }
     
-    override func viewDidAppear(animated: Bool) {
+    override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         self.grabPicture()
     }
     
-    @IBAction func doStart (sender: AnyObject!) {
+    @IBAction func doStart (_ sender: AnyObject!) {
         self.prog.progress = 0
         self.iv.image = nil
-        let del = UIApplication.sharedApplication().delegate as! AppDelegate
+        let del = UIApplication.shared.delegate as! AppDelegate
         del.startDownload(self)
     }
     
     func grabPicture () {
         NSLog("%@", "grabbing picture")
-        let del = UIApplication.sharedApplication().delegate as! AppDelegate
+        let del = UIApplication.shared.delegate as! AppDelegate
         self.iv.image = del.image
         del.image = nil
         if self.iv.image != nil {
@@ -41,12 +41,12 @@ class BackgroundDownloadVC: UIViewController {
         }
     }
     
-    func gotPicture (n: NSNotification) {
+    func gotPicture (_ n: Notification) {
         self.grabPicture()
     }
     
-    func gotProgress (n: NSNotification) {
-        if let ui = n.userInfo {
+    func gotProgress (_ n: Notification) {
+        if let ui = (n as NSNotification).userInfo {
             if let prog = ui["progress"] as? NSNumber {
                 self.prog.progress = Float(prog.doubleValue)
             }
@@ -54,10 +54,10 @@ class BackgroundDownloadVC: UIViewController {
     }
     
     deinit {
-        NSNotificationCenter.defaultCenter().removeObserver(self)
+        NotificationCenter.default.removeObserver(self)
     }
     
-    func crash (sender: AnyObject?) {
+    func crash (_ sender: AnyObject?) {
         _ = sender as! String
     }
     
