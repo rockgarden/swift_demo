@@ -13,19 +13,19 @@ class MyScrollViewController: UIViewController {
 
 	override func viewDidLoad() {
 		super.viewDidLoad()
-		self.view.backgroundColor = UIColor.whiteColor()
+		self.view.backgroundColor = UIColor.white
 		scrollView = UIScrollView(frame: self.view.frame)
 		self.view.addSubview(scrollView!)
 		scrollView!.contentSize = self.view.frame.size
-		scrollView!.backgroundColor = UIColor.clearColor()
+		scrollView!.backgroundColor = UIColor.clear
 		self.setupRefresh()
 	}
 
 	func setupRefresh() {
 		self.scrollView!.addHeaderWithCallback({
 			let delayInSeconds: Int64 = 1000000000 * 2
-			let popTime: dispatch_time_t = dispatch_time(DISPATCH_TIME_NOW, delayInSeconds)
-			dispatch_after(popTime, dispatch_get_main_queue(), {
+			let popTime: DispatchTime = DispatchTime.now() + Double(delayInSeconds) / Double(NSEC_PER_SEC)
+			DispatchQueue.main.asyncAfter(deadline: popTime, execute: {
 				self.scrollView!.contentSize = self.view.frame.size
 				self.scrollView!.headerEndRefreshing()
 			})
@@ -33,8 +33,8 @@ class MyScrollViewController: UIViewController {
 
 		self.scrollView!.addFooterWithCallback({
 			let delayInSeconds: Int64 = 1000000000 * 2
-			let popTime: dispatch_time_t = dispatch_time(DISPATCH_TIME_NOW, delayInSeconds)
-			dispatch_after(popTime, dispatch_get_main_queue(), {
+			let popTime: DispatchTime = DispatchTime.now() + Double(delayInSeconds) / Double(NSEC_PER_SEC)
+			DispatchQueue.main.asyncAfter(deadline: popTime, execute: {
 				var size: CGSize = self.scrollView!.frame.size
 				size.height = size.height + 300
 				self.scrollView!.contentSize = size

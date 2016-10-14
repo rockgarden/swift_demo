@@ -16,13 +16,13 @@ class MyTableViewController: UITableViewController {
 			self.fakeData!.removeAllObjects()
 			for _ in 0..<15 {
 				let text: String = "内容" + String(arc4random_uniform(10000))
-				self.fakeData!.addObject(text)
+				self.fakeData!.add(text)
 			}
 
 			let delayInSeconds: Int64 = 1000000000 * 2
 
-			let popTime: dispatch_time_t = dispatch_time(DISPATCH_TIME_NOW, delayInSeconds)
-			dispatch_after(popTime, dispatch_get_main_queue(), {
+			let popTime: DispatchTime = DispatchTime.now() + Double(delayInSeconds) / Double(NSEC_PER_SEC)
+			DispatchQueue.main.asyncAfter(deadline: popTime, execute: {
 				self.tableView.reloadData()
 				self.tableView.headerEndRefreshing()
 			})
@@ -32,11 +32,11 @@ class MyTableViewController: UITableViewController {
 		self.tableView.addFooterWithCallback({
 			for _ in 0 ..< 10 {
 				let text: String = "内容" + String(arc4random_uniform(10000))
-				self.fakeData!.addObject(text)
+				self.fakeData!.add(text)
 			}
 			let delayInSeconds: Int64 = 1000000000 * 2
-			let popTime: dispatch_time_t = dispatch_time(DISPATCH_TIME_NOW, delayInSeconds)
-			dispatch_after(popTime, dispatch_get_main_queue(), {
+			let popTime: DispatchTime = DispatchTime.now() + Double(delayInSeconds) / Double(NSEC_PER_SEC)
+			DispatchQueue.main.asyncAfter(deadline: popTime, execute: {
 				self.tableView.reloadData()
 				self.tableView.footerEndRefreshing()
 				 self.tableView.setFooterHidden(true)
@@ -49,9 +49,9 @@ class MyTableViewController: UITableViewController {
 		fakeData = NSMutableArray()
 		for _ in 0 ..< 15 {
 			let text: String = "内容" + String(arc4random_uniform(10000))
-			self.fakeData!.addObject(text)
+			self.fakeData!.add(text)
 		}
-		self.tableView.registerClass(UITableViewCell.classForCoder(), forCellReuseIdentifier: "cell")
+		self.tableView.register(UITableViewCell.classForCoder(), forCellReuseIdentifier: "cell")
 		self.setupRefresh()
 		// tas.assaf()
 		// Do any additional setup after loading the view, typically from a nib.
@@ -62,29 +62,29 @@ class MyTableViewController: UITableViewController {
 		// Dispose of any resources that can be recreated.
 	}
 
-	override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+	override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
 		return self.fakeData!.count
 	}
 
-	override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+	override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
 
 	}
 
-	override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+	override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 
 		let cellID = "cell"
-		var cell = tableView.dequeueReusableCellWithIdentifier(cellID)
-		cell = UITableViewCell(style: UITableViewCellStyle.Default, reuseIdentifier: "Cell") as UITableViewCell
-		cell!.selectionStyle = UITableViewCellSelectionStyle.None
+		var cell = tableView.dequeueReusableCell(withIdentifier: cellID)
+		cell = UITableViewCell(style: UITableViewCellStyle.default, reuseIdentifier: "Cell") as UITableViewCell
+		cell!.selectionStyle = UITableViewCellSelectionStyle.none
 		let statusLabel = UILabel()
-		statusLabel.frame = CGRectMake(0, 0, 320, 36)
-		statusLabel.font = UIFont.boldSystemFontOfSize(13)
-		statusLabel.textColor = UIColor.blackColor()
-		statusLabel.backgroundColor = UIColor.clearColor()
-		statusLabel.textAlignment = NSTextAlignment.Center
+		statusLabel.frame = CGRect(x: 0, y: 0, width: 320, height: 36)
+		statusLabel.font = UIFont.boldSystemFont(ofSize: 13)
+		statusLabel.textColor = UIColor.black
+		statusLabel.backgroundColor = UIColor.clear
+		statusLabel.textAlignment = NSTextAlignment.center
 		cell!.contentView.addSubview(statusLabel)
 		statusLabel.tag = 1000001
-		statusLabel.text = fakeData!.objectAtIndex(indexPath.row) as? String
+		statusLabel.text = fakeData!.object(at: (indexPath as NSIndexPath).row) as? String
 
 		return cell!
 	}

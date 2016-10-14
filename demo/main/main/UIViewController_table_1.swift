@@ -19,24 +19,24 @@ class UIViewController_table_1: UIViewController, UITableViewDataSource, UITable
         super.viewDidLoad()
         
         self.navigationItem.title = "详情"
-        self.view.backgroundColor = UIColor.whiteColor()
+        self.view.backgroundColor = UIColor.white
 
-        let tableView : UITableView = UITableView(frame: CGRectZero, style: UITableViewStyle.Plain)
+        let tableView : UITableView = UITableView(frame: CGRect.zero, style: UITableViewStyle.plain)
         tableView.delegate = self
         tableView.dataSource = self
         self.view.addSubview(tableView)
         tableView.layoutIfNeeded()
         tableView.translatesAutoresizingMaskIntoConstraints = false
         //2.注册Cell
-        tableView.registerClass(UITableViewCell_photo_1.self, forCellReuseIdentifier: ID)
+        tableView.register(UITableViewCell_photo_1.self, forCellReuseIdentifier: ID)
         tableView.rowHeight = UITableViewAutomaticDimension
         
         let views:[String:AnyObject] = ["tableView": tableView]
         //创建水平方向约束
-        self.view.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat("H:|-0-[tableView]-0-|", options: NSLayoutFormatOptions.AlignAllCenterX, metrics: nil, views: views))
+        self.view.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "H:|-0-[tableView]-0-|", options: NSLayoutFormatOptions.alignAllCenterX, metrics: nil, views: views))
 
         //创建垂直方向约束
-        self.view.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat("V:|-0-[tableView]-0-|", options: NSLayoutFormatOptions.AlignAllCenterX, metrics: nil, views: views))
+        self.view.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "V:|-0-[tableView]-0-|", options: NSLayoutFormatOptions.alignAllCenterX, metrics: nil, views: views))
 
     }
     
@@ -47,7 +47,7 @@ class UIViewController_table_1: UIViewController, UITableViewDataSource, UITable
     
     //MARK: 计算cell的高度
     
-    func cellHeightByString(content : String) -> CGFloat {
+    func cellHeightByString(_ content : String) -> CGFloat {
         
         let height = content.stringHeightWith(12, width:kScreenWidth-110)
 
@@ -55,7 +55,7 @@ class UIViewController_table_1: UIViewController, UITableViewDataSource, UITable
         
     }
     
-    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return dataArray.count
     }
     
@@ -67,37 +67,37 @@ class UIViewController_table_1: UIViewController, UITableViewDataSource, UITable
      
      - returns: 固定高度+文字高度
      */
-    func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
-        return cellHeightByString(dataArray[indexPath.row]) > 80 ? cellHeightByString(dataArray[indexPath.row]) : 80
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return cellHeightByString(dataArray[(indexPath as NSIndexPath).row]) > 80 ? cellHeightByString(dataArray[(indexPath as NSIndexPath).row]) : 80
     }
     
-    func tableView(tableView: UITableView, estimatedHeightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+    func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
         return 100
     }
 
-    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         // 获得cell
-        let cell : UITableViewCell_photo_1 = tableView.dequeueReusableCellWithIdentifier(ID, forIndexPath: indexPath) as! UITableViewCell_photo_1
+        let cell : UITableViewCell_photo_1 = tableView.dequeueReusableCell(withIdentifier: ID, for: indexPath) as! UITableViewCell_photo_1
         
 
         // 配置cell
-        if indexPath.row%2 == 0 {
+        if (indexPath as NSIndexPath).row%2 == 0 {
             cell.photoView.image = UIImage(named: "photo")
         }
         else {
             cell.photoView.image = UIImage(named: "photo1")
         }
         
-        cell.titleLabel.text = "假数据 - \(indexPath.row)"
+        cell.titleLabel.text = "假数据 - \((indexPath as NSIndexPath).row)"
         
-        cell.descLabel.text = dataArray[indexPath.row]
+        cell.descLabel.text = dataArray[(indexPath as NSIndexPath).row]
         
         // 返回cell
         return cell
     }
     
-    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        print("selected index row - \(indexPath.row)")
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        print("selected index row - \((indexPath as NSIndexPath).row)")
     }
 
 }
@@ -107,21 +107,21 @@ extension String {
     
     //MARK:获得string内容高度
     
-    func stringHeightWith(fontSize:CGFloat, width:CGFloat) -> CGFloat{
+    func stringHeightWith(_ fontSize:CGFloat, width:CGFloat) -> CGFloat{
         
-        let font                     = UIFont.systemFontOfSize(fontSize)
+        let font                     = UIFont.systemFont(ofSize: fontSize)
         
-        let size                     = CGSizeMake(width,CGFloat.max)
+        let size                     = CGSize(width: width,height: CGFloat.greatestFiniteMagnitude)
         
         let paragraphStyle           = NSMutableParagraphStyle()
         
-        paragraphStyle.lineBreakMode = .ByWordWrapping;
+        paragraphStyle.lineBreakMode = .byWordWrapping;
         
         let attributes               = [NSFontAttributeName:font, NSParagraphStyleAttributeName:paragraphStyle.copy()]
         
         let text                     = self as NSString
         
-        let rect                     = text.boundingRectWithSize(size, options:.UsesLineFragmentOrigin, attributes: attributes, context:nil)
+        let rect                     = text.boundingRect(with: size, options:.usesLineFragmentOrigin, attributes: attributes, context:nil)
         
         return rect.size.height+1.0
         

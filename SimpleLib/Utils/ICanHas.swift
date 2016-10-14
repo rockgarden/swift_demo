@@ -31,10 +31,10 @@ import Photos
 import AddressBookUI
 import EventKit
 
-public class ICanHas {
+open class ICanHas {
     
-    private class func onMain(closure:()->Void) {
-        dispatch_async(dispatch_get_main_queue(), closure)
+    fileprivate class func onMain(_ closure:@escaping ()->Void) {
+        DispatchQueue.main.async(execute: closure)
     }
     
     static var didTryToRegisterForPush = false
@@ -44,24 +44,24 @@ public class ICanHas {
     static var isHasingCapture:[String:Bool] = [AVMediaTypeAudio:false,AVMediaTypeClosedCaption:false,AVMediaTypeMetadata:false,AVMediaTypeMuxed:false,AVMediaTypeSubtitle:false,AVMediaTypeText:false,AVMediaTypeTimecode:false,AVMediaTypeVideo:false]
     static var isHasingPhotos = false
     static var isHasingContacts = false
-    static var isHasingCalendar:[EKEntityType:Bool] = [EKEntityType.Event:false,EKEntityType.Reminder:false]
+    static var isHasingCalendar:[EKEntityType:Bool] = [EKEntityType.event:false,EKEntityType.reminder:false]
     
-    static var hasPushClosures:[(authorized:Bool)->Void] = []
-    static var hasLocationClosures:[(authorized:Bool, status:CLAuthorizationStatus, denied:Bool)->Void] = []
-    static var hasCaptureClosures:[String:[(authorized:Bool,status:AVAuthorizationStatus)->Void]] = [AVMediaTypeAudio:[],AVMediaTypeClosedCaption:[],AVMediaTypeMetadata:[],AVMediaTypeMuxed:[],AVMediaTypeSubtitle:[],AVMediaTypeText:[],AVMediaTypeTimecode:[],AVMediaTypeVideo:[]]
-    static var hasPhotosClosures:[(authorized:Bool,status:PHAuthorizationStatus)->Void] = []
-    static var hasContactsClosures:[(authorized:Bool,status:ABAuthorizationStatus,error:CFError!)->Void] = []
-    static var hasCalendarClosures:[EKEntityType:[(authorized:Bool,error:NSError!)->Void]] = [EKEntityType.Event:[],EKEntityType.Reminder:[]]
+    static var hasPushClosures:[(_ authorized:Bool)->Void] = []
+    static var hasLocationClosures:[(_ authorized:Bool, _ status:CLAuthorizationStatus, _ denied:Bool)->Void] = []
+    static var hasCaptureClosures:[String:[(_ authorized:Bool,_ status:AVAuthorizationStatus)->Void]] = [AVMediaTypeAudio:[],AVMediaTypeClosedCaption:[],AVMediaTypeMetadata:[],AVMediaTypeMuxed:[],AVMediaTypeSubtitle:[],AVMediaTypeText:[],AVMediaTypeTimecode:[],AVMediaTypeVideo:[]]
+    static var hasPhotosClosures:[(_ authorized:Bool,_ status:PHAuthorizationStatus)->Void] = []
+    static var hasContactsClosures:[(_ authorized:Bool,_ status:ABAuthorizationStatus,_ error:CFError?)->Void] = []
+    static var hasCalendarClosures:[EKEntityType:[(_ authorized:Bool,_ error:NSError?)->Void]] = [EKEntityType.event:[],EKEntityType.reminder:[]]
     
-    public class func CalendarAuthorizationStatus(entityType type:EKEntityType = EKEntityType.Event)->EKAuthorizationStatus {
-        return EKEventStore.authorizationStatusForEntityType(type)
+    open class func CalendarAuthorizationStatus(entityType type:EKEntityType = EKEntityType.event)->EKAuthorizationStatus {
+        return EKEventStore.authorizationStatus(for: type)
     }
     
-    public class func CalendarAuthorization(entityType type:EKEntityType = EKEntityType.Event)->Bool {
-        return EKEventStore.authorizationStatusForEntityType(type) == .Authorized
+    open class func CalendarAuthorization(entityType type:EKEntityType = EKEntityType.event)->Bool {
+        return EKEventStore.authorizationStatus(for: type) == .authorized
     }
     
-    public class func Calendar(store:EKEventStore = EKEventStore(), entityType type:EKEntityType = EKEntityType.Event, closure:(authorized:Bool,error:NSError!)->Void) {
+    open class func Calendar(_ store:EKEventStore = EKEventStore(), entityType type:EKEntityType = EKEntityType.event, closure:@escaping (_ authorized:Bool,_ error:NSError?)->Void) {
         onMain {
             ICanHas.hasCalendarClosures[type]!.append(closure)
             if !ICanHas.isHasingCalendar[type]! {
@@ -70,28 +70,28 @@ public class ICanHas {
                     (authorized:Bool,error:NSError!)->Void in
                     let array = ICanHas.hasCalendarClosures[type]!
                     ICanHas.hasCalendarClosures[type] = []
-                    let _ = array.map{$0(authorized:authorized,error:error)}
+                    let _ = array.map{$0(authorized,error)}
                     ICanHas.isHasingCalendar[type] = false
                 }
                 
-                store.requestAccessToEntityType(type, completion: { (authorized:Bool, error:NSError?) -> Void in
+                store.requestAccess(to: type, completion: { (authorized:Bool, error:NSError?) -> Void in
                     ICanHas.onMain {
-                        done(authorized,error)
+                        done(authorized)
                     }
-                })
+                } as! EKEventStoreRequestAccessCompletionHandler)
             }
         }
     }
     
-    public class func ContactsAuthorizationStatus()->ABAuthorizationStatus {
+    open class func ContactsAuthorizationStatus()->ABAuthorizationStatus {
         return ABAddressBookGetAuthorizationStatus()
     }
     
-    public class func ContactsAuthorization()->Bool {
-        return ABAddressBookGetAuthorizationStatus() == .Authorized
+    open class func ContactsAuthorization()->Bool {
+        return ABAddressBookGetAuthorizationStatus() == .authorized
     }
     
-    public class func Contacts(addressBook:ABAddressBookRef? = ABAddressBookCreateWithOptions(nil, nil)?.takeRetainedValue(), closure:(authorized:Bool,status:ABAuthorizationStatus,error:CFError!)->Void) {
+    open class func Contacts(_ addressBook:ABAddressBook? = ABAddressBookCreateWithOptions(nil, nil)?.takeRetainedValue(), closure:@escaping (_ authorized:Bool,_ status:ABAuthorizationStatus,_ error:CFError?)->Void) {
         
         onMain {
             
@@ -105,7 +105,7 @@ public class ICanHas {
                     let array = ICanHas.hasContactsClosures
                     ICanHas.hasContactsClosures = []
                     
-                    let _ = array.map{$0(authorized:authorized,status:status,error:error)}
+                    let _ = array.map{$0(authorized,status,error)}
                     
                     ICanHas.isHasingContacts = false
                 }
@@ -113,13 +113,13 @@ public class ICanHas {
                 let currentStatus = ABAddressBookGetAuthorizationStatus()
                 
                 switch currentStatus {
-                case .Denied:
+                case .denied:
                     done(false,currentStatus,nil)
-                case .Restricted:
+                case .restricted:
                     done(false,currentStatus,nil)
-                case .Authorized:
+                case .authorized:
                     done(true,currentStatus,nil)
-                case .NotDetermined:
+                case .notDetermined:
                     ABAddressBookRequestAccessWithCompletion(addressBook, { (authorized:Bool, error:CFError!) -> Void in
                         
                         ICanHas.onMain {
@@ -136,15 +136,15 @@ public class ICanHas {
         
     }
     
-    public class func PhotosAuthorizationStatus()->PHAuthorizationStatus {
+    open class func PhotosAuthorizationStatus()->PHAuthorizationStatus {
         return PHPhotoLibrary.authorizationStatus()
     }
     
-    public class func PhotosAuthorization()->Bool {
-        return PHPhotoLibrary.authorizationStatus() == .Authorized
+    open class func PhotosAuthorization()->Bool {
+        return PHPhotoLibrary.authorizationStatus() == .authorized
     }
     
-    public class func Photos(closure:(authorized:Bool,status:PHAuthorizationStatus)->Void) {
+    open class func Photos(_ closure:@escaping (_ authorized:Bool,_ status:PHAuthorizationStatus)->Void) {
         
         onMain {
             
@@ -159,7 +159,7 @@ public class ICanHas {
                     let array = ICanHas.hasPhotosClosures
                     ICanHas.hasPhotosClosures = []
                     
-                    let _ = array.map{$0(authorized:authorized,status:status)}
+                    let _ = array.map{$0(authorized,status)}
                     
                     ICanHas.isHasingPhotos = false
                 }
@@ -167,17 +167,17 @@ public class ICanHas {
                 let currentStatus = PHPhotoLibrary.authorizationStatus()
                 
                 switch currentStatus {
-                case .Denied:
+                case .denied:
                     done(false,currentStatus)
-                case .Restricted:
+                case .restricted:
                     done(false,currentStatus)
-                case .Authorized:
+                case .authorized:
                     done(true,currentStatus)
-                case .NotDetermined:
+                case .notDetermined:
                     PHPhotoLibrary.requestAuthorization({ (status:PHAuthorizationStatus) -> Void in
                         
                         ICanHas.onMain {
-                            done(status == PHAuthorizationStatus.Authorized, status)
+                            done(status == PHAuthorizationStatus.authorized, status)
                         }
                         
                         
@@ -192,15 +192,15 @@ public class ICanHas {
         
     }
     
-    public class func CaptureAuthorizationStatus(type:String = AVMediaTypeVideo)->AVAuthorizationStatus {
-        return AVCaptureDevice.authorizationStatusForMediaType(type)
+    open class func CaptureAuthorizationStatus(_ type:String = AVMediaTypeVideo)->AVAuthorizationStatus {
+        return AVCaptureDevice.authorizationStatus(forMediaType: type)
     }
     
-    public class func CaptureAuthorization(type:String = AVMediaTypeVideo)->Bool {
-        return AVCaptureDevice.authorizationStatusForMediaType(type) == .Authorized
+    open class func CaptureAuthorization(_ type:String = AVMediaTypeVideo)->Bool {
+        return AVCaptureDevice.authorizationStatus(forMediaType: type) == .authorized
     }
     
-    public class func Capture(type:String = AVMediaTypeVideo,closure:(authorized:Bool,status:AVAuthorizationStatus)->Void) {
+    open class func Capture(_ type:String = AVMediaTypeVideo,closure:@escaping (_ authorized:Bool,_ status:AVAuthorizationStatus)->Void) {
         onMain {
             
             ICanHas.hasCaptureClosures[type]!.append(closure)
@@ -214,25 +214,25 @@ public class ICanHas {
                     let array = ICanHas.hasCaptureClosures[type]!
                     ICanHas.hasCaptureClosures[type] = []
                     
-                    let _ = array.map{$0(authorized:authorized,status:status)}
+                    let _ = array.map{$0(authorized,status)}
                     
                     ICanHas.isHasingCapture[type] = false
                 }
                 
-                let currentStatus = AVCaptureDevice.authorizationStatusForMediaType(type)
+                let currentStatus = AVCaptureDevice.authorizationStatus(forMediaType: type)
                 
                 switch currentStatus {
-                case .Denied:
+                case .denied:
                     done(false,currentStatus)
-                case .Restricted:
+                case .restricted:
                     done(false,currentStatus)
-                case .Authorized:
+                case .authorized:
                     done(true,currentStatus)
-                case .NotDetermined:
-                    AVCaptureDevice.requestAccessForMediaType(type, completionHandler: { (authorized:Bool) -> Void in
+                case .notDetermined:
+                    AVCaptureDevice.requestAccess(forMediaType: type, completionHandler: { (authorized:Bool) -> Void in
                         
                         ICanHas.onMain {
-                            done(authorized,AVCaptureDevice.authorizationStatusForMediaType(type))
+                            done(authorized,AVCaptureDevice.authorizationStatus(forMediaType: type))
                         }
                         
                         
@@ -244,13 +244,13 @@ public class ICanHas {
         }
     }
     
-    public class func PushAuthorization()->Bool {
-        return UIApplication.sharedApplication().isRegisteredForRemoteNotifications()
+    open class func PushAuthorization()->Bool {
+        return UIApplication.shared.isRegisteredForRemoteNotifications
     }
     
     //    private static var pushExchangeDone = false
     
-    public class func Push(types:UIUserNotificationType = UIUserNotificationType.Alert.union(UIUserNotificationType.Badge).union(UIUserNotificationType.Sound),closure:(authorized:Bool)->Void) {
+    open class func Push(_ types:UIUserNotificationType = UIUserNotificationType.alert.union(UIUserNotificationType.badge).union(UIUserNotificationType.sound),closure:@escaping (_ authorized:Bool)->Void) {
         
         onMain {
             
@@ -298,19 +298,19 @@ public class ICanHas {
                     let array = ICanHas.hasPushClosures
                     ICanHas.hasPushClosures = []
                     
-                    let _ = array.map{$0(authorized:authorized)}
+                    let _ = array.map{$0(authorized)}
                     
                     ICanHas.isHasingPush = false
                 }
                 
-                let application:UIApplication! = UIApplication.sharedApplication()
+                let application:UIApplication! = UIApplication.shared
                 
                 if ICanHas.didTryToRegisterForPush {
-                    done(application.isRegisteredForRemoteNotifications())
+                    done(application.isRegisteredForRemoteNotifications)
                 }else {
                     ICanHas.didTryToRegisterForPush = true
                     
-                    application.registerUserNotificationSettings(UIUserNotificationSettings(forTypes: types, categories: nil))
+                    application.registerUserNotificationSettings(UIUserNotificationSettings(types: types, categories: nil))
                     
                     var bgNoteObject:NSObjectProtocol? = nil
                     var fgNoteObject:NSObjectProtocol? = nil
@@ -321,7 +321,7 @@ public class ICanHas {
                     
                     var shouldWaitForFG = false
                     
-                    bgNoteObject = bgNoteObject ?? NSNotificationCenter.defaultCenter().addObserverForName(UIApplicationWillResignActiveNotification, object: nil, queue: NSOperationQueue.mainQueue()) { (note:NSNotification) -> Void in
+                    bgNoteObject = bgNoteObject ?? NotificationCenter.default.addObserver(forName: NSNotification.Name.UIApplicationWillResignActive, object: nil, queue: OperationQueue.main) { (note:Notification) -> Void in
                         
                         hasGoneToBG = true
                         
@@ -332,19 +332,19 @@ public class ICanHas {
                         bgNoteObject = nil
                     }
                     
-                    fgNoteObject = fgNoteObject ?? NSNotificationCenter.defaultCenter().addObserverForName(UIApplicationDidBecomeActiveNotification, object: nil, queue: NSOperationQueue.mainQueue()) { (note:NSNotification) -> Void in
+                    fgNoteObject = fgNoteObject ?? NotificationCenter.default.addObserver(forName: NSNotification.Name.UIApplicationDidBecomeActive, object: nil, queue: OperationQueue.main) { (note:Notification) -> Void in
                         
                         if shouldWaitForFG {
-                            done(application.isRegisteredForRemoteNotifications())
+                            done(application.isRegisteredForRemoteNotifications)
                         }
                         
                         fgNoteObject = nil
                     }
                     
-                    dispatch_after(dispatch_time(DISPATCH_TIME_NOW,Int64(1 * Double(NSEC_PER_SEC))),dispatch_get_main_queue(), {
+                    DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + Double(Int64(1 * Double(NSEC_PER_SEC))) / Double(NSEC_PER_SEC), execute: {
                         hasTimedOut = true
                         if !hasGoneToBG {
-                            done(application.isRegisteredForRemoteNotifications())
+                            done(application.isRegisteredForRemoteNotifications)
                         }
                     })
                     application.registerForRemoteNotifications()
@@ -353,14 +353,14 @@ public class ICanHas {
         }
     }
     
-    private static var locationExchangeDone:[String:Bool] = [:]
+    fileprivate static var locationExchangeDone:[String:Bool] = [:]
     
-    public class func LocationAuthorizationStatus()->CLAuthorizationStatus {
+    open class func LocationAuthorizationStatus()->CLAuthorizationStatus {
         return CLLocationManager.authorizationStatus()
     }
     
-    public class func LocationAuthorization(background:Bool = false)->Bool {
-        return CLLocationManager.authorizationStatus() == .AuthorizedAlways || (!background && CLLocationManager.authorizationStatus() == .AuthorizedWhenInUse)
+    open class func LocationAuthorization(_ background:Bool = false)->Bool {
+        return CLLocationManager.authorizationStatus() == .authorizedAlways || (!background && CLLocationManager.authorizationStatus() == .authorizedWhenInUse)
     }
     
     /**
@@ -370,7 +370,7 @@ public class ICanHas {
      - parameter mngr:       CLLocationManager
      - parameter closure:    是否授权/授权状态/是否允许
      */
-    public class func Location(background:Bool = false, manager mngr:CLLocationManager? = nil, closure:(authorized:Bool,status:CLAuthorizationStatus, denied:Bool) -> Void) {
+    open class func Location(_ background:Bool = false, manager mngr:CLLocationManager? = nil, closure:@escaping (_ authorized:Bool,_ status:CLAuthorizationStatus, _ denied:Bool) -> Void) {
         onMain {
             ICanHas.hasLocationClosures.append(closure)
             let currentStatus = CLLocationManager.authorizationStatus()
@@ -381,7 +381,7 @@ public class ICanHas {
                     (authorized: Bool, status: CLAuthorizationStatus, denied:Bool) -> Void in
                     let array = ICanHas.hasLocationClosures
                     ICanHas.hasLocationClosures = []
-                    let _ = array.map{$0(authorized:authorized, status:status, denied:denied)}
+                    let _ = array.map{$0(authorized, status, denied)}
                     ICanHas.isHasingLocation = false
                 }
                 
@@ -390,19 +390,19 @@ public class ICanHas {
                 }
                 
                 switch currentStatus {
-                case .AuthorizedAlways:
+                case .authorizedAlways:
                     callback(true, false)
-                case .Denied:
+                case .denied:
                     callback(false, true)
-                case .Restricted:
+                case .restricted:
                     callback(false, true )
-                case .AuthorizedWhenInUse:
+                case .authorizedWhenInUse:
                     if background {
                         fallthrough
                     }else {
                         callback(true, false)
                     }
-                case .NotDetermined:
+                case .notDetermined:
                     var manager:CLLocationManager! = mngr ?? CLLocationManager()
                     
                     //                    let managerDelegate:CLLocationManagerDelegate
@@ -462,15 +462,15 @@ public class ICanHas {
                             completed = true
                             manager = nil
                             if let object = foregroundObject {
-                                NSNotificationCenter.defaultCenter().removeObserver(object)
+                                NotificationCenter.default.removeObserver(object)
                             }
                             if let object = backgroundObject {
-                                NSNotificationCenter.defaultCenter().removeObserver(object)
+                                NotificationCenter.default.removeObserver(object)
                             }
                             foregroundObject = nil
                             backgroundObject = nil
                             let status = CLLocationManager.authorizationStatus()
-                            if status == .AuthorizedAlways || (!background && status == .AuthorizedWhenInUse) {
+                            if status == .authorizedAlways || (!background && status == .authorizedWhenInUse) {
                                 done(worked && true, status, false)
                             }else {
                                 done(false, status, false)
@@ -478,23 +478,23 @@ public class ICanHas {
                         }
                     }
                     
-                    dispatch_after(dispatch_time(DISPATCH_TIME_NOW,Int64(1 * Double(NSEC_PER_SEC))),dispatch_get_main_queue(), {
+                    DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + Double(Int64(1 * Double(NSEC_PER_SEC))) / Double(NSEC_PER_SEC), execute: {
                         if canTimeOut {
                             hasTimedOut = true
                             if let object = backgroundObject {
-                                NSNotificationCenter.defaultCenter().removeObserver(object)
+                                NotificationCenter.default.removeObserver(object)
                                 backgroundObject = nil
                                 complete(false)
                             }
                         }
                     })
                     
-                    backgroundObject = NSNotificationCenter.defaultCenter().addObserverForName(UIApplicationWillResignActiveNotification, object: nil, queue: nil) {
+                    backgroundObject = NotificationCenter.default.addObserver(forName: NSNotification.Name.UIApplicationWillResignActive, object: nil, queue: nil) {
                         _ in
                         canTimeOut = false
                     }
                     
-                    foregroundObject = NSNotificationCenter.defaultCenter().addObserverForName(UIApplicationDidBecomeActiveNotification, object: nil, queue: nil) {
+                    foregroundObject = NotificationCenter.default.addObserver(forName: NSNotification.Name.UIApplicationDidBecomeActive, object: nil, queue: nil) {
                         _ in
                         if !hasTimedOut {
                             complete(true)
@@ -537,8 +537,8 @@ public class ICanHas {
                     // 需要WhenInUse/Always权限的用户提示信息
                     if background {
                         assert(
-                            NSBundle.mainBundle().objectForInfoDictionaryKey(
-                                "NSLocationAlwaysUsageDescription"
+                            Bundle.main.object(
+                                forInfoDictionaryKey: "NSLocationAlwaysUsageDescription"
                                 ) != nil,
                             "Make sure to add the key 'NSLocationAlwaysUsageDescription' to your info.plist file!"
                         )
@@ -546,8 +546,8 @@ public class ICanHas {
                     } else {
                         debugPrint("RIGHT NOW REQUESTING!!!!!", terminator: "")
                         assert(
-                            NSBundle.mainBundle().objectForInfoDictionaryKey(
-                                "NSLocationWhenInUseUsageDescription"
+                            Bundle.main.object(
+                                forInfoDictionaryKey: "NSLocationWhenInUseUsageDescription"
                                 ) != nil,
                             "Make sure to add the key 'NSLocationWhenInUseUsageDescription' to your info.plist file!"
                         )

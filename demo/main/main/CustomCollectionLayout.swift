@@ -14,20 +14,20 @@ import UIKit
 class CustomLayout : UICollectionViewLayout {
 
     // 内容区域总大小，不是可见区域
-    override func collectionViewContentSize() -> CGSize {
-        return CGSizeMake(collectionView!.bounds.size.width,
-                          CGFloat(collectionView!.numberOfItemsInSection(0) * 200 / 3 + 200))
+    override var collectionViewContentSize : CGSize {
+        return CGSize(width: collectionView!.bounds.size.width,
+                          height: CGFloat(collectionView!.numberOfItems(inSection: 0) * 200 / 3 + 200))
     }
 
     // 所有单元格位置属性
-    override func layoutAttributesForElementsInRect(rect: CGRect)
+    override func layoutAttributesForElements(in rect: CGRect)
         -> [UICollectionViewLayoutAttributes]? {
             var attributesArray = [UICollectionViewLayoutAttributes]()
-            let cellCount = self.collectionView!.numberOfItemsInSection(0)
+            let cellCount = self.collectionView!.numberOfItems(inSection: 0)
             for i in 0..<cellCount {
-                let indexPath =  NSIndexPath(forItem:i, inSection:0)
+                let indexPath =  IndexPath(item:i, section:0)
 
-                let attributes =  self.layoutAttributesForItemAtIndexPath(indexPath)
+                let attributes =  self.layoutAttributesForItem(at: indexPath)
 
                 attributesArray.append(attributes!)
 
@@ -36,10 +36,10 @@ class CustomLayout : UICollectionViewLayout {
     }
 
     // 这个方法返回每个单元格的位置和大小
-    override func layoutAttributesForItemAtIndexPath(indexPath: NSIndexPath)
+    override func layoutAttributesForItem(at indexPath: IndexPath)
         -> UICollectionViewLayoutAttributes? {
             //当前单元格布局属性
-            let attribute =  UICollectionViewLayoutAttributes(forCellWithIndexPath:indexPath)
+            let attribute =  UICollectionViewLayoutAttributes(forCellWith:indexPath)
 
             //单元格外部空隙，简单起见，这些常量都在方法内部定义了，没有共享为类成员
             //let itemSpacing = 2
@@ -53,7 +53,7 @@ class CustomLayout : UICollectionViewLayout {
             let insets = UIEdgeInsetsMake(2, 5, 2, 5)
 
             //当前行数，每行显示3个图片，1大2小
-            let line:Int =  indexPath.item / 3
+            let line:Int =  (indexPath as NSIndexPath).item / 3
             //当前行的Y坐标
             let lineOriginY =  largeCellSide * CGFloat(line) + CGFloat(lineSpacing * line)
                 + insets.top
@@ -62,24 +62,24 @@ class CustomLayout : UICollectionViewLayout {
             let rightSmallX =  collectionView!.bounds.size.width - smallCellSide - insets.right
 
             // 每行2个图片，2行循环一次，一共6种位置
-            if (indexPath.item % 6 == 0) {
-                attribute.frame = CGRectMake(insets.left, lineOriginY, largeCellSide,
-                                             largeCellSide)
-            } else if (indexPath.item % 6 == 1) {
-                attribute.frame = CGRectMake(rightSmallX, lineOriginY, smallCellSide,
-                                             smallCellSide)
-            } else if (indexPath.item % 6 == 2) {
-                attribute.frame = CGRectMake(rightSmallX,
-                                             lineOriginY + smallCellSide + insets.top, smallCellSide, smallCellSide)
-            } else if (indexPath.item % 6 == 3) {
-                attribute.frame = CGRectMake(insets.left, lineOriginY, smallCellSide,
-                                             smallCellSide )
-            } else if (indexPath.item % 6 == 4) {
-                attribute.frame = CGRectMake(insets.left,
-                                             lineOriginY + smallCellSide + insets.top, smallCellSide, smallCellSide)
-            } else if (indexPath.item % 6 == 5) {
-                attribute.frame = CGRectMake(rightLargeX, lineOriginY, largeCellSide,
-                                             largeCellSide)
+            if ((indexPath as NSIndexPath).item % 6 == 0) {
+                attribute.frame = CGRect(x: insets.left, y: lineOriginY, width: largeCellSide,
+                                             height: largeCellSide)
+            } else if ((indexPath as NSIndexPath).item % 6 == 1) {
+                attribute.frame = CGRect(x: rightSmallX, y: lineOriginY, width: smallCellSide,
+                                             height: smallCellSide)
+            } else if ((indexPath as NSIndexPath).item % 6 == 2) {
+                attribute.frame = CGRect(x: rightSmallX,
+                                             y: lineOriginY + smallCellSide + insets.top, width: smallCellSide, height: smallCellSide)
+            } else if ((indexPath as NSIndexPath).item % 6 == 3) {
+                attribute.frame = CGRect(x: insets.left, y: lineOriginY, width: smallCellSide,
+                                             height: smallCellSide )
+            } else if ((indexPath as NSIndexPath).item % 6 == 4) {
+                attribute.frame = CGRect(x: insets.left,
+                                             y: lineOriginY + smallCellSide + insets.top, width: smallCellSide, height: smallCellSide)
+            } else if ((indexPath as NSIndexPath).item % 6 == 5) {
+                attribute.frame = CGRect(x: rightLargeX, y: lineOriginY, width: largeCellSide,
+                                             height: largeCellSide)
             }
 
             return attribute

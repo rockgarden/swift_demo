@@ -15,41 +15,41 @@ private var kStatusBarMaskKey = "kStatusBarMaskKey"
 
 extension UINavigationBar {
 
-	public func mSetStatusBarMaskColor(color: UIColor) {
+	public func mSetStatusBarMaskColor(_ color: UIColor) {
 		if statusBarMask == nil {
-			statusBarMask = UIView(frame: CGRect(x: 0, y: -20, width: UIScreen.mainScreen().bounds.width, height: 20))
-			statusBarMask?.autoresizingMask = [.FlexibleWidth, .FlexibleHeight]
+			statusBarMask = UIView(frame: CGRect(x: 0, y: -20, width: UIScreen.main.bounds.width, height: 20))
+			statusBarMask?.autoresizingMask = [.flexibleWidth, .flexibleHeight]
 			if let tempBackgroundView = backgroundView {
 				insertSubview(statusBarMask!, aboveSubview: tempBackgroundView)
 			} else {
-				insertSubview(statusBarMask!, atIndex: 0)
+				insertSubview(statusBarMask!, at: 0)
 			}
 		}
 		statusBarMask?.backgroundColor = color
 	}
 
 	// TODO:判断statusBar有否隐藏
-	public func mSetBackgroundColor(color: UIColor) {
+	public func mSetBackgroundColor(_ color: UIColor) {
 		if backgroundView == nil {
-			setBackgroundImage(UIImage(), forBarMetrics: .Default)
+			setBackgroundImage(UIImage(), for: .default)
 			shadowImage = UIImage()
-			backgroundView = UIView(frame: CGRect(x: 0, y: -20, width: UIScreen.mainScreen().bounds.width, height: 64))
-			backgroundView?.userInteractionEnabled = false
-			backgroundView?.autoresizingMask = [.FlexibleHeight, .FlexibleWidth]
-			insertSubview(backgroundView!, atIndex: 0)
+			backgroundView = UIView(frame: CGRect(x: 0, y: -20, width: UIScreen.main.bounds.width, height: 64))
+			backgroundView?.isUserInteractionEnabled = false
+			backgroundView?.autoresizingMask = [.flexibleHeight, .flexibleWidth]
+			insertSubview(backgroundView!, at: 0)
 		}
 		backgroundView?.backgroundColor = color
 	}
 
 	public func resetBackgroundColor() {
-		setBackgroundImage(nil, forBarMetrics: .Default)
+		setBackgroundImage(nil, for: .default)
 		shadowImage = nil
 		backgroundView?.removeFromSuperview()
 		backgroundView = nil
 	}
 
 	// MARK: Properties
-	private var backgroundView: UIView? {
+	fileprivate var backgroundView: UIView? {
 		get {
 			return objc_getAssociatedObject(self, &kBackgroundViewKey) as? UIView
 		}
@@ -58,7 +58,7 @@ extension UINavigationBar {
 		}
 	}
 
-	private var statusBarMask: UIView? {
+	fileprivate var statusBarMask: UIView? {
 		get {
 			return objc_getAssociatedObject(self, &kStatusBarMaskKey) as? UIView
 		}

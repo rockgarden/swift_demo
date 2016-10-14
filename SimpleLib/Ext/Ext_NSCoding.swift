@@ -20,7 +20,7 @@ extension NSCoding {
 	 - parameter key:       <#key description#>
 	 - parameter value:     <#value description#>
 	 */
-	func objc_setAssociatedWeakObject(container: AnyObject, _ key: UnsafePointer<Void>, _ value: AnyObject) {
+	func objc_setAssociatedWeakObject(_ container: AnyObject, _ key: UnsafeRawPointer, _ value: AnyObject) {
 		objc_setAssociatedObject(container, key, value, .OBJC_ASSOCIATION_RETAIN_NONATOMIC)
 	}
 
@@ -32,8 +32,8 @@ extension NSCoding {
 
 	 - returns: <#return value description#>
 	 */
-	func objc_getAssociatedWeakObject(container: AnyObject, _ key: UnsafePointer<Void>) -> AnyObject {
-		let object: AnyObject? = objc_getAssociatedObject(container, key)
+	func objc_getAssociatedWeakObject(_ container: AnyObject, _ key: UnsafeRawPointer) -> AnyObject {
+		let object: AnyObject? = objc_getAssociatedObject(container, key) as AnyObject?
 		return object!
 	}
 
@@ -44,7 +44,7 @@ extension NSCoding {
 	 - parameter originalSelector: <#originalSelector description#>
 	 - parameter swizzledSelector: <#swizzledSelector description#>
 	 */
-	public static func SwizzleMethod(cls: AnyClass, _ originalSelector: Selector, _ swizzledSelector: Selector) {
+	public static func SwizzleMethod(_ cls: AnyClass, _ originalSelector: Selector, _ swizzledSelector: Selector) {
 		let originalMethod = class_getInstanceMethod(cls, originalSelector)
 		let swizzledMethod = class_getInstanceMethod(cls, swizzledSelector)
 		let didAddMethod = class_addMethod(cls, originalSelector, method_getImplementation(swizzledMethod), method_getTypeEncoding(swizzledMethod))

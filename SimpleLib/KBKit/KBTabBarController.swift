@@ -8,16 +8,16 @@
 
 import UIKit
 
-public class KBTabBarController: UITabBarController {
+open class KBTabBarController: UITabBarController {
 	
-	override public var keyCommands: [UIKeyCommand]?{
+	override open var keyCommands: [UIKeyCommand]?{
 		guard let viewControllers = viewControllers else { return nil }
 		
-		let oneCommand = UIKeyCommand(input: "1", modifierFlags: [.Command], action: #selector(KBTabBarController.oneCommand), discoverabilityTitle: "First Tab")
-		let twoCommand = UIKeyCommand(input: "2", modifierFlags: [.Command], action: #selector(KBTabBarController.twoCommand), discoverabilityTitle: "Second Tab")
-		let threeCommand = UIKeyCommand(input: "3", modifierFlags: [.Command], action: #selector(KBTabBarController.threeCommand), discoverabilityTitle: "Third Tab")
-		let fourCommand = UIKeyCommand(input: "4", modifierFlags: [.Command], action: #selector(KBTabBarController.fourCommand), discoverabilityTitle: "Fourth Tab")
-		let fiveCommand = UIKeyCommand(input: "5", modifierFlags: [.Command], action: #selector(KBTabBarController.fiveCommand), discoverabilityTitle: "Fifth Tab")
+		let oneCommand = UIKeyCommand(input: "1", modifierFlags: [.command], action: #selector(KBTabBarController.oneCommand), discoverabilityTitle: "First Tab")
+		let twoCommand = UIKeyCommand(input: "2", modifierFlags: [.command], action: #selector(KBTabBarController.twoCommand), discoverabilityTitle: "Second Tab")
+		let threeCommand = UIKeyCommand(input: "3", modifierFlags: [.command], action: #selector(KBTabBarController.threeCommand), discoverabilityTitle: "Third Tab")
+		let fourCommand = UIKeyCommand(input: "4", modifierFlags: [.command], action: #selector(KBTabBarController.fourCommand), discoverabilityTitle: "Fourth Tab")
+		let fiveCommand = UIKeyCommand(input: "5", modifierFlags: [.command], action: #selector(KBTabBarController.fiveCommand), discoverabilityTitle: "Fifth Tab")
 		var commands = [UIKeyCommand]()
 		
 		if viewControllers.count >= 1{ commands.append(oneCommand) }
@@ -28,27 +28,27 @@ public class KBTabBarController: UITabBarController {
 		return commands
 	}
 
-	@objc private func oneCommand(){
+	@objc fileprivate func oneCommand(){
 		selectedIndex = 0
 	}
 	
-	@objc private func twoCommand(){
+	@objc fileprivate func twoCommand(){
 		selectedIndex = 1
 	}
 	
-	@objc private func threeCommand(){
+	@objc fileprivate func threeCommand(){
 		selectedIndex = 2
 	}
 	
-	@objc private func fourCommand(){
+	@objc fileprivate func fourCommand(){
 		selectedIndex = 3
 	}
 	
-	@objc private func fiveCommand(){
+	@objc fileprivate func fiveCommand(){
 		selectedIndex = 4
 	}
 	
-	public override func canBecomeFirstResponder() -> Bool {
+	open override var canBecomeFirstResponder : Bool {
 		return true
 	}
 

@@ -18,7 +18,7 @@ extension UIViewController {
 	 *  向工程里所有的 view controllers 中添加一个 descriptiveName 属性
 	 *  在私有嵌套 struct 中使用 static var 这样生成的关联对象键不会污染整个命名空间
 	 */
-	private struct descriptiveAssociatedKeys {
+	fileprivate struct descriptiveAssociatedKeys {
 		static var DescriptiveName = "rockgarden power"
 	}
 
@@ -54,10 +54,10 @@ extension UIViewController {
 
 	 - returns: <#return value description#>
 	 */
-	override public class func initialize() { // 也可用 override public static func initialize()
+	override open class func initialize() { // 也可用 override public static func initialize()
 
 		struct Static {
-			static var token: dispatch_once_t = 0
+			static var token: Int = 0
 		}
 
 		// make sure this isn't a subclass
@@ -73,7 +73,7 @@ extension UIViewController {
 		}
 	}
 
-	func interactiveViewWillAppear(animated: Bool) {
+	func interactiveViewWillAppear(_ animated: Bool) {
 		interactiveViewWillAppear(animated)
 		if let name = self.descriptiveName {
 			debugPrint("viewWillAppear: \(name)")
@@ -85,7 +85,7 @@ extension UIViewController {
 	}
 
 	func km_containerViewBackgroundColor() -> UIColor {
-		return UIColor.whiteColor()
+		return UIColor.white
 	}
 
 }

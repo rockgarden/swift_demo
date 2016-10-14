@@ -20,43 +20,43 @@ class SignupViewController: UIViewController {
 		super.viewDidLoad()
 
 		self.navigationItem.title = "注册"
-		self.view.backgroundColor = UIColor.whiteColor()
+		self.view.backgroundColor = UIColor.white
 
-		self.nameText = UITextField(frame: CGRectZero)
+		self.nameText = UITextField(frame: CGRect.zero)
 		self.nameText.textColor = kRGBA(0, g: 0, b: 0, a: 0.8)
-		self.nameText.borderStyle = UITextBorderStyle.RoundedRect
+		self.nameText.borderStyle = UITextBorderStyle.roundedRect
 		self.nameText.placeholder = "用户名"
-		self.nameText.font = UIFont.systemFontOfSize(14)
+		self.nameText.font = UIFont.systemFont(ofSize: 14)
 		self.nameText.layoutIfNeeded()
 
-		passwordText = UITextField(frame: CGRectZero)
+		passwordText = UITextField(frame: CGRect.zero)
 		passwordText.placeholder = "密码"
-		passwordText.borderStyle = UITextBorderStyle.RoundedRect
-		passwordText.font = UIFont.systemFontOfSize(14)
+		passwordText.borderStyle = UITextBorderStyle.roundedRect
+		passwordText.font = UIFont.systemFont(ofSize: 14)
 		passwordText.textColor = kRGBA(0, g: 0, b: 0, a: 0.8)
-		passwordText.secureTextEntry = true
+		passwordText.isSecureTextEntry = true
 		passwordText.layoutIfNeeded()
 
 		authCodeView = AuthcodeView()
-		authCodeView!.frame = CGRectZero
+		authCodeView!.frame = CGRect.zero
 
-		self.codeText = UITextField(frame: CGRectZero)
+		self.codeText = UITextField(frame: CGRect.zero)
 		self.codeText.textColor = kRGBA(0, g: 0, b: 0, a: 0.8)
-		self.codeText.borderStyle = UITextBorderStyle.RoundedRect
+		self.codeText.borderStyle = UITextBorderStyle.roundedRect
 		self.codeText.placeholder = "验证码"
-		self.codeText.font = UIFont.systemFontOfSize(14)
+		self.codeText.font = UIFont.systemFont(ofSize: 14)
 		self.codeText.layoutIfNeeded()
 
-		let signupButton = UIButton(type: UIButtonType.Custom)
-		signupButton.frame = CGRectZero
-		signupButton.titleLabel?.font = UIFont.boldSystemFontOfSize(16)
-		signupButton.setTitleColor(kRGBA(0, g: 0, b: 0, a: 1), forState: UIControlState.Normal)
-		signupButton.setTitle("注册", forState: UIControlState.Normal)
-		signupButton.backgroundColor = UIColor.lightGrayColor()
+		let signupButton = UIButton(type: UIButtonType.custom)
+		signupButton.frame = CGRect.zero
+		signupButton.titleLabel?.font = UIFont.boldSystemFont(ofSize: 16)
+		signupButton.setTitleColor(kRGBA(0, g: 0, b: 0, a: 1), for: UIControlState())
+		signupButton.setTitle("注册", for: UIControlState())
+		signupButton.backgroundColor = UIColor.lightGray
 		signupButton.layer.cornerRadius = 4
 		signupButton.layer.masksToBounds = true
 		signupButton.layoutIfNeeded()
-		signupButton.addTarget(self, action: #selector(SignupViewController.signupButtonPress(_:)), forControlEvents: UIControlEvents.TouchUpInside)
+		signupButton.addTarget(self, action: #selector(SignupViewController.signupButtonPress(_:)), for: UIControlEvents.touchUpInside)
 
 		self.view.addSubview(nameText)
 		self.view.addSubview(passwordText)
@@ -73,13 +73,13 @@ class SignupViewController: UIViewController {
 
 		let views: [String: AnyObject] = ["nameText": nameText, "passwordText": passwordText, "signupButton": signupButton, "authCodeView": authCodeView!, "codeText": self.codeText]
 		// 创建水平方向约束
-		self.view.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat("H:|-20-[nameText]-20-|", options: NSLayoutFormatOptions.DirectionLeadingToTrailing, metrics: nil, views: views))
-		self.view.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat("H:|-20-[passwordText]-20-|", options: NSLayoutFormatOptions.DirectionLeadingToTrailing, metrics: nil, views: views))
-		self.view.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat("H:|-20-[codeText]-15-[authCodeView(==100)]-20-|", options: NSLayoutFormatOptions.DirectionLeadingToTrailing, metrics: nil, views: views))
-		self.view.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat("H:|-20-[signupButton]-20-|", options: NSLayoutFormatOptions.DirectionLeadingToTrailing, metrics: nil, views: views))
+		self.view.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "H:|-20-[nameText]-20-|", options: NSLayoutFormatOptions(), metrics: nil, views: views))
+		self.view.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "H:|-20-[passwordText]-20-|", options: NSLayoutFormatOptions(), metrics: nil, views: views))
+		self.view.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "H:|-20-[codeText]-15-[authCodeView(==100)]-20-|", options: NSLayoutFormatOptions(), metrics: nil, views: views))
+		self.view.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "H:|-20-[signupButton]-20-|", options: NSLayoutFormatOptions(), metrics: nil, views: views))
 		// 创建垂直方向约束
-		self.view.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat("V:|-84-[nameText(==40)]-20-[passwordText(==40)]-20-[authCodeView(==40)]-20-[signupButton(==40)]", options: NSLayoutFormatOptions.DirectionLeadingToTrailing, metrics: nil, views: views))
-		self.view.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat("V:|-84-[nameText(==40)]-20-[passwordText(==40)]-20-[codeText(==40)]-20-[signupButton(==40)]", options: NSLayoutFormatOptions.DirectionLeadingToTrailing, metrics: nil, views: views))
+		self.view.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "V:|-84-[nameText(==40)]-20-[passwordText(==40)]-20-[authCodeView(==40)]-20-[signupButton(==40)]", options: NSLayoutFormatOptions(), metrics: nil, views: views))
+		self.view.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "V:|-84-[nameText(==40)]-20-[passwordText(==40)]-20-[codeText(==40)]-20-[signupButton(==40)]", options: NSLayoutFormatOptions(), metrics: nil, views: views))
 
 	}
 
@@ -87,34 +87,34 @@ class SignupViewController: UIViewController {
 		super.didReceiveMemoryWarning()
 	}
 
-	func signupButtonPress(sender: UIButton) {
-		if nameText.text?.lengthOfBytesUsingEncoding(NSUTF8StringEncoding) == 0 || passwordText.text?.lengthOfBytesUsingEncoding(NSUTF8StringEncoding) == 0 || codeText.text?.lengthOfBytesUsingEncoding(NSUTF8StringEncoding) == 0 {
-			let alert: UIAlertController = UIAlertController(title: "提示", message: "信息补全", preferredStyle: UIAlertControllerStyle.Alert)
-			let action = UIAlertAction(title: "确定", style: UIAlertActionStyle.Default, handler: nil)
+	func signupButtonPress(_ sender: UIButton) {
+		if nameText.text?.lengthOfBytes(using: String.Encoding.utf8) == 0 || passwordText.text?.lengthOfBytes(using: String.Encoding.utf8) == 0 || codeText.text?.lengthOfBytes(using: String.Encoding.utf8) == 0 {
+			let alert: UIAlertController = UIAlertController(title: "提示", message: "信息补全", preferredStyle: UIAlertControllerStyle.alert)
+			let action = UIAlertAction(title: "确定", style: UIAlertActionStyle.default, handler: nil)
 			alert.addAction(action)
-			self.presentViewController(alert, animated: true, completion: { () -> Void in
+			self.present(alert, animated: true, completion: { () -> Void in
 			})
 		}
 		else {
 			// 比较验证码
 			let code = (self.authCodeView?.authCodeStr)! as NSString
 			debugPrint("code = \(code) text =\(codeText.text)")
-			if codeText.text!.lowercaseString == code.lowercaseString {
+			if codeText.text!.lowercased() == code.lowercased {
 				let signin: LoginViewController = LoginViewController()
 				self.navigationController!.pushViewController(signin, animated: true)
 			}
 			else {
-				let alert: UIAlertController = UIAlertController(title: "提示", message: "验证码错误", preferredStyle: UIAlertControllerStyle.Alert)
-				let action = UIAlertAction(title: "确定", style: UIAlertActionStyle.Default, handler: nil)
+				let alert: UIAlertController = UIAlertController(title: "提示", message: "验证码错误", preferredStyle: UIAlertControllerStyle.alert)
+				let action = UIAlertAction(title: "确定", style: UIAlertActionStyle.default, handler: nil)
 				alert.addAction(action)
-				self.presentViewController(alert, animated: true, completion: { () -> Void in
+				self.present(alert, animated: true, completion: { () -> Void in
 				})
 			}
 		}
 	}
 
 	// RGBA的颜色设置
-	func kRGBA (r: CGFloat, g: CGFloat, b: CGFloat, a: CGFloat) -> UIColor {
+	func kRGBA (_ r: CGFloat, g: CGFloat, b: CGFloat, a: CGFloat) -> UIColor {
 		return UIColor(red: r / 255.0, green: g / 255.0, blue: b / 255.0, alpha: a)
 	}
 }

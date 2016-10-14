@@ -9,6 +9,6 @@
 import UIKit
 
 @objc public protocol NavigationBarColorSource {
-    optional func navigationBarInColor() -> UIColor
-    optional func navigationBarOutColor() -> UIColor
+    @objc optional func navigationBarInColor() -> UIColor
+    @objc optional func navigationBarOutColor() -> UIColor
 }

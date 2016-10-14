@@ -43,9 +43,9 @@ class MenuViewController: UIViewController {
         self.transitioningDelegate = self.transitionManager
     }
     
-    override func preferredStatusBarStyle() -> UIStatusBarStyle {
+    override var preferredStatusBarStyle : UIStatusBarStyle {
         
-        return UIStatusBarStyle.LightContent
+        return UIStatusBarStyle.lightContent
         
     }
     

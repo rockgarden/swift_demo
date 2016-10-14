@@ -10,12 +10,12 @@ import UIKit
 
 public extension UITableView {
     
-    public func indexPathForAbsoluteRow(absoluteRow: Int) -> NSIndexPath?{
+    public func indexPathForAbsoluteRow(_ absoluteRow: Int) -> IndexPath?{
         var currentRow = 0
         for section in 0..<numberOfSections{
-            for row in 0..<numberOfRowsInSection(section){
+            for row in 0..<numberOfRows(inSection: section){
                 if currentRow == absoluteRow{
-                    return NSIndexPath(forRow: row, inSection: section)
+                    return IndexPath(row: row, section: section)
                 }
                 currentRow += 1
             }
@@ -23,21 +23,21 @@ public extension UITableView {
         return nil
     }
     
-    public func absoluteRowForIndexPath(indexPath: NSIndexPath) -> Int?{
-        guard indexPath.section < self.numberOfSections else { return nil }
+    public func absoluteRowForIndexPath(_ indexPath: IndexPath) -> Int?{
+        guard (indexPath as NSIndexPath).section < self.numberOfSections else { return nil }
         var rowNumber = 0
-        for section in 0..<indexPath.section{
-            rowNumber += numberOfRowsInSection(section)
+        for section in 0..<(indexPath as NSIndexPath).section{
+            rowNumber += numberOfRows(inSection: section)
         }
-        guard indexPath.row < numberOfRowsInSection(indexPath.section) else { return nil }
-        rowNumber += indexPath.row
+        guard (indexPath as NSIndexPath).row < numberOfRows(inSection: (indexPath as NSIndexPath).section) else { return nil }
+        rowNumber += (indexPath as NSIndexPath).row
         return rowNumber
     }
     
     public func numberOfTotalRows() -> Int{
         var total = 0
         for section in 0..<numberOfSections{
-            total += numberOfRowsInSection(section)
+            total += numberOfRows(inSection: section)
         }
         return total
     }

@@ -8,19 +8,19 @@
 
 import UIKit
 
-public class KBNavigationController: UINavigationController {
+open class KBNavigationController: UINavigationController {
 
-    override public var keyCommands: [UIKeyCommand]?{
+    override open var keyCommands: [UIKeyCommand]?{
         if viewControllers.count < 2 { return [] }
-        let leftCommand = UIKeyCommand(input: UIKeyInputLeftArrow, modifierFlags: [.Command], action: #selector(KBNavigationController.backCommand), discoverabilityTitle: "Back")
+        let leftCommand = UIKeyCommand(input: UIKeyInputLeftArrow, modifierFlags: [.command], action: #selector(KBNavigationController.backCommand), discoverabilityTitle: "Back")
         return [leftCommand]
     }
     
-    @objc private func backCommand(){
-        popViewControllerAnimated(true)
+    @objc fileprivate func backCommand(){
+        popViewController(animated: true)
     }
 	
-	public override func canBecomeFirstResponder() -> Bool {
+	open override var canBecomeFirstResponder : Bool {
 		return true
 	}
 

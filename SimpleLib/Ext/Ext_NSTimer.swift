@@ -8,25 +8,25 @@
 
 import Foundation
 
-extension NSTimer {
+extension Timer {
 	/// EZSE: Runs every x seconds, to cancel use: timer.invalidate()
-	public static func runThisEvery(seconds seconds: NSTimeInterval, handler: NSTimer! -> Void) -> NSTimer {
+	public static func runThisEvery(seconds: TimeInterval, handler: @escaping (Timer!) -> Void) -> Timer {
 		let fireDate = CFAbsoluteTimeGetCurrent()
 		let timer = CFRunLoopTimerCreateWithHandler(kCFAllocatorDefault, fireDate, seconds, 0, 0, handler)
-		CFRunLoopAddTimer(CFRunLoopGetCurrent(), timer, kCFRunLoopCommonModes)
+		CFRunLoopAddTimer(CFRunLoopGetCurrent(), timer, CFRunLoopMode.commonModes)
 		return timer
 	}
 
 	/// EZSE: Run function after x seconds
-	public static func runThisAfterDelay(seconds seconds: Double, after: () -> ()) {
-		runThisAfterDelay(seconds: seconds, queue: dispatch_get_main_queue(), after: after)
+	public static func runThisAfterDelay(seconds: Double, after: @escaping () -> ()) {
+		runThisAfterDelay(seconds: seconds, queue: DispatchQueue.main, after: after)
 	}
 
 	// TODO: Make this easier
 	/// EZSwiftExtensions - dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_LOW, 0)
-	public static func runThisAfterDelay(seconds seconds: Double, queue: dispatch_queue_t, after: () -> ()) {
-		let time = dispatch_time(DISPATCH_TIME_NOW, Int64(seconds * Double(NSEC_PER_SEC)))
-		dispatch_after(time, queue, after)
+	public static func runThisAfterDelay(seconds: Double, queue: DispatchQueue, after: @escaping () -> ()) {
+		let time = DispatchTime.now() + Double(Int64(seconds * Double(NSEC_PER_SEC))) / Double(NSEC_PER_SEC)
+		queue.asyncAfter(deadline: time, execute: after)
 	}
 
 	public typealias TimerExcuteClosure = @convention(block)() -> ()
@@ -40,34 +40,34 @@ extension NSTimer {
 
 	 - returns: <#return value description#>
 	 */
-	public class func OC_ScheduledTimerWithTimeInterval(ti: NSTimeInterval, closure: TimerExcuteClosure, repeats yesOrNo: Bool) -> NSTimer {
-		return self.scheduledTimerWithTimeInterval(ti, target: self, selector: #selector(NSTimer.excuteTimerClosure(_:)), userInfo: unsafeBitCast(closure, AnyObject.self), repeats: true)
+	public class func OC_ScheduledTimerWithTimeInterval(_ ti: TimeInterval, closure: TimerExcuteClosure, repeats yesOrNo: Bool) -> Timer {
+		return self.scheduledTimer(timeInterval: ti, target: self, selector: #selector(Timer.excuteTimerClosure(_:)), userInfo: unsafeBitCast(closure, to: AnyObject.self), repeats: true)
 	}
 
-	class func excuteTimerClosure(timer: NSTimer)
+	class func excuteTimerClosure(_ timer: Timer)
 	{
-		let closure = unsafeBitCast(timer.userInfo, TimerExcuteClosure.self)
+		let closure = unsafeBitCast(timer.userInfo, to: TimerExcuteClosure.self)
 		closure()
 	}
 
 }
 
-extension NSTimer {
+extension Timer {
 
     // MARK: Schedule timers
 
     /// Create and schedule a timer that will call `block` once after the specified time.
 
-    public class func after(interval: NSTimeInterval, _ block: () -> Void) -> NSTimer {
-        let timer = NSTimer.new(after: interval, block)
+    public class func after(_ interval: TimeInterval, _ block: @escaping () -> Void) -> Timer {
+        let timer = Timer.new(after: interval, block)
         timer.start()
         return timer
     }
 
     /// Create and schedule a timer that will call `block` repeatedly in specified time intervals.
 
-    public class func every(interval: NSTimeInterval, _ block: () -> Void) -> NSTimer {
-        let timer = NSTimer.new(every: interval, block)
+    public class func every(_ interval: TimeInterval, _ block: () -> Void) -> Timer {
+        let timer = Timer.new(every: interval, block)
         timer.start()
         return timer
     }
@@ -75,8 +75,8 @@ extension NSTimer {
     /// Create and schedule a timer that will call `block` repeatedly in specified time intervals.
     /// (This variant also passes the timer instance to the block)
 
-    @nonobjc public class func every(interval: NSTimeInterval, _ block: NSTimer -> Void) -> NSTimer {
-        let timer = NSTimer.new(every: interval, block)
+    @nonobjc public class func every(_ interval: TimeInterval, _ block: (Timer) -> Void) -> Timer {
+        let timer = Timer.new(every: interval, block)
         timer.start()
         return timer
     }
@@ -89,7 +89,7 @@ extension NSTimer {
     ///         Use `NSTimer.after` to create and schedule a timer in one step.
     /// - Note: The `new` class function is a workaround for a crashing bug when using convenience initializers (rdar://18720947)
 
-    public class func new(after interval: NSTimeInterval, _ block: () -> Void) -> NSTimer {
+    public class func new(after interval: TimeInterval, _ block: @escaping () -> Void) -> Timer {
         return CFRunLoopTimerCreateWithHandler(kCFAllocatorDefault, CFAbsoluteTimeGetCurrent() + interval, 0, 0, 0) { _ in
             block()
         }
@@ -101,7 +101,7 @@ extension NSTimer {
     ///         Use `NSTimer.every` to create and schedule a timer in one step.
     /// - Note: The `new` class function is a workaround for a crashing bug when using convenience initializers (rdar://18720947)
 
-    public class func new(every interval: NSTimeInterval, _ block: () -> Void) -> NSTimer {
+    public class func new(every interval: TimeInterval, _ block: @escaping () -> Void) -> Timer {
         return CFRunLoopTimerCreateWithHandler(kCFAllocatorDefault, CFAbsoluteTimeGetCurrent() + interval, interval, 0, 0) { _ in
             block()
         }
@@ -114,8 +114,8 @@ extension NSTimer {
     ///         Use `NSTimer.every` to create and schedule a timer in one step.
     /// - Note: The `new` class function is a workaround for a crashing bug when using convenience initializers (rdar://18720947)
 
-    @nonobjc public class func new(every interval: NSTimeInterval, _ block: NSTimer -> Void) -> NSTimer {
-        var timer: NSTimer!
+    @nonobjc public class func new(every interval: TimeInterval, _ block: @escaping (Timer) -> Void) -> Timer {
+        var timer: Timer!
         timer = CFRunLoopTimerCreateWithHandler(kCFAllocatorDefault, CFAbsoluteTimeGetCurrent() + interval, interval, 0, 0) { _ in
             block(timer)
         }
@@ -129,11 +129,11 @@ extension NSTimer {
     /// By default, the timer is scheduled on the current run loop for the default mode.
     /// Specify `runLoop` or `modes` to override these defaults.
 
-    public func start(runLoop runLoop: NSRunLoop = NSRunLoop.currentRunLoop(), modes: String...) {
-        let modes = modes.isEmpty ? [NSDefaultRunLoopMode] : modes
+    public func start(runLoop: RunLoop = RunLoop.current, modes: String...) {
+        let modes = modes.isEmpty ? [RunLoopMode.defaultRunLoopMode] : modes
 
         for mode in modes {
-            runLoop.addTimer(self, forMode: mode)
+            runLoop.add(self, forMode: mode)
         }
     }
 }
@@ -141,19 +141,19 @@ extension NSTimer {
 // MARK: - Time extensions
 
 extension Double {
-    public var millisecond: NSTimeInterval  { return self / 1000 }
-    public var milliseconds: NSTimeInterval { return self / 1000 }
-    public var ms: NSTimeInterval           { return self / 1000 }
+    public var millisecond: TimeInterval  { return self / 1000 }
+    public var milliseconds: TimeInterval { return self / 1000 }
+    public var ms: TimeInterval           { return self / 1000 }
 
-    public var second: NSTimeInterval       { return self }
-    public var seconds: NSTimeInterval      { return self }
+    public var second: TimeInterval       { return self }
+    public var seconds: TimeInterval      { return self }
 
-    public var minute: NSTimeInterval       { return self * 60 }
-    public var minutes: NSTimeInterval      { return self * 60 }
+    public var minute: TimeInterval       { return self * 60 }
+    public var minutes: TimeInterval      { return self * 60 }
 
-    public var hour: NSTimeInterval         { return self * 3600 }
-    public var hours: NSTimeInterval        { return self * 3600 }
+    public var hour: TimeInterval         { return self * 3600 }
+    public var hours: TimeInterval        { return self * 3600 }
 
-    public var day: NSTimeInterval          { return self * 3600 * 24 }
-    public var days: NSTimeInterval         { return self * 3600 * 24 }
+    public var day: TimeInterval          { return self * 3600 * 24 }
+    public var days: TimeInterval         { return self * 3600 * 24 }
 }

@@ -24,57 +24,57 @@ let LON_MERID_IERS: Double = (3 * M_PI / 180)
 
 /// Enum grouping all element about zones.
 public enum LambertZone: Int {
-	case I = 0
-	case II
-	case III
-	case IV
-	case II_E
-	case L93
+	case i = 0
+	case ii
+	case iii
+	case iv
+	case ii_E
+	case l93
 	var n: Double {
 		get {
 			switch self {
-			case .I: return 0.7604059656
-			case .II: return 0.7289686274
-			case .III: return 0.6959127966
-			case .IV: return 0.6712679322
-			case .II_E: return 0.7289686274
-			case .L93: return 0.7256077650
+			case .i: return 0.7604059656
+			case .ii: return 0.7289686274
+			case .iii: return 0.6959127966
+			case .iv: return 0.6712679322
+			case .ii_E: return 0.7289686274
+			case .l93: return 0.7256077650
 			}
 		}
 	}
 	var c: Double {
 		get {
 			switch self {
-			case .I: return 11603796.98
-			case .II: return 11745793.39
-			case .III: return 11947992.52
-			case .IV: return 12136281.99
-			case .II_E: return 11745793.39
-			case .L93: return 11754255.426
+			case .i: return 11603796.98
+			case .ii: return 11745793.39
+			case .iii: return 11947992.52
+			case .iv: return 12136281.99
+			case .ii_E: return 11745793.39
+			case .l93: return 11754255.426
 			}
 		}
 	}
 	var xs: Double {
 		get {
 			switch self {
-			case .I: return 600000.0
-			case .II: return 600000.0
-			case .III: return 600000.0
-			case .IV: return 234.358
-			case .II_E: return 600000.0
-			case .L93: return 700000.0
+			case .i: return 600000.0
+			case .ii: return 600000.0
+			case .iii: return 600000.0
+			case .iv: return 234.358
+			case .ii_E: return 600000.0
+			case .l93: return 700000.0
 			}
 		}
 	}
 	var ys: Double {
 		get {
 			switch self {
-			case .I: return 5657616.674
-			case .II: return 6199695.768
-			case .III: return 6791905.085
-			case .IV: return 7239161.542
-			case .II_E: return 8199695.768
-			case .L93: return 12655612.050
+			case .i: return 5657616.674
+			case .ii: return 6199695.768
+			case .iii: return 6791905.085
+			case .iv: return 7239161.542
+			case .ii_E: return 8199695.768
+			case .l93: return 12655612.050
 			}
 		}
 	}
@@ -88,11 +88,11 @@ internal struct Point {
 
 internal let EPS = 10e6
 
-internal func latitudeISOFromLatitude(lat: Double, e: Double) -> Double {
+internal func latitudeISOFromLatitude(_ lat: Double, e: Double) -> Double {
 	return log(tan(M_PI_4 + lat / 2) * pow((1 - e * sin(lat)) / (1 + e * sin(lat)), e / 2));
 }
 
-internal func latitudeFromLatitudeISO(lat_iso: Double, e: Double, eps: Double) -> Double {
+internal func latitudeFromLatitudeISO(_ lat_iso: Double, e: Double, eps: Double) -> Double {
 	var phi_0: Double = 2 * atan(exp(lat_iso)) - M_PI_2
 	var phi_i: Double = 2 * atan(pow((1 + e * sin(phi_0)) / (1 - e * sin(phi_0)), e / 2.0) * exp(lat_iso)) - M_PI_2
 	var delta: Double = 1000
@@ -104,7 +104,7 @@ internal func latitudeFromLatitudeISO(lat_iso: Double, e: Double, eps: Double) -
 	return phi_i
 }
 
-internal func lamberToGeographic(org: Point, zone: LambertZone, lon_merid: Double, e: Double, eps: Double) -> Point {
+internal func lamberToGeographic(_ org: Point, zone: LambertZone, lon_merid: Double, e: Double, eps: Double) -> Point {
 	let n = zone.n
 	let C = zone.c
 	let x_s = zone.xs
@@ -120,11 +120,11 @@ internal func lamberToGeographic(org: Point, zone: LambertZone, lon_merid: Doubl
 	return Point(x: lon, y: latitudeFromLatitudeISO(lat_iso, e: e, eps: eps), z: 0)
 }
 
-internal func lambertNormal(lat: Double, a: Double, e: Double) -> Double {
+internal func lambertNormal(_ lat: Double, a: Double, e: Double) -> Double {
 	return a / sqrt(1 - e * e * sin(lat) * sin(lat))
 }
 
-internal func geographicToCartesian(lon: Double, lat: Double, he: Double, a: Double, e: Double) -> Point {
+internal func geographicToCartesian(_ lon: Double, lat: Double, he: Double, a: Double, e: Double) -> Point {
 	let N = lambertNormal(lat, a: a, e: e)
 	var pt = Point(x: 0, y: 0, z: 0)
 	pt.x = (N + he) * cos(lat) * cos(lon)
@@ -133,7 +133,7 @@ internal func geographicToCartesian(lon: Double, lat: Double, he: Double, a: Dou
 	return pt
 }
 
-internal func cartesianToGeographic(org: Point, meridian: Double, a: Double, e: Double, eps: Double) -> Point {
+internal func cartesianToGeographic(_ org: Point, meridian: Double, a: Double, e: Double, eps: Double) -> Point {
 	let x = org.x, y = org.y, z = org.z;
 	let lon = meridian + atan(y / x)
 	let module = sqrt(x * x + y * y)
@@ -151,9 +151,9 @@ internal func cartesianToGeographic(org: Point, meridian: Double, a: Double, e: 
 	return Point(x: lon, y: phi_i, z: he)
 }
 
-internal func pointToWGS84(point: Point, zone: LambertZone) -> Point {
+internal func pointToWGS84(_ point: Point, zone: LambertZone) -> Point {
 	var dest: Point
-	if (.L93 == zone) {
+	if (.l93 == zone) {
 		dest = lamberToGeographic(point, zone: zone, lon_merid: LON_MERID_IERS, e: E_WGS84, eps: EPS)
 	} else {
 		dest = lamberToGeographic(point, zone: zone, lon_merid: LON_MERID_PARIS, e: E_CLARK_IGN, eps: EPS)
@@ -179,18 +179,18 @@ internal func toMars() -> (Double, Double) {
 	return (lat: MarsLat, lon: MarsLon)
 }
 
-internal func outOfChina(lat: Double, lon: Double) -> Bool {
+internal func outOfChina(_ lat: Double, lon: Double) -> Bool {
 	if (lon < 72.004 || lon > 137.8347 || lat < 0.8293 || lat > 55.8271) {
 		return true
 	}
 	return false
 }
 
-internal func abs(v: Double) -> Double {
+internal func abs(_ v: Double) -> Double {
 	return v < 0 ? -v : v
 }
 
-internal func tr_lat(x: Double, y: Double) -> Double {
+internal func tr_lat(_ x: Double, y: Double) -> Double {
 	let t = abs(x)
 	var ret = -100.0 + 2.0 * x + 3.0 * y + 0.2 * y * y + 0.1 * x * y + 0.2 * sqrt(t)
 	ret += (20.0 * sin(6.0 * x * pi) + 20.0 * sin(2.0 * x * pi)) * 2.0 / 3.0
@@ -199,7 +199,7 @@ internal func tr_lat(x: Double, y: Double) -> Double {
 	return ret
 }
 
-internal func tr_lon(x: Double, y: Double) -> Double {
+internal func tr_lon(_ x: Double, y: Double) -> Double {
 	let t = abs(x)
 	var ret = 300.0 + x + 2.0 * y + 0.1 * x * x + 0.1 * x * y + 0.1 * sqrt(t)
 	ret += (20.0 * sin(6.0 * x * pi) + 20.0 * sin(2.0 * x * pi)) * 2.0 / 3.0
@@ -246,7 +246,7 @@ extension CLLocationManager {
 	 - parameter wgsLoc: WGS CLLocationCoordinate2D
 	 - returns: GCJ CLLocationCoordinate2D
 	 */
-	public func WGSToGCJ(wgsLoc: CLLocationCoordinate2D) -> CLLocationCoordinate2D {
+	public func WGSToGCJ(_ wgsLoc: CLLocationCoordinate2D) -> CLLocationCoordinate2D {
 		var adjustLoc = wgsLoc
 		if isLocationOutOfChina(wgsLoc) {
 			var adjustLat = tr_lat(wgsLoc.longitude - 105.0, y: wgsLoc.latitude - 35.0)
@@ -269,7 +269,7 @@ extension CLLocationManager {
 	 - parameter location: CLLocationCoordinate2D
 	 - returns: Bool
 	 */
-	public func isLocationOutOfChina(location: CLLocationCoordinate2D) -> Bool {
+	public func isLocationOutOfChina(_ location: CLLocationCoordinate2D) -> Bool {
 		return outOfChina(location.longitude, lon: location.longitude)
 	}
 }
