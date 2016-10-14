@@ -10,19 +10,25 @@ import UIKit
 import MapKit
 
 class MyAnotation: NSObject, MKAnnotation {
-    
-    var title: String?
-    var subtitle: String?
-    var coordinate: CLLocationCoordinate2D
-    func getTitle() -> NSString{
-        return self.title!
-    }
-    func getSubTitle() -> NSString {
-        return self.subtitle!
-    }
-    init(c:CLLocationCoordinate2D, t:String, st: String){
-        coordinate = c
-        title = t
-        subtitle = st
-    }
+
+	var title: String?
+	var subtitle: String?
+	dynamic var coordinate: CLLocationCoordinate2D
+	func getTitle() -> NSString {
+		return self.title!
+	}
+	func getSubTitle() -> NSString {
+		return self.subtitle!
+	}
+
+	init(location coord: CLLocationCoordinate2D) {
+		self.coordinate = coord
+		super.init()
+	}
+
+	init(c: CLLocationCoordinate2D, t: String, st: String) {
+		coordinate = c
+		title = t
+		subtitle = st
+	}
 }

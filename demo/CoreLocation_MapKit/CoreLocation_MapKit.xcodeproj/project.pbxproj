@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C2C5E6631DB0B8A70098C2DA /* MyAnnotationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2C5E6601DB0B8A70098C2DA /* MyAnnotationView.swift */; };
+		C2C5E6641DB0B8A70098C2DA /* MyOverlay.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2C5E6611DB0B8A70098C2DA /* MyOverlay.swift */; };
+		C2C5E6651DB0B8A70098C2DA /* MyOverlayRenderer.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2C5E6621DB0B8A70098C2DA /* MyOverlayRenderer.swift */; };
+		C2C5E6671DB0B8B70098C2DA /* clipartdirtbike.gif in Resources */ = {isa = PBXBuildFile; fileRef = C2C5E6661DB0B8B70098C2DA /* clipartdirtbike.gif */; };
+		C2C5E6691DB0B8C40098C2DA /* smileyWithTransparencyTiny.png in Resources */ = {isa = PBXBuildFile; fileRef = C2C5E6681DB0B8C40098C2DA /* smileyWithTransparencyTiny.png */; };
+		C2C5E66B1DB0B9270098C2DA /* MapVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2C5E66A1DB0B9270098C2DA /* MapVC.swift */; };
 		C2F3A3B51D6436A600DA66CB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2F3A3B41D6436A600DA66CB /* AppDelegate.swift */; };
 		C2F3A3B71D6436A600DA66CB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2F3A3B61D6436A600DA66CB /* ViewController.swift */; };
 		C2F3A3BA1D6436A600DA66CB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C2F3A3B81D6436A600DA66CB /* Main.storyboard */; };
@@ -16,6 +22,12 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		C2C5E6601DB0B8A70098C2DA /* MyAnnotationView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyAnnotationView.swift; sourceTree = "<group>"; };
+		C2C5E6611DB0B8A70098C2DA /* MyOverlay.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyOverlay.swift; sourceTree = "<group>"; };
+		C2C5E6621DB0B8A70098C2DA /* MyOverlayRenderer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyOverlayRenderer.swift; sourceTree = "<group>"; };
+		C2C5E6661DB0B8B70098C2DA /* clipartdirtbike.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = clipartdirtbike.gif; sourceTree = "<group>"; };
+		C2C5E6681DB0B8C40098C2DA /* smileyWithTransparencyTiny.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = smileyWithTransparencyTiny.png; sourceTree = "<group>"; };
+		C2C5E66A1DB0B9270098C2DA /* MapVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapVC.swift; sourceTree = "<group>"; };
 		C2F3A3B11D6436A600DA66CB /* CoreLocation_MapKit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CoreLocation_MapKit.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C2F3A3B41D6436A600DA66CB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C2F3A3B61D6436A600DA66CB /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -58,8 +70,14 @@
 			children = (
 				C2F3A3B41D6436A600DA66CB /* AppDelegate.swift */,
 				C2F3A3B61D6436A600DA66CB /* ViewController.swift */,
+				C2C5E66A1DB0B9270098C2DA /* MapVC.swift */,
+				C2C5E6601DB0B8A70098C2DA /* MyAnnotationView.swift */,
+				C2C5E6611DB0B8A70098C2DA /* MyOverlay.swift */,
+				C2C5E6621DB0B8A70098C2DA /* MyOverlayRenderer.swift */,
 				C2F3A3CD1D644C4600DA66CB /* MyAnotation.swift */,
 				C2F3A3B81D6436A600DA66CB /* Main.storyboard */,
+				C2C5E6661DB0B8B70098C2DA /* clipartdirtbike.gif */,
+				C2C5E6681DB0B8C40098C2DA /* smileyWithTransparencyTiny.png */,
 				C2F3A3BB1D6436A600DA66CB /* Assets.xcassets */,
 				C2F3A3BD1D6436A600DA66CB /* LaunchScreen.storyboard */,
 				C2F3A3C01D6436A600DA66CB /* Info.plist */,
@@ -126,7 +144,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C2C5E6671DB0B8B70098C2DA /* clipartdirtbike.gif in Resources */,
 				C2F3A3BF1D6436A600DA66CB /* LaunchScreen.storyboard in Resources */,
+				C2C5E6691DB0B8C40098C2DA /* smileyWithTransparencyTiny.png in Resources */,
 				C2F3A3BC1D6436A600DA66CB /* Assets.xcassets in Resources */,
 				C2F3A3BA1D6436A600DA66CB /* Main.storyboard in Resources */,
 			);
@@ -140,6 +160,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				C2F3A3B71D6436A600DA66CB /* ViewController.swift in Sources */,
+				C2C5E6641DB0B8A70098C2DA /* MyOverlay.swift in Sources */,
+				C2C5E6631DB0B8A70098C2DA /* MyAnnotationView.swift in Sources */,
+				C2C5E6651DB0B8A70098C2DA /* MyOverlayRenderer.swift in Sources */,
+				C2C5E66B1DB0B9270098C2DA /* MapVC.swift in Sources */,
 				C2F3A3CE1D644C4600DA66CB /* MyAnotation.swift in Sources */,
 				C2F3A3B51D6436A600DA66CB /* AppDelegate.swift in Sources */,
 			);
