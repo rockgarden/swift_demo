@@ -36,9 +36,9 @@ class ViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDele
 		myMap.addGestureRecognizer(tap)
 	}
 
-	func action(gestureRecognizer: UIGestureRecognizer) {
-		let touchPoint = gestureRecognizer.locationInView(self.myMap)
-		let newCoord: CLLocationCoordinate2D = myMap.convertPoint(touchPoint, toCoordinateFromView: self.myMap)
+	func action(_ gestureRecognizer: UIGestureRecognizer) {
+		let touchPoint = gestureRecognizer.location(in: self.myMap)
+		let newCoord: CLLocationCoordinate2D = myMap.convert(touchPoint, toCoordinateFrom: self.myMap)
 		let getLat: CLLocationDegrees = newCoord.latitude
 		let getLon: CLLocationDegrees = newCoord.longitude
 
@@ -54,7 +54,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDele
 		print("Final Longitude: \(finalLongitude)")
 
 		// distance between our position and the new point created
-		let distance = newCoord2.distanceFromLocation(newCoord3)
+		let distance = newCoord2.distance(from: newCoord3)
 		print("Distance between two points: \(distance)")
 
 		let newAnnotation = MKPointAnnotation()
@@ -64,7 +64,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDele
 		myMap.addAnnotation(newAnnotation)
 	}
 
-	func locationManager(manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+	func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
 		CLGeocoder().reverseGeocodeLocation(manager.location!, completionHandler: { (placemarks, error) -> Void in
 
 			if (error != nil) {
@@ -81,7 +81,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDele
 		})
 	}
 
-	func displayLocationInfo(placemark: CLPlacemark?) {
+	func displayLocationInfo(_ placemark: CLPlacemark?) {
 		if let containsPlacemark = placemark {
 			// stop updating location to save battery life
 			locationManager.stopUpdatingLocation()
@@ -111,15 +111,15 @@ class ViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDele
 		}
 	}
 
-	func locationManager(manager: CLLocationManager, didFailWithError error: NSError) {
+	func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
 		print("Error while updating location " + error.localizedDescription)
 	}
 
 	// distance between two points
-	func degreesToRadians(degrees: Double) -> Double { return degrees * M_PI / 180.0 }
-	func radiansToDegrees(radians: Double) -> Double { return radians * 180.0 / M_PI }
+	func degreesToRadians(_ degrees: Double) -> Double { return degrees * M_PI / 180.0 }
+	func radiansToDegrees(_ radians: Double) -> Double { return radians * 180.0 / M_PI }
 
-	func getBearingBetweenTwoPoints1(point1: CLLocation, point2: CLLocation) -> Double {
+	func getBearingBetweenTwoPoints1(_ point1: CLLocation, point2: CLLocation) -> Double {
 		let lat1 = degreesToRadians(point1.coordinate.latitude)
 		let lon1 = degreesToRadians(point1.coordinate.longitude)
 		let lat2 = degreesToRadians(point2.coordinate.latitude);
@@ -142,32 +142,32 @@ class ViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDele
 		super.didReceiveMemoryWarning()
 	}
     
-    private var set = NSMutableArray()
+    fileprivate var set = NSMutableArray()
 }
 
 extension ViewController {
     
-    @IBAction func createAnotation(sender: AnyObject) {
+    @IBAction func createAnotation(_ sender: AnyObject) {
         
         let a = MyAnotation(c: myMap.centerCoordinate, t: "Center", st: "The map center")
-        mapView(myMap, viewForAnnotation: a)
+        _ = mapView(myMap, viewFor: a)
         myMap.addAnnotation(a)
-        set.addObject(a)
+        set.add(a)
     }
     
-    @IBAction func deleteAnotation(sender: AnyObject) {
+    @IBAction func deleteAnotation(_ sender: AnyObject) {
         //new for swift 2.0
         let annotationsToRemove = self.myMap.annotations
         self.myMap.removeAnnotations(annotationsToRemove)
     }
     
-    @IBAction func coordinates(sender: AnyObject) {
+    @IBAction func coordinates(_ sender: AnyObject) {
         
         latitude.text = "\(myMap.centerCoordinate.latitude)"
         longitude.text = "\(myMap.centerCoordinate.longitude)"
     }
     
-    func mapView(mapView: MKMapView, viewForAnnotation annotation:
+    @objc(mapView:viewForAnnotation:) func mapView(_ mapView: MKMapView, viewFor annotation:
         MKAnnotation) -> MKAnnotationView?{
         let pinView:MKPinAnnotationView = MKPinAnnotationView(annotation:
             annotation, reuseIdentifier: "Custom")
