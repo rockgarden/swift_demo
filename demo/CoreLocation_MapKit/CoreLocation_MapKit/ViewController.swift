@@ -10,9 +10,8 @@ import UIKit
 import MapKit
 import CoreLocation
 
-@IBOutlet weak var horizontalStackView: UIStackView!
 class ViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDelegate {
-
+    @IBOutlet weak var horizontalStackView: UIStackView!
     @IBOutlet weak var latitude: UILabel!
     @IBOutlet weak var longitude: UILabel!
 	@IBOutlet weak var myMap: MKMapView!
@@ -89,7 +88,6 @@ class ViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDele
 
 			// get data from placemark
 			let locality = (containsPlacemark.locality != nil) ? containsPlacemark.locality : ""
-            @IBOutlet var lg: UILongPressGestureRecognizer!
 			let postalCode = (containsPlacemark.postalCode != nil) ? containsPlacemark.postalCode : ""
 			let administrativeArea = (containsPlacemark.administrativeArea != nil) ? containsPlacemark.administrativeArea : ""
 			let country = (containsPlacemark.country != nil) ? containsPlacemark.country : ""
