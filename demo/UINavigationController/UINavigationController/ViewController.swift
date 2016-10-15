@@ -5,15 +5,15 @@ import UIKit
 class ViewController : UIViewController, UINavigationControllerDelegate {
     
     var queryButton: UIButton {
-        let button = UIButton(type: .Custom)
+        let button = UIButton(type: .custom)
         button.translatesAutoresizingMaskIntoConstraints = false
-        button.setBackgroundImage(UIImage(named: "files.png"), forState: .Normal)
-        button.setBackgroundImage(UIImage(named: "key.png"), forState: .Selected)
-        button.frame = CGRectMake(0, 0, 30, 30)
+        button.setBackgroundImage(UIImage(named: "files.png"), for: UIControlState())
+        button.setBackgroundImage(UIImage(named: "key.png"), for: .selected)
+        button.frame = CGRect(x: 0, y: 0, width: 30, height: 30)
 //        button.imageRectForContentRect(CGRect(x: 2, y: 2, width: 30, height: 30))
         button.imageEdgeInsets = UIEdgeInsetsMake(-4, 4, -4, 4)
         button.showsTouchWhenHighlighted = true
-        button.addTarget(nil, action: #selector(navigate), forControlEvents: .TouchUpInside)
+        button.addTarget(nil, action: #selector(navigate), for: .touchUpInside)
         let gr = UILongPressGestureRecognizer(target: self, action: #selector(navigate))
         gr.minimumPressDuration = 1
         button.addGestureRecognizer(gr)
@@ -24,9 +24,9 @@ class ViewController : UIViewController, UINavigationControllerDelegate {
         super.awakeFromNib()
         
         self.title = "First"
-        let b1 = UIBarButtonItem(image:UIImage(named:"key.png"), style:.Plain, target:self, action:#selector(navigate))
-        let b2 = UIBarButtonItem(image:UIImage(named:"files.png"),
-                                 style:.Plain, target:nil, action:nil)
+        _ = UIBarButtonItem(image:UIImage(named:"key.png"), style:.plain, target:self, action:#selector(navigate))
+        _ = UIBarButtonItem(image:UIImage(named:"files.png"),
+                                 style:.plain, target:nil, action:nil)
         //self.navigationItem.rightBarButtonItems = [b1, b2]
         //        let button =  UIButton(type: .Custom)
         //        button.setBackgroundImage(UIImage(named: "key.png"), forState: .Normal)
@@ -69,8 +69,8 @@ class ViewController : UIViewController, UINavigationControllerDelegate {
         // self.navigationController!.setNavigationBarHidden(true, animated: false)
     }
     
-    func navigationControllerSupportedInterfaceOrientations(navigationController: UINavigationController) -> UIInterfaceOrientationMask {
-        return .Portrait
+    func navigationControllerSupportedInterfaceOrientations(_ navigationController: UINavigationController) -> UIInterfaceOrientationMask {
+        return .portrait
     }
     
     //    override func preferredStatusBarStyle() -> UIStatusBarStyle {

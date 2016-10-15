@@ -14,7 +14,7 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        rb?.borderColor = UIColor.brownColor()
+        rb?.borderColor = UIColor.brown
         // Do any additional setup after loading the view, typically from a nib.
     }
     

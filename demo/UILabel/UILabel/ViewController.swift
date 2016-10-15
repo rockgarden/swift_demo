@@ -8,18 +8,18 @@
 
 import UIKit
 
-func lend<T where T: NSObject> (closure: (T) -> ()) -> T {
+func lend<T> (_ closure: (T) -> ()) -> T where T: NSObject {
     let orig = T()
     closure(orig)
     return orig
 }
 
-func imageOfSize(size: CGSize, closure: () -> ()) -> UIImage {
+func imageOfSize(_ size: CGSize, closure: () -> ()) -> UIImage {
     UIGraphicsBeginImageContextWithOptions(size, false, 0)
     closure()
     let result = UIGraphicsGetImageFromCurrentImageContext()
     UIGraphicsEndImageContext()
-    return result
+    return result!
 }
 
 class ViewController: UIViewController {
@@ -40,14 +40,14 @@ class ViewController: UIViewController {
         
         let f = UIFont(name: "GillSans", size: 20)!
         
-        let align: NSTextAlignment = .Left
-        let brk: NSLineBreakMode = .ByTruncatingMiddle
+        let align: NSTextAlignment = .left
+        let brk: NSLineBreakMode = .byTruncatingMiddle
         let numLines = 2
         let tighten = true
         
         let adjusts = false
         let min: CGFloat = 0.8
-        let base: UIBaselineAdjustment = .None
+        let base: UIBaselineAdjustment = .none
         
         self.lab1.adjustsFontSizeToFitWidth = adjusts
         self.lab2.adjustsFontSizeToFitWidth = adjusts
@@ -76,26 +76,26 @@ class ViewController: UIViewController {
             }
             ])
         mas.addAttribute(NSForegroundColorAttributeName,
-                         value: UIColor.blueColor(),
-                         range: (s as NSString).rangeOfString("poltergeists"))
+                         value: UIColor.blue,
+                         range: (s as NSString).range(of: "poltergeists"))
         self.lab2.attributedText = mas
         
         let r = self.iv.bounds
         self.iv.image = imageOfSize(r.size) {
-            mas.drawInRect(r)
+            mas.draw(in: r)
         }
     }
     
     func setupLab3() {
         print(lab3.lineBreakMode.rawValue)
-        let color = UIColor.blueColor()
+        let color = UIColor.blue
         let s = NSMutableAttributedString(string: "This is\n a test", attributes: [
             NSForegroundColorAttributeName: color
             ])
         lab3.attributedText = s
         lab3.sizeToFit()
         lab3.tag = 1
-        lab3.highlightedTextColor = UIColor.redColor()
+        lab3.highlightedTextColor = UIColor.red
     }
     
     func setupLab4() {
@@ -117,8 +117,8 @@ class ViewController: UIViewController {
                                 para.headIndent = 10
                                 para.firstLineHeadIndent = 10
                                 para.tailIndent = -10
-                                para.lineBreakMode = .ByWordWrapping
-                                para.alignment = .Justified
+                                para.lineBreakMode = .byWordWrapping
+                                para.alignment = .justified
                                 para.lineHeightMultiple = 1.2
                                 para.hyphenationFactor = 1.0
             },
@@ -127,17 +127,17 @@ class ViewController: UIViewController {
         let lab = UILabel() // preferredMaxLayoutWidth is 0
         print(lab.preferredMaxLayoutWidth)
         lab.numberOfLines = 0
-        lab.backgroundColor = UIColor.yellowColor()
+        lab.backgroundColor = UIColor.yellow
         lab.translatesAutoresizingMaskIntoConstraints = false
         self.view.addSubview(lab)
-        NSLayoutConstraint.activateConstraints([
-            NSLayoutConstraint.constraintsWithVisualFormat(
-                "H:|-(30)-[v]-(30)-|",
+        NSLayoutConstraint.activate([
+            NSLayoutConstraint.constraints(
+                withVisualFormat: "H:|-(30)-[v]-(30)-|",
                 options: [], metrics: nil, views: ["v": lab]),
-            NSLayoutConstraint.constraintsWithVisualFormat(
-                "V:|-(260)-[v]",
+            NSLayoutConstraint.constraints(
+                withVisualFormat: "V:|-(260)-[v]",
                 options: [], metrics: nil, views: ["v": lab])
-            ].flatten().map { $0 })
+            ].joined().map { $0 })
         lab.attributedText = content2
     }
     
