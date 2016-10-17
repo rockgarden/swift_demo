@@ -1,6 +1,6 @@
 //
 //  CandyNewTableViewController.swift
-//  013-UISearchBar
+//  UISearchBar
 //
 //  Created by Audrey Li on 4/7/15.
 //  Copyright (c) 2015 com.shomigo. All rights reserved.

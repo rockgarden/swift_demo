@@ -65,18 +65,19 @@ extension NSURLSessionVC {
             if dic.count == 0 {
                 return
             }
+            let result = dic as? [String: AnyObject]
             
             debugPrint(dic)
             
-            let city: NSString = (dic["name"] as! NSString)
-            let kelvin: AnyObject! = (dic["main"] as! NSDictionary)["temp"]
-            let kelvin_min: AnyObject! = (dic["main"] as! NSDictionary)["temp_min"]
-            let kelvin_max: AnyObject! = (dic["main"] as! NSDictionary)["temp_max"]
+            let city = (dic["name"] as! NSString)
+            let kelvin: AnyObject! = (dic["main"] as! NSDictionary)["temp"] as! NSString
+            let kelvin_min: AnyObject! = (dic["main"] as! NSDictionary)["temp_min"] as! NSString
+            let kelvin_max: AnyObject! = (dic["main"] as! NSDictionary)["temp_max"] as! NSString
             let celsius = kelvin as! Float - 274.15 as Float
             let celsius_min = kelvin_min as! Float - 274.15 as Float
             let celsius_max = kelvin_max as! Float - 274.15 as Float
-            let humidity: AnyObject! = (dic ["main"] as! NSDictionary)["humidity"]
-            let wind: AnyObject! = (dic ["wind"] as! NSDictionary)["speed"]
+            let humidity: AnyObject! = (dic ["main"] as! NSDictionary)["humidity"] as! NSString
+            let wind: AnyObject! = (dic ["wind"] as! NSDictionary)["speed"] as! NSString
             
             // original thread
             DispatchQueue.main.async(execute: { () in

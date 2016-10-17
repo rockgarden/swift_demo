@@ -108,7 +108,19 @@ class GreetingNewViewController: UIViewController, UISearchResultsUpdating, UISe
 			return controller
 		}()
 		self.resultSearchController.searchBar.delegate = self
+        configureSearchBar(self.resultSearchController.searchBar)
 	}
+
+    // 定义searchBar样式
+    func configureSearchBar(searchBar: UISearchBar) {
+        searchBar.placeholder = "请输入客户名称或简拼"
+        debugPrint("searchBar.text", searchBar.text) //searchBar.text不会为nil
+        searchBar.sizeToFit()
+        searchBar.tintColor = UIColorDay.searchBarColor(isDay)
+        searchBar.backgroundColor = UIColor.clearColor()
+        searchBar.translucent = true
+        searchBar.enablesReturnKeyAutomatically = false //设置ReturnKey是无text输入时也直接可用
+    }
 
 }
 

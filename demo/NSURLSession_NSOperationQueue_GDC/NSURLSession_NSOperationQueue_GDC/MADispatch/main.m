@@ -9,6 +9,8 @@
 #import <Foundation/Foundation.h>
 
 #import "MADispatchQueue.h"
+#import <libkern/OSSpinLockDeprecated.h>
+
 
 
 int testHarness__totalFailures = 0;

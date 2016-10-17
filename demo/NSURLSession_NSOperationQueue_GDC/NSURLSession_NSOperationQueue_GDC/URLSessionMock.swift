@@ -11,17 +11,18 @@ import Foundation
 /**
  *  NSURLSession协议
  */
-public protocol DHURLSession {
-    func dataTaskWithURL(_ url: URL,
-                         completionHandler: (Data?, URLResponse?, NSError?) -> Void) -> URLSessionDataTask
-    func dataTaskWithRequest(_ request: URLRequest,
-                             completionHandler: (Data?, URLResponse?, NSError?) -> Void) -> URLSessionDataTask
+@objc public protocol DHURLSession {
+    @objc optional func dataTaskWithURL(_ url: URL,
+                         completionHandler: @escaping (Data?, URLResponse?, NSError?) -> Void) -> URLSessionDataTask
+    @objc optional func dataTaskWithRequest(_ request: URLRequest,
+                             completionHandler: @escaping (Data?, URLResponse?, NSError?) -> Void) -> URLSessionDataTask
 }
 
-extension URLSession: DHURLSession { }
+//extension URLSession: DHURLSession { }
 
 /// NSURLSession替换类
 public final class URLSessionMock: DHURLSession {
+
     var url: URL?
     var request: URLRequest?
     fileprivate let dataTaskMock: URLSessionDataTaskMock
@@ -49,7 +50,7 @@ public final class URLSessionMock: DHURLSession {
         self.dataTaskMock.completionHandler = completionHandler
         return self.dataTaskMock
     }
-    
+
     final fileprivate class URLSessionDataTaskMock: URLSessionDataTask {
         
         typealias CompletionHandler = (Data?, URLResponse?, NSError?) -> Void
