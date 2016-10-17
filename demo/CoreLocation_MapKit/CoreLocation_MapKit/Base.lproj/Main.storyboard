@@ -27,9 +27,15 @@
                                     <barButtonItem width="20" style="plain" systemItem="fixedSpace" id="nKd-Dh-0rn"/>
                                     <barButtonItem style="plain" systemItem="refresh" id="FLx-PK-zig"/>
                                     <barButtonItem width="20" style="plain" systemItem="fixedSpace" id="gPO-Cn-yrg"/>
-                                    <barButtonItem title="Next" id="uUR-Vr-lYG" userLabel="Next">
+                                    <barButtonItem title="Map" id="uUR-Vr-lYG" userLabel="Next">
                                         <connections>
                                             <segue destination="oXP-An-5na" kind="showDetail" id="siS-WY-oCB"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem width="20" style="plain" systemItem="fixedSpace" id="Yh2-56-jOn"/>
+                                    <barButtonItem title="Location" id="RHQ-ZI-wV0">
+                                        <connections>
+                                            <segue destination="8Zd-It-wjS" kind="show" id="isb-Fp-OUp"/>
                                         </connections>
                                     </barButtonItem>
                                 </items>
@@ -128,6 +134,84 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="w2i-U7-Pih" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="914" y="-174"/>
+        </scene>
+        <!--Location GeocodingVC-->
+        <scene sceneID="UQA-EC-uHx">
+            <objects>
+                <viewController storyboardIdentifier="LocationGeocodingVC" id="8Zd-It-wjS" customClass="LocationGeocodingVC" customModule="CoreLocation_MapKit" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="X99-ZA-QdN"/>
+                        <viewControllerLayoutGuide type="bottom" id="xDf-n4-Jy4"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Oos-Es-uPJ">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="wZe-lV-3rR">
+                                <frame key="frameInset" minX="37" minY="4" width="246" height="165"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </mapView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zZf-q4-hbm">
+                                <frame key="frameInset" minX="37" minY="177" width="240" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Show current location in Maps app">
+                                    <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="doButtonWithSender:" destination="8Zd-It-wjS" eventType="touchUpInside" id="5fy-qV-cA2"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wnc-SV-9Ax">
+                                <frame key="frameInset" minX="37" minY="215" width="228" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Show current location in our map">
+                                    <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="doButton2WithSender:" destination="8Zd-It-wjS" eventType="touchUpInside" id="bDy-mc-QAY"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="57Z-V8-MP0">
+                                <frame key="frameInset" minX="37" minY="253" width="140" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="What's my address?">
+                                    <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="reportAddressWithSender:" destination="8Zd-It-wjS" eventType="touchUpInside" id="7NQ-pC-oHz"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jAI-VF-Oiv">
+                                <frame key="frameInset" minX="37" minY="291" width="65" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Thai food">
+                                    <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="thaiFoodNearMapLocationWithSender:" destination="8Zd-It-wjS" eventType="touchUpInside" id="cWT-Ae-E8P"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xAE-43-C0T">
+                                <frame key="frameInset" minX="37" minY="329" width="156" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Directions to Thai food">
+                                    <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="directionsToThaiFoodWithSender:" destination="8Zd-It-wjS" eventType="touchUpInside" id="PdS-kf-KgQ"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="BdM-mR-e3u"/>
+                    <connections>
+                        <outlet property="map" destination="wZe-lV-3rR" id="tIk-mq-hPX"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Bbw-qe-YbC" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="194" y="566"/>
         </scene>
     </scenes>
 </document>

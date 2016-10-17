@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4401EEF71DB5357C00C81CA5 /* LocationGeocodingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4401EEF61DB5357C00C81CA5 /* LocationGeocodingVC.swift */; };
 		C2C5E6631DB0B8A70098C2DA /* MyAnnotationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2C5E6601DB0B8A70098C2DA /* MyAnnotationView.swift */; };
 		C2C5E6641DB0B8A70098C2DA /* MyOverlay.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2C5E6611DB0B8A70098C2DA /* MyOverlay.swift */; };
 		C2C5E6651DB0B8A70098C2DA /* MyOverlayRenderer.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2C5E6621DB0B8A70098C2DA /* MyOverlayRenderer.swift */; };
@@ -22,6 +23,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4401EEF61DB5357C00C81CA5 /* LocationGeocodingVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationGeocodingVC.swift; sourceTree = "<group>"; };
 		C2C5E6601DB0B8A70098C2DA /* MyAnnotationView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyAnnotationView.swift; sourceTree = "<group>"; };
 		C2C5E6611DB0B8A70098C2DA /* MyOverlay.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyOverlay.swift; sourceTree = "<group>"; };
 		C2C5E6621DB0B8A70098C2DA /* MyOverlayRenderer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyOverlayRenderer.swift; sourceTree = "<group>"; };
@@ -81,6 +83,7 @@
 				C2F3A3BB1D6436A600DA66CB /* Assets.xcassets */,
 				C2F3A3BD1D6436A600DA66CB /* LaunchScreen.storyboard */,
 				C2F3A3C01D6436A600DA66CB /* Info.plist */,
+				4401EEF61DB5357C00C81CA5 /* LocationGeocodingVC.swift */,
 			);
 			path = CoreLocation_MapKit;
 			sourceTree = "<group>";
@@ -165,6 +168,7 @@
 				C2C5E6631DB0B8A70098C2DA /* MyAnnotationView.swift in Sources */,
 				C2C5E6651DB0B8A70098C2DA /* MyOverlayRenderer.swift in Sources */,
 				C2C5E66B1DB0B9270098C2DA /* MapVC.swift in Sources */,
+				4401EEF71DB5357C00C81CA5 /* LocationGeocodingVC.swift in Sources */,
 				C2F3A3CE1D644C4600DA66CB /* MyAnotation.swift in Sources */,
 				C2F3A3B51D6436A600DA66CB /* AppDelegate.swift in Sources */,
 			);
