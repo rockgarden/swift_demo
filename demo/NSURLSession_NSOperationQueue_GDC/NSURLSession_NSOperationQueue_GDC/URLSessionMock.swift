@@ -12,52 +12,52 @@ import Foundation
  *  NSURLSession协议
  */
 public protocol DHURLSession {
-    func dataTaskWithURL(url: NSURL,
-                         completionHandler: (NSData?, NSURLResponse?, NSError?) -> Void) -> NSURLSessionDataTask
-    func dataTaskWithRequest(request: NSURLRequest,
-                             completionHandler: (NSData?, NSURLResponse?, NSError?) -> Void) -> NSURLSessionDataTask
+    func dataTaskWithURL(_ url: URL,
+                         completionHandler: (Data?, URLResponse?, NSError?) -> Void) -> URLSessionDataTask
+    func dataTaskWithRequest(_ request: URLRequest,
+                             completionHandler: (Data?, URLResponse?, NSError?) -> Void) -> URLSessionDataTask
 }
 
-extension NSURLSession: DHURLSession { }
+extension URLSession: DHURLSession { }
 
 /// NSURLSession替换类
 public final class URLSessionMock: DHURLSession {
-    var url: NSURL?
-    var request: NSURLRequest?
-    private let dataTaskMock: URLSessionDataTaskMock
+    var url: URL?
+    var request: URLRequest?
+    fileprivate let dataTaskMock: URLSessionDataTaskMock
     
-    public convenience init?(jsonDict: [String: AnyObject], response: NSURLResponse? = nil, error: NSError? = nil) {
-        guard let data = try? NSJSONSerialization.dataWithJSONObject(jsonDict, options: []) else { return nil }
+    public convenience init?(jsonDict: [String: AnyObject], response: URLResponse? = nil, error: NSError? = nil) {
+        guard let data = try? JSONSerialization.data(withJSONObject: jsonDict, options: []) else { return nil }
         self.init(data: data, response: response, error: error)
     }
     
-    public init(data: NSData? = nil, response: NSURLResponse? = nil, error: NSError? = nil) {
+    public init(data: Data? = nil, response: URLResponse? = nil, error: NSError? = nil) {
         dataTaskMock = URLSessionDataTaskMock()
         dataTaskMock.taskResponse = (data, response, error)
     }
     
-    public func dataTaskWithURL(url: NSURL,
-                                completionHandler: (NSData?, NSURLResponse?, NSError?) -> Void) -> NSURLSessionDataTask {
+    public func dataTaskWithURL(_ url: URL,
+                                completionHandler: @escaping (Data?, URLResponse?, NSError?) -> Void) -> URLSessionDataTask {
         self.url = url
         self.dataTaskMock.completionHandler = completionHandler
         return self.dataTaskMock
     }
     
-    public func dataTaskWithRequest(request: NSURLRequest,
-                                    completionHandler: (NSData?, NSURLResponse?, NSError?) -> Void) -> NSURLSessionDataTask {
+    public func dataTaskWithRequest(_ request: URLRequest,
+                                    completionHandler: @escaping (Data?, URLResponse?, NSError?) -> Void) -> URLSessionDataTask {
         self.request = request
         self.dataTaskMock.completionHandler = completionHandler
         return self.dataTaskMock
     }
     
-    final private class URLSessionDataTaskMock: NSURLSessionDataTask {
+    final fileprivate class URLSessionDataTaskMock: URLSessionDataTask {
         
-        typealias CompletionHandler = (NSData!, NSURLResponse!, NSError!) -> Void
+        typealias CompletionHandler = (Data?, URLResponse?, NSError?) -> Void
         var completionHandler: CompletionHandler?
-        var taskResponse: (NSData?, NSURLResponse?, NSError?)?
+        var taskResponse: (Data?, URLResponse?, NSError?)?
         
         override func resume() {
-            dispatch_async(dispatch_get_main_queue()) {
+            DispatchQueue.main.async {
                 self.completionHandler?(self.taskResponse?.0, self.taskResponse?.1, self.taskResponse?.2)
             }
         }

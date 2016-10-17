@@ -8,38 +8,38 @@
 
 import UIKit
 
-class NSURLSessionVC: UIViewController, NSURLSessionDownloadDelegate {
+class NSURLSessionVC: UIViewController, URLSessionDownloadDelegate {
 
-	var session = NSURLSession()
+	var session = Foundation.URLSession()
 
 	@IBOutlet weak var imagen: UIImageView!
 	@IBOutlet weak var progreso: UIProgressView!
-	@IBAction func cargar(sender: UIButton) {
+	@IBAction func cargar(_ sender: UIButton) {
 		let imageUrl: NSString = "http://c.hiphotos.baidu.com/image/pic/item/8cb1cb13495409235fa14adf9158d109b2de4942.jpg"
-		let getImageTask: NSURLSessionDownloadTask = session.downloadTaskWithURL(NSURL(string: imageUrl as String)!)
+		let getImageTask: URLSessionDownloadTask = session.downloadTask(with: URL(string: imageUrl as String)!)
 		getImageTask.resume()
 	}
 
 	override func viewDidLoad() {
 		super.viewDidLoad()
-		let sessionConfig = NSURLSessionConfiguration.defaultSessionConfiguration()
-		session = NSURLSession(configuration: sessionConfig, delegate: self, delegateQueue: nil)
+		let sessionConfig = URLSessionConfiguration.default
+		session = Foundation.URLSession(configuration: sessionConfig, delegate: self, delegateQueue: nil)
 	}
 
 	override func didReceiveMemoryWarning() {
 		super.didReceiveMemoryWarning()
 	}
 
-	func URLSession(session: NSURLSession, downloadTask: NSURLSessionDownloadTask, didFinishDownloadingToURL location: NSURL) {
+	func urlSession(_ session: URLSession, downloadTask: URLSessionDownloadTask, didFinishDownloadingTo location: URL) {
 		print("Download finished")
-		let downloadedImage = UIImage(data: NSData(contentsOfURL: location)!)
-		dispatch_async(dispatch_get_main_queue(), { () in
+		let downloadedImage = UIImage(data: try! Data(contentsOf: location))
+		DispatchQueue.main.async(execute: { () in
 			self.imagen.image = downloadedImage
 		})
 	}
 
-	func URLSession(session: NSURLSession, downloadTask: NSURLSessionDownloadTask, didWriteData bytesWritten: Int64, totalBytesWritten: Int64, totalBytesExpectedToWrite: Int64) {
-		dispatch_async(dispatch_get_main_queue(), { () in
+	func urlSession(_ session: URLSession, downloadTask: URLSessionDownloadTask, didWriteData bytesWritten: Int64, totalBytesWritten: Int64, totalBytesExpectedToWrite: Int64) {
+		DispatchQueue.main.async(execute: { () in
 			let variable = Float(totalBytesWritten) / Float(totalBytesExpectedToWrite)
 			self.progreso.progress = variable
 		})
@@ -48,19 +48,20 @@ class NSURLSessionVC: UIViewController, NSURLSessionDownloadDelegate {
 
 extension NSURLSessionVC {
     
-    private func sampleNSURLSession() {
-        let sessionConfig = NSURLSessionConfiguration.defaultSessionConfiguration()
+    fileprivate func sampleNSURLSession() {
+        let sessionConfig = URLSessionConfiguration.default
         sessionConfig.allowsCellularAccess = false
         // only accept JSON answer
-        sessionConfig.HTTPAdditionalHeaders = ["Accept": "application/json"]
+        sessionConfig.httpAdditionalHeaders = ["Accept": "application/json"]
         // timeouts and connections allowed
         sessionConfig.timeoutIntervalForRequest = 30.0
         sessionConfig.timeoutIntervalForResource = 60.0
-        sessionConfig.HTTPMaximumConnectionsPerHost = 2
+        sessionConfig.httpMaximumConnectionsPerHost = 2
         // create session, assign configuration
-        let session = NSURLSession(configuration: sessionConfig)
-        session.dataTaskWithURL(NSURL(string: "http://api.openweathermap.org")!, completionHandler: { (data, response, error) in
-            let dic = (try? NSJSONSerialization.JSONObjectWithData(data!, options: NSJSONReadingOptions(rawValue: 0))) as? NSDictionary ?? [String: String]()
+        let session = Foundation.URLSession(configuration: sessionConfig)
+        session.dataTask(with: URL(string: "http://api.openweathermap.org")!, completionHandler: { (data, response, error) in
+            //let dic = [String: String]()
+            guard let dic = (try? JSONSerialization.jsonObject(with: data!, options: JSONSerialization.ReadingOptions(rawValue: 0))) as? NSDictionary else { return }
             if dic.count == 0 {
                 return
             }
@@ -78,7 +79,7 @@ extension NSURLSessionVC {
             let wind: AnyObject! = (dic ["wind"] as! NSDictionary)["speed"]
             
             // original thread
-            dispatch_async(dispatch_get_main_queue(), { () in
+            DispatchQueue.main.async(execute: { () in
                 debugPrint(dic)
             })
         }).resume()

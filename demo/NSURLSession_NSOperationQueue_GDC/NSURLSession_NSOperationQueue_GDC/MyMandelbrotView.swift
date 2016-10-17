@@ -8,25 +8,25 @@ class MandelbrotView: UIView {
     var bitmapContext: CGContext!
     var odd = false
     /// instance NSOperationQueue
-    let queue: NSOperationQueue = {
-        let q = NSOperationQueue()
+    let queue: OperationQueue = {
+        let q = OperationQueue()
         q.maxConcurrentOperationCount = 1
         return q
     }()
     
     func drawThatPuppy () {
-        let center = CGPointMake(self.bounds.midX, self.bounds.midY)
+        let center = CGPoint(x: self.bounds.midX, y: self.bounds.midY)
         let op = MandelbrotOperation(size: self.bounds.size, center: center, zoom: 1)
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(operationFinished), name: "MyMandelbrotOperationFinished", object: op)
+        NotificationCenter.default.addObserver(self, selector: #selector(operationFinished), name: NSNotification.Name(rawValue: "MyMandelbrotOperationFinished"), object: op)
         self.queue.addOperation(op)
     }
     
     // warning! called on background thread
-    func operationFinished(n: NSNotification) {
+    func operationFinished(_ n: Notification) {
         if let op = n.object as? MandelbrotOperation {
             // 在主派发队列中更新UI
-            dispatch_async(dispatch_get_main_queue()) {
-                NSNotificationCenter.defaultCenter().removeObserver(self, name: "MyMandelbrotOperationFinished", object: op)
+            DispatchQueue.main.async {
+                NotificationCenter.default.removeObserver(self, name: NSNotification.Name(rawValue: "MyMandelbrotOperationFinished"), object: op)
                 self.bitmapContext = op.bitmapContext
                 self.setNeedsDisplay()
             }
@@ -34,13 +34,13 @@ class MandelbrotView: UIView {
     }
     
     // turn pixels of self.bitmapContext into CGImage, draw into ourselves
-    override func drawRect(rect: CGRect) {
+    override func draw(_ rect: CGRect) {
         if self.bitmapContext != nil {
             let context = UIGraphicsGetCurrentContext()!
-            let im = CGBitmapContextCreateImage(self.bitmapContext)
-            CGContextDrawImage(context, self.bounds, im)
+            let im = self.bitmapContext.makeImage()
+            context.draw(im!, in: self.bounds)
             self.odd = !self.odd
-            self.backgroundColor = self.odd ? UIColor.greenColor() : UIColor.redColor()
+            self.backgroundColor = self.odd ? UIColor.green : UIColor.red
         }
     }
     

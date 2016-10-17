@@ -9,13 +9,13 @@
 import Foundation
 
 /// 并发队列
-private let queue = dispatch_queue_create("test", DISPATCH_QUEUE_CONCURRENT)
+private let queue = DispatchQueue(label: "test", attributes: DispatchQueue.Attributes.concurrent)
 /**
  coordinate
  - parameter barrier: 是否创建同步点
  - parameter block:   <#block description#>
  */
-private func coordinate(barrier barrier: Bool = false, block: () -> Void) {
+private func coordinate(barrier: Bool = false, block: @escaping () -> Void) {
     if barrier {
         /**
          *  一个dispatch barrier 允许在一个并发队列中创建一个同步点。当在并发队列中遇到一个barrier, 他会延迟执行barrier的block,等待所有在barrier之前提交的blocks执行结束。 这时，barrier block自己开始执行。 之后， 队列继续正常的执行操作。
@@ -27,8 +27,8 @@ private func coordinate(barrier barrier: Bool = false, block: () -> Void) {
          *
          *  @return <#return value description#>
          */
-        dispatch_barrier_async(queue, block)
+        queue.async(flags: .barrier, execute: block)
         return
     }
-    dispatch_async(queue, block)
+    queue.async(execute: block)
 }

@@ -21,7 +21,7 @@ class APIClientTests: XCTestCase {
     }
     
     func testFetchingProfile_ReturnsPopulatedUser() {
-        let responseExpectation = expectationWithDescription("User")
+        let responseExpectation = expectation(description: "User")
         // Arrage
         let apiClient = APIClientMock()
         apiClient.session = URLSessionMock(jsonDict: ["login": "dasdom", "id": 1234567])!
@@ -34,7 +34,7 @@ class APIClientTests: XCTestCase {
         }
         
         // Assert
-        waitForExpectationsWithTimeout(1) { (error) in
+        waitForExpectations(timeout: 1) { (error) in
             let expectedUser = User(name: "dasdom", id: 1234567)
             debugPrint(catchedUser,expectedUser)
             XCTAssertEqual(catchedUser, expectedUser)

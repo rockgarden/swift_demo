@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		442398241DB2650F00ED63EC /* MainVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 442398231DB2650F00ED63EC /* MainVC.swift */; };
+		442398261DB26D8C00ED63EC /* URLSessionDataTaskVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 442398251DB26D8C00ED63EC /* URLSessionDataTaskVC.swift */; };
 		447F77321DAE7A4C0063DBEC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 447F77311DAE7A4C0063DBEC /* AppDelegate.swift */; };
 		447F77341DAE7A4C0063DBEC /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 447F77331DAE7A4C0063DBEC /* ViewController.swift */; };
 		447F77371DAE7A4C0063DBEC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 447F77351DAE7A4C0063DBEC /* Main.storyboard */; };
@@ -18,6 +20,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		442398231DB2650F00ED63EC /* MainVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainVC.swift; sourceTree = "<group>"; };
+		442398251DB26D8C00ED63EC /* URLSessionDataTaskVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = URLSessionDataTaskVC.swift; sourceTree = "<group>"; };
 		447F772E1DAE7A4C0063DBEC /* NSURLSessionDownload.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NSURLSessionDownload.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		447F77311DAE7A4C0063DBEC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		447F77331DAE7A4C0063DBEC /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -63,12 +67,14 @@
 				447F77311DAE7A4C0063DBEC /* AppDelegate.swift */,
 				447F77431DAE7A740063DBEC /* MyDownloader.swift */,
 				447F77331DAE7A4C0063DBEC /* ViewController.swift */,
+				447F77471DAE7EA40063DBEC /* BackgroundDownloadVC.swift */,
 				447F77451DAE7B0C0063DBEC /* MyTableViewController.swift */,
 				447F77351DAE7A4C0063DBEC /* Main.storyboard */,
 				447F77381DAE7A4C0063DBEC /* Assets.xcassets */,
 				447F773A1DAE7A4C0063DBEC /* LaunchScreen.storyboard */,
 				447F773D1DAE7A4C0063DBEC /* Info.plist */,
-				447F77471DAE7EA40063DBEC /* BackgroundDownloadVC.swift */,
+				442398231DB2650F00ED63EC /* MainVC.swift */,
+				442398251DB26D8C00ED63EC /* URLSessionDataTaskVC.swift */,
 			);
 			path = NSURLSessionDownload;
 			sourceTree = "<group>";
@@ -148,8 +154,10 @@
 			files = (
 				447F77341DAE7A4C0063DBEC /* ViewController.swift in Sources */,
 				447F77481DAE7EA40063DBEC /* BackgroundDownloadVC.swift in Sources */,
+				442398241DB2650F00ED63EC /* MainVC.swift in Sources */,
 				447F77321DAE7A4C0063DBEC /* AppDelegate.swift in Sources */,
 				447F77441DAE7A740063DBEC /* MyDownloader.swift in Sources */,
+				442398261DB26D8C00ED63EC /* URLSessionDataTaskVC.swift in Sources */,
 				447F77461DAE7B0C0063DBEC /* MyTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

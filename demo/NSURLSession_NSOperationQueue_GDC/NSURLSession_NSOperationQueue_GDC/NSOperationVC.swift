@@ -6,7 +6,7 @@ class NSOperationVC: UIViewController {
 
     @IBOutlet var mv : MandelbrotView!
     
-    @IBAction func doButton (sender:AnyObject!) {
+    @IBAction func doButton (_ sender:AnyObject!) {
         self.mv.drawThatPuppy()
         sampleNSOperationQueue()
     }
@@ -14,12 +14,12 @@ class NSOperationVC: UIViewController {
     /**
      顺序列队
      */
-    private func sampleNSOperationQueue() {
-        let queue = NSOperationQueue()
-        let operation1: NSBlockOperation = NSBlockOperation (
+    fileprivate func sampleNSOperationQueue() {
+        let queue = OperationQueue()
+        let operation1: BlockOperation = BlockOperation (
             block: {
                 self.getWebs() //run first
-                let operation2: NSBlockOperation = NSBlockOperation(block: {
+                let operation2: BlockOperation = BlockOperation(block: {
                     self.loadWebs() //run second
                 })
                 queue.addOperation(operation2)
@@ -29,9 +29,9 @@ class NSOperationVC: UIViewController {
     }
     
     func loadWebs() {
-        let urls = NSMutableArray (objects:NSURL(string:"http://www.google.es")!,NSURL(string: "http://www.apple.com")!,NSURL(string: "http://carlosbutron.es")!,NSURL(string: "http://www.bing.com")!,NSURL(string: "http://www.yahoo.com")!)
-        urls.addObjectsFromArray(googlewebs as [AnyObject])
-        for iterator: AnyObject in urls {
+        let urls = NSMutableArray (objects:URL(string:"http://www.google.es")!,URL(string: "http://www.apple.com")!,URL(string: "http://carlosbutron.es")!,URL(string: "http://www.bing.com")!,URL(string: "http://www.yahoo.com")!)
+        urls.addObjects(from: googlewebs as [AnyObject])
+        for iterator: Any in urls {
             /// NSData(contentsOfURL:iterator as! NSURL)
             debugPrint("Downloaded \(iterator)")
         }
@@ -43,8 +43,8 @@ class NSOperationVC: UIViewController {
         let languages: NSArray = ["com", "ad", "ae", "com.af", "com.ag", "com.ai", "am", "co.ao", "com.ar", "as", "at"]
         let languageWebs = NSMutableArray()
         for i in 0..<languages.count {
-            let webString: NSString = "http://www.google.\(languages[i])"
-            languageWebs.addObject(NSURL(fileURLWithPath: webString as String))
+            let webString: NSString = "http://www.google.\(languages[i])" as NSString
+            languageWebs.add(URL(fileURLWithPath: webString as String))
         }
         googlewebs = languageWebs
     }

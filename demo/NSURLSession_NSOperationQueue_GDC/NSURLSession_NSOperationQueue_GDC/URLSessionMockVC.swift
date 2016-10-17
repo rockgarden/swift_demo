@@ -15,9 +15,9 @@ class URLSessionMockVC: UIViewController {
     // Act
     var catchedUser: User? = nil
     
-    override func viewWillAppear(animated: Bool) {
+    override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
-        apiClient.session = URLSessionMock(jsonDict: ["login": "dasdom", "id": 1234567])!
+        apiClient.session = URLSessionMock(jsonDict: ["login": "dasdom" as AnyObject, "id": 1234567 as AnyObject])!
         apiClient.fetchProfileWithName("Foo") { (user, error) in
             self.catchedUser = user
         }

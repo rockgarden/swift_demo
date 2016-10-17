@@ -12,7 +12,7 @@ class GCDVC: UIViewController {
 
     var mv : GCD_MandelbrotView!
 
-    func doButton (sender:AnyObject!) {
+    func doButton (_ sender:AnyObject!) {
         self.mv.drawThatPuppy()
     }
     

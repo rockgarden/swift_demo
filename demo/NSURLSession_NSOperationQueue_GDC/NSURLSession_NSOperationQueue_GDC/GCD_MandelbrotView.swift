@@ -11,18 +11,20 @@
 import UIKit
 
 class SomeClass {
-    var once_token: dispatch_once_t = 0
-    func test() {
-        dispatch_once(&once_token) {
+    private lazy var __once: () = {
             // this code will run just once in the life of this object
-        }
+        }()
+    var once_token: Int = 0
+    func test() {
+        _ = self.__once
     }
 }
 
 let qkeyString = "label" as NSString
-let QKEY = qkeyString.UTF8String
+let QKEY = DispatchSpecificKey<String>() //qkeyString.utf8String
 let qvalString = "com.neuburg.mandeldraw" as NSString
-var QVAL = qvalString.UTF8String
+//???
+var QVAL = String(describing: qvalString.utf8String)
 
 class GCD_MandelbrotView: UIView {
     
@@ -33,9 +35,9 @@ class GCD_MandelbrotView: UIView {
     let MANDELBROT_STEPS = 200
     
     var bitmapContext: CGContext!
-    let draw_queue: dispatch_queue_t = {
-        let q = dispatch_queue_create(QVAL, nil)
-        dispatch_queue_set_specific(q, QKEY, &QVAL, nil)
+    let draw_queue: DispatchQueue = {
+        let q = DispatchQueue(label: QVAL, attributes: [])
+        q.setSpecific(key: /*Migrator FIXME: Use a variable of type DispatchSpecificKey*/ QKEY, value: QVAL)
         return q
     }()
     
@@ -44,23 +46,23 @@ class GCD_MandelbrotView: UIView {
     // jumping-off point: draw the Mandelbrot set
     func drawThatPuppy () {
         // self.makeBitmapContext(CGSizeZero) // test "wrong thread" assertion
-        let center = CGPointMake(self.bounds.midX, self.bounds.midY)
+        let center = CGPoint(x: self.bounds.midX, y: self.bounds.midY)
         // to test, increase MANDELBROT_STEPS and suspend while still calculating
         var bti: UIBackgroundTaskIdentifier = 0
-        bti = UIApplication.sharedApplication()
-            .beginBackgroundTaskWithExpirationHandler({
-                UIApplication.sharedApplication().endBackgroundTask(bti)
+        bti = UIApplication.shared
+            .beginBackgroundTask(expirationHandler: {
+                UIApplication.shared.endBackgroundTask(bti)
             })
         if bti == UIBackgroundTaskInvalid {
             return
         }
-        dispatch_async(self.draw_queue) {
+        self.draw_queue.async {
             let bitmap = self.makeBitmapContext(self.bounds.size)
             self.drawAtCenter(center, zoom: 1, context: bitmap)
-            dispatch_async(dispatch_get_main_queue()) {
+            DispatchQueue.main.async {
                 self.bitmapContext = bitmap
                 self.setNeedsDisplay()
-                UIApplication.sharedApplication().endBackgroundTask(bti)
+                UIApplication.shared.endBackgroundTask(bti)
             }
         }
     }
@@ -68,26 +70,26 @@ class GCD_MandelbrotView: UIView {
     // ==== this material is called on background thread
     
     func assertOnBackgroundThread() {
-        let s = dispatch_get_specific(QKEY)
-        assert(s == &QVAL)
+        let s = DispatchQueue.getSpecific(key: QKEY)
+        assert(s == QVAL)
     }
     
     // create and return context
-    func makeBitmapContext(size: CGSize) -> CGContext { // *
+    func makeBitmapContext(_ size: CGSize) -> CGContext { // *
         self.assertOnBackgroundThread()
         
         var bitmapBytesPerRow = Int(size.width * 4)
         bitmapBytesPerRow += (16 - (bitmapBytesPerRow % 16)) % 16
         let colorSpace = CGColorSpaceCreateDeviceRGB()
-        let prem = CGImageAlphaInfo.PremultipliedLast.rawValue
-        let context = CGBitmapContextCreate(nil, Int(size.width), Int(size.height), 8, bitmapBytesPerRow, colorSpace, prem)
+        let prem = CGImageAlphaInfo.premultipliedLast.rawValue
+        let context = CGContext(data: nil, width: Int(size.width), height: Int(size.height), bitsPerComponent: 8, bytesPerRow: bitmapBytesPerRow, space: colorSpace, bitmapInfo: prem)
         return context!
     }
     
     // NB do NOT refer to self.bitmapContext here!
-    func drawAtCenter(center: CGPoint, zoom: CGFloat, context: CGContext) {
+    func drawAtCenter(_ center: CGPoint, zoom: CGFloat, context: CGContext) {
         
-        func isInMandelbrotSet(re: Float, _ im: Float) -> Bool {
+        func isInMandelbrotSet(_ re: Float, _ im: Float) -> Bool {
             var fl = true
             var (x, y, nx, ny): (Float, Float, Float, Float) = (0, 0, 0, 0)
             for _ in 0 ..< MANDELBROT_STEPS {
@@ -105,8 +107,8 @@ class GCD_MandelbrotView: UIView {
         
         self.assertOnBackgroundThread()
         
-        CGContextSetAllowsAntialiasing(context, false) // *
-        CGContextSetRGBFillColor(context, 0, 0, 0, 1) // *
+        context.setAllowsAntialiasing(false) // *
+        context.setFillColor(red: 0, green: 0, blue: 0, alpha: 1) // *
         var re: CGFloat
         var im: CGFloat
         let maxi = Int(self.bounds.size.width) // really shouldn't be doing these...
@@ -120,7 +122,7 @@ class GCD_MandelbrotView: UIView {
                 im /= zoom
                 
                 if (isInMandelbrotSet(Float(re), Float(im))) {
-                    CGContextFillRect (context, CGRectMake(CGFloat(i), CGFloat(j), 1.0, 1.0)) // *
+                    context.fill (CGRect(x: CGFloat(i), y: CGFloat(j), width: 1.0, height: 1.0)) // *
                 }
             }
         }
@@ -130,13 +132,13 @@ class GCD_MandelbrotView: UIView {
     
     // turn pixels of self.bitmapContext into CGImage, draw into ourselves
     
-    override func drawRect(rect: CGRect) {
+    override func draw(_ rect: CGRect) {
         if self.bitmapContext != nil {
             let context = UIGraphicsGetCurrentContext()!
-            let im = CGBitmapContextCreateImage(self.bitmapContext)
-            CGContextDrawImage(context, self.bounds, im)
+            let im = self.bitmapContext.makeImage()
+            context.draw(im!, in: self.bounds)
             self.odd = !self.odd
-            self.backgroundColor = self.odd ? UIColor.greenColor() : UIColor.redColor()
+            self.backgroundColor = self.odd ? UIColor.green : UIColor.red
         }
     }
     
