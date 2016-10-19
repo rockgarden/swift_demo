@@ -37,45 +37,45 @@ class CandyTableViewController: UITableViewController, UISearchBarDelegate, UISe
         self.tableView.reloadData()
     }
 
-    func searchBar(searchBar: UISearchBar, textDidChange searchText: String) {
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         print("text changed \(searchText)")
-        data.removeRange(0..<4)
+        data.removeSubrange(0..<4) //TODO: Demo Error "Array replace: subrange extends past the end"
         self.tableView.reloadData()
     }
     
-    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        self.performSegueWithIdentifier(Constants.ShowDetailIdentifier, sender: tableView)
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        self.performSegue(withIdentifier: Constants.ShowDetailIdentifier, sender: tableView)
     }
     
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == Constants.ShowDetailIdentifier {
-            let  candyDetailViewController = segue.destinationViewController as UIViewController
+            let  candyDetailViewController = segue.destination as UIViewController
             if sender as! UITableView == self.searchDisplayController!.searchResultsTableView {
                 let indexPath = self.searchDisplayController!.searchResultsTableView.indexPathForSelectedRow!
-                candyDetailViewController.title = self.filteredData[indexPath.row].name
+                candyDetailViewController.title = self.filteredData[(indexPath as NSIndexPath).row].name
             } else {
                 let indexPath = self.tableView.indexPathForSelectedRow!
-                candyDetailViewController.title = self.data[indexPath.row].name
+                candyDetailViewController.title = self.data[(indexPath as NSIndexPath).row].name
             }
         }
     }
     
-    func filterContentForSearchText(searchText:String){
+    func filterContentForSearchText(_ searchText:String){
         self.filteredData = self.data.filter({ (candy: Candy)-> Bool in
-            let stringMatch = candy.name.rangeOfString(searchText)
+            let stringMatch = candy.name.range(of: searchText)
             return stringMatch != nil ? true : false
         })
     }
     
-    func filterContentForSearchTextWithScope(searchText: String, scope: String = "All") {
+    func filterContentForSearchTextWithScope(_ searchText: String, scope: String = "All") {
         self.filteredData = self.data.filter({( candy : Candy) -> Bool in
             let categoryMatch = (scope == "All") || (candy.category == scope)
-            let stringMatch = candy.name.rangeOfString(searchText)
+            let stringMatch = candy.name.range(of: searchText)
             return categoryMatch && (stringMatch != nil)
         })
     }
     
-    func searchDisplayController(controller: UISearchDisplayController, shouldReloadTableForSearchScope searchOption: Int) -> Bool {
+    func searchDisplayController(_ controller: UISearchDisplayController, shouldReloadTableForSearchScope searchOption: Int) -> Bool {
       //  self.filterContentForSearchText(self.searchDisplayController!.searchBar.text)
         
         let scope = self.searchDisplayController!.searchBar.scopeButtonTitles! as [String]
@@ -83,7 +83,7 @@ class CandyTableViewController: UITableViewController, UISearchBarDelegate, UISe
         return true
     }
     
-    func searchDisplayController(controller: UISearchDisplayController, shouldReloadTableForSearchString searchString: String?) -> Bool {
+    func searchDisplayController(_ controller: UISearchDisplayController, shouldReloadTableForSearch searchString: String?) -> Bool {
        // self.filterContentForSearchText(searchString)
         
         let scopes = self.searchDisplayController!.searchBar.scopeButtonTitles! as [String]
@@ -94,7 +94,7 @@ class CandyTableViewController: UITableViewController, UISearchBarDelegate, UISe
 
     // MARK: - Table view data source
 
-    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if tableView == self.searchDisplayController!.searchResultsTableView {
             return self.filteredData.count
         } else {
@@ -103,18 +103,18 @@ class CandyTableViewController: UITableViewController, UISearchBarDelegate, UISe
     }
 
 
-    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = self.tableView.dequeueReusableCellWithIdentifier("cell", forIndexPath: indexPath) as UITableViewCell
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = self.tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as UITableViewCell
         
         var candy: Candy
         if tableView == self.searchDisplayController!.searchResultsTableView {
-            candy = filteredData[indexPath.row]
+            candy = filteredData[(indexPath as NSIndexPath).row]
         } else {
-            candy = self.data[indexPath.row]
+            candy = self.data[(indexPath as NSIndexPath).row]
         }
         
         cell.textLabel!.text = candy.name
-        cell.accessoryType = UITableViewCellAccessoryType.DisclosureIndicator
+        cell.accessoryType = UITableViewCellAccessoryType.disclosureIndicator
 
         return cell
     }

@@ -20,7 +20,7 @@ class TimelineQuotes: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         let view = tableViewController.view
-        self.view.addSubview(view)
+        self.view.addSubview(view!)
     }
     
 }
@@ -33,7 +33,7 @@ class TwitterTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        tableView.registerClass(TweetCodeCell.self, forCellReuseIdentifier: "TweetCell")
+        tableView.register(TweetCodeCell.self, forCellReuseIdentifier: "TweetCell")
         tableView.estimatedRowHeight = 80
         tableView.rowHeight = UITableViewAutomaticDimension
     }
@@ -44,13 +44,13 @@ class TwitterTableViewController: UITableViewController {
     }
     
     // MARK: - Table view data source
-    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return tweets.count
     }
     
-    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("TweetCell", forIndexPath: indexPath) as! TweetCodeCell
-        let tweet = tweets[indexPath.row]
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "TweetCell", for: indexPath) as! TweetCodeCell
+        let tweet = tweets[(indexPath as NSIndexPath).row]
         cell.handleLabel.text = tweet["handle"]
         cell.dateLabel.text = tweet["date"]
         cell.tweetLabel.text = tweet["tweet"]
@@ -68,27 +68,27 @@ class TweetCodeCell: UITableViewCell {
     let dateLabel: UILabel
     let tweetLabel: UILabel
     
-    private let quoteHandle: UILabel
-    private let quoteLabel: UILabel
-    private let quoteStackView: UIStackView
-    private let quoteHostStackView: UIStackView
+    fileprivate let quoteHandle: UILabel
+    fileprivate let quoteLabel: UILabel
+    fileprivate let quoteStackView: UIStackView
+    fileprivate let quoteHostStackView: UIStackView
     
-    private var quotePaddingConstraints = [NSLayoutConstraint]()
+    fileprivate var quotePaddingConstraints = [NSLayoutConstraint]()
     
     var quote: (handle: String?, quoteString: String?) {
         didSet {
             quoteHandle.text = quote.handle
             quoteLabel.text = quote.quoteString
-            if let _ = quote.handle, _ = quote.quoteString {
-                quoteStackView.hidden = false
+            if let _ = quote.handle, let _ = quote.quoteString {
+                quoteStackView.isHidden = false
                 quoteStackView.spacing = 2
-                quoteHostStackView.hidden = false
-                NSLayoutConstraint.activateConstraints(quotePaddingConstraints)
+                quoteHostStackView.isHidden = false
+                NSLayoutConstraint.activate(quotePaddingConstraints)
             } else {
-                quoteStackView.hidden = true
+                quoteStackView.isHidden = true
                 quoteStackView.spacing = 0
-                quoteHostStackView.hidden = true
-                NSLayoutConstraint.deactivateConstraints(quotePaddingConstraints)
+                quoteHostStackView.isHidden = true
+                NSLayoutConstraint.deactivate(quotePaddingConstraints)
             }
         }
     }
@@ -96,17 +96,17 @@ class TweetCodeCell: UITableViewCell {
     override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
         
         avatarImageView = UIImageView()
-        avatarImageView.backgroundColor = .brownColor()
-        avatarImageView.contentMode = .ScaleAspectFill
+        avatarImageView.backgroundColor = .brown
+        avatarImageView.contentMode = .scaleAspectFill
         avatarImageView.layer.cornerRadius = 5
         avatarImageView.clipsToBounds = true
         
         handleLabel = UILabel()
-        handleLabel.font = UIFont.boldSystemFontOfSize(14)
+        handleLabel.font = UIFont.boldSystemFont(ofSize: 14)
         
         dateLabel = UILabel()
-        dateLabel.font = UIFont.boldSystemFontOfSize(14)
-        dateLabel.textColor = .grayColor()
+        dateLabel.font = UIFont.boldSystemFont(ofSize: 14)
+        dateLabel.textColor = .gray
         
         let handleDateStackView = UIStackView(arrangedSubviews: [handleLabel, dateLabel])
         
@@ -114,20 +114,20 @@ class TweetCodeCell: UITableViewCell {
         tweetLabel.numberOfLines = 0
         
         quoteHandle = UILabel()
-        quoteHandle.font = UIFont.boldSystemFontOfSize(13)
+        quoteHandle.font = UIFont.boldSystemFont(ofSize: 13)
         
         quoteLabel = UILabel()
         quoteLabel.numberOfLines = 0
-        quoteLabel.font = UIFont.systemFontOfSize(13)
+        quoteLabel.font = UIFont.systemFont(ofSize: 13)
         
         quoteStackView = UIStackView(arrangedSubviews: [quoteHandle, quoteLabel])
-        quoteStackView.axis = .Vertical
-        quoteStackView.alignment = .Center
+        quoteStackView.axis = .vertical
+        quoteStackView.alignment = .center
         // quoteStackView.distribution = .EqualSpacing
         // quoteStackView.spacing = 2
         
         quoteHostStackView = UIStackView(arrangedSubviews: [quoteStackView])
-        quoteHostStackView.alignment = .Center
+        quoteHostStackView.alignment = .center
         
         let quoteStackViewBackgroundView = UIView()
         quoteStackViewBackgroundView.translatesAutoresizingMaskIntoConstraints = false
@@ -136,40 +136,40 @@ class TweetCodeCell: UITableViewCell {
         quoteStackViewBackgroundView.clipsToBounds = true
         
         let tweetStackView = UIStackView(arrangedSubviews: [tweetLabel, quoteHostStackView])
-        tweetStackView.axis = .Vertical
+        tweetStackView.axis = .vertical
         tweetStackView.spacing = 5
         
         let textStackView = UIStackView(arrangedSubviews: [handleDateStackView, tweetStackView])
-        textStackView.axis = .Vertical
+        textStackView.axis = .vertical
         textStackView.spacing = 3
         
         let stackView = UIStackView(arrangedSubviews: [avatarImageView, textStackView])
         stackView.translatesAutoresizingMaskIntoConstraints = false
-        stackView.alignment = .Top
+        stackView.alignment = .top
         stackView.spacing = 5
         
-        quotePaddingConstraints.append(quoteStackView.topAnchor.constraintEqualToAnchor(quoteHostStackView.topAnchor, constant: 10))
-        quotePaddingConstraints.append(quoteStackView.bottomAnchor.constraintEqualToAnchor(quoteHostStackView.bottomAnchor, constant: -10))
+        quotePaddingConstraints.append(quoteStackView.topAnchor.constraint(equalTo: quoteHostStackView.topAnchor, constant: 10))
+        quotePaddingConstraints.append(quoteStackView.bottomAnchor.constraint(equalTo: quoteHostStackView.bottomAnchor, constant: -10))
         
         super.init(style: style, reuseIdentifier: reuseIdentifier)
-        backgroundColor = .whiteColor()
+        backgroundColor = .white
         contentView.addSubview(stackView)
         
-        quoteHostStackView.insertSubview(quoteStackViewBackgroundView, atIndex: 0)
+        quoteHostStackView.insertSubview(quoteStackViewBackgroundView, at: 0)
         
         let views = ["stackView": stackView, "quoteBackground": quoteStackViewBackgroundView, "quoteLabel": quoteLabel, "quoteStackView": quoteStackView]
         var layoutConstraints = [NSLayoutConstraint]()
-        layoutConstraints += NSLayoutConstraint.constraintsWithVisualFormat("|-10-[stackView]-|", options: [], metrics: nil, views: views)
-        layoutConstraints += NSLayoutConstraint.constraintsWithVisualFormat("V:|-10-[stackView]-(10@751)-|", options: [], metrics: nil, views: views)
-        layoutConstraints += NSLayoutConstraint.constraintsWithVisualFormat("|[quoteBackground]|", options: [], metrics: nil, views: views)
-        layoutConstraints += NSLayoutConstraint.constraintsWithVisualFormat("V:|[quoteBackground]|", options: [], metrics: nil, views: views)
-        quotePaddingConstraints += NSLayoutConstraint.constraintsWithVisualFormat("|-10-[quoteLabel]-10-|", options: [], metrics: nil, views: views)
-        layoutConstraints.append(avatarImageView.widthAnchor.constraintEqualToConstant(60))
-        layoutConstraints.append(avatarImageView.heightAnchor.constraintEqualToConstant(60))
-        layoutConstraints.append(quoteLabel.trailingAnchor.constraintEqualToAnchor(quoteHandle.trailingAnchor))
-        layoutConstraints.append(quoteLabel.leadingAnchor.constraintEqualToAnchor(quoteHandle.leadingAnchor))
+        layoutConstraints += NSLayoutConstraint.constraints(withVisualFormat: "|-10-[stackView]-|", options: [], metrics: nil, views: views)
+        layoutConstraints += NSLayoutConstraint.constraints(withVisualFormat: "V:|-10-[stackView]-(10@751)-|", options: [], metrics: nil, views: views)
+        layoutConstraints += NSLayoutConstraint.constraints(withVisualFormat: "|[quoteBackground]|", options: [], metrics: nil, views: views)
+        layoutConstraints += NSLayoutConstraint.constraints(withVisualFormat: "V:|[quoteBackground]|", options: [], metrics: nil, views: views)
+        quotePaddingConstraints += NSLayoutConstraint.constraints(withVisualFormat: "|-10-[quoteLabel]-10-|", options: [], metrics: nil, views: views)
+        layoutConstraints.append(avatarImageView.widthAnchor.constraint(equalToConstant: 60))
+        layoutConstraints.append(avatarImageView.heightAnchor.constraint(equalToConstant: 60))
+        layoutConstraints.append(quoteLabel.trailingAnchor.constraint(equalTo: quoteHandle.trailingAnchor))
+        layoutConstraints.append(quoteLabel.leadingAnchor.constraint(equalTo: quoteHandle.leadingAnchor))
         layoutConstraints += quotePaddingConstraints
-        NSLayoutConstraint.activateConstraints(layoutConstraints)
+        NSLayoutConstraint.activate(layoutConstraints)
     }
     
     required init?(coder aDecoder: NSCoder) {

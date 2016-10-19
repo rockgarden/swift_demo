@@ -15,9 +15,9 @@ class GreetingNewViewController: UIViewController, UISearchResultsUpdating, UISe
 
 	var resultSearchController = UISearchController()
 	var searchButton: UIBarButtonItem!
-	var titleButton = UIButton(type: UIButtonType.System)
-	var totalLabel = UILabel(frame: (CGRectMake(70, 26, 60, 15)))
-	var titleLabel = UILabel(frame: CGRectMake(0, 0, 200, 26))
+	var titleButton = UIButton(type: UIButtonType.system)
+	var totalLabel = UILabel(frame: (CGRect(x: 70, y: 26, width: 60, height: 15)))
+	var titleLabel = UILabel(frame: CGRect(x: 0, y: 0, width: 200, height: 26))
 	var items: [String: [AnyObject]]!
 	var filteredItems: [String: [AnyObject]]!
 	var dataSource: MultiSectionCollectionViewDataSource!
@@ -42,20 +42,20 @@ class GreetingNewViewController: UIViewController, UISearchResultsUpdating, UISe
 		addSearchBar()
 	}
 
-	func configureTitleButton(buttonTitle: String!, haveSubTitle: Bool) {
-		titleButton.frame = CGRectMake(0, 0, 200, 44)
+	func configureTitleButton(_ buttonTitle: String!, haveSubTitle: Bool) {
+		titleButton.frame = CGRect(x: 0, y: 0, width: 200, height: 44)
 		self.navigationItem.titleView = titleButton
 		if haveSubTitle {
-			titleLabel.frame = CGRectMake(0, 0, 200, 27)
+			titleLabel.frame = CGRect(x: 0, y: 0, width: 200, height: 27)
 			titleLabel.font = UIFont(name: "STHeitiSC-Light", size: 19)
-			titleLabel.textAlignment = .Center
+			titleLabel.textAlignment = .center
 			totalLabel.sizeToFit()
 			let w = totalLabel.frame.width
 			let x = (200 - w) / 2
-			totalLabel.frame = CGRectMake(x, 26, w + 2, 15)
-			totalLabel.backgroundColor = UIColor.blackColor().colorWithAlphaComponent(0.1)
+			totalLabel.frame = CGRect(x: x, y: 26, width: w + 2, height: 15)
+			totalLabel.backgroundColor = UIColor.black.withAlphaComponent(0.1)
 			totalLabel.clipsToBounds = true
-			totalLabel.textAlignment = .Center
+			totalLabel.textAlignment = .center
 			totalLabel.font = UIFont(name: "STHeitiSC-Light", size: 13)
 			totalLabel.layer.cornerRadius = 4
 			titleButton.addSubview(totalLabel)
@@ -64,13 +64,13 @@ class GreetingNewViewController: UIViewController, UISearchResultsUpdating, UISe
 		titleButton.addSubview(titleLabel)
 	}
 
-	override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-		if let dvc = segue.destinationViewController as? GreetingDetailViewController {
+	override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+		if let dvc = segue.destination as? GreetingDetailViewController {
 			dvc.data = dvcData
 		}
 	}
 
-	func searchBarCancelButtonClicked(searchBar: UISearchBar) {
+	func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
 		totalLabel.text = "1000000000"
 		configureTitleButton("业务开通", haveSubTitle: true)
 		self.navigationItem.rightBarButtonItem = searchButton
@@ -82,14 +82,14 @@ class GreetingNewViewController: UIViewController, UISearchResultsUpdating, UISe
 		resultSearchController.searchBar.becomeFirstResponder()
 	}
 
-	func updateSearchResultsForSearchController(searchController: UISearchController) {
+	func updateSearchResults(for searchController: UISearchController) {
 		let searchText = searchController.searchBar.text
 		if searchText == nil || searchText == "" {
 			filteredItems = items
 		} else {
 			var tempArray = items[Constant.GreetingOBJHandlerSectionKey]
 			// Be careful when to cast the data. Here it must be at the right side, or it will not work.
-			tempArray = (tempArray as! [Greeting]).filter { $0.language.lowercaseString.rangeOfString(searchController.searchBar.text!) != nil || $0.greetingText.lowercaseString.rangeOfString(searchController.searchBar.text!) != nil }
+			tempArray = (tempArray as! [Greeting]).filter { $0.language.lowercased().range(of: searchController.searchBar.text!) != nil || $0.greetingText.lowercased().range(of: searchController.searchBar.text!) != nil }
 			filteredItems[Constant.GreetingOBJHandlerSectionKey] = tempArray
 		}
 		dataSource.updateItems(filteredItems)
@@ -97,7 +97,7 @@ class GreetingNewViewController: UIViewController, UISearchResultsUpdating, UISe
 	}
 
 	func addSearchBar() {
-		searchButton = UIBarButtonItem(barButtonSystemItem: .Search, target: self, action: #selector(GreetingNewViewController.showSearch))
+		searchButton = UIBarButtonItem(barButtonSystemItem: .search, target: self, action: #selector(GreetingNewViewController.showSearch))
 		navigationItem.rightBarButtonItem = searchButton
 		self.resultSearchController = {
 			let controller = UISearchController(searchResultsController: nil)
@@ -112,13 +112,13 @@ class GreetingNewViewController: UIViewController, UISearchResultsUpdating, UISe
 	}
 
     // 定义searchBar样式
-    func configureSearchBar(searchBar: UISearchBar) {
+    func configureSearchBar(_ searchBar: UISearchBar) {
         searchBar.placeholder = "请输入客户名称或简拼"
         debugPrint("searchBar.text", searchBar.text) //searchBar.text不会为nil
         searchBar.sizeToFit()
-        searchBar.tintColor = UIColorDay.searchBarColor(isDay)
-        searchBar.backgroundColor = UIColor.clearColor()
-        searchBar.translucent = true
+        searchBar.tintColor = UIColor.white
+        searchBar.backgroundColor = UIColor.clear
+        searchBar.isTranslucent = true
         searchBar.enablesReturnKeyAutomatically = false //设置ReturnKey是无text输入时也直接可用
     }
 

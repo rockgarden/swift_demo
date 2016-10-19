@@ -16,7 +16,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
 	let newFavoriteEmoji = ["🏃🏃🏃🏃🏃", "💩💩💩💩💩", "👸👸👸👸👸", "🤗🤗🤗🤗🤗", "😅😅😅😅😅", "😆😆😆😆😆"]
 	var emojiData = [String]()
     var emojiTableView: UITableView!
-    var tableViewController = UITableViewController(style: .Grouped)
+    var tableViewController = UITableViewController(style: .grouped)
 	var refreshControl = UIRefreshControl()
 	// var navBar: UINavigationBar = UINavigationBar(frame: CGRect(x: 0, y: 0, width: 375, height: 64))
 
@@ -35,48 +35,48 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
 
 		emojiTableView.backgroundColor = UIColor(red: 0.092, green: 0.096, blue: 0.116, alpha: 1)
 		emojiTableView.dataSource = self
-		emojiTableView.registerClass(UITableViewCell.self, forCellReuseIdentifier: cellIdentifer)
+		emojiTableView.register(UITableViewCell.self, forCellReuseIdentifier: cellIdentifer)
 		emojiTableView.rowHeight = UITableViewAutomaticDimension
 		emojiTableView.estimatedRowHeight = 60.0
-		emojiTableView.tableFooterView = UIView(frame: CGRectZero)
-		emojiTableView.separatorStyle = UITableViewCellSeparatorStyle.None
+		emojiTableView.tableFooterView = UIView(frame: CGRect.zero)
+		emojiTableView.separatorStyle = UITableViewCellSeparatorStyle.none
 		emojiTableView.translatesAutoresizingMaskIntoConstraints = false
 
 		tableViewController.refreshControl = self.refreshControl
-		self.refreshControl.addTarget(self, action: #selector(ViewController.didRoadEmoji), forControlEvents: .ValueChanged)
+		self.refreshControl.addTarget(self, action: #selector(ViewController.didRoadEmoji), for: .valueChanged)
 		self.refreshControl.backgroundColor = UIColor(red: 0.113, green: 0.113, blue: 0.145, alpha: 1)
-		let attributes = [NSForegroundColorAttributeName: UIColor.whiteColor()]
-		self.refreshControl.attributedTitle = NSAttributedString(string: "Last updated on \(NSDate())", attributes: attributes)
-		self.refreshControl.tintColor = UIColor.whiteColor()
+		let attributes = [NSForegroundColorAttributeName: UIColor.white]
+		self.refreshControl.attributedTitle = NSAttributedString(string: "Last updated on \(Date())", attributes: attributes)
+		self.refreshControl.tintColor = UIColor.white
 
 		self.view.addSubview(emojiTableView)
 
-		NSLayoutConstraint.activateConstraints([
-			emojiTableView.trailingAnchor.constraintEqualToAnchor(self.view.trailingAnchor),
-			emojiTableView.leadingAnchor.constraintEqualToAnchor(self.view.leadingAnchor),
-			emojiTableView.topAnchor.constraintEqualToAnchor(topLayoutGuide.bottomAnchor),
-			emojiTableView.bottomAnchor.constraintEqualToAnchor(bottomLayoutGuide.bottomAnchor)
+		NSLayoutConstraint.activate([
+			emojiTableView.trailingAnchor.constraint(equalTo: self.view.trailingAnchor),
+			emojiTableView.leadingAnchor.constraint(equalTo: self.view.leadingAnchor),
+			emojiTableView.topAnchor.constraint(equalTo: topLayoutGuide.bottomAnchor),
+			emojiTableView.bottomAnchor.constraint(equalTo: bottomLayoutGuide.bottomAnchor)
 		])
 
 	}
 
 	// UITableViewDataSource
 
-	func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+	func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
 		return emojiData.count
 	}
 
-	func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+	func numberOfSections(in tableView: UITableView) -> Int {
 		return 2
 	}
 
-	func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-		let cell = tableView.dequeueReusableCellWithIdentifier(cellIdentifer)! as UITableViewCell
-		cell.textLabel!.text = self.emojiData[indexPath.row]
-		cell.textLabel!.textAlignment = NSTextAlignment.Center
-		cell.textLabel!.font = UIFont.systemFontOfSize(50)
-		cell.backgroundColor = UIColor.clearColor()
-		cell.selectionStyle = UITableViewCellSelectionStyle.None
+	func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+		let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifer)! as UITableViewCell
+		cell.textLabel!.text = self.emojiData[(indexPath as NSIndexPath).row]
+		cell.textLabel!.textAlignment = NSTextAlignment.center
+		cell.textLabel!.font = UIFont.systemFont(ofSize: 50)
+		cell.backgroundColor = UIColor.clear
+		cell.selectionStyle = UITableViewCellSelectionStyle.none
 
 		return cell
 	}
@@ -89,23 +89,23 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
 		self.refreshControl.endRefreshing()
 	}
 
-	override func preferredStatusBarStyle() -> UIStatusBarStyle {
-		return UIStatusBarStyle.LightContent
+	override var preferredStatusBarStyle : UIStatusBarStyle {
+		return UIStatusBarStyle.lightContent
 	}
 
-    func animateTable(table: UITableView) {
+    func animateTable(_ table: UITableView) {
         table.reloadData()
         let cells = table.visibleCells
         let tableHeight: CGFloat = table.bounds.size.height
         for i in cells {
             let cell = i as UITableViewCell
-            cell.transform = CGAffineTransformMakeTranslation(0, tableHeight)
+            cell.transform = CGAffineTransform(translationX: 0, y: tableHeight)
         }
         var index = 0
         for a in cells {
             let cell = a as UITableViewCell
-            UIView.animateWithDuration(1.0, delay: 0.05 * Double(index), usingSpringWithDamping: 0.8, initialSpringVelocity: 0, options: [], animations: {
-                cell.transform = CGAffineTransformMakeTranslation(0, 0);
+            UIView.animate(withDuration: 1.0, delay: 0.05 * Double(index), usingSpringWithDamping: 0.8, initialSpringVelocity: 0, options: [], animations: {
+                cell.transform = CGAffineTransform(translationX: 0, y: 0);
                 }, completion: nil)
             
             index += 1

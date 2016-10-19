@@ -18,38 +18,38 @@ class ConstraintSwapping: UIViewController {
 	var constraintsWith = [NSLayoutConstraint]()
 	var constraintsWithout = [NSLayoutConstraint]()
 
-	override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
+	override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
 		print("here")
-		super.touchesBegan(touches, withEvent: event)
+		super.touchesBegan(touches, with: event)
 	}
 
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		let mainView = self.view
 
-		v.backgroundColor = UIColor.redColor()
+		v.backgroundColor = UIColor.red
 		v.translatesAutoresizingMaskIntoConstraints = false
-		mainView.addSubview(v)
-		NSLayoutConstraint.activateConstraints([
-			NSLayoutConstraint.constraintsWithVisualFormat("H:|-(60)-[v]-(0)-|", options: [], metrics: nil, views: ["v": v]),
-			NSLayoutConstraint.constraintsWithVisualFormat("V:|-(20)-[v]-(0)-|", options: [], metrics: nil, views: ["v": v])
-			].flatten().map { $0 })
+		mainView?.addSubview(v)
+		NSLayoutConstraint.activate([
+			NSLayoutConstraint.constraints(withVisualFormat: "H:|-(60)-[v]-(0)-|", options: [], metrics: nil, views: ["v": v]),
+			NSLayoutConstraint.constraints(withVisualFormat: "V:|-(20)-[v]-(0)-|", options: [], metrics: nil, views: ["v": v])
+			].joined().map { $0 })
 		// experiment by commenting out this line
 		v.preservesSuperviewLayoutMargins = true
 
 		let v0 = UIView()
-		v0.backgroundColor = UIColor.greenColor()
+		v0.backgroundColor = UIColor.green
 		v0.translatesAutoresizingMaskIntoConstraints = false
 		v.addSubview(v0)
 
 		let v1 = UIView()
-		v1.backgroundColor = UIColor.redColor()
+		v1.backgroundColor = UIColor.red
 		v1.translatesAutoresizingMaskIntoConstraints = false
 		let v2 = UIView()
-		v2.backgroundColor = UIColor.yellowColor()
+		v2.backgroundColor = UIColor.yellow
 		v2.translatesAutoresizingMaskIntoConstraints = false
 		let v3 = UIView()
-		v3.backgroundColor = UIColor.blueColor()
+		v3.backgroundColor = UIColor.blue
 		v3.translatesAutoresizingMaskIntoConstraints = false
 		v0.addSubview(v1)
 		v0.addSubview(v2)
@@ -64,53 +64,53 @@ class ConstraintSwapping: UIViewController {
 		switch which0 {
 		case 1:
 			// no longer need delayed performance here
-			NSLayoutConstraint.activateConstraints([
-				NSLayoutConstraint.constraintsWithVisualFormat("H:|-[v1]-|", options: [], metrics: nil, views: ["v1": v0]),
-				NSLayoutConstraint.constraintsWithVisualFormat("V:|-[v1]-|", options: [], metrics: nil, views: ["v1": v0])
-				].flatten().map { $0 })
+			NSLayoutConstraint.activate([
+				NSLayoutConstraint.constraints(withVisualFormat: "H:|-[v1]-|", options: [], metrics: nil, views: ["v1": v0]),
+				NSLayoutConstraint.constraints(withVisualFormat: "V:|-[v1]-|", options: [], metrics: nil, views: ["v1": v0])
+				].joined().map { $0 })
 		case 2:
 			// new notation treats margins as a pseudoview (UILayoutGuide)
-			NSLayoutConstraint.activateConstraints([
-				v0.topAnchor.constraintEqualToAnchor(v.layoutMarginsGuide.topAnchor),
-				v0.bottomAnchor.constraintEqualToAnchor(v.layoutMarginsGuide.bottomAnchor),
-				v0.trailingAnchor.constraintEqualToAnchor(v.layoutMarginsGuide.trailingAnchor),
-				v0.leadingAnchor.constraintEqualToAnchor(v.layoutMarginsGuide.leadingAnchor)
+			NSLayoutConstraint.activate([
+				v0.topAnchor.constraint(equalTo: v.layoutMarginsGuide.topAnchor),
+				v0.bottomAnchor.constraint(equalTo: v.layoutMarginsGuide.bottomAnchor),
+				v0.trailingAnchor.constraint(equalTo: v.layoutMarginsGuide.trailingAnchor),
+				v0.leadingAnchor.constraint(equalTo: v.layoutMarginsGuide.leadingAnchor)
 			])
 		case 3:
 			// new kind of margin, "readable content"
 			// particularly dramatic on iPad in landscape
-			NSLayoutConstraint.activateConstraints([
-				v0.topAnchor.constraintEqualToAnchor(v.readableContentGuide.topAnchor),
-				v0.bottomAnchor.constraintEqualToAnchor(v.readableContentGuide.bottomAnchor),
-				v0.trailingAnchor.constraintEqualToAnchor(v.readableContentGuide.trailingAnchor),
-				v0.leadingAnchor.constraintEqualToAnchor(v.readableContentGuide.leadingAnchor)
+			NSLayoutConstraint.activate([
+				v0.topAnchor.constraint(equalTo: v.readableContentGuide.topAnchor),
+				v0.bottomAnchor.constraint(equalTo: v.readableContentGuide.bottomAnchor),
+				v0.trailingAnchor.constraint(equalTo: v.readableContentGuide.trailingAnchor),
+				v0.leadingAnchor.constraint(equalTo: v.readableContentGuide.leadingAnchor)
 			])
 			default: break
 		}
 
 		// construct constraints
-		let c1 = NSLayoutConstraint.constraintsWithVisualFormat("H:|-(20)-[v(100)]", options: [], metrics: nil, views: ["v": v1])
-		let c2 = NSLayoutConstraint.constraintsWithVisualFormat("H:|-(20)-[v(100)]", options: [], metrics: nil, views: ["v": v2])
-		let c3 = NSLayoutConstraint.constraintsWithVisualFormat("H:|-(20)-[v(100)]", options: [], metrics: nil, views: ["v": v3])
-		let c4 = NSLayoutConstraint.constraintsWithVisualFormat("V:|-(100)-[v(20)]", options: [], metrics: nil, views: ["v": v1])
-		let c5with = NSLayoutConstraint.constraintsWithVisualFormat("V:[v1]-(20)-[v2(20)]-(20)-[v3(20)]", options: [], metrics: nil, views: ["v1": v1, "v2": v2, "v3": v3])
-		let c5without = NSLayoutConstraint.constraintsWithVisualFormat("V:[v1]-(20)-[v3(20)]", options: [], metrics: nil, views: ["v1": v1, "v3": v3])
+		let c1 = NSLayoutConstraint.constraints(withVisualFormat: "H:|-(20)-[v(100)]", options: [], metrics: nil, views: ["v": v1])
+		let c2 = NSLayoutConstraint.constraints(withVisualFormat: "H:|-(20)-[v(100)]", options: [], metrics: nil, views: ["v": v2])
+		let c3 = NSLayoutConstraint.constraints(withVisualFormat: "H:|-(20)-[v(100)]", options: [], metrics: nil, views: ["v": v3])
+		let c4 = NSLayoutConstraint.constraints(withVisualFormat: "V:|-(100)-[v(20)]", options: [], metrics: nil, views: ["v": v1])
+		let c5with = NSLayoutConstraint.constraints(withVisualFormat: "V:[v1]-(20)-[v2(20)]-(20)-[v3(20)]", options: [], metrics: nil, views: ["v1": v1, "v2": v2, "v3": v3])
+		let c5without = NSLayoutConstraint.constraints(withVisualFormat: "V:[v1]-(20)-[v3(20)]", options: [], metrics: nil, views: ["v1": v1, "v3": v3])
 
 		// first set of constraints
-		self.constraintsWith.appendContentsOf(c1)
-		self.constraintsWith.appendContentsOf(c2)
-		self.constraintsWith.appendContentsOf(c3)
-		self.constraintsWith.appendContentsOf(c4)
-		self.constraintsWith.appendContentsOf(c5with)
+		self.constraintsWith.append(contentsOf: c1)
+		self.constraintsWith.append(contentsOf: c2)
+		self.constraintsWith.append(contentsOf: c3)
+		self.constraintsWith.append(contentsOf: c4)
+		self.constraintsWith.append(contentsOf: c5with)
 
 		// second set of constraints
-		self.constraintsWithout.appendContentsOf(c1)
-		self.constraintsWithout.appendContentsOf(c3)
-		self.constraintsWithout.appendContentsOf(c4)
-		self.constraintsWithout.appendContentsOf(c5without)
+		self.constraintsWithout.append(contentsOf: c1)
+		self.constraintsWithout.append(contentsOf: c3)
+		self.constraintsWithout.append(contentsOf: c4)
+		self.constraintsWithout.append(contentsOf: c5without)
 
 		// apply first set
-		NSLayoutConstraint.activateConstraints(self.constraintsWith)
+		NSLayoutConstraint.activate(self.constraintsWith)
 
 		/*
 		 // just experimenting, pay no attention
@@ -138,7 +138,7 @@ class ConstraintSwapping: UIViewController {
 		 )
 		 */
 
-		let v4 = UIView(frame: CGRectMake(100, 250, 132, 194))
+		let v4 = UIView(frame: CGRect(x: 100, y: 250, width: 132, height: 194))
 		v4.backgroundColor = UIColor(red: 1, green: 0.4, blue: 1, alpha: 1)
 		let v5 = UIView()
 		v5.backgroundColor = UIColor(red: 0.5, green: 1, blue: 0, alpha: 1)
@@ -159,66 +159,66 @@ class ConstraintSwapping: UIViewController {
 			// the old way, and this is the last time I'm going to show this
 			v4.addConstraint(
 				NSLayoutConstraint(item: v5,
-					attribute: .Leading,
-					relatedBy: .Equal,
+					attribute: .leading,
+					relatedBy: .equal,
 					toItem: v4,
-					attribute: .Leading,
+					attribute: .leading,
 					multiplier: 1, constant: 0)
 			)
 			v4.addConstraint(
 				NSLayoutConstraint(item: v5,
-					attribute: .Trailing,
-					relatedBy: .Equal,
+					attribute: .trailing,
+					relatedBy: .equal,
 					toItem: v4,
-					attribute: .Trailing,
+					attribute: .trailing,
 					multiplier: 1, constant: 0)
 			)
 			v4.addConstraint(
 				NSLayoutConstraint(item: v5,
-					attribute: .Top,
-					relatedBy: .Equal,
+					attribute: .top,
+					relatedBy: .equal,
 					toItem: v4,
-					attribute: .Top,
+					attribute: .top,
 					multiplier: 1, constant: 0)
 			)
 			v5.addConstraint(
 				NSLayoutConstraint(item: v5,
-					attribute: .Height,
-					relatedBy: .Equal,
+					attribute: .height,
+					relatedBy: .equal,
 					toItem: nil,
-					attribute: .NotAnAttribute,
+					attribute: .notAnAttribute,
 					multiplier: 1, constant: 10)
 			)
 			v6.addConstraint(
 				NSLayoutConstraint(item: v6,
-					attribute: .Width,
-					relatedBy: .Equal,
+					attribute: .width,
+					relatedBy: .equal,
 					toItem: nil,
-					attribute: .NotAnAttribute,
+					attribute: .notAnAttribute,
 					multiplier: 1, constant: 20)
 			)
 			v6.addConstraint(
 				NSLayoutConstraint(item: v6,
-					attribute: .Height,
-					relatedBy: .Equal,
+					attribute: .height,
+					relatedBy: .equal,
 					toItem: nil,
-					attribute: .NotAnAttribute,
+					attribute: .notAnAttribute,
 					multiplier: 1, constant: 20)
 			)
 			v4.addConstraint(
 				NSLayoutConstraint(item: v6,
-					attribute: .Trailing,
-					relatedBy: .Equal,
+					attribute: .trailing,
+					relatedBy: .equal,
 					toItem: v4,
-					attribute: .Trailing,
+					attribute: .trailing,
 					multiplier: 1, constant: 0)
 			)
 			v4.addConstraint(
 				NSLayoutConstraint(item: v6,
-					attribute: .Bottom,
-					relatedBy: .Equal,
+					attribute: .bottom,
+					relatedBy: .equal,
 					toItem: v4,
-					attribute: .Bottom,
+					attribute: .bottom,
 					multiplier: 1, constant: 0)
 			)
 		case 2:
@@ -226,15 +226,15 @@ class ConstraintSwapping: UIViewController {
 			// and we should now be activating constraints, not adding them...
 			// to a specific view
 			// whereever possible, activate all the constraints at once
-			NSLayoutConstraint.activateConstraints([
-				v5.leadingAnchor.constraintEqualToAnchor(v4.leadingAnchor),
-				v5.trailingAnchor.constraintEqualToAnchor(v4.trailingAnchor),
-				v5.topAnchor.constraintEqualToAnchor(v4.topAnchor),
-				v5.heightAnchor.constraintEqualToConstant(10),
-				v6.widthAnchor.constraintEqualToConstant(20),
-				v6.heightAnchor.constraintEqualToConstant(20),
-				v6.trailingAnchor.constraintEqualToAnchor(v4.trailingAnchor),
-				v6.bottomAnchor.constraintEqualToAnchor(v4.bottomAnchor)
+			NSLayoutConstraint.activate([
+				v5.leadingAnchor.constraint(equalTo: v4.leadingAnchor),
+				v5.trailingAnchor.constraint(equalTo: v4.trailingAnchor),
+				v5.topAnchor.constraint(equalTo: v4.topAnchor),
+				v5.heightAnchor.constraint(equalToConstant: 10),
+				v6.widthAnchor.constraint(equalToConstant: 20),
+				v6.heightAnchor.constraint(equalToConstant: 20),
+				v6.trailingAnchor.constraint(equalTo: v4.trailingAnchor),
+				v6.bottomAnchor.constraint(equalTo: v4.bottomAnchor)
 			])
 
 		case 3:
@@ -243,19 +243,19 @@ class ConstraintSwapping: UIViewController {
 			// okay, that's boring...
 			// let's write our own Swift NSDictionaryOfVariableBindings substitute (sort of)
 			let d = dictionaryOfNames(v4, v5, v6)
-			NSLayoutConstraint.activateConstraints([
-				NSLayoutConstraint.constraintsWithVisualFormat(
-					"H:|[v2]|", options: [], metrics: nil, views: d),
-				NSLayoutConstraint.constraintsWithVisualFormat(
-					"V:|[v2(10)]", options: [], metrics: nil, views: d),
-				NSLayoutConstraint.constraintsWithVisualFormat(
-					"H:[v3(20)]|", options: [], metrics: nil, views: d),
-				NSLayoutConstraint.constraintsWithVisualFormat(
-					"V:[v3(20)]|", options: [], metrics: nil, views: d),
+			NSLayoutConstraint.activate([
+				NSLayoutConstraint.constraints(
+					withVisualFormat: "H:|[v2]|", options: [], metrics: nil, views: d),
+				NSLayoutConstraint.constraints(
+					withVisualFormat: "V:|[v2(10)]", options: [], metrics: nil, views: d),
+				NSLayoutConstraint.constraints(
+					withVisualFormat: "H:[v3(20)]|", options: [], metrics: nil, views: d),
+				NSLayoutConstraint.constraints(
+					withVisualFormat: "V:[v3(20)]|", options: [], metrics: nil, views: d),
 				// uncomment me to form a conflict
 				// NSLayoutConstraint.constraintsWithVisualFormat(
 				// "V:[v3(10)]|", options: [], metrics: nil, views: d),
-				].flatten().map { $0 })
+				].joined().map { $0 })
 		default: break
 		}
 
@@ -270,23 +270,23 @@ class ConstraintSwapping: UIViewController {
 		let mainview = self.view
 		if self.v2.superview != nil {
 			self.v2.removeFromSuperview()
-			NSLayoutConstraint.deactivateConstraints(self.constraintsWith)
-			NSLayoutConstraint.activateConstraints(self.constraintsWithout)
+			NSLayoutConstraint.deactivate(self.constraintsWith)
+			NSLayoutConstraint.activate(self.constraintsWithout)
 		} else {
-			mainview.addSubview(v2)
-			NSLayoutConstraint.deactivateConstraints(self.constraintsWithout)
-			NSLayoutConstraint.activateConstraints(self.constraintsWith)
+			mainview?.addSubview(v2)
+			NSLayoutConstraint.deactivate(self.constraintsWithout)
+			NSLayoutConstraint.activate(self.constraintsWith)
 		}
 	}
 
-	@IBAction func doSwap(sender: AnyObject) {
+	@IBAction func doSwap(_ sender: AnyObject) {
 		doSwap()
 	}
 
-	override func traitCollectionDidChange(previousTraitCollection: UITraitCollection?) {
+	override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
 		let prev = previousTraitCollection
 		let tc = self.traitCollection
-		if prev == nil && tc.verticalSizeClass == .Compact {
+		if prev == nil && tc.verticalSizeClass == .compact {
 			self.doSwap()
 		} else if prev != nil && tc.verticalSizeClass != prev!.verticalSizeClass {
 			self.doSwap()

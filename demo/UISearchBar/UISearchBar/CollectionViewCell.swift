@@ -13,7 +13,7 @@ class CollectionViewCell: UICollectionViewCell {
     
     @IBOutlet weak var greetingTextLabel: UILabel!
 
-    func configureForItem(item: AnyObject?) {
+    func configureForItem(_ item: AnyObject?) {
         if let greeting:Greeting = item as? Greeting {
             self.textLabel.text = greeting.language
             self.greetingTextLabel.text = greeting.greetingText

@@ -14,16 +14,16 @@ class ViewController: UIViewController {
     // notice that the embedded version of ViewController2 is missing the Dismiss button!
     // that's because it thinks it has a Compact horizontal size class...
     // ...which is configured with a different interface in the storyboard
-    
+    // Constraint referencing items turned off in current configuration. Turn off this constraint in the current configuration. item 的 install wR 其 Constraint 也要 install wR
     override func viewDidLoad() {
-        let vc = self.storyboard!.instantiateViewControllerWithIdentifier("CompactHorizontalVC")
+        let vc = self.storyboard!.instantiateViewController(withIdentifier: "CompactHorizontalVC")
         self.addChildViewController(vc) // "will" called for us
         //let tc = UITraitCollection(horizontalSizeClass: .Compact)
         let tc = UITraitCollection(displayScale: 0.4)
         self.setOverrideTraitCollection(tc, forChildViewController: vc)
-        vc.view.frame = CGRectMake(100, 100, 200, 200)
+        vc.view.frame = CGRect(x: 100, y: 100, width: 200, height: 200)
         self.view.addSubview(vc.view)
-        vc.didMoveToParentViewController(self)
+        vc.didMove(toParentViewController: self)
     }
 
 }

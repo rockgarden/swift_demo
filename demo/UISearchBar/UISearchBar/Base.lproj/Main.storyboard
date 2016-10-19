@@ -263,7 +263,7 @@
         <!--UISearchBarWithCollectionView-->
         <scene sceneID="mAu-Ds-BVz">
             <objects>
-                <viewController automaticallyAdjustsScrollViewInsets="NO" id="oCY-ee-0gd" userLabel="UISearchBarWithCollectionView" customClass="CandyViewController" customModule="UISearchBar" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="CandyViewController" automaticallyAdjustsScrollViewInsets="NO" id="oCY-ee-0gd" userLabel="UISearchBarWithCollectionView" customClass="CandyViewController" customModule="UISearchBar" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="8m1-bn-ulS"/>
                         <viewControllerLayoutGuide type="bottom" id="Dac-FM-XPV"/>
@@ -585,7 +585,7 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="DaG-cU-q3B" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="4IB-8E-0HW">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="4IB-8E-0HW">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>

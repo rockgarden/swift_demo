@@ -35,22 +35,22 @@ class CandyViewController: UIViewController, UISearchBarDelegate {
 
     }
     
-    func filterContentForSearchText(searchText:String){
+    func filterContentForSearchText(_ searchText:String){
         self.filteredData = self.data.filter({ (candy: Candy)-> Bool in
-            let stringMatch = candy.name.rangeOfString(searchText)
+            let stringMatch = candy.name.range(of: searchText)
             return stringMatch != nil ? true : false
         })
     }
     
-    func filterContentForSearchTextWithScope(searchText: String, scope: String = "All") {
+    func filterContentForSearchTextWithScope(_ searchText: String, scope: String = "All") {
         self.filteredData = self.data.filter({( candy : Candy) -> Bool in
             let categoryMatch = (scope == "All") || (candy.category == scope)
-            let stringMatch = candy.name.rangeOfString(searchText)
+            let stringMatch = candy.name.range(of: searchText)
             return categoryMatch && (stringMatch != nil)
         })
     }
     
-    func searchBar(searchBar: UISearchBar, textDidChange searchText: String) {
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         if searchText != "" {
             filterContentForSearchText(searchText)
         } else {
@@ -61,18 +61,18 @@ class CandyViewController: UIViewController, UISearchBarDelegate {
     
     
     
-    func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {
+    func numberOfSectionsInCollectionView(_ collectionView: UICollectionView) -> Int {
         return 1
     }
     
-    func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return filteredData.count
     }
     
-    func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCellWithReuseIdentifier("coCell", forIndexPath: indexPath) as! CollectionViewCell
+    func collectionView(_ collectionView: UICollectionView, cellForItemAtIndexPath indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "coCell", for: indexPath) as! CollectionViewCell
         
-        cell.textLabel.text = filteredData[indexPath.row].name
+        cell.textLabel.text = filteredData[(indexPath as NSIndexPath).row].name
         
         return cell
     }

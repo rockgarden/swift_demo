@@ -30,7 +30,7 @@ class Calculator: UIViewController {
 	}
 
 	func setup() {
-		hostView.backgroundColor = .blackColor()
+		hostView.backgroundColor = .black
 
 		let zeroButton = makeButtonWithTitle("0", selector: "", tag: 0)
 		let dotButton = makeButtonWithTitle(",", selector: "", tag: 10)
@@ -57,81 +57,81 @@ class Calculator: UIViewController {
 		textView.text = "42"
 		textView.font = UIFont(name: "HelveticaNeue-Thin", size: 60)
 		// textView.backgroundColor = UIColor.redColor()
-		textView.textColor = .whiteColor()
-		textView.textAlignment = .Right
+		textView.textColor = .white
+		textView.textAlignment = .right
 
 		let textHostView = UIView(frame: .zero)
-		textHostView.backgroundColor = .blackColor()
+		textHostView.backgroundColor = .black
 		textHostView.addSubview(textView)
 
 		var constraints = [NSLayoutConstraint]()
 
-		constraints.append(textView.bottomAnchor.constraintEqualToAnchor(textHostView.bottomAnchor, constant: -5))
-		constraints.append(textView.leadingAnchor.constraintEqualToAnchor(textHostView.leadingAnchor, constant: 5))
-        constraints.append(textView.trailingAnchor.constraintEqualToAnchor(textHostView.trailingAnchor, constant: -5))
+		constraints.append(textView.bottomAnchor.constraint(equalTo: textHostView.bottomAnchor, constant: -5))
+		constraints.append(textView.leadingAnchor.constraint(equalTo: textHostView.leadingAnchor, constant: 5))
+        constraints.append(textView.trailingAnchor.constraint(equalTo: textHostView.trailingAnchor, constant: -5))
 
-		NSLayoutConstraint.activateConstraints(constraints)
+		NSLayoutConstraint.activate(constraints)
 
 		// let redView = makeView(.redColor())
 		// let blueView = makeView(.blueColor())
 		// let greenView = makeView(.greenColor())
 
 		let firstRow = UIStackView(arrangedSubviews: [zeroButton, dotButton, equalButton])
-		firstRow.distribution = .FillProportionally
+		firstRow.distribution = .fillProportionally
 		firstRow.spacing = 0.5
 
-		zeroButton.widthAnchor.constraintEqualToAnchor(dotButton.widthAnchor, multiplier: 2.0, constant: 0.5).active = true
-		dotButton.widthAnchor.constraintEqualToAnchor(equalButton.widthAnchor).active = true
+		zeroButton.widthAnchor.constraint(equalTo: dotButton.widthAnchor, multiplier: 2.0, constant: 0.5).isActive = true
+		dotButton.widthAnchor.constraint(equalTo: equalButton.widthAnchor).isActive = true
 
 		let secondRow = UIStackView(arrangedSubviews: [oneButton, twoButton, threeButton, plusButton])
-		secondRow.distribution = .FillEqually
+		secondRow.distribution = .fillEqually
 		secondRow.spacing = 0.5
 
 		let thirdRow = UIStackView(arrangedSubviews: [fourButton, fiveButton, sixButton, minusButton])
-		thirdRow.distribution = .FillEqually
+		thirdRow.distribution = .fillEqually
 		thirdRow.spacing = 0.5
 
 		let fourthRow = UIStackView(arrangedSubviews: [sevenButton, eighyButton, nineButton, timesButton])
-		fourthRow.distribution = .FillEqually
+		fourthRow.distribution = .fillEqually
 		fourthRow.spacing = 0.5
 
 		let fifthRow = UIStackView(arrangedSubviews: [tanButton, openParenthesesButton, closeParenthesesButton, divideButton])
-		fifthRow.distribution = .FillEqually
+		fifthRow.distribution = .fillEqually
 		fifthRow.spacing = 0.5
 
 		let buttonStackView = UIStackView(arrangedSubviews: [fifthRow, fourthRow, thirdRow, secondRow, firstRow])
-		buttonStackView.axis = .Vertical
-		buttonStackView.distribution = .FillEqually
+		buttonStackView.axis = .vertical
+		buttonStackView.distribution = .fillEqually
 		buttonStackView.spacing = 0.5
 
 		let hostStackView = UIStackView(arrangedSubviews: [textHostView, buttonStackView])
 		hostStackView.frame = hostView.bounds
-		hostStackView.axis = .Vertical
+		hostStackView.axis = .vertical
 		// hostStackView.distribution = .FillEqually
 		hostStackView.spacing = 0.5
 
-		textHostView.heightAnchor.constraintEqualToConstant(150).active = true
+		textHostView.heightAnchor.constraint(equalToConstant: 150).isActive = true
 
 		hostView.addSubview(hostStackView)
 
 	}
 
-	func makeButtonWithTitle(title: String, selector: String, tag: Int) -> UIButton {
-		let button = UIButton(type: .System)
-		button.tintColor = UIColor.blackColor()
+	func makeButtonWithTitle(_ title: String, selector: String, tag: Int) -> UIButton {
+		let button = UIButton(type: .system)
+		button.tintColor = UIColor.black
 		switch tag {
 		case 0...10:
 			button.backgroundColor = UIColor(white: 0.98, alpha: 1.0)
 			button.titleLabel?.font = UIFont(name: "HelveticaNeue-Thin", size: 30)
 		case 101...110:
-			button.backgroundColor = UIColor.orangeColor()
-			button.tintColor = .whiteColor()
+			button.backgroundColor = UIColor.orange
+			button.tintColor = .white
 			button.titleLabel?.font = UIFont(name: "HelveticaNeue-Light", size: 50)
 		default:
 			button.backgroundColor = UIColor(white: 0.90, alpha: 1.0)
 			button.titleLabel?.font = UIFont(name: "HelveticaNeue-Thin", size: 25)
 		}
-		button.setTitle(title, forState: .Normal)
+		button.setTitle(title, for: UIControlState())
 		button.tag = tag
 		return button
 	}

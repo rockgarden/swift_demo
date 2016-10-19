@@ -8,7 +8,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 	var tabBarController = UITabBarController()
 	var myDataSource: MyDataSource!
 
-	func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
+	func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
 
 		self.window = UIWindow()
 
@@ -32,15 +32,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 			let b = UIBarButtonItem()
 			b.title = "Back"
 			list.navigationItem.backBarButtonItem = b // so user can navigation back
-			more.navigationBar.barTintColor = UIColor.redColor()
-			more.navigationBar.tintColor = UIColor.whiteColor()
+			more.navigationBar.barTintColor = UIColor.red
+			more.navigationBar.tintColor = UIColor.white
 			let tv = list.view as! UITableView
 			let mds = MyDataSource(originalDataSource: tv.dataSource!)
 			self.myDataSource = mds
 			tv.dataSource = mds
 		}
 
-		self.window!.backgroundColor = UIColor.whiteColor()
+		self.window!.backgroundColor = UIColor.white
 		self.window!.makeKeyAndVisible()
 		return true
 	}

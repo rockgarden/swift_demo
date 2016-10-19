@@ -6,11 +6,11 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         let lab = UILabel()
         lab.text = ""
-        lab.frame.origin = CGPointMake(100,100)
+        lab.frame.origin = CGPoint(x: 100,y: 100)
         self.view.addSubview(lab)
         self.lab = lab
     }
-    override func viewDidAppear(animated: Bool) {
+    override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         self.lab.text = self.tabBarItem.title
         self.lab.sizeToFit()

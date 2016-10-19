@@ -44,20 +44,20 @@ class CandyNewTableViewController: UITableViewController, UISearchResultsUpdatin
         self.tableView.reloadData()
     }
     
-    func updateSearchResultsForSearchController(searchController: UISearchController) {
+    func updateSearchResults(for searchController: UISearchController) {
         
-        filteredData = data.filter{ $0.name.rangeOfString(searchController.searchBar.text!) != nil }
+        filteredData = data.filter{ $0.name.range(of: searchController.searchBar.text!) != nil }
        
         self.tableView.reloadData()
     }
 
 
-    override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+    override func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
 
-    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if self.resultSearchController.active {
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        if self.resultSearchController.isActive {
             return self.filteredData.count
         }else {
             return self.data.count
@@ -65,14 +65,14 @@ class CandyNewTableViewController: UITableViewController, UISearchResultsUpdatin
     }
 
 
-    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("newCell", forIndexPath: indexPath) as UITableViewCell
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "newCell", for: indexPath) as UITableViewCell
         
         var candy: Candy
-        if self.resultSearchController.active {
-            candy = filteredData[indexPath.row]
+        if self.resultSearchController.isActive {
+            candy = filteredData[(indexPath as NSIndexPath).row]
         } else {
-           candy = data[indexPath.row]
+           candy = data[(indexPath as NSIndexPath).row]
         }
         
         cell.textLabel?.text = candy.name

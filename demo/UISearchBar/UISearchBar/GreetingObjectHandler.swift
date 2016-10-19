@@ -13,10 +13,10 @@ class GreetingObjectHandler {
 
 	init(filename: String) {
 
-		let filePath = NSBundle.mainBundle().pathForResource(filename, ofType: "json")
-		let jsonData = NSData(contentsOfFile: filePath!)
+		let filePath = Bundle.main.path(forResource: filename, ofType: "json")
+		let jsonData = try? Data(contentsOf: URL(fileURLWithPath: filePath!))
 
-		let json = JSON(data: jsonData!, options: NSJSONReadingOptions.AllowFragments, error: nil)
+		let json = JSON(data: jsonData!, options: JSONSerialization.ReadingOptions.allowFragments, error: nil)
 
 		// var greeting = Greeting(language: "", link: "", description: "", greetingText: "")
 

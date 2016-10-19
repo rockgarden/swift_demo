@@ -30,13 +30,13 @@ class Springboard: UIViewController {
     }
     
     func setup() {
-        hostView.backgroundColor = .blackColor()
+        hostView.backgroundColor = .black
         
         let timeLabel = UILabel()
         timeLabel.text = "9:41 AM"
-        timeLabel.textColor = .whiteColor()
-        timeLabel.font = UIFont.boldSystemFontOfSize(13)
-        timeLabel.textAlignment = .Center
+        timeLabel.textColor = .white
+        timeLabel.font = UIFont.boldSystemFont(ofSize: 13)
+        timeLabel.textAlignment = .center
         
         let calendarImageView = UIImageView(image: UIImage(named: "calendar"))
         let photosImageView = UIImageView(image: UIImage(named: "photos"))
@@ -49,9 +49,9 @@ class Springboard: UIViewController {
         let labelWithText = { (text: String) -> UILabel in
             let label = UILabel()
             label.text = text
-            label.textColor = .whiteColor()
-            label.font = UIFont.systemFontOfSize(12)
-            label.textAlignment = .Center
+            label.textColor = .white
+            label.font = UIFont.systemFont(ofSize: 12)
+            label.textAlignment = .center
             return label
         }
         
@@ -66,8 +66,8 @@ class Springboard: UIViewController {
         
         let appStackViewWithArrangedViews = { (views: [UIView]) -> UIStackView in
             let stackView = UIStackView(arrangedSubviews: views)
-            stackView.axis = .Vertical
-            stackView.distribution = .EqualSpacing
+            stackView.axis = .vertical
+            stackView.distribution = .equalSpacing
             stackView.spacing = 3
             return stackView
         }
@@ -91,12 +91,12 @@ class Springboard: UIViewController {
         let safariColumnStackView = appStackViewWithArrangedViews([pageControl, safariStackView])
         
         let firstRowStackView = UIStackView(arrangedSubviews: [firstColumnStackView, secondColumnStackView, mapsStackView, remindersStackView])
-        firstRowStackView.distribution = .EqualSpacing
-        firstRowStackView.alignment = .Top
+        firstRowStackView.distribution = .equalSpacing
+        firstRowStackView.alignment = .top
         firstRowStackView.spacing = 15
         
         let topStackView = UIStackView(arrangedSubviews: [timeLabel, firstRowStackView])
-        topStackView.axis = .Vertical
+        topStackView.axis = .vertical
         topStackView.spacing = 5
         
         //let bottomStackView = UIStackView(arrangedSubviews: [safariStackView])
@@ -109,14 +109,14 @@ class Springboard: UIViewController {
         
         let infoLabel = UILabel()
         infoLabel.translatesAutoresizingMaskIntoConstraints = false
-        infoLabel.textColor = .grayColor()
+        infoLabel.textColor = .gray
         infoLabel.text = "Build with UIStackViews"
         
         let mainStackView = UIStackView(arrangedSubviews: [topStackView, safariColumnStackView])
         mainStackView.translatesAutoresizingMaskIntoConstraints = false
-        mainStackView.axis = .Vertical
-        mainStackView.distribution = .EqualSpacing
-        mainStackView.alignment = .Center
+        mainStackView.axis = .vertical
+        mainStackView.distribution = .equalSpacing
+        mainStackView.alignment = .center
         
         hostView.addSubview(dockBackgroundView)
         hostView.addSubview(mainStackView)
@@ -124,48 +124,48 @@ class Springboard: UIViewController {
         
         let views = ["stackView": mainStackView, "dockBackground": dockBackgroundView]
         var layoutConstraints = [NSLayoutConstraint]()
-        layoutConstraints += NSLayoutConstraint.constraintsWithVisualFormat("|[stackView]|", options: [], metrics: nil, views: views)
-        layoutConstraints += NSLayoutConstraint.constraintsWithVisualFormat("V:|-3-[stackView]-3-|", options: [], metrics: nil, views: views)
-        layoutConstraints += NSLayoutConstraint.constraintsWithVisualFormat("|[dockBackground]|", options: [], metrics: nil, views: views)
-        layoutConstraints += NSLayoutConstraint.constraintsWithVisualFormat("V:[dockBackground(95)]|", options: [], metrics: nil, views: views)
-        layoutConstraints.append(infoLabel.centerXAnchor.constraintEqualToAnchor(hostView.centerXAnchor))
-        layoutConstraints.append(infoLabel.centerYAnchor.constraintEqualToAnchor(hostView.centerYAnchor))
+        layoutConstraints += NSLayoutConstraint.constraints(withVisualFormat: "|[stackView]|", options: [], metrics: nil, views: views)
+        layoutConstraints += NSLayoutConstraint.constraints(withVisualFormat: "V:|-3-[stackView]-3-|", options: [], metrics: nil, views: views)
+        layoutConstraints += NSLayoutConstraint.constraints(withVisualFormat: "|[dockBackground]|", options: [], metrics: nil, views: views)
+        layoutConstraints += NSLayoutConstraint.constraints(withVisualFormat: "V:[dockBackground(95)]|", options: [], metrics: nil, views: views)
+        layoutConstraints.append(infoLabel.centerXAnchor.constraint(equalTo: hostView.centerXAnchor))
+        layoutConstraints.append(infoLabel.centerYAnchor.constraint(equalTo: hostView.centerYAnchor))
         
-        layoutConstraints.append(calendarImageView.widthAnchor.constraintEqualToConstant(60))
-        layoutConstraints.append(calendarImageView.heightAnchor.constraintEqualToConstant(60))
-        layoutConstraints.append(photosImageView.widthAnchor.constraintEqualToConstant(60))
-        layoutConstraints.append(photosImageView.heightAnchor.constraintEqualToConstant(60))
-        layoutConstraints.append(mapsImageView.widthAnchor.constraintEqualToConstant(60))
-        layoutConstraints.append(mapsImageView.heightAnchor.constraintEqualToConstant(60))
-        layoutConstraints.append(remindersImageView.widthAnchor.constraintEqualToConstant(60))
-        layoutConstraints.append(remindersImageView.heightAnchor.constraintEqualToConstant(60))
-        layoutConstraints.append(healthImageView.widthAnchor.constraintEqualToConstant(60))
-        layoutConstraints.append(healthImageView.heightAnchor.constraintEqualToConstant(60))
-        layoutConstraints.append(settingsImageView.widthAnchor.constraintEqualToConstant(60))
-        layoutConstraints.append(settingsImageView.heightAnchor.constraintEqualToConstant(60))
-        layoutConstraints.append(safariImageView.widthAnchor.constraintEqualToConstant(60))
-        layoutConstraints.append(safariImageView.heightAnchor.constraintEqualToConstant(60))
+        layoutConstraints.append(calendarImageView.widthAnchor.constraint(equalToConstant: 60))
+        layoutConstraints.append(calendarImageView.heightAnchor.constraint(equalToConstant: 60))
+        layoutConstraints.append(photosImageView.widthAnchor.constraint(equalToConstant: 60))
+        layoutConstraints.append(photosImageView.heightAnchor.constraint(equalToConstant: 60))
+        layoutConstraints.append(mapsImageView.widthAnchor.constraint(equalToConstant: 60))
+        layoutConstraints.append(mapsImageView.heightAnchor.constraint(equalToConstant: 60))
+        layoutConstraints.append(remindersImageView.widthAnchor.constraint(equalToConstant: 60))
+        layoutConstraints.append(remindersImageView.heightAnchor.constraint(equalToConstant: 60))
+        layoutConstraints.append(healthImageView.widthAnchor.constraint(equalToConstant: 60))
+        layoutConstraints.append(healthImageView.heightAnchor.constraint(equalToConstant: 60))
+        layoutConstraints.append(settingsImageView.widthAnchor.constraint(equalToConstant: 60))
+        layoutConstraints.append(settingsImageView.heightAnchor.constraint(equalToConstant: 60))
+        layoutConstraints.append(safariImageView.widthAnchor.constraint(equalToConstant: 60))
+        layoutConstraints.append(safariImageView.heightAnchor.constraint(equalToConstant: 60))
         
-        NSLayoutConstraint.activateConstraints(layoutConstraints)
+        NSLayoutConstraint.activate(layoutConstraints)
         
     }
     
-    func makeButtonWithTitle(title: String, selector: String, tag: Int) -> UIButton {
-        let button = UIButton(type: .System)
-        button.tintColor = UIColor.blackColor()
+    func makeButtonWithTitle(_ title: String, selector: String, tag: Int) -> UIButton {
+        let button = UIButton(type: .system)
+        button.tintColor = UIColor.black
         switch tag {
         case 0...10:
             button.backgroundColor = UIColor(white: 0.98, alpha: 1.0)
             button.titleLabel?.font = UIFont(name: "HelveticaNeue-Thin", size: 30)
         case 101...110:
-            button.backgroundColor = UIColor.orangeColor()
-            button.tintColor = .whiteColor()
+            button.backgroundColor = UIColor.orange
+            button.tintColor = .white
             button.titleLabel?.font = UIFont(name: "HelveticaNeue-Light", size: 50)
         default:
             button.backgroundColor = UIColor(white: 0.90, alpha: 1.0)
             button.titleLabel?.font = UIFont(name: "HelveticaNeue-Thin", size: 25)
         }
-        button.setTitle(title, forState: .Normal)
+        button.setTitle(title, for: UIControlState())
         button.tag = tag
         return button
     }

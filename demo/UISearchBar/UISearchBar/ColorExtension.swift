@@ -39,14 +39,15 @@ extension Color {
     }
     
      convenience init(hex: String){
-        var cString:String = hex.stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceAndNewlineCharacterSet() as NSCharacterSet).uppercaseString
+        var cString:String = hex.trimmingCharacters(in: CharacterSet.whitespacesAndNewlines).uppercased()
+            //hex.stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceAndNewlineCharacterSet() as NSCharacterSet).uppercased()
         
         if (cString.hasPrefix("#")) {
-            cString = cString.substringFromIndex(cString.startIndex.advancedBy(1))
+            cString = cString.substring(from: cString.characters.index(cString.startIndex, offsetBy: 1))
         }
         
         var rgb:UInt32 = 0
-        NSScanner(string: cString).scanHexInt(&rgb)
+        Scanner(string: cString).scanHexInt32(&rgb)
         
         if (cString.characters.count != 6) {
             rgb = 11119017
@@ -59,14 +60,15 @@ extension Color {
     }
     
     convenience init(hex: String, alpha: CGFloat){
-        var cString:String = hex.stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceAndNewlineCharacterSet() as NSCharacterSet).uppercaseString
+        var cString:String = hex.trimmingCharacters(in: CharacterSet.whitespacesAndNewlines).uppercased()
+            //hex.stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceAndNewlineCharacterSet() as NSCharacterSet).uppercased()
         
         if (cString.hasPrefix("#")) {
-            cString = cString.substringFromIndex(cString.startIndex.advancedBy(1))
+            cString = cString.substring(from: cString.characters.index(cString.startIndex, offsetBy: 1))
         }
         
         var rgb:UInt32 = 0
-        NSScanner(string: cString).scanHexInt(&rgb)
+        Scanner(string: cString).scanHexInt32(&rgb)
         
         if ((cString.characters.count) != 6) {
             rgb = 11119017

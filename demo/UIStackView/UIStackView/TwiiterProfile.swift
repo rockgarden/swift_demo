@@ -25,7 +25,7 @@ class TwiiterProfile: UIViewController {
         view = contentView
     }
     
-    override func viewWillAppear(animated: Bool) {
+    override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
         profileView.headerImage = UIImage(named: "header.jpg")
@@ -35,7 +35,7 @@ class TwiiterProfile: UIViewController {
 
 class TwitterProfileView : UIView {
     
-    private let headerImageView: UIImageView
+    fileprivate let headerImageView: UIImageView
     let avatarImageView: UIImageView
     
     var headerImage: UIImage? {
@@ -48,14 +48,14 @@ class TwitterProfileView : UIView {
         }
     }
     
-    private let headerImageViewHeightConstraint: NSLayoutConstraint
+    fileprivate let headerImageViewHeightConstraint: NSLayoutConstraint
     
     override init(frame: CGRect) {
         headerImageView = UIImageView()
-        headerImageView.contentMode = .ScaleAspectFit
+        headerImageView.contentMode = .scaleAspectFit
         
         avatarImageView = UIImageView()
-        avatarImageView.contentMode = .ScaleAspectFit
+        avatarImageView.contentMode = .scaleAspectFit
         
         let headerStackView = UIStackView(arrangedSubviews: [headerImageView])
         
@@ -63,9 +63,9 @@ class TwitterProfileView : UIView {
         
         let stackView = UIStackView(arrangedSubviews: [headerStackView, avatarAndTextStackView])
         stackView.translatesAutoresizingMaskIntoConstraints = false
-        stackView.axis = .Vertical
+        stackView.axis = .vertical
         
-        headerImageViewHeightConstraint = NSLayoutConstraint(item: headerImageView, attribute: .Height, relatedBy: .Equal, toItem: nil, attribute: .NotAnAttribute, multiplier: 1.0, constant: 0)
+        headerImageViewHeightConstraint = NSLayoutConstraint(item: headerImageView, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1.0, constant: 0)
         
         super.init(frame: frame)
         backgroundColor = UIColor(red: 0.12, green: 0.12, blue: 0.14, alpha: 1.0)
@@ -75,14 +75,14 @@ class TwitterProfileView : UIView {
         let views = ["stack": stackView]
         var layoutConstraints = [NSLayoutConstraint]()
         
-        layoutConstraints += NSLayoutConstraint.constraintsWithVisualFormat("|[stack]|", options: [], metrics: nil, views: views)
-        layoutConstraints += NSLayoutConstraint.constraintsWithVisualFormat("V:|[stack]", options: [], metrics: nil, views: views)
+        layoutConstraints += NSLayoutConstraint.constraints(withVisualFormat: "|[stack]|", options: [], metrics: nil, views: views)
+        layoutConstraints += NSLayoutConstraint.constraints(withVisualFormat: "V:|[stack]", options: [], metrics: nil, views: views)
         layoutConstraints.append(headerImageViewHeightConstraint)
         //        layoutConstraints.append(avatarImageView.widthAnchor.constraintEqualToConstant(avatarImageHeight))
-        layoutConstraints.append(avatarImageView.heightAnchor.constraintEqualToConstant(avatarImageHeight))
+        layoutConstraints.append(avatarImageView.heightAnchor.constraint(equalToConstant: avatarImageHeight))
         
         
-        NSLayoutConstraint.activateConstraints(layoutConstraints)
+        NSLayoutConstraint.activate(layoutConstraints)
     }
 
     required init?(coder aDecoder: NSCoder) {

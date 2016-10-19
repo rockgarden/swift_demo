@@ -4,10 +4,10 @@ import MapKit
 import AddressBookUI
 import Contacts
 
-func delay(_ delay: Double, closure: @escaping()->()) {
-    let dispatchTime: DispatchTime = DispatchTime.now() + Double(Int64(0.1 * Double(NSEC_PER_SEC))) / Double(NSEC_PER_SEC)
-    DispatchQueue.main.asyncAfter(deadline: dispatchTime, execute: closure)
-}
+//func delay(_ delay: Double, closure: @escaping()->()) {
+//    let dispatchTime: DispatchTime = DispatchTime.now() + Double(Int64(0.1 * Double(NSEC_PER_SEC))) / Double(NSEC_PER_SEC)
+//    DispatchQueue.main.asyncAfter(deadline: dispatchTime, execute: closure)
+//}
 
 class LocationGeocodingVC: UIViewController, MKMapViewDelegate, UISearchBarDelegate {
     @IBOutlet var map : MKMapView!

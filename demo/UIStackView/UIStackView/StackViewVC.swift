@@ -14,7 +14,7 @@ class StackViewVC: UIViewController {
     @IBOutlet var emojiButtons: [UIButton]! {
         didSet {
             emojiButtons.forEach {
-                $0.hidden = true
+                $0.isHidden = true
             }
         }
     }
@@ -37,11 +37,11 @@ class StackViewVC: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    @IBAction func addStar(sender: AnyObject) {
+    @IBAction func addStar(_ sender: AnyObject) {
         let starImgVw:UIImageView = UIImageView(image: UIImage(named: "star"))
-        starImgVw.contentMode = .ScaleAspectFit
+        starImgVw.contentMode = .scaleAspectFit
         self.horizontalStackView.addArrangedSubview(starImgVw)
-        UIView.animateWithDuration(0.25, animations: {
+        UIView.animate(withDuration: 0.25, animations: {
             self.horizontalStackView.layoutIfNeeded()
         })
     }
@@ -51,22 +51,22 @@ class StackViewVC: UIViewController {
      
      - parameter sender: <#sender description#>
      */
-    @IBAction func removeStar(sender: AnyObject) {
+    @IBAction func removeStar(_ sender: AnyObject) {
         let star:UIView? = self.horizontalStackView.arrangedSubviews.last
         if let aStar = star
         {
             self.horizontalStackView.removeArrangedSubview(aStar)
             aStar.removeFromSuperview()
-            UIView.animateWithDuration(0.25, animations: {
+            UIView.animate(withDuration: 0.25, animations: {
                 self.horizontalStackView.layoutIfNeeded()
             })
         }
     }
     
-    @IBAction func onSettingsButtonTap(sender: AnyObject) {
-        UIView.animateWithDuration(0.25, animations: {
+    @IBAction func onSettingsButtonTap(_ sender: AnyObject) {
+        UIView.animate(withDuration: 0.25, animations: {
             self.emojiButtons.forEach {
-                $0.hidden = !$0.hidden
+                $0.isHidden = !$0.isHidden
             }
         })
     }

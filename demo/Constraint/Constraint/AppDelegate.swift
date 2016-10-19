@@ -8,44 +8,40 @@
 
 import UIKit
 
-func delay(delay: Double, closure: () -> ()) {
-	dispatch_after(
-		dispatch_time(
-			DISPATCH_TIME_NOW,
-			Int64(delay * Double(NSEC_PER_SEC))
-		),
-		dispatch_get_main_queue(), closure)
+func delay(_ delay: Double, closure: @escaping () -> ()) {
+	DispatchQueue.main.asyncAfter(
+		deadline: DispatchTime.now() + Double(Int64(delay * Double(NSEC_PER_SEC))) / Double(NSEC_PER_SEC), execute: closure)
 }
 
-func dictionaryOfNames(arr: UIView...) -> [String: UIView] {
+func dictionaryOfNames(_ arr: UIView...) -> [String: UIView] {
 	var d = [String: UIView]()
-	for (ix, v) in arr.enumerate() {
+	for (ix, v) in arr.enumerated() {
 		d["v\(ix+1)"] = v
 	}
 	return d
 }
 
 extension NSLayoutConstraint {
-	class func reportAmbiguity (v: UIView?) {
+	class func reportAmbiguity (_ v: UIView?) {
 		var v = v
 		if v == nil {
-			v = UIApplication.sharedApplication().keyWindow
+			v = UIApplication.shared.keyWindow
 		}
 		for vv in v!.subviews {
-			print("\(vv) \(vv.hasAmbiguousLayout())")
+			print("\(vv) \(vv.hasAmbiguousLayout)")
 			if vv.subviews.count > 0 {
 				self.reportAmbiguity(vv)
 			}
 		}
 	}
-	class func listConstraints (v: UIView?) {
+	class func listConstraints (_ v: UIView?) {
 		var v = v
 		if v == nil {
-			v = UIApplication.sharedApplication().keyWindow
+			v = UIApplication.shared.keyWindow
 		}
 		for vv in v!.subviews {
-			let arr1 = vv.constraintsAffectingLayoutForAxis(.Horizontal)
-			let arr2 = vv.constraintsAffectingLayoutForAxis(.Vertical)
+			let arr1 = vv.constraintsAffectingLayout(for: .horizontal)
+			let arr2 = vv.constraintsAffectingLayout(for: .vertical)
 			NSLog("\n\n%@\nH: %@\nV:%@", vv, arr1, arr2);
 			if vv.subviews.count > 0 {
 				self.listConstraints(vv)
@@ -59,29 +55,29 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 	var window: UIWindow?
 
-	func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
+	func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
 		return true
 	}
 
-	func applicationWillResignActive(application: UIApplication) {
+	func applicationWillResignActive(_ application: UIApplication) {
 		// Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
 		// Use this method to pause ongoing tasks, disable timers, and throttle down OpenGL ES frame rates. Games should use this method to pause the game.
 	}
 
-	func applicationDidEnterBackground(application: UIApplication) {
+	func applicationDidEnterBackground(_ application: UIApplication) {
 		// Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later.
 		// If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
 	}
 
-	func applicationWillEnterForeground(application: UIApplication) {
+	func applicationWillEnterForeground(_ application: UIApplication) {
 		// Called as part of the transition from the background to the inactive state; here you can undo many of the changes made on entering the background.
 	}
 
-	func applicationDidBecomeActive(application: UIApplication) {
+	func applicationDidBecomeActive(_ application: UIApplication) {
 		// Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
 	}
 
-	func applicationWillTerminate(application: UIApplication) {
+	func applicationWillTerminate(_ application: UIApplication) {
 		// Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
 	}
 

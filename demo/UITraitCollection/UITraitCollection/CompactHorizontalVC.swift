@@ -10,8 +10,8 @@ import UIKit
 
 class CompactHorizontalVC: UIViewController {
     
-    @IBAction func doDismiss(sender: AnyObject) {
-        self.dismissViewControllerAnimated(true, completion: nil)
+    @IBAction func doDismiss(_ sender: AnyObject) {
+        self.dismiss(animated: true, completion: nil)
     }
     
     

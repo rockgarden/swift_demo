@@ -10,7 +10,7 @@
 import UIKit
 
 
-typealias CollectionViewCellConfigureBlock = (cell:UICollectionViewCell, item:AnyObject?) -> ()
+typealias CollectionViewCellConfigureBlock = (_ cell:UICollectionViewCell, _ item:AnyObject?) -> ()
 
 class MultiSectionCollectionViewDataSource: NSObject, UICollectionViewDataSource, UICollectionViewDelegate {
     
@@ -23,7 +23,7 @@ class MultiSectionCollectionViewDataSource: NSObject, UICollectionViewDataSource
     var viewController: AnyObject!
     var segueIdentifier: String!
     
-    init(items: [String: [AnyObject]], cellIdentifier: String, viewController: AnyObject, segueIdentifier:String, configureBlock: CollectionViewCellConfigureBlock) {
+    init(items: [String: [AnyObject]], cellIdentifier: String, viewController: AnyObject, segueIdentifier:String, configureBlock: @escaping CollectionViewCellConfigureBlock) {
         
         self.itemIdentifier = cellIdentifier
         self.viewController = viewController
@@ -42,7 +42,7 @@ class MultiSectionCollectionViewDataSource: NSObject, UICollectionViewDataSource
         
     }
     
-    func updateItems(items:[String: [AnyObject]]){
+    func updateItems(_ items:[String: [AnyObject]]){
         self.items = nil
         self.keys = nil
         
@@ -58,22 +58,22 @@ class MultiSectionCollectionViewDataSource: NSObject, UICollectionViewDataSource
         
     }
     
-    func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {
+    func numberOfSections(in collectionView: UICollectionView) -> Int {
       // return keys.count
         return 1
     }
     
-    func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return items[section].count
     }
     
-    func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
-        let cell = collectionView.dequeueReusableCellWithReuseIdentifier(self.itemIdentifier!, forIndexPath: indexPath) as UICollectionViewCell
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: self.itemIdentifier!, for: indexPath) as UICollectionViewCell
         let item: AnyObject = self.itemAtIndexPath(indexPath)
         
         if (self.configureCellBlock != nil) {
-            self.configureCellBlock!(cell: cell, item: item)
+            self.configureCellBlock!(cell, item)
         }
         
         return cell
@@ -95,11 +95,11 @@ class MultiSectionCollectionViewDataSource: NSObject, UICollectionViewDataSource
     
     // must config the viewControllerType manually everytime. So far there is no way that I know of to directly get the class name of the object
     
-    func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
         if let vc = viewController as? GreetingNewViewController {
-            vc.dvcData = items[indexPath.section][indexPath.row]
-            vc.performSegueWithIdentifier(segueIdentifier, sender: viewController)
+            vc.dvcData = items[(indexPath as NSIndexPath).section][(indexPath as NSIndexPath).row]
+            vc.performSegue(withIdentifier: segueIdentifier, sender: viewController)
             
         } else {
             print("can not convert view controller")
@@ -108,8 +108,8 @@ class MultiSectionCollectionViewDataSource: NSObject, UICollectionViewDataSource
     }
     
     
-    func itemAtIndexPath(indexPath: NSIndexPath) -> AnyObject {
-        return self.items[indexPath.section][indexPath.row]
+    func itemAtIndexPath(_ indexPath: IndexPath) -> AnyObject {
+        return self.items[(indexPath as NSIndexPath).section][(indexPath as NSIndexPath).row]
     }
     
 }

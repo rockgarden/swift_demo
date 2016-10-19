@@ -8,6 +8,26 @@
 
 import Foundation
 import UIKit
+fileprivate func < <T : Comparable>(lhs: T?, rhs: T?) -> Bool {
+  switch (lhs, rhs) {
+  case let (l?, r?):
+    return l < r
+  case (nil, _?):
+    return true
+  default:
+    return false
+  }
+}
+
+fileprivate func >= <T : Comparable>(lhs: T?, rhs: T?) -> Bool {
+  switch (lhs, rhs) {
+  case let (l?, r?):
+    return l >= r
+  default:
+    return !(lhs < rhs)
+  }
+}
+
 
 
 extension Dictionary {
@@ -37,11 +57,11 @@ extension Array {
         return self[randomIndex]
     }
     
-    func contains <T: Equatable> (items: T...) -> Bool {
+    func contains <T: Equatable> (_ items: T...) -> Bool {
         return items.all { self.indexOf($0) >= 0 }
     }
     
-    func all (test: (Element) -> Bool) -> Bool {
+    func all (_ test: (Element) -> Bool) -> Bool {
         for item in self {
             if !test(item) {
                 return false
@@ -50,9 +70,9 @@ extension Array {
         
         return true
     }
-    func indexOf <U: Equatable> (item: U) -> Int? {
+    func indexOf <U: Equatable> (_ item: U) -> Int? {
         if item is Element {
-            return unsafeBitCast(self, [U].self).indexOf(item)
+            return unsafeBitCast(self, to: [U].self).indexOf(item)
         }
         
         return nil
@@ -98,7 +118,7 @@ class MD {
         return [String](totalMDDict.keys)
     }
     
-    func getSubColorNameArray(primaryColor: String) -> [String] {
+    func getSubColorNameArray(_ primaryColor: String) -> [String] {
         return [String](totalMDDict[primaryColor]!.keys)
     }
     
@@ -139,7 +159,7 @@ class MD {
         
     }
     //return a random sub color
-     func random(primaryColor: String) -> Color{
+     func random(_ primaryColor: String) -> Color{
         
         let colorArray = totalMDDict[primaryColor]!.toArray{$1}
         return colorArray[Int.random(colorArray.count)]

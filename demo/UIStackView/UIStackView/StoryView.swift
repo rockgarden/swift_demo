@@ -26,7 +26,7 @@ class StoryView: UIViewController {
     }
     
     func setup() {
-        hostView.backgroundColor = .whiteColor()
+        hostView.backgroundColor = .white
         
         let headerLabel = UILabel()
         headerLabel.translatesAutoresizingMaskIntoConstraints = false
@@ -37,8 +37,8 @@ class StoryView: UIViewController {
         
         let image = UIImage(named: "header.jpg")
         let imageView = UIImageView(image: image)
-        imageView.backgroundColor = .yellowColor()
-        imageView.contentMode = .ScaleAspectFit
+        imageView.backgroundColor = .yellow
+        imageView.contentMode = .scaleAspectFit
         
         let bottomLabel = UILabel()
         bottomLabel.translatesAutoresizingMaskIntoConstraints = false
@@ -49,26 +49,26 @@ class StoryView: UIViewController {
         
         stackView = UIStackView(arrangedSubviews: [topStackView, imageView, bottomStackView])
         stackView.translatesAutoresizingMaskIntoConstraints = false
-        stackView.axis = .Vertical
+        stackView.axis = .vertical
         stackView.spacing = 10
         
         hostView.addSubview(stackView)
         
         let views = ["stackView": stackView]
         var layoutConstraints: [NSLayoutConstraint] = []
-        layoutConstraints += NSLayoutConstraint.constraintsWithVisualFormat("|[stackView]|", options: [], metrics: nil, views: views)
-        layoutConstraints += NSLayoutConstraint.constraintsWithVisualFormat("V:|[stackView]", options: [], metrics: nil, views: views)
-        layoutConstraints.append(headerLabel.leadingAnchor.constraintEqualToAnchor(topStackView.leadingAnchor, constant: 10))
-        layoutConstraints.append(headerLabel.trailingAnchor.constraintEqualToAnchor(topStackView.trailingAnchor, constant: 10))
+        layoutConstraints += NSLayoutConstraint.constraints(withVisualFormat: "|[stackView]|", options: [], metrics: nil, views: views)
+        layoutConstraints += NSLayoutConstraint.constraints(withVisualFormat: "V:|[stackView]", options: [], metrics: nil, views: views)
+        layoutConstraints.append(headerLabel.leadingAnchor.constraint(equalTo: topStackView.leadingAnchor, constant: 10))
+        layoutConstraints.append(headerLabel.trailingAnchor.constraint(equalTo: topStackView.trailingAnchor, constant: 10))
         
         let imageSize = image!.size
         let imageHeight = hostView.frame.size.width * imageSize.height / imageSize.width
-        layoutConstraints.append(imageView.heightAnchor.constraintEqualToConstant(imageHeight))
+        layoutConstraints.append(imageView.heightAnchor.constraint(equalToConstant: imageHeight))
         
-        layoutConstraints.append(bottomLabel.leadingAnchor.constraintEqualToAnchor(bottomStackView.leadingAnchor, constant: 10))
-        layoutConstraints.append(bottomLabel.trailingAnchor.constraintEqualToAnchor(bottomStackView.trailingAnchor, constant: 10))
+        layoutConstraints.append(bottomLabel.leadingAnchor.constraint(equalTo: bottomStackView.leadingAnchor, constant: 10))
+        layoutConstraints.append(bottomLabel.trailingAnchor.constraint(equalTo: bottomStackView.trailingAnchor, constant: 10))
 
-        NSLayoutConstraint.activateConstraints(layoutConstraints)
+        NSLayoutConstraint.activate(layoutConstraints)
 
     }
     

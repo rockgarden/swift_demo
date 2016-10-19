@@ -30,12 +30,12 @@ class Timelines: UIViewController {
     }
     
     func setup() {
-        hostView.backgroundColor = .whiteColor()
+        hostView.backgroundColor = .white
         
         let avatarImageView = UIImageView(image: UIImage(named: "logo"))
         avatarImageView.clipsToBounds = true
-        avatarImageView.backgroundColor = .yellowColor()
-        avatarImageView.contentMode = .ScaleAspectFill
+        avatarImageView.backgroundColor = .yellow
+        avatarImageView.contentMode = .scaleAspectFill
         avatarImageView.layer.cornerRadius = 5
         
         let handleLabel = UILabel(frame: .zero)
@@ -63,26 +63,26 @@ class Timelines: UIViewController {
         metaStackView.spacing = 10
         
         let textStackView = UIStackView(arrangedSubviews: [metaStackView, textLabel])
-        textStackView.axis = .Vertical
+        textStackView.axis = .vertical
         textStackView.spacing = 5
         
         let mainStackView = UIStackView(arrangedSubviews: [avatarImageView, textStackView])
         mainStackView.translatesAutoresizingMaskIntoConstraints = false
-        mainStackView.alignment = .Top
+        mainStackView.alignment = .top
         mainStackView.spacing = 10
         
         hostView.addSubview(mainStackView)
         
         var constraints = [NSLayoutConstraint]()
-        constraints.append(avatarImageView.widthAnchor.constraintEqualToConstant(60))
-        constraints.append(avatarImageView.heightAnchor.constraintEqualToConstant(60))
+        constraints.append(avatarImageView.widthAnchor.constraint(equalToConstant: 60))
+        constraints.append(avatarImageView.heightAnchor.constraint(equalToConstant: 60))
         
-        constraints.append(mainStackView.topAnchor.constraintEqualToAnchor(hostView.topAnchor, constant: 10))
-        constraints.append(mainStackView.bottomAnchor.constraintEqualToAnchor(hostView.bottomAnchor, constant: -10))
-        constraints.append(mainStackView.leadingAnchor.constraintEqualToAnchor(hostView.leadingAnchor, constant: 10))
-        constraints.append(mainStackView.trailingAnchor.constraintEqualToAnchor(hostView.trailingAnchor, constant: -10))
+        constraints.append(mainStackView.topAnchor.constraint(equalTo: hostView.topAnchor, constant: 10))
+        constraints.append(mainStackView.bottomAnchor.constraint(equalTo: hostView.bottomAnchor, constant: -10))
+        constraints.append(mainStackView.leadingAnchor.constraint(equalTo: hostView.leadingAnchor, constant: 10))
+        constraints.append(mainStackView.trailingAnchor.constraint(equalTo: hostView.trailingAnchor, constant: -10))
         
-        NSLayoutConstraint.activateConstraints(constraints)
+        NSLayoutConstraint.activate(constraints)
     }
     
 }

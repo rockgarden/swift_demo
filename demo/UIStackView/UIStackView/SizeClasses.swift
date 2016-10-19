@@ -21,10 +21,10 @@ class SizeClasses: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         let regularView = regularViewController.view
-        regularView.frame = CGRectMake(0, 0, 700, 100)
+        regularView?.frame = CGRect(x: 0, y: 0, width: 700, height: 100)
         let compactView = compactViewController.view
-        compactView.frame = CGRectMake(300, 100, 100, 500)
-        self.view.addSubview(compactView) //或add compactView
+        compactView?.frame = CGRect(x: 300, y: 100, width: 100, height: 500)
+        self.view.addSubview(compactView!) //或add compactView
     }
     
 }
@@ -40,8 +40,8 @@ class SizeClass : UIViewController {
     }
     
     override func viewDidLayoutSubviews() {
-        contentView.stackView.axis = traitCollection.horizontalSizeClass == UIUserInterfaceSizeClass.Regular ? UILayoutConstraintAxis.Horizontal : UILayoutConstraintAxis.Vertical
-        print(traitCollection.horizontalSizeClass == UIUserInterfaceSizeClass.Regular)
+        contentView.stackView.axis = traitCollection.horizontalSizeClass == UIUserInterfaceSizeClass.regular ? UILayoutConstraintAxis.horizontal : UILayoutConstraintAxis.vertical
+        print(traitCollection.horizontalSizeClass == UIUserInterfaceSizeClass.regular)
     }
 }
 
@@ -57,23 +57,23 @@ class View: UIView {
             return view
         }
         
-        let redView = makeView(.redColor())
-        let blueView = makeView(.blueColor())
-        let yellowView = makeView(.yellowColor())
+        let redView = makeView(.red)
+        let blueView = makeView(.blue)
+        let yellowView = makeView(.yellow)
         
         stackView = UIStackView(arrangedSubviews: [redView, blueView, yellowView])
         stackView.translatesAutoresizingMaskIntoConstraints = false
-        stackView.distribution = .FillEqually
+        stackView.distribution = .fillEqually
         
         super.init(frame: frame)
-        backgroundColor = .whiteColor()
+        backgroundColor = .white
         
         addSubview(stackView)
         
-        stackView.leadingAnchor.constraintEqualToAnchor(leadingAnchor, constant: 10).active = true
-        stackView.trailingAnchor.constraintEqualToAnchor(trailingAnchor, constant: -10).active = true
-        stackView.topAnchor.constraintEqualToAnchor(topAnchor, constant: 10).active = true
-        stackView.bottomAnchor.constraintEqualToAnchor(bottomAnchor, constant: -10).active = true
+        stackView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 10).isActive = true
+        stackView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -10).isActive = true
+        stackView.topAnchor.constraint(equalTo: topAnchor, constant: 10).isActive = true
+        stackView.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -10).isActive = true
     }
     
     required init(coder aDecoder: NSCoder) {
