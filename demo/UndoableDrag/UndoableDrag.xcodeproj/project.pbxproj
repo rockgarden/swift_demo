@@ -99,6 +99,7 @@
 				TargetAttributes = {
 					4451103F1DB7B5CD007A9A3A = {
 						CreatedOnToolsVersion = 8.0;
+						LastSwiftMigration = 0800;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -301,6 +302,7 @@
 				445110541DB7B5CD007A9A3A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
