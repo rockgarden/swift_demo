@@ -5,6 +5,7 @@
 //  Created by wangkan on 16/8/24.
 //  Copyright © 2016年 rockgarden. All rights reserved.
 //
+//  Example: use UITabBar and UITabBarDelegate no subClass
 
 import UIKit
 

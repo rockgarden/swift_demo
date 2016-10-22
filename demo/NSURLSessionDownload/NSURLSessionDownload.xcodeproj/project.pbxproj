@@ -111,7 +111,6 @@
 				TargetAttributes = {
 					447F772D1DAE7A4C0063DBEC = {
 						CreatedOnToolsVersion = 7.3.1;
-						DevelopmentTeam = UR7J67T5FK;
 						LastSwiftMigration = 0800;
 					};
 				};
@@ -276,7 +275,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = UR7J67T5FK;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = NSURLSessionDownload/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.rockgarden.NSURLSessionDownload;
@@ -289,7 +288,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = UR7J67T5FK;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = NSURLSessionDownload/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.rockgarden.NSURLSessionDownload;

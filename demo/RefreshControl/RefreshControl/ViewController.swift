@@ -57,7 +57,6 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
 			emojiTableView.topAnchor.constraint(equalTo: topLayoutGuide.bottomAnchor),
 			emojiTableView.bottomAnchor.constraint(equalTo: bottomLayoutGuide.bottomAnchor)
 		])
-
 	}
 
 	// UITableViewDataSource
@@ -81,8 +80,12 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
 		return cell
 	}
 
-	// RoadEmoji
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        self.refreshControl.beginRefreshing() // 无效无动画
+    }
 
+	// RoadEmoji
 	func didRoadEmoji() {
 		self.emojiData = newFavoriteEmoji
 		animateTable(emojiTableView)

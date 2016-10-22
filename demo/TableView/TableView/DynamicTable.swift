@@ -171,6 +171,7 @@ class DynamicTable: UIViewController, UITableViewDelegate, UITableViewDataSource
             self.tableView.insertRowsAtIndexPaths(arr,
                                                   withRowAnimation: .Automatic)
             self.tableView.endUpdates()
+            //Important: insertRows过多时,相当于一次性加载了所有的row,性能会受影响
             self.tableView.scrollToRowAtIndexPath(arr[ct - 1],
                                                   atScrollPosition: .None,
                                                   animated: true)
