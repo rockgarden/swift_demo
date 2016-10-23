@@ -2,6 +2,15 @@ import UIKit
 
 class TabbedUnwindSecondVC: UIViewController {
 
+    @IBOutlet weak var resultLabel: UILabel!
+
+    @IBAction func iAmSecond (_ sender: UIStoryboardSegue!) {
+        print("\(type(of: self)) \(#function)")
+        if sender.identifier == ExtraViewController2.UnwindSegue {
+            resultLabel.text = (sender.source as! ExtraViewController2).parameter
+        }
+    }
+
     override func allowedChildViewControllersForUnwinding(from source: UIStoryboardUnwindSegueSource) -> [UIViewController] {
         let result = super.allowedChildViewControllersForUnwinding(from: source)
         print("\(type(of: self)) \(#function) \(result)")

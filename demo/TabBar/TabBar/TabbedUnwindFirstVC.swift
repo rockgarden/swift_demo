@@ -55,10 +55,14 @@ import UIKit
 
 class TabbedUnwindFirstVC: UIViewController {
 
-    @IBAction func iAmFirst (_ sender:UIStoryboardSegue!) {
+    /// Step: 8 
+    // @IBAction,是UnwindSegue的入口
+    // 若只有一个unwind处理函数, 在生成UnwindSegue就不需要选择了对应的@IBAction,所以不弹出菜单
+    @IBAction func iAmFirst (_ sender: UIStoryboardSegue!) {
         print("\(type(of: self)) \(#function)")
     }
 
+    // Step 5
     override func allowedChildViewControllersForUnwinding(from source: UIStoryboardUnwindSegueSource) -> [UIViewController] {
         let result = super.allowedChildViewControllersForUnwinding(from: source)
         print("\(type(of: self)) \(#function) \(result)")
@@ -70,6 +74,7 @@ class TabbedUnwindFirstVC: UIViewController {
         super.unwind(for: unwindSegue, towardsViewController: subsequentVC)
     }
 
+    // Step 6
     override func canPerformUnwindSegueAction(_ action: Selector, from fromViewController: UIViewController, withSender sender: Any) -> Bool {
         let result = super.canPerformUnwindSegueAction(action, from: fromViewController, withSender: sender)
         print("\(type(of: self)) \(#function) \(result)")
@@ -83,7 +88,7 @@ class TabbedUnwindFirstVC: UIViewController {
 
     override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
         let result = super.shouldPerformSegue(withIdentifier: identifier, sender: sender)
-        if identifier == "unwind" {
+        if identifier == "UnwindFirst" {
             print("\(type(of: self)) \(#function) \(result)")
         }
         return result

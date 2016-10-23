@@ -38,20 +38,34 @@ class ObjectToObserve: NSObject {
 }
 
 class Observer: NSObject {
-    override func observeValueForKeyPath(keyPath: String?, ofObject object: AnyObject?, change: [String: AnyObject]?, context: UnsafeMutablePointer<Void>) {
+    override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey: Any]?, context: UnsafeMutableRawPointer?) {
         print("-----------------start------------")
         print("I heard about the change!")
         if let keyPath = keyPath {
-            print(object?.valueForKeyPath?(keyPath))
+            print((object as AnyObject).value?(forKeyPath: keyPath))
         }
         print(change)
         print(context == &con) // aha
-        let c = UnsafeMutablePointer<String>(context)
-        let s = c.memory
+        let c = context?.assumingMemoryBound(to: String.self)
+        //context?.bindMemory(to: UInt8.self, capacity: len)  //set buffer length is safer
+        //let c = UnsafeMutablePointer<String>(context)
+        let s = c?.pointee
         print(s)
         print("-----------------end------------")
     }
 }
+
+//func SHA256(data: String) -> Data {
+//    var hash = Data(count: Int(CC_SHA256_DIGEST_LENGTH))
+//    if let newData: Data = data.data(using: .utf8) {
+//        _ = hash.withUnsafeMutableBytes {mutableBytes in
+//            newData.withUnsafeBytes {bytes in
+//                CC_SHA256(bytes, CC_LONG(newData.count), mutableBytes)
+//            }
+//        }
+//    }
+//    return hash
+//}
 
 //MARK: - 案例2
 
@@ -59,9 +73,9 @@ class Observer: NSObject {
 private var myContext = "ObserveDate"
 
 class ObjectToObserve1: NSObject {
-    dynamic var myDate = NSDate()
+    dynamic var myDate = Date()
     func updateDate() {
-        myDate = NSDate()
+        myDate = Date()
     }
 }
 
@@ -72,18 +86,18 @@ class Observer1: NSObject {
     override init() {
         super.init()
         // must [.Initial, .New] if only .New observeValueForKeyPath don't response
-        objectToObserve.addObserver(self, forKeyPath: "myDate", options: [.Initial, .New, .Old], context: &myContext)
+        objectToObserve.addObserver(self, forKeyPath: "myDate", options: [.initial, .new, .old], context: &myContext)
     }
     
-    override func observeValueForKeyPath(keyPath: String?, ofObject object: AnyObject?, change: [String: AnyObject]?, context: UnsafeMutablePointer<Void>) {
-        if let change = change where context == &myContext {
+    override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey: Any]?, context: UnsafeMutableRawPointer?) {
+        if let change = change , context == &myContext {
             print("**************************")
             print(keyPath, "改变了")
             print(change)
-            print(keyPath, "oldValue:", change[NSKeyValueChangeOldKey])
+            print(keyPath, "oldValue:", change[NSKeyValueChangeKey.oldKey])
         }
         if context == &myContext {
-            if let newValue = change?[NSKeyValueChangeNewKey] {
+            if let newValue = change?[NSKeyValueChangeKey.newKey] {
                 print(keyPath, "Date changed: newValue ＝ \(newValue)")
                 print(object)
                 print(context)
@@ -91,7 +105,7 @@ class Observer1: NSObject {
             }
         } else {
             // context 不相符 时才调用 super 
-            super.observeValueForKeyPath(keyPath, ofObject: object, change: change, context: context)
+            super.observeValue(forKeyPath: keyPath, of: object, change: change, context: context)
         }
     }
     
@@ -106,12 +120,12 @@ private var Update = "ObserveArray"
 class ArrayToObserve: NSObject {
     dynamic var children: NSMutableArray = NSMutableArray()
     // Get the KVO/KVC compatible array
-    var childrenProxy = mutableArrayValueForKey("children")
+    var childrenProxy = mutableArrayValue(forKey: "children")
     //FIXME: this class is not key value coding-compliant for the key children.
     func changeArray() {
-        childrenProxy.addObject(NSNumber(integer: 20)) // .Insertion
-        childrenProxy.addObject(NSNumber(integer: 30)) // .Insertion
-        childrenProxy.removeObjectAtIndex(1) // .Removal
+        childrenProxy.add(NSNumber(value: 20 as Int)) // .Insertion
+        childrenProxy.add(NSNumber(value: 30 as Int)) // .Insertion
+        childrenProxy.removeObject(at: 1) // .Removal
     }
 }
 
@@ -121,19 +135,20 @@ class ArrayObserver: NSObject {
     
     override init() {
         super.init()
-        arrayToObserve.addObserver(self, forKeyPath: "children", options: [.Initial, .New, .Old], context: &Update)
+        arrayToObserve.addObserver(self, forKeyPath: "children", options: [.initial, .new, .old], context: &Update)
     }
     
-    override func observeValueForKeyPath(keyPath: String?, ofObject object: AnyObject?, change: [String: AnyObject]?, context: UnsafeMutablePointer<Void>) {
+    override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey: Any]?, context: UnsafeMutableRawPointer?) {
         print("-----------------start------------")
         print("I heard about the array change!")
         if let keyPath = keyPath {
-            print(object?.valueForKeyPath?(keyPath))
+            print((object as AnyObject).value?(forKeyPath: keyPath))
         }
         print(change)
         print(context == &Update)
-        let c = UnsafeMutablePointer<String>(context) // context 为 string 而非 Int
-        let s = c.memory
+        // let c = UnsafeMutablePointer<String>(context) // context 为 string 而非 Int
+        let c = context?.assumingMemoryBound(to: String.self)
+        let s = c?.pointee
         print(s)
         print("-----------------end------------")
     }

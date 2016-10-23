@@ -9,7 +9,7 @@
 import UIKit
 
 protocol myDelegate {
-    func writeDateInLabel(date: NSString)
+    func writeDateInLabel(_ date: NSString)
 }
 
 class SecondViewController: UIViewController, myObjectDelegate {
@@ -19,9 +19,9 @@ class SecondViewController: UIViewController, myObjectDelegate {
     
     @IBOutlet weak var secondLabel: UILabel!
     
-    @IBAction func secondButton(sender: AnyObject) {
+    @IBAction func secondButton(_ sender: AnyObject) {
         self.delegate?.writeDateInLabel("I got it!")
-        self.navigationController?.popViewControllerAnimated(true)
+        self.navigationController?.popViewController(animated: true)
     }
     
     override func viewDidLoad() {

@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		44574A181D6B207500754EE6 /* Examples.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44574A171D6B207500754EE6 /* Examples.swift */; };
 		449789AF1D6C916B00A607A9 /* MyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 449789AC1D6C916B00A607A9 /* MyView.swift */; };
 		449789B01D6C916B00A607A9 /* Thing.m in Sources */ = {isa = PBXBuildFile; fileRef = 449789AE1D6C916B00A607A9 /* Thing.m */; };
 		449789B21D6C91AA00A607A9 /* KVC_VC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 449789B11D6C91AA00A607A9 /* KVC_VC.swift */; };
@@ -16,16 +15,6 @@
 		C20B83D61D6AEAD100C12286 /* BasicKVOUIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C20B83D51D6AEAD100C12286 /* BasicKVOUIViewController.swift */; };
 		C20B83D81D6AEADD00C12286 /* PrincipleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C20B83D71D6AEADD00C12286 /* PrincipleViewController.swift */; };
 		C20B83DA1D6AEAE900C12286 /* RootTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C20B83D91D6AEAE900C12286 /* RootTableViewController.swift */; };
-		C20B83E81D6AF02800C12286 /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = C20B83DC1D6AF02800C12286 /* Event.swift */; };
-		C20B83E91D6AF02800C12286 /* EventReference.swift in Sources */ = {isa = PBXBuildFile; fileRef = C20B83DD1D6AF02800C12286 /* EventReference.swift */; };
-		C20B83EA1D6AF02800C12286 /* EventSubscription.swift in Sources */ = {isa = PBXBuildFile; fileRef = C20B83DE1D6AF02800C12286 /* EventSubscription.swift */; };
-		C20B83EC1D6AF02800C12286 /* Observable.swift in Sources */ = {isa = PBXBuildFile; fileRef = C20B83E11D6AF02800C12286 /* Observable.swift */; };
-		C20B83ED1D6AF02800C12286 /* ObservableChainingProxy.swift in Sources */ = {isa = PBXBuildFile; fileRef = C20B83E21D6AF02800C12286 /* ObservableChainingProxy.swift */; };
-		C20B83EE1D6AF02800C12286 /* ObservableProxy.swift in Sources */ = {isa = PBXBuildFile; fileRef = C20B83E31D6AF02800C12286 /* ObservableProxy.swift */; };
-		C20B83EF1D6AF02800C12286 /* ObservableReference.swift in Sources */ = {isa = PBXBuildFile; fileRef = C20B83E41D6AF02800C12286 /* ObservableReference.swift */; };
-		C20B83F01D6AF02800C12286 /* OwningEventReference.swift in Sources */ = {isa = PBXBuildFile; fileRef = C20B83E51D6AF02800C12286 /* OwningEventReference.swift */; };
-		C20B83F11D6AF02800C12286 /* Protocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = C20B83E61D6AF02800C12286 /* Protocols.swift */; };
-		C20B83F21D6AF02800C12286 /* TupleObservable.swift in Sources */ = {isa = PBXBuildFile; fileRef = C20B83E71D6AF02800C12286 /* TupleObservable.swift */; };
 		C2B5649A1D6ABB78003E2E7E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2B564991D6ABB78003E2E7E /* AppDelegate.swift */; };
 		C2B5649F1D6ABB78003E2E7E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C2B5649D1D6ABB78003E2E7E /* Main.storyboard */; };
 		C2B564A11D6ABB78003E2E7E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C2B564A01D6ABB78003E2E7E /* Assets.xcassets */; };
@@ -34,7 +23,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		44574A171D6B207500754EE6 /* Examples.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Examples.swift; sourceTree = "<group>"; };
 		449789AC1D6C916B00A607A9 /* MyView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyView.swift; sourceTree = "<group>"; };
 		449789AD1D6C916B00A607A9 /* Thing.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Thing.h; sourceTree = "<group>"; };
 		449789AE1D6C916B00A607A9 /* Thing.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Thing.m; sourceTree = "<group>"; };
@@ -45,17 +33,6 @@
 		C20B83D51D6AEAD100C12286 /* BasicKVOUIViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BasicKVOUIViewController.swift; sourceTree = "<group>"; };
 		C20B83D71D6AEADD00C12286 /* PrincipleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PrincipleViewController.swift; sourceTree = "<group>"; };
 		C20B83D91D6AEAE900C12286 /* RootTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootTableViewController.swift; sourceTree = "<group>"; };
-		C20B83DC1D6AF02800C12286 /* Event.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
-		C20B83DD1D6AF02800C12286 /* EventReference.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventReference.swift; sourceTree = "<group>"; };
-		C20B83DE1D6AF02800C12286 /* EventSubscription.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventSubscription.swift; sourceTree = "<group>"; };
-		C20B83E01D6AF02800C12286 /* Observable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Observable.h; sourceTree = "<group>"; };
-		C20B83E11D6AF02800C12286 /* Observable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Observable.swift; sourceTree = "<group>"; };
-		C20B83E21D6AF02800C12286 /* ObservableChainingProxy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ObservableChainingProxy.swift; sourceTree = "<group>"; };
-		C20B83E31D6AF02800C12286 /* ObservableProxy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ObservableProxy.swift; sourceTree = "<group>"; };
-		C20B83E41D6AF02800C12286 /* ObservableReference.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ObservableReference.swift; sourceTree = "<group>"; };
-		C20B83E51D6AF02800C12286 /* OwningEventReference.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OwningEventReference.swift; sourceTree = "<group>"; };
-		C20B83E61D6AF02800C12286 /* Protocols.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Protocols.swift; sourceTree = "<group>"; };
-		C20B83E71D6AF02800C12286 /* TupleObservable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TupleObservable.swift; sourceTree = "<group>"; };
 		C2B564961D6ABB78003E2E7E /* KVO.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KVO.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C2B564991D6ABB78003E2E7E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C2B5649E1D6ABB78003E2E7E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -88,25 +65,6 @@
 			path = KVC;
 			sourceTree = "<group>";
 		};
-		C20B83DB1D6AF02800C12286 /* Observable-Swift */ = {
-			isa = PBXGroup;
-			children = (
-				C20B83DC1D6AF02800C12286 /* Event.swift */,
-				C20B83DD1D6AF02800C12286 /* EventReference.swift */,
-				C20B83DE1D6AF02800C12286 /* EventSubscription.swift */,
-				C20B83E01D6AF02800C12286 /* Observable.h */,
-				C20B83E11D6AF02800C12286 /* Observable.swift */,
-				C20B83E21D6AF02800C12286 /* ObservableChainingProxy.swift */,
-				C20B83E31D6AF02800C12286 /* ObservableProxy.swift */,
-				C20B83E41D6AF02800C12286 /* ObservableReference.swift */,
-				C20B83E51D6AF02800C12286 /* OwningEventReference.swift */,
-				C20B83E61D6AF02800C12286 /* Protocols.swift */,
-				C20B83E71D6AF02800C12286 /* TupleObservable.swift */,
-				44574A171D6B207500754EE6 /* Examples.swift */,
-			);
-			path = "Observable-Swift";
-			sourceTree = "<group>";
-		};
 		C2B5648D1D6ABB78003E2E7E = {
 			isa = PBXGroup;
 			children = (
@@ -128,7 +86,6 @@
 		C2B564981D6ABB78003E2E7E /* KVO */ = {
 			isa = PBXGroup;
 			children = (
-				C20B83DB1D6AF02800C12286 /* Observable-Swift */,
 				C2B564991D6ABB78003E2E7E /* AppDelegate.swift */,
 				C2B564AB1D6ABBA6003E2E7E /* MyClass.swift */,
 				C20B83D31D6AEA0500C12286 /* Model.swift */,
@@ -175,6 +132,7 @@
 				TargetAttributes = {
 					C2B564951D6ABB78003E2E7E = {
 						CreatedOnToolsVersion = 7.3;
+						LastSwiftMigration = 0800;
 					};
 				};
 			};
@@ -215,26 +173,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C20B83ED1D6AF02800C12286 /* ObservableChainingProxy.swift in Sources */,
 				449789B01D6C916B00A607A9 /* Thing.m in Sources */,
-				C20B83EC1D6AF02800C12286 /* Observable.swift in Sources */,
-				C20B83E91D6AF02800C12286 /* EventReference.swift in Sources */,
-				C20B83F01D6AF02800C12286 /* OwningEventReference.swift in Sources */,
-				C20B83E81D6AF02800C12286 /* Event.swift in Sources */,
 				C2B564AC1D6ABBA6003E2E7E /* MyClass.swift in Sources */,
 				449789B21D6C91AA00A607A9 /* KVC_VC.swift in Sources */,
 				C20B83D61D6AEAD100C12286 /* BasicKVOUIViewController.swift in Sources */,
-				C20B83EF1D6AF02800C12286 /* ObservableReference.swift in Sources */,
-				C20B83EE1D6AF02800C12286 /* ObservableProxy.swift in Sources */,
 				C20B83DA1D6AEAE900C12286 /* RootTableViewController.swift in Sources */,
 				C20B83D81D6AEADD00C12286 /* PrincipleViewController.swift in Sources */,
 				C2B5649A1D6ABB78003E2E7E /* AppDelegate.swift in Sources */,
 				449789AF1D6C916B00A607A9 /* MyView.swift in Sources */,
 				C20B83D41D6AEA0500C12286 /* Model.swift in Sources */,
-				C20B83F21D6AF02800C12286 /* TupleObservable.swift in Sources */,
-				C20B83EA1D6AF02800C12286 /* EventSubscription.swift in Sources */,
-				44574A181D6B207500754EE6 /* Examples.swift in Sources */,
-				C20B83F11D6AF02800C12286 /* Protocols.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -355,6 +302,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.rockgarden.KVO;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "KVC/KVO-Bridging-Header.h";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
@@ -368,6 +316,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.rockgarden.KVO;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "KVC/KVO-Bridging-Header.h";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};

@@ -12,9 +12,9 @@ class ViewController: UIViewController, myDelegate, UINavigationControllerDelega
     
     @IBOutlet weak var principalLabel: UILabel!
     
-    @IBAction func mainButton(sender: UIButton) {
+    @IBAction func mainButton(_ sender: UIButton) {
         // we got it the final instance in storyboard
-        let secondController: SecondViewController = self.storyboard?.instantiateViewControllerWithIdentifier("SecondViewController") as! SecondViewController
+        let secondController: SecondViewController = self.storyboard?.instantiateViewController(withIdentifier: "SecondViewController") as! SecondViewController
         secondController.data = "Text from superclass"
         // who is it delegate
         secondController.delegate = self
@@ -28,11 +28,11 @@ class ViewController: UIViewController, myDelegate, UINavigationControllerDelega
     }
     
     func navigationControllerSupportedInterfaceOrientations(
-        nav: UINavigationController) -> UIInterfaceOrientationMask {
-        return .Portrait
+        _ nav: UINavigationController) -> UIInterfaceOrientationMask {
+        return .portrait
     }
     
-    @IBAction func doButton(sender: AnyObject) {
+    @IBAction func doButton(_ sender: AnyObject) {
         self.showColorPicker()
     }
     
@@ -40,7 +40,7 @@ class ViewController: UIViewController, myDelegate, UINavigationControllerDelega
         super.didReceiveMemoryWarning()
     }
     
-    func writeDateInLabel(data: NSString) {
+    func writeDateInLabel(_ data: NSString) {
         self.principalLabel.text = data as String
     }
     
@@ -50,20 +50,20 @@ extension ViewController: ColorPickerDelegate {
     
     func showColorPicker() {
         let colorName = "MyColor"
-        let c = UIColor.blueColor()
+        let c = UIColor.blue
         let cpc = ColorPickerController(colorName: colorName, andColor: c)
         cpc.delegate = self
-        self.presentViewController(cpc, animated: true, completion: nil)
+        self.present(cpc, animated: true, completion: nil)
     }
     
     // delegate method
-    func colorPicker (picker: ColorPickerController,
+    func colorPicker (_ picker: ColorPickerController,
                       didSetColorNamed theName: String?,
                                        toColor theColor: UIColor?) {
         print("the delegate method was called")
         delay(0.1) {
             self.view.backgroundColor = theColor
-            picker.dismissViewControllerAnimated(true, completion: nil)
+            picker.dismiss(animated: true, completion: nil)
         }
     }
     

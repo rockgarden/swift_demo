@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="L2G-zl-eeu">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Tab View Controller-->
+        <scene sceneID="3Pf-HB-pD1">
+            <objects>
+                <viewController storyboardIdentifier="TabViewController" id="L2G-zl-eeu" customClass="TabViewController" customModule="TabBar" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="adr-Jf-aQg"/>
+                        <viewControllerLayoutGuide type="bottom" id="tpq-ax-nB8"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="XFP-jc-2K0">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <tabBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="edR-lJ-JUs">
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
+                                <items>
+                                    <tabBarItem systemItem="favorites" id="fU3-cA-H5R"/>
+                                    <tabBarItem systemItem="more" id="2Yi-O5-Gfg"/>
+                                </items>
+                                <connections>
+                                    <outlet property="delegate" destination="L2G-zl-eeu" id="5sU-Jf-0G3"/>
+                                </connections>
+                            </tabBar>
+                        </subviews>
+                        <color key="backgroundColor" red="0.66666666669999997" green="0.66666666669999997" blue="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="tpq-ax-nB8" firstAttribute="top" secondItem="edR-lJ-JUs" secondAttribute="bottom" id="FGA-pf-ClT"/>
+                            <constraint firstAttribute="trailing" secondItem="edR-lJ-JUs" secondAttribute="trailing" id="UOW-Y3-4g3"/>
+                            <constraint firstItem="edR-lJ-JUs" firstAttribute="leading" secondItem="XFP-jc-2K0" secondAttribute="leading" id="yZo-dP-DR8"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="tabbar" destination="edR-lJ-JUs" id="cDN-GC-biA"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="mrO-49-atU" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-26" y="-798"/>
+        </scene>
+    </scenes>
+</document>

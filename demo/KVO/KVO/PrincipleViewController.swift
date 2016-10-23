@@ -19,13 +19,13 @@ class PrincipleViewController: UIViewController {
 		self.nameAgePeople.removeObserver(self, forKeyPath: "age")
 	}
 
-	private var myContext = 0
+	fileprivate var myContext = 0
 
 	override func viewDidLoad() {
 		super.viewDidLoad()
-		self.namePeople.addObserver(self, forKeyPath: "name", options: NSKeyValueObservingOptions([.New, .Old]), context: &myContext)
-		self.nameAgePeople.addObserver(self, forKeyPath: "name", options: NSKeyValueObservingOptions([.New, .Old]), context: &myContext)
-		self.nameAgePeople.addObserver(self, forKeyPath: "age", options: NSKeyValueObservingOptions([.New, .Old]), context: &myContext)
+		self.namePeople.addObserver(self, forKeyPath: "name", options: NSKeyValueObservingOptions([.new, .old]), context: &myContext)
+		self.nameAgePeople.addObserver(self, forKeyPath: "name", options: NSKeyValueObservingOptions([.new, .old]), context: &myContext)
+		self.nameAgePeople.addObserver(self, forKeyPath: "age", options: NSKeyValueObservingOptions([.new, .old]), context: &myContext)
 
 		self.printDescription("people", obj: people)
 		self.printDescription("namePeople", obj: namePeople)
@@ -33,10 +33,10 @@ class PrincipleViewController: UIViewController {
 
         print("-----------------start------------")
         print("Selector的方法：")
-		print(self.people.methodForSelector(Selector("setName:")))
-		print(self.namePeople.methodForSelector(Selector("setName:")))
-		print(method_getImplementation(class_getInstanceMethod(object_getClass(self.people), Selector("setName:"))))
-		print(method_getImplementation(class_getInstanceMethod(object_getClass(self.namePeople), Selector("setName:"))))
+		print(self.people.method(for: #selector(setter: UIAccessibilityCustomAction.name)))
+		print(self.namePeople.method(for: #selector(setter: UIAccessibilityCustomAction.name)))
+		print(method_getImplementation(class_getInstanceMethod(object_getClass(self.people), #selector(setter: UIAccessibilityCustomAction.name))))
+		print(method_getImplementation(class_getInstanceMethod(object_getClass(self.namePeople), #selector(setter: UIAccessibilityCustomAction.name))))
         print("-----------------end------------")
 	}
 
@@ -44,24 +44,24 @@ class PrincipleViewController: UIViewController {
 		super.didReceiveMemoryWarning()
 	}
 
-	private func classMethodNames(c: AnyObject) -> [String] {
+	fileprivate func classMethodNames(_ c: AnyObject) -> [String] {
 		var arr = [String]()
 		var methodCount: CUnsignedInt = 0;
 		let methodList = class_copyMethodList(object_getClass(c), &methodCount);
 		for i in 0...methodCount {
-			arr.append(NSStringFromSelector(method_getName(methodList[Int(i)])))
+			arr.append(NSStringFromSelector(method_getName(methodList?[Int(i)])))
 		}
 		free(methodList);
 		return arr;
 	}
 
-	private func printDescription(objectName: String, obj: AnyObject) {
+	fileprivate func printDescription(_ objectName: String, obj: AnyObject) {
 		print("-----------------start------------")
 		print("对象变量名字：", objectName)
 		print("对象：", obj)
 		print("类：", NSStringFromClass(obj.classForCoder))
 		print("元类：", NSStringFromClass(object_getClass(obj)))
-		print("实现的方法：", self.classMethodNames(obj).joinWithSeparator(", "))
+		print("实现的方法：", self.classMethodNames(obj).joined(separator: ", "))
 		print("-----------------end------------")
 	}
 

@@ -29,7 +29,7 @@ class RootTableViewController: UITableViewController {
     func testKVO() {
         objectA = ObjectToObserve()
         objectB = Observer()
-        let opts: NSKeyValueObservingOptions = [.New, .Old]
+        let opts: NSKeyValueObservingOptions = [.new, .old]
         objectA.addObserver(objectB, forKeyPath: "value", options: opts, context: &con)
         (objectA as! ObjectToObserve).value = true
         // must removeObserver otherwise comment out next line if you wish to crash

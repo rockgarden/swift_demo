@@ -1,3 +1,5 @@
+// iOS9 Storyboard unwind segue反回传递事件时机详细步骤
+
 import UIKit
 
 class ExtraViewController: UIViewController {
@@ -46,8 +48,22 @@ class ExtraViewController: UIViewController {
 
 }
 
+/// <#Description#>
 class ExtraViewController2: UIViewController {
-    
+
+    static let UnwindSegue = "UnwindSecond"
+    fileprivate(set) var parameter: String!
+
+    @IBAction func buttonPressed(_ sender: AnyObject) {
+        setParameter("Hello Second")
+    }
+
+    fileprivate func setParameter(_ para: String) {
+        parameter = para
+        performSegue(withIdentifier: ExtraViewController2.UnwindSegue, sender: nil)
+    }
+
+    // Step 12
     deinit {
         print("farewell from ExtraViewController2")
     }
@@ -62,7 +78,8 @@ class ExtraViewController2: UIViewController {
         print("\(type(of: self)) \(#function) \(subsequentVC)")
         super.unwind(for: unwindSegue, towardsViewController: subsequentVC)
     }
-    
+
+    // step 2
     override func canPerformUnwindSegueAction(_ action: Selector, from fromViewController: UIViewController, withSender sender: Any) -> Bool {
         let result = super.canPerformUnwindSegueAction(action, from: fromViewController, withSender: sender)
         print("\(type(of: self)) \(#function) \(result)")
@@ -73,17 +90,19 @@ class ExtraViewController2: UIViewController {
         print("\(type(of: self)) \(#function)")
         super.dismiss(animated: flag, completion: completion)
     }
-    
+
+    /// Step 1
     override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
         let result = super.shouldPerformSegue(withIdentifier: identifier, sender: sender)
-        if identifier == "unwind" {
+        if identifier == "UnwindSecond" {
             print("\(type(of: self)) \(#function) \(result)")
         }
         return result
     }
-    
+
+    // Step 7
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "unwind" {
+        if segue.identifier == "UnwindSecond" {
             print("\(type(of: self)) \(#function)")
         }
     }

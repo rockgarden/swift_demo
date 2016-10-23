@@ -68,27 +68,27 @@ class testClass: NSObject {
 		print("------------------设置监听------------------")
 		self.myObject.addObserver(self,
 			forKeyPath: "a",
-			options: .Initial,
+			options: .initial,
 			context: &myContext)
 		self.myObject.addObserver(self,
 			forKeyPath: "b",
-			options: NSKeyValueObservingOptions([.New]),
+			options: NSKeyValueObservingOptions([.new]),
 			context: &myContext)
 		self.myObject.addObserver(self,
 			forKeyPath: "c",
-			options: NSKeyValueObservingOptions([.Old]),
+			options: NSKeyValueObservingOptions([.old]),
 			context: &myContext)
 		self.myObject.addObserver(self,
 			forKeyPath: "d",
-			options: NSKeyValueObservingOptions([.New, .Old]),
+			options: NSKeyValueObservingOptions([.new, .old]),
 			context: &myContext)
 		self.myObject.addObserver(self,
 			forKeyPath: "e",
-			options: NSKeyValueObservingOptions([.Prior]),
+			options: NSKeyValueObservingOptions([.prior]),
 			context: &myContext)
 		self.myObject.addObserver(self,
 			forKeyPath: "f",
-			options: NSKeyValueObservingOptions([.Initial, .New, .Old, .Prior]),
+			options: NSKeyValueObservingOptions([.initial, .new, .old, .prior]),
 			context: &myContext)
 		print("------------------属性设置------------------")
 		self.myObject.a = "a1"
@@ -99,11 +99,11 @@ class testClass: NSObject {
 		self.myObject.f = "f1"
 	}
 
-	override func observeValueForKeyPath(keyPath: String?,
-		ofObject object: AnyObject?,
-		change: [String: AnyObject]?,
-		context: UnsafeMutablePointer<Void>){
-		if let change = change where context == &myContext {
+	override func observeValue(forKeyPath keyPath: String?,
+		of object: Any?,
+		change: [NSKeyValueChangeKey: Any]?,
+		context: UnsafeMutableRawPointer?){
+		if let change = change , context == &myContext {
 			print("**************************")
 			print(keyPath, "改变了")
 			print(object)
@@ -113,7 +113,7 @@ class testClass: NSObject {
 			return
 		}
         // 不会执行, 执行 就 crash
-		super.observeValueForKeyPath(keyPath, ofObject: object, change: change, context: context)
+		super.observeValue(forKeyPath: keyPath, of: object, change: change, context: context)
 	}
 }
 

@@ -91,12 +91,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 }
 
 class MyTabBarController: UITabBarController {
+    /// Step 3
     override func allowedChildViewControllersForUnwinding(from source: UIStoryboardUnwindSegueSource) -> [UIViewController] {
         let result = super.allowedChildViewControllersForUnwinding(from: source)
         print("\(type(of: self)) \(#function) \(result)")
         return result
     }
 
+    // Step 10
     override func unwind(for unwindSegue: UIStoryboardSegue, towardsViewController subsequentVC: UIViewController) {
         print("\(type(of: self)) \(#function) \(subsequentVC)")
         super.unwind(for: unwindSegue, towardsViewController: subsequentVC)
@@ -108,6 +110,7 @@ class MyTabBarController: UITabBarController {
         return result
     }
 
+    // Step 9
     override func dismiss(animated flag: Bool, completion: (() -> Void)?) {
         print("\(type(of: self)) \(#function)")
         super.dismiss(animated: flag, completion: completion)
@@ -115,27 +118,24 @@ class MyTabBarController: UITabBarController {
 
     override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
         let result = super.shouldPerformSegue(withIdentifier: identifier, sender: sender)
-        if identifier == "unwind" {
-            print("\(type(of: self)) \(#function) \(result)")
-        }
+        print("\(type(of: self)) \(#function) \(result)")
         return result
     }
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "unwind" {
-            print("\(type(of: self)) \(#function)")
-        }
+        print("\(type(of: self)) \(#function)")
     }
-
 }
 
 class MyNavController: UINavigationController {
+    // Step 4
     override func allowedChildViewControllersForUnwinding(from source: UIStoryboardUnwindSegueSource) -> [UIViewController] {
         let result = super.allowedChildViewControllersForUnwinding(from: source)
         print("\(type(of: self)) \(#function) \(result)")
         return result
     }
 
+    // Step 11
     override func unwind(for unwindSegue: UIStoryboardSegue, towardsViewController subsequentVC: UIViewController) {
         print("\(type(of: self)) \(#function) \(subsequentVC)")
         super.unwind(for: unwindSegue, towardsViewController: subsequentVC)
@@ -165,7 +165,6 @@ class MyNavController: UINavigationController {
             print("\(type(of: self)) \(#function)")
         }
     }
-    
     
 }
 
