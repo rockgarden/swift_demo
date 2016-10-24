@@ -12,6 +12,7 @@ class ViewController: UIViewController {
 
     @IBOutlet weak var button: UIButton!
     @IBOutlet weak var button2: UIButton!
+    @IBOutlet var coolviews : [UIView]!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,7 +26,11 @@ class ViewController: UIViewController {
             for: .touchUpInside)
         
         // third button is configured as nil-targeted in nib
-        
+
+        /// When enumerating a collection, the integer part of each pair is a counter for the enumeration, not necessarily the index of the paired value.
+        for (ix,b) in (self.coolviews as! [UIButton]).enumerated() {
+            b.setTitle("B\(ix+1)", for: UIControlState())
+        }
     }
     
     @IBAction func buttonPressed(_ sender:AnyObject) {

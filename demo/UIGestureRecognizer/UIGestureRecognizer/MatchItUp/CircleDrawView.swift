@@ -25,23 +25,23 @@ import UIKit
 // special view to draw the circles
 class CircleDrawView: UIView {
 
-  override class func layerClass() -> AnyClass {
+  override class var layerClass : AnyClass {
     return CAShapeLayer.self
   }
 
-  private var path: CGPath?
-  private var fitResult: CircleResult?
-  private var isCircle = false
+  fileprivate var path: CGPath?
+  fileprivate var fitResult: CircleResult?
+  fileprivate var isCircle = false
 
   var drawDebug = true // set to true show additional information about the fit 设置成true将展示拟合相关的其他信息
 
-  func updateFit(fit: CircleResult?, madeCircle: Bool) {
+  func updateFit(_ fit: CircleResult?, madeCircle: Bool) {
     fitResult = fit
     isCircle = madeCircle
     setNeedsDisplay()
   }
 
-  func updatePath(p: CGPath?) {
+  func updatePath(_ p: CGPath?) {
     path = p
     setNeedsDisplay()
   }
@@ -51,18 +51,18 @@ class CircleDrawView: UIView {
     updatePath(nil)
   }
 
-  override func drawRect(rect: CGRect) {
+  override func draw(_ rect: CGRect) {
     if let path = path { // draw a thick yellow line for the user touch path
       let context = UIGraphicsGetCurrentContext()
-      CGContextAddPath(context, path)
-      CGContextSetStrokeColorWithColor(context, UIColor.yellowColor().CGColor)
-      CGContextSetLineWidth(context, 10)
-      CGContextSetLineCap(context, CGLineCap.Round)
-      CGContextSetLineJoin(context, CGLineJoin.Round)
-      CGContextStrokePath(context)
+      context?.addPath(path)
+      context?.setStrokeColor(UIColor.yellow.cgColor)
+      context?.setLineWidth(10)
+      context?.setLineCap(CGLineCap.round)
+      context?.setLineJoin(CGLineJoin.round)
+      context?.strokePath()
     }
 
-    if let fit = fitResult where drawDebug { // if there is a fit and drawDebug is turned on
+    if let fit = fitResult , drawDebug { // if there is a fit and drawDebug is turned on
       if !fit.error.isNaN { // if error has been defined, draw the fit
         let fitRect = CGRect(
           x: fit.center.x - fit.radius,
@@ -70,19 +70,19 @@ class CircleDrawView: UIView {
           width: 2 * fit.radius,
           height: 2 * fit.radius
         )
-        let fitPath = UIBezierPath(ovalInRect: fitRect)
+        let fitPath = UIBezierPath(ovalIn: fitRect)
         fitPath.lineWidth = 3
 
         // fit is the circle (green if the circle matched, red was the fit circle but did not recognize as a circle)
-        let circleColor = isCircle ? UIColor.greenColor() : UIColor.redColor()
+        let circleColor = isCircle ? UIColor.green : UIColor.red
         circleColor.setStroke()
         fitPath.stroke()
       }
 
       // draw a black bounding box around the user touch path
-      let boundingBox = UIBezierPath(rect: CGPathGetBoundingBox(path))
+      let boundingBox = UIBezierPath(rect: (path?.boundingBox)!)
       boundingBox.lineWidth = 1
-      UIColor.blackColor().setStroke()
+      UIColor.black.setStroke()
       boundingBox.stroke()
 
       // draw a blue square inside as the touch exclusion area
@@ -93,10 +93,10 @@ class CircleDrawView: UIView {
         width: 2 * fitInnerRadius,
         height: 2 * fitInnerRadius
       )
-      let modifiedInnerBox = CGRectInset(innerBoxRect, fitInnerRadius*0.2, fitInnerRadius*0.2)
+      let modifiedInnerBox = innerBoxRect.insetBy(dx: fitInnerRadius*0.2, dy: fitInnerRadius*0.2)
 
       let innerBox = UIBezierPath(rect: modifiedInnerBox)
-      UIColor.blueColor().colorWithAlphaComponent(0.5).setFill()
+      UIColor.blue.withAlphaComponent(0.5).setFill()
       innerBox.fill()
     }
   }

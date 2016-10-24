@@ -35,7 +35,7 @@ private enum Version: String {
 // The animal images
 private enum Animal: Int {
 
-  case Bear, Cat, Frog, Wolf
+  case bear, cat, frog, wolf
 
 
   static func random() -> Animal {
@@ -44,16 +44,16 @@ private enum Animal: Int {
   }
 
   // Build the image for a particular version + animal
-  func imageForVersion(version: Version) -> UIImage {
+  func imageForVersion(_ version: Version) -> UIImage {
     let baseName: String
     switch self {
-    case .Bear:
+    case .bear:
       baseName = "Bear"
-    case .Cat:
+    case .cat:
       baseName = "Cat"
-    case .Frog:
+    case .frog:
       baseName = "Frog"
-    case .Wolf:
+    case .wolf:
       baseName = "Wolf"
     }
 
@@ -102,7 +102,7 @@ class MatchingGame {
 
   // find out if the guessed image was the different one
   // return if that guess was correct, and a flag if that was the last round
-  func didUserWin(selectedIndex: Int) -> (won: Bool, correctIndex: Int, gameOver: Bool) {
+  func didUserWin(_ selectedIndex: Int) -> (won: Bool, correctIndex: Int, gameOver: Bool) {
     let won = selectedIndex == differentLocation
     if won {
       score += 1

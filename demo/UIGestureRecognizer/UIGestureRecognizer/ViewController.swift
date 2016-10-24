@@ -54,7 +54,7 @@ class ViewController: UIViewController {
 		image.addGestureRecognizer(t2)
 
 		let t1 = UITapGestureRecognizer(target: self, action: #selector(singleTap))
-		t1.requireGestureRecognizerToFail(t2) // t2 fail response t1
+		t1.require(toFail: t2) // t2 fail response t1
 		image.addGestureRecognizer(t1)
 
 		switch which {
@@ -72,19 +72,19 @@ class ViewController: UIViewController {
 
 		// SWIPE UIPanGestureRecognizer 优先级高于 UISwipeGestureRecognizer
 		let swipeGestureRight = UISwipeGestureRecognizer(target: self, action: #selector(respondToSwipeGesture(_:)))
-		swipeGestureRight.direction = UISwipeGestureRecognizerDirection.Right
+		swipeGestureRight.direction = UISwipeGestureRecognizerDirection.right
 		image.addGestureRecognizer(swipeGestureRight)
 
 		let swipeGestureDown = UISwipeGestureRecognizer(target: self, action: #selector(respondToSwipeGesture(_:)))
-		swipeGestureDown.direction = UISwipeGestureRecognizerDirection.Down
+		swipeGestureDown.direction = UISwipeGestureRecognizerDirection.down
 		image.addGestureRecognizer(swipeGestureDown)
 
 		let swipeGestureLeft = UISwipeGestureRecognizer(target: self, action: #selector(respondToSwipeGesture(_:)))
-		swipeGestureLeft.direction = UISwipeGestureRecognizerDirection.Left
+		swipeGestureLeft.direction = UISwipeGestureRecognizerDirection.left
 		image.addGestureRecognizer(swipeGestureLeft)
 
 		let swipeGestureUp = UISwipeGestureRecognizer(target: self, action: #selector(respondToSwipeGesture(_:)))
-		swipeGestureUp.direction = UISwipeGestureRecognizerDirection.Up
+		swipeGestureUp.direction = UISwipeGestureRecognizerDirection.up
 		image.addGestureRecognizer(swipeGestureUp)
 	}
 
@@ -93,30 +93,30 @@ class ViewController: UIViewController {
 	}
 
 	// ROTATION
-	@IBAction func rotateGesture(sender: UIRotationGestureRecognizer) {
+	@IBAction func rotateGesture(_ sender: UIRotationGestureRecognizer) {
 		let rotation: CGFloat = sender.rotation
 		let transform: CGAffineTransform =
-			CGAffineTransformMakeRotation(rotation + netRotation)
+			CGAffineTransform(rotationAngle: rotation + netRotation)
 		sender.view?.transform = transform
-		if (sender.state == UIGestureRecognizerState.Ended) {
+		if (sender.state == UIGestureRecognizerState.ended) {
 			netRotation += rotation;
 		}
 	}
 
 	// SWIPE
-	@IBAction func respondToSwipeGesture(send: UIGestureRecognizer) {
+	@IBAction func respondToSwipeGesture(_ send: UIGestureRecognizer) {
 		if let swipeGesture = send as? UISwipeGestureRecognizer {
 			switch swipeGesture.direction {
-			case UISwipeGestureRecognizerDirection.Right:
+			case UISwipeGestureRecognizerDirection.right:
 				changeImage()
 				print("Swiped right")
-			case UISwipeGestureRecognizerDirection.Down:
+			case UISwipeGestureRecognizerDirection.down:
 				changeImage()
 				print("Swiped down")
-			case UISwipeGestureRecognizerDirection.Left:
+			case UISwipeGestureRecognizerDirection.left:
 				changeImage()
 				print("Swiped left")
-			case UISwipeGestureRecognizerDirection.Up:
+			case UISwipeGestureRecognizerDirection.up:
 				changeImage()
 				print("Swiped up")
 			default:
@@ -126,44 +126,44 @@ class ViewController: UIViewController {
 	}
 
 	// LONG PRESS
-	@IBAction func action(gestureRecognizer: UIGestureRecognizer) {
-		if (gestureRecognizer.state == UIGestureRecognizerState.Began) {
-			let alertController = UIAlertController(title: "Alert", message: "Long Press gesture", preferredStyle: .Alert)
-			let OKAction = UIAlertAction(title: "OK", style: .Default) { (action) in }
+	@IBAction func action(_ gestureRecognizer: UIGestureRecognizer) {
+		if (gestureRecognizer.state == UIGestureRecognizerState.began) {
+			let alertController = UIAlertController(title: "Alert", message: "Long Press gesture", preferredStyle: .alert)
+			let OKAction = UIAlertAction(title: "OK", style: .default) { (action) in }
 			alertController.addAction(OKAction)
-			self.presentViewController(alertController, animated: true) { }
+			self.present(alertController, animated: true) { }
 		}
 	}
 
-	func longPress(lp: UILongPressGestureRecognizer) {
+	func longPress(_ lp: UILongPressGestureRecognizer) {
 		switch lp.state {
-		case .Began:
+		case .began:
 			let anim = CABasicAnimation(keyPath: "transform")
-			anim.toValue = NSValue(CATransform3D: CATransform3DMakeScale(1.1, 1.1, 1))
-			anim.fromValue = NSValue(CATransform3D: CATransform3DIdentity)
+			anim.toValue = NSValue(caTransform3D: CATransform3DMakeScale(1.1, 1.1, 1))
+			anim.fromValue = NSValue(caTransform3D: CATransform3DIdentity)
 			anim.repeatCount = Float.infinity
 			anim.autoreverses = true
-			lp.view!.layer.addAnimation(anim, forKey: nil)
-		case .Ended, .Cancelled:
+			lp.view!.layer.add(anim, forKey: nil)
+		case .ended, .cancelled:
 			lp.view!.layer.removeAllAnimations()
 		default: break
 		}
 	}
 
-	@IBAction func pinchGesture(sender: UIPinchGestureRecognizer) {
+	@IBAction func pinchGesture(_ sender: UIPinchGestureRecognizer) {
 		let factor = sender.scale
 		if (factor > 1) {
 			// increase zoom
-			sender.view?.transform = CGAffineTransformMakeScale(
-				lastScaleFactor + (factor - 1),
-				lastScaleFactor + (factor - 1));
+			sender.view?.transform = CGAffineTransform(
+				scaleX: lastScaleFactor + (factor - 1),
+				y: lastScaleFactor + (factor - 1));
 		} else {
 			// decrease zoom
-			sender.view?.transform = CGAffineTransformMakeScale(
-				lastScaleFactor * factor,
-				lastScaleFactor * factor);
+			sender.view?.transform = CGAffineTransform(
+				scaleX: lastScaleFactor * factor,
+				y: lastScaleFactor * factor);
 		}
-		if (sender.state == UIGestureRecognizerState.Ended) {
+		if (sender.state == UIGestureRecognizerState.ended) {
 			if (factor > 1) {
 				lastScaleFactor += (factor - 1);
 			} else {
@@ -171,12 +171,12 @@ class ViewController: UIViewController {
 		} }
 	}
 
-	@IBAction func handleTap(sender: UIGestureRecognizer) {
-		if (sender.view?.contentMode == UIViewContentMode.ScaleAspectFit) {
-			sender.view?.contentMode = UIViewContentMode.Center
+	@IBAction func handleTap(_ sender: UIGestureRecognizer) {
+		if (sender.view?.contentMode == UIViewContentMode.scaleAspectFit) {
+			sender.view?.contentMode = UIViewContentMode.center
 		}
 		else {
-			sender.view?.contentMode = UIViewContentMode.ScaleAspectFit
+			sender.view?.contentMode = UIViewContentMode.scaleAspectFit
 		}
 	}
 
@@ -195,15 +195,15 @@ class ViewController: UIViewController {
 		print("double tap")
 	}
 
-	func dragging(p: UIPanGestureRecognizer) {
+	func dragging(_ p: UIPanGestureRecognizer) {
 		let v = p.view!
 		switch p.state {
-		case .Began, .Changed:
-			let delta = p.translationInView(v.superview)
+		case .began, .changed:
+			let delta = p.translation(in: v.superview)
 			var c = v.center
 			c.x += delta.x; c.y += delta.y
 			v.center = c
-			p.setTranslation(CGPointZero, inView: v.superview)
+			p.setTranslation(CGPoint.zero, in: v.superview)
 		default: break
 		}
 	}
@@ -211,7 +211,7 @@ class ViewController: UIViewController {
 }
 
 extension ViewController : UIGestureRecognizerDelegate {
-    func gestureRecognizerShouldBegin(gestureRecognizer: UIGestureRecognizer) -> Bool {
+    func gestureRecognizerShouldBegin(_ gestureRecognizer: UIGestureRecognizer) -> Bool {
         // g is the pan gesture recognizer
         //		switch gestureRecognizer.state {
         //		case .Possible, .Failed:
@@ -223,8 +223,8 @@ extension ViewController : UIGestureRecognizerDelegate {
     }
 
     // 允许同时识别两个手势
-    func gestureRecognizer(gestureRecognizer: UIGestureRecognizer,
-                           shouldRecognizeSimultaneouslyWithGestureRecognizer
+    func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer,
+                           shouldRecognizeSimultaneouslyWith
         otherGestureRecognizer: UIGestureRecognizer) -> Bool {
         print("sim")
         return true
@@ -238,7 +238,7 @@ extension ViewController : UIGestureRecognizerDelegate {
 
      - returns: <#return value description#>
      */
-    func gestureRecognizer(gestureRecognizer: UIGestureRecognizer, shouldRequireFailureOfGestureRecognizer otherGestureRecognizer: UIGestureRecognizer) -> Bool {
+    func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldRequireFailureOf otherGestureRecognizer: UIGestureRecognizer) -> Bool {
         print("=== should\n\(gestureRecognizer)\n\(otherGestureRecognizer)")
         if (gestureRecognizer == pan) {
             return false
@@ -254,7 +254,7 @@ extension ViewController : UIGestureRecognizerDelegate {
 
      - returns: <#return value description#>
      */
-    func gestureRecognizer(gestureRecognizer: UIGestureRecognizer, shouldBeRequiredToFailByGestureRecognizer otherGestureRecognizer: UIGestureRecognizer) -> Bool {
+    func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldBeRequiredToFailBy otherGestureRecognizer: UIGestureRecognizer) -> Bool {
         print("=== should be\n\(gestureRecognizer)\n\(otherGestureRecognizer)")
         if (gestureRecognizer == pan) {
             return false //触发

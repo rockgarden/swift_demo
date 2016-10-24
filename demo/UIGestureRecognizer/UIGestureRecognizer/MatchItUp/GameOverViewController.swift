@@ -29,25 +29,25 @@ class GameOverViewController: UIViewController {
   var game: MatchingGame!
 
 
-  override func viewWillAppear(animated: Bool) {
+  override func viewWillAppear(_ animated: Bool) {
     super.viewWillAppear(animated)
 
     let score = game.score
     let total = game.currentRound
 
-    let largeFont = UIFont.systemFontOfSize(32)
+    let largeFont = UIFont.systemFont(ofSize: 32)
     let scoreStr = NSMutableAttributedString(string: "\(score)", attributes: [NSFontAttributeName : largeFont])
     let totalStr = NSMutableAttributedString(string: "\(total)", attributes: [NSFontAttributeName : largeFont])
     let mainStr = NSAttributedString(string: " out of ", attributes: nil)
-    scoreStr.appendAttributedString(mainStr)
-    scoreStr.appendAttributedString(totalStr)
+    scoreStr.append(mainStr)
+    scoreStr.append(totalStr)
     scoreLabel.attributedText = scoreStr
   }
 
   // let the user start a new game
-  @IBAction func playAgain(sender: AnyObject) {
+  @IBAction func playAgain(_ sender: AnyObject) {
     game.reset()
-    dismissViewControllerAnimated(true, completion: nil)
+    dismiss(animated: true, completion: nil)
   }
 
 }

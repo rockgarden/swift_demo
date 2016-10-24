@@ -25,11 +25,11 @@ import UIKit.UIGestureRecognizerSubclass // UIGestureRecognizerSubclass 是 UIKi
 
 class CircleGestureRecognizer: UIGestureRecognizer {
 
-	private var touchedPoints = [CGPoint]() // point history
+	fileprivate var touchedPoints = [CGPoint]() // point history
 	var fitResult = CircleResult() // information about how circle-like is the path 路径类圆的判断结果
 	var tolerance: CGFloat = 0.2 // circle wiggle room 圆的容错值
 	var isCircle = false
-	var path = CGPathCreateMutable() // running CGPath - helps with drawing 运行 CGPath - 辅助绘制
+	var path = CGMutablePath() // running CGPath - helps with drawing 运行 CGPath - 辅助绘制
 
 	/**
 	 当手势识别器的状态改变时它的 target-action 就会被触发:
@@ -38,16 +38,18 @@ class CircleGestureRecognizer: UIGestureRecognizer {
 	 - parameter touches: <#touches description#>
 	 - parameter event:   <#event description#>
 	 */
-	override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent) {
-		super.touchesBegan(touches, withEvent: event)
+	override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent) {
+		super.touchesBegan(touches, with: event)
 		if touches.count != 1 { // touches参数=1只允许包含一个 UITouch 对象
-			state = .Failed
+			state = .failed
 		}
-		state = .Began
-
+		state = .began
 		let window = view?.window
-		if let touches = touches as? Set<UITouch>, loc = touches.first?.locationInView(window) {
-			CGPathMoveToPoint(path, nil, loc.x, loc.y) // start the path 绘制辅助线
+        // let touches = touches as? Set<UITouch> //FIXME: 判断的是touches是否是Set<UITouch>
+        // like "if touches is Set<UITouch> { }"
+		if let loc = touches.first?.location(in: window) {
+            path.move(to: CGPoint(x: loc.x, y: loc.y))  //绘出 path
+            path.addLine(to: CGPoint(x: loc.x, y: loc.y)) // start the path 绘制辅助线
 		}
 	}
 
@@ -58,39 +60,34 @@ class CircleGestureRecognizer: UIGestureRecognizer {
 	 - parameter touches: <#touches description#>
 	 - parameter event:   <#event description#>
 	 */
-	override func touchesEnded(touches: Set<UITouch>, withEvent event: UIEvent) {
-		super.touchesEnded(touches, withEvent: event)
-
+	override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent) {
+		super.touchesEnded(touches, with: event)
 		// now that the user has stopped touching, figure out if the path was a circle
 		fitResult = fitCircle(touchedPoints)
-
 		// make sure there are no points in the middle of the circle 保证没有点在圆的中间
 		let hasInside = anyPointsInTheMiddle()
-
 		let percentOverlap = calculateBoundingOverlap()
 		// error 值代表了目前的路径和真正的圆形偏离了多少，而tolerance的存在则是因为你不能期望用户能画出一个完美的圆。如果error的值在tolerance的范围内，手势识别器将状态置为.Ended；否则将状态置为.Failed。
 		isCircle = fitResult.error <= tolerance && !hasInside && percentOverlap > (1 - tolerance)
-
-		state = isCircle ? .Ended : .Failed
+		state = isCircle ? .ended : .failed
 	}
 
-	override func touchesMoved(touches: Set<UITouch>, withEvent event: UIEvent) {
-		super.touchesMoved(touches, withEvent: event)
-
+	override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent) {
+		super.touchesMoved(touches, with: event)
 		// 1
-		if state == .Failed {
+		if state == .failed {
 			return
 		}
-
 		// 2
 		let window = view?.window
-		if let touches = touches as? Set<UITouch>, loc = touches.first?.locationInView(window) {
+		if let loc = touches.first?.location(in: window) {
 			// 3
 			touchedPoints.append(loc)
-			CGPathAddLineToPoint(path, nil, loc.x, loc.y)
+            //path.move(to: CGPoint(x: loc.x, y: loc.y)) //move 不用绘 path 不然成连续的点
+            path.addLine(to: CGPoint(x: loc.x, y: loc.y))
 			// 4
-			state = .Changed
-		}
+			state = .changed
+        }
 	}
 
   /**
@@ -99,10 +96,10 @@ class CircleGestureRecognizer: UIGestureRecognizer {
    */
 	override func reset() {
 		super.reset()
-		touchedPoints.removeAll(keepCapacity: true)
-		path = CGPathCreateMutable()
+		touchedPoints.removeAll(keepingCapacity: true)
+		path = CGMutablePath()
 		isCircle = false
-		state = .Possible //状态设置为 .Possible
+		state = .possible //状态设置为 .Possible
 	}
 
   /**
@@ -117,7 +114,7 @@ class CircleGestureRecognizer: UIGestureRecognizer {
    这段代码会遍历所有的点，然后检查是否有点在 innerBox 内。
    - returns: <#return value description#>
    */
-	private func anyPointsInTheMiddle() -> Bool {
+	fileprivate func anyPointsInTheMiddle() -> Bool {
 		// 1
 		let fitInnerRadius = fitResult.radius / sqrt(2) * tolerance
 		// 2
@@ -147,17 +144,17 @@ class CircleGestureRecognizer: UIGestureRecognizer {
    找出两个包围盒面积重叠部分的百分比。如果是一个良好的圆形手势，那么这个百分比会在80%-100%的范围内。在短弧的情况下，这个百分比会非常非常小！
    - returns: <#return value description#>
    */
-	private func calculateBoundingOverlap() -> CGFloat {
+	fileprivate func calculateBoundingOverlap() -> CGFloat {
 		// 1
 		let fitBoundingBox = CGRect(
 			x: fitResult.center.x - fitResult.radius,
 			y: fitResult.center.y - fitResult.radius,
 			width: 2 * fitResult.radius,
 			height: 2 * fitResult.radius)
-		let pathBoundingBox = CGPathGetBoundingBox(path)
+		let pathBoundingBox = path.boundingBox
 
 		// 2
-		let overlapRect = fitBoundingBox.intersect(pathBoundingBox)
+		let overlapRect = fitBoundingBox.intersection(pathBoundingBox)
 
 		// 3
 		let overlapRectArea = overlapRect.width * overlapRect.height
@@ -174,9 +171,9 @@ class CircleGestureRecognizer: UIGestureRecognizer {
    - parameter touches: <#touches description#>
    - parameter event:   <#event description#>
    */
-	override func touchesCancelled(touches: Set<UITouch>, withEvent event: UIEvent) {
-		super.touchesCancelled(touches, withEvent: event)
-		state = .Cancelled // forward the cancel state 提前设置为取消状态
+	override func touchesCancelled(_ touches: Set<UITouch>, with event: UIEvent) {
+		super.touchesCancelled(touches, with: event)
+		state = .cancelled // forward the cancel state 提前设置为取消状态
 	}
 
 }

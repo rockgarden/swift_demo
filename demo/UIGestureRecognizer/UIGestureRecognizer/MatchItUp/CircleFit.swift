@@ -80,7 +80,7 @@ struct CircleResult {
   var j: Int
 
   init() {
-    center = CGPointZero
+    center = CGPoint.zero
     radius = 0
     error = 0
     j = 0
@@ -88,9 +88,9 @@ struct CircleResult {
 }
 
 // 圆形检测器
-func fitCircle(points: [CGPoint]) -> CircleResult {
+func fitCircle(_ points: [CGPoint]) -> CircleResult {
   let dataLength: CGFloat = CGFloat(points.count)
-  var mean: CGPoint = CGPointZero
+  var mean: CGPoint = CGPoint.zero
 
   for p in points {
     mean.x += p.x
@@ -146,11 +146,11 @@ func fitCircle(points: [CGPoint]) -> CircleResult {
   var x: CGFloat = 0
   var y = A0
   var iter = 0
-  for iter = 0; iter<IterMAX; iter += 1  // usually, 4-6 iterations are enough
+  for iter in 0..<IterMAX  // usually, 4-6 iterations are enough
   {
     let Dy = A1 + x*(A22 + A33*x)
     let xnew = x - y/Dy
-    if ((xnew == x)||(!isfinite(xnew))) { break }
+    if ((xnew == x)||(!(xnew.isFinite))) { break } //!isfinite(xnew))
     let ynew = A0 + xnew*(A1 + xnew*(A2 + xnew*A3))
     if (abs(ynew)>=abs(y)) { break }
     x = xnew;  y = ynew
@@ -182,7 +182,7 @@ func fitCircle(points: [CGPoint]) -> CircleResult {
 //   estimate of Sigma = square root of RSS divided by N
 //   gives the root-mean-square error of the geometric circle fit
 
-func Sigma(data: [CGPoint], circle: CircleResult) -> CGFloat {
+func Sigma(_ data: [CGPoint], circle: CircleResult) -> CGFloat {
 
   var sum: CGFloat = 0.0
 
