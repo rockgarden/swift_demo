@@ -3,7 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
-        <capability name="Alignment constraints to the first baseline" minToolsVersion="6.0"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -19,13 +19,16 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="113"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="top" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Next Coffee Time:" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="139" translatesAutoresizingMaskIntoConstraints="NO" id="8ud-PD-FtU">
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="top" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Timer" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="139" translatesAutoresizingMaskIntoConstraints="NO" id="8ud-PD-FtU">
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <color key="textColor" cocoaTouchSystemColor="lightTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" tag="15" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tRp-nA-sjq">
                                 <color key="backgroundColor" red="0.13468386630000001" green="0.43529412150000002" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="Rxy-1P-0RI"/>
+                                </constraints>
                                 <color key="tintColor" cocoaTouchSystemColor="lightTextColor"/>
                                 <state key="normal" title=" In Fifteen Minutes ">
                                     <color key="titleColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -42,6 +45,9 @@
                             </button>
                             <button opaque="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="phH-se-BH0">
                                 <color key="backgroundColor" red="0.13468386630000001" green="0.43529412150000002" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="O8c-FO-mup"/>
+                                </constraints>
                                 <color key="tintColor" cocoaTouchSystemColor="lightTextColor"/>
                                 <state key="normal" title=" In Five Minutes ">
                                     <color key="titleColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -58,21 +64,24 @@
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="cup.png" translatesAutoresizingMaskIntoConstraints="NO" id="VKH-mk-8pm">
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="60" id="Qtv-QK-Z5Q"/>
-                                    <constraint firstAttribute="height" constant="60" id="c3e-kL-UzS"/>
+                                    <constraint firstAttribute="width" constant="30" id="Qtv-QK-Z5Q"/>
+                                    <constraint firstAttribute="height" constant="30" id="c3e-kL-UzS"/>
                                 </constraints>
                             </imageView>
                         </subviews>
                         <constraints>
-                            <constraint firstAttribute="centerX" secondItem="phH-se-BH0" secondAttribute="centerX" id="4Qe-2N-lJe"/>
-                            <constraint firstItem="phH-se-BH0" firstAttribute="firstBaseline" secondItem="8ud-PD-FtU" secondAttribute="firstBaseline" constant="30" id="ZEE-di-urr"/>
-                            <constraint firstItem="tRp-nA-sjq" firstAttribute="firstBaseline" secondItem="phH-se-BH0" secondAttribute="firstBaseline" constant="36" id="fCB-C5-ak1"/>
-                            <constraint firstAttribute="centerX" secondItem="8ud-PD-FtU" secondAttribute="centerX" constant="20" id="hQ7-NQ-rtR"/>
-                            <constraint firstItem="QYH-YJ-OGi" firstAttribute="top" secondItem="tRp-nA-sjq" secondAttribute="bottom" constant="13" id="n5Z-91-kJ2"/>
+                            <constraint firstItem="phH-se-BH0" firstAttribute="leading" secondItem="VKH-mk-8pm" secondAttribute="trailing" constant="10" id="12H-YE-axn"/>
+                            <constraint firstItem="tRp-nA-sjq" firstAttribute="leading" secondItem="VKH-mk-8pm" secondAttribute="trailing" constant="10" id="2eD-IL-iaT"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="phH-se-BH0" secondAttribute="trailing" id="LGn-lf-Gkr"/>
+                            <constraint firstItem="VKH-mk-8pm" firstAttribute="centerY" secondItem="Ahz-p7-GKi" secondAttribute="centerY" id="LJf-Tq-Jea"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="8ud-PD-FtU" secondAttribute="trailing" id="NKR-UV-uIt"/>
+                            <constraint firstItem="phH-se-BH0" firstAttribute="top" secondItem="8ud-PD-FtU" secondAttribute="bottom" id="Xkb-u8-xD1"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="tRp-nA-sjq" secondAttribute="trailing" id="Y6X-nS-iTl"/>
+                            <constraint firstItem="8ud-PD-FtU" firstAttribute="leading" secondItem="Ahz-p7-GKi" secondAttribute="leadingMargin" id="i3i-ft-mVm"/>
+                            <constraint firstItem="QYH-YJ-OGi" firstAttribute="top" secondItem="tRp-nA-sjq" secondAttribute="bottom" constant="8" id="iqx-LR-IBk"/>
                             <constraint firstItem="8ud-PD-FtU" firstAttribute="top" secondItem="Or1-ug-8vZ" secondAttribute="bottom" constant="8" id="pz3-iZ-coK"/>
-                            <constraint firstItem="VKH-mk-8pm" firstAttribute="leading" secondItem="Ahz-p7-GKi" secondAttribute="leading" id="xbY-VH-FsP"/>
-                            <constraint firstItem="tRp-nA-sjq" firstAttribute="bottom" secondItem="VKH-mk-8pm" secondAttribute="bottom" id="ywG-ZH-rmR"/>
-                            <constraint firstAttribute="centerX" secondItem="tRp-nA-sjq" secondAttribute="centerX" id="zmc-gh-nWD"/>
+                            <constraint firstItem="VKH-mk-8pm" firstAttribute="leading" secondItem="Ahz-p7-GKi" secondAttribute="leading" constant="20" id="xbY-VH-FsP"/>
+                            <constraint firstItem="tRp-nA-sjq" firstAttribute="top" secondItem="phH-se-BH0" secondAttribute="bottom" id="ywq-Jl-wMe"/>
                         </constraints>
                     </view>
                     <extendedEdge key="edgesForExtendedLayout"/>
@@ -82,6 +91,7 @@
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="320" height="113"/>
                     <connections>
+                        <outlet property="dateLabel" destination="8ud-PD-FtU" id="jyo-i7-BFf"/>
                         <outlet property="iv" destination="VKH-mk-8pm" id="Cro-Cd-WLB"/>
                     </connections>
                 </viewController>

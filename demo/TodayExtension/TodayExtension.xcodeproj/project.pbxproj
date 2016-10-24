@@ -17,6 +17,8 @@
 		449718531DBCF345009C1868 /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 449718511DBCF345009C1868 /* MainInterface.storyboard */; };
 		449718571DBCF345009C1868 /* CoffeeTime.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 4497184A1DBCF345009C1868 /* CoffeeTime.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		4497185D1DBCF47B009C1868 /* cup.png in Resources */ = {isa = PBXBuildFile; fileRef = 4497185C1DBCF47B009C1868 /* cup.png */; };
+		C235AAED1DBDAC9900CDA7F8 /* TodayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4497184F1DBCF345009C1868 /* TodayViewController.swift */; };
+		C235AAF31DBDDFC700CDA7F8 /* TodayService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C235AAF21DBDDFC700CDA7F8 /* TodayService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +59,10 @@
 		449718521DBCF345009C1868 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
 		449718541DBCF345009C1868 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4497185C1DBCF47B009C1868 /* cup.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cup.png; sourceTree = "<group>"; };
+		C235AAEE1DBDB6ED00CDA7F8 /* TodayExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = TodayExtension.entitlements; sourceTree = "<group>"; };
+		C235AAEF1DBDB79200CDA7F8 /* CoffeeTime.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = CoffeeTime.entitlements; sourceTree = "<group>"; };
+		C235AAF01DBDDDF600CDA7F8 /* readme.rtfd */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = wrapper.rtfd; path = readme.rtfd; sourceTree = "<group>"; };
+		C235AAF21DBDDFC700CDA7F8 /* TodayService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TodayService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,6 +87,7 @@
 		449718281DBCF2AE009C1868 = {
 			isa = PBXGroup;
 			children = (
+				C235AAF01DBDDDF600CDA7F8 /* readme.rtfd */,
 				449718331DBCF2AE009C1868 /* TodayExtension */,
 				4497184E1DBCF345009C1868 /* CoffeeTime */,
 				4497184B1DBCF345009C1868 /* Frameworks */,
@@ -100,6 +107,7 @@
 		449718331DBCF2AE009C1868 /* TodayExtension */ = {
 			isa = PBXGroup;
 			children = (
+				C235AAEE1DBDB6ED00CDA7F8 /* TodayExtension.entitlements */,
 				449718341DBCF2AE009C1868 /* AppDelegate.swift */,
 				449718361DBCF2AE009C1868 /* ViewController.swift */,
 				449718381DBCF2AE009C1868 /* Main.storyboard */,
@@ -121,10 +129,12 @@
 		4497184E1DBCF345009C1868 /* CoffeeTime */ = {
 			isa = PBXGroup;
 			children = (
+				C235AAEF1DBDB79200CDA7F8 /* CoffeeTime.entitlements */,
 				4497184F1DBCF345009C1868 /* TodayViewController.swift */,
 				4497185C1DBCF47B009C1868 /* cup.png */,
 				449718511DBCF345009C1868 /* MainInterface.storyboard */,
 				449718541DBCF345009C1868 /* Info.plist */,
+				C235AAF21DBDDFC700CDA7F8 /* TodayService.swift */,
 			);
 			path = CoffeeTime;
 			sourceTree = "<group>";
@@ -180,11 +190,23 @@
 				TargetAttributes = {
 					449718301DBCF2AE009C1868 = {
 						CreatedOnToolsVersion = 8.0;
+						DevelopmentTeam = W3MH7MTTSB;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.ApplicationGroups.iOS = {
+								enabled = 1;
+							};
+						};
 					};
 					449718491DBCF345009C1868 = {
 						CreatedOnToolsVersion = 8.0;
+						DevelopmentTeam = UR7J67T5FK;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.ApplicationGroups.iOS = {
+								enabled = 0;
+							};
+						};
 					};
 				};
 			};
@@ -236,6 +258,7 @@
 			files = (
 				449718371DBCF2AE009C1868 /* ViewController.swift in Sources */,
 				449718351DBCF2AE009C1868 /* AppDelegate.swift in Sources */,
+				C235AAED1DBDAC9900CDA7F8 /* TodayViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -244,6 +267,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				449718501DBCF345009C1868 /* TodayViewController.swift in Sources */,
+				C235AAF31DBDDFC700CDA7F8 /* TodayService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -381,6 +405,8 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = TodayExtension/TodayExtension.entitlements;
+				DEVELOPMENT_TEAM = W3MH7MTTSB;
 				INFOPLIST_FILE = TodayExtension/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.rockgarden.TodayExtension;
@@ -394,6 +420,8 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = TodayExtension/TodayExtension.entitlements;
+				DEVELOPMENT_TEAM = W3MH7MTTSB;
 				INFOPLIST_FILE = TodayExtension/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.rockgarden.TodayExtension;
@@ -405,6 +433,7 @@
 		449718591DBCF345009C1868 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				DEVELOPMENT_TEAM = UR7J67T5FK;
 				INFOPLIST_FILE = CoffeeTime/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.rockgarden.TodayExtension.CoffeeTime;
@@ -417,6 +446,7 @@
 		4497185A1DBCF345009C1868 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				DEVELOPMENT_TEAM = UR7J67T5FK;
 				INFOPLIST_FILE = CoffeeTime/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.rockgarden.TodayExtension.CoffeeTime;
@@ -445,6 +475,7 @@
 				449718451DBCF2AE009C1868 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		449718581DBCF345009C1868 /* Build configuration list for PBXNativeTarget "CoffeeTime" */ = {
 			isa = XCConfigurationList;
@@ -453,6 +484,7 @@
 				4497185A1DBCF345009C1868 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
