@@ -14,6 +14,9 @@
 		446B95B71D66096C003EC727 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 446B95B51D66096C003EC727 /* LaunchScreen.storyboard */; };
 		44A9C4331D96BB7600F09E6A /* ExpandableByConstraint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44A9C4321D96BB7600F09E6A /* ExpandableByConstraint.swift */; };
 		44A9C4711D96C5F300F09E6A /* CancelAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44A9C4701D96C5F300F09E6A /* CancelAnimation.swift */; };
+		44D7634F1DBF91D200D7EE40 /* cell-image.png in Resources */ = {isa = PBXBuildFile; fileRef = 44D7634C1DBF91D200D7EE40 /* cell-image.png */; };
+		44D763501DBF91D200D7EE40 /* RippleEffectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44D7634D1DBF91D200D7EE40 /* RippleEffectView.swift */; };
+		44D763511DBF91D200D7EE40 /* RippleVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44D7634E1DBF91D200D7EE40 /* RippleVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,6 +48,9 @@
 		446B95C81D66096D003EC727 /* animateUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = animateUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		44A9C4321D96BB7600F09E6A /* ExpandableByConstraint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExpandableByConstraint.swift; sourceTree = "<group>"; };
 		44A9C4701D96C5F300F09E6A /* CancelAnimation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CancelAnimation.swift; sourceTree = "<group>"; };
+		44D7634C1DBF91D200D7EE40 /* cell-image.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "cell-image.png"; sourceTree = "<group>"; };
+		44D7634D1DBF91D200D7EE40 /* RippleEffectView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RippleEffectView.swift; sourceTree = "<group>"; };
+		44D7634E1DBF91D200D7EE40 /* RippleVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RippleVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,6 +81,7 @@
 		446B95A01D66096C003EC727 = {
 			isa = PBXGroup;
 			children = (
+				44D7634B1DBF91D200D7EE40 /* RippleEffect */,
 				446B95AB1D66096C003EC727 /* animate */,
 				446B95AA1D66096C003EC727 /* Products */,
 			);
@@ -96,13 +103,24 @@
 				446B95AC1D66096C003EC727 /* AppDelegate.swift */,
 				446B95AE1D66096C003EC727 /* AnimateWithDurationVC.swift */,
 				44A9C4321D96BB7600F09E6A /* ExpandableByConstraint.swift */,
+				44A9C4701D96C5F300F09E6A /* CancelAnimation.swift */,
 				446B95B01D66096C003EC727 /* Main.storyboard */,
 				446B95B31D66096C003EC727 /* Assets.xcassets */,
 				446B95B51D66096C003EC727 /* LaunchScreen.storyboard */,
 				446B95B81D66096C003EC727 /* Info.plist */,
-				44A9C4701D96C5F300F09E6A /* CancelAnimation.swift */,
 			);
 			path = animate;
+			sourceTree = "<group>";
+		};
+		44D7634B1DBF91D200D7EE40 /* RippleEffect */ = {
+			isa = PBXGroup;
+			children = (
+				44D7634C1DBF91D200D7EE40 /* cell-image.png */,
+				44D7634D1DBF91D200D7EE40 /* RippleEffectView.swift */,
+				44D7634E1DBF91D200D7EE40 /* RippleVC.swift */,
+			);
+			name = RippleEffect;
+			path = animate/RippleEffect;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -211,6 +229,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				446B95B71D66096C003EC727 /* LaunchScreen.storyboard in Resources */,
+				44D7634F1DBF91D200D7EE40 /* cell-image.png in Resources */,
 				446B95B41D66096C003EC727 /* Assets.xcassets in Resources */,
 				446B95B21D66096C003EC727 /* Main.storyboard in Resources */,
 			);
@@ -237,10 +256,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				44D763511DBF91D200D7EE40 /* RippleVC.swift in Sources */,
 				446B95AF1D66096C003EC727 /* AnimateWithDurationVC.swift in Sources */,
 				446B95AD1D66096C003EC727 /* AppDelegate.swift in Sources */,
 				44A9C4711D96C5F300F09E6A /* CancelAnimation.swift in Sources */,
 				44A9C4331D96BB7600F09E6A /* ExpandableByConstraint.swift in Sources */,
+				44D763501DBF91D200D7EE40 /* RippleEffectView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

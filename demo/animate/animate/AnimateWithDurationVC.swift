@@ -68,7 +68,7 @@ class AnimateWithDurationVC: UIViewController {
 				})
 			case 6:
 				func report(_ ix: Int) {
-					let pres = (self.v.layer.presentation() as! CALayer).position.y
+					let pres = self.v.layer.presentation()!.position.y
 					let model = self.v.center.y
 					print("step \(ix): presentation \(pres), model \(model)")
 				}
