@@ -12,8 +12,6 @@
 		446B95B21D66096C003EC727 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 446B95B01D66096C003EC727 /* Main.storyboard */; };
 		446B95B41D66096C003EC727 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 446B95B31D66096C003EC727 /* Assets.xcassets */; };
 		446B95B71D66096C003EC727 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 446B95B51D66096C003EC727 /* LaunchScreen.storyboard */; };
-		446B95C21D66096D003EC727 /* animateTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 446B95C11D66096D003EC727 /* animateTests.swift */; };
-		446B95CD1D66096D003EC727 /* animateUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 446B95CC1D66096D003EC727 /* animateUITests.swift */; };
 		44A9C4331D96BB7600F09E6A /* ExpandableByConstraint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44A9C4321D96BB7600F09E6A /* ExpandableByConstraint.swift */; };
 		44A9C4711D96C5F300F09E6A /* CancelAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44A9C4701D96C5F300F09E6A /* CancelAnimation.swift */; };
 /* End PBXBuildFile section */
@@ -44,11 +42,7 @@
 		446B95B61D66096C003EC727 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		446B95B81D66096C003EC727 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		446B95BD1D66096D003EC727 /* animateTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = animateTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		446B95C11D66096D003EC727 /* animateTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = animateTests.swift; sourceTree = "<group>"; };
-		446B95C31D66096D003EC727 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		446B95C81D66096D003EC727 /* animateUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = animateUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		446B95CC1D66096D003EC727 /* animateUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = animateUITests.swift; sourceTree = "<group>"; };
-		446B95CE1D66096D003EC727 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		44A9C4321D96BB7600F09E6A /* ExpandableByConstraint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExpandableByConstraint.swift; sourceTree = "<group>"; };
 		44A9C4701D96C5F300F09E6A /* CancelAnimation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CancelAnimation.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -82,8 +76,6 @@
 			isa = PBXGroup;
 			children = (
 				446B95AB1D66096C003EC727 /* animate */,
-				446B95C01D66096D003EC727 /* animateTests */,
-				446B95CB1D66096D003EC727 /* animateUITests */,
 				446B95AA1D66096C003EC727 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -111,24 +103,6 @@
 				44A9C4701D96C5F300F09E6A /* CancelAnimation.swift */,
 			);
 			path = animate;
-			sourceTree = "<group>";
-		};
-		446B95C01D66096D003EC727 /* animateTests */ = {
-			isa = PBXGroup;
-			children = (
-				446B95C11D66096D003EC727 /* animateTests.swift */,
-				446B95C31D66096D003EC727 /* Info.plist */,
-			);
-			path = animateTests;
-			sourceTree = "<group>";
-		};
-		446B95CB1D66096D003EC727 /* animateUITests */ = {
-			isa = PBXGroup;
-			children = (
-				446B95CC1D66096D003EC727 /* animateUITests.swift */,
-				446B95CE1D66096D003EC727 /* Info.plist */,
-			);
-			path = animateUITests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -194,11 +168,12 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0730;
-				LastUpgradeCheck = 0730;
+				LastUpgradeCheck = 0800;
 				ORGANIZATIONNAME = rockgarden;
 				TargetAttributes = {
 					446B95A81D66096C003EC727 = {
 						CreatedOnToolsVersion = 7.3.1;
+						LastSwiftMigration = 0800;
 					};
 					446B95BC1D66096D003EC727 = {
 						CreatedOnToolsVersion = 7.3.1;
@@ -273,7 +248,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				446B95C21D66096D003EC727 /* animateTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -281,7 +255,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				446B95CD1D66096D003EC727 /* animateUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -334,8 +307,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -379,8 +354,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -399,6 +376,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
@@ -411,6 +389,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.rockgarden.animate;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
@@ -422,6 +401,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.rockgarden.animate;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};

@@ -13,8 +13,8 @@ class ViewController: UIViewController, FlipsideViewControllerDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(ViewController.keyboardWillAppear(_:)), name: UIKeyboardWillShowNotification, object: nil)
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(ViewController.keyboardWillDisappear(_:)), name:UIKeyboardWillHideNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(ViewController.keyboardWillAppear(_:)), name: NSNotification.Name.UIKeyboardWillShow, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(ViewController.keyboardWillDisappear(_:)), name:NSNotification.Name.UIKeyboardWillHide, object: nil)
     }
     
     //FIXME: 如何执行 "If your app is already in the foreground, iOS does not show the notification."
@@ -23,12 +23,12 @@ class ViewController: UIViewController, FlipsideViewControllerDelegate {
      */
     func testUILocalNotification() {
         let notification = UILocalNotification()
-        notification.fireDate = NSDate().dateByAddingTimeInterval(10)
+        notification.fireDate = Date().addingTimeInterval(10)
         notification.alertBody = "Alert"
-        UIApplication.sharedApplication().scheduleLocalNotification(notification)
+        UIApplication.shared.scheduleLocalNotification(notification)
     }
 
-    func textField(textField: UITextField, shouldChangeCharactersInRange range: NSRange, replacementString string: String) -> Bool {
+    func textField(_ textField: UITextField, shouldChangeCharactersInRange range: NSRange, replacementString string: String) -> Bool {
         if(string == "\n"){
             textField.resignFirstResponder()
             return false
@@ -36,21 +36,21 @@ class ViewController: UIViewController, FlipsideViewControllerDelegate {
             return true
         } }
     
-    func keyboardWillAppear(notification: NSNotification) {
+    func keyboardWillAppear(_ notification: Foundation.Notification) {
         print("Show Keyboard")
     }
     
-    func keyboardWillDisappear(notification:NSNotification){
+    func keyboardWillDisappear(_ notification:Foundation.Notification){
         print("Hide Keyboard")
     }
     
-    func flipsideViewControllerDidFinish(controller:FlipsideViewController) {
-        self.dismissViewControllerAnimated(true, completion: nil)
+    func flipsideViewControllerDidFinish(_ controller:FlipsideViewController) {
+        self.dismiss(animated: true, completion: nil)
     }
     
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "showAlternate" {
-            if let dest = segue.destinationViewController as? FlipsideViewController {
+            if let dest = segue.destination as? FlipsideViewController {
                 dest.delegate = self
             }
         }

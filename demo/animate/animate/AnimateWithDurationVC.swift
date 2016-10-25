@@ -2,12 +2,12 @@
 
 import UIKit
 
-func imageOfSize(size: CGSize, _ whatToDraw: () -> ()) -> UIImage {
+func imageOfSize(_ size: CGSize, _ whatToDraw: () -> ()) -> UIImage {
 	UIGraphicsBeginImageContextWithOptions(size, false, 0)
 	whatToDraw()
 	let result = UIGraphicsGetImageFromCurrentImageContext()
 	UIGraphicsEndImageContext()
-	return result
+	return result!
 }
 
 class AnimateWithDurationVC: UIViewController {
@@ -20,37 +20,37 @@ class AnimateWithDurationVC: UIViewController {
 
 	override func viewDidLoad() {
 		super.viewDidLoad()
-		let image = imageOfSize(CGSizeMake(45, 20), {
+		let image = imageOfSize(CGSize(width: 45, height: 20), {
 			let p = UIBezierPath(
-				roundedRect: CGRectMake(0, 0, 45, 20), cornerRadius: 8)
+				roundedRect: CGRect(x: 0, y: 0, width: 45, height: 20), cornerRadius: 8)
 			p.stroke()
 		})
-		myButton.setBackgroundImage(image, forState: .Normal)
+		myButton.setBackgroundImage(image, for: UIControlState())
 
         loadAnimate(9)
 	}
 
-	func loadAnimate(which: Int) {
+	func loadAnimate(_ which: Int) {
 		delay(1) {
 			print(0)
 			print(self.v.center.y)
 			switch which {
 			case 1:
-				UIView.animateWithDuration(0.4, animations: {
-					self.v.backgroundColor = UIColor.redColor()
+				UIView.animate(withDuration: 0.4, animations: {
+					self.v.backgroundColor = UIColor.red
 				})
 			case 2:
-				UIView.animateWithDuration(0.4, animations: {
-					self.v.backgroundColor = UIColor.redColor()
+				UIView.animate(withDuration: 0.4, animations: {
+					self.v.backgroundColor = UIColor.red
 					self.v.center.y += 100
 				})
 			case 3:
 				let v2 = UIView()
-				v2.backgroundColor = UIColor.blackColor()
+				v2.backgroundColor = UIColor.black
 				v2.alpha = 0
 				v2.frame = self.v.frame
 				self.v.superview!.addSubview(v2)
-				UIView.animateWithDuration(0.4, animations: {
+				UIView.animate(withDuration: 0.4, animations: {
 					self.v.alpha = 0
 					v2.alpha = 1
 					}, completion: {
@@ -58,21 +58,21 @@ class AnimateWithDurationVC: UIViewController {
 					self.v.removeFromSuperview()
 				})
 			case 4:
-				UIView.performSystemAnimation(.Delete, onViews: [self.v], options: [], animations: nil, completion: { _ in print(self.v.superview) })
+				UIView.perform(.delete, on: [self.v], options: [], animations: nil, completion: { _ in print(self.v.superview) })
 			case 5:
-				UIView.animateWithDuration(1, animations: {
-					self.v.backgroundColor = UIColor.redColor()
+				UIView.animate(withDuration: 1, animations: {
+					self.v.backgroundColor = UIColor.red
 					UIView.performWithoutAnimation {
 						self.v.center.y += 100
 					}
 				})
 			case 6:
-				func report(ix: Int) {
-					let pres = (self.v.layer.presentationLayer() as! CALayer).position.y
+				func report(_ ix: Int) {
+					let pres = (self.v.layer.presentation() as! CALayer).position.y
 					let model = self.v.center.y
 					print("step \(ix): presentation \(pres), model \(model)")
 				}
-				UIView.animateWithDuration(2, animations: {
+				UIView.animate(withDuration: 2, animations: {
 					report(2)
 					self.v.center.y += 100
 					report(3)
@@ -83,14 +83,14 @@ class AnimateWithDurationVC: UIViewController {
 				self.v.center.y += 300
 				report(1)
 			case 7:
-				UIView.animateWithDuration(2, animations: {
+				UIView.animate(withDuration: 2, animations: {
 					self.v.center.y += 100
 					self.v.center.y += 300
 					}, completion: { _ in print(self.v.center.y) })
 			case 8:
-				let opts = UIViewAnimationOptions.Autoreverse
+				let opts = UIViewAnimationOptions.autoreverse
 				let xorig = self.v.center.x
-				UIView.animateWithDuration(1, delay: 0, options: opts, animations: {
+				UIView.animate(withDuration: 1, delay: 0, options: opts, animations: {
 					self.v.center.x += 100
 					}, completion: {
 					_ in
@@ -99,7 +99,7 @@ class AnimateWithDurationVC: UIViewController {
 			case 9:
 				self.animate(3)
 			case 10:
-				let opts = UIViewAnimationOptions.Autoreverse
+				let opts = UIViewAnimationOptions.autoreverse
 				let xorig = self.v.center.x
 				UIView.animateWithTimes(3, duration: 1, delay: 0, options: opts, animations: {
 					self.v.center.x += 100
@@ -108,20 +108,20 @@ class AnimateWithDurationVC: UIViewController {
 					self.v.center.x = xorig
 				})
 			case 11:
-				UIView.animateWithDuration(1, animations: {
+				UIView.animate(withDuration: 1, animations: {
 					self.v.center.x += 100
 				})
 				// let opts = UIViewAnimationOptions.BeginFromCurrentState
-				UIView.animateWithDuration(1, animations: {
+				UIView.animate(withDuration: 1, animations: {
 					self.v.center.y += 100
 				})
 			case 12:
-				UIView.animateWithDuration(2, animations: {
+				UIView.animate(withDuration: 2, animations: {
 					self.v.center.x += 100
 				})
 				delay(1) {
 					// let opts = UIViewAnimationOptions.BeginFromCurrentState
-					UIView.animateWithDuration(1, delay: 0, options: [],
+					UIView.animate(withDuration: 1, delay: 0, options: [],
 						animations: {
 							self.v.center.y += 100
 						}, completion: nil)
@@ -133,12 +133,12 @@ class AnimateWithDurationVC: UIViewController {
 
 	let whichAnimateWay = 1 // 1 or 2
 
-	func animate(count: Int) {
+	func animate(_ count: Int) {
 		switch whichAnimateWay {
 		case 1:
-			let opts = UIViewAnimationOptions.Autoreverse
+			let opts = UIViewAnimationOptions.autoreverse
 			let xorig = self.v.center.x
-			UIView.animateWithDuration(1, delay: 0, options: opts, animations: {
+			UIView.animate(withDuration: 1, delay: 0, options: opts, animations: {
 				UIView.setAnimationRepeatCount(Float(count)) // I really don't like this
 				self.v.center.x += 100
 				}, completion: {
@@ -146,9 +146,9 @@ class AnimateWithDurationVC: UIViewController {
 				self.v.center.x = xorig
 			})
 		case 2:
-			let opts = UIViewAnimationOptions.Autoreverse
+			let opts = UIViewAnimationOptions.autoreverse
 			let xorig = self.v.center.x
-			UIView.animateWithDuration(1, delay: 0, options: opts, animations: {
+			UIView.animate(withDuration: 1, delay: 0, options: opts, animations: {
 				self.v.center.x += 100
 				}, completion: {
 				_ in
@@ -163,8 +163,8 @@ class AnimateWithDurationVC: UIViewController {
 		}
 	}
 
-	@IBAction func doButton(sender: AnyObject) {
-		UIView.animateWithDuration(0.4, animations: {
+	@IBAction func doButton(_ sender: AnyObject) {
+		UIView.animate(withDuration: 0.4, animations: {
 			() -> () in
 			self.myButton.frame.origin.y += 20
 			}, completion: {
@@ -173,31 +173,31 @@ class AnimateWithDurationVC: UIViewController {
 		})
 	}
 
-	@IBAction func doButton2(sender: AnyObject) {
+	@IBAction func doButton2(_ sender: AnyObject) {
 		// showing some serious compression of the above syntax
-		UIView.animateWithDuration(0.4, animations: {
+		UIView.animate(withDuration: 0.4, animations: {
 			self.myButton2.frame.origin.y += 20
-		}) {
+		}, completion: {
 			print("finished: \($0)") // must have either "_ in" or "$0"
-		}
+		}) 
 	}
 
 }
 
 extension UIView {
-	class func animateWithTimes(times: Int,
-		duration dur: NSTimeInterval,
-		delay del: NSTimeInterval,
+	class func animateWithTimes(_ times: Int,
+		duration dur: TimeInterval,
+		delay del: TimeInterval,
 		options opts: UIViewAnimationOptions,
-		animations anim: () -> Void,
+		animations anim: @escaping () -> Void,
 		completion comp: ((Bool) -> Void)?) {
-			func helper(t: Int,
-				_ dur: NSTimeInterval,
-				_ del: NSTimeInterval,
+			func helper(_ t: Int,
+				_ dur: TimeInterval,
+				_ del: TimeInterval,
 				_ opt: UIViewAnimationOptions,
-				_ anim: () -> Void,
+				_ anim: @escaping () -> Void,
 				_ com: ((Bool) -> Void)?) {
-					UIView.animateWithDuration(dur,
+					UIView.animate(withDuration: dur,
 						delay: del, options: opt,
 						animations: anim, completion: {
 							done in

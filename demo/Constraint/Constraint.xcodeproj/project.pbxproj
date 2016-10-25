@@ -12,6 +12,7 @@
 		44A9DB2A1D8EE1FC0040E1FC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 44A9DB281D8EE1FC0040E1FC /* Main.storyboard */; };
 		44A9DB2C1D8EE1FC0040E1FC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 44A9DB2B1D8EE1FC0040E1FC /* Assets.xcassets */; };
 		44A9DB2F1D8EE1FC0040E1FC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 44A9DB2D1D8EE1FC0040E1FC /* LaunchScreen.storyboard */; };
+		44D7634A1DBF869F00D7EE40 /* ConstraintsInequalitiesAndPriorities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44D763491DBF869F00D7EE40 /* ConstraintsInequalitiesAndPriorities.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +23,7 @@
 		44A9DB2B1D8EE1FC0040E1FC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		44A9DB2E1D8EE1FC0040E1FC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		44A9DB301D8EE1FC0040E1FC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		44D763491DBF869F00D7EE40 /* ConstraintsInequalitiesAndPriorities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConstraintsInequalitiesAndPriorities.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +58,7 @@
 			children = (
 				44A9DB241D8EE1FC0040E1FC /* AppDelegate.swift */,
 				44A9DB261D8EE1FC0040E1FC /* ConstraintSwapping.swift */,
+				44D763491DBF869F00D7EE40 /* ConstraintsInequalitiesAndPriorities.swift */,
 				44A9DB281D8EE1FC0040E1FC /* Main.storyboard */,
 				44A9DB2B1D8EE1FC0040E1FC /* Assets.xcassets */,
 				44A9DB2D1D8EE1FC0040E1FC /* LaunchScreen.storyboard */,
@@ -136,6 +139,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				44D7634A1DBF869F00D7EE40 /* ConstraintsInequalitiesAndPriorities.swift in Sources */,
 				44A9DB271D8EE1FC0040E1FC /* ConstraintSwapping.swift in Sources */,
 				44A9DB251D8EE1FC0040E1FC /* AppDelegate.swift in Sources */,
 			);
