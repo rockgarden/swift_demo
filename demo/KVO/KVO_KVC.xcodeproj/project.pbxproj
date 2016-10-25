@@ -10,11 +10,13 @@
 		449789AF1D6C916B00A607A9 /* MyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 449789AC1D6C916B00A607A9 /* MyView.swift */; };
 		449789B01D6C916B00A607A9 /* Thing.m in Sources */ = {isa = PBXBuildFile; fileRef = 449789AE1D6C916B00A607A9 /* Thing.m */; };
 		449789B21D6C91AA00A607A9 /* KVC_VC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 449789B11D6C91AA00A607A9 /* KVC_VC.swift */; };
-		449789B41D6C91E800A607A9 /* KVC.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 449789B31D6C91E800A607A9 /* KVC.storyboard */; };
 		C20B83D41D6AEA0500C12286 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = C20B83D31D6AEA0500C12286 /* Model.swift */; };
 		C20B83D61D6AEAD100C12286 /* BasicKVOUIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C20B83D51D6AEAD100C12286 /* BasicKVOUIViewController.swift */; };
 		C20B83D81D6AEADD00C12286 /* PrincipleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C20B83D71D6AEADD00C12286 /* PrincipleViewController.swift */; };
 		C20B83DA1D6AEAE900C12286 /* RootTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C20B83D91D6AEAE900C12286 /* RootTableViewController.swift */; };
+		C20C021F1DBF260F00729F87 /* Configuration.swift in Sources */ = {isa = PBXBuildFile; fileRef = C20C021C1DBF260E00729F87 /* Configuration.swift */; };
+		C20C02201DBF260F00729F87 /* ConfigurationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C20C021D1DBF260E00729F87 /* ConfigurationManager.swift */; };
+		C20C02211DBF260F00729F87 /* KVOExampleVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C20C021E1DBF260E00729F87 /* KVOExampleVC.swift */; };
 		C2B5649A1D6ABB78003E2E7E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2B564991D6ABB78003E2E7E /* AppDelegate.swift */; };
 		C2B5649F1D6ABB78003E2E7E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C2B5649D1D6ABB78003E2E7E /* Main.storyboard */; };
 		C2B564A11D6ABB78003E2E7E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C2B564A01D6ABB78003E2E7E /* Assets.xcassets */; };
@@ -27,12 +29,14 @@
 		449789AD1D6C916B00A607A9 /* Thing.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Thing.h; sourceTree = "<group>"; };
 		449789AE1D6C916B00A607A9 /* Thing.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Thing.m; sourceTree = "<group>"; };
 		449789B11D6C91AA00A607A9 /* KVC_VC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KVC_VC.swift; sourceTree = "<group>"; };
-		449789B31D6C91E800A607A9 /* KVC.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = KVC.storyboard; sourceTree = "<group>"; };
 		449789B51D6C930E00A607A9 /* KVO-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "KVO-Bridging-Header.h"; path = "KVC/KVO-Bridging-Header.h"; sourceTree = "<group>"; };
 		C20B83D31D6AEA0500C12286 /* Model.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 		C20B83D51D6AEAD100C12286 /* BasicKVOUIViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BasicKVOUIViewController.swift; sourceTree = "<group>"; };
 		C20B83D71D6AEADD00C12286 /* PrincipleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PrincipleViewController.swift; sourceTree = "<group>"; };
 		C20B83D91D6AEAE900C12286 /* RootTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootTableViewController.swift; sourceTree = "<group>"; };
+		C20C021C1DBF260E00729F87 /* Configuration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Configuration.swift; sourceTree = "<group>"; };
+		C20C021D1DBF260E00729F87 /* ConfigurationManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConfigurationManager.swift; sourceTree = "<group>"; };
+		C20C021E1DBF260E00729F87 /* KVOExampleVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KVOExampleVC.swift; sourceTree = "<group>"; };
 		C2B564961D6ABB78003E2E7E /* KVO.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KVO.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C2B564991D6ABB78003E2E7E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C2B5649E1D6ABB78003E2E7E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -60,7 +64,6 @@
 				449789AD1D6C916B00A607A9 /* Thing.h */,
 				449789AE1D6C916B00A607A9 /* Thing.m */,
 				449789B11D6C91AA00A607A9 /* KVC_VC.swift */,
-				449789B31D6C91E800A607A9 /* KVC.storyboard */,
 			);
 			path = KVC;
 			sourceTree = "<group>";
@@ -92,6 +95,9 @@
 				C20B83D91D6AEAE900C12286 /* RootTableViewController.swift */,
 				C20B83D71D6AEADD00C12286 /* PrincipleViewController.swift */,
 				C20B83D51D6AEAD100C12286 /* BasicKVOUIViewController.swift */,
+				C20C021E1DBF260E00729F87 /* KVOExampleVC.swift */,
+				C20C021C1DBF260E00729F87 /* Configuration.swift */,
+				C20C021D1DBF260E00729F87 /* ConfigurationManager.swift */,
 				C2B5649D1D6ABB78003E2E7E /* Main.storyboard */,
 				C2B564A01D6ABB78003E2E7E /* Assets.xcassets */,
 				C2B564A21D6ABB78003E2E7E /* LaunchScreen.storyboard */,
@@ -127,7 +133,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0730;
-				LastUpgradeCheck = 0730;
+				LastUpgradeCheck = 0800;
 				ORGANIZATIONNAME = rockgarden;
 				TargetAttributes = {
 					C2B564951D6ABB78003E2E7E = {
@@ -160,7 +166,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				C2B564A41D6ABB78003E2E7E /* LaunchScreen.storyboard in Resources */,
-				449789B41D6C91E800A607A9 /* KVC.storyboard in Resources */,
 				C2B564A11D6ABB78003E2E7E /* Assets.xcassets in Resources */,
 				C2B5649F1D6ABB78003E2E7E /* Main.storyboard in Resources */,
 			);
@@ -176,9 +181,12 @@
 				449789B01D6C916B00A607A9 /* Thing.m in Sources */,
 				C2B564AC1D6ABBA6003E2E7E /* MyClass.swift in Sources */,
 				449789B21D6C91AA00A607A9 /* KVC_VC.swift in Sources */,
+				C20C02201DBF260F00729F87 /* ConfigurationManager.swift in Sources */,
 				C20B83D61D6AEAD100C12286 /* BasicKVOUIViewController.swift in Sources */,
 				C20B83DA1D6AEAE900C12286 /* RootTableViewController.swift in Sources */,
+				C20C02211DBF260F00729F87 /* KVOExampleVC.swift in Sources */,
 				C20B83D81D6AEADD00C12286 /* PrincipleViewController.swift in Sources */,
+				C20C021F1DBF260F00729F87 /* Configuration.swift in Sources */,
 				C2B5649A1D6ABB78003E2E7E /* AppDelegate.swift in Sources */,
 				449789AF1D6C916B00A607A9 /* MyView.swift in Sources */,
 				C20B83D41D6AEA0500C12286 /* Model.swift in Sources */,
@@ -221,8 +229,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -267,8 +277,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -287,6 +299,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 			};

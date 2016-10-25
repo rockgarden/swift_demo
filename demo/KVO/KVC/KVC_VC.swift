@@ -5,6 +5,7 @@
 //  Created by wangkan on 16/8/23.
 //  Copyright © 2016年 rockgarden. All rights reserved.
 //
+/// KVC，即是指 NSKeyValueCoding，一个非正式的Protocol，提供一种机制来间接访问对象的属性。而不是通过调用Setter、Getter方法访问。
 
 import UIKit
 
@@ -27,9 +28,11 @@ class KVC_Class: NSObject {
 			"name": "Jack"
 		]
 	]
+    
 	func countOfPepBoys() -> Int {
 		return self.theData.count
 	}
+    
 	func objectInPepBoysAtIndex(_ ix: Int) -> AnyObject {
 		return self.theData[ix] as AnyObject
 	}
@@ -48,7 +51,7 @@ class KVC_VC: UIViewController {
 		}
 	}
 
-	// but there is, in Swift 2.0, a simpler way:
+	// but there is, a simpler way: @objc(hue) == dynamic?
 	@objc(hue) var color2: UIColor {
 		get {
 			print("someone called the color2 getter")
@@ -92,18 +95,19 @@ class KVC_VC: UIViewController {
 		d.setValue("Fido", forKey: "name") // no crash!
 		print(d.name) // "Fido" - it worked!
 
+        // NSObject.value
 		let c = self.value(forKey: "hue") as? UIColor // "someone called the getter"
 		print(c) // Optional(UIDeviceRGBColorSpace 1 0 0 1)
 
-		let myObject = MyClass()
+		let myObject = KVC_Class()
 		let arr = myObject.value(forKeyPath: "theData.name") as! [String]
 		print(arr)
-		do {
-			let arr: AnyObject = myObject.value(forKey: "pepBoys")! as AnyObject
-			print(arr)
-			let arr2: AnyObject = myObject.value(forKeyPath: "pepBoys.name")! as AnyObject
-			print(arr2)
-		}
+        /// 通过命名空间调用方法？
+        let arr1: AnyObject = myObject.value(forKey: "pepBoys")! as AnyObject //调方法名包含pepBoys
+        debugPrint(myObject.value(forKey: "countOfPepBoys"))
+        print(arr1)
+        let arr2: AnyObject = myObject.value(forKeyPath: "pepBoys.name")! as AnyObject
+        print(arr2)
 
 		_ = obj
 

@@ -9,6 +9,9 @@
 import Foundation
 
 /*
+ Powering Key-Value Observing is the NSKeyValueObserving protocol. The documentation states that NSKeyValueObserving is an informal protocol. The NSObject root class conforms to the NSKeyValueObserving protocol and any class that inherits from NSObject is also assumed to conform to the protocol.
+ Later in this tutorial, we find out what that means for developers. For now, remember that every class that is defined in the Foundation framework and that inherits from NSObject conforms to the NSKeyValueObserving protocol.
+ What’s the deal with the UIKit framework? That is a great question. Apple is a bit vague about the implementation of KVO in UIKit. This is what the documentation has to say about KVO and UIKit.
  Swift 中使用 KVO 的前提条件:
  规则A. 观察者和被观察者都必须是 NSObject 的子类;both objects must derive from NSObject
  因为 OC 中KVO的实现基于 KVC 和 runtime 机制，只有是 NSObject 的子类才能利用这些特性.
@@ -38,11 +41,14 @@ class ObjectToObserve: NSObject {
 }
 
 class Observer: NSObject {
+    
     override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey: Any]?, context: UnsafeMutableRawPointer?) {
         print("-----------------start------------")
         print("I heard about the change!")
-        if let keyPath = keyPath {
-            print((object as AnyObject).value?(forKeyPath: keyPath))
+        print((object))
+        // 类型判断 object 以 Any 传入 转为 AnyObject 不含有 value
+        if object is ObjectToObserve {
+            print((object as! ObjectToObserve).value(forKeyPath: keyPath!))
         }
         print(change)
         print(context == &con) // aha
@@ -141,8 +147,9 @@ class ArrayObserver: NSObject {
     override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey: Any]?, context: UnsafeMutableRawPointer?) {
         print("-----------------start------------")
         print("I heard about the array change!")
-        if let keyPath = keyPath {
-            print((object as AnyObject).value?(forKeyPath: keyPath))
+        guard let keyPath = keyPath else { return }
+        if object is ArrayToObserve {
+            print((object as! ArrayToObserve).value(forKeyPath: keyPath))
         }
         print(change)
         print(context == &Update)
