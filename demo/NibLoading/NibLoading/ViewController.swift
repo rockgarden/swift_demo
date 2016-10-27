@@ -21,7 +21,7 @@ class ViewController: UIViewController {
         self.view.addSubview(v1)
 
         Bundle.main.loadNibNamed("CoolView", owner: self, options: nil)
-        v0.addSubview(self.coolview)
+        v1.addSubview(self.coolview)
     }
 
     override func didReceiveMemoryWarning() {
