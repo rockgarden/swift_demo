@@ -2,6 +2,9 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:demo/NibLoading/NibLoading.xcodeproj">
+   </FileRef>
+   <FileRef
       location = "group:demo/UIApplicationMain/UIApplicationMain.xcodeproj">
    </FileRef>
    <FileRef
