@@ -2,6 +2,12 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:demo/SubClass/SubClass.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:demo/Localization/Localization.xcodeproj">
+   </FileRef>
+   <FileRef
       location = "group:demo/UnitTesting/UnitTesting.xcodeproj">
    </FileRef>
    <FileRef
