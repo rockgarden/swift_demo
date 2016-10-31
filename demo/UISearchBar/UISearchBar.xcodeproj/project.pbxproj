@@ -210,15 +210,15 @@
 				44BF4E8F1D9800FC000B33D9 /* CollectionViewCell.swift */,
 				44ED802E1D9FB97200DC6182 /* SearchResultsController.swift */,
 				44DF2F2F1D9FE2F7001AFE2D /* StatesViewController.swift */,
+				44DF2F9A1D9FE9EE001AFE2D /* StatesViewController.xib */,
 				44BF4E901D9800FC000B33D9 /* IntExtension.swift */,
 				44BF4E921D9800FC000B33D9 /* MultiSectionCollectionViewDataSource.swift */,
 				44BCAB701D954A8D0019B333 /* Main.storyboard */,
-				44DF2F331D9FE416001AFE2D /* flag */,
 				44BCAB731D954A8D0019B333 /* Assets.xcassets */,
 				44BCAB751D954A8D0019B333 /* LaunchScreen.storyboard */,
 				44BCAB781D954A8D0019B333 /* Info.plist */,
+				44DF2F331D9FE416001AFE2D /* flag */,
 				44DF2F311D9FE3D4001AFE2D /* states.txt */,
-				44DF2F9A1D9FE9EE001AFE2D /* StatesViewController.xib */,
 				44BF4E911D9800FC000B33D9 /* SwiftyJSON.swift */,
 			);
 			path = UISearchBar;

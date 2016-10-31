@@ -17,8 +17,6 @@
 		446E48951D1ECE5300BF3D5B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 446E48931D1ECE5300BF3D5B /* Main.storyboard */; };
 		446E48971D1ECE5300BF3D5B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 446E48961D1ECE5300BF3D5B /* Assets.xcassets */; };
 		446E489A1D1ECE5300BF3D5B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 446E48981D1ECE5300BF3D5B /* LaunchScreen.storyboard */; };
-		446E48A51D1ECE5300BF3D5B /* mainTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 446E48A41D1ECE5300BF3D5B /* mainTests.swift */; };
-		446E48B01D1ECE5300BF3D5B /* mainUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 446E48AF1D1ECE5300BF3D5B /* mainUITests.swift */; };
 		446E48E01D1ECF3D00BF3D5B /* Ext_CCLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 446E48BF1D1ECF3D00BF3D5B /* Ext_CCLocation.swift */; };
 		446E48E11D1ECF3D00BF3D5B /* Ext_NSCoding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 446E48C01D1ECF3D00BF3D5B /* Ext_NSCoding.swift */; };
 		446E48E21D1ECF3D00BF3D5B /* Ext_UIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 446E48C11D1ECF3D00BF3D5B /* Ext_UIImage.swift */; };
@@ -94,11 +92,7 @@
 		446E48991D1ECE5300BF3D5B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		446E489B1D1ECE5300BF3D5B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		446E48A01D1ECE5300BF3D5B /* mainTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = mainTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		446E48A41D1ECE5300BF3D5B /* mainTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = mainTests.swift; sourceTree = "<group>"; };
-		446E48A61D1ECE5300BF3D5B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		446E48AB1D1ECE5300BF3D5B /* mainUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = mainUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		446E48AF1D1ECE5300BF3D5B /* mainUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = mainUITests.swift; sourceTree = "<group>"; };
-		446E48B11D1ECE5300BF3D5B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		446E48BF1D1ECF3D00BF3D5B /* Ext_CCLocation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Ext_CCLocation.swift; sourceTree = "<group>"; };
 		446E48C01D1ECF3D00BF3D5B /* Ext_NSCoding.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Ext_NSCoding.swift; sourceTree = "<group>"; };
 		446E48C11D1ECF3D00BF3D5B /* Ext_UIImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Ext_UIImage.swift; sourceTree = "<group>"; };
@@ -183,8 +177,6 @@
 			isa = PBXGroup;
 			children = (
 				446E488E1D1ECE5300BF3D5B /* main */,
-				446E48A31D1ECE5300BF3D5B /* mainTests */,
-				446E48AE1D1ECE5300BF3D5B /* mainUITests */,
 				446E488D1D1ECE5300BF3D5B /* Products */,
 				446E48BD1D1ECF3D00BF3D5B /* SimpleLib */,
 			);
@@ -222,24 +214,6 @@
 				4471E9DB1D240B98003A2C46 /* CustomCollectionLayout.swift */,
 			);
 			path = main;
-			sourceTree = "<group>";
-		};
-		446E48A31D1ECE5300BF3D5B /* mainTests */ = {
-			isa = PBXGroup;
-			children = (
-				446E48A41D1ECE5300BF3D5B /* mainTests.swift */,
-				446E48A61D1ECE5300BF3D5B /* Info.plist */,
-			);
-			path = mainTests;
-			sourceTree = "<group>";
-		};
-		446E48AE1D1ECE5300BF3D5B /* mainUITests */ = {
-			isa = PBXGroup;
-			children = (
-				446E48AF1D1ECE5300BF3D5B /* mainUITests.swift */,
-				446E48B11D1ECE5300BF3D5B /* Info.plist */,
-			);
-			path = mainUITests;
 			sourceTree = "<group>";
 		};
 		446E48BD1D1ECF3D00BF3D5B /* SimpleLib */ = {
@@ -540,7 +514,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				446E48A51D1ECE5300BF3D5B /* mainTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -548,7 +521,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				446E48B01D1ECE5300BF3D5B /* mainUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

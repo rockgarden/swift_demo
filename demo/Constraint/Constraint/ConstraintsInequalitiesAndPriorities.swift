@@ -17,7 +17,7 @@ class ConstraintsInequalitiesAndPriorities : UIViewController {
         super.viewDidLoad()
         self.lab1.translatesAutoresizingMaskIntoConstraints = false
         self.lab2.translatesAutoresizingMaskIntoConstraints = false
-        let d = dictionaryOfNames(lab1,lab2)
+        let d = dictionaryOfNames(lab1, lab2)
         NSLayoutConstraint.activate([
             NSLayoutConstraint.constraints(
                 withVisualFormat: "V:|-70-[v1]", options: [], metrics: nil, views: d),
@@ -32,10 +32,9 @@ class ConstraintsInequalitiesAndPriorities : UIViewController {
             ].joined().map{$0})
         // added width shrinkage limit to both labels, so neither gets driven down to invisibility
         // we will be ambiguous when the label texts grow
-        // one way to solve: different compression resistance priorities
-
+        // one way to solve: different compression resistance priorities, like below
         let p = self.lab2.contentCompressionResistancePriority(for: .horizontal)
-        self.lab1.setContentCompressionResistancePriority(p+1, for: .horizontal)
+        self.lab1.setContentCompressionResistancePriority(p+1, for: .horizontal) //p越大优先级越高
         
         // print(self.lab1.contentCompressionResistancePriorityForAxis(.Horizontal))
         // print(self.lab2.contentCompressionResistancePriorityForAxis(.Horizontal))
@@ -56,7 +55,8 @@ class ConstraintsInequalitiesAndPriorities : UIViewController {
             ].joined().map{$0})
 
         let con = button.centerXAnchor.constraint(equalTo: self.view.centerXAnchor)
-        con.priority = 700 // try commenting this out to see the difference in behavior
+        // default priorities
+        con.priority = 700 //try commenting this out to see the difference in behavior
         NSLayoutConstraint.activate([con])
     }
 
