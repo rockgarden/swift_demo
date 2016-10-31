@@ -2,6 +2,12 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:demo/DataSource/DataSource.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:demo/FrameBounds/FrameBounds.xcodeproj">
+   </FileRef>
+   <FileRef
       location = "group:demo/UICollectionView/UICollectionView.xcodeproj">
    </FileRef>
    <FileRef

@@ -3,7 +3,7 @@
 import UIKit
 
 protocol FlipsideViewControllerDelegate : class {
-    func flipsideViewControllerDidFinish(_ controller:FlipsideViewController)
+    func flipsideViewControllerDidFinish(_ controller: FlipsideViewController)
 }
 
 class FlipsideViewController: UIViewController {
@@ -21,12 +21,12 @@ class FlipsideViewController: UIViewController {
             self.observer = NotificationCenter.default.addObserver(
                 forName: NSNotification.Name(rawValue: "woohoo"), object:nil, queue:nil) {
                     _ in
-                    self.description // leak me, leak me
+                    self.description //leak me, leak me
             }
         case 1:
             self.observer = NotificationCenter.default.addObserver(
                 forName: NSNotification.Name(rawValue: "woohoo"), object:nil, queue:nil) {
-                    [unowned self] _ in // ha ha, fixed it
+                    [unowned self] _ in //ha ha, fixed it
                     self.description
             }
         default:break
@@ -39,7 +39,7 @@ class FlipsideViewController: UIViewController {
         NotificationCenter.default.removeObserver(self.observer)
     }
     
-    @IBAction func done (_ sender:AnyObject!) {
+    @IBAction func done (_ sender: AnyObject!) {
         print("done")
         self.delegate?.flipsideViewControllerDidFinish(self)
     }
