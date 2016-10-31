@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="U5p-Lp-fhs">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="U5p-Lp-fhs">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
@@ -46,6 +46,13 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KPY-Go-How">
+                                <frame key="frameInset" minX="20" minY="268" width="280" height="49"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
@@ -54,11 +61,12 @@
                         <outlet property="lab1" destination="hK3-wq-cfL" id="DB2-3p-b5W"/>
                         <outlet property="lab2" destination="veP-AK-KLF" id="kY6-aS-YMv"/>
                         <outlet property="lab3" destination="f3T-6J-rgd" id="SsS-pV-jYd"/>
+                        <outlet property="labelVarName" destination="KPY-Go-How" id="uoH-8U-JgN"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qLd-dC-2Nn" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="607" y="-629"/>
+            <point key="canvasLocation" x="1052" y="-684"/>
         </scene>
         <!--Expandable LabelVC-->
         <scene sceneID="DzM-g0-EF1">
@@ -121,12 +129,11 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5WQ-nn-iMB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="140" y="-628"/>
+            <point key="canvasLocation" x="270" y="-684"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="cmY-eI-Ggg">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="N8y-Fh-dUq" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <navigationController storyboardIdentifier="initNav" id="U5p-Lp-fhs" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="RIb-Jn-Ean">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -136,7 +143,9 @@
                         <segue destination="S8Q-HT-MDf" kind="relationship" relationship="rootViewController" id="Qyc-JE-UcH"/>
                     </connections>
                 </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="N8y-Fh-dUq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="-497" y="-684"/>
         </scene>
     </scenes>
 </document>

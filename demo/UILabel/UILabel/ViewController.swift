@@ -28,6 +28,7 @@ class ViewController: UIViewController {
     @IBOutlet var lab2: UILabel!
     @IBOutlet weak var iv: UIImageView!
     @IBOutlet var lab3: UILabel!
+    @IBOutlet var labelVarName: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -139,6 +140,17 @@ class ViewController: UIViewController {
                 options: [], metrics: nil, views: ["v": lab])
             ].joined().map { $0 })
         lab.attributedText = content2
+    }
+
+    func makeSubscriptSuperscript() {
+        let font = UIFont(name: "Helvetica", size:20)
+        let fontSuper = UIFont(name: "Helvetica", size:10)
+        let attString = NSMutableAttributedString(string: "6.022*1023", attributes: [NSFontAttributeName:font!])
+        attString.setAttributes([
+            NSFontAttributeName: fontSuper!,
+            NSBaselineOffsetAttributeName: 10],
+                                range: NSRange(location:8, length:2))
+        labelVarName.attributedText = attString
     }
     
 }
