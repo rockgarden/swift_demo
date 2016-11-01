@@ -2,6 +2,12 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:demo/UIStoryboard/UIStoryboard.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:demo/autoreleasepool/autoreleasepool.xcodeproj">
+   </FileRef>
+   <FileRef
       location = "group:demo/DataSource/DataSource.xcodeproj">
    </FileRef>
    <FileRef
