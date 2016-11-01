@@ -15,9 +15,6 @@ class GreetingNewViewController: UIViewController, UISearchResultsUpdating, UISe
 
 	var resultSearchController = UISearchController()
 	var searchButton: UIBarButtonItem!
-	var titleButton = UIButton(type: UIButtonType.system)
-	var totalLabel = UILabel(frame: (CGRect(x: 70, y: 26, width: 60, height: 15)))
-	var titleLabel = UILabel(frame: CGRect(x: 0, y: 0, width: 200, height: 26))
 	var items: [String: [AnyObject]]!
 	var filteredItems: [String: [AnyObject]]!
 	var dataSource: MultiSectionCollectionViewDataSource!
@@ -26,7 +23,7 @@ class GreetingNewViewController: UIViewController, UISearchResultsUpdating, UISe
 
 	override func viewDidLoad() {
 		super.viewDidLoad()
-		configureTitleButton("用户投诉", haveSubTitle: true)
+		self.title = "CollectionView Search Demo"
 		self.items = GreetingObjectHandler(filename: Constant.GreetingJSONFileName).getGreetingsAsAnyObjects()
 		filteredItems = items
 
@@ -42,38 +39,10 @@ class GreetingNewViewController: UIViewController, UISearchResultsUpdating, UISe
 		addSearchBar()
 	}
 
-	func configureTitleButton(_ buttonTitle: String!, haveSubTitle: Bool) {
-		titleButton.frame = CGRect(x: 0, y: 0, width: 200, height: 44)
-		self.navigationItem.titleView = titleButton
-		if haveSubTitle {
-			titleLabel.frame = CGRect(x: 0, y: 0, width: 200, height: 27)
-			titleLabel.font = UIFont(name: "STHeitiSC-Light", size: 19)
-			titleLabel.textAlignment = .center
-			totalLabel.sizeToFit()
-			let w = totalLabel.frame.width
-			let x = (200 - w) / 2
-			totalLabel.frame = CGRect(x: x, y: 26, width: w + 2, height: 15)
-			totalLabel.backgroundColor = UIColor.black.withAlphaComponent(0.1)
-			totalLabel.clipsToBounds = true
-			totalLabel.textAlignment = .center
-			totalLabel.font = UIFont(name: "STHeitiSC-Light", size: 13)
-			totalLabel.layer.cornerRadius = 4
-			titleButton.addSubview(totalLabel)
-		}
-		titleLabel.text = buttonTitle
-		titleButton.addSubview(titleLabel)
-	}
-
 	override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
 		if let dvc = segue.destination as? GreetingDetailViewController {
 			dvc.data = dvcData
 		}
-	}
-
-	func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
-		totalLabel.text = "1000000000"
-		configureTitleButton("业务开通", haveSubTitle: true)
-		self.navigationItem.rightBarButtonItem = searchButton
 	}
 
 	func showSearch() {
@@ -113,7 +82,7 @@ class GreetingNewViewController: UIViewController, UISearchResultsUpdating, UISe
 
     // 定义searchBar样式
     func configureSearchBar(_ searchBar: UISearchBar) {
-        searchBar.placeholder = "请输入客户名称或简拼"
+        searchBar.placeholder = "请输入名称"
         debugPrint("searchBar.text", searchBar.text) //searchBar.text不会为nil
         searchBar.sizeToFit()
         searchBar.tintColor = UIColor.white

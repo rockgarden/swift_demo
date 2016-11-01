@@ -31,14 +31,14 @@ class StatesViewController: UITableViewController, UISearchBarDelegate {
 		// this is the only important part of this class! create popover searcher
 
 		// instantiate a view controller that will present the search results
-		let src = SearchResultsController(data: self.sectionData)
+		let src = Pop_SRC(data: self.sectionData)
 		// instantiate a search controller and keep it alive
 		let searcher = UISearchController(searchResultsController: src)
 		self.searcher = searcher
 		// no effect in this situation:
 		searcher.hidesNavigationBarDuringPresentation = false
 		// searcher.dimsBackgroundDuringPresentation = false
-		// make it a popover! 设置definesPresentationContext为true，我们保证在UISearchController在激活状态下用户push到下一个view controller之后search bar不会仍留在界面上。
+		//FIXME: make it a popover! 设置definesPresentationContext为true，我们保证在UISearchController在激活状态下用户push到下一个view controller之后search bar仍留在界面上。
 		self.definesPresentationContext = true
 		searcher.modalPresentationStyle = .popover
 		searcher.preferredContentSize = CGSize(width: 400, height: 400)

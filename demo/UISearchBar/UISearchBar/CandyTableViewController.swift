@@ -39,7 +39,13 @@ class CandyTableViewController: UITableViewController, UISearchBarDelegate, UISe
 
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         print("text changed \(searchText)")
-        data.removeSubrange(0..<4) //TODO: Demo Error "Array replace: subrange extends past the end"
+        let len = data.count
+        if len > 3 {
+            data.removeSubrange(0..<4)
+        } else {
+            data.removeSubrange(0..<len)
+        }
+        //TODO: Demo Error "Array replace: subrange extends past the end"
         self.tableView.reloadData()
     }
     

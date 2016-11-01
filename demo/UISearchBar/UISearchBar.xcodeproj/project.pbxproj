@@ -80,8 +80,10 @@
 		44DF2F971D9FE416001AFE2D /* flag_wisconsin.gif in Resources */ = {isa = PBXBuildFile; fileRef = 44DF2F641D9FE416001AFE2D /* flag_wisconsin.gif */; };
 		44DF2F981D9FE416001AFE2D /* flag_wyoming.gif in Resources */ = {isa = PBXBuildFile; fileRef = 44DF2F651D9FE416001AFE2D /* flag_wyoming.gif */; };
 		44DF2F991D9FE416001AFE2D /* us_flag_small.gif in Resources */ = {isa = PBXBuildFile; fileRef = 44DF2F661D9FE416001AFE2D /* us_flag_small.gif */; };
-		44DF2F9B1D9FE9EE001AFE2D /* StatesViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 44DF2F9A1D9FE9EE001AFE2D /* StatesViewController.xib */; };
-		44ED802F1D9FB97200DC6182 /* SearchResultsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44ED802E1D9FB97200DC6182 /* SearchResultsController.swift */; };
+		44ED802F1D9FB97200DC6182 /* Pop_SRC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44ED802E1D9FB97200DC6182 /* Pop_SRC.swift */; };
+		C299B7D61DC83C8D001E45A9 /* A_TableVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C299B7D51DC83C8D001E45A9 /* A_TableVC.swift */; };
+		C299B7D81DC83D69001E45A9 /* A_SearchResultsC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C299B7D71DC83D69001E45A9 /* A_SearchResultsC.swift */; };
+		C299B7DC1DC8639E001E45A9 /* B_TableVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C299B7DB1DC8639E001E45A9 /* B_TableVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -160,8 +162,10 @@
 		44DF2F641D9FE416001AFE2D /* flag_wisconsin.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = flag_wisconsin.gif; sourceTree = "<group>"; };
 		44DF2F651D9FE416001AFE2D /* flag_wyoming.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = flag_wyoming.gif; sourceTree = "<group>"; };
 		44DF2F661D9FE416001AFE2D /* us_flag_small.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = us_flag_small.gif; sourceTree = "<group>"; };
-		44DF2F9A1D9FE9EE001AFE2D /* StatesViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = StatesViewController.xib; sourceTree = "<group>"; };
-		44ED802E1D9FB97200DC6182 /* SearchResultsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchResultsController.swift; sourceTree = "<group>"; };
+		44ED802E1D9FB97200DC6182 /* Pop_SRC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Pop_SRC.swift; sourceTree = "<group>"; };
+		C299B7D51DC83C8D001E45A9 /* A_TableVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = A_TableVC.swift; sourceTree = "<group>"; };
+		C299B7D71DC83D69001E45A9 /* A_SearchResultsC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = A_SearchResultsC.swift; sourceTree = "<group>"; };
+		C299B7DB1DC8639E001E45A9 /* B_TableVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = B_TableVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -204,13 +208,15 @@
 				44BF4EA61D9802E0000B33D9 /* GreetingDetailViewController.swift */,
 				44BF4EA71D9802E0000B33D9 /* CandyTableViewController.swift */,
 				44BCAB6E1D954A8D0019B333 /* ViewController.swift */,
+				C299B7D51DC83C8D001E45A9 /* A_TableVC.swift */,
+				C299B7D71DC83D69001E45A9 /* A_SearchResultsC.swift */,
+				C299B7DB1DC8639E001E45A9 /* B_TableVC.swift */,
 				44BF4E8C1D9800FC000B33D9 /* GreetingNewViewController.swift */,
 				44BF4E8D1D9800FC000B33D9 /* CandyNewTableViewController.swift */,
 				44BF4E8E1D9800FC000B33D9 /* CandyViewController.swift */,
 				44BF4E8F1D9800FC000B33D9 /* CollectionViewCell.swift */,
-				44ED802E1D9FB97200DC6182 /* SearchResultsController.swift */,
+				44ED802E1D9FB97200DC6182 /* Pop_SRC.swift */,
 				44DF2F2F1D9FE2F7001AFE2D /* StatesViewController.swift */,
-				44DF2F9A1D9FE9EE001AFE2D /* StatesViewController.xib */,
 				44BF4E901D9800FC000B33D9 /* IntExtension.swift */,
 				44BF4E921D9800FC000B33D9 /* MultiSectionCollectionViewDataSource.swift */,
 				44BCAB701D954A8D0019B333 /* Main.storyboard */,
@@ -367,7 +373,6 @@
 				44DF2F8B1D9FE416001AFE2D /* flag_oregon.gif in Resources */,
 				44DF2F8D1D9FE416001AFE2D /* flag_rhodeisland.gif in Resources */,
 				44DF2F681D9FE416001AFE2D /* flag_alaska.gif in Resources */,
-				44DF2F9B1D9FE9EE001AFE2D /* StatesViewController.xib in Resources */,
 				44DF2F951D9FE416001AFE2D /* flag_washington.gif in Resources */,
 				44DF2F6A1D9FE416001AFE2D /* flag_arkansas.gif in Resources */,
 				44DF2F941D9FE416001AFE2D /* flag_virginia.gif in Resources */,
@@ -410,17 +415,20 @@
 			files = (
 				44BF4EA81D9802E0000B33D9 /* GreetingDetailViewController.swift in Sources */,
 				44BF4E951D9800FC000B33D9 /* CandyViewController.swift in Sources */,
+				C299B7D61DC83C8D001E45A9 /* A_TableVC.swift in Sources */,
 				44BF4EA11D9802D0000B33D9 /* GreetingObjectHandler.swift in Sources */,
-				44ED802F1D9FB97200DC6182 /* SearchResultsController.swift in Sources */,
+				44ED802F1D9FB97200DC6182 /* Pop_SRC.swift in Sources */,
 				44BF4EA01D9802D0000B33D9 /* Candy.swift in Sources */,
 				44BF4EA21D9802D0000B33D9 /* ColorExtension.swift in Sources */,
 				44BF4E941D9800FC000B33D9 /* CandyNewTableViewController.swift in Sources */,
 				44BF4E971D9800FC000B33D9 /* IntExtension.swift in Sources */,
 				44BF4EA31D9802D0000B33D9 /* MD.swift in Sources */,
+				C299B7DC1DC8639E001E45A9 /* B_TableVC.swift in Sources */,
 				44DF2F301D9FE2F7001AFE2D /* StatesViewController.swift in Sources */,
 				44BF4E981D9800FC000B33D9 /* SwiftyJSON.swift in Sources */,
 				44BF4EA41D9802D0000B33D9 /* Greeting.swift in Sources */,
 				44BF4E961D9800FC000B33D9 /* CollectionViewCell.swift in Sources */,
+				C299B7D81DC83D69001E45A9 /* A_SearchResultsC.swift in Sources */,
 				44BF4E931D9800FC000B33D9 /* GreetingNewViewController.swift in Sources */,
 				44BF4E991D9800FC000B33D9 /* MultiSectionCollectionViewDataSource.swift in Sources */,
 				44BCAB6F1D954A8D0019B333 /* ViewController.swift in Sources */,

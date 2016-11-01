@@ -11,7 +11,7 @@ import UIKit
  a default table with the search results in each cell's textLabel.
  */
 
-class SearchResultsController: UITableViewController {
+class Pop_SRC: UITableViewController {
 	var originalData: [String]
 	var filteredData = [String]()
 
@@ -62,7 +62,7 @@ class SearchResultsController: UITableViewController {
  and reload the table.
  */
 
-extension SearchResultsController: UISearchResultsUpdating {
+extension Pop_SRC: UISearchResultsUpdating {
 	func updateSearchResults(for searchController: UISearchController) {
 		print("update")
 		let sb = searchController.searchBar
