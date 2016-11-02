@@ -68,7 +68,6 @@
 			isa = PBXGroup;
 			children = (
 				44307A9F1DC8E58900F13C66 /* Controller */,
-				44307AA31DC8E58900F13C66 /* Protocol */,
 				44307AA51DC8E58900F13C66 /* Extension */,
 				44307A9A1DC8E57000F13C66 /* Storyboard */,
 				44307A861DC8E52300F13C66 /* AppDelegate.swift */,
@@ -97,13 +96,6 @@
 				44307AA21DC8E58900F13C66 /* MainViewController.swift */,
 			);
 			path = Controller;
-			sourceTree = "<group>";
-		};
-		44307AA31DC8E58900F13C66 /* Protocol */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Protocol;
 			sourceTree = "<group>";
 		};
 		44307AA51DC8E58900F13C66 /* Extension */ = {
