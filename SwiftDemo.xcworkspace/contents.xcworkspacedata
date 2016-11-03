@@ -2,6 +2,12 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:demo/UICoordinateSpace/UICoordinateSpace.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:demo/UIWindow/UIWindow.xcodeproj">
+   </FileRef>
+   <FileRef
       location = "group:demo/DanglingPointer/DanglingPointer.xcodeproj">
    </FileRef>
    <FileRef
