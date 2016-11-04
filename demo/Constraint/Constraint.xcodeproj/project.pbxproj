@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		44410DC51DCCC81900D8908E /* LayoutMargins.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44410DC41DCCC81900D8908E /* LayoutMargins.swift */; };
 		44A9DB251D8EE1FC0040E1FC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44A9DB241D8EE1FC0040E1FC /* AppDelegate.swift */; };
 		44A9DB271D8EE1FC0040E1FC /* ConstraintSwapping.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44A9DB261D8EE1FC0040E1FC /* ConstraintSwapping.swift */; };
 		44A9DB2A1D8EE1FC0040E1FC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 44A9DB281D8EE1FC0040E1FC /* Main.storyboard */; };
@@ -16,6 +17,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		44410DC41DCCC81900D8908E /* LayoutMargins.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LayoutMargins.swift; sourceTree = "<group>"; };
 		44A9DB211D8EE1FC0040E1FC /* Constraint.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Constraint.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		44A9DB241D8EE1FC0040E1FC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		44A9DB261D8EE1FC0040E1FC /* ConstraintSwapping.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConstraintSwapping.swift; sourceTree = "<group>"; };
@@ -59,6 +61,7 @@
 				44A9DB241D8EE1FC0040E1FC /* AppDelegate.swift */,
 				44A9DB261D8EE1FC0040E1FC /* ConstraintSwapping.swift */,
 				44D763491DBF869F00D7EE40 /* ConstraintsInequalitiesAndPriorities.swift */,
+				44410DC41DCCC81900D8908E /* LayoutMargins.swift */,
 				44A9DB281D8EE1FC0040E1FC /* Main.storyboard */,
 				44A9DB2B1D8EE1FC0040E1FC /* Assets.xcassets */,
 				44A9DB2D1D8EE1FC0040E1FC /* LaunchScreen.storyboard */,
@@ -140,6 +143,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				44D7634A1DBF869F00D7EE40 /* ConstraintsInequalitiesAndPriorities.swift in Sources */,
+				44410DC51DCCC81900D8908E /* LayoutMargins.swift in Sources */,
 				44A9DB271D8EE1FC0040E1FC /* ConstraintSwapping.swift in Sources */,
 				44A9DB251D8EE1FC0040E1FC /* AppDelegate.swift in Sources */,
 			);

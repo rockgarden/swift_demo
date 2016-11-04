@@ -2,6 +2,12 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:demo/EvenDistribution/EvenDistribution.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:demo/Autoresizing/Autoresizing.xcodeproj">
+   </FileRef>
+   <FileRef
       location = "group:demo/UICoordinateSpace/UICoordinateSpace.xcodeproj">
    </FileRef>
    <FileRef
