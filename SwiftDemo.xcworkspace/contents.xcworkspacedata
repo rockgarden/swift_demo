@@ -2,6 +2,12 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:demo/BundleResource/BundleResource.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:demo/IBDesignable/IBDesignable.xcodeproj">
+   </FileRef>
+   <FileRef
       location = "group:demo/EvenDistribution/EvenDistribution.xcodeproj">
    </FileRef>
    <FileRef
