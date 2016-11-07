@@ -75,6 +75,9 @@
 		C22758D51D6C29C6008C1F18 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C22758D31D6C29C6008C1F18 /* Main.storyboard */; };
 		C22758D71D6C29C6008C1F18 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C22758D61D6C29C6008C1F18 /* Assets.xcassets */; };
 		C22758DA1D6C29C6008C1F18 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C22758D81D6C29C6008C1F18 /* LaunchScreen.storyboard */; };
+		C2D7F1221DD05FEA00BABD77 /* VariableHeightsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2D7F1211DD05FEA00BABD77 /* VariableHeightsVC.swift */; };
+		C2D7F1251DD0618600BABD77 /* Cell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C2D7F1231DD0618600BABD77 /* Cell.xib */; };
+		C2D7F1261DD0618600BABD77 /* trivia.txt in Resources */ = {isa = PBXBuildFile; fileRef = C2D7F1241DD0618600BABD77 /* trivia.txt */; };
 		C2F3DE161D6EBF5500F0A9D5 /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2F3DE151D6EBF5500F0A9D5 /* Person.swift */; };
 		C2F3DE181D6EC2D800F0A9D5 /* team_dictionary.plist in Resources */ = {isa = PBXBuildFile; fileRef = C2F3DE171D6EC2D800F0A9D5 /* team_dictionary.plist */; };
 /* End PBXBuildFile section */
@@ -150,6 +153,9 @@
 		C22758D61D6C29C6008C1F18 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C22758D91D6C29C6008C1F18 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C22758DB1D6C29C6008C1F18 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C2D7F1211DD05FEA00BABD77 /* VariableHeightsVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VariableHeightsVC.swift; sourceTree = "<group>"; };
+		C2D7F1231DD0618600BABD77 /* Cell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Cell.xib; sourceTree = "<group>"; };
+		C2D7F1241DD0618600BABD77 /* trivia.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = trivia.txt; sourceTree = "<group>"; };
 		C2F3DE151D6EBF5500F0A9D5 /* Person.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Person.swift; sourceTree = "<group>"; };
 		C2F3DE171D6EC2D800F0A9D5 /* team_dictionary.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = team_dictionary.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -259,13 +265,16 @@
 				C22758D11D6C29C6008C1F18 /* UISearchControllerVC.swift */,
 				449BC2A01D6F3F9200B63FC4 /* SearchResultsController.swift */,
 				C2F3DE151D6EBF5500F0A9D5 /* Person.swift */,
-				C22758D31D6C29C6008C1F18 /* Main.storyboard */,
 				4483B2E21D8000BB0077E75C /* RJExpandTable.swift */,
 				4483B2E41D80165A0077E75C /* SubCell.swift */,
 				442849961D8833650044DCF5 /* MasterViewController.swift */,
 				442849971D8833650044DCF5 /* DetailViewController.swift */,
 				442849271D86EB840044DCF5 /* DynamicTable.swift */,
 				442849921D86FF280044DCF5 /* ExpandTable.swift */,
+				C2D7F1211DD05FEA00BABD77 /* VariableHeightsVC.swift */,
+				C2D7F1231DD0618600BABD77 /* Cell.xib */,
+				C2D7F1241DD0618600BABD77 /* trivia.txt */,
+				C22758D31D6C29C6008C1F18 /* Main.storyboard */,
 				C22758D61D6C29C6008C1F18 /* Assets.xcassets */,
 				4428492B1D86F5930044DCF5 /* gif */,
 				C22758D81D6C29C6008C1F18 /* LaunchScreen.storyboard */,
@@ -344,6 +353,7 @@
 				C22758DA1D6C29C6008C1F18 /* LaunchScreen.storyboard in Resources */,
 				442849731D86F5930044DCF5 /* flag_massachusetts.gif in Resources */,
 				442849811D86F5930044DCF5 /* flag_ohio.gif in Resources */,
+				C2D7F1261DD0618600BABD77 /* trivia.txt in Resources */,
 				442849751D86F5930044DCF5 /* flag_minnesota.gif in Resources */,
 				C22758D71D6C29C6008C1F18 /* Assets.xcassets in Resources */,
 				442849721D86F5930044DCF5 /* flag_maryland.gif in Resources */,
@@ -367,6 +377,7 @@
 				442849911D86F5930044DCF5 /* us_flag_small.gif in Resources */,
 				442849881D86F5930044DCF5 /* flag_tennessee.gif in Resources */,
 				442849901D86F5930044DCF5 /* flag_wyoming.gif in Resources */,
+				C2D7F1251DD0618600BABD77 /* Cell.xib in Resources */,
 				442849701D86F5930044DCF5 /* flag_louisiana.gif in Resources */,
 				C2F3DE181D6EC2D800F0A9D5 /* team_dictionary.plist in Resources */,
 				442849791D86F5930044DCF5 /* flag_nebraska.gif in Resources */,
@@ -402,6 +413,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				442849991D8833660044DCF5 /* DetailViewController.swift in Sources */,
+				C2D7F1221DD05FEA00BABD77 /* VariableHeightsVC.swift in Sources */,
 				442849281D86EB840044DCF5 /* DynamicTable.swift in Sources */,
 				449BC2A11D6F3F9200B63FC4 /* SearchResultsController.swift in Sources */,
 				4483B2E51D80165A0077E75C /* SubCell.swift in Sources */,

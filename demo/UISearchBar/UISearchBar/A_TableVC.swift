@@ -8,6 +8,7 @@ class A_SearchController : UISearchController {
     }
 }
 
+// Dynamic Table Content
 // StroyBoard中copy控件TableView的Delegate要重新配置
 class A_TableVC : UITableViewController, UISearchBarDelegate {
     var sectionNames = [String]()

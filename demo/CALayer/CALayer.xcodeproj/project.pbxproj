@@ -12,6 +12,8 @@
 		44A9C4641D96C51300F09E6A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 44A9C4621D96C51300F09E6A /* Main.storyboard */; };
 		44A9C4661D96C51300F09E6A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 44A9C4651D96C51300F09E6A /* Assets.xcassets */; };
 		44A9C4691D96C51300F09E6A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 44A9C4671D96C51300F09E6A /* LaunchScreen.storyboard */; };
+		C2D7F11E1DD01CEB00BABD77 /* readme.rtfd in Resources */ = {isa = PBXBuildFile; fileRef = C2D7F11D1DD01CEB00BABD77 /* readme.rtfd */; };
+		C2D7F1201DD01F4800BABD77 /* tree.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C2D7F11F1DD01F4800BABD77 /* tree.jpg */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +24,8 @@
 		44A9C4651D96C51300F09E6A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		44A9C4681D96C51300F09E6A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		44A9C46A1D96C51300F09E6A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C2D7F11D1DD01CEB00BABD77 /* readme.rtfd */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = wrapper.rtfd; path = readme.rtfd; sourceTree = "<group>"; };
+		C2D7F11F1DD01F4800BABD77 /* tree.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = tree.jpg; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -38,6 +42,7 @@
 		44A9C4521D96C51300F09E6A = {
 			isa = PBXGroup;
 			children = (
+				C2D7F11D1DD01CEB00BABD77 /* readme.rtfd */,
 				44A9C45D1D96C51300F09E6A /* CALayer */,
 				44A9C45C1D96C51300F09E6A /* Products */,
 			);
@@ -59,6 +64,7 @@
 				44A9C4621D96C51300F09E6A /* Main.storyboard */,
 				44A9C4651D96C51300F09E6A /* Assets.xcassets */,
 				44A9C4671D96C51300F09E6A /* LaunchScreen.storyboard */,
+				C2D7F11F1DD01F4800BABD77 /* tree.jpg */,
 				44A9C46A1D96C51300F09E6A /* Info.plist */,
 			);
 			path = CALayer;
@@ -97,6 +103,7 @@
 					44A9C45A1D96C51300F09E6A = {
 						CreatedOnToolsVersion = 7.3.1;
 						LastSwiftMigration = 0800;
+						ProvisioningStyle = Automatic;
 					};
 				};
 			};
@@ -124,7 +131,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				44A9C4691D96C51300F09E6A /* LaunchScreen.storyboard in Resources */,
+				C2D7F1201DD01F4800BABD77 /* tree.jpg in Resources */,
 				44A9C4661D96C51300F09E6A /* Assets.xcassets in Resources */,
+				C2D7F11E1DD01CEB00BABD77 /* readme.rtfd in Resources */,
 				44A9C4641D96C51300F09E6A /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -255,6 +264,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = CALayer/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.rockgarden.CALayer;
@@ -267,6 +278,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = CALayer/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.rockgarden.CALayer;
