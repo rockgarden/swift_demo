@@ -53,6 +53,8 @@ class MaskView : UIViewController {
         mask.frame.origin = CGPoint(x: 110,y: 160)
         lay.mask = mask
         // lay.setValue(mask, forKey: "mask")
+
+        setupBox()
     }
     
     func setupBox() {

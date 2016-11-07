@@ -11,27 +11,27 @@
 import UIKit
 
 public protocol RJExpandableTableViewDataSource: UITableViewDataSource {
-    func tableView(tableView: RJExpandableTableView, canExpandInSection section: Int) -> Bool
-    func tableView(tableView: RJExpandableTableView, expandingCellForSection section: Int) -> RJExpandingTableViewCell
-    func tableView(tableView: RJExpandableTableView, needsToDownloadDataForExpandSection section: Int) -> Bool
+    func tableView(_ tableView: RJExpandableTableView, canExpandInSection section: Int) -> Bool
+    func tableView(_ tableView: RJExpandableTableView, expandingCellForSection section: Int) -> RJExpandingTableViewCell
+    func tableView(_ tableView: RJExpandableTableView, needsToDownloadDataForExpandSection section: Int) -> Bool
 }
 
-@objc public protocol RJExpandableTableViewDelegate: UITableViewDelegate {
-    optional func tableView(tableView: RJExpandableTableView, downloadDataForExpandableSection section: Int)
+public protocol RJExpandableTableViewDelegate: UITableViewDelegate {
+    func tableView(_ tableView: RJExpandableTableView, downloadDataForExpandableSection section: Int)
     // Optional for Expanding Cell height
-    func tableView(tableView: RJExpandableTableView, heightForExpandingCellAtSection section: Int) -> CGFloat
-    func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat
+    func tableView(_ tableView: RJExpandableTableView, heightForExpandingCellAtSection section: Int) -> CGFloat
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat
 }
 
 // MARK: - RJExpandableTableView main class
-public class RJExpandableTableView: UITableView {
+open class RJExpandableTableView: UITableView {
 
     lazy var canExpandedSections = [Int]()
     lazy var expandedSections = [Int]()
     lazy var downloadingSections = [Int]()
-    public var keepExpanded = true // 开关参数:是否收缩已经展开的section
+    open var keepExpanded = true // 开关参数:是否收缩已经展开的section
 
-    override weak public var delegate: UITableViewDelegate? {
+    override weak open var delegate: UITableViewDelegate? {
         get {
             return super.delegate
         }
@@ -41,7 +41,7 @@ public class RJExpandableTableView: UITableView {
         }
     }
 
-    override weak public var dataSource: UITableViewDataSource? {
+    override weak open var dataSource: UITableViewDataSource? {
         get {
             return super.dataSource
         }
@@ -54,8 +54,8 @@ public class RJExpandableTableView: UITableView {
         }
     }
 
-    private weak var expandDataSource: RJExpandableTableViewDataSource!
-    private weak var expandDelegate: RJExpandableTableViewDelegate!
+    fileprivate weak var expandDataSource: RJExpandableTableViewDataSource!
+    fileprivate weak var expandDelegate: RJExpandableTableViewDelegate!
 
     // MARK: Public
     /**
@@ -64,14 +64,14 @@ public class RJExpandableTableView: UITableView {
      - parameter section:  expanded section
      - parameter animated: animate or not
      */
-    public func expandSection(section: Int, animated: Bool) {
+    open func expandSection(_ section: Int, animated: Bool) {
         guard !expandedSections.contains(section) else {
             return
         }
-        if let downloadingIndex = downloadingSections.indexOf(section) {
-            downloadingSections.removeAtIndex(downloadingIndex)
+        if let downloadingIndex = downloadingSections.index(of: section) {
+            downloadingSections.remove(at: downloadingIndex)
         }
-        deselectRowAtIndexPath(NSIndexPath(forRow: 0, inSection: section), animated: true)
+        deselectRow(at: IndexPath(row: 0, section: section), animated: true)
         if keepExpanded { expandedSections.removeAll() }
         expandedSections.append(section)
         reloadData()
@@ -83,9 +83,9 @@ public class RJExpandableTableView: UITableView {
      - parameter section:  collapsed section
      - parameter animated: animate or not
      */
-    public func collapseSection(section: Int, animated: Bool) {
-        if let index = expandedSections.indexOf(section) {
-            expandedSections.removeAtIndex(index)
+    open func collapseSection(_ section: Int, animated: Bool) {
+        if let index = expandedSections.index(of: section) {
+            expandedSections.remove(at: index)
         }
         reloadData()
     }
@@ -95,49 +95,49 @@ public class RJExpandableTableView: UITableView {
 
      - parameter section: downloading section
      */
-    public func cancelDownloadInSection(section: Int) {
-        guard let index = downloadingSections.indexOf(section) else {
+    open func cancelDownloadInSection(_ section: Int) {
+        guard let index = downloadingSections.index(of: section) else {
             return
         }
-        downloadingSections.removeAtIndex(index)
-        reloadRowsAtIndexPaths([NSIndexPath(forRow: 0, inSection: section)], withRowAnimation: .Automatic)
+        downloadingSections.remove(at: index)
+        reloadRows(at: [IndexPath(row: 0, section: section)], with: .automatic)
     }
 
     // Check a section is expandable or not
-    public func canExpandSection(section: Int) -> Bool {
+    open func canExpandSection(_ section: Int) -> Bool {
         return canExpandedSections.contains(section)
     }
 
     // Check a section is expanding or not
-    public func isSectionExpand(section: Int) -> Bool {
+    open func isSectionExpand(_ section: Int) -> Bool {
         return expandedSections.contains(section)
     }
 
     // MARK: Private Helper
-    private func canExpand(section: Int) -> Bool {
+    fileprivate func canExpand(_ section: Int) -> Bool {
         return expandDataSource.tableView(self, canExpandInSection: section)
     }
-    private func needsToDownload(section: Int) -> Bool {
+    fileprivate func needsToDownload(_ section: Int) -> Bool {
         return expandDataSource.tableView(self, needsToDownloadDataForExpandSection: section)
     }
-    private func downloadData(inSection section: Int) {
+    fileprivate func downloadData(inSection section: Int) {
         downloadingSections.append(section)
-        expandDelegate?.tableView!(self, downloadDataForExpandableSection: section)
-        reloadRowsAtIndexPaths([NSIndexPath(forRow: 0, inSection: section)], withRowAnimation: .Automatic)
+        expandDelegate.tableView(self, downloadDataForExpandableSection: section)
+        reloadRows(at: [IndexPath(row: 0, section: section)], with: .automatic)
     }
 }
 
 // MARK: TableView DataSource
 extension RJExpandableTableView: UITableViewDataSource {
 
-    public func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        if expandDataSource.respondsToSelector(#selector(UITableViewDataSource.numberOfSectionsInTableView(_:))) {
-            return expandDataSource.numberOfSectionsInTableView!(tableView)
+    public func numberOfSections(in tableView: UITableView) -> Int {
+        if expandDataSource.responds(to: #selector(UITableViewDataSource.numberOfSections(in:))) {
+            return expandDataSource.numberOfSections!(in: tableView)
         }
         return 1
     }
 
-    public func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if canExpand(section) {
             canExpandedSections.append(section)
             if expandedSections.contains(section) {
@@ -150,7 +150,7 @@ extension RJExpandableTableView: UITableViewDataSource {
         }
     }
 
-    public func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+    public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let section = indexPath.section
         if canExpand(section) {
             if indexPath.row == 0 {
@@ -160,17 +160,17 @@ extension RJExpandableTableView: UITableViewDataSource {
                 } else {
                     expandCell.setLoading(false)
                     if (expandedSections.contains(section)) {
-                        expandCell.setExpandStatus(RJExpandStatus.Expanded, animated: false)
+                        expandCell.setExpandStatus(RJExpandStatus.expanded, animated: false)
                     } else {
-                        expandCell.setExpandStatus(RJExpandStatus.Collapsed, animated: false)
+                        expandCell.setExpandStatus(RJExpandStatus.collapsed, animated: false)
                     }
                 }
                 return expandCell as! UITableViewCell
             } else {
-                return expandDataSource.tableView(self, cellForRowAtIndexPath: indexPath)
+                return expandDataSource.tableView(self, cellForRowAt: indexPath)
             }
         } else {
-            return expandDataSource.tableView(self, cellForRowAtIndexPath: indexPath)
+            return expandDataSource.tableView(self, cellForRowAt: indexPath)
         }
     }
 
@@ -179,15 +179,15 @@ extension RJExpandableTableView: UITableViewDataSource {
 // MARK: TableView Delegate
 extension RJExpandableTableView: UITableViewDelegate {
 
-    public func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+    public func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         if indexPath.row == 0 {
             return expandDelegate.tableView(self, heightForExpandingCellAtSection: indexPath.section)
         } else {
-            return expandDelegate.tableView(tableView, heightForRowAtIndexPath: indexPath)
+            return expandDelegate.tableView(tableView, heightForRowAt: indexPath)
         }
     }
 
-    public func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+    public func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let section = indexPath.section
         if canExpand(section) {
             if indexPath.row == 0 {
@@ -201,16 +201,16 @@ extension RJExpandableTableView: UITableViewDelegate {
                     }
                 }
             } else {
-                return expandDelegate.tableView!(tableView, didSelectRowAtIndexPath: indexPath)
+                return expandDelegate.tableView!(tableView, didSelectRowAt: indexPath)
             }
         }
     }
     
-    public func tableView(tableView: UITableView, willDisplayCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath) {
-        return expandDelegate.tableView!(tableView, willDisplayCell: cell, forRowAtIndexPath: indexPath)
+    public func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        return expandDelegate.tableView!(tableView, willDisplay: cell, forRowAt: indexPath)
     }
     
-    public func tableView(tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
+    public func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
         return expandDelegate.tableView!(tableView, willDisplayHeaderView: view, forSection: section)
     }
     

@@ -15,7 +15,7 @@ import Foundation
  - Expanded:  The cell is expanded
  */
 public enum RJExpandStatus {
-    case Collapsed, Expanded
+    case collapsed, expanded
 }
 
 public protocol RJExpandingTableViewCell {
@@ -24,12 +24,12 @@ public protocol RJExpandingTableViewCell {
      You can implement it to do some things.
      - parameter loading: Is data loading
      */
-    func setLoading(loading: Bool)
+    func setLoading(_ loading: Bool)
     /**
      When the section expand status changes,RJExpandableTableView will call this method.
      You can implement it to do some things, like animate the arrow image etc.
      - parameter status:   Expanded or Collapsed
      - parameter animated: Animated or not
      */
-    func setExpandStatus(status: RJExpandStatus, animated: Bool)
+    func setExpandStatus(_ status: RJExpandStatus, animated: Bool)
 }

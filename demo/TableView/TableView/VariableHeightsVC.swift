@@ -23,18 +23,17 @@ class VariableHeightsVC : UIViewController, UITableViewDelegate, UITableViewData
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        tableView = UITableView(frame: self.view.bounds)
-        
+        /// 基于NIB so no setup
+        //tableView = UITableView(frame: self.view.bounds)
+        //tableView.delegate = self
+        //tableView.dataSource = self
+
         let url = Bundle.main.url(forResource: "trivia", withExtension: "txt")
         let s = try! String(contentsOf:url!, encoding: String.Encoding.utf8)
         var arr = s.components(separatedBy: "\n")
-        arr.count
         debugPrint(arr[arr.count-1])
         arr.removeLast()
         self.trivia = arr
-        
-        tableView.delegate = self
-        tableView.dataSource = self
         
         self.tableView.register(UINib(nibName: "Cell", bundle: nil), forCellReuseIdentifier: "Cell")
         self.tableView.rowHeight = UITableViewAutomaticDimension // not actually necessary

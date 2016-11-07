@@ -18,17 +18,17 @@ class ExpandTableViewCell: UITableViewCell {
         super.awakeFromNib()
 
         gradientLayer.frame = self.bounds
-        let color1 = UIColor(white: 1.0, alpha: 0.2).CGColor as CGColorRef
-        let color2 = UIColor(white: 1.0, alpha: 0.1).CGColor as CGColorRef
-        let color3 = UIColor.clearColor().CGColor as CGColorRef
-        let color4 = UIColor(white: 0.0, alpha: 0.05).CGColor as CGColorRef
+        let color1 = UIColor(white: 1.0, alpha: 0.2).cgColor as CGColor
+        let color2 = UIColor(white: 1.0, alpha: 0.1).cgColor as CGColor
+        let color3 = UIColor.clear.cgColor as CGColor
+        let color4 = UIColor(white: 0.0, alpha: 0.05).cgColor as CGColor
 
         gradientLayer.colors = [color1, color2, color3, color4]
         gradientLayer.locations = [0.0, 0.04, 0.95, 1.0]
-        layer.insertSublayer(gradientLayer, atIndex: 0)
+        layer.insertSublayer(gradientLayer, at: 0)
     }
 
-    override func setSelected(selected: Bool, animated: Bool) {
+    override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
     }
 
@@ -41,26 +41,26 @@ class ExpandTableViewCell: UITableViewCell {
 
 extension ExpandTableViewCell: RJExpandingTableViewCell {
     
-    func setLoading(loading: Bool) {
+    func setLoading(_ loading: Bool) {
         if (loading) {
             indicatorView.startAnimating()
         }else{
             indicatorView.stopAnimating()
         }
-        indicatorView.hidden = !loading
+        indicatorView.isHidden = !loading
     }
     
-    func setExpandStatus(status: RJExpandStatus,animated:Bool) {
+    func setExpandStatus(_ status: RJExpandStatus,animated:Bool) {
         var angle: CGFloat = 0
-        var duration: NSTimeInterval = 0
-        if status == .Expanded {
+        var duration: TimeInterval = 0
+        if status == .expanded {
             angle = CGFloat(M_PI)
         }
         if animated {
             duration = 0.3
         }
-        UIView.animateWithDuration(duration) {
-            self.arrowImageView.transform = CGAffineTransformMakeRotation(angle)
-        }
+        UIView.animate(withDuration: duration, animations: {
+            self.arrowImageView.transform = CGAffineTransform(rotationAngle: angle)
+        }) 
     }
 }

@@ -22,7 +22,7 @@ class UISearchControllerVC: UIViewController, UITableViewDelegate {
     var sectionNames = [String]()
     var sectionData = [[String]]()
     
-    override func prefersStatusBarHidden() -> Bool {
+    override var prefersStatusBarHidden : Bool {
         return false
     }
     
@@ -34,32 +34,32 @@ class UISearchControllerVC: UIViewController, UITableViewDelegate {
         self.setupSearchVC()
     }
     
-    override func viewDidAppear(animated: Bool) {
+    override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(true)
         myTableView.reloadData()
-        myTableView.scrollToRowAtIndexPath(
-            NSIndexPath(forRow: 0, inSection: 0),
-            atScrollPosition: .Top, animated: false)
+        myTableView.scrollToRow(
+            at: IndexPath(row: 0, section: 0),
+            at: .top, animated: false)
     }
     
     func addSubView() {
         myTableView = UITableView(frame: self.view.bounds)
         myTableView.delegate = self
         myTableView.dataSource = self
-        myTableView.sectionIndexBackgroundColor = UIColor.clearColor()
-        myTableView.sectionIndexColor = UIColor.lightGrayColor()
+        myTableView.sectionIndexBackgroundColor = UIColor.clear
+        myTableView.sectionIndexColor = UIColor.lightGray
         // myTableView.sectionIndexTrackingBackgroundColor = UIColor.blueColor()
-        myTableView.backgroundColor = UIColor.grayColor() // but the search bar covers that
+        myTableView.backgroundColor = UIColor.gray // but the search bar covers that
         myTableView.backgroundView = { // this will fix it
             let v = UIView()
-            v.backgroundColor = UIColor.grayColor()
+            v.backgroundColor = UIColor.gray
             return v
         }()
         myTableView.rowHeight = 68
         myTableView.sectionHeaderHeight = 28
         myTableView.sectionFooterHeight = 28
-        myTableView.registerClass(UITableViewCell.self, forCellReuseIdentifier: "cell")
-        myTableView.registerClass(UITableViewHeaderFooterView.self, forHeaderFooterViewReuseIdentifier: "Header")
+        myTableView.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
+        myTableView.register(UITableViewHeaderFooterView.self, forHeaderFooterViewReuseIdentifier: "Header")
         self.view.addSubview(myTableView)
     }
     
@@ -78,7 +78,7 @@ class UISearchControllerVC: UIViewController, UITableViewDelegate {
         // (not used in this example; just showing the interface)
         // WARNING: do NOT call showsScopeBar! it messes things up!
         // (buttons will show during search if there are titles)
-        sb.autocapitalizationType = .None
+        sb.autocapitalizationType = .none
 
         // put search bar into table Header View
         myTableView.tableHeaderView = sb // 有自动隐藏效果, 只能加载一次
@@ -94,61 +94,61 @@ class UISearchControllerVC: UIViewController, UITableViewDelegate {
         let personArr = NSMutableArray()
         for str in testArr {
             let p = Person.init(name: str)
-            personArr.addObject(p)
+            personArr.add(p)
         }
-        let collation = UILocalizedIndexedCollation.currentCollation()
+        let collation = UILocalizedIndexedCollation.current()
         // 1.获取section的标题
-        let titles: NSArray = collation.sectionIndexTitles // sectionTitles
+        let titles: NSArray = collation.sectionIndexTitles as NSArray // sectionTitles
         // 2.构建每个section数组
         let sectionArray = NSMutableArray()
         let total = titles.count
         for _ in 1...total {
             let subArr = NSMutableArray()
-            sectionArray.addObject(subArr)
+            sectionArray.add(subArr)
         }
         // 3.排序
         // 3.1按照将需要排序的对象放入到对应分区数组
         for p in personArr {
             let section: NSInteger = collation
-                .sectionForObject(p, collationStringSelector: Selector("name"))
+                .section(for: p, collationStringSelector: #selector(getter: UIDevice.name))
             let subArr: NSMutableArray = sectionArray[section] as! NSMutableArray
-            subArr.addObject(p)
+            subArr.add(p)
         }
         // 3.2分别对分区进行排序
         for subArr in sectionArray {
-            let sortArr: NSArray = collation.sortedArrayFromArray(subArr as! [AnyObject], collationStringSelector: Selector("name"))
-            subArr.removeAllObjects()
-            subArr.addObjectsFromArray(sortArr as [AnyObject])
+            let sortArr: NSArray = collation.sortedArray(from: subArr as! [AnyObject], collationStringSelector: #selector(getter: UIDevice.name)) as NSArray
+            (subArr as AnyObject).removeAllObjects()
+            (subArr as AnyObject).addObjects(from: sortArr as [AnyObject])
         }
         // 4.删除分区为空的内容
         let temp = NSMutableArray()
-        sectionArray.enumerateObjectsUsingBlock { (arr: AnyObject, idx: Int, stop: UnsafeMutablePointer<ObjCBool>) in
-            let array: NSArray = arr as! NSArray
-            if Bool(array.count) {
-                let titleArr: NSArray = collation.sectionIndexTitles
-                self.sectionTitlesArray.addObject(titleArr.objectAtIndex(idx))
+        sectionArray.enumerateObjects({ (arr, idx, stop) in
+            let array = arr as! NSArray
+            if (array.count > 0) {
+                let titleArr = collation.sectionIndexTitles as NSArray
+                self.sectionTitlesArray.add(titleArr.object(at: idx))
             } else {
-                temp.addObject(arr)
+                temp.add(arr)
             }
-        }
-        sectionArray.removeObjectsInArray(temp as [AnyObject])
+        })
+        sectionArray.removeObjects(in: temp as [AnyObject])
         self.dataSource = sectionArray.copy() as! NSArray
     }
     
     func plistDataForTableView() {
-        let plistPath = NSBundle.mainBundle().pathForResource("team_dictionary", ofType: "plist")
+        let plistPath = Bundle.main.path(forResource: "team_dictionary", ofType: "plist")
         // 获取属性列表文件中的全部数据
         self.dictData = NSDictionary(contentsOfFile: plistPath!)
         let tempList = self.dictData.allKeys as NSArray
         // 对keys进行排序，字典本身乱序
         print(tempList)
-        self.listGroupName = tempList.sortedArrayUsingSelector(#selector(NSString.compare(_:)))
+        self.listGroupName = tempList.sortedArray(using: #selector(NSString.compare(_:))) as NSArray
         print(listGroupName)
     }
     
     func txtDataForTableView() {
-        let s = try! String(contentsOfFile: NSBundle.mainBundle().pathForResource("states", ofType: "txt")!, encoding: NSUTF8StringEncoding)
-        let states = s.componentsSeparatedByString("\n")
+        let s = try! String(contentsOfFile: Bundle.main.path(forResource: "states", ofType: "txt")!, encoding: String.Encoding.utf8)
+        let states = s.components(separatedBy: "\n")
         var previous = ""
         for aState in states {
             // get the first letter
@@ -156,7 +156,7 @@ class UISearchControllerVC: UIViewController, UITableViewDelegate {
             // only add a letter to sectionNames when it's a different letter
             if c != previous {
                 previous = c
-                self.sectionNames.append(c.uppercaseString)
+                self.sectionNames.append(c.uppercased())
                 // and in that case also add new subarray to our array of subarrays
                 self.sectionData.append([String]())
             }
@@ -168,7 +168,7 @@ class UISearchControllerVC: UIViewController, UITableViewDelegate {
 
 extension UISearchControllerVC: UITableViewDataSource {
     
-    func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+    func numberOfSections(in tableView: UITableView) -> Int {
         // return self.listGroupName.count
         
         // return self.sectionNames.count
@@ -177,7 +177,7 @@ extension UISearchControllerVC: UITableViewDataSource {
     }
     
     // Number of rows
-    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // //按照节索引从小组名中获得组名
         // let groupName = self.listGroupName[section] as! String
         // //将组名作为Key，从字典中取出球队数组集合
@@ -186,20 +186,20 @@ extension UISearchControllerVC: UITableViewDataSource {
         
         // return self.sectionData[section].count
         
-        return self.dataSource.objectAtIndex(section).count
+        return (self.dataSource.object(at: section) as AnyObject).count
     }
     
     // Section Title
-    func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         // return self.listGroupName[section] as? String
         
         // return self.sectionNames[section]
         
-        return self.sectionTitlesArray.objectAtIndex(section) as? String
+        return self.sectionTitlesArray.object(at: section) as? String
     }
     
     // 为表视图提供索引
-    func sectionIndexTitlesForTableView(tableView: UITableView) -> [String]? {
+    func sectionIndexTitles(for tableView: UITableView) -> [String]? {
         // let tempIndex = NSMutableArray(capacity: self.listGroupName.count)
         // for item in self.listGroupName{
         // let title = item.substringToIndex(1) as String
@@ -251,12 +251,12 @@ extension UISearchControllerVC: UITableViewDataSource {
 //    }
 
     // MARK:－cell
-    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cellIdentifier = "CellIdentifier"
         // 纯代码重用单元格
-        var cell: UITableViewCell! = tableView.dequeueReusableCellWithIdentifier(cellIdentifier)
+        var cell: UITableViewCell! = tableView.dequeueReusableCell(withIdentifier: cellIdentifier)
         if cell == nil {
-            cell = UITableViewCell(style: UITableViewCellStyle.Subtitle, reuseIdentifier: cellIdentifier) // .Default .Subtitle .Value1 .Value2 单元格四种样式 reuseIdentifier = nil 不reuse
+            cell = UITableViewCell(style: UITableViewCellStyle.subtitle, reuseIdentifier: cellIdentifier) // .Default .Subtitle .Value1 .Value2 单元格四种样式 reuseIdentifier = nil 不reuse
         }
         // 视图中指定重用单元格
         // let cell:UITableViewCell = tableView.dequeueReusableCellWithIdentifier("cell", forIndexPath: indexPath)
@@ -265,7 +265,7 @@ extension UISearchControllerVC: UITableViewDataSource {
         return cell
     }
     
-    func configureCell(cell: UITableViewCell, indexPath: NSIndexPath) {
+    func configureCell(_ cell: UITableViewCell, indexPath: IndexPath) {
         // //获得选择的节
         // let section = indexPath.section
         // //获得选择节中选中的行索引
@@ -287,23 +287,23 @@ extension UISearchControllerVC: UITableViewDataSource {
         //        let im = UIImage(named: stateName)
         //        cell.imageView!.image = im
         
-        cell.textLabel?.text = self.dataSource.objectAtIndex(indexPath.section).objectAtIndex(indexPath.row).name
+        cell.textLabel?.text = ((self.dataSource.object(at: indexPath.section) as! NSArray).object(at: indexPath.row) as AnyObject).name
         cell.detailTextLabel?.text = "Cell Subtitle"
         cell.imageView!.image = UIImage(named: "image1.png")
     }
-    
+
     // Foot Subtitle
-    func tableView(tableView: UITableView, titleForFooterInSection section: Int) -> String? {
+    func tableView(_ tableView: UITableView, titleForFooterInSection section: Int) -> String? {
         return nil // "No More"
     }
     
-    func tableView(tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
+    func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
         debugPrint(view) // prove we are reusing header views
     }
 }
 
 class MySearchController: UISearchController {
-    override func prefersStatusBarHidden() -> Bool {
+    override var prefersStatusBarHidden : Bool {
         return true
     }
 }

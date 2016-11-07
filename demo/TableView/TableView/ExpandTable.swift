@@ -8,8 +8,8 @@
 
 import UIKit
 
-public class FoldTableViewHeader: UITableViewHeaderFooterView {
-    public var keepExpanded = true // 开关参数:是否收缩已经展开的section
+open class FoldTableViewHeader: UITableViewHeaderFooterView {
+    open var keepExpanded = true // 开关参数:是否收缩已经展开的section
 
 
 }

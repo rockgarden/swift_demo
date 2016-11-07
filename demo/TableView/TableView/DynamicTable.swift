@@ -20,26 +20,26 @@ class DynamicTable: UIViewController, UITableViewDelegate, UITableViewDataSource
     var sectionData = [[String]]()
     var hiddenSections = Set<Int>()
     var showSections = Set<Int>()
-    private var tableView = UITableView()
+    fileprivate var tableView = UITableView()
     
-    override func prefersStatusBarHidden() -> Bool {
+    override var prefersStatusBarHidden : Bool {
         return true
     }
     
     override func viewDidLoad() {
         tableView = UITableView(frame: self.view.bounds)
         self.view.addSubview(tableView)
-        tableView.registerClass(UITableViewCell.self, forCellReuseIdentifier: "Cell")
-        tableView.registerClass(
+        tableView.register(UITableViewCell.self, forCellReuseIdentifier: "Cell")
+        tableView.register(
             MyHeaderView.self, forHeaderFooterViewReuseIdentifier: "Header")
-        tableView.sectionIndexColor = UIColor.whiteColor()
-        tableView.sectionIndexBackgroundColor = UIColor.redColor()
-        tableView.sectionIndexTrackingBackgroundColor = UIColor.blueColor()
+        tableView.sectionIndexColor = UIColor.white
+        tableView.sectionIndexBackgroundColor = UIColor.red
+        tableView.sectionIndexTrackingBackgroundColor = UIColor.blue
         tableView.estimatedRowHeight = 30
         tableView.estimatedSectionHeaderHeight = 40
         
-        let s = try! String(contentsOfFile: NSBundle.mainBundle().pathForResource("states", ofType: "txt")!, encoding: NSUTF8StringEncoding)
-        let states = s.componentsSeparatedByString("\n")
+        let s = try! String(contentsOfFile: Bundle.main.path(forResource: "states", ofType: "txt")!, encoding: String.Encoding.utf8)
+        let states = s.components(separatedBy: "\n")
         var previous = ""
         for aState in states {
             // get the first letter
@@ -47,7 +47,7 @@ class DynamicTable: UIViewController, UITableViewDelegate, UITableViewDataSource
             // only add a letter to sectionNames when it's a different letter
             if c != previous {
                 previous = c
-                self.sectionNames.append(c.uppercaseString)
+                self.sectionNames.append(c.uppercased())
                 // and in that case also add new subarray to our array of subarrays
                 self.sectionData.append([String]())
             }
@@ -60,29 +60,29 @@ class DynamicTable: UIViewController, UITableViewDelegate, UITableViewDataSource
         tableView.dataSource = self
     }
     
-    override func viewDidAppear(animated: Bool = true) {
+    override func viewDidAppear(_ animated: Bool = true) {
         super.viewDidAppear(animated)
         tableView.reloadData()
     }
     
-    func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+    func numberOfSections(in tableView: UITableView) -> Int {
         return self.sectionNames.count
     }
     
-    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if self.showSections.contains(section) {
             return self.sectionData[section].count
         }
         return 0
     }
     
-    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath)
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
         let s = self.sectionData[indexPath.section][indexPath.row]
         cell.textLabel!.text = s
         var stateName = s
-        stateName = stateName.lowercaseString
-        stateName = stateName.stringByReplacingOccurrencesOfString(" ", withString: "")
+        stateName = stateName.lowercased()
+        stateName = stateName.replacingOccurrences(of: " ", with: "")
         stateName = "flag_\(stateName).gif"
         let im = UIImage(named: stateName)
         cell.imageView!.image = im
@@ -94,46 +94,46 @@ class DynamicTable: UIViewController, UITableViewDelegate, UITableViewDataSource
     //        return 40
     //    }
     
-    func tableView(tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let h = tableView
-            .dequeueReusableHeaderFooterViewWithIdentifier("Header") as! MyHeaderView
-        if h.tintColor != UIColor.redColor() {
-            h.tintColor = UIColor.redColor() // invisible marker, tee-hee
+            .dequeueReusableHeaderFooterView(withIdentifier: "Header") as! MyHeaderView
+        if h.tintColor != UIColor.red {
+            h.tintColor = UIColor.red // invisible marker, tee-hee
             h.backgroundView = UIView()
-            h.backgroundView?.backgroundColor = UIColor.blackColor()
+            h.backgroundView?.backgroundColor = UIColor.black
             let lab = UILabel()
             let lab1 = UILabel()
             lab.tag = 1
             lab.font = UIFont(name: "Georgia-Bold", size: 22)
-            lab.textColor = UIColor.greenColor()
-            lab.backgroundColor = UIColor.clearColor()
+            lab.textColor = UIColor.green
+            lab.backgroundColor = UIColor.clear
             lab1.tag = 1
             lab1.font = UIFont(name: "Georgia-Bold", size: 22)
-            lab1.textColor = UIColor.greenColor()
-            lab1.backgroundColor = UIColor.clearColor()
+            lab1.textColor = UIColor.green
+            lab1.backgroundColor = UIColor.clear
             h.contentView.addSubview(lab)
             let v = UIImageView()
             let v1 = UIImageView()
             v.tag = 2
-            v.backgroundColor = UIColor.blackColor()
+            v.backgroundColor = UIColor.black
             v.image = UIImage(named: "us_flag_small.gif")
             v1.tag = 2
-            v1.backgroundColor = UIColor.blackColor()
+            v1.backgroundColor = UIColor.black
             v1.image = UIImage(named: "us_flag_small.gif")
             h.contentView.addSubview(v)
             lab.translatesAutoresizingMaskIntoConstraints = false
             v.translatesAutoresizingMaskIntoConstraints = false
-            NSLayoutConstraint.activateConstraints([
-                NSLayoutConstraint.constraintsWithVisualFormat(
-                    "H:|-5-[lab]-5-[v(40)]-10-|",
+            NSLayoutConstraint.activate([
+                NSLayoutConstraint.constraints(
+                    withVisualFormat: "H:|-5-[lab]-5-[v(40)]-10-|",
                     options: [], metrics: nil, views: ["v": v, "lab": lab]),
-                NSLayoutConstraint.constraintsWithVisualFormat(
-                    "V:|[v]|",
+                NSLayoutConstraint.constraints(
+                    withVisualFormat: "V:|[v]|",
                     options: [], metrics: nil, views: ["v": v]),
-                NSLayoutConstraint.constraintsWithVisualFormat(
-                    "V:|[lab]|",
+                NSLayoutConstraint.constraints(
+                    withVisualFormat: "V:|[lab]|",
                     options: [], metrics: nil, views: ["lab": lab])
-                ].flatten().map { $0 })
+                ].joined().map { $0 })
             // add tap g.r.
             let tap = UITapGestureRecognizer(target: self, action: #selector(tapped)) // *
             tap.numberOfTapsRequired = 2
@@ -146,34 +146,34 @@ class DynamicTable: UIViewController, UITableViewDelegate, UITableViewDataSource
     }
     
     
-    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
     }
     
-    func sectionIndexTitlesForTableView(tableView: UITableView) -> [String]? {
+    func sectionIndexTitles(for tableView: UITableView) -> [String]? {
         return self.sectionNames
     }
     
-    func tapped (g: UIGestureRecognizer) {
+    func tapped (_ g: UIGestureRecognizer) {
         let v = g.view as! MyHeaderView
         let sec = v.section
         let ct = self.sectionData[sec].count
-        let arr = (0..<ct).map { NSIndexPath(forRow: $0, inSection: sec) } // whoa! ***
+        let arr = (0..<ct).map { IndexPath(row: $0, section: sec) } // whoa! ***
         if self.showSections.contains(sec) {
             self.showSections.remove(sec)
             self.tableView.beginUpdates()
-            self.tableView.deleteRowsAtIndexPaths(arr,
-                                                  withRowAnimation: .Automatic)
+            self.tableView.deleteRows(at: arr,
+                                                  with: .automatic)
             self.tableView.endUpdates()
         } else {
             self.showSections.insert(sec)
             self.tableView.beginUpdates()
-            self.tableView.insertRowsAtIndexPaths(arr,
-                                                  withRowAnimation: .Automatic)
+            self.tableView.insertRows(at: arr,
+                                                  with: .automatic)
             self.tableView.endUpdates()
             //Important: insertRows过多时,相当于一次性加载了所有的row,性能会受影响
-            self.tableView.scrollToRowAtIndexPath(arr[ct - 1],
-                                                  atScrollPosition: .None,
+            self.tableView.scrollToRow(at: arr[ct - 1],
+                                                  at: .none,
                                                   animated: true)
         }
         //        if self.hiddenSections.contains(sec) {
