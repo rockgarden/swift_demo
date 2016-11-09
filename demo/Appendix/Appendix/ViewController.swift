@@ -60,14 +60,10 @@ class ViewController: UIViewController {
         }
         
         do {
-        
             // conversion of String to C string
-            
             let q = DispatchQueue(label: "MyQueue", attributes: [])
-            
             let s = "MyQueue"
             let qq = DispatchQueue(label: s, attributes: [])
-
             let cs = "hello".utf8CString // UnsafePointer<Int8>
             if let cs2 = "hello".cString(using: String.Encoding.utf8) { // [CChar]?
                 let ss = String(cString: cs2)
@@ -85,7 +81,6 @@ class ViewController: UIViewController {
             _ = q
             _ = qq
             _ = cs
-            
         }
         
         do {
@@ -98,7 +93,6 @@ class ViewController: UIViewController {
             
             self.view.autoresizingMask = .flexibleWidth
             self.view.autoresizingMask = [.flexibleWidth, .flexibleHeight]
-            
         }
         
         do {
@@ -133,14 +127,12 @@ class ViewController: UIViewController {
         do {
             let col = UIColor(red: 0.5, green: 0.6, blue: 0.7, alpha: 1.0)
             let comp = col.cgColor.components
-            
             if let sp = col.cgColor.colorSpace {
                 if sp.model == .rgb {
                     let red = comp?[0]
                     let green = comp?[1]
                     let blue = comp?[2]
                     let alpha = comp?[3]
-                    
                     print(red!, green!, blue!, alpha!)
                 }
             }
@@ -148,16 +140,16 @@ class ViewController: UIViewController {
         
         do {
             // hold my beer and watch _this_!
-            
             let arr = ["Mannyz", "Moey", "Jackx"]
-            func sortByLastCharacter(_ s1:AnyObject,
+            func sortByLastCharacter(_ s1: AnyObject,
                 _ s2:AnyObject, _ context: UnsafeMutableRawPointer) -> Int {
                     let c1 = (s1 as! String).characters.last
                     let c2 = (s2 as! String).characters.last
                     return ((String(describing: c1)).compare(String(describing: c2))).rawValue
             }
-//            let arr2 = (arr as NSArray).sortedArray(sortByLastCharacter as! @convention(c) (Any, Any, UnsafeMutableRawPointer?) -> Int, context: nil)
-//            print(arr2)
+            ///FIXME:
+             let arr2 = (arr as NSArray).sortedArray(sortByLastCharacter as! @convention(c) (Any, Any, UnsafeMutableRawPointer?) -> Int, context: nil)
+             print(arr2)
             let arr3 = (arr as NSArray).sortedArray({
                 s1, s2, context in
                 let c1 = (s1 as! String).characters.last

@@ -58,9 +58,9 @@
 		32A79E981B4C283C0096ECAB /* Appendix */ = {
 			isa = PBXGroup;
 			children = (
+				32A79E991B4C283C0096ECAB /* AppDelegate.swift */,
 				32A79E9B1B4C283C0096ECAB /* ViewController.swift */,
 				32A79EAC1B4C2FDD0096ECAB /* Thing.h */,
-				32A79E991B4C283C0096ECAB /* AppDelegate.swift */,
 				32A79EAD1B4C2FDD0096ECAB /* Thing.m */,
 				446DC37F1DD35B6D00686190 /* LaunchScreen.storyboard */,
 				446DC3811DD35B6D00686190 /* Main.storyboard */,
@@ -266,7 +266,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = Appendix/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.neuburg.matt.Appendix;
+				PRODUCT_BUNDLE_IDENTIFIER = com.rockgarden.Appendix;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "Appendix/Appendix-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -281,7 +281,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = Appendix/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.neuburg.matt.Appendix;
+				PRODUCT_BUNDLE_IDENTIFIER = com.rockgarden.Appendix;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "Appendix/Appendix-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
