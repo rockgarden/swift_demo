@@ -14,6 +14,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var iv2: UIImageView!
     let which = 2
     let which1 = 1
+    var v: UIView!
 
     override func viewDidLoad() {
         super.viewDidLoad()

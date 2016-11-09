@@ -14,6 +14,8 @@
 		44493E5A1DD0AFAA006A7958 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 44493E581DD0AFAA006A7958 /* LaunchScreen.storyboard */; };
 		44493E621DD0B329006A7958 /* finder.png in Resources */ = {isa = PBXBuildFile; fileRef = 44493E611DD0B329006A7958 /* finder.png */; };
 		44493E641DD0BAB2006A7958 /* bottle5.png in Resources */ = {isa = PBXBuildFile; fileRef = 44493E631DD0BAB2006A7958 /* bottle5.png */; };
+		446DC37B1DD3417900686190 /* ImageRenderingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 446DC37A1DD3417900686190 /* ImageRenderingVC.swift */; };
+		446DC37D1DD349BB00686190 /* ImageDrawingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 446DC37C1DD349BB00686190 /* ImageDrawingVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +28,8 @@
 		44493E5B1DD0AFAA006A7958 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		44493E611DD0B329006A7958 /* finder.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = finder.png; sourceTree = "<group>"; };
 		44493E631DD0BAB2006A7958 /* bottle5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bottle5.png; sourceTree = "<group>"; };
+		446DC37A1DD3417900686190 /* ImageRenderingVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageRenderingVC.swift; sourceTree = "<group>"; };
+		446DC37C1DD349BB00686190 /* ImageDrawingVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageDrawingVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,8 +63,10 @@
 			isa = PBXGroup;
 			children = (
 				44493E4F1DD0AFAA006A7958 /* AppDelegate.swift */,
-				44493E511DD0AFAA006A7958 /* ViewController.swift */,
 				44493E531DD0AFAA006A7958 /* Main.storyboard */,
+				44493E511DD0AFAA006A7958 /* ViewController.swift */,
+				446DC37A1DD3417900686190 /* ImageRenderingVC.swift */,
+				446DC37C1DD349BB00686190 /* ImageDrawingVC.swift */,
 				44493E561DD0AFAA006A7958 /* Assets.xcassets */,
 				44493E631DD0BAB2006A7958 /* bottle5.png */,
 				44493E611DD0B329006A7958 /* finder.png */,
@@ -146,6 +152,8 @@
 			files = (
 				44493E521DD0AFAA006A7958 /* ViewController.swift in Sources */,
 				44493E501DD0AFAA006A7958 /* AppDelegate.swift in Sources */,
+				446DC37B1DD3417900686190 /* ImageRenderingVC.swift in Sources */,
+				446DC37D1DD349BB00686190 /* ImageDrawingVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -305,6 +313,7 @@
 				44493E601DD0AFAA006A7958 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
