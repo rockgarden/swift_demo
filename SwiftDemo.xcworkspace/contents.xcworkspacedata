@@ -2,6 +2,9 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:demo/Draw/Draw.xcodeproj">
+   </FileRef>
+   <FileRef
       location = "group:demo/Appendix/Appendix.xcodeproj">
    </FileRef>
    <FileRef

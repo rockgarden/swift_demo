@@ -13,18 +13,18 @@ class ViewController: UIViewController {
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		// Do any additional setup after loading the view, typically from a nib.
-		let sessionConfig: NSURLSessionConfiguration = NSURLSessionConfiguration.defaultSessionConfiguration()
+		let sessionConfig: URLSessionConfiguration = URLSessionConfiguration.default
 		sessionConfig.allowsCellularAccess = false
 		// only accept JSON answer
-		sessionConfig.HTTPAdditionalHeaders = ["Accept": "application/json"]
+		sessionConfig.httpAdditionalHeaders = ["Accept": "application/json"]
 		// timeouts and connections allowed
 		sessionConfig.timeoutIntervalForRequest = 30.0
 		sessionConfig.timeoutIntervalForResource = 60.0
-		sessionConfig.HTTPMaximumConnectionsPerHost = 1
+		sessionConfig.httpMaximumConnectionsPerHost = 1
 		// create session, assign configuration
-		let session = NSURLSession(configuration: sessionConfig)
-		session.dataTaskWithURL(NSURL(string: "http://api.openweathermap.org/data/2.5/weather?q=Barcelona,es&appid=2de143494c0b295cca9337e1e96b00e0")!, completionHandler: { (data, response, error) in
-			let dic: NSDictionary = (try? NSJSONSerialization.JSONObjectWithData(data!, options: NSJSONReadingOptions(rawValue: 0))) as? NSDictionary ?? [String: String]()
+		let session = URLSession(configuration: sessionConfig)
+		session.dataTask(with: URL(string: "http://api.openweathermap.org/data/2.5/weather?q=Barcelona,es&appid=2de143494c0b295cca9337e1e96b00e0")!, completionHandler: { (data, response, error) in
+			let dic: NSDictionary = (try? JSONSerialization.jsonObject(with: data!, options: JSONSerialization.ReadingOptions(rawValue: 0))) as? NSDictionary ?? [String: String]() as NSDictionary
 
 			if dic.count == 0 {
 				return
@@ -43,7 +43,7 @@ class ViewController: UIViewController {
 			let wind: AnyObject! = (dic ["wind"] as! NSDictionary)["speed"]
 
 			// original thread
-			dispatch_async(dispatch_get_main_queue(), { () in
+			DispatchQueue.main.async(execute: { () in
 				debugPrint(dic)
 			})
 		}).resume()
@@ -58,7 +58,7 @@ class ViewController: UIViewController {
     func testFetchingProfile_ReturnsPopulatedUser() {
         // Arrage
         let responseString = "{\"login\": \"dasdom\", \"id\": 1234567}"
-        let responseData = responseString.dataUsingEncoding(NSUTF8StringEncoding)!
+        let responseData = responseString.data(using: String.Encoding.utf8)!
         let sessionMock = URLSessionMock(data: responseData, response: nil, error: nil)
         let apiClient = APIClient()
         apiClient.session = sessionMock

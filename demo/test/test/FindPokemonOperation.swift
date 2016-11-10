@@ -12,10 +12,10 @@ import SwiftyJSON
 
 class FindPokemonOperation: ConcurrentOperation {
 	let URLString: String
-	let findPokemonCompletionHandler: (responseObjects: [PokemonEntity], error: NSError?) -> ()
+	let findPokemonCompletionHandler: (_ responseObjects: [PokemonEntity], _ error: NSError?) -> ()
 	weak var request: Alamofire.Request?
 
-	init(URLString: String, findPokemonCompletionHandler: (responseObjects: [PokemonEntity], error: NSError?) -> ()) {
+	init(URLString: String, findPokemonCompletionHandler: (_ responseObjects: [PokemonEntity], _ error: NSError?) -> ()) {
 		self.URLString = URLString
 		self.findPokemonCompletionHandler = findPokemonCompletionHandler
 		super.init()
@@ -43,7 +43,7 @@ class FindPokemonOperation: ConcurrentOperation {
 		}
 	}
 
-	func handlerJson(jsons: [JSON]) -> [PokemonEntity] {
+	func handlerJson(_ jsons: [JSON]) -> [PokemonEntity] {
 		var returnPokes: [PokemonEntity] = [PokemonEntity]()
 		let specialPokemon = UserDefault.instance.getPokemonFilterArr()
 		for json in jsons {

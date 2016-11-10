@@ -10,6 +10,7 @@
 		44A409211D5F6F0900E1AC68 /* FindPokemonOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44A4091F1D5F6F0900E1AC68 /* FindPokemonOperation.swift */; };
 		44A409221D5F6F0900E1AC68 /* AlphaOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44A409201D5F6F0900E1AC68 /* AlphaOperation.swift */; };
 		44A409261D5F723B00E1AC68 /* DHURLSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44A409251D5F723B00E1AC68 /* DHURLSession.swift */; };
+		C20379E71DD43E8E00631D6F /* SwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = C20379E61DD43E8E00631D6F /* SwiftyJSON.swift */; };
 		C266519F1D5C6A0D00FADE3C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C266519E1D5C6A0D00FADE3C /* AppDelegate.swift */; };
 		C26651A11D5C6A0D00FADE3C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C26651A01D5C6A0D00FADE3C /* ViewController.swift */; };
 		C26651A41D5C6A0D00FADE3C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C26651A21D5C6A0D00FADE3C /* Main.storyboard */; };
@@ -21,6 +22,7 @@
 		44A4091F1D5F6F0900E1AC68 /* FindPokemonOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FindPokemonOperation.swift; sourceTree = "<group>"; };
 		44A409201D5F6F0900E1AC68 /* AlphaOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlphaOperation.swift; sourceTree = "<group>"; };
 		44A409251D5F723B00E1AC68 /* DHURLSession.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DHURLSession.swift; sourceTree = "<group>"; };
+		C20379E61DD43E8E00631D6F /* SwiftyJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftyJSON.swift; sourceTree = "<group>"; };
 		C266519B1D5C6A0D00FADE3C /* test.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = test.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C266519E1D5C6A0D00FADE3C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C26651A01D5C6A0D00FADE3C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -65,6 +67,7 @@
 				C26651A21D5C6A0D00FADE3C /* Main.storyboard */,
 				44A4091F1D5F6F0900E1AC68 /* FindPokemonOperation.swift */,
 				44A409201D5F6F0900E1AC68 /* AlphaOperation.swift */,
+				C20379E61DD43E8E00631D6F /* SwiftyJSON.swift */,
 				C26651A51D5C6A0D00FADE3C /* Assets.xcassets */,
 				C26651A71D5C6A0D00FADE3C /* LaunchScreen.storyboard */,
 				C26651AA1D5C6A0D00FADE3C /* Info.plist */,
@@ -105,6 +108,7 @@
 				TargetAttributes = {
 					C266519A1D5C6A0D00FADE3C = {
 						CreatedOnToolsVersion = 7.3;
+						LastSwiftMigration = 0810;
 					};
 				};
 			};
@@ -147,6 +151,7 @@
 				C26651A11D5C6A0D00FADE3C /* ViewController.swift in Sources */,
 				C266519F1D5C6A0D00FADE3C /* AppDelegate.swift in Sources */,
 				44A409221D5F6F0900E1AC68 /* AlphaOperation.swift in Sources */,
+				C20379E71DD43E8E00631D6F /* SwiftyJSON.swift in Sources */,
 				44A409261D5F723B00E1AC68 /* DHURLSession.swift in Sources */,
 				44A409211D5F6F0900E1AC68 /* FindPokemonOperation.swift in Sources */,
 			);
@@ -267,6 +272,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.rockgarden.test;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 2.3;
 			};
 			name = Debug;
 		};
@@ -278,6 +284,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.rockgarden.test;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 2.3;
 			};
 			name = Release;
 		};

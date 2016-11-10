@@ -8,15 +8,15 @@
 
 import Foundation
 import SwiftyJSON
-class AlphaOperation: NSOperation {
-	var queue: NSOperationQueue?
+class AlphaOperation: Operation {
+	var queue: OperationQueue?
 	var urlList: [String] = [String]()
-	let completionHandler: (responseObjects: [PokemonEntity]) -> ()
+	let completionHandler: (_ responseObjects: [PokemonEntity]) -> ()
 	let allCompletionHandler: () -> ()
-	let progress: (progress: Float) -> ()
+	let progress: (_ progress: Float) -> ()
 	var resultPokes: [PokemonEntity] = [PokemonEntity]()
 
-	init(urlList: [String], completionHandler: (responseObjects: [PokemonEntity]) -> (), allCompletionHandler: () -> (), progress: (progress: Float) -> ()) {
+	init(urlList: [String], completionHandler: (_ responseObjects: [PokemonEntity]) -> (), allCompletionHandler: () -> (), progress: (_ progress: Float) -> ()) {
 		self.urlList = urlList
 		self.completionHandler = completionHandler
 		self.allCompletionHandler = allCompletionHandler
@@ -24,7 +24,7 @@ class AlphaOperation: NSOperation {
 		super.init()
 	}
 	override func main() {
-		self.queue = NSOperationQueue()
+		self.queue = OperationQueue()
 		self.queue?.maxConcurrentOperationCount = 3
 		var i: Float = 0
 		for url in urlList {
