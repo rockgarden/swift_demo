@@ -12,7 +12,7 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        getIFAddresses()
+        print("Local IP \(getIFAddresses())")
     }
 
     override func didReceiveMemoryWarning() {
