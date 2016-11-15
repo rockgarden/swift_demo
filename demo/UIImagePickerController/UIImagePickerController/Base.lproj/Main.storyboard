@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="zqM-v4-Map">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tDB-xS-2gm">
+            <objects>
+                <viewController id="zqM-v4-Map" customClass="ViewController" customModule="UIImagePickerController" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="hRR-bN-ybY"/>
+                        <viewControllerLayoutGuide type="bottom" id="nV8-U3-pkf"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="xhf-cX-O31">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mVH-2t-Ng0">
+                                <rect key="frame" x="139" y="623" width="97" height="30"/>
+                                <state key="normal" title="Take a Picture">
+                                    <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="doTake:" destination="zqM-v4-Map" eventType="touchUpInside" id="BBC-4z-gEK"/>
+                                </connections>
+                            </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Qmw-qq-py2">
+                                <rect key="frame" x="0.0" y="45" width="375" height="567"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="mVH-2t-Ng0" firstAttribute="centerX" secondItem="xhf-cX-O31" secondAttribute="centerX" id="VaR-xf-3Fa"/>
+                            <constraint firstItem="Qmw-qq-py2" firstAttribute="centerX" secondItem="xhf-cX-O31" secondAttribute="centerX" id="fjq-pN-aX5"/>
+                            <constraint firstItem="nV8-U3-pkf" firstAttribute="top" secondItem="mVH-2t-Ng0" secondAttribute="bottom" constant="14" id="opX-Du-qCU"/>
+                            <constraint firstItem="Qmw-qq-py2" firstAttribute="top" secondItem="hRR-bN-ybY" secondAttribute="bottom" constant="25" id="qBq-kx-X4u"/>
+                            <constraint firstItem="Qmw-qq-py2" firstAttribute="width" secondItem="xhf-cX-O31" secondAttribute="width" id="vQ0-lQ-uAa"/>
+                            <constraint firstItem="Qmw-qq-py2" firstAttribute="height" secondItem="xhf-cX-O31" secondAttribute="height" constant="-100" id="zx8-CI-1Pj"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="redView" destination="Qmw-qq-py2" id="5In-Ou-AER"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Fi6-An-9Na" sceneMemberID="firstResponder"/>
+            </objects>
+        </scene>
+    </scenes>
+</document>
