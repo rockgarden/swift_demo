@@ -12,14 +12,13 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        print("Local IP \(getIFAddresses())")
+        print("Local IP \(get_ifaddrs_list())")
+        print("Remote IP \(remoteIP("http://www.open-open.com/news/view/54640313"))")
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
-
 
 }
 
