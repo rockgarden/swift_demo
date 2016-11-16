@@ -2,6 +2,12 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:demo/PhotoKitImages/PhotoKitImages.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:demo/AVCapture/AVCapture.xcodeproj">
+   </FileRef>
+   <FileRef
       location = "group:demo/UIImagePickerController/UIImagePickerController.xcodeproj">
    </FileRef>
    <FileRef

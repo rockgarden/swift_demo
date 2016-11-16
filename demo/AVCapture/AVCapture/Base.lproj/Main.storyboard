@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="1uU-1v-b5O">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="vxE-Ad-5nj">
+            <objects>
+                <viewController id="1uU-1v-b5O" customClass="ViewController" customModule="AVCapture" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="v3I-Uh-GG5"/>
+                        <viewControllerLayoutGuide type="bottom" id="g64-gx-90c"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="qMH-cJ-hpI">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0aE-LU-fxk">
+                                <rect key="frame" x="20" y="617" width="105" height="30"/>
+                                <state key="normal" title="Toggle Preview">
+                                    <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="doStart:" destination="1uU-1v-b5O" eventType="touchUpInside" id="yJG-jN-qed"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hJD-2S-sFa">
+                                <rect key="frame" x="276" y="617" width="79" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="79" id="zJf-ce-E2c"/>
+                                </constraints>
+                                <state key="normal" title="Snap!">
+                                    <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="doSnap:" destination="1uU-1v-b5O" eventType="touchUpInside" id="2bC-Yb-urA"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="g64-gx-90c" firstAttribute="top" secondItem="0aE-LU-fxk" secondAttribute="bottom" constant="20" id="A2P-LU-dhS"/>
+                            <constraint firstAttribute="trailing" secondItem="hJD-2S-sFa" secondAttribute="trailing" constant="20" id="omC-3x-xtn"/>
+                            <constraint firstItem="g64-gx-90c" firstAttribute="top" secondItem="hJD-2S-sFa" secondAttribute="bottom" constant="20" id="rX9-Sh-Gey"/>
+                            <constraint firstItem="0aE-LU-fxk" firstAttribute="leading" secondItem="qMH-cJ-hpI" secondAttribute="leading" constant="20" id="uD2-NR-uH8"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="AIn-Nu-oxR" sceneMemberID="firstResponder"/>
+            </objects>
+        </scene>
+    </scenes>
+</document>

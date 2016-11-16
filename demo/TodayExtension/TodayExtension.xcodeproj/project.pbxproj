@@ -200,7 +200,7 @@
 					};
 					449718491DBCF345009C1868 = {
 						CreatedOnToolsVersion = 8.0;
-						DevelopmentTeam = UR7J67T5FK;
+						DevelopmentTeam = W3MH7MTTSB;
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
 							com.apple.ApplicationGroups.iOS = {
@@ -433,7 +433,7 @@
 		449718591DBCF345009C1868 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				DEVELOPMENT_TEAM = UR7J67T5FK;
+				DEVELOPMENT_TEAM = W3MH7MTTSB;
 				INFOPLIST_FILE = CoffeeTime/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.rockgarden.TodayExtension.CoffeeTime;
@@ -446,7 +446,7 @@
 		4497185A1DBCF345009C1868 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				DEVELOPMENT_TEAM = UR7J67T5FK;
+				DEVELOPMENT_TEAM = W3MH7MTTSB;
 				INFOPLIST_FILE = CoffeeTime/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.rockgarden.TodayExtension.CoffeeTime;
