@@ -80,7 +80,7 @@ class DataViewController: UIViewController, EditingViewControllerDelegate {
             
             evc.delegate = self
             let adj : PHAdjustmentData? = input.adjustmentData
-            print(adj)
+            print(adj ?? "no data")
 //            do {
 //                asset.cancelContentEditingInputRequest(id)
 //                return
@@ -122,7 +122,7 @@ class DataViewController: UIViewController, EditingViewControllerDelegate {
         let dest = CGImageDestinationCreateWithURL(outurl as CFURL, kUTTypeJPEG, 1, nil)!
         CGImageDestinationAddImage(dest, outcgimage, [
             kCGImageDestinationLossyCompressionQuality as String:1
-            ] as CFDictionary)
+            ] as CFDictionary) //For Swift 3 you need extra casting to CFDictionary. Otherwise Contextual type 'CFDictionary' cannot be used with dictionary literal is thrown.
         CGImageDestinationFinalize(dest)
 
         let data = NSKeyedArchiver.archivedData(withRootObject: vignette)

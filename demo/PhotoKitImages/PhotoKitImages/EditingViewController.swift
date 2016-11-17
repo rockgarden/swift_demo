@@ -23,7 +23,7 @@ class EditingViewController: UIViewController, GLKViewDelegate {
     var canUndo = false
     weak var delegate : EditingViewControllerDelegate?
     
-    init(displayImage:CIImage) {
+    init(displayImage: CIImage) {
         self.displayImage = displayImage
         super.init(nibName: "EditingViewController", bundle: nil)
     }

@@ -4,13 +4,28 @@ import AVFoundation
 import AVKit
 import MobileCoreServices
 import Photos
+import PhotosUI
 
-func imageOfSize(_ size:CGSize, closure:() -> ()) -> UIImage {
-    UIGraphicsBeginImageContextWithOptions(size, false, 0)
-    closure()
-    let result = UIGraphicsGetImageFromCurrentImageContext()
-    UIGraphicsEndImageContext()
-    return result!
+func checkForPhotoLibraryAccess(andThen f:(()->())? = nil) {
+    let status = PHPhotoLibrary.authorizationStatus()
+    switch status {
+    case .authorized:
+        f?()
+    case .notDetermined:
+        PHPhotoLibrary.requestAuthorization() { status in
+            if status == .authorized {
+                DispatchQueue.main.async {
+                    f?()
+                }
+            }
+        }
+    case .restricted:
+        // do nothing
+        break
+    case .denied:
+        // do nothing, or beg the user to authorize us in Settings
+        break
+    }
 }
 
 class ViewController: UIViewController {
@@ -102,31 +117,31 @@ class ViewController: UIViewController {
         NotificationCenter.default.removeObserver(self)
     }
 
-    @IBAction func doPick (_ sender:AnyObject!) {
+    @IBAction func doPick (_ sender: AnyObject!) {
         if !self.determineStatus() {
             print("not authorized")
             return
         }
+        checkForPhotoLibraryAccess {
+            self.pickPhoto(sender)
+        }
 
-        // horrible
+    }
+
+    fileprivate func pickPhoto(_ sender: AnyObject!) {
+        // horrible SavedPhotosAlbum 极不友好的api
         // let src = UIImagePickerControllerSourceType.SavedPhotosAlbum
-        let src = UIImagePickerControllerSourceType.photoLibrary
-        let ok = UIImagePickerController.isSourceTypeAvailable(src)
-        if !ok {
-            print("alas")
-            return
-        }
 
-        let arr = UIImagePickerController.availableMediaTypes(for: src)
-        if arr == nil {
-            print("no available types")
-            return
-        }
+        let src = UIImagePickerControllerSourceType.photoLibrary
+        guard UIImagePickerController.isSourceTypeAvailable(src)
+            else { debugPrint("alas"); return }
+        guard let arr = UIImagePickerController.availableMediaTypes(for: src)
+            else { print("no available types"); return }
+
         let picker = MyImagePickerController() // see comments below for reason
         picker.sourceType = src
-        picker.mediaTypes = arr!
+        picker.mediaTypes = arr //[kUTTypeLivePhoto as String, kUTTypeImage as String, kUTTypeMovie as String]
         picker.delegate = self
-
         picker.allowsEditing = false // try true
 
         // this will automatically be fullscreen on phone and pad, looks fine
@@ -149,7 +164,7 @@ class ViewController: UIViewController {
             print("no camera")
             return
         }
-        let desiredType = kUTTypeImage as NSString as String
+        let desiredType = kUTTypeImage as String
         // let desiredType = kUTTypeMovie as NSString as String
         let arr = UIImagePickerController.availableMediaTypes(for: cam)
         print(arr!)
@@ -185,11 +200,6 @@ class ViewController: UIViewController {
         self.picker?.takePicture()
     }
 
-    //MARK: - UIImagePickerControllerDelegate
-    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
-        self.dismiss(animated: true, completion: nil)
-    }
-
     func doCancel(_ sender:AnyObject) {
         self.dismiss(animated: true, completion: nil)
     }
@@ -211,19 +221,17 @@ class ViewController: UIViewController {
 
 extension ViewController : UIImagePickerControllerDelegate {
 
-    // this has no effect
-    func navigationControllerSupportedInterfaceOrientations(_ navigationController: UINavigationController) -> UIInterfaceOrientationMask {
-        return .landscape
+    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+        self.dismiss(animated: true, completion: nil)
     }
 
     func imagePickerController(_ picker: UIImagePickerController,
                                didFinishPickingMediaWithInfo info: [String : Any]) {
-        print(info)
+        print(info[UIImagePickerControllerReferenceURL] as Any) //UIImagePickerControllerReferenceURL maybe nil
         let url = info[UIImagePickerControllerMediaURL] as? URL //iOS 10 url = nil
         var im = info[UIImagePickerControllerOriginalImage] as? UIImage
-        let edim = info[UIImagePickerControllerEditedImage] as? UIImage
-        if edim != nil {
-            im = edim
+        if let ed = info[UIImagePickerControllerEditedImage] as? UIImage {
+            im = ed
         }
 
         if pushMyPhotoView {
@@ -233,10 +241,12 @@ extension ViewController : UIImagePickerControllerDelegate {
         } else {
             // no push photo view, than back to ViewController
             self.dismiss(animated: true) {
-                let type = info[UIImagePickerControllerMediaType] as? String
+                let type = info[UIImagePickerControllerMediaType] as? NSString
                 if type != nil {
                     switch type! {
-                    case kUTTypeImage as NSString as String:
+                    case kUTTypeMovie: //CFString "public.movie"
+                        if url != nil { self.showMovie(url!) }
+                    case kUTTypeImage: //CFString "public.image"
                         if im != nil {
                             self.showImage(im!)
                             // showing how simple it is to save into the Camera Roll
@@ -245,11 +255,13 @@ extension ViewController : UIImagePickerControllerDelegate {
                                 PHAssetChangeRequest.creationRequestForAsset(from: im!)
                             }, completionHandler: nil)
                         }
-                    case kUTTypeMovie as NSString as String:
-                        if url != nil {
-                            self.showMovie(url!)
+                    default: break
+                    }
+                    if #available(iOS 9.1, *) {
+                        let live = info[UIImagePickerControllerLivePhoto] as? PHLivePhoto
+                        if type! == kUTTypeLivePhoto, live != nil { //,相当于&&?
+                            self.showLivePhoto(live!)
                         }
-                    default:break
                     }
                 }
             }
@@ -257,7 +269,7 @@ extension ViewController : UIImagePickerControllerDelegate {
 
     }
 
-    func clearAll() {
+    fileprivate func clearAll() {
         if self.childViewControllers.count > 0 {
             let av = self.childViewControllers[0] as! AVPlayerViewController
             av.willMove(toParentViewController: nil)
@@ -267,7 +279,7 @@ extension ViewController : UIImagePickerControllerDelegate {
         self.redView.subviews.forEach { $0.removeFromSuperview() }
     }
 
-    func showImage(_ im:UIImage) {
+    fileprivate func showImage(_ im:UIImage) {
         self.clearAll()
         let iv = UIImageView(image:im)
         iv.contentMode = .scaleAspectFit
@@ -275,21 +287,37 @@ extension ViewController : UIImagePickerControllerDelegate {
         self.redView.addSubview(iv)
     }
 
-    func showMovie(_ url: URL) {
+    ///FIXME: don't run in iOS 10
+    fileprivate func showMovie(_ url: URL) {
         self.clearAll()
         let av = AVPlayerViewController()
-        let player = AVPlayer(url:url)
+        let player = AVPlayer(url: url)
         av.player = player
         self.addChildViewController(av)
         av.view.frame = self.redView.bounds
+        debugPrint(self.redView.bounds)
         av.view.backgroundColor = self.redView.backgroundColor
         self.redView.addSubview(av.view)
         av.didMove(toParentViewController: self)
     }
 
+    @available(iOS 9.1, *)
+    fileprivate func showLivePhoto(_ ph:PHLivePhoto) {
+        self.clearAll()
+        let v = PHLivePhotoView(frame: self.redView.bounds)
+        v.contentMode = .scaleAspectFit
+        v.livePhoto = ph
+        self.redView.addSubview(v)
+    }
+
 }
 
 extension ViewController : UINavigationControllerDelegate {
+
+    // this has no effect
+    func navigationControllerSupportedInterfaceOrientations(_ navigationController: UINavigationController) -> UIInterfaceOrientationMask {
+        return .landscape
+    }
 
     func navigationController(_ nc: UINavigationController, didShow vc: UIViewController, animated: Bool) {
         if pushMyPhotoView {

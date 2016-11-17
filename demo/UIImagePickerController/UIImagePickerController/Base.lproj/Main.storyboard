@@ -4,7 +4,6 @@
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -23,7 +22,7 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mVH-2t-Ng0">
-                                <rect key="frame" x="252" y="623" width="97" height="30"/>
+                                <rect key="frame" x="252" y="627" width="97" height="30"/>
                                 <state key="normal" title="Take a Picture">
                                     <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
@@ -50,7 +49,7 @@
                             <constraint firstItem="bTo-SP-umQ" firstAttribute="leading" secondItem="xhf-cX-O31" secondAttribute="leadingMargin" constant="10" id="Dma-d3-fiQ"/>
                             <constraint firstAttribute="trailingMargin" secondItem="mVH-2t-Ng0" secondAttribute="trailing" constant="10" id="WTd-gI-pep"/>
                             <constraint firstItem="Qmw-qq-py2" firstAttribute="centerX" secondItem="xhf-cX-O31" secondAttribute="centerX" id="fjq-pN-aX5"/>
-                            <constraint firstItem="nV8-U3-pkf" firstAttribute="top" secondItem="mVH-2t-Ng0" secondAttribute="bottom" constant="14" id="opX-Du-qCU"/>
+                            <constraint firstItem="nV8-U3-pkf" firstAttribute="top" secondItem="mVH-2t-Ng0" secondAttribute="bottom" constant="10" id="opX-Du-qCU"/>
                             <constraint firstItem="Qmw-qq-py2" firstAttribute="top" secondItem="hRR-bN-ybY" secondAttribute="bottom" constant="25" id="qBq-kx-X4u"/>
                             <constraint firstItem="Qmw-qq-py2" firstAttribute="width" secondItem="xhf-cX-O31" secondAttribute="width" id="vQ0-lQ-uAa"/>
                             <constraint firstItem="Qmw-qq-py2" firstAttribute="height" secondItem="xhf-cX-O31" secondAttribute="height" constant="-100" id="zx8-CI-1Pj"/>

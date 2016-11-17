@@ -10,7 +10,7 @@
 		442398241DB2650F00ED63EC /* MainVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 442398231DB2650F00ED63EC /* MainVC.swift */; };
 		442398261DB26D8C00ED63EC /* URLSessionDataTaskVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 442398251DB26D8C00ED63EC /* URLSessionDataTaskVC.swift */; };
 		447F77321DAE7A4C0063DBEC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 447F77311DAE7A4C0063DBEC /* AppDelegate.swift */; };
-		447F77341DAE7A4C0063DBEC /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 447F77331DAE7A4C0063DBEC /* ViewController.swift */; };
+		447F77341DAE7A4C0063DBEC /* MyDownloaderVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 447F77331DAE7A4C0063DBEC /* MyDownloaderVC.swift */; };
 		447F77371DAE7A4C0063DBEC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 447F77351DAE7A4C0063DBEC /* Main.storyboard */; };
 		447F77391DAE7A4C0063DBEC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 447F77381DAE7A4C0063DBEC /* Assets.xcassets */; };
 		447F773C1DAE7A4C0063DBEC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 447F773A1DAE7A4C0063DBEC /* LaunchScreen.storyboard */; };
@@ -24,7 +24,7 @@
 		442398251DB26D8C00ED63EC /* URLSessionDataTaskVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = URLSessionDataTaskVC.swift; sourceTree = "<group>"; };
 		447F772E1DAE7A4C0063DBEC /* NSURLSessionDownload.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NSURLSessionDownload.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		447F77311DAE7A4C0063DBEC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		447F77331DAE7A4C0063DBEC /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		447F77331DAE7A4C0063DBEC /* MyDownloaderVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyDownloaderVC.swift; sourceTree = "<group>"; };
 		447F77361DAE7A4C0063DBEC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		447F77381DAE7A4C0063DBEC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		447F773B1DAE7A4C0063DBEC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -66,7 +66,7 @@
 			children = (
 				447F77311DAE7A4C0063DBEC /* AppDelegate.swift */,
 				447F77431DAE7A740063DBEC /* MyDownloader.swift */,
-				447F77331DAE7A4C0063DBEC /* ViewController.swift */,
+				447F77331DAE7A4C0063DBEC /* MyDownloaderVC.swift */,
 				447F77471DAE7EA40063DBEC /* BackgroundDownloadVC.swift */,
 				447F77451DAE7B0C0063DBEC /* MyTableViewController.swift */,
 				447F77351DAE7A4C0063DBEC /* Main.storyboard */,
@@ -111,6 +111,7 @@
 				TargetAttributes = {
 					447F772D1DAE7A4C0063DBEC = {
 						CreatedOnToolsVersion = 7.3.1;
+						DevelopmentTeam = W3MH7MTTSB;
 						LastSwiftMigration = 0800;
 					};
 				};
@@ -151,7 +152,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				447F77341DAE7A4C0063DBEC /* ViewController.swift in Sources */,
+				447F77341DAE7A4C0063DBEC /* MyDownloaderVC.swift in Sources */,
 				447F77481DAE7EA40063DBEC /* BackgroundDownloadVC.swift in Sources */,
 				442398241DB2650F00ED63EC /* MainVC.swift in Sources */,
 				447F77321DAE7A4C0063DBEC /* AppDelegate.swift in Sources */,
@@ -275,7 +276,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = W3MH7MTTSB;
 				INFOPLIST_FILE = NSURLSessionDownload/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.rockgarden.NSURLSessionDownload;
@@ -288,7 +289,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = W3MH7MTTSB;
 				INFOPLIST_FILE = NSURLSessionDownload/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.rockgarden.NSURLSessionDownload;

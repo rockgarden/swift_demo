@@ -8,6 +8,12 @@
 
 import UIKit
 
+extension Notification.Name {
+    /// NSNotification.Name(rawValue: "GotPicture") -> .gotProgress
+    static let gotProgress = Notification.Name("gotProgress")
+    static let gotPicture = Notification.Name("gotPicture")
+}
+
 class BackgroundDownloadVC: UIViewController {
     
     @IBOutlet var iv: UIImageView!
@@ -15,8 +21,8 @@ class BackgroundDownloadVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        NotificationCenter.default.addObserver(self, selector: #selector(gotPicture), name: NSNotification.Name(rawValue: "GotPicture"), object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(gotProgress), name: NSNotification.Name(rawValue: "GotProgress"), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(gotPicture), name: .gotPicture, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(gotProgress), name: .gotProgress, object: nil)
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -27,15 +33,13 @@ class BackgroundDownloadVC: UIViewController {
     @IBAction func doStart (_ sender: AnyObject!) {
         self.prog.progress = 0
         self.iv.image = nil
-        let del = UIApplication.shared.delegate as! AppDelegate
-        del.startDownload(self)
+        APP.startDownload(self)
     }
     
     func grabPicture () {
         NSLog("%@", "grabbing picture")
-        let del = UIApplication.shared.delegate as! AppDelegate
-        self.iv.image = del.image
-        del.image = nil
+        self.iv.image = APP.image
+        APP.image = nil
         if self.iv.image != nil {
             self.prog.progress = 1
         }
@@ -57,8 +61,9 @@ class BackgroundDownloadVC: UIViewController {
         NotificationCenter.default.removeObserver(self)
     }
     
-    func crash (_ sender: AnyObject?) {
-        _ = sender as! String
+    @IBAction func crash (_ sender: Any?) { //AnyObject -> Any
+        //_ = sender as! String //Could not cast value of type 'UIButton' to 'NSString'.
+        fatalError("kaboom")
     }
     
 }

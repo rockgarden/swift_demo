@@ -92,7 +92,7 @@ extension MainVC {
             loc, response, error in
             print("here")
             if error != nil {
-                print(error)
+                print(error ?? "unknown")
                 return
             }
             let status = (response as! HTTPURLResponse).statusCode
