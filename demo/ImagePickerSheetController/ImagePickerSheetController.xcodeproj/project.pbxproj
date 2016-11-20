@@ -9,6 +9,18 @@
 /* Begin PBXBuildFile section */
 		441CD0D51DE1D1B400355BD3 /* ImagePickerSheetController.h in Headers */ = {isa = PBXBuildFile; fileRef = 441CD0D31DE1D1B400355BD3 /* ImagePickerSheetController.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		441CD0F61DE1D36500355BD3 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 441CD0F51DE1D36500355BD3 /* Images.xcassets */; };
+		441CD1051DE1EFC100355BD3 /* ImagePickerSheetController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 441CD0F71DE1EFC100355BD3 /* ImagePickerSheetController.swift */; };
+		441CD1061DE1EFC100355BD3 /* PreviewCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 441CD0FA1DE1EFC100355BD3 /* PreviewCollectionView.swift */; };
+		441CD1071DE1EFC100355BD3 /* PreviewCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 441CD0FB1DE1EFC100355BD3 /* PreviewCollectionViewCell.swift */; };
+		441CD1081DE1EFC100355BD3 /* PreviewCollectionViewLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 441CD0FC1DE1EFC100355BD3 /* PreviewCollectionViewLayout.swift */; };
+		441CD1091DE1EFC100355BD3 /* PreviewSupplementaryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 441CD0FD1DE1EFC100355BD3 /* PreviewSupplementaryView.swift */; };
+		441CD10A1DE1EFC100355BD3 /* SheetActionCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 441CD0FE1DE1EFC100355BD3 /* SheetActionCollectionViewCell.swift */; };
+		441CD10B1DE1EFC100355BD3 /* SheetCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 441CD0FF1DE1EFC100355BD3 /* SheetCollectionViewCell.swift */; };
+		441CD10C1DE1EFC100355BD3 /* SheetCollectionViewLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 441CD1001DE1EFC100355BD3 /* SheetCollectionViewLayout.swift */; };
+		441CD10D1DE1EFC100355BD3 /* SheetController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 441CD1011DE1EFC100355BD3 /* SheetController.swift */; };
+		441CD10E1DE1EFC100355BD3 /* SheetPreviewCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 441CD1021DE1EFC100355BD3 /* SheetPreviewCollectionViewCell.swift */; };
+		441CD10F1DE1EFC100355BD3 /* ImagePickerAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 441CD1031DE1EFC100355BD3 /* ImagePickerAction.swift */; };
+		441CD1101DE1EFC100355BD3 /* AnimationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 441CD1041DE1EFC100355BD3 /* AnimationController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -16,6 +28,18 @@
 		441CD0D31DE1D1B400355BD3 /* ImagePickerSheetController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ImagePickerSheetController.h; sourceTree = "<group>"; };
 		441CD0D41DE1D1B400355BD3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		441CD0F51DE1D36500355BD3 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		441CD0F71DE1EFC100355BD3 /* ImagePickerSheetController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImagePickerSheetController.swift; sourceTree = "<group>"; };
+		441CD0FA1DE1EFC100355BD3 /* PreviewCollectionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PreviewCollectionView.swift; sourceTree = "<group>"; };
+		441CD0FB1DE1EFC100355BD3 /* PreviewCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PreviewCollectionViewCell.swift; sourceTree = "<group>"; };
+		441CD0FC1DE1EFC100355BD3 /* PreviewCollectionViewLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PreviewCollectionViewLayout.swift; sourceTree = "<group>"; };
+		441CD0FD1DE1EFC100355BD3 /* PreviewSupplementaryView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PreviewSupplementaryView.swift; sourceTree = "<group>"; };
+		441CD0FE1DE1EFC100355BD3 /* SheetActionCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SheetActionCollectionViewCell.swift; sourceTree = "<group>"; };
+		441CD0FF1DE1EFC100355BD3 /* SheetCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SheetCollectionViewCell.swift; sourceTree = "<group>"; };
+		441CD1001DE1EFC100355BD3 /* SheetCollectionViewLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SheetCollectionViewLayout.swift; sourceTree = "<group>"; };
+		441CD1011DE1EFC100355BD3 /* SheetController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SheetController.swift; sourceTree = "<group>"; };
+		441CD1021DE1EFC100355BD3 /* SheetPreviewCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SheetPreviewCollectionViewCell.swift; sourceTree = "<group>"; };
+		441CD1031DE1EFC100355BD3 /* ImagePickerAction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImagePickerAction.swift; sourceTree = "<group>"; };
+		441CD1041DE1EFC100355BD3 /* AnimationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnimationController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -48,11 +72,39 @@
 		441CD0D21DE1D1B400355BD3 /* ImagePickerSheetController */ = {
 			isa = PBXGroup;
 			children = (
+				441CD0F71DE1EFC100355BD3 /* ImagePickerSheetController.swift */,
+				441CD1031DE1EFC100355BD3 /* ImagePickerAction.swift */,
+				441CD1041DE1EFC100355BD3 /* AnimationController.swift */,
+				441CD0F81DE1EFC100355BD3 /* Sheet */,
 				441CD0D31DE1D1B400355BD3 /* ImagePickerSheetController.h */,
 				441CD0F51DE1D36500355BD3 /* Images.xcassets */,
 				441CD0D41DE1D1B400355BD3 /* Info.plist */,
 			);
 			path = ImagePickerSheetController;
+			sourceTree = "<group>";
+		};
+		441CD0F81DE1EFC100355BD3 /* Sheet */ = {
+			isa = PBXGroup;
+			children = (
+				441CD0F91DE1EFC100355BD3 /* Preview */,
+				441CD0FE1DE1EFC100355BD3 /* SheetActionCollectionViewCell.swift */,
+				441CD0FF1DE1EFC100355BD3 /* SheetCollectionViewCell.swift */,
+				441CD1001DE1EFC100355BD3 /* SheetCollectionViewLayout.swift */,
+				441CD1011DE1EFC100355BD3 /* SheetController.swift */,
+				441CD1021DE1EFC100355BD3 /* SheetPreviewCollectionViewCell.swift */,
+			);
+			path = Sheet;
+			sourceTree = "<group>";
+		};
+		441CD0F91DE1EFC100355BD3 /* Preview */ = {
+			isa = PBXGroup;
+			children = (
+				441CD0FA1DE1EFC100355BD3 /* PreviewCollectionView.swift */,
+				441CD0FB1DE1EFC100355BD3 /* PreviewCollectionViewCell.swift */,
+				441CD0FC1DE1EFC100355BD3 /* PreviewCollectionViewLayout.swift */,
+				441CD0FD1DE1EFC100355BD3 /* PreviewSupplementaryView.swift */,
+			);
+			path = Preview;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -136,6 +188,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				441CD1101DE1EFC100355BD3 /* AnimationController.swift in Sources */,
+				441CD10C1DE1EFC100355BD3 /* SheetCollectionViewLayout.swift in Sources */,
+				441CD1071DE1EFC100355BD3 /* PreviewCollectionViewCell.swift in Sources */,
+				441CD1091DE1EFC100355BD3 /* PreviewSupplementaryView.swift in Sources */,
+				441CD10E1DE1EFC100355BD3 /* SheetPreviewCollectionViewCell.swift in Sources */,
+				441CD1081DE1EFC100355BD3 /* PreviewCollectionViewLayout.swift in Sources */,
+				441CD1051DE1EFC100355BD3 /* ImagePickerSheetController.swift in Sources */,
+				441CD10D1DE1EFC100355BD3 /* SheetController.swift in Sources */,
+				441CD10A1DE1EFC100355BD3 /* SheetActionCollectionViewCell.swift in Sources */,
+				441CD10F1DE1EFC100355BD3 /* ImagePickerAction.swift in Sources */,
+				441CD10B1DE1EFC100355BD3 /* SheetCollectionViewCell.swift in Sources */,
+				441CD1061DE1EFC100355BD3 /* PreviewCollectionView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

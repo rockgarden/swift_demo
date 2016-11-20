@@ -13,35 +13,48 @@ let previewInset: CGFloat = 5
 
 /// The media type an instance of ImagePickerSheetController can display
 public enum ImagePickerMediaType {
-    case Image
-    case Video
-    case ImageAndVideo
+    case image
+    case video
+    case imageAndVideo
 }
 
-@available(iOS 8.0, *)
-public class ImagePickerSheetController: UIViewController {
-    
-    private lazy var sheetController: SheetController = {
+@objc public protocol ImagePickerSheetControllerDelegate {
+
+    @objc optional func controllerWillEnlargePreview(_ controller: ImagePickerSheetController)
+    @objc optional func controllerDidEnlargePreview(_ controller: ImagePickerSheetController)
+
+    @objc optional func controller(_ controller: ImagePickerSheetController, willSelectAsset asset: PHAsset)
+    @objc optional func controller(_ controller: ImagePickerSheetController, didSelectAsset asset: PHAsset)
+
+    @objc optional func controller(_ controller: ImagePickerSheetController, willDeselectAsset asset: PHAsset)
+    @objc optional func controller(_ controller: ImagePickerSheetController, didDeselectAsset asset: PHAsset)
+
+}
+
+@available(iOS 9.0, *)
+open class ImagePickerSheetController: UIViewController {
+
+    fileprivate lazy var sheetController: SheetController = {
         let controller = SheetController(previewCollectionView: self.previewCollectionView)
         controller.actionHandlingCallback = { [weak self] in
-            self?.dismissViewControllerAnimated(true, completion: { _ in
+            self?.dismiss(animated: true, completion: { _ in
                 // Possible retain cycle when action handlers hold a reference to the IPSC
                 // Remove all actions to break it
                 controller.removeAllActions()
             })
         }
-        
+
         return controller
     }()
-    
+
     var sheetCollectionView: UICollectionView {
         return sheetController.sheetCollectionView
     }
-    
-    private(set) lazy var previewCollectionView: PreviewCollectionView = {
+
+    fileprivate(set) lazy var previewCollectionView: PreviewCollectionView = {
         let collectionView = PreviewCollectionView()
         collectionView.accessibilityIdentifier = "ImagePickerSheetPreview"
-        collectionView.backgroundColor = .clearColor()
+        collectionView.backgroundColor = .clear
         collectionView.allowsMultipleSelection = true
         collectionView.imagePreviewLayout.sectionInset = UIEdgeInsets(top: previewInset, left: previewInset, bottom: previewInset, right: previewInset)
         collectionView.imagePreviewLayout.showsSupplementaryViews = false
@@ -49,70 +62,72 @@ public class ImagePickerSheetController: UIViewController {
         collectionView.delegate = self
         collectionView.showsHorizontalScrollIndicator = false
         collectionView.alwaysBounceHorizontal = true
-        collectionView.registerClass(PreviewCollectionViewCell.self, forCellWithReuseIdentifier: NSStringFromClass(PreviewCollectionViewCell.self))
-        collectionView.registerClass(PreviewSupplementaryView.self, forSupplementaryViewOfKind: UICollectionElementKindSectionHeader, withReuseIdentifier: NSStringFromClass(PreviewSupplementaryView.self))
-        
+        collectionView.register(PreviewCollectionViewCell.self, forCellWithReuseIdentifier: NSStringFromClass(PreviewCollectionViewCell.self))
+        collectionView.register(PreviewSupplementaryView.self, forSupplementaryViewOfKind: UICollectionElementKindSectionHeader, withReuseIdentifier: NSStringFromClass(PreviewSupplementaryView.self))
+
         return collectionView
     }()
-    
-    private var supplementaryViews = [Int: PreviewSupplementaryView]()
-    
+
+    fileprivate var supplementaryViews = [Int: PreviewSupplementaryView]()
+
     lazy var backgroundView: UIView = {
         let view = UIView()
         view.accessibilityIdentifier = "ImagePickerSheetBackground"
         view.backgroundColor = UIColor(white: 0.0, alpha: 0.3961)
         view.addGestureRecognizer(UITapGestureRecognizer(target: self.sheetController, action: #selector(SheetController.handleCancelAction)))
-        
+
         return view
     }()
-    
+
+    open var delegate: ImagePickerSheetControllerDelegate?
+
     /// All the actions. The first action is shown at the top.
-    public var actions: [ImagePickerAction] {
+    open var actions: [ImagePickerAction] {
         return sheetController.actions
     }
-    
+
     /// Maximum selection of images.
-    public var maximumSelection: Int?
-    
-    private var selectedImageIndices = [Int]() {
+    open var maximumSelection: Int?
+
+    fileprivate var selectedAssetIndices = [Int]() {
         didSet {
-            sheetController.numberOfSelectedImages = selectedImageIndices.count
+            sheetController.numberOfSelectedAssets = selectedAssetIndices.count
         }
     }
-    
+
     /// The selected image assets
-    public var selectedImageAssets: [PHAsset] {
-        return selectedImageIndices.map { self.assets[$0] }
+    open var selectedAssets: [PHAsset] {
+        return selectedAssetIndices.map { self.assets[$0] }
     }
-    
+
     /// The media type of the displayed assets
-    public let mediaType: ImagePickerMediaType
-    
-    private var assets = [PHAsset]()
-    
-    private lazy var requestOptions: PHImageRequestOptions = {
+    open let mediaType: ImagePickerMediaType
+
+    fileprivate var assets = [PHAsset]()
+
+    fileprivate lazy var requestOptions: PHImageRequestOptions = {
         let options = PHImageRequestOptions()
-        options.deliveryMode = .HighQualityFormat
-        options.resizeMode = .Fast
-        
+        options.deliveryMode = .highQualityFormat
+        options.resizeMode = .fast
+
         return options
     }()
-    
-    private let imageManager = PHCachingImageManager()
-    
+
+    fileprivate let imageManager = PHCachingImageManager()
+
     /// Whether the image preview has been elarged. This is the case when at least once
     /// image has been selected.
-    public private(set) var enlargedPreviews = false
-    
-    private let minimumPreviewHeight: CGFloat = 129
-    private var maximumPreviewHeight: CGFloat = 129
-    
-    private var previewCheckmarkInset: CGFloat {
+    open fileprivate(set) var enlargedPreviews = false
+
+    fileprivate let minimumPreviewHeight: CGFloat = 129
+    fileprivate var maximumPreviewHeight: CGFloat = 129
+
+    fileprivate var previewCheckmarkInset: CGFloat {
         return 12.5
     }
-    
+
     // MARK: - Initialization
-    
+
     public init(mediaType: ImagePickerMediaType) {
         self.mediaType = mediaType
         super.init(nibName: nil, bundle: nil)
@@ -120,53 +135,53 @@ public class ImagePickerSheetController: UIViewController {
     }
 
     public required init?(coder aDecoder: NSCoder) {
-        self.mediaType = .ImageAndVideo
+        self.mediaType = .imageAndVideo
         super.init(coder: aDecoder)
         initialize()
     }
-    
-    private func initialize() {
-        modalPresentationStyle = .Custom
+
+    fileprivate func initialize() {
+        modalPresentationStyle = .custom
         transitioningDelegate = self
-        
-        NSNotificationCenter.defaultCenter().addObserver(sheetController, selector: #selector(SheetController.handleCancelAction), name: UIApplicationDidEnterBackgroundNotification, object: nil)
+
+        NotificationCenter.default.addObserver(sheetController, selector: #selector(SheetController.handleCancelAction), name: NSNotification.Name.UIApplicationDidEnterBackground, object: nil)
     }
-    
+
     deinit {
-        NSNotificationCenter.defaultCenter().removeObserver(sheetController, name: UIApplicationDidEnterBackgroundNotification, object: nil)
+        NotificationCenter.default.removeObserver(sheetController, name: NSNotification.Name.UIApplicationDidEnterBackground, object: nil)
     }
-    
+
     // MARK: - View Lifecycle
-    
-    override public func loadView() {
+
+    override open func loadView() {
         super.loadView()
-        
+
         view.addSubview(backgroundView)
         view.addSubview(sheetCollectionView)
     }
-    
-    public override func viewWillAppear(animated: Bool) {
+
+    open override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        
+
         preferredContentSize = CGSize(width: 400, height: view.frame.height)
-        
-        if PHPhotoLibrary.authorizationStatus() == .Authorized {
+
+        if PHPhotoLibrary.authorizationStatus() == .authorized {
             prepareAssets()
         }
     }
-    
-    public override func viewDidAppear(animated: Bool) {
+
+    open override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        
-        if PHPhotoLibrary.authorizationStatus() == .NotDetermined {
+
+        if PHPhotoLibrary.authorizationStatus() == .notDetermined {
             PHPhotoLibrary.requestAuthorization() { status in
-                if status == .Authorized {
-                    dispatch_async(dispatch_get_main_queue()) {
+                if status == .authorized {
+                    DispatchQueue.main.async {
                         self.prepareAssets()
                         self.previewCollectionView.reloadData()
                         self.sheetCollectionView.reloadData()
                         self.view.setNeedsLayout()
-                        
+
                         // Explicitely disable animations so it wouldn't animate either
                         // if it was in a popover
                         CATransaction.begin()
@@ -178,33 +193,33 @@ public class ImagePickerSheetController: UIViewController {
             }
         }
     }
-    
+
     // MARK: - Actions
-    
+
     /// Adds an new action.
     /// If the passed action is of type Cancel, any pre-existing Cancel actions will be removed.
     /// Always arranges the actions so that the Cancel action appears at the bottom.
-    public func addAction(action: ImagePickerAction) {
+    open func addAction(_ action: ImagePickerAction) {
         sheetController.addAction(action)
         view.setNeedsLayout()
     }
-    
+
     // MARK: - Images
-    
-    private func sizeForAsset(asset: PHAsset, scale: CGFloat = 1) -> CGSize {
+
+    fileprivate func sizeForAsset(_ asset: PHAsset, scale: CGFloat = 1) -> CGSize {
         let proportion = CGFloat(asset.pixelWidth)/CGFloat(asset.pixelHeight)
-    
+
         let imageHeight = maximumPreviewHeight - 2 * previewInset
         let imageWidth = floor(proportion * imageHeight)
-        
+
         return CGSize(width: imageWidth * scale, height: imageHeight * scale)
     }
-    
-    private func prepareAssets() {
+
+    fileprivate func prepareAssets() {
         fetchAssets()
         reloadMaximumPreviewHeight()
         reloadCurrentPreviewHeight(invalidateLayout: false)
-        
+
         // Filter out the assets that are too thin. This can't be done before because
         // we don't know how tall the images should be
         let minImageWidth = 2 * previewCheckmarkInset + (PreviewSupplementaryView.checkmarkImage?.size.width ?? 0)
@@ -213,79 +228,77 @@ public class ImagePickerSheetController: UIViewController {
             return size.width >= minImageWidth
         }
     }
-    
-    private func fetchAssets() {
+
+    fileprivate func fetchAssets() {
         let options = PHFetchOptions()
         options.sortDescriptors = [NSSortDescriptor(key: "creationDate", ascending: false)]
-        
+
         switch mediaType {
-        case .Image:
-            options.predicate = NSPredicate(format: "mediaType = %d", PHAssetMediaType.Image.rawValue)
-        case .Video:
-            options.predicate = NSPredicate(format: "mediaType = %d", PHAssetMediaType.Video.rawValue)
-        case .ImageAndVideo:
-            options.predicate = NSPredicate(format: "mediaType = %d OR mediaType = %d", PHAssetMediaType.Image.rawValue, PHAssetMediaType.Video.rawValue)
+        case .image:
+            options.predicate = NSPredicate(format: "mediaType = %d", PHAssetMediaType.image.rawValue)
+        case .video:
+            options.predicate = NSPredicate(format: "mediaType = %d", PHAssetMediaType.video.rawValue)
+        case .imageAndVideo:
+            options.predicate = NSPredicate(format: "mediaType = %d OR mediaType = %d", PHAssetMediaType.image.rawValue, PHAssetMediaType.video.rawValue)
         }
-        
+
         let fetchLimit = 50
         options.fetchLimit = fetchLimit
-        
-        let result = PHAsset.fetchAssetsWithOptions(options)
+
+        let result = PHAsset.fetchAssets(with: options)
         let requestOptions = PHImageRequestOptions()
-        requestOptions.synchronous = true
-        requestOptions.deliveryMode = .FastFormat
-        
-        result.enumerateObjectsUsingBlock { asset, _, stop in
+        requestOptions.isSynchronous = true
+        requestOptions.deliveryMode = .fastFormat
+
+        result.enumerateObjects(options: [], using: { asset, index, stop in
             defer {
                 if self.assets.count > fetchLimit {
-                    stop.initialize(true)
+                    stop.initialize(to: true)
                 }
             }
-            
-            if let asset = asset as? PHAsset {
-                self.imageManager.requestImageDataForAsset(asset, options: requestOptions) { data, _, _, info in
-                    if data != nil {
-                        self.assets.append(asset)
-                    }
+
+            self.imageManager.requestImageData(for: asset, options: requestOptions) { data, _, _, info in
+                if data != nil {
+                    self.assets.append(asset)
                 }
             }
-        }
+        })
     }
-    
-    private func requestImageForAsset(asset: PHAsset, completion: (image: UIImage?) -> ()) {
-        let targetSize = sizeForAsset(asset, scale: UIScreen.mainScreen().scale)
-        requestOptions.synchronous = true
-        
+
+    fileprivate func requestImageForAsset(_ asset: PHAsset, completion: @escaping (_ image: UIImage?) -> ()) {
+        let targetSize = sizeForAsset(asset, scale: UIScreen.main.scale)
+        requestOptions.isSynchronous = true
+
         // Workaround because PHImageManager.requestImageForAsset doesn't work for burst images
         if asset.representsBurst {
-            imageManager.requestImageDataForAsset(asset, options: requestOptions) { data, _, _, _ in
+            imageManager.requestImageData(for: asset, options: requestOptions) { data, _, _, _ in
                 let image = data.flatMap { UIImage(data: $0) }
-                completion(image: image)
+                completion(image)
             }
         }
         else {
-            imageManager.requestImageForAsset(asset, targetSize: targetSize, contentMode: .AspectFill, options: requestOptions) { image, _ in
-                completion(image: image)
+            imageManager.requestImage(for: asset, targetSize: targetSize, contentMode: .aspectFill, options: requestOptions) { image, _ in
+                completion(image)
             }
         }
     }
-    
-    private func prefetchImagesForAsset(asset: PHAsset) {
-        let targetSize = sizeForAsset(asset, scale: UIScreen.mainScreen().scale)
-        imageManager.startCachingImagesForAssets([asset], targetSize: targetSize, contentMode: .AspectFill, options: requestOptions)
+
+    fileprivate func prefetchImagesForAsset(_ asset: PHAsset) {
+        let targetSize = sizeForAsset(asset, scale: UIScreen.main.scale)
+        imageManager.startCachingImages(for: [asset], targetSize: targetSize, contentMode: .aspectFill, options: requestOptions)
     }
-    
+
     // MARK: - Layout
-    
-    public override func viewDidLayoutSubviews() {
+
+    open override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
-        
+
         if popoverPresentationController == nil {
             // Offset necessary for expanded status bar
             // Bug in UIKit which doesn't reset the view's frame correctly
-            
-            let offset = UIApplication.sharedApplication().statusBarFrame.height
-            var backgroundViewFrame = UIScreen.mainScreen().bounds
+
+            let offset = UIApplication.shared.statusBarFrame.height
+            var backgroundViewFrame = UIScreen.main.bounds
             backgroundViewFrame.origin.y = -offset
             backgroundViewFrame.size.height += offset
             backgroundView.frame = backgroundViewFrame
@@ -293,20 +306,20 @@ public class ImagePickerSheetController: UIViewController {
         else {
             backgroundView.frame = view.bounds
         }
-        
+
         reloadMaximumPreviewHeight()
         reloadCurrentPreviewHeight(invalidateLayout: true)
-        
+
         let sheetHeight = sheetController.preferredSheetHeight
         let sheetSize = CGSize(width: view.bounds.width, height: sheetHeight)
-        
+
         // This particular order is necessary so that the sheet is layed out
         // correctly with and without an enclosing popover
         preferredContentSize = sheetSize
         sheetCollectionView.frame = CGRect(origin: CGPoint(x: view.bounds.minX, y: view.bounds.maxY - view.frame.origin.y - sheetHeight), size: sheetSize)
     }
-    
-    private func reloadCurrentPreviewHeight(invalidateLayout invalidate: Bool) {
+
+    fileprivate func reloadCurrentPreviewHeight(invalidateLayout invalidate: Bool) {
         if assets.count <= 0 {
             sheetController.setPreviewHeight(0, invalidateLayout: invalidate)
         }
@@ -317,20 +330,20 @@ public class ImagePickerSheetController: UIViewController {
             sheetController.setPreviewHeight(minimumPreviewHeight, invalidateLayout: invalidate)
         }
     }
-    
-    private func reloadMaximumPreviewHeight() {
+
+    fileprivate func reloadMaximumPreviewHeight() {
         let maxHeight: CGFloat = 400
         let maxImageWidth = view.bounds.width - 2 * sheetInset - 2 * previewInset
 
         let assetRatios = assets.map { (asset: PHAsset) -> CGSize in
-                CGSize(width: max(asset.pixelHeight, asset.pixelWidth), height: min(asset.pixelHeight, asset.pixelWidth))
+            CGSize(width: max(asset.pixelHeight, asset.pixelWidth), height: min(asset.pixelHeight, asset.pixelWidth))
             }.map { (size: CGSize) -> CGFloat in
                 size.height / size.width
-            }
+        }
 
         let assetHeights = assetRatios.map { (ratio: CGFloat) -> CGFloat in ratio * maxImageWidth }
-                                      .filter { (height: CGFloat) -> Bool in height < maxImageWidth && height < maxHeight } // Make sure the preview isn't too high eg for squares
-                                      .sort(>)
+            .filter { (height: CGFloat) -> Bool in height < maxImageWidth && height < maxHeight } // Make sure the preview isn't too high eg for squares
+            .sorted(by: >)
         let assetHeight: CGFloat
         if let first = assetHeights.first {
             assetHeight = first
@@ -343,147 +356,168 @@ public class ImagePickerSheetController: UIViewController {
         let scaledHeight: CGFloat = min(assetHeight, maxHeight)
         maximumPreviewHeight = scaledHeight + 2 * previewInset
     }
-    
+
     // MARK: -
-    
-    func enlargePreviewsByCenteringToIndexPath(indexPath: NSIndexPath?, completion: (Bool -> ())?) {
+
+    func enlargePreviewsByCenteringToIndexPath(_ indexPath: IndexPath?, completion: (() -> ())?) {
         enlargedPreviews = true
         previewCollectionView.imagePreviewLayout.invalidationCenteredIndexPath = indexPath
         reloadCurrentPreviewHeight(invalidateLayout: false)
-        
+
         view.setNeedsLayout()
-        
-        UIView.animateWithDuration(0.2, animations: {
+
+        self.delegate?.controllerWillEnlargePreview?(self)
+
+        UIView.animate(withDuration: 0.2, animations: {
             self.view.layoutIfNeeded()
             self.sheetCollectionView.collectionViewLayout.invalidateLayout()
-        }, completion: completion)
+        }, completion: { _ in
+            self.delegate?.controllerDidEnlargePreview?(self)
+
+            completion?()
+        })
     }
-    
+
 }
 
 // MARK: - UICollectionViewDataSource
 
 extension ImagePickerSheetController: UICollectionViewDataSource {
-    
-    public func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {
+
+    public func numberOfSections(in collectionView: UICollectionView) -> Int {
         return assets.count
     }
-    
-    public func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+
+    public func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return 1
     }
-    
-    public func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCellWithReuseIdentifier(NSStringFromClass(PreviewCollectionViewCell.self), forIndexPath: indexPath) as! PreviewCollectionViewCell
-        
+
+    public func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: NSStringFromClass(PreviewCollectionViewCell.self), for: indexPath) as! PreviewCollectionViewCell
+
         let asset = assets[indexPath.section]
-        cell.videoIndicatorView.hidden = asset.mediaType != .Video
+        cell.videoIndicatorView.isHidden = asset.mediaType != .video
 
         requestImageForAsset(asset) { image in
             cell.imageView.image = image
         }
-        
-        cell.selected = selectedImageIndices.contains(indexPath.section)
-        
+
+        cell.isSelected = selectedAssetIndices.contains(indexPath.section)
+
         return cell
     }
-    
-    public func collectionView(collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, atIndexPath indexPath:
-        NSIndexPath) -> UICollectionReusableView {
-        let view = collectionView.dequeueReusableSupplementaryViewOfKind(UICollectionElementKindSectionHeader, withReuseIdentifier: NSStringFromClass(PreviewSupplementaryView.self), forIndexPath: indexPath) as! PreviewSupplementaryView
-        view.userInteractionEnabled = false
+
+    public func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath:
+        IndexPath) -> UICollectionReusableView {
+        let view = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionElementKindSectionHeader, withReuseIdentifier: NSStringFromClass(PreviewSupplementaryView.self), for: indexPath) as! PreviewSupplementaryView
+        view.isUserInteractionEnabled = false
         view.buttonInset = UIEdgeInsetsMake(0.0, previewCheckmarkInset, previewCheckmarkInset, 0.0)
-        view.selected = selectedImageIndices.contains(indexPath.section)
-        
+        view.selected = selectedAssetIndices.contains(indexPath.section)
+
         supplementaryViews[indexPath.section] = view
-        
+
         return view
     }
-    
+
 }
 
 // MARK: - UICollectionViewDelegate
 
 extension ImagePickerSheetController: UICollectionViewDelegate {
-    
-    public func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
+
+    public func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         if let maximumSelection = maximumSelection {
-            if selectedImageIndices.count >= maximumSelection,
-                let previousItemIndex = selectedImageIndices.first {
-                    supplementaryViews[previousItemIndex]?.selected = false
-                    selectedImageIndices.removeAtIndex(0)
+            if selectedAssetIndices.count >= maximumSelection,
+                let previousItemIndex = selectedAssetIndices.first {
+                let deselectedAsset = selectedAssets[previousItemIndex]
+                delegate?.controller?(self, willDeselectAsset: deselectedAsset)
+
+                supplementaryViews[previousItemIndex]?.selected = false
+                selectedAssetIndices.remove(at: 0)
+
+                delegate?.controller?(self, didDeselectAsset: deselectedAsset)
             }
         }
-        
+
+        let selectedAsset = assets[indexPath.section]
+        delegate?.controller?(self, willSelectAsset: selectedAsset)
+
         // Just to make sure the image is only selected once
-        selectedImageIndices = selectedImageIndices.filter { $0 != indexPath.section }
-        selectedImageIndices.append(indexPath.section)
-        
+        selectedAssetIndices = selectedAssetIndices.filter { $0 != indexPath.section }
+        selectedAssetIndices.append(indexPath.section)
+
         if !enlargedPreviews {
-            enlargePreviewsByCenteringToIndexPath(indexPath) { _ in
+            enlargePreviewsByCenteringToIndexPath(indexPath) {
                 self.sheetController.reloadActionItems()
                 self.previewCollectionView.imagePreviewLayout.showsSupplementaryViews = true
             }
         }
         else {
             // scrollToItemAtIndexPath doesn't work reliably
-            if let cell = collectionView.cellForItemAtIndexPath(indexPath) {
-                var contentOffset = CGPointMake(cell.frame.midX - collectionView.frame.width / 2.0, 0.0)
+            if let cell = collectionView.cellForItem(at: indexPath) {
+                var contentOffset = CGPoint(x: cell.frame.midX - collectionView.frame.width / 2.0, y: 0.0)
                 contentOffset.x = max(contentOffset.x, -collectionView.contentInset.left)
                 contentOffset.x = min(contentOffset.x, collectionView.contentSize.width - collectionView.frame.width + collectionView.contentInset.right)
-                
+
                 collectionView.setContentOffset(contentOffset, animated: true)
             }
-            
+
             sheetController.reloadActionItems()
         }
-        
+
         supplementaryViews[indexPath.section]?.selected = true
+
+        delegate?.controller?(self, didSelectAsset: selectedAsset)
     }
-    
-    public func collectionView(collectionView: UICollectionView, didDeselectItemAtIndexPath indexPath: NSIndexPath) {
-        if let index = selectedImageIndices.indexOf(indexPath.section) {
-            selectedImageIndices.removeAtIndex(index)
+
+    public func collectionView(_ collectionView: UICollectionView, didDeselectItemAt indexPath: IndexPath) {
+        if let index = selectedAssetIndices.index(of: indexPath.section) {
+            let deselectedAsset = selectedAssets[index]
+            delegate?.controller?(self, willDeselectAsset: deselectedAsset)
+
+            selectedAssetIndices.remove(at: index)
             sheetController.reloadActionItems()
+
+            delegate?.controller?(self, didDeselectAsset: deselectedAsset)
         }
-        
+
         supplementaryViews[indexPath.section]?.selected = false
     }
-    
+
 }
 
 // MARK: - UICollectionViewDelegateFlowLayout
 
 extension ImagePickerSheetController: UICollectionViewDelegateFlowLayout {
-    
-    public func collectionView(collectionView: UICollectionView, layout: UICollectionViewLayout, sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize {
+
+    public func collectionView(_ collectionView: UICollectionView, layout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let asset = assets[indexPath.section]
         let size = sizeForAsset(asset)
-        
+
         // Scale down to the current preview height, sizeForAsset returns the original size
         let currentImagePreviewHeight = sheetController.previewHeight - 2 * previewInset
         let scale = currentImagePreviewHeight / size.height
-        
+
         return CGSize(width: size.width * scale, height: currentImagePreviewHeight)
     }
 
-    public func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
+    public func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
         let checkmarkWidth = PreviewSupplementaryView.checkmarkImage?.size.width ?? 0
-        return CGSizeMake(checkmarkWidth + 2 * previewCheckmarkInset, sheetController.previewHeight - 2 * previewInset)
+        return CGSize(width: checkmarkWidth + 2 * previewCheckmarkInset, height: sheetController.previewHeight - 2 * previewInset)
     }
-    
+
 }
 
 // MARK: - UIViewControllerTransitioningDelegate
 
 extension ImagePickerSheetController: UIViewControllerTransitioningDelegate {
-    
-    public func animationControllerForPresentedController(presented: UIViewController, presentingController presenting: UIViewController, sourceController source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+
+    public func animationController(forPresented presented: UIViewController, presenting: UIViewController, source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
         return AnimationController(imagePickerSheetController: self, presenting: true)
     }
-    
-    public func animationControllerForDismissedController(dismissed: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+
+    public func animationController(forDismissed dismissed: UIViewController) -> UIViewControllerAnimatedTransitioning? {
         return AnimationController(imagePickerSheetController: self, presenting: false)
     }
-    
+
 }
