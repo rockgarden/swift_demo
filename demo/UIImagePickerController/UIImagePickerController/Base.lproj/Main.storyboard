@@ -13,7 +13,7 @@
         <scene sceneID="kC2-Be-Nh1">
             <objects>
                 <navigationController id="GP5-Aa-PXb" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="YZn-a0-5b1">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="YZn-a0-5b1">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -71,7 +71,13 @@
                             <constraint firstItem="Qmw-qq-py2" firstAttribute="width" secondItem="xhf-cX-O31" secondAttribute="width" id="vQ0-lQ-uAa"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="Yaa-LC-kNz"/>
+                    <navigationItem key="navigationItem" id="Yaa-LC-kNz">
+                        <barButtonItem key="rightBarButtonItem" title="ImagePIckerSheet" id="dbO-2a-olR">
+                            <connections>
+                                <segue destination="BPT-sd-ehu" kind="show" id="1bh-mi-g7L"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="redView" destination="Qmw-qq-py2" id="5In-Ou-AER"/>
                     </connections>
@@ -79,6 +85,24 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Fi6-An-9Na" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="127" y="37"/>
+        </scene>
+        <!--Example Image Picker SheetVC-->
+        <scene sceneID="nma-TS-iWl">
+            <objects>
+                <viewController storyboardIdentifier="ExampleImagePickerSheetVC" id="BPT-sd-ehu" customClass="ExampleImagePickerSheetVC" customModule="UIImagePickerController" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="ZWG-jE-yzA"/>
+                        <viewControllerLayoutGuide type="bottom" id="OOJ-L7-5qM"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="4L7-z2-ur5">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="yyy-b8-3sM" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="892" y="36"/>
         </scene>
     </scenes>
 </document>

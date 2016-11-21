@@ -17,6 +17,18 @@
 		C2A145FB1DE2CD3600830347 /* ImageSelectionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2A145F51DE2CD3600830347 /* ImageSelectionTests.swift */; };
 		C2A145FC1DE2CD3600830347 /* KIFExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2A145F61DE2CD3600830347 /* KIFExtensions.swift */; };
 		C2A145FD1DE2CD3600830347 /* PresentationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2A145F71DE2CD3600830347 /* PresentationTests.swift */; };
+		C2A146141DE2CE5400830347 /* AnimationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2A146061DE2CE5400830347 /* AnimationController.swift */; };
+		C2A146151DE2CE5400830347 /* ImagePickerAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2A146071DE2CE5400830347 /* ImagePickerAction.swift */; };
+		C2A146161DE2CE5400830347 /* ImagePickerSheetController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2A146081DE2CE5400830347 /* ImagePickerSheetController.swift */; };
+		C2A146171DE2CE5400830347 /* PreviewCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2A1460B1DE2CE5400830347 /* PreviewCollectionView.swift */; };
+		C2A146181DE2CE5400830347 /* PreviewCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2A1460C1DE2CE5400830347 /* PreviewCollectionViewCell.swift */; };
+		C2A146191DE2CE5400830347 /* PreviewCollectionViewLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2A1460D1DE2CE5400830347 /* PreviewCollectionViewLayout.swift */; };
+		C2A1461A1DE2CE5400830347 /* PreviewSupplementaryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2A1460E1DE2CE5400830347 /* PreviewSupplementaryView.swift */; };
+		C2A1461B1DE2CE5400830347 /* SheetActionCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2A1460F1DE2CE5400830347 /* SheetActionCollectionViewCell.swift */; };
+		C2A1461C1DE2CE5400830347 /* SheetCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2A146101DE2CE5400830347 /* SheetCollectionViewCell.swift */; };
+		C2A1461D1DE2CE5400830347 /* SheetCollectionViewLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2A146111DE2CE5400830347 /* SheetCollectionViewLayout.swift */; };
+		C2A1461E1DE2CE5400830347 /* SheetController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2A146121DE2CE5400830347 /* SheetController.swift */; };
+		C2A1461F1DE2CE5400830347 /* SheetPreviewCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2A146131DE2CE5400830347 /* SheetPreviewCollectionViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -43,6 +55,18 @@
 		C2A145F51DE2CD3600830347 /* ImageSelectionTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageSelectionTests.swift; sourceTree = "<group>"; };
 		C2A145F61DE2CD3600830347 /* KIFExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KIFExtensions.swift; sourceTree = "<group>"; };
 		C2A145F71DE2CD3600830347 /* PresentationTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PresentationTests.swift; sourceTree = "<group>"; };
+		C2A146061DE2CE5400830347 /* AnimationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnimationController.swift; sourceTree = "<group>"; };
+		C2A146071DE2CE5400830347 /* ImagePickerAction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImagePickerAction.swift; sourceTree = "<group>"; };
+		C2A146081DE2CE5400830347 /* ImagePickerSheetController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImagePickerSheetController.swift; sourceTree = "<group>"; };
+		C2A1460B1DE2CE5400830347 /* PreviewCollectionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PreviewCollectionView.swift; sourceTree = "<group>"; };
+		C2A1460C1DE2CE5400830347 /* PreviewCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PreviewCollectionViewCell.swift; sourceTree = "<group>"; };
+		C2A1460D1DE2CE5400830347 /* PreviewCollectionViewLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PreviewCollectionViewLayout.swift; sourceTree = "<group>"; };
+		C2A1460E1DE2CE5400830347 /* PreviewSupplementaryView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PreviewSupplementaryView.swift; sourceTree = "<group>"; };
+		C2A1460F1DE2CE5400830347 /* SheetActionCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SheetActionCollectionViewCell.swift; sourceTree = "<group>"; };
+		C2A146101DE2CE5400830347 /* SheetCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SheetCollectionViewCell.swift; sourceTree = "<group>"; };
+		C2A146111DE2CE5400830347 /* SheetCollectionViewLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SheetCollectionViewLayout.swift; sourceTree = "<group>"; };
+		C2A146121DE2CE5400830347 /* SheetController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SheetController.swift; sourceTree = "<group>"; };
+		C2A146131DE2CE5400830347 /* SheetPreviewCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SheetPreviewCollectionViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,6 +109,10 @@
 		441CD0D21DE1D1B400355BD3 /* ImagePickerSheetController */ = {
 			isa = PBXGroup;
 			children = (
+				C2A146061DE2CE5400830347 /* AnimationController.swift */,
+				C2A146071DE2CE5400830347 /* ImagePickerAction.swift */,
+				C2A146081DE2CE5400830347 /* ImagePickerSheetController.swift */,
+				C2A146091DE2CE5400830347 /* Sheet */,
 				441CD0D31DE1D1B400355BD3 /* ImagePickerSheetController.h */,
 				441CD0F51DE1D36500355BD3 /* Images.xcassets */,
 				441CD0D41DE1D1B400355BD3 /* Info.plist */,
@@ -105,6 +133,30 @@
 				C2A145EB1DE2CCED00830347 /* Info.plist */,
 			);
 			path = ImagePickerSheetControllerTests;
+			sourceTree = "<group>";
+		};
+		C2A146091DE2CE5400830347 /* Sheet */ = {
+			isa = PBXGroup;
+			children = (
+				C2A1460A1DE2CE5400830347 /* Preview */,
+				C2A1460F1DE2CE5400830347 /* SheetActionCollectionViewCell.swift */,
+				C2A146101DE2CE5400830347 /* SheetCollectionViewCell.swift */,
+				C2A146111DE2CE5400830347 /* SheetCollectionViewLayout.swift */,
+				C2A146121DE2CE5400830347 /* SheetController.swift */,
+				C2A146131DE2CE5400830347 /* SheetPreviewCollectionViewCell.swift */,
+			);
+			path = Sheet;
+			sourceTree = "<group>";
+		};
+		C2A1460A1DE2CE5400830347 /* Preview */ = {
+			isa = PBXGroup;
+			children = (
+				C2A1460B1DE2CE5400830347 /* PreviewCollectionView.swift */,
+				C2A1460C1DE2CE5400830347 /* PreviewCollectionViewCell.swift */,
+				C2A1460D1DE2CE5400830347 /* PreviewCollectionViewLayout.swift */,
+				C2A1460E1DE2CE5400830347 /* PreviewSupplementaryView.swift */,
+			);
+			path = Preview;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -174,6 +226,7 @@
 					};
 					C2A145E61DE2CCED00830347 = {
 						CreatedOnToolsVersion = 8.1;
+						DevelopmentTeam = W3MH7MTTSB;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -219,6 +272,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C2A1461D1DE2CE5400830347 /* SheetCollectionViewLayout.swift in Sources */,
+				C2A1461A1DE2CE5400830347 /* PreviewSupplementaryView.swift in Sources */,
+				C2A146141DE2CE5400830347 /* AnimationController.swift in Sources */,
+				C2A146161DE2CE5400830347 /* ImagePickerSheetController.swift in Sources */,
+				C2A1461E1DE2CE5400830347 /* SheetController.swift in Sources */,
+				C2A146151DE2CE5400830347 /* ImagePickerAction.swift in Sources */,
+				C2A1461B1DE2CE5400830347 /* SheetActionCollectionViewCell.swift in Sources */,
+				C2A1461C1DE2CE5400830347 /* SheetCollectionViewCell.swift in Sources */,
+				C2A146191DE2CE5400830347 /* PreviewCollectionViewLayout.swift in Sources */,
+				C2A1461F1DE2CE5400830347 /* SheetPreviewCollectionViewCell.swift in Sources */,
+				C2A146171DE2CE5400830347 /* PreviewCollectionView.swift in Sources */,
+				C2A146181DE2CE5400830347 /* PreviewCollectionViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -357,6 +422,7 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = ImagePickerSheetController/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.rockgarden.ImagePickerSheetController;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -377,6 +443,7 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = ImagePickerSheetController/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.rockgarden.ImagePickerSheetController;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -388,6 +455,8 @@
 		C2A145EF1DE2CCED00830347 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				DEVELOPMENT_TEAM = W3MH7MTTSB;
 				INFOPLIST_FILE = ImagePickerSheetControllerTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.rockgarden.ImagePickerSheetControllerTests;
@@ -399,6 +468,8 @@
 		C2A145F01DE2CCED00830347 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				DEVELOPMENT_TEAM = W3MH7MTTSB;
 				INFOPLIST_FILE = ImagePickerSheetControllerTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.rockgarden.ImagePickerSheetControllerTests;
