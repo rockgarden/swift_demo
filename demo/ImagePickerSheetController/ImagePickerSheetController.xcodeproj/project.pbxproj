@@ -9,37 +9,40 @@
 /* Begin PBXBuildFile section */
 		441CD0D51DE1D1B400355BD3 /* ImagePickerSheetController.h in Headers */ = {isa = PBXBuildFile; fileRef = 441CD0D31DE1D1B400355BD3 /* ImagePickerSheetController.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		441CD0F61DE1D36500355BD3 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 441CD0F51DE1D36500355BD3 /* Images.xcassets */; };
-		441CD1051DE1EFC100355BD3 /* ImagePickerSheetController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 441CD0F71DE1EFC100355BD3 /* ImagePickerSheetController.swift */; };
-		441CD1061DE1EFC100355BD3 /* PreviewCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 441CD0FA1DE1EFC100355BD3 /* PreviewCollectionView.swift */; };
-		441CD1071DE1EFC100355BD3 /* PreviewCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 441CD0FB1DE1EFC100355BD3 /* PreviewCollectionViewCell.swift */; };
-		441CD1081DE1EFC100355BD3 /* PreviewCollectionViewLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 441CD0FC1DE1EFC100355BD3 /* PreviewCollectionViewLayout.swift */; };
-		441CD1091DE1EFC100355BD3 /* PreviewSupplementaryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 441CD0FD1DE1EFC100355BD3 /* PreviewSupplementaryView.swift */; };
-		441CD10A1DE1EFC100355BD3 /* SheetActionCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 441CD0FE1DE1EFC100355BD3 /* SheetActionCollectionViewCell.swift */; };
-		441CD10B1DE1EFC100355BD3 /* SheetCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 441CD0FF1DE1EFC100355BD3 /* SheetCollectionViewCell.swift */; };
-		441CD10C1DE1EFC100355BD3 /* SheetCollectionViewLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 441CD1001DE1EFC100355BD3 /* SheetCollectionViewLayout.swift */; };
-		441CD10D1DE1EFC100355BD3 /* SheetController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 441CD1011DE1EFC100355BD3 /* SheetController.swift */; };
-		441CD10E1DE1EFC100355BD3 /* SheetPreviewCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 441CD1021DE1EFC100355BD3 /* SheetPreviewCollectionViewCell.swift */; };
-		441CD10F1DE1EFC100355BD3 /* ImagePickerAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 441CD1031DE1EFC100355BD3 /* ImagePickerAction.swift */; };
-		441CD1101DE1EFC100355BD3 /* AnimationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 441CD1041DE1EFC100355BD3 /* AnimationController.swift */; };
+		C2A145EA1DE2CCED00830347 /* ImagePickerSheetControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2A145E91DE2CCED00830347 /* ImagePickerSheetControllerTests.swift */; };
+		C2A145EC1DE2CCED00830347 /* ImagePickerSheetController.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 441CD0D01DE1D1B400355BD3 /* ImagePickerSheetController.framework */; };
+		C2A145F81DE2CD3600830347 /* ActionHandlingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2A145F21DE2CD3600830347 /* ActionHandlingTests.swift */; };
+		C2A145F91DE2CD3600830347 /* AddingActionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2A145F31DE2CD3600830347 /* AddingActionTests.swift */; };
+		C2A145FA1DE2CD3600830347 /* DismissalTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2A145F41DE2CD3600830347 /* DismissalTests.swift */; };
+		C2A145FB1DE2CD3600830347 /* ImageSelectionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2A145F51DE2CD3600830347 /* ImageSelectionTests.swift */; };
+		C2A145FC1DE2CD3600830347 /* KIFExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2A145F61DE2CD3600830347 /* KIFExtensions.swift */; };
+		C2A145FD1DE2CD3600830347 /* PresentationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2A145F71DE2CD3600830347 /* PresentationTests.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		C2A145ED1DE2CCED00830347 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 441CD0C71DE1D1B300355BD3 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 441CD0CF1DE1D1B400355BD3;
+			remoteInfo = ImagePickerSheetController;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		441CD0D01DE1D1B400355BD3 /* ImagePickerSheetController.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ImagePickerSheetController.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		441CD0D31DE1D1B400355BD3 /* ImagePickerSheetController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ImagePickerSheetController.h; sourceTree = "<group>"; };
 		441CD0D41DE1D1B400355BD3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		441CD0F51DE1D36500355BD3 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		441CD0F71DE1EFC100355BD3 /* ImagePickerSheetController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImagePickerSheetController.swift; sourceTree = "<group>"; };
-		441CD0FA1DE1EFC100355BD3 /* PreviewCollectionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PreviewCollectionView.swift; sourceTree = "<group>"; };
-		441CD0FB1DE1EFC100355BD3 /* PreviewCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PreviewCollectionViewCell.swift; sourceTree = "<group>"; };
-		441CD0FC1DE1EFC100355BD3 /* PreviewCollectionViewLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PreviewCollectionViewLayout.swift; sourceTree = "<group>"; };
-		441CD0FD1DE1EFC100355BD3 /* PreviewSupplementaryView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PreviewSupplementaryView.swift; sourceTree = "<group>"; };
-		441CD0FE1DE1EFC100355BD3 /* SheetActionCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SheetActionCollectionViewCell.swift; sourceTree = "<group>"; };
-		441CD0FF1DE1EFC100355BD3 /* SheetCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SheetCollectionViewCell.swift; sourceTree = "<group>"; };
-		441CD1001DE1EFC100355BD3 /* SheetCollectionViewLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SheetCollectionViewLayout.swift; sourceTree = "<group>"; };
-		441CD1011DE1EFC100355BD3 /* SheetController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SheetController.swift; sourceTree = "<group>"; };
-		441CD1021DE1EFC100355BD3 /* SheetPreviewCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SheetPreviewCollectionViewCell.swift; sourceTree = "<group>"; };
-		441CD1031DE1EFC100355BD3 /* ImagePickerAction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImagePickerAction.swift; sourceTree = "<group>"; };
-		441CD1041DE1EFC100355BD3 /* AnimationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnimationController.swift; sourceTree = "<group>"; };
+		C2A145E71DE2CCED00830347 /* ImagePickerSheetControllerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ImagePickerSheetControllerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		C2A145E91DE2CCED00830347 /* ImagePickerSheetControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePickerSheetControllerTests.swift; sourceTree = "<group>"; };
+		C2A145EB1DE2CCED00830347 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C2A145F21DE2CD3600830347 /* ActionHandlingTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActionHandlingTests.swift; sourceTree = "<group>"; };
+		C2A145F31DE2CD3600830347 /* AddingActionTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddingActionTests.swift; sourceTree = "<group>"; };
+		C2A145F41DE2CD3600830347 /* DismissalTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DismissalTests.swift; sourceTree = "<group>"; };
+		C2A145F51DE2CD3600830347 /* ImageSelectionTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageSelectionTests.swift; sourceTree = "<group>"; };
+		C2A145F61DE2CD3600830347 /* KIFExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KIFExtensions.swift; sourceTree = "<group>"; };
+		C2A145F71DE2CD3600830347 /* PresentationTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PresentationTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -50,6 +53,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		C2A145E41DE2CCED00830347 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C2A145EC1DE2CCED00830347 /* ImagePickerSheetController.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -57,6 +68,7 @@
 			isa = PBXGroup;
 			children = (
 				441CD0D21DE1D1B400355BD3 /* ImagePickerSheetController */,
+				C2A145E81DE2CCED00830347 /* ImagePickerSheetControllerTests */,
 				441CD0D11DE1D1B400355BD3 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -65,6 +77,7 @@
 			isa = PBXGroup;
 			children = (
 				441CD0D01DE1D1B400355BD3 /* ImagePickerSheetController.framework */,
+				C2A145E71DE2CCED00830347 /* ImagePickerSheetControllerTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -72,10 +85,6 @@
 		441CD0D21DE1D1B400355BD3 /* ImagePickerSheetController */ = {
 			isa = PBXGroup;
 			children = (
-				441CD0F71DE1EFC100355BD3 /* ImagePickerSheetController.swift */,
-				441CD1031DE1EFC100355BD3 /* ImagePickerAction.swift */,
-				441CD1041DE1EFC100355BD3 /* AnimationController.swift */,
-				441CD0F81DE1EFC100355BD3 /* Sheet */,
 				441CD0D31DE1D1B400355BD3 /* ImagePickerSheetController.h */,
 				441CD0F51DE1D36500355BD3 /* Images.xcassets */,
 				441CD0D41DE1D1B400355BD3 /* Info.plist */,
@@ -83,28 +92,19 @@
 			path = ImagePickerSheetController;
 			sourceTree = "<group>";
 		};
-		441CD0F81DE1EFC100355BD3 /* Sheet */ = {
+		C2A145E81DE2CCED00830347 /* ImagePickerSheetControllerTests */ = {
 			isa = PBXGroup;
 			children = (
-				441CD0F91DE1EFC100355BD3 /* Preview */,
-				441CD0FE1DE1EFC100355BD3 /* SheetActionCollectionViewCell.swift */,
-				441CD0FF1DE1EFC100355BD3 /* SheetCollectionViewCell.swift */,
-				441CD1001DE1EFC100355BD3 /* SheetCollectionViewLayout.swift */,
-				441CD1011DE1EFC100355BD3 /* SheetController.swift */,
-				441CD1021DE1EFC100355BD3 /* SheetPreviewCollectionViewCell.swift */,
+				C2A145F21DE2CD3600830347 /* ActionHandlingTests.swift */,
+				C2A145F31DE2CD3600830347 /* AddingActionTests.swift */,
+				C2A145F41DE2CD3600830347 /* DismissalTests.swift */,
+				C2A145F51DE2CD3600830347 /* ImageSelectionTests.swift */,
+				C2A145F61DE2CD3600830347 /* KIFExtensions.swift */,
+				C2A145F71DE2CD3600830347 /* PresentationTests.swift */,
+				C2A145E91DE2CCED00830347 /* ImagePickerSheetControllerTests.swift */,
+				C2A145EB1DE2CCED00830347 /* Info.plist */,
 			);
-			path = Sheet;
-			sourceTree = "<group>";
-		};
-		441CD0F91DE1EFC100355BD3 /* Preview */ = {
-			isa = PBXGroup;
-			children = (
-				441CD0FA1DE1EFC100355BD3 /* PreviewCollectionView.swift */,
-				441CD0FB1DE1EFC100355BD3 /* PreviewCollectionViewCell.swift */,
-				441CD0FC1DE1EFC100355BD3 /* PreviewCollectionViewLayout.swift */,
-				441CD0FD1DE1EFC100355BD3 /* PreviewSupplementaryView.swift */,
-			);
-			path = Preview;
+			path = ImagePickerSheetControllerTests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -139,18 +139,41 @@
 			productReference = 441CD0D01DE1D1B400355BD3 /* ImagePickerSheetController.framework */;
 			productType = "com.apple.product-type.framework";
 		};
+		C2A145E61DE2CCED00830347 /* ImagePickerSheetControllerTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C2A145F11DE2CCED00830347 /* Build configuration list for PBXNativeTarget "ImagePickerSheetControllerTests" */;
+			buildPhases = (
+				C2A145E31DE2CCED00830347 /* Sources */,
+				C2A145E41DE2CCED00830347 /* Frameworks */,
+				C2A145E51DE2CCED00830347 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				C2A145EE1DE2CCED00830347 /* PBXTargetDependency */,
+			);
+			name = ImagePickerSheetControllerTests;
+			productName = ImagePickerSheetControllerTests;
+			productReference = C2A145E71DE2CCED00830347 /* ImagePickerSheetControllerTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
 		441CD0C71DE1D1B300355BD3 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastSwiftUpdateCheck = 0810;
 				LastUpgradeCheck = 0810;
 				ORGANIZATIONNAME = rockgarden;
 				TargetAttributes = {
 					441CD0CF1DE1D1B400355BD3 = {
 						CreatedOnToolsVersion = 8.1;
 						LastSwiftMigration = 0810;
+						ProvisioningStyle = Automatic;
+					};
+					C2A145E61DE2CCED00830347 = {
+						CreatedOnToolsVersion = 8.1;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -168,6 +191,7 @@
 			projectRoot = "";
 			targets = (
 				441CD0CF1DE1D1B400355BD3 /* ImagePickerSheetController */,
+				C2A145E61DE2CCED00830347 /* ImagePickerSheetControllerTests */,
 			);
 		};
 /* End PBXProject section */
@@ -181,6 +205,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		C2A145E51DE2CCED00830347 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -188,22 +219,32 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				441CD1101DE1EFC100355BD3 /* AnimationController.swift in Sources */,
-				441CD10C1DE1EFC100355BD3 /* SheetCollectionViewLayout.swift in Sources */,
-				441CD1071DE1EFC100355BD3 /* PreviewCollectionViewCell.swift in Sources */,
-				441CD1091DE1EFC100355BD3 /* PreviewSupplementaryView.swift in Sources */,
-				441CD10E1DE1EFC100355BD3 /* SheetPreviewCollectionViewCell.swift in Sources */,
-				441CD1081DE1EFC100355BD3 /* PreviewCollectionViewLayout.swift in Sources */,
-				441CD1051DE1EFC100355BD3 /* ImagePickerSheetController.swift in Sources */,
-				441CD10D1DE1EFC100355BD3 /* SheetController.swift in Sources */,
-				441CD10A1DE1EFC100355BD3 /* SheetActionCollectionViewCell.swift in Sources */,
-				441CD10F1DE1EFC100355BD3 /* ImagePickerAction.swift in Sources */,
-				441CD10B1DE1EFC100355BD3 /* SheetCollectionViewCell.swift in Sources */,
-				441CD1061DE1EFC100355BD3 /* PreviewCollectionView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C2A145E31DE2CCED00830347 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C2A145F91DE2CD3600830347 /* AddingActionTests.swift in Sources */,
+				C2A145FB1DE2CD3600830347 /* ImageSelectionTests.swift in Sources */,
+				C2A145FD1DE2CD3600830347 /* PresentationTests.swift in Sources */,
+				C2A145F81DE2CD3600830347 /* ActionHandlingTests.swift in Sources */,
+				C2A145EA1DE2CCED00830347 /* ImagePickerSheetControllerTests.swift in Sources */,
+				C2A145FC1DE2CD3600830347 /* KIFExtensions.swift in Sources */,
+				C2A145FA1DE2CD3600830347 /* DismissalTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		C2A145EE1DE2CCED00830347 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 441CD0CF1DE1D1B400355BD3 /* ImagePickerSheetController */;
+			targetProxy = C2A145ED1DE2CCED00830347 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		441CD0D61DE1D1B400355BD3 /* Debug */ = {
@@ -344,6 +385,28 @@
 			};
 			name = Release;
 		};
+		C2A145EF1DE2CCED00830347 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = ImagePickerSheetControllerTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.rockgarden.ImagePickerSheetControllerTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		C2A145F01DE2CCED00830347 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = ImagePickerSheetControllerTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.rockgarden.ImagePickerSheetControllerTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -361,6 +424,15 @@
 			buildConfigurations = (
 				441CD0D91DE1D1B400355BD3 /* Debug */,
 				441CD0DA1DE1D1B400355BD3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C2A145F11DE2CCED00830347 /* Build configuration list for PBXNativeTarget "ImagePickerSheetControllerTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C2A145EF1DE2CCED00830347 /* Debug */,
+				C2A145F01DE2CCED00830347 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 		};
