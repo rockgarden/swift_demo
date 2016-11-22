@@ -50,7 +50,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
          */
 
-        let vc = self.window!.rootViewController as! HandoffVC
+        let vc = self.window!.rootViewController as! FileHandoffVC
         vc.displayDoc(finalurl)
         print("end \(#function)")
         return true

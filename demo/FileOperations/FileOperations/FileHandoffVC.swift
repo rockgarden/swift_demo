@@ -5,11 +5,12 @@
 //  Created by wangkan on 2016/11/22.
 //  Copyright © 2016年 rockgarden. All rights reserved.
 //
+//  http://www.cocoachina.com/ios/20150115/10926.html
 
 import UIKit
 import QuickLook
 
-class HandoffVC: UIViewController, UIDocumentInteractionControllerDelegate, QLPreviewControllerDataSource {
+class FileHandoffVC: UIViewController, UIDocumentInteractionControllerDelegate, QLPreviewControllerDataSource {
 
     @IBOutlet var wv : UIWebView!
     var doc : URL!

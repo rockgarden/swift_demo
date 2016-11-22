@@ -14,7 +14,7 @@
 		449116E41DE4753E00430E31 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 449116E21DE4753E00430E31 /* LaunchScreen.storyboard */; };
 		449116EC1DE4757400430E31 /* FileManagerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 449116EB1DE4757400430E31 /* FileManagerVC.swift */; };
 		449116EE1DE477FF00430E31 /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = 449116ED1DE477FF00430E31 /* Person.swift */; };
-		449116F21DE490E000430E31 /* HandoffVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 449116F11DE490E000430E31 /* HandoffVC.swift */; };
+		449116F21DE490E000430E31 /* FileHandoffVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 449116F11DE490E000430E31 /* FileHandoffVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,7 +27,7 @@
 		449116E51DE4753E00430E31 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		449116EB1DE4757400430E31 /* FileManagerVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FileManagerVC.swift; sourceTree = "<group>"; };
 		449116ED1DE477FF00430E31 /* Person.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Person.swift; sourceTree = "<group>"; };
-		449116F11DE490E000430E31 /* HandoffVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HandoffVC.swift; sourceTree = "<group>"; };
+		449116F11DE490E000430E31 /* FileHandoffVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FileHandoffVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,11 +64,11 @@
 				449116DB1DE4753E00430E31 /* ViewController.swift */,
 				449116DD1DE4753E00430E31 /* Main.storyboard */,
 				449116EB1DE4757400430E31 /* FileManagerVC.swift */,
+				449116F11DE490E000430E31 /* FileHandoffVC.swift */,
 				449116E01DE4753E00430E31 /* Assets.xcassets */,
 				449116E21DE4753E00430E31 /* LaunchScreen.storyboard */,
 				449116E51DE4753E00430E31 /* Info.plist */,
 				449116ED1DE477FF00430E31 /* Person.swift */,
-				449116F11DE490E000430E31 /* HandoffVC.swift */,
 			);
 			path = FileOperations;
 			sourceTree = "<group>";
@@ -149,7 +149,7 @@
 				449116DC1DE4753E00430E31 /* ViewController.swift in Sources */,
 				449116DA1DE4753E00430E31 /* AppDelegate.swift in Sources */,
 				449116EE1DE477FF00430E31 /* Person.swift in Sources */,
-				449116F21DE490E000430E31 /* HandoffVC.swift in Sources */,
+				449116F21DE490E000430E31 /* FileHandoffVC.swift in Sources */,
 				449116EC1DE4757400430E31 /* FileManagerVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

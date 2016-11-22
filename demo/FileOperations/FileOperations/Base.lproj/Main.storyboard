@@ -86,7 +86,7 @@
         <scene sceneID="oq2-vS-uaw">
             <objects>
                 <navigationController id="wfN-zN-Xup" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="Arj-LZ-6V5">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Arj-LZ-6V5">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -124,7 +124,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Udk-9o-PvM">
-                                        <rect key="frame" x="113.5" y="35" width="148" height="32"/>
+                                        <rect key="frame" x="114" y="35" width="148" height="32"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                         <state key="normal" title="Get Documents URL">
                                             <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -134,7 +134,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="m9L-Ek-jgO">
-                                        <rect key="frame" x="35.5" y="70" width="304" height="32"/>
+                                        <rect key="frame" x="36" y="70" width="304" height="32"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                         <state key="normal" title="Get (and Create) Application Support URL">
                                             <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -154,7 +154,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uj3-nl-LWg">
-                                        <rect key="frame" x="94.5" y="140" width="186" height="32"/>
+                                        <rect key="frame" x="95" y="140" width="186" height="32"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                         <state key="normal" title="Get Contents of Directory">
                                             <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -208,10 +208,10 @@
             </objects>
             <point key="canvasLocation" x="1172" y="-99"/>
         </scene>
-        <!--HandoffVC-->
+        <!--File HandoffVC-->
         <scene sceneID="vEu-5t-HeG">
             <objects>
-                <viewController storyboardIdentifier="HandoffVC" id="ldx-mI-C2j" customClass="HandoffVC" customModule="FileOperations" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="FileHandoffVC" id="ldx-mI-C2j" customClass="FileHandoffVC" customModule="FileOperations" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="jrp-sf-lNT"/>
                         <viewControllerLayoutGuide type="bottom" id="x1F-P0-ci9"/>
