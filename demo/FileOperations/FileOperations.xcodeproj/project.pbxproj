@@ -15,6 +15,10 @@
 		449116EC1DE4757400430E31 /* FileManagerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 449116EB1DE4757400430E31 /* FileManagerVC.swift */; };
 		449116EE1DE477FF00430E31 /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = 449116ED1DE477FF00430E31 /* Person.swift */; };
 		449116F21DE490E000430E31 /* FileHandoffVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 449116F11DE490E000430E31 /* FileHandoffVC.swift */; };
+		449116F81DE49D0A00430E31 /* File Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = 449116F41DE49D0A00430E31 /* File Models.swift */; };
+		449116F91DE49D0A00430E31 /* FileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 449116F51DE49D0A00430E31 /* FileManager.swift */; };
+		449116FA1DE49D0A00430E31 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 449116F61DE49D0A00430E31 /* Info.plist */; };
+		449116FC1DE49D1700430E31 /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = 449116FB1DE49D1700430E31 /* README.md */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +32,11 @@
 		449116EB1DE4757400430E31 /* FileManagerVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FileManagerVC.swift; sourceTree = "<group>"; };
 		449116ED1DE477FF00430E31 /* Person.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Person.swift; sourceTree = "<group>"; };
 		449116F11DE490E000430E31 /* FileHandoffVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FileHandoffVC.swift; sourceTree = "<group>"; };
+		449116F41DE49D0A00430E31 /* File Models.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "File Models.swift"; sourceTree = "<group>"; };
+		449116F51DE49D0A00430E31 /* FileManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FileManager.swift; sourceTree = "<group>"; };
+		449116F61DE49D0A00430E31 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		449116F71DE49D0A00430E31 /* IWFileManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IWFileManager.h; sourceTree = "<group>"; };
+		449116FB1DE49D1700430E31 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -44,6 +53,7 @@
 		449116CD1DE4753E00430E31 = {
 			isa = PBXGroup;
 			children = (
+				449116F31DE49D0A00430E31 /* IWFileManager */,
 				449116D81DE4753E00430E31 /* FileOperations */,
 				449116D71DE4753E00430E31 /* Products */,
 			);
@@ -71,6 +81,18 @@
 				449116ED1DE477FF00430E31 /* Person.swift */,
 			);
 			path = FileOperations;
+			sourceTree = "<group>";
+		};
+		449116F31DE49D0A00430E31 /* IWFileManager */ = {
+			isa = PBXGroup;
+			children = (
+				449116FB1DE49D1700430E31 /* README.md */,
+				449116F41DE49D0A00430E31 /* File Models.swift */,
+				449116F51DE49D0A00430E31 /* FileManager.swift */,
+				449116F61DE49D0A00430E31 /* Info.plist */,
+				449116F71DE49D0A00430E31 /* IWFileManager.h */,
+			);
+			path = IWFileManager;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -133,6 +155,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				449116FA1DE49D0A00430E31 /* Info.plist in Resources */,
 				449116E41DE4753E00430E31 /* LaunchScreen.storyboard in Resources */,
 				449116E11DE4753E00430E31 /* Assets.xcassets in Resources */,
 				449116DF1DE4753E00430E31 /* Main.storyboard in Resources */,
@@ -146,10 +169,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				449116F81DE49D0A00430E31 /* File Models.swift in Sources */,
 				449116DC1DE4753E00430E31 /* ViewController.swift in Sources */,
 				449116DA1DE4753E00430E31 /* AppDelegate.swift in Sources */,
+				449116F91DE49D0A00430E31 /* FileManager.swift in Sources */,
 				449116EE1DE477FF00430E31 /* Person.swift in Sources */,
 				449116F21DE490E000430E31 /* FileHandoffVC.swift in Sources */,
+				449116FC1DE49D1700430E31 /* README.md in Sources */,
 				449116EC1DE4757400430E31 /* FileManagerVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
