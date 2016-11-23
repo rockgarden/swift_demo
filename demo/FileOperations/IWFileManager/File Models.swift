@@ -6,6 +6,8 @@
 //  Copyright © 2016 Dylan McArthur. All rights reserved.
 //
 
+import Foundation
+
 public enum FileNodeType {
 	case file, folder
 }
@@ -13,11 +15,8 @@ public enum FileNodeType {
 open class FileNode: CustomStringConvertible {
 	
 	open var name = ""
-	
 	open var type: FileNodeType = .file
-	
 	open var level = 0
-	
 	open var url: URL
 	
 	public init(url: URL, type: FileNodeType) {
@@ -31,7 +30,6 @@ open class FileNode: CustomStringConvertible {
 		for _ in 0..<level {
 			ticks += "- "
 		}
-		
 		return ticks + name + " (\(type)) "
 	}
 	

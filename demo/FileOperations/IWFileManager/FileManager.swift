@@ -6,16 +6,16 @@
 //  Copyright © 2016 Dylan McArthur. All rights reserved.
 //
 
+import Foundation
+
 open class IWFileManager {
 	
 	// MARK: - Singleton
-	
+    
 	open static let sharedManager: IWFileManager = {
 		let fileManager = Foundation.FileManager()
 		let documentsDirectory = fileManager.urls(for: .documentDirectory, in: .userDomainMask)[0]
-		
 		let instance = IWFileManager(fileManager: fileManager, documentsDirectory: documentsDirectory)
-		
 		return instance
 	}()
 	
@@ -27,16 +27,11 @@ open class IWFileManager {
 	// MARK: - Properties
 	
 	public typealias Callback = (URL)->Void
-	
 	let fileManager: Foundation.FileManager
-	
 	let documentsDirectoryURL: URL
-	
 	let coordinationQueue: OperationQueue = {
 		let coordinationQueue = OperationQueue()
-		
 		coordinationQueue.name = "com.dylanthejoel.IWFileManager.fileManager.coordinationQueue"
-		
 		return coordinationQueue
 	}()
 	

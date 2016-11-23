@@ -19,6 +19,16 @@
 		449116F91DE49D0A00430E31 /* FileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 449116F51DE49D0A00430E31 /* FileManager.swift */; };
 		449116FA1DE49D0A00430E31 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 449116F61DE49D0A00430E31 /* Info.plist */; };
 		449116FC1DE49D1700430E31 /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = 449116FB1DE49D1700430E31 /* README.md */; };
+		C29499BC1DE564BE0035CD62 /* DocumentLister.swift in Sources */ = {isa = PBXBuildFile; fileRef = C29499B71DE564BE0035CD62 /* DocumentLister.swift */; };
+		C29499BD1DE564BE0035CD62 /* PeopleDocument.swift in Sources */ = {isa = PBXBuildFile; fileRef = C29499B81DE564BE0035CD62 /* PeopleDocument.swift */; };
+		C29499BE1DE564BE0035CD62 /* PeopleLister.swift in Sources */ = {isa = PBXBuildFile; fileRef = C29499B91DE564BE0035CD62 /* PeopleLister.swift */; };
+		C29499BF1DE564BE0035CD62 /* PeopleLister.xib in Resources */ = {isa = PBXBuildFile; fileRef = C29499BA1DE564BE0035CD62 /* PeopleLister.xib */; };
+		C29499C01DE564BE0035CD62 /* PersonCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C29499BB1DE564BE0035CD62 /* PersonCell.xib */; };
+		C29499C21DE584140035CD62 /* ParseXmlVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C29499C11DE584140035CD62 /* ParseXmlVC.swift */; };
+		C29499C71DE585470035CD62 /* folks.xml in Resources */ = {isa = PBXBuildFile; fileRef = C29499C31DE585470035CD62 /* folks.xml */; };
+		C29499C81DE585470035CD62 /* MyPeopleParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = C29499C41DE585470035CD62 /* MyPeopleParser.swift */; };
+		C29499C91DE585470035CD62 /* MyPersonParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = C29499C51DE585470035CD62 /* MyPersonParser.swift */; };
+		C29499CA1DE585470035CD62 /* MyXMLParserDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C29499C61DE585470035CD62 /* MyXMLParserDelegate.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,6 +47,16 @@
 		449116F61DE49D0A00430E31 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		449116F71DE49D0A00430E31 /* IWFileManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IWFileManager.h; sourceTree = "<group>"; };
 		449116FB1DE49D1700430E31 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		C29499B71DE564BE0035CD62 /* DocumentLister.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DocumentLister.swift; sourceTree = "<group>"; };
+		C29499B81DE564BE0035CD62 /* PeopleDocument.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PeopleDocument.swift; sourceTree = "<group>"; };
+		C29499B91DE564BE0035CD62 /* PeopleLister.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PeopleLister.swift; sourceTree = "<group>"; };
+		C29499BA1DE564BE0035CD62 /* PeopleLister.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PeopleLister.xib; sourceTree = "<group>"; };
+		C29499BB1DE564BE0035CD62 /* PersonCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PersonCell.xib; sourceTree = "<group>"; };
+		C29499C11DE584140035CD62 /* ParseXmlVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParseXmlVC.swift; sourceTree = "<group>"; };
+		C29499C31DE585470035CD62 /* folks.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = folks.xml; sourceTree = "<group>"; };
+		C29499C41DE585470035CD62 /* MyPeopleParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyPeopleParser.swift; sourceTree = "<group>"; };
+		C29499C51DE585470035CD62 /* MyPersonParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyPersonParser.swift; sourceTree = "<group>"; };
+		C29499C61DE585470035CD62 /* MyXMLParserDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyXMLParserDelegate.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,10 +95,20 @@
 				449116DD1DE4753E00430E31 /* Main.storyboard */,
 				449116EB1DE4757400430E31 /* FileManagerVC.swift */,
 				449116F11DE490E000430E31 /* FileHandoffVC.swift */,
+				C29499B71DE564BE0035CD62 /* DocumentLister.swift */,
+				C29499B91DE564BE0035CD62 /* PeopleLister.swift */,
+				C29499BA1DE564BE0035CD62 /* PeopleLister.xib */,
+				C29499BB1DE564BE0035CD62 /* PersonCell.xib */,
+				C29499B81DE564BE0035CD62 /* PeopleDocument.swift */,
+				C29499C11DE584140035CD62 /* ParseXmlVC.swift */,
+				C29499C41DE585470035CD62 /* MyPeopleParser.swift */,
+				C29499C51DE585470035CD62 /* MyPersonParser.swift */,
+				C29499C61DE585470035CD62 /* MyXMLParserDelegate.swift */,
+				449116ED1DE477FF00430E31 /* Person.swift */,
 				449116E01DE4753E00430E31 /* Assets.xcassets */,
+				C29499C31DE585470035CD62 /* folks.xml */,
 				449116E21DE4753E00430E31 /* LaunchScreen.storyboard */,
 				449116E51DE4753E00430E31 /* Info.plist */,
-				449116ED1DE477FF00430E31 /* Person.swift */,
 			);
 			path = FileOperations;
 			sourceTree = "<group>";
@@ -157,8 +187,11 @@
 			files = (
 				449116FA1DE49D0A00430E31 /* Info.plist in Resources */,
 				449116E41DE4753E00430E31 /* LaunchScreen.storyboard in Resources */,
+				C29499C01DE564BE0035CD62 /* PersonCell.xib in Resources */,
+				C29499BF1DE564BE0035CD62 /* PeopleLister.xib in Resources */,
 				449116E11DE4753E00430E31 /* Assets.xcassets in Resources */,
 				449116DF1DE4753E00430E31 /* Main.storyboard in Resources */,
+				C29499C71DE585470035CD62 /* folks.xml in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -169,14 +202,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C29499C21DE584140035CD62 /* ParseXmlVC.swift in Sources */,
 				449116F81DE49D0A00430E31 /* File Models.swift in Sources */,
+				C29499BD1DE564BE0035CD62 /* PeopleDocument.swift in Sources */,
 				449116DC1DE4753E00430E31 /* ViewController.swift in Sources */,
 				449116DA1DE4753E00430E31 /* AppDelegate.swift in Sources */,
+				C29499C91DE585470035CD62 /* MyPersonParser.swift in Sources */,
 				449116F91DE49D0A00430E31 /* FileManager.swift in Sources */,
+				C29499CA1DE585470035CD62 /* MyXMLParserDelegate.swift in Sources */,
+				C29499BE1DE564BE0035CD62 /* PeopleLister.swift in Sources */,
 				449116EE1DE477FF00430E31 /* Person.swift in Sources */,
+				C29499C81DE585470035CD62 /* MyPeopleParser.swift in Sources */,
 				449116F21DE490E000430E31 /* FileHandoffVC.swift in Sources */,
 				449116FC1DE49D1700430E31 /* README.md in Sources */,
 				449116EC1DE4757400430E31 /* FileManagerVC.swift in Sources */,
+				C29499BC1DE564BE0035CD62 /* DocumentLister.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -340,6 +380,7 @@
 				449116EA1DE4753E00430E31 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

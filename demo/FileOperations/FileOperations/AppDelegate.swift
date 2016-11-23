@@ -12,10 +12,20 @@ import UIKit
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-
+    var ubiq : URL!
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        
+        DispatchQueue.global(qos:.default).async {
+            let fm = FileManager.default
+            let ubiq = fm.url(forUbiquityContainerIdentifier:nil)
+            print("ubiq: \(ubiq)")
+            DispatchQueue.main.async {
+                self.ubiq = ubiq
+            }
+        }
+        
         return true
     }
 
@@ -23,14 +33,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         print("start \(#function)")
         print(url)
 
-
         let finalurl = url
 
         // work around bug where Quick Look can no longer preview a document in the inbox
         // okay, they seem to have fixed the bug in iOS 9, cutting for now
 
         /*
-
          let dir = url.URLByDeletingLastPathComponent?.lastPathComponent
          if dir == "Inbox" {
          do {
@@ -47,7 +55,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
          print(error)
          }
          }
-
          */
 
         let vc = self.window!.rootViewController as! FileHandoffVC
