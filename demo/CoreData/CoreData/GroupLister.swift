@@ -4,7 +4,11 @@ import CoreData
 
 class GroupLister: UITableViewController, NSFetchedResultsControllerDelegate {
     
-    var managedObjectContext : NSManagedObjectContext!
+    var managedObjectContext : NSManagedObjectContext! = {
+        let context = App_Delegate.context
+        return context
+        //didSet { managedObjectContext = App_Delegate.context } //init 迟于 return ???
+    }()
     
     lazy var frc: NSFetchedResultsController<Group> = {
         let req: NSFetchRequest<Group> = Group.fetchRequest()
@@ -13,9 +17,9 @@ class GroupLister: UITableViewController, NSFetchedResultsControllerDelegate {
         req.sortDescriptors = [sortDescriptor]
 
         let afrc = NSFetchedResultsController(
-            fetchRequest:req,
-            managedObjectContext:self.managedObjectContext,
-            sectionNameKeyPath:nil, cacheName:nil)
+            fetchRequest: req,
+            managedObjectContext: self.managedObjectContext,
+            sectionNameKeyPath: nil, cacheName: nil)
         afrc.delegate = self
         do {
             try afrc.performFetch()
@@ -25,7 +29,6 @@ class GroupLister: UITableViewController, NSFetchedResultsControllerDelegate {
         }
         return afrc
     }()
-
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -38,11 +41,11 @@ class GroupLister: UITableViewController, NSFetchedResultsControllerDelegate {
         // no need to register cell, comes from storyboard
     }
     
-    func doRefresh(_:AnyObject) {
+    func doRefresh(_: AnyObject) {
         // currently a no-op
     }
     
-    func doAdd(_:AnyObject) {
+    func doAdd(_: AnyObject) {
         let av = UIAlertController(title: "New Group", message: "Enter name:", preferredStyle: .alert)
         av.addTextField {$0.autocapitalizationType = .words}
         av.addAction(UIAlertAction(title: "Cancel", style: .cancel))
@@ -92,6 +95,5 @@ class GroupLister: UITableViewController, NSFetchedResultsControllerDelegate {
         let pl = PeopleLister(group: self.frc.object(at:indexPath))
         self.navigationController!.pushViewController(pl, animated: true)
     }
- 
 
 }

@@ -12,11 +12,12 @@
 		440E065C1DE5DE4400F175DB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 440E065B1DE5DE4400F175DB /* Assets.xcassets */; };
 		440E065F1DE5DE4400F175DB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 440E065D1DE5DE4400F175DB /* LaunchScreen.storyboard */; };
 		440E066C1DE5DF1200F175DB /* GroupLister.swift in Sources */ = {isa = PBXBuildFile; fileRef = 440E06661DE5DF1200F175DB /* GroupLister.swift */; };
-		440E066D1DE5DF1200F175DB /* PeopleGroupsCoreData.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 440E06671DE5DF1200F175DB /* PeopleGroupsCoreData.xcdatamodeld */; };
 		440E066E1DE5DF1200F175DB /* PeopleLister.swift in Sources */ = {isa = PBXBuildFile; fileRef = 440E06691DE5DF1200F175DB /* PeopleLister.swift */; };
 		440E066F1DE5DF1200F175DB /* PeopleLister.xib in Resources */ = {isa = PBXBuildFile; fileRef = 440E066A1DE5DF1200F175DB /* PeopleLister.xib */; };
 		440E06701DE5DF1200F175DB /* PersonCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 440E066B1DE5DF1200F175DB /* PersonCell.xib */; };
 		440E06721DE5E02B00F175DB /* MainVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 440E06711DE5E02B00F175DB /* MainVC.swift */; };
+		C243E4831DE6B337008C9D38 /* CoreDataExample.xcdatamodel in Sources */ = {isa = PBXBuildFile; fileRef = C243E4821DE6B337008C9D38 /* CoreDataExample.xcdatamodel */; };
+		C243E4851DE6CC08008C9D38 /* SearchGroupListerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C243E4841DE6CC08008C9D38 /* SearchGroupListerVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,11 +28,12 @@
 		440E065E1DE5DE4400F175DB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		440E06601DE5DE4400F175DB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		440E06661DE5DF1200F175DB /* GroupLister.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GroupLister.swift; sourceTree = "<group>"; };
-		440E06681DE5DF1200F175DB /* PeopleGroupsCoreData.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = PeopleGroupsCoreData.xcdatamodel; sourceTree = "<group>"; };
 		440E06691DE5DF1200F175DB /* PeopleLister.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PeopleLister.swift; sourceTree = "<group>"; };
 		440E066A1DE5DF1200F175DB /* PeopleLister.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PeopleLister.xib; sourceTree = "<group>"; };
 		440E066B1DE5DF1200F175DB /* PersonCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PersonCell.xib; sourceTree = "<group>"; };
 		440E06711DE5E02B00F175DB /* MainVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainVC.swift; sourceTree = "<group>"; };
+		C243E4821DE6B337008C9D38 /* CoreDataExample.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CoreDataExample.xcdatamodel; sourceTree = "<group>"; };
+		C243E4841DE6CC08008C9D38 /* SearchGroupListerVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchGroupListerVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,8 +72,9 @@
 				440E06691DE5DF1200F175DB /* PeopleLister.swift */,
 				440E066A1DE5DF1200F175DB /* PeopleLister.xib */,
 				440E066B1DE5DF1200F175DB /* PersonCell.xib */,
+				C243E4841DE6CC08008C9D38 /* SearchGroupListerVC.swift */,
 				440E06581DE5DE4400F175DB /* Main.storyboard */,
-				440E06671DE5DF1200F175DB /* PeopleGroupsCoreData.xcdatamodeld */,
+				C243E4821DE6B337008C9D38 /* CoreDataExample.xcdatamodel */,
 				440E065B1DE5DE4400F175DB /* Assets.xcassets */,
 				440E065D1DE5DE4400F175DB /* LaunchScreen.storyboard */,
 				440E06601DE5DE4400F175DB /* Info.plist */,
@@ -154,11 +157,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C243E4851DE6CC08008C9D38 /* SearchGroupListerVC.swift in Sources */,
+				C243E4831DE6B337008C9D38 /* CoreDataExample.xcdatamodel in Sources */,
 				440E06721DE5E02B00F175DB /* MainVC.swift in Sources */,
 				440E066C1DE5DF1200F175DB /* GroupLister.swift in Sources */,
 				440E06551DE5DE4400F175DB /* AppDelegate.swift in Sources */,
 				440E066E1DE5DF1200F175DB /* PeopleLister.swift in Sources */,
-				440E066D1DE5DF1200F175DB /* PeopleGroupsCoreData.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -320,21 +324,9 @@
 				440E06651DE5DE4400F175DB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCVersionGroup section */
-		440E06671DE5DF1200F175DB /* PeopleGroupsCoreData.xcdatamodeld */ = {
-			isa = XCVersionGroup;
-			children = (
-				440E06681DE5DF1200F175DB /* PeopleGroupsCoreData.xcdatamodel */,
-			);
-			currentVersion = 440E06681DE5DF1200F175DB /* PeopleGroupsCoreData.xcdatamodel */;
-			path = PeopleGroupsCoreData.xcdatamodeld;
-			sourceTree = "<group>";
-			versionGroupType = wrapper.xcdatamodel;
-		};
-/* End XCVersionGroup section */
 	};
 	rootObject = 440E06491DE5DE4400F175DB /* Project object */;
 }

@@ -9,32 +9,53 @@
 import UIKit
 import CoreData
 
+let App_Delegate = UIApplication.shared.delegate as! AppDelegate
+
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-
-
+    var context: NSManagedObjectContext!
+    /// Core Data stack
+    lazy var persistentContainer: NSPersistentContainer = {
+        /*
+         The persistent container for the application. This implementation
+         creates and returns a container, having loaded the store for the
+         application to it. This property is optional since there are legitimate
+         error conditions that could cause the creation of the store to fail.
+         */
+        let container = NSPersistentContainer(name: "CoreDataExample")
+        container.loadPersistentStores { desc, err in
+            print(desc)
+            if let err = err {
+                // Replace this implementation with code to handle the error appropriately.
+                // fatalError() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
+                
+                /*
+                 Typical reasons for an error here include:
+                 * The parent directory does not exist, cannot be created, or disallows writing.
+                 * The persistent store is not accessible, due to permissions or data protection when the device is locked.
+                 * The device is out of space.
+                 * The store could not be migrated to the current model version.
+                 Check the error message to determine what the actual problem was.
+                 */
+                fatalError("Unresolved error \(err), \((err as NSError).userInfo)")
+            }
+        }
+        return container
+    }()
+    
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-
-        // Override point for customization after application launch.
-        let nav = self.window!.rootViewController as! UINavigationController
-        let tvc = nav.topViewController as! GroupLister
-        tvc.managedObjectContext = self.persistentContainer.viewContext
+        
+        context = persistentContainer.viewContext
+        
+        /* only for test. Use topViewController send context */
+        //let nav = self.window!.rootViewController as! UINavigationController
+        //let tvc = nav.topViewController as! GroupLister
+        //tvc.managedObjectContext = self.context
         
         return true
     }
-
-    lazy var persistentContainer: NSPersistentContainer = {
-        let con = NSPersistentContainer(name: "PeopleGroupsCoreData")
-        con.loadPersistentStores { desc, err in
-            print(desc)
-            if let err = err {
-                fatalError("Unresolved error \(err)")
-            }
-        }
-        return con
-    }()
 
     func applicationWillResignActive(_ application: UIApplication) {
         // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
@@ -56,8 +77,30 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func applicationWillTerminate(_ application: UIApplication) {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+        // Saves changes in the application's managed object context before the application terminates.
+        try! self.saveContext()
     }
-
+    
+    // MARK: - Core Data Saving support
+    
+    func saveContext() throws {
+        let context = persistentContainer.viewContext
+        if context.hasChanges {
+            try context.save()
+        }
+    }
 
 }
 
+extension Car {
+    func configured(maker _maker: String, model _model: String, owner _owner: Person) -> Self {
+        maker = _maker
+        model = _model
+        owner = _owner
+        return self
+    }
+}
+
+enum ReadDataExceptions : Error{
+    case MoreThanOnePersonCameBack
+}

@@ -7,7 +7,7 @@ class PeopleLister: UITableViewController, NSFetchedResultsControllerDelegate, U
     
     let group : Group
 
-    init(group:Group) {
+    init(group: Group) {
         self.group = group
         super.init(nibName:"PeopleLister", bundle:nil)
     }
@@ -26,7 +26,7 @@ class PeopleLister: UITableViewController, NSFetchedResultsControllerDelegate, U
         req.predicate = pred
         
         let afrc = NSFetchedResultsController(fetchRequest:req,
-            managedObjectContext:self.group.managedObjectContext!,
+            managedObjectContext: self.group.managedObjectContext!,
             sectionNameKeyPath:nil, cacheName:nil)
         afrc.delegate = self
         
@@ -68,14 +68,18 @@ class PeopleLister: UITableViewController, NSFetchedResultsControllerDelegate, U
         return cell
     }
     
-    func doAdd(_:AnyObject) {
+    func doAdd(_: AnyObject) {
         self.tableView.endEditing(true)
         let context = self.frc.managedObjectContext
-        let person = Person(context:context)
+        let person = Person(context: context)
         person.group = self.group
         person.lastName = ""
         person.firstName = ""
         person.timestamp = NSDate()
+        person.cars = NSSet(array: [
+            Car(context: context).configured(maker: "VW", model: "Sharan", owner: person),
+            Car(context: context).configured(maker: "VW", model: "Tiguan", owner: person)
+            ])
         // save context
         do {
             try context.save()
@@ -102,7 +106,6 @@ class PeopleLister: UITableViewController, NSFetchedResultsControllerDelegate, U
             print(error)
             return
         }
-
     }
     
     override func viewWillDisappear(_ animated: Bool) {

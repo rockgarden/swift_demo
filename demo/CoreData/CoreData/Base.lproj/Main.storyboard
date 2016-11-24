@@ -36,6 +36,9 @@
                                                 </label>
                                             </subviews>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="5zH-hi-KCc" kind="show" id="fMy-CW-bwX"/>
+                                        </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" textLabel="WPE-Rd-DBW" style="IBUITableViewCellStyleDefault" id="9yN-kD-TfA">
                                         <rect key="frame" x="0.0" y="44" width="375" height="44"/>
@@ -44,7 +47,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="WPE-Rd-DBW">
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Search Group Lister" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="WPE-Rd-DBW">
                                                     <rect key="frame" x="15" y="0.0" width="345" height="43"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -53,6 +56,9 @@
                                                 </label>
                                             </subviews>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="bd9-9x-Osr" kind="show" id="N8O-BN-r3Q"/>
+                                        </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" textLabel="RXy-Rn-6x4" style="IBUITableViewCellStyleDefault" id="Jzq-Go-mhE">
                                         <rect key="frame" x="0.0" y="88" width="375" height="44"/>
@@ -85,6 +91,49 @@
             </objects>
             <point key="canvasLocation" x="463" y="-180"/>
         </scene>
+        <!--Search Group ListerVC-->
+        <scene sceneID="qls-x8-90f">
+            <objects>
+                <viewController storyboardIdentifier="SearchGroupListerVC" id="bd9-9x-Osr" customClass="SearchGroupListerVC" customModule="CoreDataExample" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="9yg-Hq-rfF"/>
+                        <viewControllerLayoutGuide type="bottom" id="nOe-rj-YNM"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="zLA-QB-K6o">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="RR0-Ca-1J6">
+                                <rect key="frame" x="-0.5" y="72" width="375" height="667"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="RR0-Ca-1J6" firstAttribute="width" secondItem="zLA-QB-K6o" secondAttribute="width" id="SHQ-er-HWq"/>
+                            <constraint firstItem="RR0-Ca-1J6" firstAttribute="top" secondItem="9yg-Hq-rfF" secondAttribute="bottom" constant="8" id="Yfp-TT-fbN"/>
+                            <constraint firstItem="RR0-Ca-1J6" firstAttribute="height" secondItem="zLA-QB-K6o" secondAttribute="height" id="cYM-HI-G3K"/>
+                            <constraint firstItem="RR0-Ca-1J6" firstAttribute="centerX" secondItem="zLA-QB-K6o" secondAttribute="centerX" id="zUv-z8-mMa"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="UZ3-8T-OJX">
+                        <barButtonItem key="leftBarButtonItem" title="Item" id="0vc-0f-cYy"/>
+                        <barButtonItem key="rightBarButtonItem" title="read" id="3JX-TF-Xxn">
+                            <connections>
+                                <action selector="read" destination="bd9-9x-Osr" id="zl6-N1-TcA"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="dataView" destination="RR0-Ca-1J6" id="1mQ-RI-6cd"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="XOw-OU-ocd" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1215" y="-180"/>
+        </scene>
         <!--Navigation Controller-->
         <scene sceneID="McU-xr-myq">
             <objects>
@@ -94,7 +143,7 @@
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
-                        <segue destination="5zH-hi-KCc" kind="relationship" relationship="rootViewController" id="D5I-0i-hxW"/>
+                        <segue destination="UoS-xo-rUE" kind="relationship" relationship="rootViewController" id="FtZ-3m-ob1"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="s7P-5H-wyY" userLabel="First Responder" sceneMemberID="firstResponder"/>
