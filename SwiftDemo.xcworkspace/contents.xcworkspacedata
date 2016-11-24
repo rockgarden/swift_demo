@@ -2,6 +2,12 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:demo/CoreData/CoreDataExample.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:demo/SQLite/SQLite.xcodeproj">
+   </FileRef>
+   <FileRef
       location = "group:demo/NSURLSession/NSURLSession.xcodeproj">
    </FileRef>
    <FileRef
