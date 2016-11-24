@@ -48,7 +48,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         
         context = persistentContainer.viewContext
-        
+
+        try? writeData()
+
         /* only for test. Use topViewController send context */
         //let nav = self.window!.rootViewController as! UINavigationController
         //let tvc = nav.topViewController as! GroupLister
@@ -79,6 +81,32 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
         // Saves changes in the application's managed object context before the application terminates.
         try! self.saveContext()
+    }
+
+    func writeData() throws {
+        let context = persistentContainer.viewContext
+        let group = Group(context: context)
+        group.name = "init"
+        group.uuid = NSUUID().uuidString
+        group.timestamp = NSDate()
+        do {
+            try self.context.save()
+        } catch {
+            //catch the errors here
+        }
+        let person = Person(context: context)
+        person.group = group
+        person.firstName = "Foo"
+        person.lastName = "Bar"
+        person.cars = NSSet(array: [
+            Car(context: context).configured(maker: "VW",
+                                             model: "Sharan",
+                                             owner: person),
+            Car(context: context).configured(maker: "VW",
+                                             model: "Tiguan",
+                                             owner: person)
+            ])
+        try saveContext()
     }
     
     // MARK: - Core Data Saving support

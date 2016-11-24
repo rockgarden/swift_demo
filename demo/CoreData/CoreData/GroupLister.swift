@@ -32,11 +32,9 @@ class GroupLister: UITableViewController, NSFetchedResultsControllerDelegate {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
         let b = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(doAdd))
-        self.navigationItem.rightBarButtonItems = [b]
         let b2 = UIBarButtonItem(barButtonSystemItem: .refresh, target: self, action: #selector(doRefresh))
-        self.navigationItem.leftBarButtonItems = [b2]
+        self.navigationItem.rightBarButtonItems = [b, b2]
         self.title = "Groups"
         // no need to register cell, comes from storyboard
     }
@@ -82,7 +80,7 @@ class GroupLister: UITableViewController, NSFetchedResultsControllerDelegate {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier:"Cell", for: indexPath)
         cell.accessoryType = .disclosureIndicator
-        let group = self.frc.object(at:indexPath)
+        let group = self.frc.object(at: indexPath)
         cell.textLabel!.text = group.name
         return cell
     }
@@ -92,7 +90,7 @@ class GroupLister: UITableViewController, NSFetchedResultsControllerDelegate {
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let pl = PeopleLister(group: self.frc.object(at:indexPath))
+        let pl = PeopleLister(group: self.frc.object(at: indexPath))
         self.navigationController!.pushViewController(pl, animated: true)
     }
 

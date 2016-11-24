@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		448F1A101DE71A040076F6F8 /* colson.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 448F1A0F1DE71A040076F6F8 /* colson.jpg */; };
+		448F1A121DE71B020076F6F8 /* ImageIOVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 448F1A111DE71B020076F6F8 /* ImageIOVC.swift */; };
 		449116DA1DE4753E00430E31 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 449116D91DE4753E00430E31 /* AppDelegate.swift */; };
 		449116DC1DE4753E00430E31 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 449116DB1DE4753E00430E31 /* ViewController.swift */; };
 		449116DF1DE4753E00430E31 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 449116DD1DE4753E00430E31 /* Main.storyboard */; };
@@ -32,6 +34,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		448F1A0F1DE71A040076F6F8 /* colson.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = colson.jpg; sourceTree = "<group>"; };
+		448F1A111DE71B020076F6F8 /* ImageIOVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageIOVC.swift; sourceTree = "<group>"; };
 		449116D61DE4753E00430E31 /* FileOperations.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FileOperations.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		449116D91DE4753E00430E31 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		449116DB1DE4753E00430E31 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -105,8 +109,10 @@
 				C29499C51DE585470035CD62 /* MyPersonParser.swift */,
 				C29499C61DE585470035CD62 /* MyXMLParserDelegate.swift */,
 				449116ED1DE477FF00430E31 /* Person.swift */,
+				448F1A111DE71B020076F6F8 /* ImageIOVC.swift */,
 				449116E01DE4753E00430E31 /* Assets.xcassets */,
 				C29499C31DE585470035CD62 /* folks.xml */,
+				448F1A0F1DE71A040076F6F8 /* colson.jpg */,
 				449116E21DE4753E00430E31 /* LaunchScreen.storyboard */,
 				449116E51DE4753E00430E31 /* Info.plist */,
 			);
@@ -192,6 +198,7 @@
 				449116E11DE4753E00430E31 /* Assets.xcassets in Resources */,
 				449116DF1DE4753E00430E31 /* Main.storyboard in Resources */,
 				C29499C71DE585470035CD62 /* folks.xml in Resources */,
+				448F1A101DE71A040076F6F8 /* colson.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -216,6 +223,7 @@
 				449116F21DE490E000430E31 /* FileHandoffVC.swift in Sources */,
 				449116FC1DE49D1700430E31 /* README.md in Sources */,
 				449116EC1DE4757400430E31 /* FileManagerVC.swift in Sources */,
+				448F1A121DE71B020076F6F8 /* ImageIOVC.swift in Sources */,
 				C29499BC1DE564BE0035CD62 /* DocumentLister.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

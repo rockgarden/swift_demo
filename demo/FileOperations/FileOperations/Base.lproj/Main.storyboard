@@ -5,6 +5,7 @@
     </device>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -97,6 +98,26 @@
                                         </tableViewCellContentView>
                                         <connections>
                                             <segue destination="AXb-rd-DcM" kind="show" id="Utb-HP-wBD"/>
+                                        </connections>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" textLabel="zO6-Ed-10T" style="IBUITableViewCellStyleDefault" id="yiY-It-0PN">
+                                        <rect key="frame" x="0.0" y="176" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="yiY-It-0PN" id="Fy1-hZ-xZe">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Load Image IO" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="zO6-Ed-10T">
+                                                    <rect key="frame" x="15" y="0.0" width="345" height="43"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="fFL-77-yBS" kind="show" id="eEI-df-vmg"/>
                                         </connections>
                                     </tableViewCell>
                                 </cells>
@@ -369,6 +390,79 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gGn-uR-cPB" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-383" y="625"/>
+        </scene>
+        <!--ImageIOVC-->
+        <scene sceneID="anW-XN-LTN">
+            <objects>
+                <viewController storyboardIdentifier="ImageIOVC" id="fFL-77-yBS" customClass="ImageIOVC" customModule="FileOperations" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="SDf-Ro-ZjX"/>
+                        <viewControllerLayoutGuide type="bottom" id="jBW-UH-3p5"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="awI-Z3-1hI">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Wig-JA-2hK">
+                                <rect key="frame" x="0.0" y="64" width="375" height="507"/>
+                            </imageView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="l1v-Xh-Oen">
+                                <rect key="frame" x="16" y="571" width="343" height="96"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vy0-fN-fYh">
+                                        <rect key="frame" x="79.5" y="0.0" width="184" height="32"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                        <state key="normal" title="Read image file metadata">
+                                            <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="doButton:" destination="fFL-77-yBS" eventType="touchUpInside" id="Tg8-Sr-4Oy"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="K52-t5-xk3">
+                                        <rect key="frame" x="78" y="32" width="187" height="32"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                        <state key="normal" title="Display image in interface">
+                                            <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="doButton2:" destination="fFL-77-yBS" eventType="touchUpInside" id="yVP-RJ-thC"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cda-CN-CDH">
+                                        <rect key="frame" x="95" y="64" width="153" height="32"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                        <state key="normal" title="Export image as TIFF">
+                                            <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="doButton3:" destination="fFL-77-yBS" eventType="touchUpInside" id="unl-UP-N2X"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="96" id="cBF-YP-ArZ"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="Wig-JA-2hK" firstAttribute="top" secondItem="SDf-Ro-ZjX" secondAttribute="bottom" id="8V6-RK-qWD"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="l1v-Xh-Oen" secondAttribute="trailing" id="Oqv-dj-C4c"/>
+                            <constraint firstItem="jBW-UH-3p5" firstAttribute="top" secondItem="l1v-Xh-Oen" secondAttribute="bottom" id="ZWu-Xm-DIE"/>
+                            <constraint firstItem="Wig-JA-2hK" firstAttribute="centerX" secondItem="awI-Z3-1hI" secondAttribute="centerX" id="dWd-rO-Eyq"/>
+                            <constraint firstItem="l1v-Xh-Oen" firstAttribute="leading" secondItem="awI-Z3-1hI" secondAttribute="leadingMargin" id="hjG-hQ-LaR"/>
+                            <constraint firstItem="Wig-JA-2hK" firstAttribute="bottom" secondItem="l1v-Xh-Oen" secondAttribute="top" id="qY7-g8-vAd"/>
+                            <constraint firstItem="Wig-JA-2hK" firstAttribute="width" secondItem="awI-Z3-1hI" secondAttribute="width" id="vPq-sc-Mnc"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="iv" destination="Wig-JA-2hK" id="omc-z6-3T8"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="eWn-tm-1Eh" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2062" y="625"/>
         </scene>
     </scenes>
 </document>
