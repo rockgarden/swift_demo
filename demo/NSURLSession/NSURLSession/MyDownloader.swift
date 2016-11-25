@@ -16,11 +16,11 @@ typealias MyDownloaderCompletion = (URL!) -> ()
 class MyDownloader: NSObject {
 	let config: URLSessionConfiguration
 	let q = OperationQueue()
-	let main = true // try false to move delegate methods onto a background thread
+	let main = false // try false to move delegate methods onto a background thread
 	lazy var session: URLSession = {
 		let queue = (self.main ? .main : self.q)
 		return URLSession(configuration: self.config, delegate: self, delegateQueue: queue)
-	}() //若delegate: self 改为 MyDownloaderDelegate
+	}() //若delegate: self 改为 MyDownloaderDelegate()
 
 	init(configuration config: URLSessionConfiguration) {
 		self.config = config
@@ -58,6 +58,41 @@ class MyDownloader: NSObject {
         print("farewell from MyDownloader")
         cancelAllTasks()
     }
+
+    private class MyDownloaderDelegate : NSObject, URLSessionDownloadDelegate {
+
+        func urlSession(_ session: URLSession, downloadTask: URLSessionDownloadTask, didWriteData bytesWritten: Int64, totalBytesWritten writ: Int64, totalBytesExpectedToWrite exp: Int64) {
+            print("downloaded \(100*writ/exp)%")
+        }
+
+        func urlSession(_ session: URLSession, downloadTask: URLSessionDownloadTask, didResumeAtOffset fileOffset: Int64, expectedTotalBytes: Int64) {
+            // unused in this example
+            print("did resume")
+        }
+
+        func urlSession(_ session: URLSession, downloadTask: URLSessionDownloadTask, didFinishDownloadingTo url: URL) {
+            let req = downloadTask.originalRequest!
+            let response = downloadTask.response as! HTTPURLResponse
+            let stat = response.statusCode
+            print("status \(stat)")
+            if stat == 200 {
+                print("download \(req.url!.lastPathComponent)")
+            }
+            let ch = URLProtocol.property(forKey:"ch", in:req) as! MyDownloaderCompletion
+            if isMain {
+                ch(url)
+            } else {
+                DispatchQueue.main.sync {
+                    ch(url)
+                }
+            }
+        }
+
+        deinit {
+            print("farewell from Delegate")
+        }
+    }
+
 }
 
 extension MyDownloader: URLSessionDownloadDelegate {
@@ -95,27 +130,3 @@ extension MyDownloader: URLSessionDownloadDelegate {
         }
 	}
 }
-
-extension MyDownloader {
-
-    private class MyDownloaderDelegate : NSObject, URLSessionDownloadDelegate {
-
-        func urlSession(_ session: URLSession, downloadTask: URLSessionDownloadTask, didFinishDownloadingTo url: URL) {
-            let req = downloadTask.originalRequest!
-            let ch = URLProtocol.property(forKey:"ch", in:req) as! MyDownloaderCompletion
-            if isMain {
-                ch(url)
-            } else {
-                DispatchQueue.main.sync {
-                    ch(url)
-                }
-            }
-        }
-
-        deinit {
-            print("farewell from Delegate")
-        }
-    }
-}
-
-

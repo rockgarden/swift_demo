@@ -69,11 +69,11 @@
 			isa = PBXGroup;
 			children = (
 				C2A1463C1DE5364200830347 /* AppDelegate.swift */,
+				C2A146541DE5375D00830347 /* MainVC.swift */,
 				C2A1464E1DE5365D00830347 /* MyUploader.swift */,
 				C2A1464F1DE5365D00830347 /* MyUploaderVC.swift */,
-				C2A146541DE5375D00830347 /* MainVC.swift */,
-				C2A146551DE5375D00830347 /* MyDownloader.swift */,
 				C2A146561DE5375D00830347 /* MyDownloaderVC.swift */,
+				C2A146551DE5375D00830347 /* MyDownloader.swift */,
 				C2A146571DE5375D00830347 /* MyTableViewController.swift */,
 				C2A146581DE5375D00830347 /* URLSessionDataTaskVC.swift */,
 				C2A1465E1DE5384000830347 /* BackgroundDownloadVC.swift */,
@@ -322,6 +322,7 @@
 				C2A1464D1DE5364300830347 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

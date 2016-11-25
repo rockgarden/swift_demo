@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -64,6 +65,68 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8OW-ym-XZZ" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="-231" y="61"/>
+        </scene>
+        <!--On Demand ResourcesVC-->
+        <scene sceneID="A7a-1P-apl">
+            <objects>
+                <viewController storyboardIdentifier="OnDemandResourcesVC" id="9Wg-xd-V3j" customClass="OnDemandResourcesVC" customModule="BundleResource" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="jat-Sz-kWv"/>
+                        <viewControllerLayoutGuide type="bottom" id="4Yc-QL-zuf"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="zoI-88-rzJ">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sC5-OA-hqM">
+                                <rect key="frame" x="16" y="44" width="102" height="30"/>
+                                <state key="normal" title="Test For Tubby"/>
+                                <connections>
+                                    <action selector="testForTubby" destination="9Wg-xd-V3j" eventType="touchUpInside" id="v7b-f9-jYS"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Nis-gq-Gez">
+                                <rect key="frame" x="16" y="94" width="124" height="30"/>
+                                <state key="normal" title="Start Using Tubby"/>
+                                <connections>
+                                    <action selector="startUsingTubby" destination="9Wg-xd-V3j" eventType="touchUpInside" id="VOi-xS-Pg8"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GEX-Ps-Pjr">
+                                <rect key="frame" x="17" y="146" width="122" height="30"/>
+                                <state key="normal" title="Stop Using Tubby"/>
+                                <connections>
+                                    <action selector="stopUsingTubby" destination="9Wg-xd-V3j" eventType="touchUpInside" id="Y6j-BT-B8H"/>
+                                </connections>
+                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="TopLeft" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="FzC-XB-6gt">
+                                <rect key="frame" x="17" y="205" width="240" height="128"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="128" id="ahn-LV-ha2"/>
+                                    <constraint firstAttribute="width" constant="240" id="toD-rS-OmA"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="FzC-XB-6gt" firstAttribute="leading" secondItem="zoI-88-rzJ" secondAttribute="leadingMargin" constant="1" id="1GF-1w-z6o"/>
+                            <constraint firstItem="GEX-Ps-Pjr" firstAttribute="leading" secondItem="zoI-88-rzJ" secondAttribute="leadingMargin" constant="1" id="3Hg-NJ-9TM"/>
+                            <constraint firstItem="GEX-Ps-Pjr" firstAttribute="top" secondItem="Nis-gq-Gez" secondAttribute="bottom" constant="22" id="F6D-3j-HUt"/>
+                            <constraint firstItem="sC5-OA-hqM" firstAttribute="top" secondItem="jat-Sz-kWv" secondAttribute="bottom" constant="24" id="Ou9-4f-NTy"/>
+                            <constraint firstItem="FzC-XB-6gt" firstAttribute="top" secondItem="GEX-Ps-Pjr" secondAttribute="bottom" constant="29" id="eV9-WM-ANM"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="sC5-OA-hqM" secondAttribute="leading" id="hVX-Ks-v2q"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="Nis-gq-Gez" secondAttribute="leading" id="oZ2-bX-9jC"/>
+                            <constraint firstItem="Nis-gq-Gez" firstAttribute="top" secondItem="sC5-OA-hqM" secondAttribute="bottom" constant="20" id="tnf-WO-r4A"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="iv" destination="FzC-XB-6gt" id="BC0-Bc-z9z"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="M64-fI-QFK" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-231" y="805"/>
         </scene>
     </scenes>
     <resources>

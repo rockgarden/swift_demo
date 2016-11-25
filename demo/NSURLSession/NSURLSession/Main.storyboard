@@ -28,7 +28,7 @@
             </objects>
             <point key="canvasLocation" x="-1111" y="137"/>
         </scene>
-        <!--Table View Controller-->
+        <!--Main-->
         <scene sceneID="V4B-CZ-s70">
             <objects>
                 <tableViewController id="zmu-dQ-ArN" sceneMemberID="viewController">
@@ -95,7 +95,7 @@
                             <outlet property="delegate" destination="zmu-dQ-ArN" id="GAE-EX-Kdd"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="79c-tv-c1N"/>
+                    <navigationItem key="navigationItem" title="Main" id="79c-tv-c1N"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="C63-Gd-i6B" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -114,49 +114,63 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="RVs-KF-leD">
-                                <rect key="frame" x="0.0" y="64" width="375" height="243.5"/>
+                                <rect key="frame" x="0.0" y="64" width="375" height="250"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" secondItem="RVs-KF-leD" secondAttribute="height" multiplier="375:244" id="nUT-dl-tH6"/>
+                                    <constraint firstAttribute="width" secondItem="RVs-KF-leD" secondAttribute="height" multiplier="3:2" id="nUT-dl-tH6"/>
                                 </constraints>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dB6-h0-p7U">
-                                <rect key="frame" x="135" y="327.5" width="105" height="30"/>
-                                <state key="normal" title="Fetch an image">
-                                    <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                </state>
-                                <connections>
-                                    <action selector="doSimpleHTTP:" destination="0Na-Rz-frL" eventType="touchUpInside" id="nIa-qQ-n2Z"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Phb-BP-Kcl">
-                                <rect key="frame" x="76" y="377.5" width="223" height="30"/>
-                                <state key="normal" title="Perform elaborate HTTP request">
-                                    <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                </state>
-                                <connections>
-                                    <action selector="doElaborateHTTP:" destination="0Na-Rz-frL" eventType="touchUpInside" id="nQU-1d-XnN"/>
-                                </connections>
-                            </button>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="gSn-QF-SwU">
+                                <rect key="frame" x="16" y="533" width="343" height="90"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dB6-h0-p7U">
+                                        <rect key="frame" x="82" y="0.0" width="179" height="30"/>
+                                        <state key="normal" title="smple htto fetch an image">
+                                            <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="doSimpleHTTP:" destination="0Na-Rz-frL" eventType="touchUpInside" id="nIa-qQ-n2Z"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uLT-Lc-q06">
+                                        <rect key="frame" x="51" y="30" width="241" height="30"/>
+                                        <state key="normal" title="Simple HTTP and return something">
+                                            <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="doElaborateHTTP:" destination="0Na-Rz-frL" eventType="touchUpInside" id="Q9D-rk-wKm"/>
+                                            <action selector="doSimpleHTTPandReturn" destination="0Na-Rz-frL" eventType="touchUpInside" id="2gJ-Rv-z0F"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Phb-BP-Kcl">
+                                        <rect key="frame" x="60" y="60" width="223" height="30"/>
+                                        <state key="normal" title="Perform elaborate HTTP request">
+                                            <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="doElaborateHTTP:" destination="0Na-Rz-frL" eventType="touchUpInside" id="nQU-1d-XnN"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="RVs-KF-leD" firstAttribute="top" secondItem="6d6-mW-gJg" secondAttribute="bottom" id="5YF-G7-QQK"/>
-                            <constraint firstItem="dB6-h0-p7U" firstAttribute="centerX" secondItem="vdu-1h-1TN" secondAttribute="centerX" id="Cwk-Vq-lBf"/>
-                            <constraint firstItem="dB6-h0-p7U" firstAttribute="top" secondItem="RVs-KF-leD" secondAttribute="bottom" constant="20" id="LUe-pg-JMS"/>
-                            <constraint firstItem="Phb-BP-Kcl" firstAttribute="top" secondItem="dB6-h0-p7U" secondAttribute="bottom" constant="20" id="Z3z-ew-etB"/>
+                            <constraint firstItem="BHR-7g-dTa" firstAttribute="top" secondItem="gSn-QF-SwU" secondAttribute="bottom" id="ISY-Bx-zyG"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="gSn-QF-SwU" secondAttribute="trailing" id="VV1-XT-Hqj"/>
+                            <constraint firstItem="gSn-QF-SwU" firstAttribute="leading" secondItem="vdu-1h-1TN" secondAttribute="leadingMargin" id="WNA-8M-OlI"/>
                             <constraint firstItem="RVs-KF-leD" firstAttribute="width" secondItem="vdu-1h-1TN" secondAttribute="width" id="czZ-Eb-ObB"/>
                             <constraint firstItem="RVs-KF-leD" firstAttribute="centerX" secondItem="vdu-1h-1TN" secondAttribute="centerX" id="jit-FG-C2f"/>
-                            <constraint firstItem="Phb-BP-Kcl" firstAttribute="centerX" secondItem="vdu-1h-1TN" secondAttribute="centerX" id="l8Z-ys-4R9"/>
                         </constraints>
                     </view>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" id="njk-hf-vde">
-                        <barButtonItem key="leftBarButtonItem" title="Background" id="HfW-Je-F0d">
-                            <connections>
-                                <segue destination="WcF-dU-6Wa" kind="show" id="7fc-SA-nlS"/>
-                            </connections>
-                        </barButtonItem>
                         <rightBarButtonItems>
+                            <barButtonItem title="Background" id="HfW-Je-F0d">
+                                <connections>
+                                    <segue destination="WcF-dU-6Wa" kind="show" id="7fc-SA-nlS"/>
+                                </connections>
+                            </barButtonItem>
                             <barButtonItem title="DataTask" id="afw-0x-6h1">
                                 <connections>
                                     <segue destination="Sl6-cu-EHP" kind="show" id="77t-TP-Y4G"/>

@@ -78,7 +78,7 @@ class MyTableViewController: UITableViewController, UITableViewDataSourcePrefetc
 
 	override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 		let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
-		let m = self.model[(indexPath as NSIndexPath).row]
+		let m = self.model[indexPath.row]
 		cell.textLabel!.text = m.text
 
         if #available(iOS 10.0, *) {
@@ -114,7 +114,7 @@ class MyTableViewController: UITableViewController, UITableViewDataSourcePrefetc
 
     // uncomment to try expunging
 	override func tableView(_ tableView: UITableView, didEndDisplaying cell: UITableViewCell, forRowAt indexPath: IndexPath) {
-		let m = self.model[(indexPath as NSIndexPath).row]
+		let m = self.model[indexPath.row]
 
         if #available(iOS 10.0, *) {
             if let task = m.task {
