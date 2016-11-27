@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		44AA0DF11DEB09D400BE61E9 /* MandelbrotNoThreadingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44AA0DF01DEB09D400BE61E9 /* MandelbrotNoThreadingVC.swift */; };
+		44AA0DF51DEB147900BE61E9 /* MandelbrotManualThreadingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44AA0DF41DEB147900BE61E9 /* MandelbrotManualThreadingVC.swift */; };
+		44AA0DF71DEB17AC00BE61E9 /* MandelbrotOperationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44AA0DF61DEB17AC00BE61E9 /* MandelbrotOperationVC.swift */; };
 		C20379F51DD43FB100631D6F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C20379F41DD43FB100631D6F /* AppDelegate.swift */; };
 		C20379F71DD43FB100631D6F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C20379F61DD43FB100631D6F /* ViewController.swift */; };
 		C20379FA1DD43FB200631D6F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C20379F81DD43FB200631D6F /* Main.storyboard */; };
@@ -17,6 +20,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		44AA0DF01DEB09D400BE61E9 /* MandelbrotNoThreadingVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MandelbrotNoThreadingVC.swift; sourceTree = "<group>"; };
+		44AA0DF41DEB147900BE61E9 /* MandelbrotManualThreadingVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MandelbrotManualThreadingVC.swift; sourceTree = "<group>"; };
+		44AA0DF61DEB17AC00BE61E9 /* MandelbrotOperationVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MandelbrotOperationVC.swift; sourceTree = "<group>"; };
 		C20379F11DD43FB100631D6F /* Draw.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Draw.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C20379F41DD43FB100631D6F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C20379F61DD43FB100631D6F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -66,6 +72,9 @@
 				C20379FB1DD43FB200631D6F /* Assets.xcassets */,
 				C20379FD1DD43FB200631D6F /* LaunchScreen.storyboard */,
 				C2037A001DD43FB200631D6F /* Info.plist */,
+				44AA0DF01DEB09D400BE61E9 /* MandelbrotNoThreadingVC.swift */,
+				44AA0DF41DEB147900BE61E9 /* MandelbrotManualThreadingVC.swift */,
+				44AA0DF61DEB17AC00BE61E9 /* MandelbrotOperationVC.swift */,
 			);
 			path = Draw;
 			sourceTree = "<group>";
@@ -143,8 +152,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				44AA0DF11DEB09D400BE61E9 /* MandelbrotNoThreadingVC.swift in Sources */,
 				C20379F71DD43FB100631D6F /* ViewController.swift in Sources */,
+				44AA0DF51DEB147900BE61E9 /* MandelbrotManualThreadingVC.swift in Sources */,
 				C20379F51DD43FB100631D6F /* AppDelegate.swift in Sources */,
+				44AA0DF71DEB17AC00BE61E9 /* MandelbrotOperationVC.swift in Sources */,
 				C2037A071DD43FCF00631D6F /* Views.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -307,6 +319,7 @@
 				C2037A051DD43FB200631D6F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

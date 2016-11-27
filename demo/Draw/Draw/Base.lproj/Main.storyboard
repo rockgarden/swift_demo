@@ -1,18 +1,140 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="gwX-No-a5z">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="N30-Mn-VVg">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
+        <!--Root View Controller-->
+        <scene sceneID="8Wx-kB-w66">
+            <objects>
+                <tableViewController id="gSU-kz-Iz6" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="i6a-tD-Iyt">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <sections>
+                            <tableViewSection id="Mo8-NG-dbn">
+                                <cells>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" textLabel="btq-nm-ZU5" style="IBUITableViewCellStyleDefault" id="SoZ-ou-bPm">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="SoZ-ou-bPm" id="fmA-nD-02J">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Core Graphics Draw" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="btq-nm-ZU5">
+                                                    <rect key="frame" x="15" y="0.0" width="345" height="43"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="gwX-No-a5z" kind="show" id="lt6-ql-9hq"/>
+                                        </connections>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" textLabel="gep-Kc-eww" style="IBUITableViewCellStyleDefault" id="eAZ-BG-UCY">
+                                        <rect key="frame" x="0.0" y="44" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="eAZ-BG-UCY" id="19o-4Q-udZ">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Draw mandelbrot no threading" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="gep-Kc-eww">
+                                                    <rect key="frame" x="15" y="0.0" width="345" height="43"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="ctn-Qh-ODH" kind="show" id="3h2-GY-Fyn"/>
+                                        </connections>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" textLabel="AQj-0E-4yJ" style="IBUITableViewCellStyleDefault" id="Tq2-Ny-fqD">
+                                        <rect key="frame" x="0.0" y="88" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Tq2-Ny-fqD" id="9qw-XZ-GXq">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Draw mandelbrot manual threading" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="AQj-0E-4yJ">
+                                                    <rect key="frame" x="15" y="0.0" width="345" height="43"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="gMX-Ct-enf" kind="show" id="jhV-yz-TAK"/>
+                                        </connections>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" textLabel="IE8-kJ-VMj" style="IBUITableViewCellStyleDefault" id="wFD-NY-xH1">
+                                        <rect key="frame" x="0.0" y="132" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="wFD-NY-xH1" id="pbF-qF-54n">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Draw mandelbrot operation" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="IE8-kJ-VMj">
+                                                    <rect key="frame" x="15" y="0.0" width="345" height="43"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="82w-aq-TjE" kind="show" id="HM1-2S-VJa"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                        </sections>
+                        <connections>
+                            <outlet property="dataSource" destination="gSU-kz-Iz6" id="brt-WQ-c6x"/>
+                            <outlet property="delegate" destination="gSU-kz-Iz6" id="bxp-yo-xfQ"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Root View Controller" id="dF0-8o-1J7"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="kEK-6f-Jpf" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-153" y="116"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="YJR-uI-SnR">
+            <objects>
+                <navigationController storyboardIdentifier="initNav" id="N30-Mn-VVg" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="8uX-IV-114">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="gSU-kz-Iz6" kind="relationship" relationship="rootViewController" id="bhQ-xd-fwd"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="NX1-q8-Bva" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-889" y="116"/>
+        </scene>
         <!--View Controller-->
         <scene sceneID="kKl-aI-iid">
             <objects>
-                <viewController id="gwX-No-a5z" customClass="ViewController" customModule="ch15p411sixBlueCircles" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="gwX-No-a5z" customClass="ViewController" customModule="Draw" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="23Y-dG-nfr"/>
                         <viewControllerLayoutGuide type="bottom" id="5WT-oT-b2z"/>
@@ -21,40 +143,186 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="riA-ri-Nyh" customClass="MyView1" customModule="ch15p411sixBlueCircles" customModuleProvider="target">
-                                <rect key="frame" x="37" y="41" width="100" height="100"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
-                            </view>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="n4r-ww-H9a" customClass="MyView2" customModule="ch15p411sixBlueCircles" customModuleProvider="target">
-                                <rect key="frame" x="184" y="41" width="100" height="100"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
-                            </view>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bRz-ZT-qOe" customClass="MyView3" customModule="ch15p411sixBlueCircles" customModuleProvider="target">
-                                <rect key="frame" x="37" y="175" width="100" height="100"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
-                            </view>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="yZv-xl-xdg" customClass="MyView4" customModule="ch15p411sixBlueCircles" customModuleProvider="target">
-                                <rect key="frame" x="184" y="175" width="100" height="100"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
-                            </view>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="KrT-rJ-saw" customClass="MyImageView1" customModule="ch15p411sixBlueCircles" customModuleProvider="target">
-                                <rect key="frame" x="37" y="308" width="100" height="100"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Wb3-8K-BHB" customClass="MyImageView2" customModule="ch15p411sixBlueCircles" customModuleProvider="target">
-                                <rect key="frame" x="184" y="308" width="100" height="100"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="cIT-Jz-8yO">
+                                <rect key="frame" x="16" y="64" width="343" height="603"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="y8h-9y-n7F">
+                                        <rect key="frame" x="0.0" y="0.0" width="343" height="201"/>
+                                        <subviews>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="riA-ri-Nyh" customClass="MyView1" customModule="Draw" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="0.0" width="171.5" height="201"/>
+                                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
+                                            </view>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="n4r-ww-H9a" customClass="MyView2" customModule="Draw" customModuleProvider="target">
+                                                <rect key="frame" x="171.5" y="0.0" width="171.5" height="201"/>
+                                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
+                                            </view>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="Nzv-zn-SUC">
+                                        <rect key="frame" x="0.0" y="201" width="343" height="201"/>
+                                        <subviews>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bRz-ZT-qOe" customClass="MyView3" customModule="Draw" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="0.0" width="171.5" height="201"/>
+                                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
+                                            </view>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yZv-xl-xdg" customClass="MyView4" customModule="Draw" customModuleProvider="target">
+                                                <rect key="frame" x="171.5" y="0.0" width="171.5" height="201"/>
+                                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
+                                            </view>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="j5V-IR-GLj">
+                                        <rect key="frame" x="0.0" y="402" width="343" height="201"/>
+                                        <subviews>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="KrT-rJ-saw" customClass="MyImageView1" customModule="Draw" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="0.0" width="171.5" height="201"/>
+                                            </imageView>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Wb3-8K-BHB" customClass="MyImageView2" customModule="Draw" customModuleProvider="target">
+                                                <rect key="frame" x="171.5" y="0.0" width="171.5" height="201"/>
+                                            </imageView>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="y8h-9y-n7F" firstAttribute="leading" secondItem="cIT-Jz-8yO" secondAttribute="leading" id="RbK-98-oPM"/>
+                                    <constraint firstAttribute="trailing" secondItem="y8h-9y-n7F" secondAttribute="trailing" id="xkG-c3-Oq8"/>
+                                </constraints>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="leadingMargin" secondItem="cIT-Jz-8yO" secondAttribute="leading" id="G9Q-RF-uR7"/>
+                            <constraint firstItem="cIT-Jz-8yO" firstAttribute="top" secondItem="23Y-dG-nfr" secondAttribute="bottom" id="GKt-Ls-dib"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="cIT-Jz-8yO" secondAttribute="trailing" id="bHO-Ah-4bq"/>
+                            <constraint firstItem="5WT-oT-b2z" firstAttribute="top" secondItem="cIT-Jz-8yO" secondAttribute="bottom" id="qyI-Qo-gaE"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zUr-Ms-BT3" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="698" y="116"/>
+        </scene>
+        <!--Mandelbrot No ThreadingVC-->
+        <scene sceneID="0qe-3c-kzC">
+            <objects>
+                <viewController storyboardIdentifier="MandelbrotNoThreadingVC" id="ctn-Qh-ODH" customClass="MandelbrotNoThreadingVC" customModule="Draw" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="8Rv-FI-Q8p"/>
+                        <viewControllerLayoutGuide type="bottom" id="gwu-WA-C9l"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="dvJ-9Q-zOT">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" restorationIdentifier="MyMandelbrotView" translatesAutoresizingMaskIntoConstraints="NO" id="ss2-I1-SJV" customClass="MyMandelbrotView" customModule="Draw" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="ss2-I1-SJV" secondAttribute="trailing" id="9aw-Do-7yu"/>
+                            <constraint firstItem="ss2-I1-SJV" firstAttribute="top" secondItem="8Rv-FI-Q8p" secondAttribute="bottom" id="HBy-14-OSY"/>
+                            <constraint firstItem="gwu-WA-C9l" firstAttribute="top" secondItem="ss2-I1-SJV" secondAttribute="bottom" id="JMj-cA-1f1"/>
+                            <constraint firstItem="ss2-I1-SJV" firstAttribute="leading" secondItem="dvJ-9Q-zOT" secondAttribute="leading" id="cl1-Ib-MAk"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="5zV-nY-hhy">
+                        <barButtonItem key="rightBarButtonItem" title="Draw That Puppy" id="lSz-R4-67F">
+                            <connections>
+                                <action selector="doButton:" destination="ctn-Qh-ODH" id="2ow-XP-Ecu"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="mv" destination="ss2-I1-SJV" id="0Jj-Fq-qWU"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="uY1-lc-dq2" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="666" y="866"/>
+        </scene>
+        <!--Mandelbrot Manual ThreadingVC-->
+        <scene sceneID="t50-DM-wSd">
+            <objects>
+                <viewController storyboardIdentifier="MandelbrotManualThreadingVC" id="gMX-Ct-enf" customClass="MandelbrotManualThreadingVC" customModule="Draw" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Eth-0H-RqF"/>
+                        <viewControllerLayoutGuide type="bottom" id="cs3-5X-MU7"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="E7m-ee-r0z">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" restorationIdentifier="MyMandelbrotViewMT" translatesAutoresizingMaskIntoConstraints="NO" id="Qp2-ma-Riu" customClass="MyMandelbrotViewMT" customModule="Draw" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="cs3-5X-MU7" firstAttribute="top" secondItem="Qp2-ma-Riu" secondAttribute="bottom" id="9Bl-hX-kDv"/>
+                            <constraint firstItem="Qp2-ma-Riu" firstAttribute="top" secondItem="Eth-0H-RqF" secondAttribute="bottom" id="lIr-z5-TYV"/>
+                            <constraint firstItem="Qp2-ma-Riu" firstAttribute="leading" secondItem="E7m-ee-r0z" secondAttribute="leading" id="ttu-FH-b6K"/>
+                            <constraint firstAttribute="trailing" secondItem="Qp2-ma-Riu" secondAttribute="trailing" id="yJU-t2-4Mx"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="I3n-LB-NwS">
+                        <barButtonItem key="rightBarButtonItem" title="Draw That Puppy" id="dEg-ll-ZcN">
+                            <connections>
+                                <action selector="doButton:" destination="gMX-Ct-enf" id="jNd-Jt-cGi"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="mv" destination="Qp2-ma-Riu" id="GgC-zp-SRh"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="xcP-IU-zAs" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-154" y="866"/>
+        </scene>
+        <!--Mandelbrot OperationVC-->
+        <scene sceneID="OP7-el-GWM">
+            <objects>
+                <viewController storyboardIdentifier="MandelbrotOperationVC" id="82w-aq-TjE" customClass="MandelbrotOperationVC" customModule="Draw" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="ZNO-uD-KNL"/>
+                        <viewControllerLayoutGuide type="bottom" id="1JK-qp-V2w"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="b05-V4-Ve8">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" restorationIdentifier="MyMandelbrotViewMT" translatesAutoresizingMaskIntoConstraints="NO" id="bhh-SX-eni" customClass="MyMandelbrotViewMT" customModule="Draw" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="bhh-SX-eni" firstAttribute="leading" secondItem="b05-V4-Ve8" secondAttribute="leading" id="1cl-7X-QSi"/>
+                            <constraint firstItem="bhh-SX-eni" firstAttribute="top" secondItem="ZNO-uD-KNL" secondAttribute="bottom" id="Fdc-Jz-3V2"/>
+                            <constraint firstAttribute="trailing" secondItem="bhh-SX-eni" secondAttribute="trailing" id="L56-rV-xrt"/>
+                            <constraint firstItem="1JK-qp-V2w" firstAttribute="top" secondItem="bhh-SX-eni" secondAttribute="bottom" id="bZd-df-ak3"/>
+                            <constraint firstItem="bhh-SX-eni" firstAttribute="top" secondItem="ZNO-uD-KNL" secondAttribute="bottom" id="iaF-NT-9He"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="kGj-Jo-UIF">
+                        <barButtonItem key="rightBarButtonItem" title="Draw That Puppy" id="Y26-a2-gCD">
+                            <connections>
+                                <action selector="doButton:" destination="82w-aq-TjE" id="zRF-1p-eUs"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="mv" destination="bhh-SX-eni" id="RpH-6k-Sre"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vHj-we-F5S" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-890" y="866"/>
         </scene>
     </scenes>
 </document>
