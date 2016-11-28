@@ -2,6 +2,9 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:demo/GCD/GCD.xcodeproj">
+   </FileRef>
+   <FileRef
       location = "group:demo/NetServiceBrowser/NetServiceBrowser.xcodeproj">
    </FileRef>
    <FileRef
