@@ -76,7 +76,7 @@ class LocationGeocodingVC: UIViewController, MKMapViewDelegate, UISearchBarDeleg
         geo.geocodeAddressString(s!) {
             placemarks,error in
             guard let placemarks = placemarks else {
-                print(error?.localizedDescription)
+                print(error?.localizedDescription as Any)
                 return
             }
             self.map.showsUserLocation = false
@@ -102,7 +102,7 @@ class LocationGeocodingVC: UIViewController, MKMapViewDelegate, UISearchBarDeleg
         search.start {
             response,error in
             guard let response = response else {
-                print(error)
+                print(error as Any)
                 return
             }
             self.map.showsUserLocation = false
@@ -133,7 +133,7 @@ class LocationGeocodingVC: UIViewController, MKMapViewDelegate, UISearchBarDeleg
         search.start {
             response,error in
             guard let response = response else {
-                print(error)
+                print(error as Any)
                 return
             }
             print("Got restaurant address")
@@ -145,7 +145,7 @@ class LocationGeocodingVC: UIViewController, MKMapViewDelegate, UISearchBarDeleg
             dir.calculate {
                 response,error in
                 guard let response = response else {
-                    print(error)
+                    print(error as Any)
                     return
                 }
                 print("got directions")

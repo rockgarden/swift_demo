@@ -15,6 +15,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDele
     @IBOutlet weak var latitude: UILabel!
     @IBOutlet weak var longitude: UILabel!
 	@IBOutlet weak var myMap: MKMapView!
+    @IBOutlet var headingLab : UILabel!
 
 	let locationManager = CLLocationManager()
 	var myLatitude: CLLocationDegrees!
@@ -22,6 +23,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDele
 	var finalLatitude: CLLocationDegrees!
 	var finalLongitude: CLLocationDegrees!
 	var distance: CLLocationDistance!
+    var updating = false
 
 	override func viewDidLoad() {
 		super.viewDidLoad()
@@ -113,6 +115,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDele
 
 	func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
 		print("Error while updating location " + error.localizedDescription)
+        self.doStop(nil)
 	}
 
 	// distance between two points
@@ -177,6 +180,58 @@ extension ViewController {
         return pinView
     }
 
+}
+
+extension ViewController {
+
+    @IBAction func doStart (_ sender: Any!) {
+        guard CLLocationManager.headingAvailable() else {return} // no hardware
+        if self.updating {doStop(nil); return}
+        if self.locationManager.delegate == nil {self.locationManager.delegate = self}
+
+        print("starting")
+        self.locationManager.headingFilter = 5
+        self.locationManager.headingOrientation = .portrait
+        self.updating = true
+        // NO AUTH NEEDED!
+        // the heading part works just fine even if Location Services is turned off
+        // and if it is turned on, we will get true-north
+        // seems like a major bug to me
+        self.locationManager.startUpdatingHeading()
+    }
+
+    func doStop (_ sender: Any!) {
+        self.locationManager.stopUpdatingHeading()
+        self.headingLab.text = ""
+        self.updating = false
+    }
+
+    func locationManager(_ manager: CLLocationManager, didUpdateHeading newHeading: CLHeading) {
+        var h = newHeading.magneticHeading
+        let h2 = newHeading.trueHeading // -1 if no location info
+        print("\(h) \(h2) ")
+        if h2 >= 0 {
+            h = h2
+        }
+        let cards = ["N", "NE", "E", "SE", "S", "SW", "W", "NW"]
+        var dir = "N"
+        for (ix, card) in cards.enumerated() {
+            if h < 45.0/2.0 + 45.0*Double(ix) {
+                dir = card
+                break
+            }
+        }
+        if self.headingLab.text != dir {
+            self.headingLab.text = dir
+        }
+        print(dir)
+    }
+
+    func locationManagerShouldDisplayHeadingCalibration(_ manager: CLLocationManager) -> Bool {
+        print("he asked me, he asked me")
+        return true // if you want the calibration dialog to be able to appear
+    }
 
 }
+
 
