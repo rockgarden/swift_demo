@@ -2,21 +2,16 @@
 import UIKit
 import MapKit
 
-func delay(_ delay: Double, closure: @escaping () -> ()) {
-    DispatchQueue.main.asyncAfter(
-        deadline: DispatchTime.now() + Double(Int64(delay * Double(NSEC_PER_SEC))) / Double(NSEC_PER_SEC), execute: closure)
-}
-
 class MapVC: UIViewController, MKMapViewDelegate {
     
-    let which = 6 // 1...10
+    let which = 5 // 1...10
     
     @IBOutlet var map: MKMapView!
     var annloc: CLLocationCoordinate2D!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.map.tintColor = UIColor.green
+        self.map.tintColor = .green
         let loc = CLLocationCoordinate2DMake(34.927752, -120.217608)
         let span = MKCoordinateSpanMake(0.015, 0.015)
         let reg = MKCoordinateRegionMake(loc, span)
@@ -103,7 +98,7 @@ class MapVC: UIViewController, MKMapViewDelegate {
             over.path = UIBezierPath(cgPath: p)
             // add the overlay to the map
             self.map.add(over)
-            // println(self.map.overlays)
+            // print(self.map.overlays)
         }
         if which == 10 {
             let lat = self.annloc.latitude
@@ -254,13 +249,12 @@ class MapVC: UIViewController, MKMapViewDelegate {
         let p = MKPlacemark(coordinate: self.annloc, addressDictionary: nil)
         let mi = MKMapItem(placemark: p)
         mi.name = "A Great Place to Dirt Bike" // label to appear in Maps app
-        // setting the span seems to have no effect
-        let opts = [
+        // this now works!
+        mi.openInMaps(launchOptions:[
             MKLaunchOptionsMapTypeKey: MKMapType.standard.rawValue,
-            //            MKLaunchOptionsMapCenterKey: NSValue(MKCoordinate:self.map.region.center),
-            //            MKLaunchOptionsMapSpanKey: NSValue(MKCoordinateSpan:self.map.region.span)
-        ]
-        mi.openInMaps(launchOptions: opts)
+            MKLaunchOptionsMapCenterKey: self.map.region.center,
+            MKLaunchOptionsMapSpanKey: self.map.region.span
+            ])
         
     }
     
@@ -272,6 +266,10 @@ class MapVC: UIViewController, MKMapViewDelegate {
             view.dragState = .none
         default: break
         }
+    }
+    
+    @IBAction func dismissVC() {
+        self.dismiss(animated: true, completion: nil)
     }
     
 }

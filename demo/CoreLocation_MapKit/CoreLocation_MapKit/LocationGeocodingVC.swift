@@ -4,27 +4,38 @@ import MapKit
 import AddressBookUI
 import Contacts
 
-//func delay(_ delay: Double, closure: @escaping()->()) {
-//    let dispatchTime: DispatchTime = DispatchTime.now() + Double(Int64(0.1 * Double(NSEC_PER_SEC))) / Double(NSEC_PER_SEC)
-//    DispatchQueue.main.asyncAfter(deadline: dispatchTime, execute: closure)
-//}
-
 class LocationGeocodingVC: UIViewController, MKMapViewDelegate, UISearchBarDelegate {
     @IBOutlet var map : MKMapView!
-    let locman = CLLocationManager()
+    @IBOutlet weak var toolBar: UIToolbar!
+    @IBOutlet weak var close: UIBarButtonItem!
+    
+    let managerHolder = LocationManagerHolder()
+    var locationManager : CLLocationManager {
+        return self.managerHolder.locman
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         let bbi = MKUserTrackingBarButtonItem(mapView:self.map)
-        self.toolbarItems = [bbi]
-
-        let sb = UISearchBar()
-        sb.sizeToFit()
-        sb.searchBarStyle = .minimal
-        sb.delegate = self
-        self.navigationItem.titleView = sb
+        
+        let searchBar = UISearchBar(frame: CGRect(x: 0, y: 0, width: 200, height: 40))
+        searchBar.searchBarStyle = .minimal
+        searchBar.delegate = self
+        let myView = UIView(frame: searchBar.frame)
+        myView.addSubview(searchBar)
+        let sbButtonItem = UIBarButtonItem(customView: myView)
+        
+        //toolBar.setItems([bbi,barButtonItem], animated: false)
+        self.toolBar.items = [close,sbButtonItem,bbi]
+        
+        self.close.action = #selector(dismissVC)
 
         self.map.delegate = self
+    }
+    
+    func dismissVC() {
+        self.dismiss(animated: true, completion: nil)
     }
 
     @IBAction func doButton (sender:AnyObject!) {
@@ -37,13 +48,10 @@ class LocationGeocodingVC: UIViewController, MKMapViewDelegate, UISearchBarDeleg
             ])
     }
 
-    @IBAction func doButton2 (sender:AnyObject!) {
-        // new in iOS 8, can't simply switch this on
-        // must request authorization first
-        // and this request will be ignored without a corresponding reason in the Info.plist
-        // (see next chapter for full dance)
-        self.locman.requestWhenInUseAuthorization()
-        // self.map.showsUserLocation = true // otiose (I love that word)
+    @IBAction func doButton2 (sender: AnyObject!) {
+        /// new in iOS 8, can't simply switch this on must request authorization first and this request will be ignored without a corresponding reason in the Info.plist.
+        //self.locationManager.requestWhenInUseAuthorization() //由LocationManagerHolder处理
+        //// otiose (I love that word)
         self.map.userTrackingMode = .follow // will cause map to zoom nicely to user location
         // (the thing I was doing before, adjusting the map region manually, was just wrong)
     }
@@ -71,7 +79,7 @@ class LocationGeocodingVC: UIViewController, MKMapViewDelegate, UISearchBarDeleg
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         searchBar.resignFirstResponder()
         let s = searchBar.text
-        if s == nil || s!.characters.count < 5 { return }
+        if s == nil || s!.characters.count < 3 { return }
         let geo = CLGeocoder()
         geo.geocodeAddressString(s!) {
             placemarks,error in
@@ -91,6 +99,7 @@ class LocationGeocodingVC: UIViewController, MKMapViewDelegate, UISearchBarDeleg
     }
 
     @IBAction func thaiFoodNearMapLocation (sender:AnyObject!) {
+        self.map.showsUserLocation = true
         guard let loc = self.map.userLocation.location else {
             print("I don't know where you are now")
             return
@@ -120,9 +129,8 @@ class LocationGeocodingVC: UIViewController, MKMapViewDelegate, UISearchBarDeleg
     }
 
     @IBAction func directionsToThaiFood (sender:AnyObject!) {
-        let userLoc = self.map.userLocation
-        let loc = userLoc.location
-        if loc == nil {
+        self.map.showsUserLocation = true
+        guard self.map.userLocation.location != nil else {
             print("I don't know where you are now")
             return
         }
