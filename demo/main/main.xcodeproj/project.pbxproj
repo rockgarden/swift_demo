@@ -392,16 +392,16 @@
 					446E488B1D1ECE5300BF3D5B = {
 						CreatedOnToolsVersion = 7.3.1;
 						DevelopmentTeam = UR7J67T5FK;
-						LastSwiftMigration = 0800;
+						LastSwiftMigration = 0810;
 					};
 					446E489F1D1ECE5300BF3D5B = {
 						CreatedOnToolsVersion = 7.3.1;
-						LastSwiftMigration = 0800;
+						LastSwiftMigration = 0810;
 						TestTargetID = 446E488B1D1ECE5300BF3D5B;
 					};
 					446E48AA1D1ECE5300BF3D5B = {
 						CreatedOnToolsVersion = 7.3.1;
-						LastSwiftMigration = 0800;
+						LastSwiftMigration = 0810;
 						TestTargetID = 446E488B1D1ECE5300BF3D5B;
 					};
 				};
