@@ -1,8 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
@@ -17,7 +20,7 @@
         <!--Game View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="GameViewController" customModule="UIGestureRecognizer" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="GameViewController" id="BYZ-38-t0r" customClass="GameViewController" customModule="UIGestureRecognizer" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -27,6 +30,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Match It Up!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UNO-5M-KQX">
+                                <rect key="frame" x="-4" y="0.0" width="383" height="64"/>
                                 <color key="backgroundColor" red="0.26457890868186951" green="0.70562124252319336" blue="0.74568051099777222" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="64" id="3U2-AQ-duQ"/>
@@ -49,11 +53,19 @@
                                 </variation>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hgM-uj-NlW" userLabel="Animals">
+                                <rect key="frame" x="16" y="119" width="343" height="429"/>
                                 <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="CatA" translatesAutoresizingMaskIntoConstraints="NO" id="qaC-rZ-uMm" userLabel="LL" customClass="RoundedImageView" customModule="UIGestureRecognizer" customModuleProvider="target"/>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ywu-lB-3d3" userLabel="LR" customClass="RoundedImageView" customModule="UIGestureRecognizer" customModuleProvider="target"/>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="BearA" translatesAutoresizingMaskIntoConstraints="NO" id="HJL-Uu-Vvr" userLabel="UR" customClass="RoundedImageView" customModule="UIGestureRecognizer" customModuleProvider="target"/>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="CatA" translatesAutoresizingMaskIntoConstraints="NO" id="qaC-rZ-uMm" userLabel="LL" customClass="RoundedImageView" customModule="UIGestureRecognizer" customModuleProvider="target">
+                                        <rect key="frame" x="10" y="164.5" width="154.5" height="154"/>
+                                    </imageView>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ywu-lB-3d3" userLabel="LR" customClass="RoundedImageView" customModule="UIGestureRecognizer" customModuleProvider="target">
+                                        <rect key="frame" x="174.5" y="164.5" width="154" height="154"/>
+                                    </imageView>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="BearA" translatesAutoresizingMaskIntoConstraints="NO" id="HJL-Uu-Vvr" userLabel="UR" customClass="RoundedImageView" customModule="UIGestureRecognizer" customModuleProvider="target">
+                                        <rect key="frame" x="174.5" y="0.0" width="154" height="154.5"/>
+                                    </imageView>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="iQ9-W8-8Ez" userLabel="UL" customClass="RoundedImageView" customModule="UIGestureRecognizer" customModuleProvider="target">
+                                        <rect key="frame" x="10" y="0.0" width="154.5" height="154.5"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="iQ9-W8-8Ez" secondAttribute="height" multiplier="1:1" id="TlA-sX-V6i"/>
                                             <constraint firstAttribute="width" secondItem="iQ9-W8-8Ez" secondAttribute="height" multiplier="1:1" id="dzM-Vu-Tum"/>
@@ -127,6 +139,7 @@
                                 </constraints>
                                 <variation key="default">
                                     <mask key="constraints">
+                                        <exclude reference="BSb-hf-teZ"/>
                                         <exclude reference="Fyj-Rs-XHd"/>
                                         <exclude reference="Ic5-uC-Xly"/>
                                         <exclude reference="Vck-Ep-rJs"/>
@@ -140,12 +153,16 @@
                                         <exclude reference="utY-a0-Iku"/>
                                         <exclude reference="xwW-dW-OdI"/>
                                         <exclude reference="M9B-AH-D68"/>
-                                        <exclude reference="BSb-hf-teZ"/>
                                         <exclude reference="cMQ-M1-BGY"/>
                                     </mask>
                                 </variation>
                                 <variation key="heightClass=compact">
                                     <mask key="constraints">
+                                        <exclude reference="1Ph-iH-cLR"/>
+                                        <include reference="BSb-hf-teZ"/>
+                                        <exclude reference="MDX-RB-ULV"/>
+                                        <exclude reference="eQf-ph-VVC"/>
+                                        <exclude reference="yIW-gX-PGg"/>
                                         <exclude reference="EEF-NF-Pbo"/>
                                         <exclude reference="Emf-mZ-cKb"/>
                                         <include reference="Fyj-Rs-XHd"/>
@@ -169,17 +186,13 @@
                                         <include reference="xwW-dW-OdI"/>
                                         <include reference="M9B-AH-D68"/>
                                         <exclude reference="iDP-Ky-tvI"/>
-                                        <exclude reference="1Ph-iH-cLR"/>
-                                        <include reference="BSb-hf-teZ"/>
-                                        <exclude reference="MDX-RB-ULV"/>
-                                        <exclude reference="eQf-ph-VVC"/>
-                                        <exclude reference="yIW-gX-PGg"/>
                                         <exclude reference="QM3-20-61F"/>
                                         <include reference="cMQ-M1-BGY"/>
                                     </mask>
                                 </variation>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Which one of these is not like the others?" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YAu-wP-NiH">
+                                <rect key="frame" x="16" y="64" width="343" height="55"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="32" id="1CU-zi-dJ2"/>
                                     <constraint firstAttribute="height" constant="55" id="2An-TK-NLM"/>
@@ -200,6 +213,7 @@
                                 </variation>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gu3-dy-oOc" userLabel="newSetButton">
+                                <rect key="frame" x="112.5" y="595" width="150" height="32"/>
                                 <color key="backgroundColor" red="0.26457890868186951" green="0.70562124252319336" blue="0.74568051099777222" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="31" id="Md5-2Z-vtT">
@@ -228,6 +242,7 @@
                                 </connections>
                             </button>
                             <view userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dCb-J5-nNP" userLabel="CircleDrawer" customClass="CircleDrawView" customModule="UIGestureRecognizer" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                             </view>
                         </subviews>
@@ -264,8 +279,8 @@
                         </variation>
                         <variation key="heightClass=compact">
                             <mask key="constraints">
-                                <exclude reference="qzT-08-wUM"/>
                                 <include reference="MzE-cg-dhp"/>
+                                <exclude reference="qzT-08-wUM"/>
                             </mask>
                         </variation>
                     </view>
@@ -296,6 +311,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Match It Up!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="duo-p9-ido">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="64"/>
                                 <color key="backgroundColor" red="0.26457890868186951" green="0.70562124252319336" blue="0.74568051099777222" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="64" id="5gO-iG-pXa"/>
@@ -318,6 +334,7 @@
                                 </variation>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Your Score" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tNa-FF-RTh">
+                                <rect key="frame" x="112.5" y="128" width="150" height="37"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="150" id="dmn-YW-5Tr"/>
                                 </constraints>
@@ -326,6 +343,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vjt-hw-cVP">
+                                <rect key="frame" x="101" y="168" width="173" height="136"/>
                                 <color key="backgroundColor" red="0.26457890868186951" green="0.70562124252319336" blue="0.74568051099777222" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="136" id="Zy4-Er-aM5"/>
@@ -357,6 +375,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jdB-vn-HRc">
+                                <rect key="frame" x="112.5" y="488" width="150" height="55"/>
                                 <color key="backgroundColor" red="0.26457890868186951" green="0.70562124252319336" blue="0.74568051099777222" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="55" id="G3b-kP-ywu"/>
