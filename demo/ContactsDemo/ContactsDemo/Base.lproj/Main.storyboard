@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="Ivb-Pg-9z9">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="SzF-Bt-m90">
+            <objects>
+                <viewController id="4Sp-46-vj8" customClass="ViewController" customModule="ch31p973addressBook" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="9ZS-uw-8jY"/>
+                        <viewControllerLayoutGuide type="bottom" id="7My-Bh-weT"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="S0O-n9-7YQ">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YBg-n3-Qcu">
+                                <rect key="frame" x="16" y="84" width="84" height="32"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <state key="normal" title="Find Myself">
+                                    <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="doFindMoi:" destination="4Sp-46-vj8" eventType="touchUpInside" id="OPM-oo-p57"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AIs-Xk-AGr">
+                                <rect key="frame" x="16" y="146" width="106" height="32"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <state key="normal" title="Create Snidely">
+                                    <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="doCreateSnidely:" destination="4Sp-46-vj8" eventType="touchUpInside" id="S0q-N7-aF9"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zpm-iW-ky5">
+                                <rect key="frame" x="16" y="208" width="99" height="32"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <state key="normal" title="People Picker">
+                                    <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="doPeoplePicker:" destination="4Sp-46-vj8" eventType="touchUpInside" id="o1p-hO-qNu"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LWx-fI-d3r">
+                                <rect key="frame" x="16" y="270" width="93" height="32"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <state key="normal" title="View Snidely">
+                                    <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="doViewPerson:" destination="4Sp-46-vj8" eventType="touchUpInside" id="ojx-ud-vdH"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="urD-o5-rar">
+                                <rect key="frame" x="16" y="332" width="87" height="32"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <state key="normal" title="New Person">
+                                    <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="doNewPerson:" destination="4Sp-46-vj8" eventType="touchUpInside" id="jRA-UB-UBK"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MBe-OF-mko">
+                                <rect key="frame" x="16" y="394" width="123" height="32"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <state key="normal" title="Unknown Person">
+                                    <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="doUnknownPerson:" destination="4Sp-46-vj8" eventType="touchUpInside" id="DHK-Ux-wMs"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="AIs-Xk-AGr" firstAttribute="top" secondItem="YBg-n3-Qcu" secondAttribute="bottom" constant="30" id="3tk-B7-fae"/>
+                            <constraint firstItem="MBe-OF-mko" firstAttribute="top" secondItem="urD-o5-rar" secondAttribute="bottom" constant="30" id="8Lv-gZ-SCW"/>
+                            <constraint firstItem="YBg-n3-Qcu" firstAttribute="top" secondItem="9ZS-uw-8jY" secondAttribute="bottom" constant="20" id="904-Fu-DNG"/>
+                            <constraint firstItem="LWx-fI-d3r" firstAttribute="top" secondItem="Zpm-iW-ky5" secondAttribute="bottom" constant="30" id="D9f-V4-b5u"/>
+                            <constraint firstItem="Zpm-iW-ky5" firstAttribute="top" secondItem="AIs-Xk-AGr" secondAttribute="bottom" constant="30" id="V9D-xM-7IV"/>
+                            <constraint firstItem="MBe-OF-mko" firstAttribute="leading" secondItem="YBg-n3-Qcu" secondAttribute="leading" id="VXM-Kf-JdN"/>
+                            <constraint firstItem="urD-o5-rar" firstAttribute="leading" secondItem="YBg-n3-Qcu" secondAttribute="leading" id="Y7M-zl-UH8"/>
+                            <constraint firstItem="Zpm-iW-ky5" firstAttribute="leading" secondItem="YBg-n3-Qcu" secondAttribute="leading" id="bmL-a3-fsu"/>
+                            <constraint firstItem="YBg-n3-Qcu" firstAttribute="leading" secondItem="S0O-n9-7YQ" secondAttribute="leadingMargin" id="f7d-Sh-zVK"/>
+                            <constraint firstItem="urD-o5-rar" firstAttribute="top" secondItem="LWx-fI-d3r" secondAttribute="bottom" constant="30" id="nSC-h7-Kvu"/>
+                            <constraint firstItem="LWx-fI-d3r" firstAttribute="leading" secondItem="YBg-n3-Qcu" secondAttribute="leading" id="qj0-jK-bBz"/>
+                            <constraint firstItem="AIs-Xk-AGr" firstAttribute="leading" secondItem="YBg-n3-Qcu" secondAttribute="leading" id="xZs-zv-VMj"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="Xe7-HL-nxH"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fJi-Ft-gE4" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="930" y="28"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="1wf-Jp-K9d">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Ivb-Pg-9z9" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="qI7-SH-DcF">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="4Sp-46-vj8" kind="relationship" relationship="rootViewController" id="JzL-fq-6qj"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="0w7-TP-sO8" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="113" y="27"/>
+        </scene>
+    </scenes>
+</document>
