@@ -1,16 +1,34 @@
 
 import UIKit
 import Photos
-func delay(_ delay:Double, closure:@escaping ()->()) {
-    DispatchQueue.main.asyncAfter(
-        deadline: DispatchTime.now() + Double(Int64(delay * Double(NSEC_PER_SEC))) / Double(NSEC_PER_SEC), execute: closure)
+import PhotosUI
+
+func checkForPhotoLibraryAccess(andThen f:(()->())? = nil) {
+    let status = PHPhotoLibrary.authorizationStatus()
+    switch status {
+    case .authorized:
+        f?()
+    case .notDetermined:
+        PHPhotoLibrary.requestAuthorization() { status in
+            if status == .authorized {
+                DispatchQueue.main.async {
+                    f?()
+                }
+            }
+        }
+    case .restricted:
+        // do nothing
+        break
+    case .denied:
+        // do nothing, or beg the user to authorize us in Settings
+        break
+    }
 }
 
 class RootViewController: UIViewController {
                             
     var pageViewController: UIPageViewController?
     var modelController : ModelController!
-
     
     /*
     Because authorization is asynchronous, we face an interesting problem:
@@ -20,7 +38,7 @@ class RootViewController: UIViewController {
     So what we'd like to do in that case is try again;
     thus we want to be notified if authorization happens.
     The way to detect that is to observe that we now have images where previously we had none
-*/
+     */
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -112,6 +130,37 @@ extension RootViewController {
             dvc.doVignette()
         }
     }
+
+    @available(iOS 9.1, *)
+    @IBAction func displayLivePhoto(_ sender: Any) {
+        checkForPhotoLibraryAccess {
+            let recs = PHAssetCollection.fetchAssetCollections(with:
+                .smartAlbum, subtype: .smartAlbumUserLibrary, options: nil)
+            guard let rec = recs.firstObject else {return}
+            let options = PHFetchOptions()
+            let pred = NSPredicate(format: "(mediaSubtype & %d) != 0", PHAssetMediaSubtype.photoLive.rawValue)
+            options.predicate = pred
+            options.fetchLimit = 1
+            let photos = PHAsset.fetchAssets(in: rec, options: options)
+            if photos.count > 0 {
+                let photo = photos[0]
+                let opts = PHLivePhotoRequestOptions()
+                opts.deliveryMode = .highQualityFormat
+                PHImageManager.default().requestLivePhoto(for: photo, targetSize: CGSize(300,300), contentMode: .aspectFit, options: opts) {
+                    photo, info in
+                    print(photo?.size as Any)
+                    let v = PHLivePhotoView(frame: CGRect(20,20,300,300))
+                    v.contentMode = .scaleAspectFit
+                    v.livePhoto = photo
+                    //TODO: show in Page
+                    self.view.addSubview(v)
+                }
+
+            }
+            
+        }
+    }
+
 }
 
 

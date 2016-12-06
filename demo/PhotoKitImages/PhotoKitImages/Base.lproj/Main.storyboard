@@ -65,7 +65,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PHE-GN-Yf3" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1863" y="476"/>
+            <point key="canvasLocation" x="2022" y="475"/>
         </scene>
         <!--Root View Controller-->
         <scene sceneID="3GU-QQ-JyJ">
@@ -82,6 +82,11 @@
                     </view>
                     <extendedEdge key="edgesForExtendedLayout"/>
                     <navigationItem key="navigationItem" id="iET-ZD-CvL">
+                        <barButtonItem key="leftBarButtonItem" title="LivePhoto" id="l9n-b1-k8g">
+                            <connections>
+                                <action selector="displayLivePhoto:" destination="PxF-Ax-wPy" id="QS8-BI-e5r"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Vignette" id="EhD-Xl-GDp">
                             <connections>
                                 <action selector="doVignetteButton:" destination="PxF-Ax-wPy" id="JNn-wH-o00"/>
@@ -98,7 +103,7 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="PWZ-GO-auh" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Ivf-L8-Q9I">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="Ivf-L8-Q9I">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>

@@ -2,12 +2,16 @@
 
 import UIKit
 
+/// 定义传值闭包: 传递的参数 UIImage
+typealias ImageClosure = (_ im: UIImage) ->Void
+
 //FIXME: back UIImagePickerController can't run
 class SecondViewController: UIViewController {
 
     var image : UIImage!
     @IBOutlet var iv : UIImageView!
-    
+    var sendClosure: ImageClosure?
+
     init(image im:UIImage!) {
         self.image = im
         super.init(nibName: "SecondViewController", bundle: nil)
@@ -30,8 +34,16 @@ class SecondViewController: UIViewController {
         self.navigationController?.setNavigationBarHidden(true, animated: true)
     }
     
-    func doUse(_ sender:AnyObject) {
-        let vc = self.presentingViewController as! ViewController
-        vc.doUse(self.image)
+    func doUse(_ sender: Any) {
+        /// 创建闭包方法
+        if sendClosure != nil {
+            sendClosure!(self.image) //保存回传值的闭包
+        }
+
+        self.dismiss(animated: true)
+        
+        /// Error: 由于引入了 UINavigationController 所以 presentingViewController 不是 ViewController
+        //let vc = self.presentingViewController as! ViewController
+        //vc.doUse(self.image)
     }
 }

@@ -28,11 +28,51 @@ func checkForPhotoLibraryAccess(andThen f:(()->())? = nil) {
     }
 }
 
+func checkForMovieCaptureAccess(andThen f:(()->())? = nil) {
+    let status = AVCaptureDevice.authorizationStatus(forMediaType:AVMediaTypeVideo)
+    switch status {
+    case .authorized:
+        f?()
+    case .notDetermined:
+        AVCaptureDevice.requestAccess(forMediaType:AVMediaTypeVideo) { granted in
+            if granted {
+                DispatchQueue.main.async {
+                    f?()
+                }
+            }
+        }
+    case .restricted:
+        // do nothing
+        break
+    case .denied:
+        let alert = UIAlertController(
+            title: "Need Authorization",
+            message: "Wouldn't you like to authorize this app " +
+            "to use the camera?",
+            preferredStyle: .alert)
+        alert.addAction(UIAlertAction(
+            title: "No", style: .cancel))
+        alert.addAction(UIAlertAction(
+        title: "OK", style: .default) {
+            _ in
+            let url = URL(string:UIApplicationOpenSettingsURLString)!
+            if #available(iOS 10.0, *) {
+                UIApplication.shared.open(url)
+            } else {
+                // Fallback on earlier versions
+            }
+        })
+        UIApplication.shared.delegate!.window!!.rootViewController!.present(alert, animated:true)
+    }
+}
+
+
 class ViewController: UIViewController {
 
     @IBOutlet weak var redView: UIView!
     weak var picker : UIImagePickerController?
     var pushMyPhotoView = false //是否使用自定义的PhotoView
+    var pushMyPickerController = false //是否使用自定义的PickerController
 
     override var supportedInterfaceOrientations : UIInterfaceOrientationMask {
         if self.traitCollection.userInterfaceIdiom == .pad {
@@ -157,36 +197,63 @@ class ViewController: UIViewController {
         }
     }
 
-    @IBAction func doTake (_ sender:AnyObject!) {
+    @IBAction func doTake (_ sender: Any!) {
+        checkForMovieCaptureAccess(andThen: self.reallyTake)
+    }
+
+    func reallyTake() {
         let cam = UIImagePickerControllerSourceType.camera
-        let ok = UIImagePickerController.isSourceTypeAvailable(cam)
-        if (!ok) {
-            print("no camera")
-            return
+        guard UIImagePickerController.isSourceTypeAvailable(cam) else {return}
+        guard let arr = UIImagePickerController.availableMediaTypes(for:cam) else {return}
+
+        var which : Int {return 0} // 1, 2, 3, 4
+        var desiredTypes : [String]!
+        if #available(iOS 9.1, *) {
+            desiredTypes = {
+                switch which {
+                case 1: return [kUTTypeImage as String]
+                case 2: return [kUTTypeMovie as String]
+                case 3: return [kUTTypeImage as String, kUTTypeMovie as String]
+                case 4: return [kUTTypeImage as String, kUTTypeLivePhoto as String] // nope
+                default: return [kUTTypeImage as String, kUTTypeMovie as String, kUTTypeLivePhoto as String] // nope
+                }
+            }()
+        } else {
+            desiredTypes = {
+                switch which {
+                case 1: return [kUTTypeImage as String]
+                case 2: return [kUTTypeMovie as String]
+                default:
+                    return [kUTTypeImage as String, kUTTypeMovie as String]
+                }
+            }()
         }
-        let desiredType = kUTTypeImage as String
-        // let desiredType = kUTTypeMovie as NSString as String
-        let arr = UIImagePickerController.availableMediaTypes(for: cam)
-        print(arr!)
-        if arr?.index(of: desiredType) == nil {
-            print("no capture")
-            return
-        }
-        let picker = MyImagePickerController()
+
+        desiredTypes = desiredTypes.filter {arr.contains($0)}
+        guard desiredTypes.count > 0 else {return}
+
+        //let desiredType = kUTTypeImage as String
+        //if arr.index(of: desiredType) == nil {return}
+
+        let picker = pushMyPickerController ? MyImagePickerController() : UIImagePickerController()
         picker.sourceType = .camera
-        picker.mediaTypes = [desiredType]
+        picker.mediaTypes = desiredTypes
+        /// Good: instead of desiredTypes; that was just for testing
+        picker.mediaTypes = arr
         picker.allowsEditing = true
         picker.delegate = self
 
-        //FIXME: cameraOverlayView addGestureRecognizer 无效
-        //        picker.showsCameraControls = false
-        //        let f = self.view.window!.bounds
-        //        let v = UIView(frame:f)
-        //        debugPrint(v)
-        //        let t = UITapGestureRecognizer(target:self, action:#selector(tap))
-        //        t.numberOfTapsRequired = 2
-        //        v.addGestureRecognizer(t)
-        //        picker.cameraOverlayView = v
+        if !pushMyPhotoView {
+            picker.showsCameraControls = true
+        } else {
+            picker.showsCameraControls = false
+            let f = self.view.window!.bounds
+            let v = UIView(frame:f)
+            let t = UITapGestureRecognizer(target:self, action:#selector(tap))
+            t.numberOfTapsRequired = 2
+            v.addGestureRecognizer(t)
+            picker.cameraOverlayView = v
+        }
 
         self.picker = picker
 
@@ -200,11 +267,11 @@ class ViewController: UIViewController {
         self.picker?.takePicture()
     }
 
-    func doCancel(_ sender:AnyObject) {
+    func doCancel(_ sender: Any) {
         self.dismiss(animated: true, completion: nil)
     }
 
-    func doUse(_ im:UIImage?) {
+    func doUse(_ im: UIImage?) {
         if im != nil {
             showImage(im!)
         }
@@ -222,34 +289,39 @@ class ViewController: UIViewController {
 extension ViewController : UIImagePickerControllerDelegate {
 
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
-        self.dismiss(animated: true, completion: nil)
+        self.dismiss(animated: true)
     }
 
     func imagePickerController(_ picker: UIImagePickerController,
                                didFinishPickingMediaWithInfo info: [String : Any]) {
         print(info[UIImagePickerControllerReferenceURL] as Any) //UIImagePickerControllerReferenceURL maybe nil
-        let url = info[UIImagePickerControllerMediaURL] as? URL //iOS 10 url = nil
+        let url = info[UIImagePickerControllerMediaURL] as? URL
         var im = info[UIImagePickerControllerOriginalImage] as? UIImage
         if let ed = info[UIImagePickerControllerEditedImage] as? UIImage {
             im = ed
         }
-
         if pushMyPhotoView {
             // push photo view
-            let svc = SecondViewController(image:im)
+            let svc = SecondViewController(image: im)
+            /// 实现回调,获取闭包(回调的数据)
+            svc.sendClosure = {
+                im in
+                self.doUse(im)
+            }
             picker.pushViewController(svc, animated: true)
         } else {
             // no push photo view, than back to ViewController
             self.dismiss(animated: true) {
-                let type = info[UIImagePickerControllerMediaType] as? NSString
-                if type != nil {
-                    switch type! {
+                let mediatype = info[UIImagePickerControllerMediaType]
+                guard let type = mediatype as? NSString else {return}
+                    switch type {
                     case kUTTypeMovie: //CFString "public.movie"
                         if url != nil { self.showMovie(url!) }
                     case kUTTypeImage: //CFString "public.image"
-                        if im != nil {
-                            self.showImage(im!)
-                            // showing how simple it is to save into the Camera Roll
+                        guard im != nil else {return}
+                        self.showImage(im!)
+                        // showing how simple it is to save into the Camera Roll
+                        checkForPhotoLibraryAccess {
                             let lib = PHPhotoLibrary.shared()
                             lib.performChanges({
                                 PHAssetChangeRequest.creationRequestForAsset(from: im!)
@@ -259,11 +331,11 @@ extension ViewController : UIImagePickerControllerDelegate {
                     }
                     if #available(iOS 9.1, *) {
                         let live = info[UIImagePickerControllerLivePhoto] as? PHLivePhoto
-                        if type! == kUTTypeLivePhoto, live != nil { //,相当于&&?
+                        if type == kUTTypeLivePhoto, live != nil { //,相当于&&?
                             self.showLivePhoto(live!)
                         }
                     }
-                }
+
             }
         }
 
@@ -328,10 +400,22 @@ extension ViewController : UINavigationControllerDelegate {
             nc.isToolbarHidden = false
 
             let sz = CGSize(width: 10,height: 10)
-            let im = imageOfSize(sz) {
-                UIColor.black.withAlphaComponent(0.1).setFill()
-                UIGraphicsGetCurrentContext()!.fill(CGRect(origin: CGPoint(), size: sz))
+
+            var im = UIImage()
+
+            if #available(iOS 10.0, *) {
+                let r = UIGraphicsImageRenderer(size:sz)
+                im = r.image { ctx in
+                    UIColor.black.withAlphaComponent(0.1).setFill()
+                    ctx.fill(CGRect(origin: .zero, size: sz))
+                }
+            } else {
+                im = imageOfSize(sz) {
+                    UIColor.black.withAlphaComponent(0.1).setFill()
+                    UIGraphicsGetCurrentContext()!.fill(CGRect(origin: CGPoint(), size: sz))
+                }
             }
+
             nc.toolbar.setBackgroundImage(im, forToolbarPosition: .any, barMetrics: .default)
             nc.toolbar.isTranslucent = true
             let b = UIBarButtonItem(title: "Cancel", style: .plain, target: self, action: #selector(doCancel))
@@ -343,8 +427,12 @@ extension ViewController : UINavigationControllerDelegate {
             let b2 = UIBarButtonItem(customView: lab)
             nc.topViewController!.toolbarItems = [b,b2]
             nc.topViewController!.title = "Retake"
+            
+            let t = UITapGestureRecognizer(target:self, action:#selector(tap))
+            t.numberOfTapsRequired = 2
+            nc.topViewController!.view.addGestureRecognizer(t)
         }
     }
-
+    
 }
 
