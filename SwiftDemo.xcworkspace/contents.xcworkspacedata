@@ -2,13 +2,13 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:demo/Social/SocialDemo.xcodeproj">
+   </FileRef>
+   <FileRef
       location = "group:demo/ContactsDemo/ContactsDemo.xcodeproj">
    </FileRef>
    <FileRef
       location = "group:demo/EventKitDemo/EventKitDemo.xcodeproj">
-   </FileRef>
-   <FileRef
-      location = "group:/Users/rockgarden/Documents/workProject/swift_demo/demo/Social/SocialDemo.xcodeproj">
    </FileRef>
    <FileRef
       location = "group:demo/UIScrollView/UIScrollView.xcodeproj">

@@ -17,6 +17,16 @@
 		44DD8F071DF571C0004B109B /* HelperDemo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44DD8F061DF571C0004B109B /* HelperDemo.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		C298AA0F1DF7B067006EA930 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C298AA0B1DF7B067006EA930 /* SocialDemo.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 44291CAA1DF5206100D2F579;
+			remoteInfo = SocialDemo;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
 		445937C51DF522FF00AC52CD /* EventKitDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EventKitDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		445937C81DF522FF00AC52CD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -28,6 +38,7 @@
 		445937DA1DF52D7200AC52CD /* CalendarVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalendarVC.swift; sourceTree = "<group>"; };
 		44DD8F041DF5715F004B109B /* EventHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventHelper.swift; sourceTree = "<group>"; };
 		44DD8F061DF571C0004B109B /* HelperDemo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HelperDemo.swift; sourceTree = "<group>"; };
+		C298AA0B1DF7B067006EA930 /* SocialDemo.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = SocialDemo.xcodeproj; path = ../Social/SocialDemo.xcodeproj; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -44,6 +55,7 @@
 		445937BC1DF522FF00AC52CD = {
 			isa = PBXGroup;
 			children = (
+				C298AA0B1DF7B067006EA930 /* SocialDemo.xcodeproj */,
 				445937C71DF522FF00AC52CD /* EventKitDemo */,
 				445937C61DF522FF00AC52CD /* Products */,
 			);
@@ -71,6 +83,14 @@
 				445937D41DF522FF00AC52CD /* Info.plist */,
 			);
 			path = EventKitDemo;
+			sourceTree = "<group>";
+		};
+		C298AA0C1DF7B067006EA930 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				C298AA101DF7B067006EA930 /* SocialDemo.app */,
+			);
+			name = Products;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -121,12 +141,28 @@
 			mainGroup = 445937BC1DF522FF00AC52CD;
 			productRefGroup = 445937C61DF522FF00AC52CD /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = C298AA0C1DF7B067006EA930 /* Products */;
+					ProjectRef = C298AA0B1DF7B067006EA930 /* SocialDemo.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				445937C41DF522FF00AC52CD /* EventKitDemo */,
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		C298AA101DF7B067006EA930 /* SocialDemo.app */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.application;
+			path = SocialDemo.app;
+			remoteRef = C298AA0F1DF7B067006EA930 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		445937C31DF522FF00AC52CD /* Resources */ = {
