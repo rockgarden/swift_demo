@@ -65,7 +65,92 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PHE-GN-Yf3" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2022" y="475"/>
+            <point key="canvasLocation" x="2734" y="475"/>
+        </scene>
+        <!--Main-->
+        <scene sceneID="JHU-JY-h16">
+            <objects>
+                <tableViewController id="IDR-Vx-Nn7" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="0vA-wr-86W">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <sections>
+                            <tableViewSection id="fPn-pA-Cst">
+                                <cells>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" textLabel="3jK-po-9cu" style="IBUITableViewCellStyleDefault" id="rCB-KK-vkI">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="rCB-KK-vkI" id="oMd-nH-snp">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Show Live Photo" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="3jK-po-9cu">
+                                                    <rect key="frame" x="15" y="0.0" width="345" height="43"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="dso-Aa-i4C" kind="show" id="zmB-fe-IzN"/>
+                                        </connections>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" textLabel="au5-iH-M1C" style="IBUITableViewCellStyleDefault" id="kyp-02-ExK">
+                                        <rect key="frame" x="0.0" y="44" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="kyp-02-ExK" id="Kak-ej-o30">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Show Movie" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="au5-iH-M1C">
+                                                    <rect key="frame" x="15" y="0.0" width="345" height="43"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="Zgr-lp-62D" kind="show" id="2oD-Sr-Ama"/>
+                                        </connections>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" textLabel="Uyj-17-KPg" style="IBUITableViewCellStyleDefault" id="kJh-M6-xLf">
+                                        <rect key="frame" x="0.0" y="88" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="kJh-M6-xLf" id="ikc-rj-Pi6">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Show Photos" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Uyj-17-KPg">
+                                                    <rect key="frame" x="15" y="0.0" width="345" height="43"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="PxF-Ax-wPy" kind="show" id="zcB-FR-Cbj"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                        </sections>
+                        <connections>
+                            <outlet property="dataSource" destination="IDR-Vx-Nn7" id="4Bg-1q-OnF"/>
+                            <outlet property="delegate" destination="IDR-Vx-Nn7" id="geV-3m-JRe"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Main" id="8gN-Yi-z0V"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="GlJ-FT-ewm" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1161" y="475"/>
         </scene>
         <!--Root View Controller-->
         <scene sceneID="3GU-QQ-JyJ">
@@ -82,11 +167,6 @@
                     </view>
                     <extendedEdge key="edgesForExtendedLayout"/>
                     <navigationItem key="navigationItem" id="iET-ZD-CvL">
-                        <barButtonItem key="leftBarButtonItem" title="LivePhoto" id="l9n-b1-k8g">
-                            <connections>
-                                <action selector="displayLivePhoto:" destination="PxF-Ax-wPy" id="QS8-BI-e5r"/>
-                            </connections>
-                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Vignette" id="EhD-Xl-GDp">
                             <connections>
                                 <action selector="doVignetteButton:" destination="PxF-Ax-wPy" id="JNn-wH-o00"/>
@@ -96,7 +176,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BPC-vx-IW7" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1172" y="476"/>
+            <point key="canvasLocation" x="1951" y="475"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="bTe-yd-sAK">
@@ -109,12 +189,79 @@
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="PxF-Ax-wPy" kind="relationship" relationship="rootViewController" id="Uty-Tr-YRl"/>
+                        <segue destination="IDR-Vx-Nn7" kind="relationship" relationship="rootViewController" id="uNK-aU-hLg"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1le-Sw-H2i" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="360" y="476"/>
+        </scene>
+        <!--MoiveVC-->
+        <scene sceneID="3pk-sd-snt">
+            <objects>
+                <viewController storyboardIdentifier="MoiveVC" id="Zgr-lp-62D" customClass="MoiveVC" customModule="PhotoKitImages" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Lse-IP-NHU"/>
+                        <viewControllerLayoutGuide type="bottom" id="c8z-nP-526"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="XJH-7k-DrA">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sYH-wC-rkz">
+                                <rect key="frame" x="38" y="84" width="300" height="180"/>
+                                <color key="backgroundColor" red="0.92549020049999997" green="0.23529411850000001" blue="0.1019607857" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="300" id="7a8-uJ-FcY"/>
+                                    <constraint firstAttribute="height" constant="180" id="iof-M4-FN0"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="sYH-wC-rkz" firstAttribute="top" secondItem="Lse-IP-NHU" secondAttribute="bottom" constant="20" id="63y-55-LBG"/>
+                            <constraint firstItem="sYH-wC-rkz" firstAttribute="centerX" secondItem="XJH-7k-DrA" secondAttribute="centerX" id="e0C-o6-iBX"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="aSz-f9-WSM">
+                        <barButtonItem key="rightBarButtonItem" title="Show" id="W3E-80-lfJ">
+                            <connections>
+                                <action selector="doShowMovie:" destination="Zgr-lp-62D" id="Xxj-td-Uhn"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="v" destination="sYH-wC-rkz" id="Bft-Ee-7Gq"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hRi-8b-ibo" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1950" y="-218"/>
+        </scene>
+        <!--Live PhotoVC-->
+        <scene sceneID="8nd-1C-gIe">
+            <objects>
+                <viewController storyboardIdentifier="LivePhotoVC" id="dso-Aa-i4C" customClass="LivePhotoVC" customModule="PhotoKitImages" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Yfw-8G-ctr"/>
+                        <viewControllerLayoutGuide type="bottom" id="UbE-8E-Efb"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="CUn-GW-gjb">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="LVa-qk-R4Q">
+                        <barButtonItem key="rightBarButtonItem" title="show" id="TVq-dD-Noe">
+                            <connections>
+                                <action selector="displayLivePhoto:" destination="dso-Aa-i4C" id="ihe-1P-zri"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="yr2-EC-QXu" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1950" y="1159"/>
         </scene>
     </scenes>
 </document>

@@ -28,7 +28,8 @@ class ModelController: NSObject {
             return nil
         }
         let dvc = storyboard.instantiateViewController(withIdentifier: "DataViewController") as! DataViewController
-        dvc.asset = self.photos[index] 
+        //dvc.asset = self.photos[index]
+        dvc.asset = Optional(self.photos[index]) // work around compiler crash
         // dvc.index = index
         return dvc
     }

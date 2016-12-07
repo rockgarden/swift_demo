@@ -16,7 +16,7 @@ class PhotoEditingViewController: UIViewController, PHContentEditingController, 
 
     var input: PHContentEditingInput?
     
-    let myidentifier = "com.neuburg.matt.PhotoKitImages.vignette"
+    let myidentifier = "com.rockgarden.PhotoKitImages.VignettePhotoExtension"
     var displayImage : CIImage?
     var context : CIContext?
     let vig = VignetteFilter()
@@ -54,7 +54,6 @@ class PhotoEditingViewController: UIViewController, PHContentEditingController, 
             let orient = self.input?.fullSizeImageOrientation {
                 var output = output
                 if self.seg.selectedSegmentIndex == 0 {
-                    
                     self.vig.setValue(output, forKey: "inputImage")
                     let val = Double(self.slider.value)
                     self.vig.setValue(val, forKey:"inputPercentage")
@@ -62,20 +61,15 @@ class PhotoEditingViewController: UIViewController, PHContentEditingController, 
                     if !self.seg.isHidden {
                         output = output.applyingOrientation(orient)
                     }
-                    
                 } else {
                     output = output.applyingOrientation(orient)
                 }
-                
                 var r = self.glkview.bounds
                 r.size.width = CGFloat(self.glkview.drawableWidth)
                 r.size.height = CGFloat(self.glkview.drawableHeight)
-                
                 r = AVMakeRect(aspectRatio: output.extent.size, insideRect: r)
-                
                 self.context?.draw(output, in: r, from: output.extent)
         }
-        
     }
 
     func canHandle(_ adjustmentData: PHAdjustmentData) -> Bool {
@@ -90,9 +84,18 @@ class PhotoEditingViewController: UIViewController, PHContentEditingController, 
         if let im = self.input?.displaySizeImage {
             let scale = max(im.size.width/self.glkview.bounds.width, im.size.height/self.glkview.bounds.height)
             let sz = CGSize(width: im.size.width/scale, height: im.size.height/scale)
-            let im2 = imageOfSize(sz) {
-                // perhaps no need for this, but the image they give us is much larger than we need
-                im.draw(in: CGRect(origin: CGPoint(), size: sz))
+            var im2 = UIImage()
+            if #available(iOSApplicationExtension 10.0, *) {
+                let r = UIGraphicsImageRenderer(size:sz)
+                im2 = r.image { _ in
+                    // perhaps no need for this, but the image they give us is much larger than we need
+                    im.draw(in:CGRect(origin: .zero, size: sz))
+                }
+            } else {
+                im2 = imageOfSize(sz) {
+                    // perhaps no need for this, but the image they give us is much larger than we need
+                    im.draw(in: CGRect(origin: CGPoint(), size: sz))
+                }
             }
 
             self.displayImage = CIImage(image:im2)
