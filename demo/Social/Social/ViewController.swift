@@ -2,11 +2,6 @@
 //  ViewController.swift
 //  Social
 //
-//  Created by wangkan on 2016/12/5.
-//  Copyright © 2016年 rockgarden. All rights reserved.
-//
-
-
 
 import UIKit
 import MessageUI
