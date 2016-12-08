@@ -1,0 +1,702 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		3276DA511BC0A17900DDD64E /* PhotosUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3276DA501BC0A17900DDD64E /* PhotosUI.framework */; };
+		3276DA531BC0A17900DDD64E /* Photos.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3276DA521BC0A17900DDD64E /* Photos.framework */; };
+		3276DA5D1BC0A17900DDD64E /* VignettePhotoExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 3276DA4E1BC0A17900DDD64E /* VignettePhotoExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		32C5A8961C5C107900064A33 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 32C5A8951C5C107900064A33 /* UIKit.framework */; };
+		440237461DDC9E100067C071 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4402373B1DDC9E100067C071 /* AppDelegate.swift */; };
+		440237471DDC9E100067C071 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4402373C1DDC9E100067C071 /* Assets.xcassets */; };
+		440237481DDC9E100067C071 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4402373D1DDC9E100067C071 /* Main.storyboard */; };
+		440237491DDC9E100067C071 /* DataViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4402373F1DDC9E100067C071 /* DataViewController.swift */; };
+		4402374A1DDC9E100067C071 /* EditingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 440237401DDC9E100067C071 /* EditingViewController.swift */; };
+		4402374B1DDC9E100067C071 /* EditingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 440237411DDC9E100067C071 /* EditingViewController.xib */; };
+		4402374D1DDC9E100067C071 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 440237431DDC9E100067C071 /* LaunchScreen.storyboard */; };
+		4402374E1DDC9E100067C071 /* ModelController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 440237441DDC9E100067C071 /* ModelController.swift */; };
+		4402374F1DDC9E100067C071 /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 440237451DDC9E100067C071 /* RootViewController.swift */; };
+		440237651DDCA58E0067C071 /* VignetteFilter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 32C5A8861C5C0CE600064A33 /* VignetteFilter.framework */; };
+		440237661DDCA58E0067C071 /* VignetteFilter.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 32C5A8861C5C0CE600064A33 /* VignetteFilter.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		440237691DDCA8740067C071 /* VignetteFilter.h in Headers */ = {isa = PBXBuildFile; fileRef = 440237521DDC9E320067C071 /* VignetteFilter.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		4402376B1DDCA8970067C071 /* VignetteFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 440237531DDC9E320067C071 /* VignetteFilter.swift */; };
+		4402376D1DDCA9170067C071 /* PhotoEditingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 440237591DDC9E6D0067C071 /* PhotoEditingViewController.swift */; };
+		4402376E1DDCA91B0067C071 /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 440237581DDC9E6D0067C071 /* MainInterface.storyboard */; };
+		44CEA5D91DF849A500CD023A /* readme.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 44CEA5D81DF849A500CD023A /* readme.rtf */; };
+		44CEA5DB1DF84D6A00CD023A /* MovieVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44CEA5DA1DF84D6A00CD023A /* MovieVC.swift */; };
+		44CEA5DD1DF84F1900CD023A /* LivePhotoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44CEA5DC1DF84F1900CD023A /* LivePhotoVC.swift */; };
+		44CEA5DF1DF97D3D00CD023A /* PhotoKitVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44CEA5DE1DF97D3D00CD023A /* PhotoKitVC.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		32427ABA1C5C11EE00107FF4 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 32EBFD6819A10EA9008F9D28 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 32C5A8851C5C0CE600064A33;
+			remoteInfo = VignetteFilter;
+		};
+		3276DA5B1BC0A17900DDD64E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 32EBFD6819A10EA9008F9D28 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 3276DA4D1BC0A17900DDD64E;
+			remoteInfo = VignettePhotoExtension;
+		};
+		440237671DDCA58E0067C071 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 32EBFD6819A10EA9008F9D28 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 32C5A8851C5C0CE600064A33;
+			remoteInfo = VignetteFilter;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		3276DA461BC094CD00DDD64E /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				440237661DDCA58E0067C071 /* VignetteFilter.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		328C1A4019A268AB00B08BA1 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				3276DA5D1BC0A17900DDD64E /* VignettePhotoExtension.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		3276DA4E1BC0A17900DDD64E /* VignettePhotoExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = VignettePhotoExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		3276DA501BC0A17900DDD64E /* PhotosUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = PhotosUI.framework; path = System/Library/Frameworks/PhotosUI.framework; sourceTree = SDKROOT; };
+		3276DA521BC0A17900DDD64E /* Photos.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Photos.framework; path = System/Library/Frameworks/Photos.framework; sourceTree = SDKROOT; };
+		32C5A8861C5C0CE600064A33 /* VignetteFilter.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = VignetteFilter.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		32C5A8951C5C107900064A33 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		32EBFD7019A10EA9008F9D28 /* PhotoKit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PhotoKit.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		4402373B1DDC9E100067C071 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		4402373C1DDC9E100067C071 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		4402373E1DDC9E100067C071 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		4402373F1DDC9E100067C071 /* DataViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataViewController.swift; sourceTree = "<group>"; };
+		440237401DDC9E100067C071 /* EditingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditingViewController.swift; sourceTree = "<group>"; };
+		440237411DDC9E100067C071 /* EditingViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EditingViewController.xib; sourceTree = "<group>"; };
+		440237421DDC9E100067C071 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		440237431DDC9E100067C071 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
+		440237441DDC9E100067C071 /* ModelController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModelController.swift; sourceTree = "<group>"; };
+		440237451DDC9E100067C071 /* RootViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
+		440237511DDC9E320067C071 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		440237521DDC9E320067C071 /* VignetteFilter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VignetteFilter.h; sourceTree = "<group>"; };
+		440237531DDC9E320067C071 /* VignetteFilter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VignetteFilter.swift; sourceTree = "<group>"; };
+		440237571DDC9E6D0067C071 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		440237581DDC9E6D0067C071 /* MainInterface.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MainInterface.storyboard; sourceTree = "<group>"; };
+		440237591DDC9E6D0067C071 /* PhotoEditingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoEditingViewController.swift; sourceTree = "<group>"; };
+		447166681DF82F9700C40FB5 /* PhotoKitImages.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = PhotoKitImages.entitlements; sourceTree = "<group>"; };
+		447166691DF82FD300C40FB5 /* VignettePhotoExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = VignettePhotoExtension.entitlements; sourceTree = "<group>"; };
+		44CEA5C91DF83EDC00CD023A /* NotificationCenter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NotificationCenter.framework; path = System/Library/Frameworks/NotificationCenter.framework; sourceTree = SDKROOT; };
+		44CEA5D81DF849A500CD023A /* readme.rtf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.rtf; path = readme.rtf; sourceTree = "<group>"; };
+		44CEA5DA1DF84D6A00CD023A /* MovieVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MovieVC.swift; sourceTree = "<group>"; };
+		44CEA5DC1DF84F1900CD023A /* LivePhotoVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LivePhotoVC.swift; sourceTree = "<group>"; };
+		44CEA5DE1DF97D3D00CD023A /* PhotoKitVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoKitVC.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		3276DA4B1BC0A17900DDD64E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3276DA511BC0A17900DDD64E /* PhotosUI.framework in Frameworks */,
+				3276DA531BC0A17900DDD64E /* Photos.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		32C5A8821C5C0CE600064A33 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				32C5A8961C5C107900064A33 /* UIKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		32EBFD6D19A10EA9008F9D28 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				440237651DDCA58E0067C071 /* VignetteFilter.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		3276DA4F1BC0A17900DDD64E /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				32C5A8951C5C107900064A33 /* UIKit.framework */,
+				3276DA501BC0A17900DDD64E /* PhotosUI.framework */,
+				3276DA521BC0A17900DDD64E /* Photos.framework */,
+				44CEA5C91DF83EDC00CD023A /* NotificationCenter.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		32EBFD6719A10EA9008F9D28 = {
+			isa = PBXGroup;
+			children = (
+				4402373A1DDC9E100067C071 /* PhotoKitImages */,
+				440237501DDC9E320067C071 /* VignetteFilter */,
+				440237561DDC9E6D0067C071 /* VignettePhotoExtension */,
+				3276DA4F1BC0A17900DDD64E /* Frameworks */,
+				32EBFD7119A10EA9008F9D28 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		32EBFD7119A10EA9008F9D28 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				32EBFD7019A10EA9008F9D28 /* PhotoKit.app */,
+				3276DA4E1BC0A17900DDD64E /* VignettePhotoExtension.appex */,
+				32C5A8861C5C0CE600064A33 /* VignetteFilter.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		4402373A1DDC9E100067C071 /* PhotoKitImages */ = {
+			isa = PBXGroup;
+			children = (
+				447166681DF82F9700C40FB5 /* PhotoKitImages.entitlements */,
+				4402373B1DDC9E100067C071 /* AppDelegate.swift */,
+				4402373D1DDC9E100067C071 /* Main.storyboard */,
+				440237451DDC9E100067C071 /* RootViewController.swift */,
+				4402373F1DDC9E100067C071 /* DataViewController.swift */,
+				440237441DDC9E100067C071 /* ModelController.swift */,
+				440237401DDC9E100067C071 /* EditingViewController.swift */,
+				440237411DDC9E100067C071 /* EditingViewController.xib */,
+				44CEA5DA1DF84D6A00CD023A /* MovieVC.swift */,
+				44CEA5DC1DF84F1900CD023A /* LivePhotoVC.swift */,
+				44CEA5DE1DF97D3D00CD023A /* PhotoKitVC.swift */,
+				440237421DDC9E100067C071 /* Info.plist */,
+				440237431DDC9E100067C071 /* LaunchScreen.storyboard */,
+				4402373C1DDC9E100067C071 /* Assets.xcassets */,
+			);
+			path = PhotoKitImages;
+			sourceTree = "<group>";
+		};
+		440237501DDC9E320067C071 /* VignetteFilter */ = {
+			isa = PBXGroup;
+			children = (
+				440237511DDC9E320067C071 /* Info.plist */,
+				440237521DDC9E320067C071 /* VignetteFilter.h */,
+				440237531DDC9E320067C071 /* VignetteFilter.swift */,
+			);
+			path = VignetteFilter;
+			sourceTree = "<group>";
+		};
+		440237561DDC9E6D0067C071 /* VignettePhotoExtension */ = {
+			isa = PBXGroup;
+			children = (
+				447166691DF82FD300C40FB5 /* VignettePhotoExtension.entitlements */,
+				440237571DDC9E6D0067C071 /* Info.plist */,
+				440237581DDC9E6D0067C071 /* MainInterface.storyboard */,
+				440237591DDC9E6D0067C071 /* PhotoEditingViewController.swift */,
+				44CEA5D81DF849A500CD023A /* readme.rtf */,
+			);
+			path = VignettePhotoExtension;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		32C5A8831C5C0CE600064A33 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				440237691DDCA8740067C071 /* VignetteFilter.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		3276DA4D1BC0A17900DDD64E /* VignettePhotoExtension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3276DA5E1BC0A17900DDD64E /* Build configuration list for PBXNativeTarget "VignettePhotoExtension" */;
+			buildPhases = (
+				3276DA4A1BC0A17900DDD64E /* Sources */,
+				3276DA4B1BC0A17900DDD64E /* Frameworks */,
+				3276DA4C1BC0A17900DDD64E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				32427ABB1C5C11EE00107FF4 /* PBXTargetDependency */,
+			);
+			name = VignettePhotoExtension;
+			productName = VignettePhotoExtension;
+			productReference = 3276DA4E1BC0A17900DDD64E /* VignettePhotoExtension.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
+		32C5A8851C5C0CE600064A33 /* VignetteFilter */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 32C5A8911C5C0CE600064A33 /* Build configuration list for PBXNativeTarget "VignetteFilter" */;
+			buildPhases = (
+				32C5A8811C5C0CE600064A33 /* Sources */,
+				32C5A8821C5C0CE600064A33 /* Frameworks */,
+				32C5A8831C5C0CE600064A33 /* Headers */,
+				32C5A8841C5C0CE600064A33 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = VignetteFilter;
+			productName = VignetteFilter;
+			productReference = 32C5A8861C5C0CE600064A33 /* VignetteFilter.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		32EBFD6F19A10EA9008F9D28 /* PhotoKit */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 32EBFD9019A10EA9008F9D28 /* Build configuration list for PBXNativeTarget "PhotoKit" */;
+			buildPhases = (
+				32EBFD6C19A10EA9008F9D28 /* Sources */,
+				32EBFD6D19A10EA9008F9D28 /* Frameworks */,
+				32EBFD6E19A10EA9008F9D28 /* Resources */,
+				328C1A4019A268AB00B08BA1 /* Embed App Extensions */,
+				3276DA461BC094CD00DDD64E /* Embed Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				3276DA5C1BC0A17900DDD64E /* PBXTargetDependency */,
+				440237681DDCA58E0067C071 /* PBXTargetDependency */,
+			);
+			name = PhotoKit;
+			productName = PhotoKitImages;
+			productReference = 32EBFD7019A10EA9008F9D28 /* PhotoKit.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		32EBFD6819A10EA9008F9D28 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0810;
+				LastUpgradeCheck = 0810;
+				ORGANIZATIONNAME = "Matt Neuburg";
+				TargetAttributes = {
+					3276DA4D1BC0A17900DDD64E = {
+						CreatedOnToolsVersion = 7.0.1;
+						DevelopmentTeam = W3MH7MTTSB;
+						LastSwiftMigration = 0810;
+						SystemCapabilities = {
+							com.apple.ApplicationGroups.iOS = {
+								enabled = 1;
+							};
+						};
+					};
+					32C5A8851C5C0CE600064A33 = {
+						CreatedOnToolsVersion = 7.2;
+						DevelopmentTeam = W3MH7MTTSB;
+						LastSwiftMigration = 0810;
+					};
+					32EBFD6F19A10EA9008F9D28 = {
+						CreatedOnToolsVersion = 6.0;
+						DevelopmentTeam = W3MH7MTTSB;
+						LastSwiftMigration = 0810;
+						SystemCapabilities = {
+							com.apple.ApplicationGroups.iOS = {
+								enabled = 1;
+							};
+						};
+					};
+				};
+			};
+			buildConfigurationList = 32EBFD6B19A10EA9008F9D28 /* Build configuration list for PBXProject "PhotoKit" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 32EBFD6719A10EA9008F9D28;
+			productRefGroup = 32EBFD7119A10EA9008F9D28 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				32EBFD6F19A10EA9008F9D28 /* PhotoKit */,
+				3276DA4D1BC0A17900DDD64E /* VignettePhotoExtension */,
+				32C5A8851C5C0CE600064A33 /* VignetteFilter */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		3276DA4C1BC0A17900DDD64E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				44CEA5D91DF849A500CD023A /* readme.rtf in Resources */,
+				4402376E1DDCA91B0067C071 /* MainInterface.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		32C5A8841C5C0CE600064A33 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		32EBFD6E19A10EA9008F9D28 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				440237471DDC9E100067C071 /* Assets.xcassets in Resources */,
+				440237481DDC9E100067C071 /* Main.storyboard in Resources */,
+				4402374D1DDC9E100067C071 /* LaunchScreen.storyboard in Resources */,
+				4402374B1DDC9E100067C071 /* EditingViewController.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		3276DA4A1BC0A17900DDD64E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4402376D1DDCA9170067C071 /* PhotoEditingViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		32C5A8811C5C0CE600064A33 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4402376B1DDCA8970067C071 /* VignetteFilter.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		32EBFD6C19A10EA9008F9D28 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4402374F1DDC9E100067C071 /* RootViewController.swift in Sources */,
+				440237491DDC9E100067C071 /* DataViewController.swift in Sources */,
+				4402374E1DDC9E100067C071 /* ModelController.swift in Sources */,
+				44CEA5DB1DF84D6A00CD023A /* MovieVC.swift in Sources */,
+				44CEA5DD1DF84F1900CD023A /* LivePhotoVC.swift in Sources */,
+				4402374A1DDC9E100067C071 /* EditingViewController.swift in Sources */,
+				44CEA5DF1DF97D3D00CD023A /* PhotoKitVC.swift in Sources */,
+				440237461DDC9E100067C071 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		32427ABB1C5C11EE00107FF4 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 32C5A8851C5C0CE600064A33 /* VignetteFilter */;
+			targetProxy = 32427ABA1C5C11EE00107FF4 /* PBXContainerItemProxy */;
+		};
+		3276DA5C1BC0A17900DDD64E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 3276DA4D1BC0A17900DDD64E /* VignettePhotoExtension */;
+			targetProxy = 3276DA5B1BC0A17900DDD64E /* PBXContainerItemProxy */;
+		};
+		440237681DDCA58E0067C071 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 32C5A8851C5C0CE600064A33 /* VignetteFilter */;
+			targetProxy = 440237671DDCA58E0067C071 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		4402373D1DDC9E100067C071 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				4402373E1DDC9E100067C071 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		3276DA5F1BC0A17900DDD64E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = VignettePhotoExtension/VignettePhotoExtension.entitlements;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = W3MH7MTTSB;
+				ENABLE_TESTABILITY = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = VignettePhotoExtension/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.rockgarden.PhotoKitImages.VignettePhotoExtension;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		3276DA601BC0A17900DDD64E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = VignettePhotoExtension/VignettePhotoExtension.entitlements;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = W3MH7MTTSB;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = VignettePhotoExtension/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.rockgarden.PhotoKitImages.VignettePhotoExtension;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+		32C5A88F1C5C0CE600064A33 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = YES;
+				CLANG_ENABLE_MODULES = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = W3MH7MTTSB;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_TESTABILITY = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = VignetteFilter/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.rockgarden.VignetteFilter;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		32C5A8901C5C0CE600064A33 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = YES;
+				CLANG_ENABLE_MODULES = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = W3MH7MTTSB;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = VignetteFilter/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.rockgarden.VignetteFilter;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		32EBFD8E19A10EA9008F9D28 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		32EBFD8F19A10EA9008F9D28 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		32EBFD9119A10EA9008F9D28 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = PhotoKitImages/PhotoKitImages.entitlements;
+				DEVELOPMENT_TEAM = W3MH7MTTSB;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
+				INFOPLIST_FILE = PhotoKitImages/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.rockgarden.PhotoKitImages;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		32EBFD9219A10EA9008F9D28 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = PhotoKitImages/PhotoKitImages.entitlements;
+				DEVELOPMENT_TEAM = W3MH7MTTSB;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
+				INFOPLIST_FILE = PhotoKitImages/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.rockgarden.PhotoKitImages;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		3276DA5E1BC0A17900DDD64E /* Build configuration list for PBXNativeTarget "VignettePhotoExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3276DA5F1BC0A17900DDD64E /* Debug */,
+				3276DA601BC0A17900DDD64E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		32C5A8911C5C0CE600064A33 /* Build configuration list for PBXNativeTarget "VignetteFilter" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				32C5A88F1C5C0CE600064A33 /* Debug */,
+				32C5A8901C5C0CE600064A33 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		32EBFD6B19A10EA9008F9D28 /* Build configuration list for PBXProject "PhotoKit" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				32EBFD8E19A10EA9008F9D28 /* Debug */,
+				32EBFD8F19A10EA9008F9D28 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		32EBFD9019A10EA9008F9D28 /* Build configuration list for PBXNativeTarget "PhotoKit" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				32EBFD9119A10EA9008F9D28 /* Debug */,
+				32EBFD9219A10EA9008F9D28 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 32EBFD6819A10EA9008F9D28 /* Project object */;
+}

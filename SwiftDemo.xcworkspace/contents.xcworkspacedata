@@ -41,7 +41,7 @@
       location = "group:demo/ImagePickerSheetController/ImagePickerSheetController.xcodeproj">
    </FileRef>
    <FileRef
-      location = "group:demo/PhotoKitImages/PhotoKitImages.xcodeproj">
+      location = "group:/Users/rockgarden/Documents/workProject/swift_demo/demo/PhotoKitImages/PhotoKit.xcodeproj">
    </FileRef>
    <FileRef
       location = "group:demo/AVCapture/AVCapture.xcodeproj">

@@ -5,13 +5,14 @@
     </device>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--Data View Controller-->
         <scene sceneID="3qM-eY-iJ1">
             <objects>
-                <viewController storyboardIdentifier="DataViewController" id="hzS-jB-y9W" customClass="DataViewController" customModule="PhotoKitImages" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="DataViewController" id="hzS-jB-y9W" customClass="DataViewController" customModule="PhotoKit" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="6LC-1I-4vP"/>
                         <viewControllerLayoutGuide type="bottom" id="a4F-Wq-f2I"/>
@@ -138,6 +139,26 @@
                                             <segue destination="PxF-Ax-wPy" kind="show" id="zcB-FR-Cbj"/>
                                         </connections>
                                     </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" textLabel="P9T-s7-DsL" style="IBUITableViewCellStyleDefault" id="2NE-MO-zMV">
+                                        <rect key="frame" x="0.0" y="132" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="2NE-MO-zMV" id="2Wq-NU-8aJ">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Photo Kit" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="P9T-s7-DsL">
+                                                    <rect key="frame" x="15" y="0.0" width="345" height="43"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="0ie-bs-JzM" kind="show" id="Tto-kV-DQ2"/>
+                                        </connections>
+                                    </tableViewCell>
                                 </cells>
                             </tableViewSection>
                         </sections>
@@ -155,7 +176,7 @@
         <!--Root View Controller-->
         <scene sceneID="3GU-QQ-JyJ">
             <objects>
-                <viewController id="PxF-Ax-wPy" customClass="RootViewController" customModule="PhotoKitImages" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="PxF-Ax-wPy" customClass="RootViewController" customModule="PhotoKit" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="17i-ZA-3zy"/>
                         <viewControllerLayoutGuide type="bottom" id="8Yh-h8-jIR"/>
@@ -199,7 +220,7 @@
         <!--MoiveVC-->
         <scene sceneID="3pk-sd-snt">
             <objects>
-                <viewController storyboardIdentifier="MoiveVC" id="Zgr-lp-62D" customClass="MoiveVC" customModule="PhotoKitImages" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MoiveVC" id="Zgr-lp-62D" customClass="MoiveVC" customModule="PhotoKit" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Lse-IP-NHU"/>
                         <viewControllerLayoutGuide type="bottom" id="c8z-nP-526"/>
@@ -241,7 +262,7 @@
         <!--Live PhotoVC-->
         <scene sceneID="8nd-1C-gIe">
             <objects>
-                <viewController storyboardIdentifier="LivePhotoVC" id="dso-Aa-i4C" customClass="LivePhotoVC" customModule="PhotoKitImages" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="LivePhotoVC" id="dso-Aa-i4C" customClass="LivePhotoVC" customModule="PhotoKit" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Yfw-8G-ctr"/>
                         <viewControllerLayoutGuide type="bottom" id="UbE-8E-Efb"/>
@@ -261,7 +282,86 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yr2-EC-QXu" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1950" y="1159"/>
+            <point key="canvasLocation" x="1950" y="1186"/>
+        </scene>
+        <!--Photo KitVC-->
+        <scene sceneID="Z3U-tc-RXk">
+            <objects>
+                <viewController storyboardIdentifier="PhotoKitVC" id="0ie-bs-JzM" customClass="PhotoKitVC" customModule="PhotoKit" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="jRC-mz-hQM"/>
+                        <viewControllerLayoutGuide type="bottom" id="hYV-1v-B44"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="jQI-vq-H4j">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="JFc-ey-Zko">
+                                <rect key="frame" x="16" y="84" width="343" height="194"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JzI-bL-c84">
+                                        <rect key="frame" x="119.5" y="0.0" width="104" height="33"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <state key="normal" title="List Moments">
+                                            <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="doButton:" destination="0ie-bs-JzM" eventType="touchUpInside" id="5iA-o8-Eak"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gkc-6o-LXM">
+                                        <rect key="frame" x="126.5" y="41" width="90" height="33"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <state key="normal" title="List Albums">
+                                            <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="doButton2:" destination="0ie-bs-JzM" eventType="touchUpInside" id="F9Q-2Y-jED"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EF9-uC-dlZ">
+                                        <rect key="frame" x="75" y="82" width="193" height="33"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <state key="normal" title="List Photos in One Album">
+                                            <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="doButton3:" destination="0ie-bs-JzM" eventType="touchUpInside" id="d22-3O-YHP"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="e3X-hg-6Tv">
+                                        <rect key="frame" x="119" y="123" width="105" height="33"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <state key="normal" title="Create Album">
+                                            <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="doButton4:" destination="0ie-bs-JzM" eventType="touchUpInside" id="iQi-f9-6kq"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="exn-EV-V1L">
+                                        <rect key="frame" x="73.5" y="164" width="196" height="30"/>
+                                        <state key="normal" title="Add Photo to Created Album">
+                                            <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="doButton5:" destination="0ie-bs-JzM" eventType="touchUpInside" id="GJv-hm-gEI"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="JFc-ey-Zko" secondAttribute="trailing" id="I8f-jF-3lc"/>
+                            <constraint firstItem="JFc-ey-Zko" firstAttribute="top" secondItem="jRC-mz-hQM" secondAttribute="bottom" constant="20" id="Qxx-0v-4YL"/>
+                            <constraint firstItem="JFc-ey-Zko" firstAttribute="leading" secondItem="jQI-vq-H4j" secondAttribute="leadingMargin" id="lsE-Lj-JRK"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="tey-R2-BTc" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1161" y="1186"/>
         </scene>
     </scenes>
 </document>

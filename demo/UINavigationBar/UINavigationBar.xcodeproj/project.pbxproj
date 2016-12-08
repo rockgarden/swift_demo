@@ -8,21 +8,48 @@
 
 /* Begin PBXBuildFile section */
 		44A9C4211D96B72400F09E6A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44A9C4201D96B72400F09E6A /* AppDelegate.swift */; };
-		44A9C4231D96B72400F09E6A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44A9C4221D96B72400F09E6A /* ViewController.swift */; };
-		44A9C4261D96B72400F09E6A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 44A9C4241D96B72400F09E6A /* Main.storyboard */; };
+		44A9C4231D96B72400F09E6A /* TestCustomNavBarVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44A9C4221D96B72400F09E6A /* TestCustomNavBarVC.swift */; };
 		44A9C4281D96B72400F09E6A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 44A9C4271D96B72400F09E6A /* Assets.xcassets */; };
 		44A9C42B1D96B72400F09E6A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 44A9C4291D96B72400F09E6A /* LaunchScreen.storyboard */; };
+		44CEA5E11DF9910E00CD023A /* MaterialNavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44CEA5E01DF9910E00CD023A /* MaterialNavigationBar.swift */; };
+		44CEA5E31DF9944300CD023A /* Cities.json in Resources */ = {isa = PBXBuildFile; fileRef = 44CEA5E21DF9944300CD023A /* Cities.json */; };
+		44CEA5E51DF9945E00CD023A /* ReadMe.md in Sources */ = {isa = PBXBuildFile; fileRef = 44CEA5E41DF9945E00CD023A /* ReadMe.md */; };
+		44CEA5E71DF9947400CD023A /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44CEA5E61DF9947400CD023A /* MainViewController.swift */; };
+		44CEA5F81DF994AC00CD023A /* CustomAppearanceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44CEA5E91DF994AC00CD023A /* CustomAppearanceViewController.swift */; };
+		44CEA5F91DF994AC00CD023A /* CustomBackButtonDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44CEA5EB1DF994AC00CD023A /* CustomBackButtonDetailViewController.swift */; };
+		44CEA5FA1DF994AC00CD023A /* CustomBackButtonNavController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44CEA5EC1DF994AC00CD023A /* CustomBackButtonNavController.swift */; };
+		44CEA5FB1DF994AC00CD023A /* CustomBackButtonViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 44CEA5EE1DF994AC00CD023A /* CustomBackButtonViewController.m */; };
+		44CEA5FC1DF994AD00CD023A /* CustomRightViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44CEA5F01DF994AC00CD023A /* CustomRightViewController.swift */; };
+		44CEA5FD1DF994AD00CD023A /* CustomTitleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44CEA5F21DF994AC00CD023A /* CustomTitleViewController.swift */; };
+		44CEA5FE1DF994AD00CD023A /* ExtendedNavBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44CEA5F41DF994AC00CD023A /* ExtendedNavBarView.swift */; };
+		44CEA5FF1DF994AD00CD023A /* ExtendedNavBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44CEA5F51DF994AC00CD023A /* ExtendedNavBarViewController.swift */; };
+		44CEA6001DF994AD00CD023A /* NavigationPromptViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44CEA5F71DF994AC00CD023A /* NavigationPromptViewController.swift */; };
+		44CEA6021DF994E300CD023A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 44CEA6011DF994E300CD023A /* Main.storyboard */; };
 		C21C2DD21DEE7A8B00706D84 /* readme.rtf in Resources */ = {isa = PBXBuildFile; fileRef = C21C2DD11DEE7A8B00706D84 /* readme.rtf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		44A9C41D1D96B72400F09E6A /* UINavigationBar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UINavigationBar.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		44A9C4201D96B72400F09E6A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		44A9C4221D96B72400F09E6A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		44A9C4251D96B72400F09E6A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		44A9C4221D96B72400F09E6A /* TestCustomNavBarVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestCustomNavBarVC.swift; sourceTree = "<group>"; };
 		44A9C4271D96B72400F09E6A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		44A9C42A1D96B72400F09E6A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		44A9C42C1D96B72400F09E6A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		44CEA5E01DF9910E00CD023A /* MaterialNavigationBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MaterialNavigationBar.swift; sourceTree = "<group>"; };
+		44CEA5E21DF9944300CD023A /* Cities.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Cities.json; sourceTree = "<group>"; };
+		44CEA5E41DF9945E00CD023A /* ReadMe.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = ReadMe.md; sourceTree = "<group>"; };
+		44CEA5E61DF9947400CD023A /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		44CEA5E91DF994AC00CD023A /* CustomAppearanceViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomAppearanceViewController.swift; sourceTree = "<group>"; };
+		44CEA5EB1DF994AC00CD023A /* CustomBackButtonDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomBackButtonDetailViewController.swift; sourceTree = "<group>"; };
+		44CEA5EC1DF994AC00CD023A /* CustomBackButtonNavController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomBackButtonNavController.swift; sourceTree = "<group>"; };
+		44CEA5ED1DF994AC00CD023A /* CustomBackButtonViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomBackButtonViewController.h; sourceTree = "<group>"; };
+		44CEA5EE1DF994AC00CD023A /* CustomBackButtonViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomBackButtonViewController.m; sourceTree = "<group>"; };
+		44CEA5F01DF994AC00CD023A /* CustomRightViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomRightViewController.swift; sourceTree = "<group>"; };
+		44CEA5F21DF994AC00CD023A /* CustomTitleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomTitleViewController.swift; sourceTree = "<group>"; };
+		44CEA5F41DF994AC00CD023A /* ExtendedNavBarView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExtendedNavBarView.swift; sourceTree = "<group>"; };
+		44CEA5F51DF994AC00CD023A /* ExtendedNavBarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExtendedNavBarViewController.swift; sourceTree = "<group>"; };
+		44CEA5F71DF994AC00CD023A /* NavigationPromptViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigationPromptViewController.swift; sourceTree = "<group>"; };
+		44CEA6011DF994E300CD023A /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		C21C2DD11DEE7A8B00706D84 /* readme.rtf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.rtf; path = readme.rtf; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -40,6 +67,7 @@
 		44A9C4141D96B72400F09E6A = {
 			isa = PBXGroup;
 			children = (
+				44CEA5E41DF9945E00CD023A /* ReadMe.md */,
 				C21C2DD11DEE7A8B00706D84 /* readme.rtf */,
 				44A9C41F1D96B72400F09E6A /* UINavigationBar */,
 				44A9C41E1D96B72400F09E6A /* Products */,
@@ -57,14 +85,75 @@
 		44A9C41F1D96B72400F09E6A /* UINavigationBar */ = {
 			isa = PBXGroup;
 			children = (
+				44CEA6011DF994E300CD023A /* Main.storyboard */,
+				44CEA5E61DF9947400CD023A /* MainViewController.swift */,
 				44A9C4201D96B72400F09E6A /* AppDelegate.swift */,
-				44A9C4221D96B72400F09E6A /* ViewController.swift */,
-				44A9C4241D96B72400F09E6A /* Main.storyboard */,
+				44CEA5E81DF994AC00CD023A /* CustomAppearance */,
+				44CEA5EA1DF994AC00CD023A /* CustomBackButton */,
+				44CEA5EF1DF994AC00CD023A /* CustomRightView */,
+				44CEA5F11DF994AC00CD023A /* CustomTitleView */,
+				44CEA5F31DF994AC00CD023A /* ExtendedNavBar */,
+				44CEA5F61DF994AC00CD023A /* NavigationPrompt */,
+				44A9C4221D96B72400F09E6A /* TestCustomNavBarVC.swift */,
+				44CEA5E21DF9944300CD023A /* Cities.json */,
 				44A9C4271D96B72400F09E6A /* Assets.xcassets */,
 				44A9C4291D96B72400F09E6A /* LaunchScreen.storyboard */,
 				44A9C42C1D96B72400F09E6A /* Info.plist */,
+				44CEA5E01DF9910E00CD023A /* MaterialNavigationBar.swift */,
 			);
 			path = UINavigationBar;
+			sourceTree = "<group>";
+		};
+		44CEA5E81DF994AC00CD023A /* CustomAppearance */ = {
+			isa = PBXGroup;
+			children = (
+				44CEA5E91DF994AC00CD023A /* CustomAppearanceViewController.swift */,
+			);
+			path = CustomAppearance;
+			sourceTree = "<group>";
+		};
+		44CEA5EA1DF994AC00CD023A /* CustomBackButton */ = {
+			isa = PBXGroup;
+			children = (
+				44CEA5EB1DF994AC00CD023A /* CustomBackButtonDetailViewController.swift */,
+				44CEA5EC1DF994AC00CD023A /* CustomBackButtonNavController.swift */,
+				44CEA5ED1DF994AC00CD023A /* CustomBackButtonViewController.h */,
+				44CEA5EE1DF994AC00CD023A /* CustomBackButtonViewController.m */,
+			);
+			path = CustomBackButton;
+			sourceTree = "<group>";
+		};
+		44CEA5EF1DF994AC00CD023A /* CustomRightView */ = {
+			isa = PBXGroup;
+			children = (
+				44CEA5F01DF994AC00CD023A /* CustomRightViewController.swift */,
+			);
+			path = CustomRightView;
+			sourceTree = "<group>";
+		};
+		44CEA5F11DF994AC00CD023A /* CustomTitleView */ = {
+			isa = PBXGroup;
+			children = (
+				44CEA5F21DF994AC00CD023A /* CustomTitleViewController.swift */,
+			);
+			path = CustomTitleView;
+			sourceTree = "<group>";
+		};
+		44CEA5F31DF994AC00CD023A /* ExtendedNavBar */ = {
+			isa = PBXGroup;
+			children = (
+				44CEA5F41DF994AC00CD023A /* ExtendedNavBarView.swift */,
+				44CEA5F51DF994AC00CD023A /* ExtendedNavBarViewController.swift */,
+			);
+			path = ExtendedNavBar;
+			sourceTree = "<group>";
+		};
+		44CEA5F61DF994AC00CD023A /* NavigationPrompt */ = {
+			isa = PBXGroup;
+			children = (
+				44CEA5F71DF994AC00CD023A /* NavigationPromptViewController.swift */,
+			);
+			path = NavigationPrompt;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -94,12 +183,13 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0730;
-				LastUpgradeCheck = 0730;
+				LastUpgradeCheck = 0810;
 				ORGANIZATIONNAME = rockgarden;
 				TargetAttributes = {
 					44A9C41C1D96B72400F09E6A = {
 						CreatedOnToolsVersion = 7.3.1;
-						LastSwiftMigration = 0800;
+						DevelopmentTeam = W3MH7MTTSB;
+						LastSwiftMigration = 0810;
 					};
 				};
 			};
@@ -127,9 +217,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				44A9C42B1D96B72400F09E6A /* LaunchScreen.storyboard in Resources */,
+				44CEA6021DF994E300CD023A /* Main.storyboard in Resources */,
 				44A9C4281D96B72400F09E6A /* Assets.xcassets in Resources */,
+				44CEA5E31DF9944300CD023A /* Cities.json in Resources */,
 				C21C2DD21DEE7A8B00706D84 /* readme.rtf in Resources */,
-				44A9C4261D96B72400F09E6A /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -140,22 +231,26 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				44A9C4231D96B72400F09E6A /* ViewController.swift in Sources */,
+				44CEA5FB1DF994AC00CD023A /* CustomBackButtonViewController.m in Sources */,
+				44CEA5FE1DF994AD00CD023A /* ExtendedNavBarView.swift in Sources */,
+				44CEA5F91DF994AC00CD023A /* CustomBackButtonDetailViewController.swift in Sources */,
+				44CEA5FC1DF994AD00CD023A /* CustomRightViewController.swift in Sources */,
+				44A9C4231D96B72400F09E6A /* TestCustomNavBarVC.swift in Sources */,
 				44A9C4211D96B72400F09E6A /* AppDelegate.swift in Sources */,
+				44CEA5E51DF9945E00CD023A /* ReadMe.md in Sources */,
+				44CEA5E11DF9910E00CD023A /* MaterialNavigationBar.swift in Sources */,
+				44CEA6001DF994AD00CD023A /* NavigationPromptViewController.swift in Sources */,
+				44CEA5E71DF9947400CD023A /* MainViewController.swift in Sources */,
+				44CEA5F81DF994AC00CD023A /* CustomAppearanceViewController.swift in Sources */,
+				44CEA5FA1DF994AC00CD023A /* CustomBackButtonNavController.swift in Sources */,
+				44CEA5FF1DF994AD00CD023A /* ExtendedNavBarViewController.swift in Sources */,
+				44CEA5FD1DF994AD00CD023A /* CustomTitleViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		44A9C4241D96B72400F09E6A /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				44A9C4251D96B72400F09E6A /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		44A9C4291D96B72400F09E6A /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -181,8 +276,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -226,8 +323,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -246,6 +345,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
@@ -254,7 +354,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = W3MH7MTTSB;
 				INFOPLIST_FILE = UINavigationBar/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.rockgarden.UINavigationBar;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -266,7 +368,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = W3MH7MTTSB;
 				INFOPLIST_FILE = UINavigationBar/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.rockgarden.UINavigationBar;
 				PRODUCT_NAME = "$(TARGET_NAME)";
