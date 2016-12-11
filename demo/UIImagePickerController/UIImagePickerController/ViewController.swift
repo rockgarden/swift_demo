@@ -81,6 +81,7 @@ class ViewController: UIViewController {
         return .all
     }
 
+    @discardableResult
     func determineStatus() -> Bool {
         let status = AVCaptureDevice.authorizationStatus(forMediaType: AVMediaTypeVideo)
         switch status {
@@ -145,7 +146,9 @@ class ViewController: UIViewController {
 
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
+        /// 优化的方案还是在每次使用时检查权限
         self.determineStatus()
+        /// APP每次切回前台时检查权限
         NotificationCenter.default.addObserver(self,
                                                selector: #selector(determineStatus),
                                                name: NSNotification.Name.UIApplicationWillEnterForeground,
@@ -157,7 +160,7 @@ class ViewController: UIViewController {
         NotificationCenter.default.removeObserver(self)
     }
 
-    @IBAction func doPick (_ sender: AnyObject!) {
+    @IBAction func doPick (_ sender: Any!) {
         if !self.determineStatus() {
             print("not authorized")
             return
@@ -168,9 +171,9 @@ class ViewController: UIViewController {
 
     }
 
-    fileprivate func pickPhoto(_ sender: AnyObject!) {
-        // horrible SavedPhotosAlbum 极不友好的api
-        // let src = UIImagePickerControllerSourceType.SavedPhotosAlbum
+    fileprivate func pickPhoto(_ sender: Any!) {
+        //horrible SavedPhotosAlbum //极不友好的api
+        //let src = UIImagePickerControllerSourceType.SavedPhotosAlbum
 
         let src = UIImagePickerControllerSourceType.photoLibrary
         guard UIImagePickerController.isSourceTypeAvailable(src)
@@ -178,7 +181,7 @@ class ViewController: UIViewController {
         guard let arr = UIImagePickerController.availableMediaTypes(for: src)
             else { print("no available types"); return }
 
-        let picker = MyImagePickerController() // see comments below for reason
+        let picker = MyImagePickerController() //see comments below for reason
         picker.sourceType = src
         picker.mediaTypes = arr //[kUTTypeLivePhoto as String, kUTTypeImage as String, kUTTypeMovie as String]
         picker.delegate = self
@@ -335,7 +338,6 @@ extension ViewController : UIImagePickerControllerDelegate {
                             self.showLivePhoto(live!)
                         }
                     }
-
             }
         }
 
