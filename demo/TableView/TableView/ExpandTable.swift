@@ -10,6 +10,4 @@ import UIKit
 
 open class FoldTableViewHeader: UITableViewHeaderFooterView {
     open var keepExpanded = true // 开关参数:是否收缩已经展开的section
-
-
 }
