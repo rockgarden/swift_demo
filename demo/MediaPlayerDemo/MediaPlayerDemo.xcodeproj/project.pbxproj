@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4435E9D01DFEC6CF0003196A /* AVPlayerLayerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4435E9CF1DFEC6CF0003196A /* AVPlayerLayerVC.swift */; };
+		4435E9D21DFEC8FF0003196A /* wilhelm.aiff in Resources */ = {isa = PBXBuildFile; fileRef = 4435E9D11DFEC8FF0003196A /* wilhelm.aiff */; };
+		4435E9D41DFECA9B0003196A /* EmbeddedAVKitVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4435E9D31DFECA9B0003196A /* EmbeddedAVKitVC.swift */; };
+		4435E9D61DFED0D30003196A /* EmbeddedAVKitVC_UIVideoEditor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4435E9D51DFED0D30003196A /* EmbeddedAVKitVC_UIVideoEditor.swift */; };
 		4453579C1DFAFF8300F996A2 /* AVKitVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4453579B1DFAFF8300F996A2 /* AVKitVC.swift */; };
 		4453579E1DFB000800F996A2 /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4453579D1DFB000800F996A2 /* Player.swift */; };
 		445357A01DFD332300F996A2 /* MediaQueryVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4453579F1DFD332300F996A2 /* MediaQueryVC.swift */; };
@@ -22,6 +26,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4435E9CF1DFEC6CF0003196A /* AVPlayerLayerVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AVPlayerLayerVC.swift; sourceTree = "<group>"; };
+		4435E9D11DFEC8FF0003196A /* wilhelm.aiff */ = {isa = PBXFileReference; lastKnownFileType = audio.aiff; path = wilhelm.aiff; sourceTree = "<group>"; };
+		4435E9D31DFECA9B0003196A /* EmbeddedAVKitVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmbeddedAVKitVC.swift; sourceTree = "<group>"; };
+		4435E9D51DFED0D30003196A /* EmbeddedAVKitVC_UIVideoEditor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmbeddedAVKitVC_UIVideoEditor.swift; sourceTree = "<group>"; };
 		4453579B1DFAFF8300F996A2 /* AVKitVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AVKitVC.swift; sourceTree = "<group>"; };
 		4453579D1DFB000800F996A2 /* Player.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
 		4453579F1DFD332300F996A2 /* MediaQueryVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MediaQueryVC.swift; sourceTree = "<group>"; };
@@ -74,8 +82,12 @@
 				4453579D1DFB000800F996A2 /* Player.swift */,
 				4453579F1DFD332300F996A2 /* MediaQueryVC.swift */,
 				445357A11DFD487000F996A2 /* PlayerLayerVC.swift */,
+				4435E9CF1DFEC6CF0003196A /* AVPlayerLayerVC.swift */,
+				4435E9D31DFECA9B0003196A /* EmbeddedAVKitVC.swift */,
+				4435E9D51DFED0D30003196A /* EmbeddedAVKitVC_UIVideoEditor.swift */,
 				44C070B91DFAFB4E0093BC1E /* Main.storyboard */,
 				44C070C71DFAFD700093BC1E /* Main_iPad.storyboard */,
+				4435E9D11DFEC8FF0003196A /* wilhelm.aiff */,
 				445357A31DFD48E500F996A2 /* aboutTiagol.m4a */,
 				445357A41DFD48E500F996A2 /* ElMirage.mp4 */,
 				44C070BC1DFAFB4E0093BC1E /* Assets.xcassets */,
@@ -145,6 +157,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4435E9D21DFEC8FF0003196A /* wilhelm.aiff in Resources */,
 				445357A61DFD4ED200F996A2 /* aboutTiagol.m4a in Resources */,
 				445357A51DFD4ECC00F996A2 /* ElMirage.mp4 in Resources */,
 				44C070C01DFAFB4E0093BC1E /* LaunchScreen.storyboard in Resources */,
@@ -163,9 +176,12 @@
 			files = (
 				4453579E1DFB000800F996A2 /* Player.swift in Sources */,
 				445357A21DFD487000F996A2 /* PlayerLayerVC.swift in Sources */,
+				4435E9D41DFECA9B0003196A /* EmbeddedAVKitVC.swift in Sources */,
 				44C070B81DFAFB4E0093BC1E /* MediaPickerVC.swift in Sources */,
+				4435E9D01DFEC6CF0003196A /* AVPlayerLayerVC.swift in Sources */,
 				4453579C1DFAFF8300F996A2 /* AVKitVC.swift in Sources */,
 				44C070B61DFAFB4E0093BC1E /* AppDelegate.swift in Sources */,
+				4435E9D61DFED0D30003196A /* EmbeddedAVKitVC_UIVideoEditor.swift in Sources */,
 				445357A01DFD332300F996A2 /* MediaQueryVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
