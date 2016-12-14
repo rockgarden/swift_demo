@@ -15,7 +15,7 @@
 		442DF1241DC61E96002BF874 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 442DF1261DC61E96002BF874 /* Localizable.strings */; };
 		442DF12D1DC61F4E002BF874 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 442DF12F1DC61F4E002BF874 /* InfoPlist.strings */; };
 		44790F701DC6217F00AAB442 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 44790F6F1DC6217F00AAB442 /* Info.plist */; };
-		C2D48F5E1E00EED5008D4F90 /* Readme.rtf in Resources */ = {isa = PBXBuildFile; fileRef = C2D48F5D1E00EED5008D4F90 /* Readme.rtf */; };
+		C2D48F5E1E00EED5008D4F90 /* Readme.rtfd in Resources */ = {isa = PBXBuildFile; fileRef = C2D48F5D1E00EED5008D4F90 /* Readme.rtfd */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,7 +32,7 @@
 		442DF12E1DC61F4E002BF874 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
 		442DF1301DC61F51002BF874 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		44790F6F1DC6217F00AAB442 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		C2D48F5D1E00EED5008D4F90 /* Readme.rtf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.rtf; path = Readme.rtf; sourceTree = "<group>"; };
+		C2D48F5D1E00EED5008D4F90 /* Readme.rtfd */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = wrapper.rtfd; path = Readme.rtfd; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -49,7 +49,7 @@
 		442DF1001DC61D58002BF874 = {
 			isa = PBXGroup;
 			children = (
-				C2D48F5D1E00EED5008D4F90 /* Readme.rtf */,
+				C2D48F5D1E00EED5008D4F90 /* Readme.rtfd */,
 				442DF10B1DC61D58002BF874 /* Localization */,
 				442DF10A1DC61D58002BF874 /* Products */,
 			);
@@ -144,7 +144,7 @@
 				442DF1121DC61D58002BF874 /* Main.storyboard in Resources */,
 				442DF12D1DC61F4E002BF874 /* InfoPlist.strings in Resources */,
 				44790F701DC6217F00AAB442 /* Info.plist in Resources */,
-				C2D48F5E1E00EED5008D4F90 /* Readme.rtf in Resources */,
+				C2D48F5E1E00EED5008D4F90 /* Readme.rtfd in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
