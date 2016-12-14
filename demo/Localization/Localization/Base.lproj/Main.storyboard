@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="Pq6-VC-MxW">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="Pq6-VC-MxW">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -20,6 +22,7 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CPW-SQ-pQe">
+                                <rect key="frame" x="170" y="577" width="35" height="30"/>
                                 <state key="normal" title="Hello">
                                     <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
@@ -30,8 +33,8 @@
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="CPW-SQ-pQe" firstAttribute="leading" secondItem="2RB-CI-Akj" secondAttribute="leadingMargin" constant="35" id="RAl-RI-sAk"/>
-                            <constraint firstItem="CPW-SQ-pQe" firstAttribute="top" secondItem="aUT-Ld-MvG" secondAttribute="bottom" constant="34" id="jcV-WZ-4b3"/>
+                            <constraint firstItem="7vN-dK-jbp" firstAttribute="top" secondItem="CPW-SQ-pQe" secondAttribute="bottom" constant="60" id="4Ej-et-iPp"/>
+                            <constraint firstItem="CPW-SQ-pQe" firstAttribute="centerX" secondItem="2RB-CI-Akj" secondAttribute="centerX" id="7zh-ur-6zZ"/>
                         </constraints>
                     </view>
                 </viewController>

@@ -23,6 +23,9 @@
 		44C070BD1DFAFB4E0093BC1E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 44C070BC1DFAFB4E0093BC1E /* Assets.xcassets */; };
 		44C070C01DFAFB4E0093BC1E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 44C070BE1DFAFB4E0093BC1E /* LaunchScreen.storyboard */; };
 		44C070C81DFAFD700093BC1E /* Main_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 44C070C71DFAFD700093BC1E /* Main_iPad.storyboard */; };
+		C2D48F601E010195008D4F90 /* MIDITestVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2D48F5F1E010195008D4F90 /* MIDITestVC.swift */; };
+		C2D48F631E0101B4008D4F90 /* presto.mid in Resources */ = {isa = PBXBuildFile; fileRef = C2D48F611E0101B4008D4F90 /* presto.mid */; };
+		C2D48F641E0101B4008D4F90 /* PianoBell.sf2 in Resources */ = {isa = PBXBuildFile; fileRef = C2D48F621E0101B4008D4F90 /* PianoBell.sf2 */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,6 +47,9 @@
 		44C070BF1DFAFB4E0093BC1E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		44C070C11DFAFB4E0093BC1E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		44C070C71DFAFD700093BC1E /* Main_iPad.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main_iPad.storyboard; sourceTree = "<group>"; };
+		C2D48F5F1E010195008D4F90 /* MIDITestVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MIDITestVC.swift; sourceTree = "<group>"; };
+		C2D48F611E0101B4008D4F90 /* presto.mid */ = {isa = PBXFileReference; lastKnownFileType = audio.midi; path = presto.mid; sourceTree = "<group>"; };
+		C2D48F621E0101B4008D4F90 /* PianoBell.sf2 */ = {isa = PBXFileReference; lastKnownFileType = file; path = PianoBell.sf2; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,11 +91,14 @@
 				4435E9CF1DFEC6CF0003196A /* AVPlayerLayerVC.swift */,
 				4435E9D31DFECA9B0003196A /* EmbeddedAVKitVC.swift */,
 				4435E9D51DFED0D30003196A /* EmbeddedAVKitVC_UIVideoEditor.swift */,
+				C2D48F5F1E010195008D4F90 /* MIDITestVC.swift */,
 				44C070B91DFAFB4E0093BC1E /* Main.storyboard */,
 				44C070C71DFAFD700093BC1E /* Main_iPad.storyboard */,
 				4435E9D11DFEC8FF0003196A /* wilhelm.aiff */,
 				445357A31DFD48E500F996A2 /* aboutTiagol.m4a */,
 				445357A41DFD48E500F996A2 /* ElMirage.mp4 */,
+				C2D48F611E0101B4008D4F90 /* presto.mid */,
+				C2D48F621E0101B4008D4F90 /* PianoBell.sf2 */,
 				44C070BC1DFAFB4E0093BC1E /* Assets.xcassets */,
 				44C070BE1DFAFB4E0093BC1E /* LaunchScreen.storyboard */,
 				44C070C11DFAFB4E0093BC1E /* Info.plist */,
@@ -163,7 +172,9 @@
 				44C070C01DFAFB4E0093BC1E /* LaunchScreen.storyboard in Resources */,
 				44C070C81DFAFD700093BC1E /* Main_iPad.storyboard in Resources */,
 				44C070BD1DFAFB4E0093BC1E /* Assets.xcassets in Resources */,
+				C2D48F641E0101B4008D4F90 /* PianoBell.sf2 in Resources */,
 				44C070BB1DFAFB4E0093BC1E /* Main.storyboard in Resources */,
+				C2D48F631E0101B4008D4F90 /* presto.mid in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -179,6 +190,7 @@
 				4435E9D41DFECA9B0003196A /* EmbeddedAVKitVC.swift in Sources */,
 				44C070B81DFAFB4E0093BC1E /* MediaPickerVC.swift in Sources */,
 				4435E9D01DFEC6CF0003196A /* AVPlayerLayerVC.swift in Sources */,
+				C2D48F601E010195008D4F90 /* MIDITestVC.swift in Sources */,
 				4453579C1DFAFF8300F996A2 /* AVKitVC.swift in Sources */,
 				44C070B61DFAFB4E0093BC1E /* AppDelegate.swift in Sources */,
 				4435E9D61DFED0D30003196A /* EmbeddedAVKitVC_UIVideoEditor.swift in Sources */,
