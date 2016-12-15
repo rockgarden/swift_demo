@@ -11,7 +11,7 @@
 		4420AB9B1DF1B385005D280A /* DrawView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4420AB9A1DF1B385005D280A /* DrawView.swift */; };
 		44291CA01DF1B77300D2F579 /* RootVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44291C9F1DF1B77300D2F579 /* RootVC.swift */; };
 		442F31221D6831D60060942F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 442F31211D6831D60060942F /* AppDelegate.swift */; };
-		442F31241D6831D60060942F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 442F31231D6831D60060942F /* ViewController.swift */; };
+		442F31241D6831D60060942F /* GestureRecognizerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 442F31231D6831D60060942F /* GestureRecognizerVC.swift */; };
 		442F31271D6831D60060942F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 442F31251D6831D60060942F /* Main.storyboard */; };
 		442F31291D6831D60060942F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 442F31281D6831D60060942F /* Assets.xcassets */; };
 		442F312C1D6831D60060942F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 442F312A1D6831D60060942F /* LaunchScreen.storyboard */; };
@@ -27,7 +27,9 @@
 		4454EE381D69F33800DC3F04 /* MatchingGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4454EE2E1D69F33800DC3F04 /* MatchingGame.swift */; };
 		4454EE391D69F33800DC3F04 /* RoundedImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4454EE2F1D69F33800DC3F04 /* RoundedImageView.swift */; };
 		4454EE3B1D69F3A800DC3F04 /* MatchItUp.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4454EE3A1D69F3A800DC3F04 /* MatchItUp.storyboard */; };
+		4462AC731E02C12F00A122DF /* DraggingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4462AC721E02C12F00A122DF /* DraggingVC.swift */; };
 		449B13CA1D683DE400795F70 /* HorizVertPanGestureRecognizers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 449B13C91D683DE400795F70 /* HorizVertPanGestureRecognizers.swift */; };
+		44E811331E02C406000079F7 /* DraggingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44E811321E02C406000079F7 /* DraggingView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,7 +38,7 @@
 		44291C9F1DF1B77300D2F579 /* RootVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootVC.swift; sourceTree = "<group>"; };
 		442F311E1D6831D60060942F /* UIGestureRecognizer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UIGestureRecognizer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		442F31211D6831D60060942F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		442F31231D6831D60060942F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		442F31231D6831D60060942F /* GestureRecognizerVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GestureRecognizerVC.swift; sourceTree = "<group>"; };
 		442F31261D6831D60060942F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		442F31281D6831D60060942F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		442F312B1D6831D60060942F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -53,7 +55,9 @@
 		4454EE2E1D69F33800DC3F04 /* MatchingGame.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MatchingGame.swift; sourceTree = "<group>"; };
 		4454EE2F1D69F33800DC3F04 /* RoundedImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoundedImageView.swift; sourceTree = "<group>"; };
 		4454EE3A1D69F3A800DC3F04 /* MatchItUp.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MatchItUp.storyboard; sourceTree = "<group>"; };
+		4462AC721E02C12F00A122DF /* DraggingVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DraggingVC.swift; sourceTree = "<group>"; };
 		449B13C91D683DE400795F70 /* HorizVertPanGestureRecognizers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HorizVertPanGestureRecognizers.swift; sourceTree = "<group>"; };
+		44E811321E02C406000079F7 /* DraggingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DraggingView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,15 +93,17 @@
 				4454EE251D69F33800DC3F04 /* MatchItUp */,
 				442F31211D6831D60060942F /* AppDelegate.swift */,
 				44291C9F1DF1B77300D2F579 /* RootVC.swift */,
-				442F31231D6831D60060942F /* ViewController.swift */,
+				442F31231D6831D60060942F /* GestureRecognizerVC.swift */,
 				442F5D5C1DF1B59D00B2DD3F /* DrawVC.swift */,
 				4420AB9A1DF1B385005D280A /* DrawView.swift */,
 				4420AB981DF1B37E005D280A /* Line.swift */,
+				4462AC721E02C12F00A122DF /* DraggingVC.swift */,
+				44E811321E02C406000079F7 /* DraggingView.swift */,
+				449B13C91D683DE400795F70 /* HorizVertPanGestureRecognizers.swift */,
 				442F31251D6831D60060942F /* Main.storyboard */,
 				442F31281D6831D60060942F /* Assets.xcassets */,
 				442F312A1D6831D60060942F /* LaunchScreen.storyboard */,
 				442F312D1D6831D60060942F /* Info.plist */,
-				449B13C91D683DE400795F70 /* HorizVertPanGestureRecognizers.swift */,
 			);
 			path = UIGestureRecognizer;
 			sourceTree = "<group>";
@@ -198,7 +204,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				442F5D5D1DF1B59D00B2DD3F /* DrawVC.swift in Sources */,
-				442F31241D6831D60060942F /* ViewController.swift in Sources */,
+				4462AC731E02C12F00A122DF /* DraggingVC.swift in Sources */,
+				442F31241D6831D60060942F /* GestureRecognizerVC.swift in Sources */,
 				449B13CA1D683DE400795F70 /* HorizVertPanGestureRecognizers.swift in Sources */,
 				4420AB9B1DF1B385005D280A /* DrawView.swift in Sources */,
 				4454EE301D69F33800DC3F04 /* CircleDrawView.swift in Sources */,
@@ -207,6 +214,7 @@
 				4454EE331D69F33800DC3F04 /* GameOverViewController.swift in Sources */,
 				4454EE391D69F33800DC3F04 /* RoundedImageView.swift in Sources */,
 				4454EE311D69F33800DC3F04 /* CircleFit.swift in Sources */,
+				44E811331E02C406000079F7 /* DraggingView.swift in Sources */,
 				442F31221D6831D60060942F /* AppDelegate.swift in Sources */,
 				4420AB991DF1B37E005D280A /* Line.swift in Sources */,
 				44291CA01DF1B77300D2F579 /* RootVC.swift in Sources */,

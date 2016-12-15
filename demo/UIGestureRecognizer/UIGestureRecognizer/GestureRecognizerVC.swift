@@ -9,7 +9,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class GestureRecognizerVC: UIViewController {
 
 	var netRotation: CGFloat = 0
 	var lastScaleFactor: CGFloat = 1
@@ -92,6 +92,7 @@ class ViewController: UIViewController {
 
 	// ROTATION
 	@IBAction func rotateGesture(_ sender: UIRotationGestureRecognizer) {
+        print("rotate")
 		let rotation: CGFloat = sender.rotation
 		let transform: CGAffineTransform =
 			CGAffineTransform(rotationAngle: rotation + netRotation)
@@ -208,7 +209,7 @@ class ViewController: UIViewController {
 
 }
 
-extension ViewController : UIGestureRecognizerDelegate {
+extension GestureRecognizerVC : UIGestureRecognizerDelegate {
     func gestureRecognizerShouldBegin(_ gestureRecognizer: UIGestureRecognizer) -> Bool {
         // g is the pan gesture recognizer
         //		switch gestureRecognizer.state {

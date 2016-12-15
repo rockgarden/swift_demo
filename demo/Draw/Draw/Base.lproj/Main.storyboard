@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="N30-Mn-VVg">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="N30-Mn-VVg">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -99,6 +99,26 @@
                                         </tableViewCellContentView>
                                         <connections>
                                             <segue destination="82w-aq-TjE" kind="show" id="HM1-2S-VJa"/>
+                                        </connections>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" textLabel="ExV-L0-NFL" style="IBUITableViewCellStyleDefault" id="8Oi-DW-8Za">
+                                        <rect key="frame" x="0.0" y="176" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="8Oi-DW-8Za" id="mN2-zM-YV0">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Draw shapes" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="ExV-L0-NFL">
+                                                    <rect key="frame" x="15" y="0.0" width="345" height="43"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="0DW-W1-1gV" kind="show" id="nau-Z4-k1s"/>
                                         </connections>
                                     </tableViewCell>
                                 </cells>
@@ -323,6 +343,56 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vHj-we-F5S" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-890" y="866"/>
+        </scene>
+        <!--Draw ShapesVC-->
+        <scene sceneID="lkF-IH-2QW">
+            <objects>
+                <viewController storyboardIdentifier="DrawShapesVC" id="0DW-W1-1gV" customClass="DrawShapesVC" customModule="Draw" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="ocU-6o-Hq7"/>
+                        <viewControllerLayoutGuide type="bottom" id="QDF-gC-PUd"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="pDq-GE-alv">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="CzI-WX-MNA">
+                                <rect key="frame" x="84" y="64" width="207" height="30"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YKy-aO-haM">
+                                        <rect key="frame" x="0.0" y="0.0" width="69" height="30"/>
+                                        <state key="normal" title="Rectangle"/>
+                                        <connections>
+                                            <action selector="buttonPressed:" destination="0DW-W1-1gV" eventType="touchUpInside" id="dhl-fd-fMW"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Nxb-t4-0u8">
+                                        <rect key="frame" x="69" y="0.0" width="69" height="30"/>
+                                        <state key="normal" title="Lines"/>
+                                        <connections>
+                                            <action selector="buttonPressed:" destination="0DW-W1-1gV" eventType="touchUpInside" id="8bC-3Q-bRi"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SHs-Tz-kox">
+                                        <rect key="frame" x="138" y="0.0" width="69" height="30"/>
+                                        <state key="normal" title="Circle"/>
+                                        <connections>
+                                            <action selector="buttonPressed:" destination="0DW-W1-1gV" eventType="touchUpInside" id="3CH-an-ubB"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="CzI-WX-MNA" firstAttribute="top" secondItem="ocU-6o-Hq7" secondAttribute="bottom" id="ZoB-fD-heK"/>
+                            <constraint firstItem="CzI-WX-MNA" firstAttribute="centerX" secondItem="pDq-GE-alv" secondAttribute="centerX" id="c1W-OU-mTw"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4Aq-xx-16L" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1478" y="866"/>
         </scene>
     </scenes>
 </document>

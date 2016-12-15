@@ -17,6 +17,7 @@
 		445357A21DFD487000F996A2 /* PlayerLayerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 445357A11DFD487000F996A2 /* PlayerLayerVC.swift */; };
 		445357A51DFD4ECC00F996A2 /* ElMirage.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 445357A41DFD48E500F996A2 /* ElMirage.mp4 */; };
 		445357A61DFD4ED200F996A2 /* aboutTiagol.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 445357A31DFD48E500F996A2 /* aboutTiagol.m4a */; };
+		447DDCE91E02D674000CEA4F /* BackgroundPlayerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 447DDCE81E02D674000CEA4F /* BackgroundPlayerVC.swift */; };
 		44C070B61DFAFB4E0093BC1E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44C070B51DFAFB4E0093BC1E /* AppDelegate.swift */; };
 		44C070B81DFAFB4E0093BC1E /* MediaPickerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44C070B71DFAFB4E0093BC1E /* MediaPickerVC.swift */; };
 		44C070BB1DFAFB4E0093BC1E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 44C070B91DFAFB4E0093BC1E /* Main.storyboard */; };
@@ -41,6 +42,7 @@
 		445357A11DFD487000F996A2 /* PlayerLayerVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayerLayerVC.swift; sourceTree = "<group>"; };
 		445357A31DFD48E500F996A2 /* aboutTiagol.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = aboutTiagol.m4a; sourceTree = "<group>"; };
 		445357A41DFD48E500F996A2 /* ElMirage.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = ElMirage.mp4; sourceTree = "<group>"; };
+		447DDCE81E02D674000CEA4F /* BackgroundPlayerVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BackgroundPlayerVC.swift; sourceTree = "<group>"; };
 		44C070B21DFAFB4E0093BC1E /* MediaPlayerDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MediaPlayerDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		44C070B51DFAFB4E0093BC1E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		44C070B71DFAFB4E0093BC1E /* MediaPickerVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaPickerVC.swift; sourceTree = "<group>"; };
@@ -97,6 +99,7 @@
 				4435E9D51DFED0D30003196A /* EmbeddedAVKitVC_UIVideoEditor.swift */,
 				C2D48F5F1E010195008D4F90 /* MIDITestVC.swift */,
 				44CCDBE21E017CDA00C7163A /* AVAudioEngineTestVC.swift */,
+				447DDCE81E02D674000CEA4F /* BackgroundPlayerVC.swift */,
 				44C070B91DFAFB4E0093BC1E /* Main.storyboard */,
 				44C070C71DFAFD700093BC1E /* Main_iPad.storyboard */,
 				44CCDBE41E017E7200C7163A /* Hooded.mp3 */,
@@ -146,6 +149,11 @@
 						CreatedOnToolsVersion = 8.1;
 						DevelopmentTeam = W3MH7MTTSB;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -201,6 +209,7 @@
 				C2D48F601E010195008D4F90 /* MIDITestVC.swift in Sources */,
 				4453579C1DFAFF8300F996A2 /* AVKitVC.swift in Sources */,
 				44C070B61DFAFB4E0093BC1E /* AppDelegate.swift in Sources */,
+				447DDCE91E02D674000CEA4F /* BackgroundPlayerVC.swift in Sources */,
 				4435E9D61DFED0D30003196A /* EmbeddedAVKitVC_UIVideoEditor.swift in Sources */,
 				445357A01DFD332300F996A2 /* MediaQueryVC.swift in Sources */,
 			);

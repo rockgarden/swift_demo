@@ -40,15 +40,27 @@ extension CGVector {
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
+    var timer : Timer?
 
-
+    // standard behavior: category is ambient, activate on app activate and after interruption ends
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+
         try? AVAudioSession.sharedInstance().setCategory(AVAudioSessionCategoryPlayback)
 
         NotificationCenter.default.addObserver(forName:.MPMediaLibraryDidChange, object: nil, queue: nil) {
             _ in
             print("library changed!")
             print("library last modified \(MPMediaLibrary.default().lastModifiedDate)")
+        }
+
+        NotificationCenter.default.addObserver(forName:
+        .AVAudioSessionInterruption, object: nil, queue: nil) {
+            n in
+            let why = n.userInfo![AVAudioSessionInterruptionTypeKey] as! UInt
+            let type = AVAudioSessionInterruptionType(rawValue: why)!
+            if type == .ended {
+                try? AVAudioSession.sharedInstance().setActive(true)
+            }
         }
 
         // NB this will trigger the authorization dialog, so we may as well
@@ -62,26 +74,56 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
     func applicationWillResignActive(_ application: UIApplication) {
-        // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
-        // Use this method to pause ongoing tasks, disable timers, and invalidate graphics rendering callbacks. Games should use this method to pause the game.
+        print("bp in \(#function)")
+        self.timer = Timer.scheduledTimer(timeInterval:5, target: self, selector: #selector(fired), userInfo: nil, repeats: true)
+        return //comment out to perform timer experiment
+    }
+
+    // timer fires while we are in background, provided
+    // (1) we scheduled it before going into the background
+    // (2) we are running in the background (i.e. playing)
+    func fired(_ timer:Timer) {
+        print("bp timer fired")
+        self.timer?.invalidate()
     }
 
     func applicationDidEnterBackground(_ application: UIApplication) {
-        // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later.
-        // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
+        print("bp in \(#function)")
+        print("bp state while entering background: \(application.applicationState.rawValue)")
+        return // comment out to experiment with background app performing immediate local notification
+
+        //        delay(2) {
+        //            print("bp trying to fire local notification")
+        //            let ln = UILocalNotification()
+        //            ln.alertBody = "Testing"
+        //            application.presentLocalNotificationNow(ln)
+        //        }
     }
 
+    // we never receive this (if we are in background at the time)
+    // but the notification does appear as banner/alert and in the notification center
+    //    func application(_ application: UIApplication, didReceive notification: UILocalNotification) {
+    //        print("bp got local notification reading \(notification.alertBody)")
+    //    }
+
     func applicationWillEnterForeground(_ application: UIApplication) {
-        // Called as part of the transition from the background to the active state; here you can undo many of the changes made on entering the background.
+        print("bp in \(#function)")
     }
 
     func applicationDidBecomeActive(_ application: UIApplication) {
-        // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
+        print("bp or interrupter in \(#function)")
+        //        let types : UIUserNotificationType = .alert
+        //        let settings = UIUserNotificationSettings(types: types, categories: nil)
+        //        application.registerUserNotificationSettings(settings)
         try? AVAudioSession.sharedInstance().setActive(true)
+        // new iOS 8 feature
+        let mute = AVAudioSession.sharedInstance().secondaryAudioShouldBeSilencedHint
+        let s = mute ? "to" : "not"
+        print("I need \(s) mute my secondary audio at this point")
     }
 
     func applicationWillTerminate(_ application: UIApplication) {
-        // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+        print("bp or interrupter in \(#function)") //trying killing app from app switcher while playing in background, we receive this!
     }
 
 

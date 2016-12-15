@@ -57,7 +57,11 @@ class MyMandelbrotView : UIView {
         //assert(s == qVal)
 
         // woohoo! much nicer way to do this, we can drop use of setSpecific and getSpecific ???
-        dispatchPrecondition(condition: .onQueue(self.draw_queue))
+        if #available(iOS 10.0, *) {
+            dispatchPrecondition(condition: .onQueue(self.draw_queue))
+        } else {
+            // Fallback on earlier versions
+        }
     }
 
 
