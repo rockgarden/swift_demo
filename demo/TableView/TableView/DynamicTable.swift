@@ -162,14 +162,12 @@ class DynamicTable: UIViewController, UITableViewDelegate, UITableViewDataSource
         if self.showSections.contains(sec) {
             self.showSections.remove(sec)
             self.tableView.beginUpdates()
-            self.tableView.deleteRows(at: arr,
-                                                  with: .automatic)
+            self.tableView.deleteRows(at: arr, with: .automatic)
             self.tableView.endUpdates()
         } else {
             self.showSections.insert(sec)
             self.tableView.beginUpdates()
-            self.tableView.insertRows(at: arr,
-                                                  with: .automatic)
+            self.tableView.insertRows(at: arr, with: .automatic)
             self.tableView.endUpdates()
             //Important: insertRows过多时,相当于一次性加载了所有的row,性能会受影响
             self.tableView.scrollToRow(at: arr[ct - 1],

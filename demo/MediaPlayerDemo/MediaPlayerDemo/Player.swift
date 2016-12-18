@@ -58,8 +58,24 @@ class Player : NSObject, AVAudioPlayerDelegate {
 
         self.player.prepareToPlay()
         self.player.delegate = self
-        let ok = player.play()
+
+        if self.forever {
+            self.player.numberOfLoops = -1
+        }
+
+        /// cool feature
+        //player.enableRate = true
+        //player.rate = 1.2
+
+        let ok = player.play() //player.play()
         print("bp or interrupter trying to play \(path): \(ok)")
+
+        // cute little demo
+        let mpic = MPNowPlayingInfoCenter.default()
+        mpic.nowPlayingInfo = [
+            MPMediaItemPropertyTitle:"This Is a Test",
+            MPMediaItemPropertyArtist:"Matt Neuburg"
+        ]
     }
 
 
@@ -75,17 +91,6 @@ class Player : NSObject, AVAudioPlayerDelegate {
         }
         player.play()
     }
-    
-    // delegate method
-    func audioPlayerDidFinishPlaying(_ player: AVAudioPlayer, successfully flag: Bool) {
-        let sess = AVAudioSession.sharedInstance()
-        // this is the key move
-        try? sess.setActive(false, with: .notifyOthersOnDeactivation)
-        // now go back to ambient
-        try? sess.setCategory(AVAudioSessionCategoryAmbient)
-        try? sess.setActive(true)
-        delegate?.soundFinished(self)
-    }
 
     // to hear about interruptions, in iOS 8, use the session notifications
     func stop () {
@@ -94,6 +99,17 @@ class Player : NSObject, AVAudioPlayerDelegate {
 
     deinit {
         player?.delegate = nil
+    }
+
+    //MARK: - delegate method
+    func audioPlayerDidFinishPlaying(_ player: AVAudioPlayer, successfully flag: Bool) {
+        let sess = AVAudioSession.sharedInstance()
+        // this is the key move
+        try? sess.setActive(false, with: .notifyOthersOnDeactivation)
+        // now go back to ambient
+        try? sess.setCategory(AVAudioSessionCategoryAmbient)
+        try? sess.setActive(true)
+        delegate?.soundFinished(self)
     }
 
 }

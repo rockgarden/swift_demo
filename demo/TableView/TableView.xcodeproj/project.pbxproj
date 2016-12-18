@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4421E9FE1E06922D0098968B /* Readme.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 4421E9FD1E06922D0098968B /* Readme.rtf */; };
 		442849281D86EB840044DCF5 /* DynamicTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 442849271D86EB840044DCF5 /* DynamicTable.swift */; };
 		4428495F1D86F5930044DCF5 /* flag_alabama.gif in Resources */ = {isa = PBXBuildFile; fileRef = 4428492C1D86F5930044DCF5 /* flag_alabama.gif */; };
 		442849601D86F5930044DCF5 /* flag_alaska.gif in Resources */ = {isa = PBXBuildFile; fileRef = 4428492D1D86F5930044DCF5 /* flag_alaska.gif */; };
@@ -88,6 +89,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4421E9FD1E06922D0098968B /* Readme.rtf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.rtf; path = Readme.rtf; sourceTree = "<group>"; };
 		442849271D86EB840044DCF5 /* DynamicTable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DynamicTable.swift; sourceTree = "<group>"; };
 		4428492C1D86F5930044DCF5 /* flag_alabama.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = flag_alabama.gif; sourceTree = "<group>"; };
 		4428492D1D86F5930044DCF5 /* flag_alaska.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = flag_alaska.gif; sourceTree = "<group>"; };
@@ -254,6 +256,7 @@
 		C22758C31D6C29C6008C1F18 = {
 			isa = PBXGroup;
 			children = (
+				4421E9FD1E06922D0098968B /* Readme.rtf */,
 				C28AAB1E1DFE6344009DE34B /* SpreadTableRow */,
 				4483B2D91D7FFF460077E75C /* RJExpandableTable */,
 				C22758CE1D6C29C6008C1F18 /* TableView */,
@@ -404,6 +407,7 @@
 				442849881D86F5930044DCF5 /* flag_tennessee.gif in Resources */,
 				442849901D86F5930044DCF5 /* flag_wyoming.gif in Resources */,
 				C2D7F1251DD0618600BABD77 /* Cell.xib in Resources */,
+				4421E9FE1E06922D0098968B /* Readme.rtf in Resources */,
 				442849701D86F5930044DCF5 /* flag_louisiana.gif in Resources */,
 				C2F3DE181D6EC2D800F0A9D5 /* team_dictionary.plist in Resources */,
 				442849791D86F5930044DCF5 /* flag_nebraska.gif in Resources */,

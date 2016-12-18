@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="Hf2-6R-6Wt">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16C67" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="Hf2-6R-6Wt">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -221,6 +221,26 @@
                                             <segue destination="f7e-tW-fD3" kind="show" id="BtK-vj-AyA"/>
                                         </connections>
                                     </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" textLabel="tAD-E9-KCH" style="IBUITableViewCellStyleDefault" id="BfH-Sk-NBz">
+                                        <rect key="frame" x="0.0" y="440" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="BfH-Sk-NBz" id="cb5-kf-Blw">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Remote Player" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="tAD-E9-KCH">
+                                                    <rect key="frame" x="15" y="0.0" width="345" height="43"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="1JV-rf-51z" kind="show" id="TfM-Pr-sx1"/>
+                                        </connections>
+                                    </tableViewCell>
                                 </cells>
                             </tableViewSection>
                         </sections>
@@ -233,7 +253,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dtr-QT-ekj" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-382" y="65"/>
+            <point key="canvasLocation" x="753" y="65"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="hHc-mp-NMd">
@@ -249,7 +269,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sVd-f1-VnE" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1186" y="66"/>
+            <point key="canvasLocation" x="-1143" y="64"/>
         </scene>
         <!--Media PickerVC-->
         <scene sceneID="tne-QT-ifu">
@@ -274,7 +294,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="439" y="64"/>
+            <point key="canvasLocation" x="7135" y="824"/>
         </scene>
         <!--KitVC-->
         <scene sceneID="kh1-X9-5uU">
@@ -359,7 +379,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DHI-Kd-JyI" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="438" y="743"/>
+            <point key="canvasLocation" x="438" y="824"/>
         </scene>
         <!--Media QueryVC-->
         <scene sceneID="MUh-iB-R0N">
@@ -457,7 +477,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="k9N-38-ou0" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="438" y="1421"/>
+            <point key="canvasLocation" x="1321" y="824"/>
         </scene>
         <!--Player LayerVC-->
         <scene sceneID="28G-Rd-cnx">
@@ -518,7 +538,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="AQB-5s-3CY" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="438" y="-613"/>
+            <point key="canvasLocation" x="-383" y="824"/>
         </scene>
         <!--Player LayerVC-->
         <scene sceneID="tlT-m8-IYg">
@@ -556,7 +576,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xbe-55-LqY" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="438" y="-1301"/>
+            <point key="canvasLocation" x="-1143" y="824"/>
         </scene>
         <!--EmbeddedAV KitVC-->
         <scene sceneID="MwV-Ma-QCP">
@@ -589,7 +609,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tue-LU-GkX" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="438" y="-1979"/>
+            <point key="canvasLocation" x="6305" y="824"/>
         </scene>
         <!--EmbeddedAV KitVCUI Video Editor-->
         <scene sceneID="Xu8-Nj-dAP">
@@ -633,7 +653,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="w7R-nt-Wa4" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="438" y="-2661"/>
+            <point key="canvasLocation" x="5342" y="824"/>
         </scene>
         <!--TestVC-->
         <scene sceneID="qRg-v5-yfe">
@@ -665,7 +685,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="P9l-0u-WEd" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="438" y="2122"/>
+            <point key="canvasLocation" x="2164" y="824"/>
         </scene>
         <!--Audio Engine TestVC-->
         <scene sceneID="otF-9z-FHL">
@@ -765,7 +785,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HB9-EO-0Xf" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="438" y="2810"/>
+            <point key="canvasLocation" x="2922" y="824"/>
         </scene>
         <!--Background PlayerVC-->
         <scene sceneID="Zbl-Rq-r9P">
@@ -809,7 +829,49 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oQc-LU-1uo" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-383" y="743"/>
+            <point key="canvasLocation" x="3764" y="824"/>
+        </scene>
+        <!--Remote ControlVC-->
+        <scene sceneID="97g-A1-k9K">
+            <objects>
+                <viewController storyboardIdentifier="RemoteControlVC" id="1JV-rf-51z" customClass="RemoteControlVC" customModule="MediaPlayerDemo" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="K1D-F9-eTF"/>
+                        <viewControllerLayoutGuide type="bottom" id="MPO-OT-GKb"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="4CV-ik-3Ll">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GAh-63-eGT">
+                                <rect key="frame" x="151" y="173" width="52" height="30"/>
+                                <state key="normal" title="Forever">
+                                    <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="doButton:" destination="1JV-rf-51z" eventType="touchUpInside" id="a6V-fO-hdy"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="To stop after tapping Forever, summon Control Center to see remote controls, tap playpause button." textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="280" translatesAutoresizingMaskIntoConstraints="NO" id="9eU-cJ-lR5">
+                                <rect key="frame" x="20" y="246" width="335" height="87"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="9eU-cJ-lR5" firstAttribute="top" secondItem="GAh-63-eGT" secondAttribute="bottom" constant="43" id="0Se-df-LnN"/>
+                            <constraint firstAttribute="trailing" secondItem="9eU-cJ-lR5" secondAttribute="trailing" constant="20" id="G2u-he-oLq"/>
+                            <constraint firstItem="GAh-63-eGT" firstAttribute="top" secondItem="K1D-F9-eTF" secondAttribute="bottom" constant="109" id="gwu-wC-UIi"/>
+                            <constraint firstItem="9eU-cJ-lR5" firstAttribute="leading" secondItem="4CV-ik-3Ll" secondAttribute="leading" constant="20" id="j6w-fd-cOh"/>
+                            <constraint firstAttribute="centerX" secondItem="GAh-63-eGT" secondAttribute="centerX" constant="11" id="nby-4x-W6p"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hsj-zC-MoK" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4527" y="824"/>
         </scene>
     </scenes>
 </document>
