@@ -8,8 +8,27 @@ import AVFoundation
 import MediaPlayer
 
 class RemoteControlVC: UIViewController {
-    var player = Player()
 
+    var player = Player()
+    var opaques = [String:Any]()
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        player.delegate = self
+        setMPRemoteCommandCenter() //一般用 remoteControlReceived() 就可
+    }
+
+    override var canBecomeFirstResponder : Bool {
+        return true
+    }
+
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        self.becomeFirstResponder()
+        UIApplication.shared.beginReceivingRemoteControlEvents()
+    }
+
+    //FIXME: Ducking can't test
     @IBAction func doButton (_ sender: Any!) {
         let path = Bundle.main.path(forResource:"test", ofType: "aif")!
         if (sender as! UIButton).currentTitle == "Forever" {
@@ -18,18 +37,34 @@ class RemoteControlVC: UIViewController {
             // for background audio to work, it must be Playback
             try? AVAudioSession.sharedInstance().setCategory(AVAudioSessionCategoryPlayback)
             self.player.forever = true
+        } else {
+            // example works better if there is some background audio already playing
+            let oth = AVAudioSession.sharedInstance().isOtherAudioPlaying
+            print("other audio playing: \(oth)")
+            // new iOS 8 feature! finer grained than merely whether other audio is playing
+            let hint = AVAudioSession.sharedInstance().secondaryAudioShouldBeSilencedHint
+            print("secondary hint: \(hint)")
+            if !oth {
+                let alert = UIAlertController(title: "Pointless", message: "You won't get the point of the example unless some other audio is already playing!", preferredStyle: .alert)
+                alert.addAction(UIAlertAction(title: "OK", style: .cancel))
+                self.present(alert, animated: true)
+                return
+            }
+            print("ducking")
+            let sess = AVAudioSession.sharedInstance()
+            try? sess.setActive(false)
+            let opts = sess.categoryOptions.union(.duckOthers)
+            try? sess.setCategory(sess.category, mode: sess.mode, options: opts)
+            try? sess.setActive(true)
+            self.player.forever = false
         }
         self.player.playFile(atPath:path)
     }
 
     // ======== respond to remote controls
 
-    var opaques = [String:Any]()
-
     var which = 0 // 0 means use target-action, 1 means use handler
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
+    func setMPRemoteCommandCenter() {
         let scc = MPRemoteCommandCenter.shared()
         switch which {
         case 0:
@@ -62,6 +97,22 @@ class RemoteControlVC: UIViewController {
         }
     }
 
+    override func remoteControlReceived(with event: UIEvent?) { // *
+        let rc = event!.subtype
+        let p = self.player.player!
+        print("received remote control \(rc.rawValue)") // 101 = pause, 100 = play
+        switch rc {
+        case .remoteControlTogglePlayPause:
+            if p.isPlaying { p.pause() } else { p.play() }
+        case .remoteControlPlay:
+            p.play()
+        case .remoteControlPause:
+            p.pause()
+        default:break
+        }
+
+    }
+
     // these are used only in case 0
 
     func doPlayPause(_ event:MPRemoteCommandEvent) {
@@ -83,7 +134,7 @@ class RemoteControlVC: UIViewController {
         print("like")
     }
 
-    // must deregister or can crash later!
+    // MARK: - must deregister or can crash later!
 
     deinit {
         print("deinit")
@@ -100,6 +151,22 @@ class RemoteControlVC: UIViewController {
             scc.pauseCommand.removeTarget(self.opaques["pause"])
         default:break
         }
+    }
+}
+
+
+extension RemoteControlVC: PlayerDelegate {
+    func soundFinished(_ sender: Any) { // delegate message from Player
+        self.unduck()
+    }
+
+    func unduck() {
+        print("unducking")
+        let sess = AVAudioSession.sharedInstance()
+        try? sess.setActive(false)
+        let opts = sess.categoryOptions.symmetricDifference(.duckOthers)
+        try? sess.setCategory(sess.category, mode: sess.mode, options:opts)
+        try? sess.setActive(true)
     }
 }
 

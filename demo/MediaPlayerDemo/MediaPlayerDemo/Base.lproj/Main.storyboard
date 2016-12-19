@@ -13,7 +13,7 @@
         <!--Root View Controller-->
         <scene sceneID="zmk-Oe-a1Y">
             <objects>
-                <tableViewController id="cCe-mA-8Ge" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="RootVC" id="cCe-mA-8Ge" customClass="RootVC" customModule="MediaPlayerDemo" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="SE2-ef-z4v">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -228,11 +228,11 @@
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Remote Player" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="tAD-E9-KCH">
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Remote control Player (Once &amp;&amp; Forever)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="tAD-E9-KCH">
                                                     <rect key="frame" x="15" y="0.0" width="345" height="43"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <nil key="textColor"/>
+                                                    <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
@@ -240,6 +240,59 @@
                                         <connections>
                                             <segue destination="1JV-rf-51z" kind="show" id="TfM-Pr-sx1"/>
                                         </connections>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="72" id="tsu-JW-cql">
+                                        <rect key="frame" x="0.0" y="484" width="375" height="72"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="tsu-JW-cql" id="miE-oB-b6a">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="71"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="System sound" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pgN-Zq-gvG" userLabel="System Sound">
+                                                    <rect key="frame" x="16" y="8" width="109" height="20.5"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="center" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="9L0-sS-CUZ">
+                                                    <rect key="frame" x="16" y="32.5" width="351" height="31"/>
+                                                    <subviews>
+                                                        <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NmT-IA-goU">
+                                                            <rect key="frame" x="0.0" y="0.5" width="113.5" height="30"/>
+                                                            <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
+                                                            <state key="normal" title="test"/>
+                                                            <connections>
+                                                                <action selector="doButton1:" destination="cCe-mA-8Ge" eventType="touchUpInside" id="uOv-eG-wde"/>
+                                                            </connections>
+                                                        </button>
+                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FzO-HW-M8J">
+                                                            <rect key="frame" x="118.5" y="0.5" width="114" height="30"/>
+                                                            <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
+                                                            <state key="normal" title="test"/>
+                                                            <connections>
+                                                                <action selector="doButton2:" destination="cCe-mA-8Ge" eventType="touchUpInside" id="nFp-BS-E9K"/>
+                                                            </connections>
+                                                        </button>
+                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2qo-nh-rqg">
+                                                            <rect key="frame" x="237.5" y="0.5" width="113.5" height="30"/>
+                                                            <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
+                                                            <state key="normal" title="test"/>
+                                                            <connections>
+                                                                <action selector="doButton3:" destination="cCe-mA-8Ge" eventType="touchUpInside" id="cmy-eO-ayX"/>
+                                                            </connections>
+                                                        </button>
+                                                    </subviews>
+                                                </stackView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="leadingMargin" secondItem="9L0-sS-CUZ" secondAttribute="leading" constant="-8" id="Lsy-Wg-yb7"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="9L0-sS-CUZ" secondAttribute="bottom" id="arF-rd-nhm"/>
+                                                <constraint firstItem="pgN-Zq-gvG" firstAttribute="leading" secondItem="miE-oB-b6a" secondAttribute="leadingMargin" constant="8" id="cOR-Y4-lfP"/>
+                                                <constraint firstItem="9L0-sS-CUZ" firstAttribute="top" secondItem="pgN-Zq-gvG" secondAttribute="bottom" constant="4" id="dZv-iW-HY7"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="9L0-sS-CUZ" secondAttribute="trailing" id="x6V-IH-UOd"/>
+                                                <constraint firstItem="pgN-Zq-gvG" firstAttribute="top" secondItem="miE-oB-b6a" secondAttribute="topMargin" id="zWu-it-mai"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
@@ -294,7 +347,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="7135" y="824"/>
+            <point key="canvasLocation" x="6945" y="824"/>
         </scene>
         <!--KitVC-->
         <scene sceneID="kh1-X9-5uU">
@@ -609,7 +662,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tue-LU-GkX" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="6305" y="824"/>
+            <point key="canvasLocation" x="6138" y="824"/>
         </scene>
         <!--EmbeddedAV KitVCUI Video Editor-->
         <scene sceneID="Xu8-Nj-dAP">
@@ -843,29 +896,47 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GAh-63-eGT">
-                                <rect key="frame" x="151" y="173" width="52" height="30"/>
-                                <state key="normal" title="Forever">
-                                    <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                </state>
-                                <connections>
-                                    <action selector="doButton:" destination="1JV-rf-51z" eventType="touchUpInside" id="a6V-fO-hdy"/>
-                                </connections>
-                            </button>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="To stop after tapping Forever, summon Control Center to see remote controls, tap playpause button." textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="280" translatesAutoresizingMaskIntoConstraints="NO" id="9eU-cJ-lR5">
-                                <rect key="frame" x="20" y="246" width="335" height="87"/>
-                                <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="GqU-Am-3Iq">
+                                <rect key="frame" x="16" y="91" width="343" height="239"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uSK-GK-lj0">
+                                        <rect key="frame" x="0.0" y="0.0" width="343" height="30"/>
+                                        <state key="normal" title="Once">
+                                            <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="doButton:" destination="1JV-rf-51z" eventType="touchUpInside" id="2rh-bD-f4e"/>
+                                        </connections>
+                                    </button>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="To stop after tapping Forever, summon Control Center to see remote controls, tap playpause button." textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="280" translatesAutoresizingMaskIntoConstraints="NO" id="VLE-3l-Vk6">
+                                        <rect key="frame" x="0.0" y="32" width="343" height="86.5"/>
+                                        <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GAh-63-eGT">
+                                        <rect key="frame" x="0.0" y="120.5" width="343" height="30"/>
+                                        <state key="normal" title="Forever">
+                                            <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="doButton:" destination="1JV-rf-51z" eventType="touchUpInside" id="a6V-fO-hdy"/>
+                                        </connections>
+                                    </button>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="To stop after tapping Forever, summon Control Center to see remote controls, tap playpause button." textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="280" translatesAutoresizingMaskIntoConstraints="NO" id="9eU-cJ-lR5">
+                                        <rect key="frame" x="0.0" y="152.5" width="343" height="86.5"/>
+                                        <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="9eU-cJ-lR5" firstAttribute="top" secondItem="GAh-63-eGT" secondAttribute="bottom" constant="43" id="0Se-df-LnN"/>
-                            <constraint firstAttribute="trailing" secondItem="9eU-cJ-lR5" secondAttribute="trailing" constant="20" id="G2u-he-oLq"/>
-                            <constraint firstItem="GAh-63-eGT" firstAttribute="top" secondItem="K1D-F9-eTF" secondAttribute="bottom" constant="109" id="gwu-wC-UIi"/>
-                            <constraint firstItem="9eU-cJ-lR5" firstAttribute="leading" secondItem="4CV-ik-3Ll" secondAttribute="leading" constant="20" id="j6w-fd-cOh"/>
-                            <constraint firstAttribute="centerX" secondItem="GAh-63-eGT" secondAttribute="centerX" constant="11" id="nby-4x-W6p"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="GqU-Am-3Iq" secondAttribute="trailing" id="7RF-CP-4eQ"/>
+                            <constraint firstItem="GqU-Am-3Iq" firstAttribute="leading" secondItem="4CV-ik-3Ll" secondAttribute="leadingMargin" id="T4P-LC-Ro4"/>
+                            <constraint firstItem="GqU-Am-3Iq" firstAttribute="top" secondItem="K1D-F9-eTF" secondAttribute="bottom" constant="27" id="WYc-FB-xOd"/>
                         </constraints>
                     </view>
                 </viewController>

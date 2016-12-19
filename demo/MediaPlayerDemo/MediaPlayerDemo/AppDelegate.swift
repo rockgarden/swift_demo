@@ -45,22 +45,54 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     // standard behavior: category is ambient, activate on app activate and after interruption ends
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
 
-        try? AVAudioSession.sharedInstance().setCategory(AVAudioSessionCategoryPlayback)
+        /// 预先检查 new in iOS 9, can check beforehand
+        try? AVAudioSession.sharedInstance().setCategory(AVAudioSessionCategoryAmbient)
 
-        NotificationCenter.default.addObserver(forName:.MPMediaLibraryDidChange, object: nil, queue: nil) {
-            _ in
-            print("library changed!")
-            print("library last modified \(MPMediaLibrary.default().lastModifiedDate)")
+        // deliberate leak here
+        NotificationCenter.default.addObserver(forName:.AVAudioSessionRouteChange, object: nil, queue: nil) { n in
+            NSLog("change route %@", n.userInfo!)
+            print("current route \(AVAudioSession.sharedInstance().currentRoute)")
         }
 
+        // properly, if the route changes from some kind of Headphones to Built-In Speaker,
+        // we should pause our sound (doesn't happen automatically)
         NotificationCenter.default.addObserver(forName:
-        .AVAudioSessionInterruption, object: nil, queue: nil) {
-            n in
+        .AVAudioSessionInterruption, object: nil, queue: nil) { n in
             let why = n.userInfo![AVAudioSessionInterruptionTypeKey] as! UInt
             let type = AVAudioSessionInterruptionType(rawValue: why)!
+            if type == .began {
+                print("interruption began:\n\(n.userInfo!)")
+            }
             if type == .ended {
+                print("interruption ended:\n\(n.userInfo!)")
+                guard let opt = n.userInfo![AVAudioSessionInterruptionOptionKey] as? UInt else {return}
+                if AVAudioSessionInterruptionOptions(rawValue:opt).contains(.shouldResume) {
+                    print("should resume")
+                } else {
+                    print("not should resume")
+                }
                 try? AVAudioSession.sharedInstance().setActive(true)
             }
+        }
+
+        // use control center to test, e.g. start and stop a Music song
+        NotificationCenter.default.addObserver(forName:
+        .AVAudioSessionSilenceSecondaryAudioHint, object: nil, queue: nil) { n in
+            let why = AVAudioSessionSilenceSecondaryAudioHintType(rawValue: n.userInfo![AVAudioSessionSilenceSecondaryAudioHintTypeKey] as! UInt)!
+            if why == .begin {
+                print("silence hint begin:\n\(n.userInfo!)")
+            } else {
+                print("silence hint end:\n\(n.userInfo!)")
+            }
+        }
+
+
+        try? AVAudioSession.sharedInstance().setCategory(AVAudioSessionCategoryPlayback)
+
+        NotificationCenter.default.addObserver(forName:
+        .MPMediaLibraryDidChange, object: nil, queue: nil) { _ in
+            print("library changed!")
+            print("library last modified \(MPMediaLibrary.default().lastModifiedDate)")
         }
 
         // NB this will trigger the authorization dialog, so we may as well

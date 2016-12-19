@@ -101,7 +101,7 @@ class Player : NSObject, AVAudioPlayerDelegate {
         player?.delegate = nil
     }
 
-    //MARK: - delegate method
+    // MARK: - delegate method
     func audioPlayerDidFinishPlaying(_ player: AVAudioPlayer, successfully flag: Bool) {
         let sess = AVAudioSession.sharedInstance()
         // this is the key move
