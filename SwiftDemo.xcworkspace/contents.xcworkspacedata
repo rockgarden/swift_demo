@@ -2,6 +2,12 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:demo/ActionExtensionDemo/ActionExtensionDemo.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:RockCamera/RockCamera.xcodeproj">
+   </FileRef>
+   <FileRef
       location = "group:demo/SpeechDemo/SpeechDemo.xcodeproj">
    </FileRef>
    <FileRef

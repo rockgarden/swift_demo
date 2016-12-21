@@ -78,15 +78,19 @@ class ShapeView: UIView {
 
         guard let ctx = UIGraphicsGetCurrentContext() else { return }
         ctx.beginPath()
-
         ctx.setLineWidth(5)
 
         let x:CGFloat = center.x
         let y:CGFloat = center.y
         let radius: CGFloat = 100.0
-        let endAngle: CGFloat = CGFloat(2 * M_PI)
+        let endAngle = CGFloat(2 * M_PI)
 
-        //6 With CGContextAddArc a circle is drawn
+        //6 With CGContextAddArc a circle is drawn swfit 2.3 is 
+        /* CGContextAddArcToPoint
+        Add an arc of a circle to the context's path, possibly preceded by a
+        straight line segment. `radius' is the radius of the arc. The arc is
+        tangent to the line from the current point to `(x1, y1)', and the line
+        from `(x1, y1)' to `(x2, y2)'. */
         ctx.addArc(center: CGPoint(x: x,y: y), radius: radius, startAngle: 0, endAngle: endAngle, clockwise: true)
 
         ctx.strokePath()
