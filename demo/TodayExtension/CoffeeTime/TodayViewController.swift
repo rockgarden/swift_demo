@@ -39,7 +39,7 @@ class TodayViewController: UIViewController, NCWidgetProviding {
     override func viewDidLoad() {
         super.viewDidLoad()
         // self.preferredContentSize = CGSizeMake(320,113)
-        self.iv.image = UIImage(named:"cup.png")?.withRenderingMode(.alwaysTemplate)
+        self.iv.image = UIImage(named:"cup.png").withRenderingMode(.alwaysTemplate)
     }
     
     /// After updating the constraint, you must reload the chart’s data so that it redraws based on the new layout.
@@ -84,17 +84,18 @@ class TodayViewController: UIViewController, NCWidgetProviding {
         self.dateLabel.text = "\(days) days \(hours) hours \(mins) minutes \(seconds) seconds"
     }
 
-    /// 怎么调试
     @IBAction func doButton(_ sender: AnyObject) {
         NSLog("doButton")
         let v = sender as! UIView
         var comp = URLComponents()
         comp.scheme = "coffeetime"
         comp.host = String(v.tag) // tag is number of minutes
+        /// relativeTo: 如果NSURLComponents具有权限组件（用户，密码，主机或端口）和路径组件，则路径必须以“/”开头或为空字符串。 如果NSURLComponents没有权限组件（用户，密码，主机或端口）并且有一个路径组件，则路径组件不能以“//”开头。 如果不满足这些要求，则返回nil。
         if let url = comp.url(relativeTo: nil) {
             NSLog("%@", "\(url)")
             self.extensionContext?.open(url, completionHandler: nil)
         }
+
         let url = URL(string: "todolist://add")
         self.extensionContext?.open(url!, completionHandler: nil)
         /// self.extensionContext其实就是Today这个app,然后有Today和主应用进行进程间通讯,就是OpenUrl
@@ -114,11 +115,6 @@ class TodayViewController: UIViewController, NCWidgetProviding {
     func widgetMarginInsets(forProposedMarginInsets defaultMarginInsets: UIEdgeInsets) -> UIEdgeInsets {
         return UIEdgeInsetsMake(0,16,0,16)
     }
-    
-//    func widgetPerformUpdate(completionHandler: ((NCUpdateResult) -> Void)) {
-//        NSLog("performUpdate")
-//        completionHandler(NCUpdateResult.newData)
-//    }
 
     /// 更新插件
     func widgetPerformUpdate(completionHandler: (@escaping (NCUpdateResult) -> Void)) {
@@ -127,7 +123,7 @@ class TodayViewController: UIViewController, NCWidgetProviding {
         // If an error is encoutered, use NCUpdateResult.Failed
         // If there's no update required, use NCUpdateResult.NoData
         // If there's an update, use NCUpdateResult.NewData
-        completionHandler(NCUpdateResult.newData)
+        completionHandler(.newData)
     }
 
 }
