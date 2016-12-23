@@ -2,6 +2,9 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:demo/UserNotificationsDemo/UserNotificationsDemo.xcodeproj">
+   </FileRef>
+   <FileRef
       location = "group:demo/UIActivityViewControllerDemo/UIActivityViewControllerDemo.xcodeproj">
    </FileRef>
    <FileRef

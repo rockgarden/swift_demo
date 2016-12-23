@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16C67" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="POl-Cj-h4T">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Notification View Controller-->
+        <scene sceneID="ejM-Md-fQq">
+            <objects>
+                <viewController storyboardIdentifier="NotificationViewController" id="POl-Cj-h4T" userLabel="Notification View Controller" customClass="NotificationViewController" customModule="CoffeeTime" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="qPI-hx-WNI"/>
+                        <viewControllerLayoutGuide type="bottom" id="rmQ-11-7NG"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" simulatedAppContext="notificationCenter" id="FXa-dE-KZA">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="40"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Lb8-I4-Clj">
+                                <rect key="frame" x="0.0" y="0.0" width="40" height="40"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="GGW-p7-1Cr"/>
+                                    <constraint firstAttribute="width" constant="40" id="IE7-Jz-sa2"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="top" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Time for a cup of coffee!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="280" translatesAutoresizingMaskIntoConstraints="NO" id="n4G-Xu-nS1">
+                                <rect key="frame" x="20" y="8" width="280" height="24"/>
+                                <fontDescription key="fontDescription" name="GillSans-SemiBold" family="Gill Sans" pointSize="18"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="0.90588235289999997" green="0.90588235289999997" blue="0.90588235289999997" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="n4G-Xu-nS1" firstAttribute="leading" secondItem="FXa-dE-KZA" secondAttribute="leading" constant="20" symbolic="YES" id="5yK-FO-m56"/>
+                            <constraint firstItem="n4G-Xu-nS1" firstAttribute="top" secondItem="qPI-hx-WNI" secondAttribute="bottom" constant="8" symbolic="YES" id="8dq-sE-WaI"/>
+                            <constraint firstItem="Lb8-I4-Clj" firstAttribute="leading" secondItem="FXa-dE-KZA" secondAttribute="leading" id="LSD-CP-mSJ"/>
+                            <constraint firstItem="rmQ-11-7NG" firstAttribute="top" secondItem="n4G-Xu-nS1" secondAttribute="bottom" constant="8" symbolic="YES" id="PF1-gn-9gs"/>
+                            <constraint firstAttribute="trailing" secondItem="n4G-Xu-nS1" secondAttribute="trailing" constant="20" symbolic="YES" id="QbJ-Qo-txG"/>
+                            <constraint firstItem="Lb8-I4-Clj" firstAttribute="centerY" secondItem="FXa-dE-KZA" secondAttribute="centerY" id="XH0-AK-Mih"/>
+                        </constraints>
+                    </view>
+                    <extendedEdge key="edgesForExtendedLayout"/>
+                    <nil key="simulatedStatusBarMetrics"/>
+                    <nil key="simulatedTopBarMetrics"/>
+                    <nil key="simulatedBottomBarMetrics"/>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="320" height="40"/>
+                    <connections>
+                        <outlet property="imageView" destination="Lb8-I4-Clj" id="P8D-Ac-4ub"/>
+                        <outlet property="label" destination="n4G-Xu-nS1" id="VVY-uY-3WV"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="E5x-mc-CKr" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+        </scene>
+    </scenes>
+</document>
