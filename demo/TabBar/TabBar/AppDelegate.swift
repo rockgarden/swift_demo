@@ -1,6 +1,8 @@
 
 import UIKit
+
 let arr = ["First", "Second", "Third", "Fourth", "Fifth", "Sixth", "Seventh", "Eighth", "Ninth", "Tenth"]
+
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 	var window: UIWindow?
@@ -9,8 +11,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 	var myDataSource: MyDataSource!
 
 	func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        exampleTabUnwind()
-        //exampleNoController()
+        //exampleTabUnwind()
+        exampleNoController()
         //exampleCodeInit()
         //setTabBar()
 		return true
@@ -26,23 +28,23 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         self.window!.makeKeyAndVisible()
     }
 
-    // 示例 subClass UIViewController
+    /// 示例 subClass UIViewController
     func exampleNoController() {
         self.window = UIWindow()
         let sBoard = UIStoryboard(name: "TabViewController", bundle: nil)
         let vController = sBoard.instantiateViewController(withIdentifier: "TabViewController")
-        self.window!.rootViewController = UINavigationController(rootViewController: vController)
+        self.window!.rootViewController = vController
         self.window!.backgroundColor = .white
         self.window!.makeKeyAndVisible()
     }
 
-    // 示例 init UITabBarController by code
+    /// 示例 init UITabBarController by code
     func exampleCodeInit() {
-        self.window = UIWindow()
+        self.window = self.window ?? UIWindow()
         // to see an interesting bug on iPhone 6 Plus, pick "Eighth", rotate to landscape, rotate back to portrait
         var vcs = [UIViewController]()
         for t in arr {
-            let vc = ViewController()
+            let vc = SubVC()
             vc.tabBarItem.title = t
             vcs.append(vc)
         }
@@ -50,6 +52,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         self.window!.rootViewController = self.tabBarController
         let ok = true
         var customize: Bool { return ok }
+
+        ///FIXME:这是什么鬼?
+        doneCustomizing:
         if customize {
             let more = self.tabBarController.moreNavigationController
             let list = more.viewControllers[0]
@@ -59,6 +64,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             list.navigationItem.backBarButtonItem = b // so user can navigation back
             more.navigationBar.barTintColor = UIColor.red
             more.navigationBar.tintColor = UIColor.white
+            // break doneCustomizing
+
             let tv = list.view as! UITableView
             let mds = MyDataSource(originalDataSource: tv.dataSource!)
             self.myDataSource = mds

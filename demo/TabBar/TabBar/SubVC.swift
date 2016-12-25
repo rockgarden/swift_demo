@@ -1,6 +1,6 @@
 import UIKit
 
-class ViewController: UIViewController {
+class SubVC: UIViewController {
     var lab : UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()

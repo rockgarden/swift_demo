@@ -26,7 +26,7 @@ class TabViewController: UIViewController {
 		}
 		set {
 			for t in arr {
-				let vc = ViewController()
+				let vc = SubVC()
 				vc.tabBarItem.title = t
 				_vcs.append(vc)
 			}
@@ -37,6 +37,7 @@ class TabViewController: UIViewController {
 		super.viewDidLoad()
 		self.tabbar.items = Array(self.items[0..<4]) + [UITabBarItem(tabBarSystemItem: .more, tag: 0)]
 		self.tabbar.selectedItem = self.tabbar.items![0]
+        self.tabbar.delegate = self //Storyboard已经设置可不写
 	}
 }
 
