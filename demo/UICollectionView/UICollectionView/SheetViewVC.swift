@@ -34,13 +34,13 @@ class SheetViewVC: UIViewController {
 }
 
 
-extension StationInspectionVC : MyFileManagerViewDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+extension SheetViewVC : MyFileManagerViewDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
     func cameraRollUnauthorized() {
         let alert = UIAlertController(title: "Access Requested", message: "Saving image needs to access your photo album", preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "Settings", style: .default, handler: { (action) -> Void in
             if let url = URL(string:UIApplicationOpenSettingsURLString) {
-                UIApplication.shared.openURL(url)
+                UIApplication.shared.canOpenURL(url)
             }
         }))
         alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: { (action) -> Void in
@@ -49,7 +49,7 @@ extension StationInspectionVC : MyFileManagerViewDelegate, UIImagePickerControll
     }
     
     func presentCamera() {
-        let imagePickerController = MyImagePickerController()
+        let imagePickerController = UIImagePickerController()
         imagePickerController.delegate = self
         imagePickerController.allowsEditing = true //true为拍照、选择完进入图片编辑模式
         imagePickerController.sourceType = .camera

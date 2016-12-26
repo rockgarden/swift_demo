@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" colorMatched="YES" initialViewController="Ssr-hk-KKY">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16C67" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" colorMatched="YES" initialViewController="Ssr-hk-KKY">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -523,7 +523,7 @@
         <scene sceneID="QLe-9Q-yDA">
             <objects>
                 <navigationController definesPresentationContext="YES" id="EO8-8C-sx2" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" translucent="NO" shadowImage="TransparentPixel" id="KYZ-Ar-kmC">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" shadowImage="TransparentPixel" id="KYZ-Ar-kmC">
                         <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -663,20 +663,20 @@
                                 </constraints>
                             </view>
                             <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="n3J-2Y-uKt">
-                                <rect key="frame" x="0.0" y="108" width="375" height="44"/>
+                                <rect key="frame" x="0.0" y="623" width="375" height="44"/>
                                 <items>
-                                    <navigationItem title="Title" id="bfr-AL-RSu"/>
+                                    <navigationItem title="No image bar item" id="bfr-AL-RSu"/>
                                 </items>
                             </navigationBar>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="n3J-2Y-uKt" firstAttribute="top" secondItem="iHV-FB-b3R" secondAttribute="bottom" id="7gi-oC-8np"/>
                             <constraint firstAttribute="trailing" secondItem="iHV-FB-b3R" secondAttribute="trailing" id="Sa5-jU-Sda"/>
                             <constraint firstItem="q1L-eG-GCa" firstAttribute="centerX" secondItem="iHV-FB-b3R" secondAttribute="centerX" id="WaY-dd-Kpn"/>
                             <constraint firstItem="q1L-eG-GCa" firstAttribute="width" secondItem="Fmi-my-bfn" secondAttribute="width" multiplier="1/2" id="Ywo-g2-hz9"/>
                             <constraint firstItem="iHV-FB-b3R" firstAttribute="top" secondItem="ZeS-Tw-JHd" secondAttribute="bottom" id="hSX-cF-huT"/>
                             <constraint firstItem="q1L-eG-GCa" firstAttribute="top" secondItem="ZeS-Tw-JHd" secondAttribute="bottom" constant="120" id="ore-BU-wIj"/>
+                            <constraint firstItem="awS-Tk-6jZ" firstAttribute="top" secondItem="n3J-2Y-uKt" secondAttribute="bottom" id="ovU-Id-04s"/>
                             <constraint firstItem="n3J-2Y-uKt" firstAttribute="leading" secondItem="Fmi-my-bfn" secondAttribute="leading" id="qCK-2F-EId"/>
                             <constraint firstAttribute="trailing" secondItem="n3J-2Y-uKt" secondAttribute="trailing" id="rXW-5f-9m4"/>
                             <constraint firstItem="iHV-FB-b3R" firstAttribute="leading" secondItem="Fmi-my-bfn" secondAttribute="leading" id="wjd-x7-kbd"/>

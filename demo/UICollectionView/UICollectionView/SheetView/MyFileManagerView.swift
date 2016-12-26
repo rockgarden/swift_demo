@@ -74,7 +74,7 @@ final class MyFileManagerView: UIView, UICollectionViewDataSource, UICollectionV
         let currentTag = cell.tag + 1
         cell.tag = currentTag
         
-        let asset = self.images[indexPath.item] as! PHAsset
+        let asset = self.images[indexPath.item] 
         self.imageManager?.requestImage(for: asset,
                                                 targetSize: cellSize,
                                                 contentMode: .aspectFill,
@@ -300,7 +300,7 @@ private extension MyFileManagerView {
         var assets: [PHAsset] = []
         assets.reserveCapacity(indexPaths.count)
         for indexPath in indexPaths {
-            let asset = self.images[indexPath.item] as! PHAsset
+            let asset = self.images[indexPath.item] 
             assets.append(asset)
         }
         return assets

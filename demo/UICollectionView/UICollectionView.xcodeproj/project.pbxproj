@@ -77,6 +77,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4424D4241E11627D00EF3D0A /* Photos.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Photos.framework; path = System/Library/Frameworks/Photos.framework; sourceTree = SDKROOT; };
+		4424D4261E11628700EF3D0A /* PhotosUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = PhotosUI.framework; path = System/Library/Frameworks/PhotosUI.framework; sourceTree = SDKROOT; };
+		4424D4281E1162EE00EF3D0A /* AssetsLibrary.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AssetsLibrary.framework; path = System/Library/Frameworks/AssetsLibrary.framework; sourceTree = SDKROOT; };
 		C2AA3B091E110ADE00C9E438 /* MyFileManagerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyFileManagerView.swift; sourceTree = "<group>"; };
 		C2AA3B0A1E110ADE00C9E438 /* MyFileManagerView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MyFileManagerView.xib; sourceTree = "<group>"; };
 		C2AA3B0B1E110ADE00C9E438 /* MyFileViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyFileViewCell.swift; sourceTree = "<group>"; };
@@ -159,6 +162,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4424D4231E11627D00EF3D0A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				4424D4281E1162EE00EF3D0A /* AssetsLibrary.framework */,
+				4424D4261E11628700EF3D0A /* PhotosUI.framework */,
+				4424D4241E11627D00EF3D0A /* Photos.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		C2AA3B081E110ADE00C9E438 /* SheetView */ = {
 			isa = PBXGroup;
 			children = (
@@ -175,6 +188,7 @@
 			children = (
 				C2BC5B071DC6E729007F23F4 /* UICollectionView */,
 				C2BC5B061DC6E729007F23F4 /* Products */,
+				4424D4231E11627D00EF3D0A /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -301,7 +315,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0800;
-				LastUpgradeCheck = 0800;
+				LastUpgradeCheck = 0820;
 				ORGANIZATIONNAME = rockgarden;
 				TargetAttributes = {
 					C2BC5B041DC6E729007F23F4 = {
@@ -453,6 +467,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -503,6 +518,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
