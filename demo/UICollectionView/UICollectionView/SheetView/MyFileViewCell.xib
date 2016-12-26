@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11762" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="MyFileViewCell" id="Mtr-PH-nUS" customClass="MyFileViewCell" customModule="mobile112" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="85" height="85"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="85" height="85"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_photo_camera" translatesAutoresizingMaskIntoConstraints="NO" id="GyL-xP-nMQ">
+                        <rect key="frame" x="0.0" y="0.0" width="85" height="85"/>
+                        <color key="backgroundColor" red="0.41176470590000003" green="0.66274509800000003" blue="0.92156862750000001" alpha="1" colorSpace="calibratedRGB"/>
+                    </imageView>
+                </subviews>
+            </view>
+            <constraints>
+                <constraint firstItem="GyL-xP-nMQ" firstAttribute="leading" secondItem="Mtr-PH-nUS" secondAttribute="leading" id="40v-wP-re7"/>
+                <constraint firstAttribute="trailing" secondItem="GyL-xP-nMQ" secondAttribute="trailing" id="7uK-GE-TtO"/>
+                <constraint firstItem="GyL-xP-nMQ" firstAttribute="top" secondItem="Mtr-PH-nUS" secondAttribute="top" id="Ady-Sn-k9F"/>
+                <constraint firstAttribute="bottom" secondItem="GyL-xP-nMQ" secondAttribute="bottom" id="Be3-rz-blz"/>
+            </constraints>
+            <size key="customSize" width="87" height="85"/>
+            <connections>
+                <outlet property="imageView" destination="GyL-xP-nMQ" id="UVo-Qh-LE3"/>
+            </connections>
+            <point key="canvasLocation" x="-307.5" y="-208.5"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <image name="ic_photo_camera" width="36" height="36"/>
+    </resources>
+</document>

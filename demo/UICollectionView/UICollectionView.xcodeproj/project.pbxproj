@@ -7,8 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C2AA3B0D1E110ADE00C9E438 /* MyFileManagerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2AA3B091E110ADE00C9E438 /* MyFileManagerView.swift */; };
+		C2AA3B0E1E110ADE00C9E438 /* MyFileManagerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C2AA3B0A1E110ADE00C9E438 /* MyFileManagerView.xib */; };
+		C2AA3B0F1E110ADE00C9E438 /* MyFileViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2AA3B0B1E110ADE00C9E438 /* MyFileViewCell.swift */; };
+		C2AA3B101E110ADE00C9E438 /* MyFileViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C2AA3B0C1E110ADE00C9E438 /* MyFileViewCell.xib */; };
 		C2BC5B091DC6E72A007F23F4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2BC5B081DC6E72A007F23F4 /* AppDelegate.swift */; };
-		C2BC5B0B1DC6E72A007F23F4 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2BC5B0A1DC6E72A007F23F4 /* ViewController.swift */; };
+		C2BC5B0B1DC6E72A007F23F4 /* SheetViewVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2BC5B0A1DC6E72A007F23F4 /* SheetViewVC.swift */; };
 		C2BC5B0E1DC6E72A007F23F4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C2BC5B0C1DC6E72A007F23F4 /* Main.storyboard */; };
 		C2BC5B101DC6E72A007F23F4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C2BC5B0F1DC6E72A007F23F4 /* Assets.xcassets */; };
 		C2BC5B131DC6E72B007F23F4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C2BC5B111DC6E72B007F23F4 /* LaunchScreen.storyboard */; };
@@ -73,9 +77,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		C2AA3B091E110ADE00C9E438 /* MyFileManagerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyFileManagerView.swift; sourceTree = "<group>"; };
+		C2AA3B0A1E110ADE00C9E438 /* MyFileManagerView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MyFileManagerView.xib; sourceTree = "<group>"; };
+		C2AA3B0B1E110ADE00C9E438 /* MyFileViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyFileViewCell.swift; sourceTree = "<group>"; };
+		C2AA3B0C1E110ADE00C9E438 /* MyFileViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MyFileViewCell.xib; sourceTree = "<group>"; };
 		C2BC5B051DC6E729007F23F4 /* UICollectionView.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UICollectionView.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C2BC5B081DC6E72A007F23F4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		C2BC5B0A1DC6E72A007F23F4 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		C2BC5B0A1DC6E72A007F23F4 /* SheetViewVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SheetViewVC.swift; sourceTree = "<group>"; };
 		C2BC5B0D1DC6E72A007F23F4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		C2BC5B0F1DC6E72A007F23F4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C2BC5B121DC6E72B007F23F4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -151,6 +159,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		C2AA3B081E110ADE00C9E438 /* SheetView */ = {
+			isa = PBXGroup;
+			children = (
+				C2AA3B091E110ADE00C9E438 /* MyFileManagerView.swift */,
+				C2AA3B0A1E110ADE00C9E438 /* MyFileManagerView.xib */,
+				C2AA3B0B1E110ADE00C9E438 /* MyFileViewCell.swift */,
+				C2AA3B0C1E110ADE00C9E438 /* MyFileViewCell.xib */,
+			);
+			path = SheetView;
+			sourceTree = "<group>";
+		};
 		C2BC5AFC1DC6E729007F23F4 = {
 			isa = PBXGroup;
 			children = (
@@ -170,10 +189,11 @@
 		C2BC5B071DC6E729007F23F4 /* UICollectionView */ = {
 			isa = PBXGroup;
 			children = (
+				C2AA3B081E110ADE00C9E438 /* SheetView */,
 				C2BC5B831DC6E87B007F23F4 /* LayoutFromScratch */,
 				C2BC5B1A1DC6E7D1007F23F4 /* flag */,
 				C2BC5B081DC6E72A007F23F4 /* AppDelegate.swift */,
-				C2BC5B0A1DC6E72A007F23F4 /* ViewController.swift */,
+				C2BC5B0A1DC6E72A007F23F4 /* SheetViewVC.swift */,
 				C2BC5B0C1DC6E72A007F23F4 /* Main.storyboard */,
 				C2BC5B0F1DC6E72A007F23F4 /* Assets.xcassets */,
 				C2BC5B111DC6E72B007F23F4 /* LaunchScreen.storyboard */,
@@ -361,11 +381,13 @@
 				C2BC5B691DC6E7D1007F23F4 /* flag_nevada.gif in Resources */,
 				C2BC5B5B1DC6E7D1007F23F4 /* flag_indiana.gif in Resources */,
 				C2BC5B7D1DC6E7D1007F23F4 /* flag_westvirginia.gif in Resources */,
+				C2AA3B101E110ADE00C9E438 /* MyFileViewCell.xib in Resources */,
 				C2BC5B601DC6E7D1007F23F4 /* flag_maine.gif in Resources */,
 				C2BC5B4F1DC6E7D1007F23F4 /* flag_alaska.gif in Resources */,
 				C2BC5B821DC6E7ED007F23F4 /* states.txt in Resources */,
 				C2BC5B6A1DC6E7D1007F23F4 /* flag_newhampshire.gif in Resources */,
 				C2BC5B611DC6E7D1007F23F4 /* flag_maryland.gif in Resources */,
+				C2AA3B0E1E110ADE00C9E438 /* MyFileManagerView.xib in Resources */,
 				C2BC5B581DC6E7D1007F23F4 /* flag_hawaii.gif in Resources */,
 				C2BC5B771DC6E7D1007F23F4 /* flag_tennessee.gif in Resources */,
 				C2BC5B751DC6E7D1007F23F4 /* flag_southcarolina.gif in Resources */,
@@ -379,12 +401,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C2AA3B0F1E110ADE00C9E438 /* MyFileViewCell.swift in Sources */,
 				C2BC5B8F1DC6E87B007F23F4 /* LayoutFlushVC.swift in Sources */,
 				C2BC5B8E1DC6E87B007F23F4 /* LayoutNormalVC.swift in Sources */,
-				C2BC5B0B1DC6E72A007F23F4 /* ViewController.swift in Sources */,
+				C2BC5B0B1DC6E72A007F23F4 /* SheetViewVC.swift in Sources */,
 				C2BC5B8C1DC6E87B007F23F4 /* MyFlowLayout.swift in Sources */,
 				C2BC5B8D1DC6E87B007F23F4 /* MyLayout.swift in Sources */,
 				C2BC5B091DC6E72A007F23F4 /* AppDelegate.swift in Sources */,
+				C2AA3B0D1E110ADE00C9E438 /* MyFileManagerView.swift in Sources */,
 				C2BC5B8A1DC6E87B007F23F4 /* Cell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
