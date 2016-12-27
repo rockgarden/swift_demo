@@ -24,11 +24,15 @@ class SheetViewVC: UIViewController {
         albumView.delegate  = self
     }
 
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+//        albumView.frame  = CGRect(origin: CGPoint.zero, size: bottomView.frame.size)
+//        albumView.layoutIfNeeded()
+        albumView.initialize()
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        albumView.frame  = CGRect(origin: CGPoint.zero, size: bottomView.frame.size)
-        albumView.layoutIfNeeded()
-        albumView.initialize()
     }
 
 }

@@ -36,7 +36,7 @@ final class MyFileManagerView: UIView, UICollectionViewDataSource, UICollectionV
     }
     
     func initialize() {
-        collectionViewConstraintHeight.constant = collectionView.frame.width - 3 / 4
+        //collectionViewConstraintHeight.constant = collectionView.frame.width - 3 / 4
         collectionView.register(UINib(nibName: "MyFileViewCell", bundle: Bundle(for: self.classForCoder)), forCellWithReuseIdentifier: "MyFileViewCell")
         collectionView.backgroundColor = UIColor.hex("#212121", alpha: 0.3)
         
