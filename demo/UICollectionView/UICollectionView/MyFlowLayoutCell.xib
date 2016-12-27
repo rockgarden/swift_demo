@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11762" systemVersion="16C67" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="" id="2RU-Vs-M5Q" customClass="MyFlowLayoutCell" customModule="UICollectionView" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="246" height="50"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="246" height="50"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="haS-Pl-Rwr">
+                        <rect key="frame" x="0.0" y="0.0" width="246" height="50"/>
+                        <subviews>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h6I-Sn-8jd">
+                                <rect key="frame" x="2" y="2" width="242" height="46"/>
+                                <fontDescription key="fontDescription" name="GillSans-Bold" family="Gill Sans" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="1" blue="0.1426398754" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="highlightedColor" red="0.33333333329999998" green="0.33333333329999998" blue="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="shadowColor" red="1" green="0.50196081400000003" blue="0.0" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
+                                <size key="shadowOffset" width="2" height="2"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="h6I-Sn-8jd" firstAttribute="leading" secondItem="haS-Pl-Rwr" secondAttribute="leading" constant="2" id="Ci5-gO-vJK"/>
+                            <constraint firstAttribute="trailing" secondItem="h6I-Sn-8jd" secondAttribute="trailing" constant="2" id="SH7-vZ-D7B"/>
+                            <constraint firstAttribute="bottom" secondItem="h6I-Sn-8jd" secondAttribute="bottom" constant="2" id="bdH-yK-M4e"/>
+                            <constraint firstItem="h6I-Sn-8jd" firstAttribute="top" secondItem="haS-Pl-Rwr" secondAttribute="top" constant="2" id="k4g-md-GbJ"/>
+                        </constraints>
+                    </view>
+                </subviews>
+            </view>
+            <constraints>
+                <constraint firstItem="haS-Pl-Rwr" firstAttribute="leading" secondItem="2RU-Vs-M5Q" secondAttribute="leading" id="15S-X7-9bs"/>
+                <constraint firstAttribute="bottom" secondItem="haS-Pl-Rwr" secondAttribute="bottom" id="Fep-4i-jb9"/>
+                <constraint firstAttribute="trailing" secondItem="haS-Pl-Rwr" secondAttribute="trailing" id="QJM-Ab-jSg"/>
+                <constraint firstItem="haS-Pl-Rwr" firstAttribute="top" secondItem="2RU-Vs-M5Q" secondAttribute="top" id="kPx-hd-PaE"/>
+            </constraints>
+            <size key="customSize" width="246" height="50"/>
+            <connections>
+                <outlet property="container" destination="haS-Pl-Rwr" id="U0G-75-hnD"/>
+                <outlet property="lab" destination="h6I-Sn-8jd" id="ogU-D5-Fn0"/>
+            </connections>
+        </collectionViewCell>
+    </objects>
+</document>

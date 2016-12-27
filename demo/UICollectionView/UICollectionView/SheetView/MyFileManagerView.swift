@@ -18,11 +18,8 @@ public let FileManagerViewHeight = FileViewCellSize + 40
 }
 
 final class MyFileManagerView: UIView, UICollectionViewDataSource, UICollectionViewDelegate, PHPhotoLibraryChangeObserver, UIGestureRecognizerDelegate {
-    
+
     @IBOutlet weak var collectionView: UICollectionView!
-    @IBOutlet weak var actionView: UIStackView!
-    @IBOutlet weak var collectionViewConstraintHeight: NSLayoutConstraint!
-    
     weak var delegate: MyFileManagerViewDelegate? = nil
     
     var images: PHFetchResult<PHAsset>!
@@ -32,12 +29,12 @@ final class MyFileManagerView: UIView, UICollectionViewDataSource, UICollectionV
     var phAsset: PHAsset!
     
     static func instance() -> MyFileManagerView {
-        return UINib(nibName: "MyFileManagerView", bundle: Bundle(for: self.classForCoder())).instantiate(withOwner: self, options: nil)[0] as! MyFileManagerView
+        return UINib(nibName: "MyFileManagerView", bundle: nil).instantiate(withOwner: self, options: nil)[0] as! MyFileManagerView
     }
     
     func initialize() {
-        //collectionViewConstraintHeight.constant = collectionView.frame.width - 3 / 4
-        collectionView.register(UINib(nibName: "MyFileViewCell", bundle: Bundle(for: self.classForCoder)), forCellWithReuseIdentifier: "MyFileViewCell")
+        //Bundle(for: self.classForCoder) = nil
+        collectionView.register(UINib(nibName: "MyFileViewCell", bundle: nil), forCellWithReuseIdentifier: "MyFileViewCell")
         collectionView.backgroundColor = UIColor.hex("#212121", alpha: 0.3)
         
         // Never load photos Unless the user allows to access to photo album
@@ -89,11 +86,15 @@ final class MyFileManagerView: UIView, UICollectionViewDataSource, UICollectionV
     }
     
     func numberOfSections(in collectionView: UICollectionView) -> Int {
-        return 1
+        return 2
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return images == nil ? 0 : images.count
+        if section == 1 {
+            return images == nil ? 0 : images.count
+        } else {
+            return 1
+        }
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAtIndexPath indexPath: IndexPath) -> CGSize {

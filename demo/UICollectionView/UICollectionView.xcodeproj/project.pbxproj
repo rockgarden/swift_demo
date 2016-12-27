@@ -7,10 +7,18 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		442A3C801E1294F400DB8E17 /* FlowLayoutVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 442A3C7F1E1294F400DB8E17 /* FlowLayoutVC.swift */; };
+		442A3C821E12976D00DB8E17 /* MyFlowLayoutVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 442A3C811E12976D00DB8E17 /* MyFlowLayoutVC.swift */; };
+		442A3C841E1297E200DB8E17 /* MyFlowLayoutCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 442A3C831E1297E200DB8E17 /* MyFlowLayoutCell.swift */; };
+		442A3C861E1297F800DB8E17 /* MyFlowLayoutCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 442A3C851E1297F800DB8E17 /* MyFlowLayoutCell.xib */; };
+		442A3C891E12A82100DB8E17 /* MyFileViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 442A3C871E12A6C000DB8E17 /* MyFileViewCell.xib */; };
+		442A3C8B1E12AA2200DB8E17 /* DecorationViewVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 442A3C8A1E12AA2200DB8E17 /* DecorationViewVC.swift */; };
+		446AAA1E1E12B4F0008DA395 /* SectionDemoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 446AAA1D1E12B4F0008DA395 /* SectionDemoVC.swift */; };
+		446AAA201E12B7D2008DA395 /* Papers.plist in Resources */ = {isa = PBXBuildFile; fileRef = 446AAA1F1E12B7D2008DA395 /* Papers.plist */; };
+		44C3DEC21E128B3E00118938 /* CellBackgroundLayeringVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44C3DEC11E128B3E00118938 /* CellBackgroundLayeringVC.swift */; };
 		C2AA3B0D1E110ADE00C9E438 /* MyFileManagerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2AA3B091E110ADE00C9E438 /* MyFileManagerView.swift */; };
 		C2AA3B0E1E110ADE00C9E438 /* MyFileManagerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C2AA3B0A1E110ADE00C9E438 /* MyFileManagerView.xib */; };
 		C2AA3B0F1E110ADE00C9E438 /* MyFileViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2AA3B0B1E110ADE00C9E438 /* MyFileViewCell.swift */; };
-		C2AA3B101E110ADE00C9E438 /* MyFileViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C2AA3B0C1E110ADE00C9E438 /* MyFileViewCell.xib */; };
 		C2BC5B091DC6E72A007F23F4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2BC5B081DC6E72A007F23F4 /* AppDelegate.swift */; };
 		C2BC5B0B1DC6E72A007F23F4 /* SheetViewVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2BC5B0A1DC6E72A007F23F4 /* SheetViewVC.swift */; };
 		C2BC5B0E1DC6E72A007F23F4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C2BC5B0C1DC6E72A007F23F4 /* Main.storyboard */; };
@@ -80,10 +88,18 @@
 		4424D4241E11627D00EF3D0A /* Photos.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Photos.framework; path = System/Library/Frameworks/Photos.framework; sourceTree = SDKROOT; };
 		4424D4261E11628700EF3D0A /* PhotosUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = PhotosUI.framework; path = System/Library/Frameworks/PhotosUI.framework; sourceTree = SDKROOT; };
 		4424D4281E1162EE00EF3D0A /* AssetsLibrary.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AssetsLibrary.framework; path = System/Library/Frameworks/AssetsLibrary.framework; sourceTree = SDKROOT; };
+		442A3C7F1E1294F400DB8E17 /* FlowLayoutVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlowLayoutVC.swift; sourceTree = "<group>"; };
+		442A3C811E12976D00DB8E17 /* MyFlowLayoutVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyFlowLayoutVC.swift; sourceTree = "<group>"; };
+		442A3C831E1297E200DB8E17 /* MyFlowLayoutCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyFlowLayoutCell.swift; sourceTree = "<group>"; };
+		442A3C851E1297F800DB8E17 /* MyFlowLayoutCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MyFlowLayoutCell.xib; sourceTree = "<group>"; };
+		442A3C871E12A6C000DB8E17 /* MyFileViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MyFileViewCell.xib; sourceTree = "<group>"; };
+		442A3C8A1E12AA2200DB8E17 /* DecorationViewVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DecorationViewVC.swift; sourceTree = "<group>"; };
+		446AAA1D1E12B4F0008DA395 /* SectionDemoVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SectionDemoVC.swift; sourceTree = "<group>"; };
+		446AAA1F1E12B7D2008DA395 /* Papers.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Papers.plist; sourceTree = "<group>"; };
+		44C3DEC11E128B3E00118938 /* CellBackgroundLayeringVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CellBackgroundLayeringVC.swift; sourceTree = "<group>"; };
 		C2AA3B091E110ADE00C9E438 /* MyFileManagerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyFileManagerView.swift; sourceTree = "<group>"; };
 		C2AA3B0A1E110ADE00C9E438 /* MyFileManagerView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MyFileManagerView.xib; sourceTree = "<group>"; };
 		C2AA3B0B1E110ADE00C9E438 /* MyFileViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyFileViewCell.swift; sourceTree = "<group>"; };
-		C2AA3B0C1E110ADE00C9E438 /* MyFileViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MyFileViewCell.xib; sourceTree = "<group>"; };
 		C2BC5B051DC6E729007F23F4 /* UICollectionView.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UICollectionView.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C2BC5B081DC6E72A007F23F4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C2BC5B0A1DC6E72A007F23F4 /* SheetViewVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SheetViewVC.swift; sourceTree = "<group>"; };
@@ -172,13 +188,20 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		446AAA1C1E12B3AD008DA395 /* Section */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Section;
+			sourceTree = "<group>";
+		};
 		C2AA3B081E110ADE00C9E438 /* SheetView */ = {
 			isa = PBXGroup;
 			children = (
 				C2AA3B091E110ADE00C9E438 /* MyFileManagerView.swift */,
 				C2AA3B0A1E110ADE00C9E438 /* MyFileManagerView.xib */,
 				C2AA3B0B1E110ADE00C9E438 /* MyFileViewCell.swift */,
-				C2AA3B0C1E110ADE00C9E438 /* MyFileViewCell.xib */,
+				442A3C871E12A6C000DB8E17 /* MyFileViewCell.xib */,
 			);
 			path = SheetView;
 			sourceTree = "<group>";
@@ -203,6 +226,7 @@
 		C2BC5B071DC6E729007F23F4 /* UICollectionView */ = {
 			isa = PBXGroup;
 			children = (
+				446AAA1C1E12B3AD008DA395 /* Section */,
 				C2AA3B081E110ADE00C9E438 /* SheetView */,
 				C2BC5B831DC6E87B007F23F4 /* LayoutFromScratch */,
 				C2BC5B1A1DC6E7D1007F23F4 /* flag */,
@@ -213,6 +237,14 @@
 				C2BC5B111DC6E72B007F23F4 /* LaunchScreen.storyboard */,
 				C2BC5B811DC6E7ED007F23F4 /* states.txt */,
 				C2BC5B141DC6E72B007F23F4 /* Info.plist */,
+				44C3DEC11E128B3E00118938 /* CellBackgroundLayeringVC.swift */,
+				442A3C7F1E1294F400DB8E17 /* FlowLayoutVC.swift */,
+				442A3C811E12976D00DB8E17 /* MyFlowLayoutVC.swift */,
+				442A3C8A1E12AA2200DB8E17 /* DecorationViewVC.swift */,
+				442A3C831E1297E200DB8E17 /* MyFlowLayoutCell.swift */,
+				442A3C851E1297F800DB8E17 /* MyFlowLayoutCell.xib */,
+				446AAA1D1E12B4F0008DA395 /* SectionDemoVC.swift */,
+				446AAA1F1E12B7D2008DA395 /* Papers.plist */,
 			);
 			path = UICollectionView;
 			sourceTree = "<group>";
@@ -348,6 +380,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				442A3C891E12A82100DB8E17 /* MyFileViewCell.xib in Resources */,
 				C2BC5B7E1DC6E7D1007F23F4 /* flag_wisconsin.gif in Resources */,
 				C2BC5B541DC6E7D1007F23F4 /* flag_connecticut.gif in Resources */,
 				C2BC5B5A1DC6E7D1007F23F4 /* flag_illinois.gif in Resources */,
@@ -396,7 +429,8 @@
 				C2BC5B691DC6E7D1007F23F4 /* flag_nevada.gif in Resources */,
 				C2BC5B5B1DC6E7D1007F23F4 /* flag_indiana.gif in Resources */,
 				C2BC5B7D1DC6E7D1007F23F4 /* flag_westvirginia.gif in Resources */,
-				C2AA3B101E110ADE00C9E438 /* MyFileViewCell.xib in Resources */,
+				446AAA201E12B7D2008DA395 /* Papers.plist in Resources */,
+				442A3C861E1297F800DB8E17 /* MyFlowLayoutCell.xib in Resources */,
 				C2BC5B601DC6E7D1007F23F4 /* flag_maine.gif in Resources */,
 				C2BC5B4F1DC6E7D1007F23F4 /* flag_alaska.gif in Resources */,
 				C2BC5B821DC6E7ED007F23F4 /* states.txt in Resources */,
@@ -417,11 +451,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				C2AA3B0F1E110ADE00C9E438 /* MyFileViewCell.swift in Sources */,
+				442A3C841E1297E200DB8E17 /* MyFlowLayoutCell.swift in Sources */,
+				44C3DEC21E128B3E00118938 /* CellBackgroundLayeringVC.swift in Sources */,
+				442A3C801E1294F400DB8E17 /* FlowLayoutVC.swift in Sources */,
 				C2BC5B8F1DC6E87B007F23F4 /* LayoutFlushVC.swift in Sources */,
 				C2BC5B8E1DC6E87B007F23F4 /* LayoutNormalVC.swift in Sources */,
+				446AAA1E1E12B4F0008DA395 /* SectionDemoVC.swift in Sources */,
 				C2BC5B0B1DC6E72A007F23F4 /* SheetViewVC.swift in Sources */,
+				442A3C8B1E12AA2200DB8E17 /* DecorationViewVC.swift in Sources */,
 				C2BC5B8C1DC6E87B007F23F4 /* MyFlowLayout.swift in Sources */,
 				C2BC5B8D1DC6E87B007F23F4 /* MyLayout.swift in Sources */,
+				442A3C821E12976D00DB8E17 /* MyFlowLayoutVC.swift in Sources */,
 				C2BC5B091DC6E72A007F23F4 /* AppDelegate.swift in Sources */,
 				C2AA3B0D1E110ADE00C9E438 /* MyFileManagerView.swift in Sources */,
 				C2BC5B8A1DC6E87B007F23F4 /* Cell.swift in Sources */,
