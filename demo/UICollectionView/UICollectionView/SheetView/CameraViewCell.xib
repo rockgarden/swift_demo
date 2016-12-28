@@ -10,29 +10,33 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="8Vu-ir-nZk" customClass="MyFileViewCell" customModule="UICollectionView" customModuleProvider="target">
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="" id="3P6-Y3-8Mo" customClass="CameraViewCell" customModule="UICollectionView" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="152" height="141"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                 <rect key="frame" x="0.0" y="0.0" width="152" height="141"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Fyw-Ct-22e">
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_photo_camera" translatesAutoresizingMaskIntoConstraints="NO" id="1Z9-0q-PVX">
                         <rect key="frame" x="0.0" y="0.0" width="152" height="141"/>
+                        <color key="backgroundColor" red="0.41176470590000003" green="0.66274509800000003" blue="0.92156862750000001" alpha="1" colorSpace="calibratedRGB"/>
                     </imageView>
                 </subviews>
             </view>
             <constraints>
-                <constraint firstItem="Fyw-Ct-22e" firstAttribute="leading" secondItem="8Vu-ir-nZk" secondAttribute="leading" id="4Md-zZ-63M"/>
-                <constraint firstAttribute="trailing" secondItem="Fyw-Ct-22e" secondAttribute="trailing" id="i8F-gt-77e"/>
-                <constraint firstItem="Fyw-Ct-22e" firstAttribute="top" secondItem="8Vu-ir-nZk" secondAttribute="top" id="luN-UW-aOm"/>
-                <constraint firstAttribute="bottom" secondItem="Fyw-Ct-22e" secondAttribute="bottom" id="tBh-rE-p4B"/>
+                <constraint firstAttribute="trailing" secondItem="1Z9-0q-PVX" secondAttribute="trailing" id="6Se-2e-11m"/>
+                <constraint firstItem="1Z9-0q-PVX" firstAttribute="leading" secondItem="3P6-Y3-8Mo" secondAttribute="leading" id="QDB-xa-Afc"/>
+                <constraint firstAttribute="bottom" secondItem="1Z9-0q-PVX" secondAttribute="bottom" id="UiN-2Q-gYE"/>
+                <constraint firstItem="1Z9-0q-PVX" firstAttribute="top" secondItem="3P6-Y3-8Mo" secondAttribute="top" id="uU0-qd-o8p"/>
             </constraints>
             <size key="customSize" width="152" height="141"/>
             <connections>
-                <outlet property="imageView" destination="Fyw-Ct-22e" id="Ktd-FH-b82"/>
+                <outlet property="imageView" destination="1Z9-0q-PVX" id="be4-UI-LQU"/>
             </connections>
             <point key="canvasLocation" x="-150" y="-84.5"/>
         </collectionViewCell>
     </objects>
+    <resources>
+        <image name="ic_photo_camera" width="36" height="36"/>
+    </resources>
 </document>

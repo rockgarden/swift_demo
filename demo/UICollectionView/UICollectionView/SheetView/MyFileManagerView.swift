@@ -9,8 +9,9 @@
 import UIKit
 import Photos
 
-public let FileViewCellSize = (UIScreen.main.bounds.width - 2) / 3 //3张一行
-public let FileManagerViewHeight = FileViewCellSize + 40
+public let NumberOfItemsOneRow: CGFloat = 4
+public let FileViewCellSize = (UIScreen.main.bounds.width - NumberOfItemsOneRow - 1) / NumberOfItemsOneRow
+public let FileManagerViewHeight = FileViewCellSize
 
 @objc public protocol MyFileManagerViewDelegate: class {
     func cameraRollUnauthorized()
@@ -21,6 +22,7 @@ final class MyFileManagerView: UIView, UICollectionViewDataSource, UICollectionV
 
     @IBOutlet weak var collectionView: UICollectionView!
     weak var delegate: MyFileManagerViewDelegate? = nil
+    var isPrivate: Bool!
     
     var images: PHFetchResult<PHAsset>!
     var imageManager: PHCachingImageManager?
@@ -32,9 +34,15 @@ final class MyFileManagerView: UIView, UICollectionViewDataSource, UICollectionV
         return UINib(nibName: "MyFileManagerView", bundle: nil).instantiate(withOwner: self, options: nil)[0] as! MyFileManagerView
     }
     
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        initialize()
+    }
+    
     func initialize() {
         //Bundle(for: self.classForCoder) = nil
         collectionView.register(UINib(nibName: "MyFileViewCell", bundle: nil), forCellWithReuseIdentifier: "MyFileViewCell")
+        collectionView.register(UINib(nibName: "CameraViewCell", bundle: nil), forCellWithReuseIdentifier: "CameraViewCell")
         collectionView.backgroundColor = UIColor.hex("#212121", alpha: 0.3)
         
         // Never load photos Unless the user allows to access to photo album
@@ -67,7 +75,11 @@ final class MyFileManagerView: UIView, UICollectionViewDataSource, UICollectionV
     // MARK: - UICollectionViewDelegate Protocol
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "MyFileViewCell", for: indexPath) as! MyFileViewCell
+        let camera = collectionView.dequeueReusableCell(withReuseIdentifier: "CameraViewCell", for: indexPath) as! CameraViewCell
         
+        if indexPath.section == 0 {
+            
+        }
         let currentTag = cell.tag + 1
         cell.tag = currentTag
         

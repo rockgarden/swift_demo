@@ -20,15 +20,10 @@ class SheetViewVC: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        /// VC中有多个 ScrollView 或 是动态加入时, 要设置为 false (定义: 允许控制器根据所在界面的 status bar\navigationbar\tabbar 的高度, 自动调整 scrollview 的 inset)
+        automaticallyAdjustsScrollViewInsets = false
         bottomView.addSubview(albumView)
         albumView.delegate  = self
-    }
-
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-//        albumView.frame  = CGRect(origin: CGPoint.zero, size: bottomView.frame.size)
-//        albumView.layoutIfNeeded()
-        albumView.initialize()
     }
     
     override func didReceiveMemoryWarning() {

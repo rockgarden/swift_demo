@@ -16,6 +16,8 @@
 		446AAA1E1E12B4F0008DA395 /* SectionDemoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 446AAA1D1E12B4F0008DA395 /* SectionDemoVC.swift */; };
 		446AAA201E12B7D2008DA395 /* Papers.plist in Resources */ = {isa = PBXBuildFile; fileRef = 446AAA1F1E12B7D2008DA395 /* Papers.plist */; };
 		44C3DEC21E128B3E00118938 /* CellBackgroundLayeringVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44C3DEC11E128B3E00118938 /* CellBackgroundLayeringVC.swift */; };
+		C202C0041E13AEEC00CEC12A /* CameraViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C202C0031E13AEEC00CEC12A /* CameraViewCell.swift */; };
+		C202C0061E13AF2B00CEC12A /* CameraViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C202C0051E13AF2B00CEC12A /* CameraViewCell.xib */; };
 		C2AA3B0D1E110ADE00C9E438 /* MyFileManagerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2AA3B091E110ADE00C9E438 /* MyFileManagerView.swift */; };
 		C2AA3B0E1E110ADE00C9E438 /* MyFileManagerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C2AA3B0A1E110ADE00C9E438 /* MyFileManagerView.xib */; };
 		C2AA3B0F1E110ADE00C9E438 /* MyFileViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2AA3B0B1E110ADE00C9E438 /* MyFileViewCell.swift */; };
@@ -97,6 +99,8 @@
 		446AAA1D1E12B4F0008DA395 /* SectionDemoVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SectionDemoVC.swift; sourceTree = "<group>"; };
 		446AAA1F1E12B7D2008DA395 /* Papers.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Papers.plist; sourceTree = "<group>"; };
 		44C3DEC11E128B3E00118938 /* CellBackgroundLayeringVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CellBackgroundLayeringVC.swift; sourceTree = "<group>"; };
+		C202C0031E13AEEC00CEC12A /* CameraViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CameraViewCell.swift; sourceTree = "<group>"; };
+		C202C0051E13AF2B00CEC12A /* CameraViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CameraViewCell.xib; sourceTree = "<group>"; };
 		C2AA3B091E110ADE00C9E438 /* MyFileManagerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyFileManagerView.swift; sourceTree = "<group>"; };
 		C2AA3B0A1E110ADE00C9E438 /* MyFileManagerView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MyFileManagerView.xib; sourceTree = "<group>"; };
 		C2AA3B0B1E110ADE00C9E438 /* MyFileViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyFileViewCell.swift; sourceTree = "<group>"; };
@@ -188,13 +192,6 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		446AAA1C1E12B3AD008DA395 /* Section */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = Section;
-			sourceTree = "<group>";
-		};
 		C2AA3B081E110ADE00C9E438 /* SheetView */ = {
 			isa = PBXGroup;
 			children = (
@@ -202,6 +199,8 @@
 				C2AA3B0A1E110ADE00C9E438 /* MyFileManagerView.xib */,
 				C2AA3B0B1E110ADE00C9E438 /* MyFileViewCell.swift */,
 				442A3C871E12A6C000DB8E17 /* MyFileViewCell.xib */,
+				C202C0031E13AEEC00CEC12A /* CameraViewCell.swift */,
+				C202C0051E13AF2B00CEC12A /* CameraViewCell.xib */,
 			);
 			path = SheetView;
 			sourceTree = "<group>";
@@ -226,7 +225,6 @@
 		C2BC5B071DC6E729007F23F4 /* UICollectionView */ = {
 			isa = PBXGroup;
 			children = (
-				446AAA1C1E12B3AD008DA395 /* Section */,
 				C2AA3B081E110ADE00C9E438 /* SheetView */,
 				C2BC5B831DC6E87B007F23F4 /* LayoutFromScratch */,
 				C2BC5B1A1DC6E7D1007F23F4 /* flag */,
@@ -437,6 +435,7 @@
 				C2BC5B6A1DC6E7D1007F23F4 /* flag_newhampshire.gif in Resources */,
 				C2BC5B611DC6E7D1007F23F4 /* flag_maryland.gif in Resources */,
 				C2AA3B0E1E110ADE00C9E438 /* MyFileManagerView.xib in Resources */,
+				C202C0061E13AF2B00CEC12A /* CameraViewCell.xib in Resources */,
 				C2BC5B581DC6E7D1007F23F4 /* flag_hawaii.gif in Resources */,
 				C2BC5B771DC6E7D1007F23F4 /* flag_tennessee.gif in Resources */,
 				C2BC5B751DC6E7D1007F23F4 /* flag_southcarolina.gif in Resources */,
@@ -453,6 +452,7 @@
 				C2AA3B0F1E110ADE00C9E438 /* MyFileViewCell.swift in Sources */,
 				442A3C841E1297E200DB8E17 /* MyFlowLayoutCell.swift in Sources */,
 				44C3DEC21E128B3E00118938 /* CellBackgroundLayeringVC.swift in Sources */,
+				C202C0041E13AEEC00CEC12A /* CameraViewCell.swift in Sources */,
 				442A3C801E1294F400DB8E17 /* FlowLayoutVC.swift in Sources */,
 				C2BC5B8F1DC6E87B007F23F4 /* LayoutFlushVC.swift in Sources */,
 				C2BC5B8E1DC6E87B007F23F4 /* LayoutNormalVC.swift in Sources */,
