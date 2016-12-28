@@ -402,9 +402,8 @@ extension ViewController : UINavigationControllerDelegate {
             nc.isToolbarHidden = false
 
             let sz = CGSize(width: 10,height: 10)
-
+            
             var im = UIImage()
-
             if #available(iOS 10.0, *) {
                 let r = UIGraphicsImageRenderer(size:sz)
                 im = r.image { ctx in
@@ -420,6 +419,7 @@ extension ViewController : UINavigationControllerDelegate {
 
             nc.toolbar.setBackgroundImage(im, forToolbarPosition: .any, barMetrics: .default)
             nc.toolbar.isTranslucent = true
+
             let b = UIBarButtonItem(title: "Cancel", style: .plain, target: self, action: #selector(doCancel))
             let lab = UILabel()
             lab.text = "Double tap to take a picture"

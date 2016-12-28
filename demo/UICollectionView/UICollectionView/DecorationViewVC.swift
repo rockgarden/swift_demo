@@ -185,8 +185,6 @@ class DecorationViewVC : UICollectionViewController, UICollectionViewDelegateFlo
     // NB According to Apple, in iOS 8 I should be able to eliminate this code;
     // simply turning on estimatedItemSize should do it for me (sizing according to constraints)
     // but I have not been able to get that feature to work
-
-    //    /*
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         // note; this approach didn't work on iOS 8...
         // ...until I introduced the "container" view
@@ -200,7 +198,6 @@ class DecorationViewVC : UICollectionViewController, UICollectionViewDelegateFlo
         sz.width = ceil(sz.width); sz.height = ceil(sz.height)
         return sz
     }
-    // */
 
 
     // selection: nothing to do!

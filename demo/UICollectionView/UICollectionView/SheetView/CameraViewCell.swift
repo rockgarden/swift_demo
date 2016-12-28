@@ -9,7 +9,7 @@
 import UIKit
 import Photos
 
-final class CameraViewCell: UICollectionViewCell {
+final class CameraViewCell: UICollectionReusableView {
     
     @IBOutlet weak var imageView: UIImageView!
     
@@ -19,15 +19,4 @@ final class CameraViewCell: UICollectionViewCell {
         }
     }
     
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        self.isSelected = false
-    }
-    
-    override var isSelected : Bool {
-        didSet {
-            self.layer.borderColor = isSelected ? UIColor("#009688", alpha: 1.0).cgColor : UIColor.clear.cgColor
-            self.layer.borderWidth = isSelected ? 2 : 0
-        }
-    }
 }

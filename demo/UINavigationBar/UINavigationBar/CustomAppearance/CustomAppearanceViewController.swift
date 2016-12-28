@@ -40,6 +40,60 @@ class CustomAppearanceViewController: UITableViewController {
             return
         }
     }
+
+    override func viewDidAppear(_ animated:Bool) {
+        super.viewDidAppear(animated)
+
+        let navbar = self.navigationController!.navigationBar
+        let toolbar = self.navigationController!.toolbar
+
+        /// navigationBar set Background Image
+        do {
+            var im: UIImage?
+            let sz = CGSize(20,20)
+            if #available(iOS 10.0, *) {
+                let r = UIGraphicsImageRenderer(size:sz)
+                im = r.image { ctx in
+                    UIColor(white:0.95, alpha:0.85).setFill()
+                    ctx.fill(CGRect(0,0,20,20)) }
+            } else {
+                im = imageOfSize(sz) {
+                    UIColor(white:0.95, alpha:0.85).setFill()
+                    UIGraphicsGetCurrentContext()!.fill(CGRect(origin: CGPoint(), size: sz))
+                }
+            }
+            _ = im //启用时删除
+            //navbar.setBackgroundImage(im, for:.any, barMetrics: .default)
+            toolbar?.setBackgroundImage(im, forToolbarPosition:.any, barMetrics: .default)
+        }
+
+        /// navigationBar and toolbar add shadow
+        do {
+            var im: UIImage?
+            let sz = CGSize(4,4)
+            if #available(iOS 10.0, *) {
+                let r = UIGraphicsImageRenderer(size:sz)
+                im = r.image { ctx in
+                    UIColor.gray.withAlphaComponent(0.3).setFill()
+                    ctx.fill(CGRect(0,0,4,2))
+                    UIColor.gray.withAlphaComponent(0.15).setFill()
+                    ctx.fill(CGRect(0,2,4,2))
+                }
+            } else {
+                im = imageOfSize(sz) {
+                    UIColor.gray.withAlphaComponent(0.3).setFill()
+                    UIGraphicsGetCurrentContext()!.fill(CGRect(0,0,4,2))
+                    UIColor.gray.withAlphaComponent(0.15).setFill()
+                    UIGraphicsGetCurrentContext()!.fill(CGRect(0,2,4,2))
+                }
+            }
+            navbar.shadowImage = im
+            toolbar?.setShadowImage(im, forToolbarPosition:.any )
+        }
+        // try false - effective only here
+        //navbar.isTranslucent = true
+        toolbar?.isTranslucent = true
+    }
     
     @available(iOS 8.0, *)
     override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {

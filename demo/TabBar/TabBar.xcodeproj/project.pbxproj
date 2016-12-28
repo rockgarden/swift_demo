@@ -21,6 +21,7 @@
 		449789CF1D6DD33200A607A9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 449789CD1D6DD33200A607A9 /* LaunchScreen.storyboard */; };
 		449789D71D6DD38B00A607A9 /* MyDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 449789D61D6DD38B00A607A9 /* MyDataSource.swift */; };
 		449789D91D6DD6A500A607A9 /* TabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 449789D81D6DD6A500A607A9 /* TabViewController.swift */; };
+		449E5D801E13E9CF009F2915 /* TabBarVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 449E5D7F1E13E9CF009F2915 /* TabBarVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +41,7 @@
 		449789D01D6DD33200A607A9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		449789D61D6DD38B00A607A9 /* MyDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyDataSource.swift; sourceTree = "<group>"; };
 		449789D81D6DD6A500A607A9 /* TabViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabViewController.swift; sourceTree = "<group>"; };
+		449E5D7F1E13E9CF009F2915 /* TabBarVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,6 +104,7 @@
 			children = (
 				449789C41D6DD33200A607A9 /* AppDelegate.swift */,
 				449789C81D6DD33200A607A9 /* Main.storyboard */,
+				449E5D7F1E13E9CF009F2915 /* TabBarVC.swift */,
 				449789C61D6DD33200A607A9 /* SubVC.swift */,
 				449718171DBB608A009C1868 /* FirstVC.swift */,
 				449718191DBB60DB009C1868 /* SecondVC.swift */,
@@ -191,6 +194,7 @@
 			files = (
 				449789D91D6DD6A500A607A9 /* TabViewController.swift in Sources */,
 				449718201DBB9FD5009C1868 /* TabbedUnwindSecondVC.swift in Sources */,
+				449E5D801E13E9CF009F2915 /* TabBarVC.swift in Sources */,
 				449718221DBBA010009C1868 /* ExtraViewController.swift in Sources */,
 				449789C71D6DD33200A607A9 /* SubVC.swift in Sources */,
 				449789D71D6DD38B00A607A9 /* MyDataSource.swift in Sources */,

@@ -23,122 +23,145 @@ final class MyFileManagerView: UIView, UICollectionViewDataSource, UICollectionV
     @IBOutlet weak var collectionView: UICollectionView!
     weak var delegate: MyFileManagerViewDelegate? = nil
     var isPrivate: Bool!
-    
+
     var images: PHFetchResult<PHAsset>!
     var imageManager: PHCachingImageManager?
+    var phAsset: PHAsset!
     var previousPreheatRect: CGRect = CGRect.zero
     let cellSize = CGSize(width: FileViewCellSize, height: FileViewCellSize)
-    var phAsset: PHAsset!
-    
+
     static func instance() -> MyFileManagerView {
         return UINib(nibName: "MyFileManagerView", bundle: nil).instantiate(withOwner: self, options: nil)[0] as! MyFileManagerView
     }
-    
+
     override func awakeFromNib() {
         super.awakeFromNib()
         initialize()
     }
-    
+
     func initialize() {
+        let flow = collectionView!.collectionViewLayout as! UICollectionViewFlowLayout
+        setUpFlowLayout(flow)
+
+        debugPrint("collectionView",collectionView)
+
+        collectionView.backgroundColor = UIColor.clear
         //Bundle(for: self.classForCoder) = nil
         collectionView.register(UINib(nibName: "MyFileViewCell", bundle: nil), forCellWithReuseIdentifier: "MyFileViewCell")
-        collectionView.register(UINib(nibName: "CameraViewCell", bundle: nil), forCellWithReuseIdentifier: "CameraViewCell")
-        collectionView.backgroundColor = UIColor.hex("#212121", alpha: 0.3)
-        
+        collectionView.register(UINib(nibName: "CameraViewCell", bundle: nil),
+                                forSupplementaryViewOfKind:UICollectionElementKindSectionFooter,
+                                withReuseIdentifier:"Footer")
+
         // Never load photos Unless the user allows to access to photo album
         checkPhotoAuth()
-        
+
         // Sorting condition
         let options = PHFetchOptions()
         options.sortDescriptors = [
             NSSortDescriptor(key: "creationDate", ascending: false)
         ]
-        
+
         images = PHAsset.fetchAssets(with: .image, options: options)
-        
+
         if images.count > 0 {
             changeImage(images[0])
             collectionView.reloadData()
             collectionView.selectItem(at: IndexPath(row: 0, section: 0), animated: false, scrollPosition: UICollectionViewScrollPosition())
         }
-        
+
         PHPhotoLibrary.shared().register(self)
     }
-    
+
+    fileprivate func setUpFlowLayout(_ flow:UICollectionViewFlowLayout) {
+        flow.footerReferenceSize = cellSize
+        flow.sectionInset = UIEdgeInsetsMake(0, 0, 0, 0) // looks nicer
+        flow.sectionFootersPinToVisibleBounds = false // try cool new iOS 9 feature
+        flow.scrollDirection = .horizontal
+
+        // uncomment to crash
+        // cripes, now we don't crash, but the layout is wrong! can these guys never get this implemented???
+        // also tried doing this by overriding sizeThatFits in the cell, but with the same wrong layout
+        // also tried doing it by overriding preferredAttributes in the cell, same wrong layout
+        // flow.estimatedItemSize = UICollectionViewFlowLayoutAutomaticSize
+    }
+
+
     deinit {
         if PHPhotoLibrary.authorizationStatus() == PHAuthorizationStatus.authorized {
             PHPhotoLibrary.shared().unregisterChangeObserver(self)
         }
     }
-    
-    
+
+
     // MARK: - UICollectionViewDelegate Protocol
+
+    func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
+        var v : UICollectionReusableView! = nil
+        if kind == UICollectionElementKindSectionFooter {
+            v = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionElementKindSectionFooter, withReuseIdentifier:"Footer", for: indexPath) as! CameraViewCell
+        }
+        return v
+    }
+
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "MyFileViewCell", for: indexPath) as! MyFileViewCell
-        let camera = collectionView.dequeueReusableCell(withReuseIdentifier: "CameraViewCell", for: indexPath) as! CameraViewCell
-        
-        if indexPath.section == 0 {
-            
-        }
+
         let currentTag = cell.tag + 1
         cell.tag = currentTag
-        
-        let asset = self.images[indexPath.item] 
+
+        let asset = self.images[indexPath.item]
         self.imageManager?.requestImage(for: asset,
-                                                targetSize: cellSize,
-                                                contentMode: .aspectFill,
-                                                options: nil) {
-                                                    result, info in
-                                                    if cell.tag == currentTag {
-                                                        cell.image = result
-                                                    }
-                                                    
+                                        targetSize: cellSize,
+                                        contentMode: .aspectFill,
+                                        options: nil) {
+                                            result, info in
+                                            if cell.tag == currentTag {
+                                                cell.image = result
+                                            }
+
         }
         return cell
+
     }
-    
+
     func numberOfSections(in collectionView: UICollectionView) -> Int {
-        return 2
+        return 1
     }
-    
+
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        if section == 1 {
-            return images == nil ? 0 : images.count
-        } else {
-            return 1
-        }
+        return images == nil ? 0 : images.count
     }
-    
+
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAtIndexPath indexPath: IndexPath) -> CGSize {
         return CGSize(width: FileViewCellSize, height: FileViewCellSize)
     }
-    
+
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         changeImage(images[indexPath.row])
         collectionView.scrollToItem(at: indexPath, at: .left, animated: true)
     }
-    
-    
+
+
     // MARK: - ScrollViewDelegate
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         if scrollView == collectionView {
             self.updateCachedAssets()
         }
     }
-    
-    
+
+
     //MARK: - PHPhotoLibraryChangeObserver
     func photoLibraryDidChange(_ changeInstance: PHChange) {
-        
+
         DispatchQueue.main.async {
-            
+
             let collectionChanges = changeInstance.changeDetails(for: self.images)
             if collectionChanges != nil {
-                
+
                 self.images = collectionChanges!.fetchResultAfterChanges
-                
+
                 let collectionView = self.collectionView!
-                
+
                 if !collectionChanges!.hasIncrementalChanges || collectionChanges!.hasMoves {
                     collectionView.reloadData()
                 } else {
@@ -155,7 +178,7 @@ final class MyFileManagerView: UIView, UICollectionViewDataSource, UICollectionV
                         if (changedIndexes?.count ?? 0) != 0 {
                             collectionView.reloadItems(at: changedIndexes!.aapl_indexPathsFromIndexesWithSection(0))
                         }
-                        }, completion: nil)
+                    }, completion: nil)
                 }
                 self.resetCachedAssets()
             }
@@ -165,7 +188,7 @@ final class MyFileManagerView: UIView, UICollectionViewDataSource, UICollectionV
 
 
 internal extension UICollectionView {
-    
+
     func aapl_indexPathsForElementsInRect(_ rect: CGRect) -> [IndexPath] {
         let allLayoutAttributes = self.collectionViewLayout.layoutAttributesForElements(in: rect)
         if (allLayoutAttributes?.count ?? 0) == 0 {return []}
@@ -180,7 +203,7 @@ internal extension UICollectionView {
 }
 
 internal extension IndexSet {
-    
+
     func aapl_indexPathsFromIndexesWithSection(_ section: Int) -> [IndexPath] {
         var indexPaths: [IndexPath] = []
         indexPaths.reserveCapacity(self.count)
@@ -192,25 +215,25 @@ internal extension IndexSet {
 }
 
 private extension MyFileManagerView {
-    
+
     func changeImage(_ asset: PHAsset) {
         self.phAsset = asset
-        
+
         DispatchQueue.global(qos: .default).async(execute: {
             let options = PHImageRequestOptions()
             options.isNetworkAccessAllowed = true
-            
+
             self.imageManager?.requestImage(for: asset,
-                targetSize: CGSize(width: asset.pixelWidth, height: asset.pixelHeight),
-                contentMode: .aspectFill,
-            options: options) {
-                result, info in
-                DispatchQueue.main.async(execute: {
-                })
+                                            targetSize: CGSize(width: asset.pixelWidth, height: asset.pixelHeight),
+                                            contentMode: .aspectFill,
+                                            options: options) {
+                                                result, info in
+                                                DispatchQueue.main.async(execute: {
+                                                })
             }
         })
     }
-    
+
     // Check the status of authorization for PHPhotoLibrary
     func checkPhotoAuth() {
         PHPhotoLibrary.requestAuthorization { (status) -> Void in
@@ -218,7 +241,7 @@ private extension MyFileManagerView {
             case .authorized:
                 self.imageManager = PHCachingImageManager()
                 if self.images != nil && self.images.count > 0 {
-                    
+
                     self.changeImage(self.images[0])
                 }
             case .restricted, .denied:
@@ -230,55 +253,55 @@ private extension MyFileManagerView {
             }
         }
     }
-    
+
     @IBAction func startCamera() {
         DispatchQueue.main.async(execute: { () -> Void in
             self.delegate?.presentCamera()
         })
     }
-    
+
     // MARK: - Asset Caching
-    
+
     func resetCachedAssets() {
         imageManager?.stopCachingImagesForAllAssets()
         previousPreheatRect = CGRect.zero
     }
-    
+
     func updateCachedAssets() {
-        
+
         var preheatRect = self.collectionView!.bounds
         preheatRect = preheatRect.insetBy(dx: 0.0, dy: -0.5 * preheatRect.height)
-        
+
         let delta = abs(preheatRect.midY - self.previousPreheatRect.midY)
         if delta > self.collectionView!.bounds.height / 3.0 {
-            
+
             var addedIndexPaths: [IndexPath] = []
             var removedIndexPaths: [IndexPath] = []
-            
+
             self.computeDifferenceBetweenRect(self.previousPreheatRect, andRect: preheatRect, removedHandler: {removedRect in
                 let indexPaths = self.collectionView.aapl_indexPathsForElementsInRect(removedRect)
                 removedIndexPaths += indexPaths
-                }, addedHandler: {addedRect in
-                    let indexPaths = self.collectionView.aapl_indexPathsForElementsInRect(addedRect)
-                    addedIndexPaths += indexPaths
+            }, addedHandler: {addedRect in
+                let indexPaths = self.collectionView.aapl_indexPathsForElementsInRect(addedRect)
+                addedIndexPaths += indexPaths
             })
-            
+
             let assetsToStartCaching = self.assetsAtIndexPaths(addedIndexPaths)
             let assetsToStopCaching = self.assetsAtIndexPaths(removedIndexPaths)
-            
+
             self.imageManager?.startCachingImages(for: assetsToStartCaching,
-                                                           targetSize: cellSize,
-                                                           contentMode: .aspectFill,
-                                                           options: nil)
+                                                  targetSize: cellSize,
+                                                  contentMode: .aspectFill,
+                                                  options: nil)
             self.imageManager?.stopCachingImages(for: assetsToStopCaching,
-                                                          targetSize: cellSize,
-                                                          contentMode: .aspectFill,
-                                                          options: nil)
-            
+                                                 targetSize: cellSize,
+                                                 contentMode: .aspectFill,
+                                                 options: nil)
+
             self.previousPreheatRect = preheatRect
         }
     }
-    
+
     func computeDifferenceBetweenRect(_ oldRect: CGRect, andRect newRect: CGRect, removedHandler: (CGRect)->Void, addedHandler: (CGRect)->Void) {
         if newRect.intersects(oldRect) {
             let oldMaxY = oldRect.maxY
@@ -306,10 +329,10 @@ private extension MyFileManagerView {
             removedHandler(oldRect)
         }
     }
-    
+
     func assetsAtIndexPaths(_ indexPaths: [IndexPath]) -> [PHAsset] {
         if indexPaths.count == 0 { return [] }
-        
+
         var assets: [PHAsset] = []
         assets.reserveCapacity(indexPaths.count)
         for indexPath in indexPaths {
