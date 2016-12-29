@@ -1,5 +1,5 @@
 //
-//  MyFileViewCell.swift
+//  PhotoCell.swift
 //  mobile112
 //
 //  Created by wangkan on 2016/12/20.
@@ -9,7 +9,7 @@
 import UIKit
 import Photos
 
-final class MyFileViewCell: UICollectionViewCell {
+final class PhotoCell: UICollectionViewCell {
     
     @IBOutlet weak var imageView: UIImageView!
     

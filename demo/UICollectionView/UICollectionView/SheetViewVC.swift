@@ -12,19 +12,22 @@ class SheetViewVC: UIViewController {
     
     @IBOutlet weak var bottomViewHeight: NSLayoutConstraint! {
         didSet {
-            bottomViewHeight.constant = FileManagerViewHeight
+            bottomViewHeight.constant = PhotoManagerViewHeight
         }
     }
     @IBOutlet var bottomView: UIView!
-    var albumView = MyFileManagerView.instance()
+    var albumView = PhotoManagerView.instance()
 
     override func viewDidLoad() {
         super.viewDidLoad()
         /// VC中有多个 ScrollView 或 是动态加入时, 要设置为 false (定义: 允许控制器根据所在界面的 status bar\navigationbar\tabbar 的高度, 自动调整 scrollview 的 inset)
+        /// the item height must be less than the height of the UICollectionView minus the section insets top and bottom values, minus the content insets top and bottom values.
         automaticallyAdjustsScrollViewInsets = false
         bottomView.addSubview(albumView)
+        albumView.frame  = CGRect(origin: CGPoint.zero, size: bottomView.frame.size) //albumView.layoutIfNeeded()
         albumView.delegate  = self
     }
+
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -33,7 +36,7 @@ class SheetViewVC: UIViewController {
 }
 
 
-extension SheetViewVC : MyFileManagerViewDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+extension SheetViewVC : PhotoManagerViewDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
     func cameraRollUnauthorized() {
         let alert = UIAlertController(title: "Access Requested", message: "Saving image needs to access your photo album", preferredStyle: .alert)
