@@ -1,0 +1,30 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "7A6330B963D324A0C822B1465E2121F5C90B8C23",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "7A6330B963D324A0C822B1465E2121F5C90B8C23" : 9223372036854775807,
+    "74831E6EF7BC55505B11136FA83DDC06A5E7268B" : 9223372036854775807
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "164E796F-CA21-447E-8519-76720E1AEFC0",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "7A6330B963D324A0C822B1465E2121F5C90B8C23" : "swift_demo\/",
+    "74831E6EF7BC55505B11136FA83DDC06A5E7268B" : "SimpleLib\/"
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "SwiftDemo",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "SwiftDemo.xcworkspace",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/rockgarden\/SimpleLib.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "74831E6EF7BC55505B11136FA83DDC06A5E7268B"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/rockgarden\/swift_demo.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "7A6330B963D324A0C822B1465E2121F5C90B8C23"
+    }
+  ]
+}

@@ -12,12 +12,12 @@
 		<key>VignetteFilter.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>5</integer>
+			<integer>6</integer>
 		</dict>
 		<key>VignetteKit.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>14</integer>
+			<integer>15</integer>
 		</dict>
 		<key>VignettePhotoExtension.xcscheme</key>
 		<dict>
