@@ -7,8 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		449BD9581E192470003A0762 /* MyKnob.swift in Sources */ = {isa = PBXBuildFile; fileRef = 449BD9571E192470003A0762 /* MyKnob.swift */; };
+		449BD95A1E19280C003A0762 /* MyShrinkingButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 449BD9591E19280C003A0762 /* MyShrinkingButton.swift */; };
+		449BD95C1E192CE8003A0762 /* UISegmentedControlVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 449BD95B1E192CE8003A0762 /* UISegmentedControlVC.swift */; };
 		449E5D8E1E13FC6B009F2915 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 449E5D8D1E13FC6B009F2915 /* AppDelegate.swift */; };
-		449E5D901E13FC6B009F2915 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 449E5D8F1E13FC6B009F2915 /* ViewController.swift */; };
+		449E5D901E13FC6B009F2915 /* UIControlVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 449E5D8F1E13FC6B009F2915 /* UIControlVC.swift */; };
 		449E5D931E13FC6B009F2915 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 449E5D911E13FC6B009F2915 /* Main.storyboard */; };
 		449E5D951E13FC6B009F2915 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 449E5D941E13FC6B009F2915 /* Assets.xcassets */; };
 		449E5D981E13FC6B009F2915 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 449E5D961E13FC6B009F2915 /* LaunchScreen.storyboard */; };
@@ -16,9 +19,12 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		449BD9571E192470003A0762 /* MyKnob.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyKnob.swift; sourceTree = "<group>"; };
+		449BD9591E19280C003A0762 /* MyShrinkingButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyShrinkingButton.swift; sourceTree = "<group>"; };
+		449BD95B1E192CE8003A0762 /* UISegmentedControlVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UISegmentedControlVC.swift; sourceTree = "<group>"; };
 		449E5D8A1E13FC6B009F2915 /* UIControlDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UIControlDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		449E5D8D1E13FC6B009F2915 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		449E5D8F1E13FC6B009F2915 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		449E5D8F1E13FC6B009F2915 /* UIControlVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIControlVC.swift; sourceTree = "<group>"; };
 		449E5D921E13FC6B009F2915 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		449E5D941E13FC6B009F2915 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		449E5D971E13FC6B009F2915 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -57,12 +63,15 @@
 			isa = PBXGroup;
 			children = (
 				449E5D8D1E13FC6B009F2915 /* AppDelegate.swift */,
-				449E5D8F1E13FC6B009F2915 /* ViewController.swift */,
+				449E5D8F1E13FC6B009F2915 /* UIControlVC.swift */,
 				449E5D911E13FC6B009F2915 /* Main.storyboard */,
+				449BD9591E19280C003A0762 /* MyShrinkingButton.swift */,
+				449BD9571E192470003A0762 /* MyKnob.swift */,
 				449E5D9F1E13FC87009F2915 /* MySlider.swift */,
 				449E5D941E13FC6B009F2915 /* Assets.xcassets */,
 				449E5D961E13FC6B009F2915 /* LaunchScreen.storyboard */,
 				449E5D991E13FC6B009F2915 /* Info.plist */,
+				449BD95B1E192CE8003A0762 /* UISegmentedControlVC.swift */,
 			);
 			path = UIControlDemo;
 			sourceTree = "<group>";
@@ -141,8 +150,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				449E5DA01E13FC87009F2915 /* MySlider.swift in Sources */,
-				449E5D901E13FC6B009F2915 /* ViewController.swift in Sources */,
+				449BD95A1E19280C003A0762 /* MyShrinkingButton.swift in Sources */,
+				449E5D901E13FC6B009F2915 /* UIControlVC.swift in Sources */,
+				449BD95C1E192CE8003A0762 /* UISegmentedControlVC.swift in Sources */,
 				449E5D8E1E13FC6B009F2915 /* AppDelegate.swift in Sources */,
+				449BD9581E192470003A0762 /* MyKnob.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -208,7 +220,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -251,7 +263,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
@@ -306,6 +318,7 @@
 				449E5D9E1E13FC6B009F2915 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

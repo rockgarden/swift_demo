@@ -1,12 +1,11 @@
 
-
 import UIKit
 
 /*
  An example of how the tracking methods are useful when subclassing an existing UIControl subclass.
 */
 
-
+/// Slider Bubble
 class MySlider: UISlider {
     var bubbleView : UIView!
     weak var label : UILabel?

@@ -3,7 +3,7 @@
 import UIKit
 
 class DocumentLister: UITableViewController {
-    
+
     var files = [URL]()
     var docsurl : URL {
         let del = UIApplication.shared.delegate
@@ -29,25 +29,25 @@ class DocumentLister: UITableViewController {
         self.title = "Groups"
         self.tableView.register(UITableViewCell.self, forCellReuseIdentifier: "Cell")
     }
-    
+
     func doRefresh (_: Any?) {
         print("refreshing")
         do {
             let fm = FileManager.default
             self.files = try fm.contentsOfDirectory(at: self.docsurl, includingPropertiesForKeys: nil).filter {
-                    print($0)
-                    if fm.isUbiquitousItem(at:$0) {
-                        print("trying to download \($0)")
-                        try fm.startDownloadingUbiquitousItem(at:$0)
-                    }
-                    return $0.pathExtension == "pplgrp"
+                print($0)
+                if fm.isUbiquitousItem(at:$0) {
+                    print("trying to download \($0)")
+                    try fm.startDownloadingUbiquitousItem(at:$0)
+                }
+                return $0.pathExtension == "pplgrp"
             }
             self.tableView.reloadData()
         } catch {
             print(error)
         }
     }
-    
+
     func doAdd (_: Any?) {
         let av = UIAlertController(title: "New Group", message: "Enter name:", preferredStyle: .alert)
         av.addTextField {$0.autocapitalizationType = .words}
@@ -62,20 +62,20 @@ class DocumentLister: UITableViewController {
         })
         self.present(av, animated: true)
     }
-    
+
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         self.doRefresh(nil)
     }
-    
+
     override func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
-    
+
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return self.files.count
     }
-    
+
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier:"Cell", for: indexPath)
         let fileURL = self.files[indexPath.row]
@@ -83,11 +83,11 @@ class DocumentLister: UITableViewController {
         cell.accessoryType = .disclosureIndicator
         return cell
     }
-    
+
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let pl = PeopleLister(fileURL: self.files[indexPath.row])
         self.navigationController!.pushViewController(pl, animated: true)
     }
 
-    
+
 }

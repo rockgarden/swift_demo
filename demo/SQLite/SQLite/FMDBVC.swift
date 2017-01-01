@@ -31,9 +31,7 @@ class FMDBVC: UIViewController {
             else {print("Ooooops"); return}
 
         db.executeUpdate("create table people (lastname text, firstname text)", withArgumentsIn:[])
-
         db.beginTransaction()
-
         db.executeUpdate("insert into people (firstname, lastname) values (?,?)", withArgumentsIn:["Matt", "Neuburg"])
         db.executeUpdate("insert into people (firstname, lastname) values (?,?)", withArgumentsIn:["Snidely", "Whiplash"])
         db.executeUpdate("insert into people (firstname, lastname) values (?,?)", withArgumentsIn:["Dudley", "Doright"])
@@ -54,7 +52,6 @@ class FMDBVC: UIViewController {
             }
         }
         db.close()
-        
     }
     
 }

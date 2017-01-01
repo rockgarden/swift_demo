@@ -4,16 +4,15 @@
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--ControlVC-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="UIControlDemo" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="UIControlVC" customModule="UIControlDemo" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -23,19 +22,93 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="5" minValue="0.0" maxValue="10" translatesAutoresizingMaskIntoConstraints="NO" id="pYx-3V-dJL" customClass="MySlider" customModule="UIControlDemo" customModuleProvider="target">
-                                <rect key="frame" x="24" y="220" width="327" height="31"/>
+                                <rect key="frame" x="24" y="120" width="327" height="31"/>
                             </slider>
+                            <view opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RZz-v2-26w" customClass="MyKnob" customModule="UIControlDemo" customModuleProvider="target">
+                                <rect key="frame" x="87" y="447" width="200" height="200"/>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="200" id="erb-Uu-6RF"/>
+                                    <constraint firstAttribute="width" constant="200" id="tdN-V5-bKw"/>
+                                </constraints>
+                                <connections>
+                                    <action selector="doKnob:" destination="BYZ-38-t0r" eventType="touchUpInside" id="KbR-Or-vO1"/>
+                                </connections>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" showsTouchWhenHighlighted="YES" adjustsImageWhenHighlighted="NO" adjustsImageWhenDisabled="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XaG-RF-ARC" customClass="MyShrinkingButton" customModule="UIControlDemo" customModuleProvider="target">
+                                <rect key="frame" x="134" y="170" width="107" height="22"/>
+                                <state key="normal" title="Pay Tribute" image="coin2.png">
+                                    <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XXC-06-Oww">
+                                <rect key="frame" x="128" y="212" width="120" height="60"/>
+                                <color key="backgroundColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="6A3-m7-879"/>
+                                    <constraint firstAttribute="width" constant="120" id="8Yj-ve-6ox"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="pYx-3V-dJL" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="200" id="WnE-kB-jEi"/>
+                            <constraint firstItem="XXC-06-Oww" firstAttribute="centerX" secondItem="k16-0R-iF9" secondAttribute="centerX" id="GzV-9V-29a"/>
+                            <constraint firstItem="pYx-3V-dJL" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="100" id="WnE-kB-jEi"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="RZz-v2-26w" secondAttribute="bottom" constant="20" id="aQF-7y-X5t"/>
+                            <constraint firstItem="RZz-v2-26w" firstAttribute="centerX" secondItem="k16-0R-iF9" secondAttribute="centerX" id="d3W-HG-yI8"/>
+                            <constraint firstItem="XaG-RF-ARC" firstAttribute="top" secondItem="pYx-3V-dJL" secondAttribute="bottom" constant="20" id="dWB-e6-DlY"/>
                             <constraint firstItem="pYx-3V-dJL" firstAttribute="leading" secondItem="k16-0R-iF9" secondAttribute="leadingMargin" constant="10" id="jxT-is-75l"/>
+                            <constraint firstItem="XXC-06-Oww" firstAttribute="top" secondItem="XaG-RF-ARC" secondAttribute="bottom" constant="20" id="ln1-4c-rAV"/>
                             <constraint firstAttribute="trailingMargin" secondItem="pYx-3V-dJL" secondAttribute="trailing" constant="10" id="uHh-Qz-y3X"/>
+                            <constraint firstItem="XaG-RF-ARC" firstAttribute="centerX" secondItem="k16-0R-iF9" secondAttribute="centerX" id="vti-98-r9N"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="button2" destination="XXC-06-Oww" id="1Zg-gI-85H"/>
+                        <outlet property="knob" destination="RZz-v2-26w" id="2nR-ue-ZJn"/>
+                        <outlet property="shrinkingButton" destination="XaG-RF-ARC" id="Jdg-7W-x94"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
         </scene>
+        <!--Segmented ControlVC-->
+        <scene sceneID="6Fp-53-ToT">
+            <objects>
+                <viewController id="VH9-t6-7wm" customClass="UISegmentedControlVC" customModule="UIControlDemo" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="W26-up-6pw"/>
+                        <viewControllerLayoutGuide type="bottom" id="sb4-sL-A64"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="0e6-72-3TG">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="Yrw-xB-YEX">
+                                <rect key="frame" x="97" y="165" width="182" height="29"/>
+                                <segments>
+                                    <segment title="First"/>
+                                    <segment title="Second"/>
+                                    <segment title="Third"/>
+                                </segments>
+                            </segmentedControl>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="centerX" secondItem="Yrw-xB-YEX" secondAttribute="centerX" constant="-0.5" id="5IY-Ce-Gag"/>
+                            <constraint firstItem="Yrw-xB-YEX" firstAttribute="top" secondItem="W26-up-6pw" secondAttribute="bottom" constant="145" id="tC8-Aw-fsX"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="seg" destination="Yrw-xB-YEX" id="R2X-Zo-U4J"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Feh-fh-y1k" sceneMemberID="firstResponder"/>
+            </objects>
+        </scene>
     </scenes>
+    <resources>
+        <image name="coin2.png" width="16" height="16"/>
+    </resources>
 </document>

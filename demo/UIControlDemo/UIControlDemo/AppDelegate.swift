@@ -19,6 +19,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 }
 
+func delay(_ delay:Double, closure:@escaping ()->()) {
+    let when = DispatchTime.now() + delay
+    DispatchQueue.main.asyncAfter(deadline: when, execute: closure)
+}
+
 func imageOfSize(_ size:CGSize, closure:() -> ()) -> UIImage {
     UIGraphicsBeginImageContextWithOptions(size, false, 0)
     closure()

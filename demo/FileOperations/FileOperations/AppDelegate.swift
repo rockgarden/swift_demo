@@ -15,17 +15,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var ubiq : URL!
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
-        
         DispatchQueue.global(qos:.default).async {
             let fm = FileManager.default
-            let ubiq = fm.url(forUbiquityContainerIdentifier:nil)
+            let ubiq = fm.url(forUbiquityContainerIdentifier: nil)
             print("ubiq: \(ubiq)")
             DispatchQueue.main.async {
                 self.ubiq = ubiq
             }
         }
-        
         return true
     }
 
