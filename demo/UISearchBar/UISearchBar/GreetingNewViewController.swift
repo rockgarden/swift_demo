@@ -8,6 +8,7 @@
 
 import UIKit
 
+//FIXME: searchBar 显示异常
 class GreetingNewViewController: UIViewController, UISearchResultsUpdating, UISearchBarDelegate {
 
 	@IBOutlet weak var collectionView: UICollectionView!

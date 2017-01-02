@@ -53,6 +53,9 @@
       location = "group:demo/CoreData/CoreDataExample.xcodeproj">
    </FileRef>
    <FileRef
+      location = "group:demo/PhotoKit/PhotoKit.xcodeproj">
+   </FileRef>
+   <FileRef
       location = "group:demo/SQLite/SQLite.xcodeproj">
    </FileRef>
    <FileRef
@@ -63,9 +66,6 @@
    </FileRef>
    <FileRef
       location = "group:demo/ImagePickerSheetController/ImagePickerSheetController.xcodeproj">
-   </FileRef>
-   <FileRef
-      location = "group:demo/PhotoKitImages/PhotoKit.xcodeproj">
    </FileRef>
    <FileRef
       location = "group:demo/AVCapture/AVCapture.xcodeproj">

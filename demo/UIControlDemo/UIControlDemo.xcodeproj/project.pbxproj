@@ -16,6 +16,9 @@
 		449E5D951E13FC6B009F2915 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 449E5D941E13FC6B009F2915 /* Assets.xcassets */; };
 		449E5D981E13FC6B009F2915 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 449E5D961E13FC6B009F2915 /* LaunchScreen.storyboard */; };
 		449E5DA01E13FC87009F2915 /* MySlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 449E5D9F1E13FC87009F2915 /* MySlider.swift */; };
+		44D68A0E1E19FB5B00AB4C19 /* CoinSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44D68A0D1E19FB5B00AB4C19 /* CoinSlider.swift */; };
+		44D68A101E19FD8000AB4C19 /* DataPickerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44D68A0F1E19FD8000AB4C19 /* DataPickerVC.swift */; };
+		44D68A121E19FF8800AB4C19 /* UIStepperVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44D68A111E19FF8800AB4C19 /* UIStepperVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +33,9 @@
 		449E5D971E13FC6B009F2915 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		449E5D991E13FC6B009F2915 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		449E5D9F1E13FC87009F2915 /* MySlider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MySlider.swift; sourceTree = "<group>"; };
+		44D68A0D1E19FB5B00AB4C19 /* CoinSlider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoinSlider.swift; sourceTree = "<group>"; };
+		44D68A0F1E19FD8000AB4C19 /* DataPickerVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataPickerVC.swift; sourceTree = "<group>"; };
+		44D68A111E19FF8800AB4C19 /* UIStepperVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIStepperVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,13 +71,16 @@
 				449E5D8D1E13FC6B009F2915 /* AppDelegate.swift */,
 				449E5D8F1E13FC6B009F2915 /* UIControlVC.swift */,
 				449E5D911E13FC6B009F2915 /* Main.storyboard */,
+				449BD95B1E192CE8003A0762 /* UISegmentedControlVC.swift */,
 				449BD9591E19280C003A0762 /* MyShrinkingButton.swift */,
 				449BD9571E192470003A0762 /* MyKnob.swift */,
 				449E5D9F1E13FC87009F2915 /* MySlider.swift */,
+				44D68A0F1E19FD8000AB4C19 /* DataPickerVC.swift */,
+				44D68A0D1E19FB5B00AB4C19 /* CoinSlider.swift */,
+				44D68A111E19FF8800AB4C19 /* UIStepperVC.swift */,
 				449E5D941E13FC6B009F2915 /* Assets.xcassets */,
 				449E5D961E13FC6B009F2915 /* LaunchScreen.storyboard */,
 				449E5D991E13FC6B009F2915 /* Info.plist */,
-				449BD95B1E192CE8003A0762 /* UISegmentedControlVC.swift */,
 			);
 			path = UIControlDemo;
 			sourceTree = "<group>";
@@ -150,10 +159,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				449E5DA01E13FC87009F2915 /* MySlider.swift in Sources */,
+				44D68A121E19FF8800AB4C19 /* UIStepperVC.swift in Sources */,
+				44D68A0E1E19FB5B00AB4C19 /* CoinSlider.swift in Sources */,
 				449BD95A1E19280C003A0762 /* MyShrinkingButton.swift in Sources */,
 				449E5D901E13FC6B009F2915 /* UIControlVC.swift in Sources */,
 				449BD95C1E192CE8003A0762 /* UISegmentedControlVC.swift in Sources */,
 				449E5D8E1E13FC6B009F2915 /* AppDelegate.swift in Sources */,
+				44D68A101E19FD8000AB4C19 /* DataPickerVC.swift in Sources */,
 				449BD9581E192470003A0762 /* MyKnob.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

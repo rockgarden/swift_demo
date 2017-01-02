@@ -32,6 +32,12 @@ func imageOfSize(_ size:CGSize, closure:() -> ()) -> UIImage {
     return result!
 }
 
+func lend<T> (closure:(T)->()) -> T where T:NSObject {
+    let orig = T()
+    closure(orig)
+    return orig
+}
+
 extension CGRect {
     init(_ x:CGFloat, _ y:CGFloat, _ w:CGFloat, _ h:CGFloat) {
         self.init(x:x, y:y, width:w, height:h)
