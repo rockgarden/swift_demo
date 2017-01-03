@@ -28,6 +28,7 @@ class ProgressVC: UIViewController {
     @IBOutlet var prog1 : UIProgressView!
     @IBOutlet var prog2 : UIProgressView!
     @IBOutlet var prog3 : MyProgressView!
+    @IBOutlet var prog4: MyCircularProgressButton!
     
     var op1 : ProgressingOperation?
     var op2 : ProgressingOperation?
@@ -38,6 +39,8 @@ class ProgressVC: UIViewController {
         self.prog2.progress = 0
         self.prog3.value = 0
         self.prog3.setNeedsDisplay()
+        self.prog4.progress = 0
+        Timer.scheduledTimer(timeInterval: 0.4, target: self, selector: #selector(inc), userInfo: nil, repeats: true)
         
         // architecture 1: progress view's observedProgress is a second pointer to a vended NSProgress
         
@@ -70,7 +73,6 @@ class ProgressVC: UIViewController {
     }
     
     var didSetUp = false
-    
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         if self.didSetUp { return }
@@ -108,6 +110,20 @@ class ProgressVC: UIViewController {
         }
         self.prog2.progressImage = im
     }
+
+    func inc(_ t:Timer) {
+        var val = Float(self.prog3.value)
+        val += 0.1
+        //self.prog1.setProgress(val, animated:true) // bug fixed in iOS 7.1
+        //self.prog2.setProgress(val, animated:true)
+        //self.prog3.value = CGFloat(val)
+        //self.prog3.setNeedsDisplay()
+        self.prog4.progress = val
+        if val >= 1.0 {
+            t.invalidate()
+        }
+    }
+
 }
 
 
@@ -137,3 +153,39 @@ class MyProgressView: UIView {
     }
     
 }
+
+
+class MyCircularProgressButton : UIButton {
+
+    var progress : Float = 0 {
+        didSet {
+            if let layer = self.shapelayer {
+                layer.strokeEnd = CGFloat(self.progress)
+            }
+        }
+    }
+    private var shapelayer : CAShapeLayer!
+    private var didLayout = false
+
+    override func layoutSubviews() {
+        super.layoutSubviews()
+
+        guard !self.didLayout else {return}
+        self.didLayout = true
+        print(self.bounds)
+        let layer = CAShapeLayer()
+        layer.frame = self.bounds
+        layer.lineWidth = 2
+        layer.fillColor = nil
+        layer.strokeColor = UIColor.red.cgColor
+        let b = UIBezierPath(ovalIn: self.bounds.insetBy(dx: 3, dy: 3))
+        layer.path = b.cgPath
+        self.layer.addSublayer(layer)
+        layer.zPosition = -1
+        layer.strokeStart = 0
+        layer.strokeEnd = 0
+        layer.setAffineTransform(CGAffineTransform(rotationAngle: -.pi/2.0))
+        self.shapelayer = layer
+    }
+}
+

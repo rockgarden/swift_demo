@@ -1,10 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16C67" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -81,6 +80,14 @@
                                     <constraint firstAttribute="height" constant="50" id="gH4-lv-qva"/>
                                 </constraints>
                             </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jVd-3d-pF9" customClass="MyCircularProgressButton" customModule="UIViewDemo" customModuleProvider="target">
+                                <rect key="frame" x="158" y="240" width="60" height="60"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="60" id="Lve-No-7JY"/>
+                                    <constraint firstAttribute="height" constant="60" id="ggq-V8-tnz"/>
+                                </constraints>
+                                <state key="normal" image="pause"/>
+                            </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1lT-Ih-bFm">
                                 <rect key="frame" x="321" y="617" width="34" height="30"/>
                                 <state key="normal" title="Start">
@@ -110,7 +117,9 @@
                             <constraint firstItem="sAX-ah-vRs" firstAttribute="top" secondItem="1lT-Ih-bFm" secondAttribute="bottom" constant="20" id="YZ2-aI-x7o"/>
                             <constraint firstItem="dOv-Uu-lPk" firstAttribute="top" secondItem="qr7-ij-pUH" secondAttribute="bottom" constant="97" id="dj1-PI-B1b"/>
                             <constraint firstItem="9ZG-10-hCx" firstAttribute="leading" secondItem="4TD-oO-gvP" secondAttribute="leading" constant="85" id="j3n-5s-b2S"/>
+                            <constraint firstItem="jVd-3d-pF9" firstAttribute="centerX" secondItem="4TD-oO-gvP" secondAttribute="centerX" id="kfi-hh-P38"/>
                             <constraint firstItem="sAX-ah-vRs" firstAttribute="top" secondItem="vhS-KX-uAd" secondAttribute="bottom" constant="20" id="n07-yS-NiL"/>
+                            <constraint firstItem="jVd-3d-pF9" firstAttribute="top" secondItem="mOE-d2-eJq" secondAttribute="bottom" constant="10" id="oyO-vM-rqB"/>
                             <constraint firstItem="9ZG-10-hCx" firstAttribute="top" secondItem="qr7-ij-pUH" secondAttribute="bottom" constant="36" id="uqC-8s-3GG"/>
                             <constraint firstAttribute="leadingMargin" secondItem="vhS-KX-uAd" secondAttribute="leading" id="vDA-xD-wKi"/>
                         </constraints>
@@ -119,6 +128,7 @@
                         <outlet property="prog1" destination="9ZG-10-hCx" id="TfC-lo-Lfg"/>
                         <outlet property="prog2" destination="dOv-Uu-lPk" id="qfD-XY-hsR"/>
                         <outlet property="prog3" destination="mOE-d2-eJq" id="D40-hp-4NU"/>
+                        <outlet property="prog4" destination="jVd-3d-pF9" id="fth-Fa-imS"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MWu-5g-FRG" sceneMemberID="firstResponder"/>
@@ -126,4 +136,7 @@
             <point key="canvasLocation" x="25" y="767"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="pause" width="18" height="18"/>
+    </resources>
 </document>

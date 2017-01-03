@@ -10,6 +10,7 @@ import UIKit
 
 class MaskView : UIViewController {
     @IBOutlet fileprivate var box: UIView!
+    @IBOutlet fileprivate var replicator: UIView!
     
     func maskOfSize(_ sz:CGSize, roundingCorners rad:CGFloat) -> CALayer {
         let r = CGRect(origin:CGPoint.zero, size:sz)
@@ -76,6 +77,14 @@ class MaskView : UIViewController {
         box.layer.contentsGravity = kCAGravityResize //设置图层的内容重心来调整大小，这意味着图层中的所有内容将被调整大小以便完美地适应图层的尺寸。
         box.layer.masksToBounds = true //以便图层中任何延伸到边界外的子图层都会在边界处被剪裁。
     }
+
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        let lay = ReplicatorLayer()
+        replicator.layer.addSublayer(lay)
+        lay.position = CGPoint(replicator.layer.bounds.midX, replicator.layer.bounds.midY)
+    }
+
 }
 
 

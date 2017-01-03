@@ -12,6 +12,7 @@
 		44A9C4641D96C51300F09E6A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 44A9C4621D96C51300F09E6A /* Main.storyboard */; };
 		44A9C4661D96C51300F09E6A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 44A9C4651D96C51300F09E6A /* Assets.xcassets */; };
 		44A9C4691D96C51300F09E6A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 44A9C4671D96C51300F09E6A /* LaunchScreen.storyboard */; };
+		44AA37CE1E1BC7EA00B24A61 /* ReplicatorLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44AA37CD1E1BC7EA00B24A61 /* ReplicatorLayer.swift */; };
 		C2037A0B1DD4638100631D6F /* CompassView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2037A0A1DD4638100631D6F /* CompassView.swift */; };
 		C2D7F11E1DD01CEB00BABD77 /* readme.rtfd in Resources */ = {isa = PBXBuildFile; fileRef = C2D7F11D1DD01CEB00BABD77 /* readme.rtfd */; };
 		C2D7F1201DD01F4800BABD77 /* tree.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C2D7F11F1DD01F4800BABD77 /* tree.jpg */; };
@@ -25,6 +26,7 @@
 		44A9C4651D96C51300F09E6A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		44A9C4681D96C51300F09E6A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		44A9C46A1D96C51300F09E6A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		44AA37CD1E1BC7EA00B24A61 /* ReplicatorLayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReplicatorLayer.swift; sourceTree = "<group>"; };
 		C2037A0A1DD4638100631D6F /* CompassView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CompassView.swift; sourceTree = "<group>"; };
 		C2D7F11D1DD01CEB00BABD77 /* readme.rtfd */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = wrapper.rtfd; path = readme.rtfd; sourceTree = "<group>"; };
 		C2D7F11F1DD01F4800BABD77 /* tree.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = tree.jpg; sourceTree = "<group>"; };
@@ -64,6 +66,7 @@
 				44A9C45E1D96C51300F09E6A /* AppDelegate.swift */,
 				44A9C4601D96C51300F09E6A /* MaskView.swift */,
 				C2037A0A1DD4638100631D6F /* CompassView.swift */,
+				44AA37CD1E1BC7EA00B24A61 /* ReplicatorLayer.swift */,
 				44A9C4621D96C51300F09E6A /* Main.storyboard */,
 				44A9C4651D96C51300F09E6A /* Assets.xcassets */,
 				44A9C4671D96C51300F09E6A /* LaunchScreen.storyboard */,
@@ -151,6 +154,7 @@
 				C2037A0B1DD4638100631D6F /* CompassView.swift in Sources */,
 				44A9C4611D96C51300F09E6A /* MaskView.swift in Sources */,
 				44A9C45F1D96C51300F09E6A /* AppDelegate.swift in Sources */,
+				44AA37CE1E1BC7EA00B24A61 /* ReplicatorLayer.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

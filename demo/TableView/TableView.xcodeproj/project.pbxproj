@@ -71,6 +71,7 @@
 		4483B2E51D80165A0077E75C /* SubCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4483B2E41D80165A0077E75C /* SubCell.swift */; };
 		449BC2A11D6F3F9200B63FC4 /* SearchResultsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 449BC2A01D6F3F9200B63FC4 /* SearchResultsController.swift */; };
 		449BC2A31D6F427700B63FC4 /* states.txt in Resources */ = {isa = PBXBuildFile; fileRef = 449BC2A21D6F427700B63FC4 /* states.txt */; };
+		44AA37D01E1BED2C00B24A61 /* ActivityIndicatorCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44AA37CF1E1BED2C00B24A61 /* ActivityIndicatorCell.swift */; };
 		C22758D01D6C29C6008C1F18 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C22758CF1D6C29C6008C1F18 /* AppDelegate.swift */; };
 		C22758D21D6C29C6008C1F18 /* UISearchControllerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C22758D11D6C29C6008C1F18 /* UISearchControllerVC.swift */; };
 		C22758D51D6C29C6008C1F18 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C22758D31D6C29C6008C1F18 /* Main.storyboard */; };
@@ -153,6 +154,7 @@
 		4483B2E41D80165A0077E75C /* SubCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SubCell.swift; sourceTree = "<group>"; };
 		449BC2A01D6F3F9200B63FC4 /* SearchResultsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchResultsController.swift; sourceTree = "<group>"; };
 		449BC2A21D6F427700B63FC4 /* states.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = states.txt; sourceTree = "<group>"; };
+		44AA37CF1E1BED2C00B24A61 /* ActivityIndicatorCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityIndicatorCell.swift; sourceTree = "<group>"; };
 		C22758CC1D6C29C6008C1F18 /* TableView.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TableView.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C22758CF1D6C29C6008C1F18 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C22758D11D6C29C6008C1F18 /* UISearchControllerVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UISearchControllerVC.swift; sourceTree = "<group>"; };
@@ -296,6 +298,7 @@
 				C22758DB1D6C29C6008C1F18 /* Info.plist */,
 				C2F3DE171D6EC2D800F0A9D5 /* team_dictionary.plist */,
 				449BC2A21D6F427700B63FC4 /* states.txt */,
+				44AA37CF1E1BED2C00B24A61 /* ActivityIndicatorCell.swift */,
 			);
 			path = TableView;
 			sourceTree = "<group>";
@@ -344,6 +347,7 @@
 				TargetAttributes = {
 					C22758CB1D6C29C6008C1F18 = {
 						CreatedOnToolsVersion = 7.3;
+						DevelopmentTeam = W3MH7MTTSB;
 						LastSwiftMigration = 0810;
 					};
 				};
@@ -447,6 +451,7 @@
 				C2D7F1221DD05FEA00BABD77 /* VariableHeightsVC.swift in Sources */,
 				442849281D86EB840044DCF5 /* DynamicTable.swift in Sources */,
 				449BC2A11D6F3F9200B63FC4 /* SearchResultsController.swift in Sources */,
+				44AA37D01E1BED2C00B24A61 /* ActivityIndicatorCell.swift in Sources */,
 				4483B2E51D80165A0077E75C /* SubCell.swift in Sources */,
 				C2F3DE161D6EBF5500F0A9D5 /* Person.swift in Sources */,
 				C22758D21D6C29C6008C1F18 /* UISearchControllerVC.swift in Sources */,
@@ -524,7 +529,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -566,7 +571,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
@@ -579,6 +584,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = W3MH7MTTSB;
 				INFOPLIST_FILE = TableView/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -592,6 +598,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = W3MH7MTTSB;
 				INFOPLIST_FILE = TableView/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

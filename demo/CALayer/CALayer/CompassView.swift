@@ -1,17 +1,6 @@
 
 import UIKit
 
-func delay(_ delay:Double, closure:@escaping ()->()) {
-    DispatchQueue.main.asyncAfter(
-        deadline: DispatchTime.now() + Double(Int64(delay * Double(NSEC_PER_SEC))) / Double(NSEC_PER_SEC), execute: closure)
-}
-
-extension CGRect {
-    var center : CGPoint {
-    return CGPoint(x: self.midX, y: self.midY)
-    }
-}
-
 // view exists solely to host layer
 class CompassView : UIView {
     override class var layerClass : AnyClass {
@@ -138,7 +127,6 @@ class CompassLayer : CALayer {
         p.addLine(to: CGPoint(x: 40,y: 25))
         p.fill()
         UIGraphicsPopContext()
-
     }
     
     func resizeArrowLayer(_ arrow:CALayer) {
