@@ -8,31 +8,23 @@
 
 import UIKit
 
-func imageOfSize(_ size:CGSize, closure:() -> ()) -> UIImage {
-    UIGraphicsBeginImageContextWithOptions(size, false, 0)
-    closure()
-    let result = UIGraphicsGetImageFromCurrentImageContext()
-    UIGraphicsEndImageContext()
-    return result!
-}
-
 class TabBarVC: UITabBarController {
 
     override func awakeFromNib() {
         super.awakeFromNib()
 
-        // FIXME: 无效 tabBar set Background Image
+        /// tabBar set Background Image
         do {
             var im: UIImage?
             let sz = CGSize(20,20)
             if #available(iOS 10.0, *) {
                 let r = UIGraphicsImageRenderer(size:sz)
                 im = r.image { ctx in
-                    UIColor(white:0.95, alpha:0.85).setFill()
+                    UIColor.brown.withAlphaComponent(0.8).setFill()
                     ctx.fill(CGRect(0,0,20,20)) }
             } else {
                 im = imageOfSize(sz) {
-                    UIColor(white:0.95, alpha:0.85).setFill()
+                    UIColor.brown.withAlphaComponent(0.8).setFill()
                     UIGraphicsGetCurrentContext()!.fill(CGRect(origin: CGPoint(), size: sz))
                 }
             }
@@ -40,23 +32,23 @@ class TabBarVC: UITabBarController {
             self.tabBar.backgroundImage = im
         }
 
-        // FIXME: 无效 tabBar add shadow
+        /// tabBar add shadow
         do {
             var im: UIImage?
             let sz = CGSize(4,4)
             if #available(iOS 10.0, *) {
                 let r = UIGraphicsImageRenderer(size:sz)
                 im = r.image { ctx in
-                    UIColor.gray.withAlphaComponent(0.3).setFill()
+                    UIColor.red.withAlphaComponent(0.15).setFill()
                     ctx.fill(CGRect(0,0,4,2))
-                    UIColor.gray.withAlphaComponent(0.15).setFill()
+                    UIColor.red.withAlphaComponent(0.3).setFill()
                     ctx.fill(CGRect(0,2,4,2))
                 }
             } else {
                 im = imageOfSize(sz) {
-                    UIColor.gray.withAlphaComponent(0.3).setFill()
+                    UIColor.red.withAlphaComponent(0.15).setFill()
                     UIGraphicsGetCurrentContext()!.fill(CGRect(0,0,4,2))
-                    UIColor.gray.withAlphaComponent(0.15).setFill()
+                    UIColor.red.withAlphaComponent(0.3).setFill()
                     UIGraphicsGetCurrentContext()!.fill(CGRect(0,2,4,2))
                 }
             }
@@ -65,6 +57,21 @@ class TabBarVC: UITabBarController {
         // try false - effective only here
         self.tabBar.isTranslucent = true
     }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        // FIXME: self.tabBarController?.tabBar return nil
+        //guard let tabBar = self.tabBarController?.tabBar else { return }
+        
+        tabBar.tintColor = UIColor.white
+        tabBar.barTintColor = UIColor.black
+        if #available(iOS 10.0, *) {
+            tabBar.unselectedItemTintColor = UIColor.yellow
+        } else {
+            // Fallback on earlier versions
+        }
+    }
+    
 }
 
 internal extension CGSize {

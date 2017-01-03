@@ -12,9 +12,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 	func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         //exampleTabUnwind()
-        exampleNoController()
+        //exampleNoController()
         //exampleCodeInit()
         //setTabBar()
+        /// no func run Main.storyboard
 		return true
 	}
 
@@ -175,3 +176,10 @@ class MyNavController: UINavigationController {
     
 }
 
+func imageOfSize(_ size:CGSize, closure:() -> ()) -> UIImage {
+    UIGraphicsBeginImageContextWithOptions(size, false, 0)
+    closure()
+    let result = UIGraphicsGetImageFromCurrentImageContext()
+    UIGraphicsEndImageContext()
+    return result!
+}
