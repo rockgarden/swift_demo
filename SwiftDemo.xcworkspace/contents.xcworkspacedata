@@ -2,6 +2,9 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:demo/WebViewDemo/WebViewDemo.xcodeproj">
+   </FileRef>
+   <FileRef
       location = "group:demo/UIViewDemo/UIViewDemo.xcodeproj">
    </FileRef>
    <FileRef

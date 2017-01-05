@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16C67" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="SZU-Fi-cAN">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="Navigation items with more than one left or right bar item" minToolsVersion="7.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Web View Root-->
+        <scene sceneID="H6L-8V-Pl9">
+            <objects>
+                <viewController storyboardIdentifier="WebViewRoot" useStoryboardIdentifierAsRestorationIdentifier="YES" id="3dU-5R-0wC" customClass="WebViewRoot" customModule="WebViewDemo" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="0Eg-KU-dzk"/>
+                        <viewControllerLayoutGuide type="bottom" id="EYi-TA-l6r"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="iuR-zl-eIv">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="JWu-gt-kiR">
+                        <barButtonItem key="leftBarButtonItem" title="NoNav" id="hsy-3b-Rsl">
+                            <connections>
+                                <action selector="showNoNav:" destination="3dU-5R-0wC" id="ILs-61-JCX"/>
+                            </connections>
+                        </barButtonItem>
+                        <rightBarButtonItems>
+                            <barButtonItem title="Push" id="BCI-ng-T26">
+                                <connections>
+                                    <action selector="doButton:" destination="3dU-5R-0wC" id="k1Z-vC-O0R"/>
+                                </connections>
+                            </barButtonItem>
+                            <barButtonItem title="WKWeb" id="EfU-pI-zKj">
+                                <connections>
+                                    <action selector="showWKWeb:" destination="3dU-5R-0wC" id="1Fe-Vn-yHk"/>
+                                </connections>
+                            </barButtonItem>
+                        </rightBarButtonItems>
+                    </navigationItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="eC6-99-NPj" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1441" y="-28"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="qyQ-8T-Ple">
+            <objects>
+                <navigationController storyboardIdentifier="nav" automaticallyAdjustsScrollViewInsets="NO" useStoryboardIdentifierAsRestorationIdentifier="YES" id="SZU-Fi-cAN" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="3Ra-pw-sgZ">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="3dU-5R-0wC" kind="relationship" relationship="rootViewController" id="X4a-WT-JTz"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5pK-bi-OSg" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="671" y="-28"/>
+        </scene>
+    </scenes>
+</document>
