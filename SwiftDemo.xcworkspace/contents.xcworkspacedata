@@ -2,6 +2,9 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:demo/UndoManagerDemo/UndoManagerDemo.xcodeproj">
+   </FileRef>
+   <FileRef
       location = "group:demo/WebViewDemo/WebViewDemo.xcodeproj">
    </FileRef>
    <FileRef
@@ -147,9 +150,6 @@
    </FileRef>
    <FileRef
       location = "group:demo/TodayExtension/TodayExtension.xcodeproj">
-   </FileRef>
-   <FileRef
-      location = "group:demo/UndoableDrag/UndoableDrag.xcodeproj">
    </FileRef>
    <FileRef
       location = "group:demo/transform/transform.xcodeproj">

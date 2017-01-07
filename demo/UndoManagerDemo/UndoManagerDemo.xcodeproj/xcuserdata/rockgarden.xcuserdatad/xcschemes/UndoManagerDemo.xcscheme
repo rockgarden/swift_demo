@@ -14,10 +14,10 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "4451103F1DB7B5CD007A9A3A"
-               BuildableName = "UndoableDrag.app"
-               BlueprintName = "UndoableDrag"
-               ReferencedContainer = "container:UndoableDrag.xcodeproj">
+               BlueprintIdentifier = "4498B9741E212E81007927EF"
+               BuildableName = "UndoManagerDemo.app"
+               BlueprintName = "UndoManagerDemo"
+               ReferencedContainer = "container:UndoManagerDemo.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -32,10 +32,10 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "4451103F1DB7B5CD007A9A3A"
-            BuildableName = "UndoableDrag.app"
-            BlueprintName = "UndoableDrag"
-            ReferencedContainer = "container:UndoableDrag.xcodeproj">
+            BlueprintIdentifier = "4498B9741E212E81007927EF"
+            BuildableName = "UndoManagerDemo.app"
+            BlueprintName = "UndoManagerDemo"
+            ReferencedContainer = "container:UndoManagerDemo.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <AdditionalOptions>
@@ -55,10 +55,10 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "4451103F1DB7B5CD007A9A3A"
-            BuildableName = "UndoableDrag.app"
-            BlueprintName = "UndoableDrag"
-            ReferencedContainer = "container:UndoableDrag.xcodeproj">
+            BlueprintIdentifier = "4498B9741E212E81007927EF"
+            BuildableName = "UndoManagerDemo.app"
+            BlueprintName = "UndoManagerDemo"
+            ReferencedContainer = "container:UndoManagerDemo.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -74,10 +74,10 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "4451103F1DB7B5CD007A9A3A"
-            BuildableName = "UndoableDrag.app"
-            BlueprintName = "UndoableDrag"
-            ReferencedContainer = "container:UndoableDrag.xcodeproj">
+            BlueprintIdentifier = "4498B9741E212E81007927EF"
+            BuildableName = "UndoManagerDemo.app"
+            BlueprintName = "UndoManagerDemo"
+            ReferencedContainer = "container:UndoManagerDemo.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

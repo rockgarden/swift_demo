@@ -15,7 +15,7 @@ class MandelbrotOperationVC: UIViewController {
     
 }
 
-class MyMandelbrotViewO : UIView {
+class MyMandelbrotViewO: UIView {
 
     var bitmapContext: CGContext!
     var odd = false

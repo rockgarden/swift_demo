@@ -7,27 +7,27 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		445110441DB7B5CD007A9A3A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 445110431DB7B5CD007A9A3A /* AppDelegate.swift */; };
-		445110461DB7B5CD007A9A3A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 445110451DB7B5CD007A9A3A /* ViewController.swift */; };
-		445110491DB7B5CD007A9A3A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 445110471DB7B5CD007A9A3A /* Main.storyboard */; };
-		4451104B1DB7B5CD007A9A3A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4451104A1DB7B5CD007A9A3A /* Assets.xcassets */; };
-		4451104E1DB7B5CD007A9A3A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4451104C1DB7B5CD007A9A3A /* LaunchScreen.storyboard */; };
-		445110561DB7B633007A9A3A /* MyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 445110551DB7B633007A9A3A /* MyView.swift */; };
+		4498B9791E212E81007927EF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4498B9781E212E81007927EF /* AppDelegate.swift */; };
+		4498B97B1E212E81007927EF /* UndoManagerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4498B97A1E212E81007927EF /* UndoManagerVC.swift */; };
+		4498B97E1E212E81007927EF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4498B97C1E212E81007927EF /* Main.storyboard */; };
+		4498B9801E212E81007927EF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4498B97F1E212E81007927EF /* Assets.xcassets */; };
+		4498B9831E212E81007927EF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4498B9811E212E81007927EF /* LaunchScreen.storyboard */; };
+		4498B98B1E212F06007927EF /* UndoDragView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4498B98A1E212F06007927EF /* UndoDragView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		445110401DB7B5CD007A9A3A /* UndoableDrag.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UndoableDrag.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		445110431DB7B5CD007A9A3A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		445110451DB7B5CD007A9A3A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		445110481DB7B5CD007A9A3A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		4451104A1DB7B5CD007A9A3A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		4451104D1DB7B5CD007A9A3A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		4451104F1DB7B5CD007A9A3A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		445110551DB7B633007A9A3A /* MyView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyView.swift; sourceTree = "<group>"; };
+		4498B9751E212E81007927EF /* UndoManagerDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UndoManagerDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		4498B9781E212E81007927EF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		4498B97A1E212E81007927EF /* UndoManagerVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UndoManagerVC.swift; sourceTree = "<group>"; };
+		4498B97D1E212E81007927EF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		4498B97F1E212E81007927EF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		4498B9821E212E81007927EF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		4498B9841E212E81007927EF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4498B98A1E212F06007927EF /* UndoDragView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UndoDragView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		4451103D1DB7B5CD007A9A3A /* Frameworks */ = {
+		4498B9721E212E81007927EF /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -37,74 +37,74 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		445110371DB7B5CD007A9A3A = {
+		4498B96C1E212E80007927EF = {
 			isa = PBXGroup;
 			children = (
-				445110421DB7B5CD007A9A3A /* UndoableDrag */,
-				445110411DB7B5CD007A9A3A /* Products */,
+				4498B9771E212E81007927EF /* UndoManagerDemo */,
+				4498B9761E212E81007927EF /* Products */,
 			);
 			sourceTree = "<group>";
 		};
-		445110411DB7B5CD007A9A3A /* Products */ = {
+		4498B9761E212E81007927EF /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				445110401DB7B5CD007A9A3A /* UndoableDrag.app */,
+				4498B9751E212E81007927EF /* UndoManagerDemo.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		445110421DB7B5CD007A9A3A /* UndoableDrag */ = {
+		4498B9771E212E81007927EF /* UndoManagerDemo */ = {
 			isa = PBXGroup;
 			children = (
-				445110431DB7B5CD007A9A3A /* AppDelegate.swift */,
-				445110451DB7B5CD007A9A3A /* ViewController.swift */,
-				445110551DB7B633007A9A3A /* MyView.swift */,
-				445110471DB7B5CD007A9A3A /* Main.storyboard */,
-				4451104A1DB7B5CD007A9A3A /* Assets.xcassets */,
-				4451104C1DB7B5CD007A9A3A /* LaunchScreen.storyboard */,
-				4451104F1DB7B5CD007A9A3A /* Info.plist */,
+				4498B9781E212E81007927EF /* AppDelegate.swift */,
+				4498B97C1E212E81007927EF /* Main.storyboard */,
+				4498B97A1E212E81007927EF /* UndoManagerVC.swift */,
+				4498B98A1E212F06007927EF /* UndoDragView.swift */,
+				4498B97F1E212E81007927EF /* Assets.xcassets */,
+				4498B9811E212E81007927EF /* LaunchScreen.storyboard */,
+				4498B9841E212E81007927EF /* Info.plist */,
 			);
-			path = UndoableDrag;
+			path = UndoManagerDemo;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		4451103F1DB7B5CD007A9A3A /* UndoableDrag */ = {
+		4498B9741E212E81007927EF /* UndoManagerDemo */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 445110521DB7B5CD007A9A3A /* Build configuration list for PBXNativeTarget "UndoableDrag" */;
+			buildConfigurationList = 4498B9871E212E81007927EF /* Build configuration list for PBXNativeTarget "UndoManagerDemo" */;
 			buildPhases = (
-				4451103C1DB7B5CD007A9A3A /* Sources */,
-				4451103D1DB7B5CD007A9A3A /* Frameworks */,
-				4451103E1DB7B5CD007A9A3A /* Resources */,
+				4498B9711E212E81007927EF /* Sources */,
+				4498B9721E212E81007927EF /* Frameworks */,
+				4498B9731E212E81007927EF /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = UndoableDrag;
-			productName = UndoableDrag;
-			productReference = 445110401DB7B5CD007A9A3A /* UndoableDrag.app */;
+			name = UndoManagerDemo;
+			productName = UndoManagerDemo;
+			productReference = 4498B9751E212E81007927EF /* UndoManagerDemo.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		445110381DB7B5CD007A9A3A /* Project object */ = {
+		4498B96D1E212E80007927EF /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 0800;
-				LastUpgradeCheck = 0800;
-				ORGANIZATIONNAME = rockgarden;
+				LastSwiftUpdateCheck = 0820;
+				LastUpgradeCheck = 0820;
+				ORGANIZATIONNAME = apple;
 				TargetAttributes = {
-					4451103F1DB7B5CD007A9A3A = {
-						CreatedOnToolsVersion = 8.0;
-						LastSwiftMigration = 0800;
+					4498B9741E212E81007927EF = {
+						CreatedOnToolsVersion = 8.2.1;
+						DevelopmentTeam = W3MH7MTTSB;
 						ProvisioningStyle = Automatic;
 					};
 				};
 			};
-			buildConfigurationList = 4451103B1DB7B5CD007A9A3A /* Build configuration list for PBXProject "UndoableDrag" */;
+			buildConfigurationList = 4498B9701E212E80007927EF /* Build configuration list for PBXProject "UndoManagerDemo" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -112,55 +112,55 @@
 				en,
 				Base,
 			);
-			mainGroup = 445110371DB7B5CD007A9A3A;
-			productRefGroup = 445110411DB7B5CD007A9A3A /* Products */;
+			mainGroup = 4498B96C1E212E80007927EF;
+			productRefGroup = 4498B9761E212E81007927EF /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				4451103F1DB7B5CD007A9A3A /* UndoableDrag */,
+				4498B9741E212E81007927EF /* UndoManagerDemo */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		4451103E1DB7B5CD007A9A3A /* Resources */ = {
+		4498B9731E212E81007927EF /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4451104E1DB7B5CD007A9A3A /* LaunchScreen.storyboard in Resources */,
-				4451104B1DB7B5CD007A9A3A /* Assets.xcassets in Resources */,
-				445110491DB7B5CD007A9A3A /* Main.storyboard in Resources */,
+				4498B9831E212E81007927EF /* LaunchScreen.storyboard in Resources */,
+				4498B9801E212E81007927EF /* Assets.xcassets in Resources */,
+				4498B97E1E212E81007927EF /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		4451103C1DB7B5CD007A9A3A /* Sources */ = {
+		4498B9711E212E81007927EF /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				445110561DB7B633007A9A3A /* MyView.swift in Sources */,
-				445110461DB7B5CD007A9A3A /* ViewController.swift in Sources */,
-				445110441DB7B5CD007A9A3A /* AppDelegate.swift in Sources */,
+				4498B97B1E212E81007927EF /* UndoManagerVC.swift in Sources */,
+				4498B9791E212E81007927EF /* AppDelegate.swift in Sources */,
+				4498B98B1E212F06007927EF /* UndoDragView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		445110471DB7B5CD007A9A3A /* Main.storyboard */ = {
+		4498B97C1E212E81007927EF /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				445110481DB7B5CD007A9A3A /* Base */,
+				4498B97D1E212E81007927EF /* Base */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
-		4451104C1DB7B5CD007A9A3A /* LaunchScreen.storyboard */ = {
+		4498B9811E212E81007927EF /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				4451104D1DB7B5CD007A9A3A /* Base */,
+				4498B9821E212E81007927EF /* Base */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -168,7 +168,7 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
-		445110501DB7B5CD007A9A3A /* Debug */ = {
+		4498B9851E212E81007927EF /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -186,7 +186,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
-				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -208,7 +208,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -217,7 +217,7 @@
 			};
 			name = Debug;
 		};
-		445110511DB7B5CD007A9A3A /* Release */ = {
+		4498B9861E212E81007927EF /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -235,7 +235,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
-				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -251,7 +251,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
@@ -259,34 +259,28 @@
 			};
 			name = Release;
 		};
-		445110531DB7B5CD007A9A3A /* Debug */ = {
+		4498B9881E212E81007927EF /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = "";
-				INFOPLIST_FILE = UndoableDrag/Info.plist;
+				DEVELOPMENT_TEAM = W3MH7MTTSB;
+				INFOPLIST_FILE = UndoManagerDemo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.rockgarden.UndoableDrag;
+				PRODUCT_BUNDLE_IDENTIFIER = com.apple.UndoManagerDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
-				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
-		445110541DB7B5CD007A9A3A /* Release */ = {
+		4498B9891E212E81007927EF /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = "";
-				INFOPLIST_FILE = UndoableDrag/Info.plist;
+				DEVELOPMENT_TEAM = W3MH7MTTSB;
+				INFOPLIST_FILE = UndoManagerDemo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.rockgarden.UndoableDrag;
+				PRODUCT_BUNDLE_IDENTIFIER = com.apple.UndoManagerDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
-				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
@@ -294,25 +288,24 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		4451103B1DB7B5CD007A9A3A /* Build configuration list for PBXProject "UndoableDrag" */ = {
+		4498B9701E212E80007927EF /* Build configuration list for PBXProject "UndoManagerDemo" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				445110501DB7B5CD007A9A3A /* Debug */,
-				445110511DB7B5CD007A9A3A /* Release */,
+				4498B9851E212E81007927EF /* Debug */,
+				4498B9861E212E81007927EF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		445110521DB7B5CD007A9A3A /* Build configuration list for PBXNativeTarget "UndoableDrag" */ = {
+		4498B9871E212E81007927EF /* Build configuration list for PBXNativeTarget "UndoManagerDemo" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				445110531DB7B5CD007A9A3A /* Debug */,
-				445110541DB7B5CD007A9A3A /* Release */,
+				4498B9881E212E81007927EF /* Debug */,
+				4498B9891E212E81007927EF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = 445110381DB7B5CD007A9A3A /* Project object */;
+	rootObject = 4498B96D1E212E80007927EF /* Project object */;
 }

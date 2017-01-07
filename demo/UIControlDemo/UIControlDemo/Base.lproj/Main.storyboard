@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="O7t-cB-ryr">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16C67" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="O7t-cB-ryr">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -39,7 +39,7 @@
                                 <attributedString key="userComments">
                                     <fragment content="Proving that the thumbTintColor now works once again.">
                                         <attributes>
-                                            <font key="NSFont" metaFont="smallSystem"/>
+                                            <font key="NSFont" metaFont="system" size="11"/>
                                             <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
                                         </attributes>
                                     </fragment>
@@ -61,11 +61,11 @@
                                 <state key="normal" title="Button"/>
                             </button>
                             <view opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RZz-v2-26w" customClass="MyKnob" customModule="UIControlDemo" customModuleProvider="target">
-                                <rect key="frame" x="107" y="487" width="160" height="160"/>
+                                <rect key="frame" x="137" y="547" width="100" height="100"/>
                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="160" id="erb-Uu-6RF"/>
-                                    <constraint firstAttribute="width" constant="160" id="tdN-V5-bKw"/>
+                                    <constraint firstAttribute="height" constant="100" id="erb-Uu-6RF"/>
+                                    <constraint firstAttribute="width" constant="100" id="tdN-V5-bKw"/>
                                 </constraints>
                                 <connections>
                                     <action selector="doKnob:" destination="BYZ-38-t0r" eventType="touchUpInside" id="KbR-Or-vO1"/>
@@ -228,7 +228,7 @@
         <scene sceneID="OuT-h5-LOI">
             <objects>
                 <navigationController id="O7t-cB-ryr" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="H4m-a8-JkO">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="H4m-a8-JkO">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -354,7 +354,7 @@
                                     <action selector="tapButtonWithSender:" destination="RSF-CP-Uhu" eventType="touchUpInside" id="IWO-Zb-FNU"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NW8-LE-ONB" customClass="SqueezeButton" customModule="SqueezeButtonPreview" customModuleProvider="target">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NW8-LE-ONB" customClass="SqueezeButton" customModule="UIControlDemo" customModuleProvider="target">
                                 <rect key="frame" x="107.5" y="220" width="160" height="60"/>
                                 <color key="backgroundColor" red="0.48709371509999999" green="1" blue="0.5491524592" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>

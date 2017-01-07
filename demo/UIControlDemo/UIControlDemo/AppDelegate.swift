@@ -32,6 +32,17 @@ func imageOfSize(_ size:CGSize, closure:() -> ()) -> UIImage {
     return result!
 }
 
+extension UIImage {
+
+    func trimImage(_ trimRect :CGRect) -> UIImage {
+        UIGraphicsBeginImageContextWithOptions(trimRect.size, true, self.scale)
+        self.draw(in: CGRect(x: -trimRect.minX, y: -trimRect.minY, width: self.size.width, height: self.size.height))
+        let trimmedImage = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+        return trimmedImage!
+    }
+}
+
 func lend<T> (closure:(T)->()) -> T where T:NSObject {
     let orig = T()
     closure(orig)

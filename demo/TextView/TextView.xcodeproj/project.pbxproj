@@ -8,24 +8,34 @@
 
 /* Begin PBXBuildFile section */
 		442849A71D8837D50044DCF5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 442849A61D8837D50044DCF5 /* AppDelegate.swift */; };
-		442849A91D8837D50044DCF5 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 442849A81D8837D50044DCF5 /* ViewController.swift */; };
+		442849A91D8837D50044DCF5 /* TextViewVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 442849A81D8837D50044DCF5 /* TextViewVC.swift */; };
 		442849AC1D8837D50044DCF5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 442849AA1D8837D50044DCF5 /* Main.storyboard */; };
 		442849AE1D8837D50044DCF5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 442849AD1D8837D50044DCF5 /* Assets.xcassets */; };
 		442849B11D8837D50044DCF5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 442849AF1D8837D50044DCF5 /* LaunchScreen.storyboard */; };
 		442849BA1D8839A60044DCF5 /* peppers.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 442849B81D8839A60044DCF5 /* peppers.jpg */; };
 		442849BB1D8839A60044DCF5 /* onion.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 442849B91D8839A60044DCF5 /* onion.jpg */; };
+		446B0D701E20CB280012140C /* StyledTextVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 446B0D6F1E20CB280012140C /* StyledTextVC.swift */; };
+		446B0D721E20D0EA0012140C /* states.txt in Resources */ = {isa = PBXBuildFile; fileRef = 446B0D711E20D0EA0012140C /* states.txt */; };
+		446B0D741E20DC8D0012140C /* MyLayoutManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 446B0D731E20DC8D0012140C /* MyLayoutManager.swift */; };
+		446B0D761E210FB60012140C /* brillig.txt in Resources */ = {isa = PBXBuildFile; fileRef = 446B0D751E210FB60012140C /* brillig.txt */; };
+		446B0D781E2111BE0012140C /* TextKitStacksVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 446B0D771E2111BE0012140C /* TextKitStacksVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		442849A31D8837D50044DCF5 /* TextView.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TextView.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		442849A61D8837D50044DCF5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		442849A81D8837D50044DCF5 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		442849A81D8837D50044DCF5 /* TextViewVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextViewVC.swift; sourceTree = "<group>"; };
 		442849AB1D8837D50044DCF5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		442849AD1D8837D50044DCF5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		442849B01D8837D50044DCF5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		442849B21D8837D50044DCF5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		442849B81D8839A60044DCF5 /* peppers.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = peppers.jpg; sourceTree = "<group>"; };
 		442849B91D8839A60044DCF5 /* onion.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = onion.jpg; sourceTree = "<group>"; };
+		446B0D6F1E20CB280012140C /* StyledTextVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StyledTextVC.swift; sourceTree = "<group>"; };
+		446B0D711E20D0EA0012140C /* states.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = states.txt; sourceTree = "<group>"; };
+		446B0D731E20DC8D0012140C /* MyLayoutManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyLayoutManager.swift; sourceTree = "<group>"; };
+		446B0D751E210FB60012140C /* brillig.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = brillig.txt; sourceTree = "<group>"; };
+		446B0D771E2111BE0012140C /* TextKitStacksVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextKitStacksVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,10 +69,15 @@
 			isa = PBXGroup;
 			children = (
 				442849A61D8837D50044DCF5 /* AppDelegate.swift */,
-				442849A81D8837D50044DCF5 /* ViewController.swift */,
+				442849A81D8837D50044DCF5 /* TextViewVC.swift */,
+				446B0D771E2111BE0012140C /* TextKitStacksVC.swift */,
+				446B0D6F1E20CB280012140C /* StyledTextVC.swift */,
+				446B0D731E20DC8D0012140C /* MyLayoutManager.swift */,
 				442849AA1D8837D50044DCF5 /* Main.storyboard */,
 				442849AD1D8837D50044DCF5 /* Assets.xcassets */,
+				446B0D711E20D0EA0012140C /* states.txt */,
 				442849B81D8839A60044DCF5 /* peppers.jpg */,
+				446B0D751E210FB60012140C /* brillig.txt */,
 				442849B91D8839A60044DCF5 /* onion.jpg */,
 				442849AF1D8837D50044DCF5 /* LaunchScreen.storyboard */,
 				442849B21D8837D50044DCF5 /* Info.plist */,
@@ -102,6 +117,7 @@
 				TargetAttributes = {
 					442849A21D8837D50044DCF5 = {
 						CreatedOnToolsVersion = 7.3.1;
+						DevelopmentTeam = W3MH7MTTSB;
 						LastSwiftMigration = 0800;
 					};
 				};
@@ -129,9 +145,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				446B0D721E20D0EA0012140C /* states.txt in Resources */,
 				442849B11D8837D50044DCF5 /* LaunchScreen.storyboard in Resources */,
 				442849BA1D8839A60044DCF5 /* peppers.jpg in Resources */,
 				442849BB1D8839A60044DCF5 /* onion.jpg in Resources */,
+				446B0D761E210FB60012140C /* brillig.txt in Resources */,
 				442849AE1D8837D50044DCF5 /* Assets.xcassets in Resources */,
 				442849AC1D8837D50044DCF5 /* Main.storyboard in Resources */,
 			);
@@ -144,8 +162,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				442849A91D8837D50044DCF5 /* ViewController.swift in Sources */,
+				446B0D701E20CB280012140C /* StyledTextVC.swift in Sources */,
+				442849A91D8837D50044DCF5 /* TextViewVC.swift in Sources */,
+				446B0D781E2111BE0012140C /* TextKitStacksVC.swift in Sources */,
 				442849A71D8837D50044DCF5 /* AppDelegate.swift in Sources */,
+				446B0D741E20DC8D0012140C /* MyLayoutManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -263,6 +284,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = W3MH7MTTSB;
 				INFOPLIST_FILE = TextView/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.rockgarden.TextView;
@@ -275,6 +297,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = W3MH7MTTSB;
 				INFOPLIST_FILE = TextView/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.rockgarden.TextView;

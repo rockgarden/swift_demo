@@ -1,8 +1,11 @@
-
+//
+//  UndoDragView.swift
+//  UndoManagerDemo
+//
 
 import UIKit
 
-class MyView : UIView {
+class UndoDragView : UIView {
 
     let undoer = UndoManager()
     override var undoManager : UndoManager? {
@@ -21,19 +24,26 @@ class MyView : UIView {
         return true
     }
 
-    // invocation variant
-    func setCenterUndoably (_ newCenter: NSValue) {
-        self.undoer.registerUndo(
-            withTarget: self, selector: #selector(setCenterUndoably),
-            object: NSValue(cgPoint: self.center))
+    /// Main func
+    func setCenterUndoably(_ newCenter: CGPoint) {
+        let oldCenter = self.center
+        /// 1️⃣ undo.registerUndo
+        //self.undoer.registerUndo(withTarget: self, selector: #selector(setCenterUndoably), object: oldCenter)
+
+        /// 2️⃣ undo.prepare invocation variant 调用变体的方法
+        //(self.undoer.prepare(withInvocationTarget:self) as AnyObject).setCenterUndoably(oldCenter)
+
+        /// 3️⃣ handler variant in iOS 9
+        //self.undoer.registerUndo(withTarget: self) { myself in myself.setCenterUndoably(oldCenter) }
+        self.undoer.registerUndo(withTarget: self) { myself in UIView.animate(withDuration:0.4, delay: 0.1, animations: { myself.center = oldCenter}); myself.setCenterUndoably(oldCenter) }
+
         self.undoer.setActionName("Move")
         if self.undoer.isUndoing || self.undoer.isRedoing {
-            UIView.animate(withDuration: 0.4, delay: 0.1, options: [], animations: {
-                self.center = newCenter.cgPointValue
-                }, completion: nil)
-        } else {
-            // just do it
-            self.center = newCenter.cgPointValue
+            UIView.animate(withDuration:0.4, delay: 0.1, animations: {
+                self.center = newCenter
+            })
+        } else { // just do it
+            self.center = newCenter
         }
     }
 
@@ -43,20 +53,35 @@ class MyView : UIView {
             self.undoer.beginUndoGrouping()
             fallthrough
         case .began, .changed:
-            let delta = p.translation(in: self.superview!)
+            let delta = p.translation(in:self.superview!)
             var c = self.center
-            c.x += delta.x
-            c.y += delta.y
-            self.setCenterUndoably(NSValue(cgPoint:c))
-            p.setTranslation(CGPoint.zero, in: self.superview!)
+            c.x += delta.x; c.y += delta.y
+
+            /// 4️⃣ inner func is better?
+            func registerForUndo() {
+                let oldCenter = self.center
+                self.undoer.registerUndo(withTarget: self) { myself in
+                    UIView.animate(withDuration:0.4, delay: 0.1, animations: {
+                        myself.center = oldCenter
+                    })
+                    registerForUndo()
+                }
+                self.undoer.setActionName("Move")
+            }
+            registerForUndo()
+            self.center = c
+
+            //self.setCenterUndoably(c) // for 1️⃣2️⃣3️⃣
+            p.setTranslation(.zero, in: self.superview!)
         case .ended, .cancelled:
             self.undoer.endUndoGrouping()
             self.becomeFirstResponder()
-        default: break
+        default:break
         }
     }
 
     // ===== press-and-hold, menu
+
     func longPress (_ g : UIGestureRecognizer) {
         if g.state == .began {
             let m = UIMenuController.shared
@@ -78,11 +103,12 @@ class MyView : UIView {
         return super.canPerformAction(action, withSender: sender)
     }
 
-    func undo(_:AnyObject?) {
+    func undo(_: Any?) {
         self.undoer.undo()
     }
 
-    func redo(_:AnyObject?) {
+    func redo(_: Any?) {
         self.undoer.redo()
     }
 }
+
