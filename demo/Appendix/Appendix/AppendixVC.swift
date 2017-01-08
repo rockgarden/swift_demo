@@ -102,10 +102,6 @@ class AppendixVC: UIViewController {
                 self.v.center.x = xorig
             })
 
-            var arr = [1,2,3,4]
-            arr.remove(at:[0,2])
-            print(arr)
-
             do { // without lend
                 let content = NSMutableAttributedString(string:"Ho de ho")
                 let para = NSMutableParagraphStyle()
@@ -223,27 +219,6 @@ class AppendixVC: UIViewController {
                     print(red!, green!, blue!, alpha!)
                 }
             }
-        }
-
-        do {
-            // hold my beer and watch _this_!
-            let arr = ["Mannyz", "Moey", "Jackx"]
-            func sortByLastCharacter(_ s1: AnyObject,
-                                     _ s2:AnyObject, _ context: UnsafeMutableRawPointer) -> Int {
-                let c1 = (s1 as! String).characters.last
-                let c2 = (s2 as! String).characters.last
-                return ((String(describing: c1)).compare(String(describing: c2))).rawValue
-            }
-            ///FIXME:
-            let arr2 = (arr as NSArray).sortedArray(sortByLastCharacter as! @convention(c) (Any, Any, UnsafeMutableRawPointer?) -> Int, context: nil)
-            print(arr2)
-            let arr3 = (arr as NSArray).sortedArray({
-                s1, s2, context in
-                let c1 = (s1 as! String).characters.last
-                let c2 = (s2 as! String).characters.last
-                return ((String(describing: c1)).compare(String(describing: c2))).rawValue
-            }, context:nil)
-            print(arr3)
         }
 
         self.testTimer()

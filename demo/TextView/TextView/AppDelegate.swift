@@ -8,6 +8,10 @@
 
 import UIKit
 
+let path = Bundle.main.path(forResource: "brillig", ofType: "txt")!
+let s = try! String(contentsOfFile:path)
+let sBrillig = s.replacingOccurrences(of:"\n", with: "")
+
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 

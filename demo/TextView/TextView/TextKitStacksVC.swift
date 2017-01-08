@@ -15,10 +15,7 @@ class TextKitStacksVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        let path = Bundle.main.path(forResource: "brillig", ofType: "txt")!
-        let s = try! String(contentsOfFile:path)
-        let s2 = s.replacingOccurrences(of:"\n", with: "")
-        let mas = NSMutableAttributedString(string:s2, attributes:[
+        let mas = NSMutableAttributedString(string:sBrillig, attributes:[
             NSFontAttributeName: UIFont(name:"GillSans", size:14)!
             ])
 
@@ -31,26 +28,23 @@ class TextKitStacksVC: UIViewController {
             },
                          range:NSMakeRange(0,1))
 
+        //FIXME: frame error
         var which : Int { return 2 }
+        let r = self.tv.frame
+        let r2 = self.tv2.frame
+        let ts1 = NSTextStorage(attributedString:mas)
+        let lm1 = NSLayoutManager()
+        ts1.addLayoutManager(lm1)
         switch which {
         case 1:
-
-            let r = self.tv.frame
-            let r2 = self.tv2.frame
-
-            let ts1 = NSTextStorage(attributedString:mas)
-            let lm1 = NSLayoutManager()
-            ts1.addLayoutManager(lm1)
             let tc1 = NSTextContainer(size:r.size)
             lm1.addTextContainer(tc1)
             let tv = UITextView(frame:r, textContainer:tc1)
             //            tv.scrollEnabled = false
-
             let tc2 = NSTextContainer(size:r2.size)
             lm1.addTextContainer(tc2)
             let tv2 = UITextView(frame:r2, textContainer:tc2)
             //            tv2.scrollEnabled = false
-
             self.tv.removeFromSuperview()
             self.tv2.removeFromSuperview()
             tv.backgroundColor = .yellow
@@ -61,12 +55,6 @@ class TextKitStacksVC: UIViewController {
             self.tv2 = tv2
 
         case 2:
-            let r = self.tv.frame
-            let r2 = self.tv2.frame
-
-            let ts1 = NSTextStorage(attributedString:mas)
-            let lm1 = NSLayoutManager()
-            ts1.addLayoutManager(lm1)
             let lm2 = NSLayoutManager()
             ts1.addLayoutManager(lm2)
 

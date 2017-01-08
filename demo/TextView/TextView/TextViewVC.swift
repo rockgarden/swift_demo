@@ -17,6 +17,7 @@ class TextViewVC: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        automaticallyAdjustsScrollViewInsets = false
         textLayoutGeometry()
         TextTabDemo()
     }
@@ -144,10 +145,7 @@ extension TextViewVC: UITextViewDelegate {
 extension TextViewVC {
 
     func textLayoutGeometry() {
-        let path = Bundle.main.path(forResource: "brillig", ofType: "txt")!
-        let s = try! String(contentsOfFile:path)
-        let s2 = s.replacingOccurrences(of:"\n", with: "")
-        let mas = NSMutableAttributedString(string:s2 + " " + s2, attributes:[
+        let mas = NSMutableAttributedString(string:sBrillig + " " + sBrillig, attributes:[
             NSFontAttributeName: UIFont(name:"GillSans", size:20)!
             ])
 
