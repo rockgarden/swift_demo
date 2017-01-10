@@ -1,7 +1,12 @@
 
 import UIKit
 
-class StyledTextVC : UIViewController {}
+class StyledTextVC : UIViewController {
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        automaticallyAdjustsScrollViewInsets = false
+    }
+}
 
 class StyledText: UIScrollView {
 

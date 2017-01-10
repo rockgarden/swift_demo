@@ -21,6 +21,10 @@
 		446B0D781E2111BE0012140C /* TextKitStacksVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 446B0D771E2111BE0012140C /* TextKitStacksVC.swift */; };
 		4474E0631E2262640013290C /* ExclusionPathVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4474E0621E2262640013290C /* ExclusionPathVC.swift */; };
 		4474E0651E2272060013290C /* MyTextContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4474E0641E2272060013290C /* MyTextContainer.swift */; };
+		4474E0691E23B73C0013290C /* SelfSizingTextViewVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4474E0681E23B73C0013290C /* SelfSizingTextViewVC.swift */; };
+		44D348961E24643000F953D7 /* MyTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44D348951E24643000F953D7 /* MyTextField.swift */; };
+		44D348981E24643B00F953D7 /* abbreviations.txt in Resources */ = {isa = PBXBuildFile; fileRef = 44D348971E24643B00F953D7 /* abbreviations.txt */; };
+		44D3489A1E24649000F953D7 /* TextFieldVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44D348991E24649000F953D7 /* TextFieldVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +44,10 @@
 		446B0D771E2111BE0012140C /* TextKitStacksVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextKitStacksVC.swift; sourceTree = "<group>"; };
 		4474E0621E2262640013290C /* ExclusionPathVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExclusionPathVC.swift; sourceTree = "<group>"; };
 		4474E0641E2272060013290C /* MyTextContainer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyTextContainer.swift; sourceTree = "<group>"; };
+		4474E0681E23B73C0013290C /* SelfSizingTextViewVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelfSizingTextViewVC.swift; sourceTree = "<group>"; };
+		44D348951E24643000F953D7 /* MyTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyTextField.swift; sourceTree = "<group>"; };
+		44D348971E24643B00F953D7 /* abbreviations.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = abbreviations.txt; sourceTree = "<group>"; };
+		44D348991E24649000F953D7 /* TextFieldVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextFieldVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,9 +87,13 @@
 				446B0D6F1E20CB280012140C /* StyledTextVC.swift */,
 				446B0D731E20DC8D0012140C /* MyLayoutManager.swift */,
 				4474E0641E2272060013290C /* MyTextContainer.swift */,
+				4474E0681E23B73C0013290C /* SelfSizingTextViewVC.swift */,
+				44D348991E24649000F953D7 /* TextFieldVC.swift */,
+				44D348951E24643000F953D7 /* MyTextField.swift */,
 				442849AA1D8837D50044DCF5 /* Main.storyboard */,
 				442849AD1D8837D50044DCF5 /* Assets.xcassets */,
 				446B0D711E20D0EA0012140C /* states.txt */,
+				44D348971E24643B00F953D7 /* abbreviations.txt */,
 				442849B81D8839A60044DCF5 /* peppers.jpg */,
 				446B0D751E210FB60012140C /* brillig.txt */,
 				442849B91D8839A60044DCF5 /* onion.jpg */,
@@ -151,6 +163,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				44D348981E24643B00F953D7 /* abbreviations.txt in Resources */,
 				446B0D721E20D0EA0012140C /* states.txt in Resources */,
 				442849B11D8837D50044DCF5 /* LaunchScreen.storyboard in Resources */,
 				442849BA1D8839A60044DCF5 /* peppers.jpg in Resources */,
@@ -170,8 +183,11 @@
 			files = (
 				446B0D701E20CB280012140C /* StyledTextVC.swift in Sources */,
 				4474E0651E2272060013290C /* MyTextContainer.swift in Sources */,
+				44D3489A1E24649000F953D7 /* TextFieldVC.swift in Sources */,
 				442849A91D8837D50044DCF5 /* TextViewVC.swift in Sources */,
+				44D348961E24643000F953D7 /* MyTextField.swift in Sources */,
 				4474E0631E2262640013290C /* ExclusionPathVC.swift in Sources */,
+				4474E0691E23B73C0013290C /* SelfSizingTextViewVC.swift in Sources */,
 				446B0D781E2111BE0012140C /* TextKitStacksVC.swift in Sources */,
 				442849A71D8837D50044DCF5 /* AppDelegate.swift in Sources */,
 				446B0D741E20DC8D0012140C /* MyLayoutManager.swift in Sources */,
