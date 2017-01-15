@@ -5,14 +5,16 @@
 
 import UIKit
 
-class TextFieldVC: UIViewController, UITextFieldDelegate {
+class TextFieldVC: UIViewController {
 
     @IBOutlet var tf : UITextField!
+    @IBOutlet var tfDelegate : UITextField!
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        self.tf.allowsEditingTextAttributes = true
+        tf.allowsEditingTextAttributes = true
+        setupInputAssistantItem(which: 2)
 
         let mi = UIMenuItem(title:"Expand", action:#selector(MyTextField.expand))
         let mc = UIMenuController.shared
@@ -46,7 +48,95 @@ class TextFieldVC: UIViewController, UITextFieldDelegate {
 
         return false
     }
-    
+
+}
+
+
+//MARK: inputAssistantItem just for ipad
+extension TextFieldVC {
+
+    func setupInputAssistantItem(which: Int) {
+        switch which {
+        case 1:
+            let bbi = UIBarButtonItem(
+                barButtonSystemItem: .camera, target: self, action: #selector(doCamera))
+            let group = UIBarButtonItemGroup(
+                barButtonItems: [bbi], representativeItem: nil)
+            let shortcuts = tf.inputAssistantItem
+            shortcuts.trailingBarButtonGroups.append(group)
+
+        case 2:
+            var bbis = [UIBarButtonItem]()
+            for _ in 1...5 {
+                let bbi = UIBarButtonItem(barButtonSystemItem: .camera, target: self, action: #selector(doCamera))
+                bbis.append(bbi)
+            }
+            let rep = UIBarButtonItem(barButtonSystemItem: .edit, target: nil, action: nil)
+            let group = UIBarButtonItemGroup(barButtonItems: bbis, representativeItem: rep)
+            let shortcuts = tf.inputAssistantItem
+            shortcuts.trailingBarButtonGroups.append(group)
+
+        default:break
+        }
+    }
+
+    func doCamera(_ sender: Any) {
+        print("do camera")
+    }
+
+}
+
+
+//MARK: TextFieldDelegate just for ipad
+extension TextFieldVC: UITextFieldDelegate {
+    // this way works fine too
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        
+        let p = UIPickerView()
+        p.delegate = self
+        p.dataSource = self
+
+        // tfDelegate.inputView = p
+
+        // 自定义UIInputView
+        let iv = UIInputView(frame: CGRect(origin:.zero, size:CGSize(200,200)), inputViewStyle: .keyboard)
+        iv.addSubview(p)
+        p.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            p.leadingAnchor.constraint(equalTo: iv.leadingAnchor),
+            p.trailingAnchor.constraint(equalTo: iv.trailingAnchor),
+            p.centerYAnchor.constraint(equalTo: iv.centerYAnchor)
+            ])
+        tfDelegate.inputView = iv
+
+        let b = UIButton(type: .system)
+        b.setTitle("Done", for: .normal)
+        b.sizeToFit()
+        b.addTarget(self, action: #selector(doDone), for: .touchUpInside)
+        b.backgroundColor = UIColor.lightGray
+        tfDelegate.inputAccessoryView = b
+    }
+
+    func doDone() {
+        self.tf.resignFirstResponder()
+    }
+}
+
+
+extension TextFieldVC : UIPickerViewDelegate, UIPickerViewDataSource {
+    var pep : [String] {return ["Manny", "Moe", "Jack"]}
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 1
+    }
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return pep.count
+    }
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        return pep[row]
+    }
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        tfDelegate.text = self.pep[row]
+    }
     
 }
 

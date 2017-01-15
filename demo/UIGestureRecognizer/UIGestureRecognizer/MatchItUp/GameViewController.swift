@@ -86,7 +86,7 @@ class GameViewController: UIViewController {
     gameButton.setTitleColor(UIColor.white, for: UIControlState())
     gameButton.backgroundColor = successColor
     
-    imageViews.map { $0.layer.borderColor = defaultColor.cgColor }
+    _ = imageViews.map { $0.layer.borderColor = defaultColor.cgColor }
     
     let images = game.getImages()
     for (index, image) in images.enumerated() {

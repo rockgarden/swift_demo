@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		441F82841E2B2D0D00D6EBD4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 441F827F1E2B2D0D00D6EBD4 /* Assets.xcassets */; };
+		441F82851E2B2D0D00D6EBD4 /* PanGestureAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 441F82811E2B2D0D00D6EBD4 /* PanGestureAction.swift */; };
+		441F82861E2B2D0D00D6EBD4 /* PanGestureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 441F82821E2B2D0D00D6EBD4 /* PanGestureView.swift */; };
+		441F82871E2B2D0D00D6EBD4 /* PanGestureViewDemo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 441F82831E2B2D0D00D6EBD4 /* PanGestureViewDemo.swift */; };
 		4420AB991DF1B37E005D280A /* Line.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4420AB981DF1B37E005D280A /* Line.swift */; };
 		4420AB9B1DF1B385005D280A /* DrawView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4420AB9A1DF1B385005D280A /* DrawView.swift */; };
 		44291CA01DF1B77300D2F579 /* RootVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44291C9F1DF1B77300D2F579 /* RootVC.swift */; };
@@ -33,6 +37,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		441F827F1E2B2D0D00D6EBD4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		441F82811E2B2D0D00D6EBD4 /* PanGestureAction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PanGestureAction.swift; sourceTree = "<group>"; };
+		441F82821E2B2D0D00D6EBD4 /* PanGestureView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PanGestureView.swift; sourceTree = "<group>"; };
+		441F82831E2B2D0D00D6EBD4 /* PanGestureViewDemo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PanGestureViewDemo.swift; sourceTree = "<group>"; };
 		4420AB981DF1B37E005D280A /* Line.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Line.swift; sourceTree = "<group>"; };
 		4420AB9A1DF1B385005D280A /* DrawView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DrawView.swift; sourceTree = "<group>"; };
 		44291C9F1DF1B77300D2F579 /* RootVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootVC.swift; sourceTree = "<group>"; };
@@ -71,6 +79,25 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		441F827E1E2B2D0D00D6EBD4 /* PanGestureView */ = {
+			isa = PBXGroup;
+			children = (
+				441F827F1E2B2D0D00D6EBD4 /* Assets.xcassets */,
+				441F82801E2B2D0D00D6EBD4 /* Classes */,
+				441F82831E2B2D0D00D6EBD4 /* PanGestureViewDemo.swift */,
+			);
+			path = PanGestureView;
+			sourceTree = "<group>";
+		};
+		441F82801E2B2D0D00D6EBD4 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				441F82811E2B2D0D00D6EBD4 /* PanGestureAction.swift */,
+				441F82821E2B2D0D00D6EBD4 /* PanGestureView.swift */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
 		442F31151D6831D60060942F = {
 			isa = PBXGroup;
 			children = (
@@ -90,6 +117,7 @@
 		442F31201D6831D60060942F /* UIGestureRecognizer */ = {
 			isa = PBXGroup;
 			children = (
+				441F827E1E2B2D0D00D6EBD4 /* PanGestureView */,
 				4454EE251D69F33800DC3F04 /* MatchItUp */,
 				442F31211D6831D60060942F /* AppDelegate.swift */,
 				44291C9F1DF1B77300D2F579 /* RootVC.swift */,
@@ -192,6 +220,7 @@
 				4454EE351D69F33800DC3F04 /* Images.xcassets in Resources */,
 				442F31291D6831D60060942F /* Assets.xcassets in Resources */,
 				4454EE361D69F33800DC3F04 /* Info.plist in Resources */,
+				441F82841E2B2D0D00D6EBD4 /* Assets.xcassets in Resources */,
 				442F31271D6831D60060942F /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -209,11 +238,14 @@
 				449B13CA1D683DE400795F70 /* HorizVertPanGestureRecognizers.swift in Sources */,
 				4420AB9B1DF1B385005D280A /* DrawView.swift in Sources */,
 				4454EE301D69F33800DC3F04 /* CircleDrawView.swift in Sources */,
+				441F82851E2B2D0D00D6EBD4 /* PanGestureAction.swift in Sources */,
 				4454EE321D69F33800DC3F04 /* CircleGestureRecognizer.swift in Sources */,
 				4454EE341D69F33800DC3F04 /* GameViewController.swift in Sources */,
 				4454EE331D69F33800DC3F04 /* GameOverViewController.swift in Sources */,
+				441F82871E2B2D0D00D6EBD4 /* PanGestureViewDemo.swift in Sources */,
 				4454EE391D69F33800DC3F04 /* RoundedImageView.swift in Sources */,
 				4454EE311D69F33800DC3F04 /* CircleFit.swift in Sources */,
+				441F82861E2B2D0D00D6EBD4 /* PanGestureView.swift in Sources */,
 				44E811331E02C406000079F7 /* DraggingView.swift in Sources */,
 				442F31221D6831D60060942F /* AppDelegate.swift in Sources */,
 				4420AB991DF1B37E005D280A /* Line.swift in Sources */,

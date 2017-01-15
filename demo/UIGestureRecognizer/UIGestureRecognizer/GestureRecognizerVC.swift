@@ -206,16 +206,20 @@ class GestureRecognizerVC: UIViewController {
     func doubleTap () {
         print("double tap")
     }
-    
+
+    /// Pan
     func dragging(_ p: UIPanGestureRecognizer) {
         let v = p.view!
+        let sV = v.superview
+        let loc = p.location(in: v)
+        _ = v.hitTest(loc, with: nil)
         switch p.state {
         case .began, .changed:
-            let delta = p.translation(in: v.superview)
+            let delta = p.translation(in: sV)
             var c = v.center
             c.x += delta.x; c.y += delta.y
             v.center = c
-            p.setTranslation(CGPoint.zero, in: v.superview)
+            p.setTranslation(CGPoint.zero, in: sV)
         default: break
         }
     }

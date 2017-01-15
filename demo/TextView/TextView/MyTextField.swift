@@ -30,7 +30,6 @@ class MyTextField: UITextField {
     func state(for abbrev:String) -> String? {
         return self.list[abbrev.uppercased()]
     }
-    
 
     override func canPerformAction(_ action: Selector, withSender sender: Any?) -> Bool {
         if action == #selector(expand),

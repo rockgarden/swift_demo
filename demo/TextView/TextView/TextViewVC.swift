@@ -9,11 +9,14 @@
 import UIKit
 import ImageIO
 
+
 /// tabStops 示例 NSTextTab 的用法
 class TextViewVC: UIViewController {
     
     @IBOutlet var tv: UITextView!
     @IBOutlet var tv1 : UITextView!
+
+    let which = 1
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -129,6 +132,7 @@ class TextViewVC: UIViewController {
     
 }
 
+
 extension TextViewVC: UITextViewDelegate {
     func textView(_ textView: UITextView, shouldInteractWith textAttachment: NSTextAttachment, in characterRange: NSRange) -> Bool {
         return true
@@ -141,6 +145,7 @@ extension TextViewVC: UITextViewDelegate {
     }
 
 }
+
 
 extension TextViewVC {
 
@@ -225,3 +230,5 @@ extension TextViewVC {
     }
 
 }
+
+

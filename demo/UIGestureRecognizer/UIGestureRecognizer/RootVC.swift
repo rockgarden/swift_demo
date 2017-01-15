@@ -19,6 +19,10 @@ class RootVC: UITableViewController {
                 let vc = sBoard.instantiateViewController(withIdentifier: "GameViewController")
                 vc.hidesBottomBarWhenPushed = true
                 self.navigationController!.pushViewController(vc, animated: true)
+            case "PanGestureViewCell":
+                let vc = PanGestureViewDemo()
+                vc.hidesBottomBarWhenPushed = true
+                self.present(vc, animated: true, completion: nil)
             default:
                 break
             }
