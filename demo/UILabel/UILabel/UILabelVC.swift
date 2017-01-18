@@ -30,22 +30,26 @@ class UILabelVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        setupLab3()
-        selfSizingLabel3()
+        labelFontShrinkTest()
+        lineBreakTest()
+        selfSizingLabel()
+    }
+
+    func labelFontShrinkTest() {
         // idea is to provide a test bed for playing with these parameters
         // you can see how both string-based and attributed-string-based label behaves also now added drawing attributed string in image to show wrapping differences
-        
+
         let f = UIFont(name: "GillSans", size: 20)!
-        
+
         let align: NSTextAlignment = .left
         let brk: NSLineBreakMode = .byTruncatingMiddle
         let numLines = 2
         let tighten = true
-        
+
         let adjusts = false
         let min: CGFloat = 0.8
         let base: UIBaselineAdjustment = .none
-        
+
         self.lab1.adjustsFontSizeToFitWidth = adjusts
         self.lab2.adjustsFontSizeToFitWidth = adjusts
         self.lab1.minimumScaleFactor = min
@@ -56,13 +60,13 @@ class UILabelVC: UIViewController {
         self.lab2.numberOfLines = numLines
         self.lab1.allowsDefaultTighteningForTruncation = tighten
         self.lab2.allowsDefaultTighteningForTruncation = tighten
-        
+
         let s = "Little poltergeists make up the principal form of material manifestation."
         self.lab1.text = s
         self.lab1.font = f
         self.lab1.textAlignment = align
         self.lab1.lineBreakMode = brk
-        
+
         let mas = NSMutableAttributedString(string: s, attributes: [
             NSFontAttributeName: f,
             NSParagraphStyleAttributeName: lend {
@@ -76,7 +80,7 @@ class UILabelVC: UIViewController {
                          value: UIColor.blue,
                          range: (s as NSString).range(of: "poltergeists"))
         self.lab2.attributedText = mas
-        
+
         let r = self.iv.bounds
         self.iv.image = imageOfSize(r.size) {
             mas.draw(in: r)
@@ -85,12 +89,12 @@ class UILabelVC: UIViewController {
 
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        delay(2) {
+        delay(5) {
             self.doYourThing()
         }
     }
     
-    func setupLab3() {
+    func lineBreakTest() {
         print(lab3.lineBreakMode.rawValue)
         let color = UIColor.blue
         let s = NSMutableAttributedString(string: "This is\n a test", attributes: [
@@ -148,8 +152,9 @@ class UILabelVC: UIViewController {
         self.lab1.attributedText = content2
         self.lab2.attributedText = content2
     }
-    
-    func selfSizingLabel3() {
+
+    //TODO: 加入有效的constraints
+    func selfSizingLabel() {
         let content2 = NSMutableAttributedString(string: s2, attributes: [
             NSFontAttributeName: UIFont(name: "HoeflerText-Black", size: 16)!
             ])
@@ -200,8 +205,8 @@ class UILabelVC: UIViewController {
         labelVarName.attributedText = attString
     }
 
+    //TODO: 加入有效的constraints
     func labelFontSizeScaling() {
-
         let content2 = NSMutableAttributedString(string:s2, attributes: [
             NSFontAttributeName: UIFont(name:"HoeflerText-Black", size:16)!
             ])
@@ -227,8 +232,6 @@ class UILabelVC: UIViewController {
         lab.adjustsFontSizeToFitWidth = true
         lab.minimumScaleFactor = 0.7
         lab.attributedText = content2
-
-
     }
 
     override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
