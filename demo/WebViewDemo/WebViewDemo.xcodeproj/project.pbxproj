@@ -27,6 +27,9 @@
 		441D44EB1E1E8EBF00857C4F /* test.rtfd.zip in Resources */ = {isa = PBXBuildFile; fileRef = 441D44DF1E1E8EBF00857C4F /* test.rtfd.zip */; };
 		441D44ED1E1E921000857C4F /* NoNavigationWebViewVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 441D44EC1E1E921000857C4F /* NoNavigationWebViewVC.swift */; };
 		441D44EF1E1E935B00857C4F /* WKWebViewVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 441D44EE1E1E935B00857C4F /* WKWebViewVC.swift */; };
+		44CFF3DF1E326C0800CABB08 /* Html.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 44CFF3DE1E326C0800CABB08 /* Html.bundle */; };
+		44CFF3E11E32801000CABB08 /* myJs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44CFF3E01E32801000CABB08 /* myJs.swift */; };
+		44FB21F11E324AE000F191D3 /* readme.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 44FB21F01E324AE000F191D3 /* readme.rtf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -52,6 +55,9 @@
 		441D44DF1E1E8EBF00857C4F /* test.rtfd.zip */ = {isa = PBXFileReference; lastKnownFileType = archive.zip; path = test.rtfd.zip; sourceTree = "<group>"; };
 		441D44EC1E1E921000857C4F /* NoNavigationWebViewVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoNavigationWebViewVC.swift; sourceTree = "<group>"; };
 		441D44EE1E1E935B00857C4F /* WKWebViewVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WKWebViewVC.swift; sourceTree = "<group>"; };
+		44CFF3DE1E326C0800CABB08 /* Html.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Html.bundle; sourceTree = "<group>"; };
+		44CFF3E01E32801000CABB08 /* myJs.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = myJs.swift; sourceTree = "<group>"; };
+		44FB21F01E324AE000F191D3 /* readme.rtf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.rtf; path = readme.rtf; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,6 +74,7 @@
 		441D44B31E1E8DF000857C4F = {
 			isa = PBXGroup;
 			children = (
+				44FB21F01E324AE000F191D3 /* readme.rtf */,
 				441D44BE1E1E8DF000857C4F /* WebViewDemo */,
 				441D44BD1E1E8DF000857C4F /* Products */,
 			);
@@ -89,6 +96,7 @@
 				441D44D11E1E8E6000857C4F /* WebViewVC.swift */,
 				441D44EC1E1E921000857C4F /* NoNavigationWebViewVC.swift */,
 				441D44EE1E1E935B00857C4F /* WKWebViewVC.swift */,
+				44CFF3E01E32801000CABB08 /* myJs.swift */,
 				441D44C31E1E8DF000857C4F /* Main.storyboard */,
 				441D44C61E1E8DF000857C4F /* Assets.xcassets */,
 				441D44C81E1E8DF000857C4F /* LaunchScreen.storyboard */,
@@ -113,6 +121,7 @@
 				441D44DD1E1E8EBF00857C4F /* test.rtfd */,
 				441D44DE1E1E8EBF00857C4F /* release.pdf */,
 				441D44DF1E1E8EBF00857C4F /* test.rtfd.zip */,
+				44CFF3DE1E326C0800CABB08 /* Html.bundle */,
 			);
 			path = resource;
 			sourceTree = "<group>";
@@ -179,9 +188,11 @@
 			files = (
 				441D44E21E1E8EBF00857C4F /* listen.png in Resources */,
 				441D44E81E1E8EBF00857C4F /* test.pages.zip in Resources */,
+				44FB21F11E324AE000F191D3 /* readme.rtf in Resources */,
 				441D44CA1E1E8DF000857C4F /* LaunchScreen.storyboard in Resources */,
 				441D44E91E1E8EBF00857C4F /* test.rtfd in Resources */,
 				441D44E41E1E8EBF00857C4F /* test.rtf in Resources */,
+				44CFF3DF1E326C0800CABB08 /* Html.bundle in Resources */,
 				441D44E01E1E8EBF00857C4F /* htmlbody.txt in Resources */,
 				441D44EB1E1E8EBF00857C4F /* test.rtfd.zip in Resources */,
 				441D44C71E1E8DF000857C4F /* Assets.xcassets in Resources */,
@@ -206,6 +217,7 @@
 				441D44C21E1E8DF000857C4F /* WebViewRoot.swift in Sources */,
 				441D44D21E1E8E6000857C4F /* WebViewVC.swift in Sources */,
 				441D44ED1E1E921000857C4F /* NoNavigationWebViewVC.swift in Sources */,
+				44CFF3E11E32801000CABB08 /* myJs.swift in Sources */,
 				441D44C01E1E8DF000857C4F /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -368,6 +380,7 @@
 				441D44D01E1E8DF000857C4F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
