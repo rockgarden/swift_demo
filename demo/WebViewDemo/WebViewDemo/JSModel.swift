@@ -5,7 +5,7 @@
 //  Created by wangkan on 2017/1/21.
 //  Copyright © 2017年 apple. All rights reserved.
 //
-//  注入模型的交互
+//  Swift2JS通过注入模型交互
 //
 
 
@@ -23,7 +23,7 @@ import JavaScriptCore
     func choose(b: Bool)
 }
 
-@objc class myJs: NSObject, JavaScriptSwiftDelegate {
+@objc class JSModel: NSObject, JavaScriptSwiftDelegate {
 
     weak var controller: UIViewController?
     weak var jsContext: JSContext?

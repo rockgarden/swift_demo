@@ -22,6 +22,11 @@ class WebViewRoot: UIViewController {
         self.navigationController!.pushViewController(wvc, animated:true)
     }
 
+    @IBAction func showSwift2JS (_ sender: Any!) {
+        let wvc = UIWeb2JsVC()
+        self.navigationController!.pushViewController(wvc, animated:true)
+    }
+
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = "Start"

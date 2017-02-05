@@ -127,39 +127,6 @@ class WKWebViewVC: UIViewController, UIViewControllerRestoration {
         return configuretion
     }
 
-    // UIWebViewDelegate func webViewDidFinishLoad(_ webView: UIWebView) 时注入
-    func addJScript() {
-        let context = wv.value(forKeyPath: "documentView.webView.mainFrame.javaScriptContext") as? JSContext
-        let model = myJs()
-        model.controller = self
-        model.jsContext = context
-        self.jsContext = context
-
-        // 这一步是将OCModel这个模型注入到JS中，在JS就可以通过OCModel调用我们公暴露的方法了。
-        self.jsContext?.setObject(model, forKeyedSubscript: "OCModel" as (NSCopying & NSObjectProtocol)!)
-        let url = Bundle.main.url(forResource: "test", withExtension: "html")
-        self.jsContext?.evaluateScript(try? String(contentsOf: url!, encoding: .utf8));
-
-        self.jsContext?.exceptionHandler = {
-            (context, exception) in
-            print("exception @", exception as Any)
-        }
-    }
-
-    /// 不通过模型来调用方法，也可以直接调用方法
-    func doJS() {
-        let context = JSContext()
-        context?.evaluateScript("var num = 10")
-        context?.evaluateScript("function square(value) { return value * 2}")
-        // 直接调用
-        let squareValue = context?.evaluateScript("square(num)")
-        print(squareValue as Any)
-
-        // 通过下标来获取到JS方法。
-        let squareFunc = context?.objectForKeyedSubscript("square")
-        print(squareFunc?.call(withArguments: ["10"]).toString() as Any);
-    }
-
     override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
         guard let _ = object as? WKWebView else {return}
         guard let keyPath = keyPath else {return}
@@ -189,7 +156,7 @@ class WKWebViewVC: UIViewController, UIViewControllerRestoration {
         }
 
         // 已经完成加载时，我们就可以做我们的事了
-        if !wv.isLoading {
+        if !wv.isLoading == true {
             // 手动调用JS代码
             let js = "callJsAlert()";
             wv.evaluateJavaScript(js) { (_, _) -> Void in

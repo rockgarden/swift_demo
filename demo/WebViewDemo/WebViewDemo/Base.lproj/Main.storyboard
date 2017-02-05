@@ -4,7 +4,6 @@
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
         <capability name="Navigation items with more than one left or right bar item" minToolsVersion="7.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -24,11 +23,18 @@
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
                     <navigationItem key="navigationItem" id="JWu-gt-kiR">
-                        <barButtonItem key="leftBarButtonItem" title="NoNav" id="hsy-3b-Rsl">
-                            <connections>
-                                <action selector="showNoNav:" destination="3dU-5R-0wC" id="ILs-61-JCX"/>
-                            </connections>
-                        </barButtonItem>
+                        <leftBarButtonItems>
+                            <barButtonItem title="NoNav" id="hsy-3b-Rsl">
+                                <connections>
+                                    <action selector="showNoNav:" destination="3dU-5R-0wC" id="ILs-61-JCX"/>
+                                </connections>
+                            </barButtonItem>
+                            <barButtonItem title="2JS" id="mOW-Yu-ead">
+                                <connections>
+                                    <action selector="showSwift2JS:" destination="3dU-5R-0wC" id="fQY-8B-bhw"/>
+                                </connections>
+                            </barButtonItem>
+                        </leftBarButtonItems>
                         <rightBarButtonItems>
                             <barButtonItem title="Push" id="BCI-ng-T26">
                                 <connections>
