@@ -171,7 +171,7 @@ class WKWebViewVC: UIViewController, UIViewControllerRestoration {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         print("view did appear, req: \(self.wv.url)") // no evidence that restoration is being done for us
-
+        // 添加前进、后退按钮
         let b = UIBarButtonItem(title:"Back", style:.done, target:self, action:#selector(goBack))
         let b1 = UIBarButtonItem(title: "后退", style: .done, target: self, action: #selector(goForward))
         self.navigationItem.rightBarButtonItems = [b,b1]
@@ -282,6 +282,7 @@ extension WKWebViewVC : WKNavigationDelegate {
 
 
 // MARK: WKUIDelegate
+/// 不是必须实现的，但是如果我们的页面中有调用了js的alert、confirm、prompt方法，我们应该实现下面这几个代理方法，然后在原来这里调用native的弹出窗，因为使用WKWebView后，HTML中的alert、confirm、prompt方法调用是不会再弹出窗口了，只是转化成ios的native回调代理方法
 extension WKWebViewVC: WKUIDelegate {
 
     func webView(_ webView: WKWebView, runJavaScriptAlertPanelWithMessage message: String, initiatedByFrame frame: WKFrameInfo, completionHandler: @escaping () -> Void) {
@@ -299,6 +300,7 @@ extension WKWebViewVC: WKUIDelegate {
             completionHandler(true)
         }))
         alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: { (_) -> Void in
+            // 点击取消后，可以做相应处理，最后再回调js端
             completionHandler(false)
         }))
         self.present(alert, animated: true, completion: nil)

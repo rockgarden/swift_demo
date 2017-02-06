@@ -85,7 +85,7 @@ class UIWeb2JsVC: UIViewController, UIViewControllerRestoration, UIWebViewDelega
         self.jsContext?.setObject(model, forKeyedSubscript: "OCModel" as (NSCopying & NSObjectProtocol)!)
         let htmlBundle = Bundle.main.url(forResource: "Html", withExtension: "bundle")
         let url = Bundle(url: htmlBundle!)?.url(forResource: "test", withExtension: "html")
-        self.jsContext?.evaluateScript(try? String(contentsOf: url!, encoding: .utf8));
+        self.jsContext?.evaluateScript(try? String(contentsOf: url!, encoding: .utf8))
         self.jsContext?.exceptionHandler = {
             (context, exception) in
             print("exception @", exception as Any)

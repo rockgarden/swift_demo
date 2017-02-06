@@ -63,6 +63,19 @@
             window.webkit.messageHandlers.AppModel.postMessage({body: response});
         }
         
+        /// JavaScript for person
+        /// 注意：JavaScriptCore实现了Objective-C/Swift的方法名和JavaScript代码交互。因为JavaScript没有命名好的参数，任何额外的参数名称都采取驼峰命名法（Camel-Case），并附加到函数名称上。在此示例中，Objective-C的方法createWithFirstName:lastName:在JavaScript中则变成了createWithFirstNameLastName()。
+        var loadPeopleFromJSON = function(jsonString) {
+            var data = JSON.parse(jsonString);
+            var people = [];
+            for (i = 0; i < data.length; i++) {
+                var person = Person.createWithFirstNameLastName(data[i].first, data[i].last);
+                person.birthYear = data[i].year;
+                people.push(person);
+            }  
+            return people;  
+        }
+        
         var jsParamFunc = function(argument) {
             document.getElementById('jsParamFuncSpan').innerHTML
             = argument['name'];

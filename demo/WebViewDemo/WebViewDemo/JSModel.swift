@@ -1,12 +1,12 @@
 //
-//  myJs.swift
+//  JSModel.swift
 //  WebViewDemo
 //
 //  Created by wangkan on 2017/1/21.
 //  Copyright © 2017年 apple. All rights reserved.
 //
 //  Swift2JS通过注入模型交互
-//
+//  借助JSExport协议可以在JavaScript上使用自定义对象。在JSExport协议中声明的实例方法、类方法，不论属性，都能自动与JavaScrip交互。
 
 
 import UIKit
@@ -15,7 +15,7 @@ import JavaScriptCore
 /*
  先定义一个协议，而且这个协议必须要遵守JSExport协议。
  All methods that should apply in Javascript,should be in the following protocol.
- 注意，这里必须使用@objc，因为JavaScriptCore库是ObjectiveC版本的。如果不加@objc，则调用无效果
+ 注意: Custom protocol must be declared with `@objc`，因为JavaScriptCore库是ObjectiveC版本的。如果不加@objc，则调用无效果
  */
 @objc protocol JavaScriptSwiftDelegate: JSExport {
     func btnDs()
@@ -23,6 +23,7 @@ import JavaScriptCore
     func choose(b: Bool)
 }
 
+/// Custom class must inherit from `NSObject`
 @objc class JSModel: NSObject, JavaScriptSwiftDelegate {
 
     weak var controller: UIViewController?
