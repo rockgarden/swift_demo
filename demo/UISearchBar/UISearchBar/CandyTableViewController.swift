@@ -33,7 +33,6 @@ class CandyTableViewController: UITableViewController, UISearchBarDelegate, UISe
             Candy(category:"Other", name:"sour chew"),
             Candy(category:"Other", name:"gummi bear")]
         
-
         self.tableView.reloadData()
     }
 

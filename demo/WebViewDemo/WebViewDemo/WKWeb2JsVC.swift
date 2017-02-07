@@ -1,5 +1,5 @@
 //
-//  Swift2JsVC.swift
+//  WKWeb2JsVC.swift
 //  WebViewDemo
 //
 //  Created by wangkan on 2017/1/25.
@@ -10,7 +10,7 @@ import UIKit
 import WebKit
 import JavaScriptCore
 
-class Swift2JsVC: UIViewController, UIViewControllerRestoration {
+class WKWeb2JsVC: UIViewController, UIViewControllerRestoration {
 
     weak var wv : WKWebView!
     var decoded = false
