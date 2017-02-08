@@ -50,9 +50,7 @@ class WKWebViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        
         if isNavHidden == true{
-            
             navigationController?.isNavigationBarHidden = true
             let statusBarView = UIView.init(frame: CGRect.init(x: 0, y: 0, width: view.bounds.size.width, height: 20))
             statusBarView.backgroundColor = UIColor.white
@@ -67,36 +65,23 @@ class WKWebViewController: UIViewController {
     
     //关闭按钮
     fileprivate lazy var closeButtonItem:UIBarButtonItem = {
-        
         let closeButtonItem = UIBarButtonItem.init(title: "关闭", style: UIBarButtonItemStyle.plain, target: self, action: #selector(closeItemClicked))
-        
         return closeButtonItem
-        
     }()
     
     //返回按钮
     fileprivate lazy var customBackBarItem:UIBarButtonItem = {
-        
         let backItemImage = UIImage.init(named: "backItemImage")
-        
         let backItemHlImage = UIImage.init(named: "backItemImage-hl")
-        
         let backButton = UIButton.init(type: .system)
-        
-        backButton .setTitle("返回", for: .normal)
-        
-        backButton .setTitleColor(self.navigationController?.navigationBar.tintColor, for: .normal)
+        backButton.setTitle("返回", for: .normal)
+        backButton.setTitleColor(self.navigationController?.navigationBar.tintColor, for: .normal)
         backButton.titleLabel?.font = UIFont.systemFont(ofSize: 17)
-        
-        backButton .setImage(backItemImage, for: .normal)
-        backButton .setImage(backItemHlImage, for: .highlighted)
-        
+        backButton.setImage(backItemImage, for: .normal)
+        backButton.setImage(backItemHlImage, for: .highlighted)
         backButton.sizeToFit()
-        
         backButton.addTarget(self, action: #selector(customBackItemClicked), for: .touchUpInside)
-        
         let customBackBarItem = UIBarButtonItem.init(customView: backButton)
-        
         return customBackBarItem
     }()
 
@@ -108,10 +93,9 @@ class WKWebViewController: UIViewController {
 
 
 // MARK: - Other Action
-extension WKWebViewController{
+extension WKWebViewController {
     
     /// 普通URL加载方式
-    ///
     /// Parameter urlString: 需要加载的url字符串
     func loadUrlSting(string:String!) {
         urltring = string;
@@ -119,7 +103,6 @@ extension WKWebViewController{
     }
     
     /// 加载本地HTML
-    ///
     /// Parameter urlString: 需要加载的本地文件名
     func loadHTMLSting(string:String!) {
         loadWebType = .loadWebHTMLString
@@ -127,40 +110,32 @@ extension WKWebViewController{
     }
 
     /// POST方式请求加载
-    ///
     /// urlString: post请求的url字符串
     /// postString: post参数体 详情请搜索swift/oc转义字符（注意格式："\"username\":\"aaa\",\"password\":\"123\""）
     func loadPOSTUrlSting(string:String!,postString:String!) {
-        
         loadWebType = .POSTWebURLString
         urltring = string
         postData = postString
     }
-    
-    
+
     fileprivate func loadHost(string:String) {
         let path = Bundle.main.path(forResource: string, ofType: "html")
         // 获得html内容
         do {
-            let html = try String(contentsOfFile: path!, encoding: String.Encoding.utf8)
+            let html = try String(contentsOfFile: path!, encoding: .utf8)
             // 加载js
             webView.loadHTMLString(html, baseURL: Bundle.main.bundleURL)
         } catch { }
     }
-
     
     fileprivate func loadType() {
-        
         switch loadWebType!{
-            
         case .loadWebURLString :
             let urlstr = URL.init(string: urltring!)
             let request = URLRequest.init(url: urlstr!)
             webView.load(request)
-            
         case .loadWebHTMLString:
             loadHost(string: urltring!)
-            
         case .POSTWebURLString:
             needLoadJSPOST = true
             loadHost(string: "WKJSPOST")
@@ -214,9 +189,9 @@ extension WKWebViewController{
         
         view.addSubview(webView!);
     }
+
     //添加进度条
     fileprivate func addProgressView() {
-        
         progressView = UIProgressView(progressViewStyle: .default)
         if isNavHidden == true{
             progressView?.frame = CGRect(x: 0, y: 20, width: view.bounds.size.width, height: 3)
@@ -225,13 +200,12 @@ extension WKWebViewController{
         }
         progressView?.trackTintColor = UIColor.clear
         progressView?.progressTintColor = UIColor.green
-        
         view.addSubview(progressView!)
     }
     
     //视图即将消失的时候调用该方法
     override func viewDidDisappear(_ animated: Bool) {
-        webView.configuration.userContentController .removeScriptMessageHandler(forName: "AppModel")
+        webView.configuration.userContentController.removeScriptMessageHandler(forName: "AppModel")
         webView.navigationDelegate = nil;
         webView.uiDelegate = nil;
     }
@@ -244,13 +218,14 @@ extension WKWebViewController{
             _ = navigationController?.popViewController(animated: true)
         }
     }
+
     //关闭按钮
     @objc fileprivate func closeItemClicked() {
         _ = navigationController?.popViewController(animated: true)
     }
 
     //KVO监听进度条变化
-     override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
+    override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
         
         if keyPath == "estimatedProgress"{
             
@@ -287,38 +262,31 @@ extension WKWebViewController{
         let url = URL(string: urlStr as! String)
         
         let lastRequest = NSURLRequest(url: url!)
-        
-        
+
         //如果url是很奇怪的就不push
         if request.url?.absoluteString == "about:blank"{
-            return;
+            return
         }
 
         //如果url一样就不进行push
         if (lastRequest.url?.absoluteString == request.url?.absoluteString) {
-            return;
+            return
         }
         
         let currentSnapShotView = webView.snapshotView(afterScreenUpdates: true);
         
         //向数组添加字典
-        snapShotsArray = [["request":request,"snapShotView":currentSnapShotView]]
-
+        snapShotsArray = [["request":request, "snapShotView":currentSnapShotView]]
     }
     
     fileprivate func updateNavigationItems(){
-    
         if webView.canGoBack {
             let spaceButtonItem = UIBarButtonItem.init(barButtonSystemItem: UIBarButtonSystemItem.fixedSpace, target: nil, action: nil)
             spaceButtonItem.width = -6.5
-            
             navigationItem .setLeftBarButtonItems([spaceButtonItem,customBackBarItem,closeButtonItem], animated: false)
-            
         }else{
-            
             navigationController?.interactivePopGestureRecognizer?.isEnabled = true;
-            
-            navigationItem .setLeftBarButtonItems([customBackBarItem],animated: false)
+            navigationItem.setLeftBarButtonItems([customBackBarItem],animated: false)
         }
 
     }

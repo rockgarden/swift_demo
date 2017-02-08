@@ -71,3 +71,4 @@ import JavaScriptCore
         jsParamFunc?.call(withArguments: [dict])
     }
 }
+
