@@ -63,6 +63,7 @@ class WKWebViewVC: UIViewController, UIViewControllerRestoration {
         view.restorationIdentifier = "wvcontainer" // shouldn't be necessary...
         wv.scrollView.backgroundColor = .black // web view alone, ineffective
         view.addSubview(wv)
+        /// 若布局采用了 AutoLayout 必须使用 NSLayoutConstraint 来控制 WKWebView 的大小, 不然引起 html 页面大小缩放异常
         wv.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
             NSLayoutConstraint.constraints(withVisualFormat:"H:|[wv]|", metrics: nil, views: ["wv":wv]),
@@ -189,6 +190,7 @@ class WKWebViewVC: UIViewController, UIViewControllerRestoration {
     }
 
     fileprivate func loadHTML() {
+        /// 使用 Bundle 载入资源可避免 路径问题
         let htmlBundle = Bundle.main.url(forResource: "Html", withExtension: "bundle")
         let url = Bundle(url: htmlBundle!)?.url(forResource: "test", withExtension: "html")
         let s = try! String(contentsOf: url!, encoding: .utf8)

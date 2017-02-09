@@ -228,6 +228,7 @@ class NoNavigationWebViewVC: UIViewController, WKNavigationDelegate, WKScriptMes
             // (instead of body style containing font-size:<fontsize>px; in template)
 
             do {
+                let jscript = "var meta = document.createElement('meta'); meta.setAttribute('name', 'viewport'); meta.setAttribute('content', 'width=device-width, user-scalable=no'); document.getElementsByTagName('head')[0].appendChild(meta);"
                 let rule = self.cssrule
                 let script = WKUserScript(source: rule, injectionTime: .atDocumentStart, forMainFrameOnly: true)
                 let config = self.wv.configuration
