@@ -122,10 +122,7 @@ class UIWeb2JsVC: UIViewController, UIViewControllerRestoration, UIWebViewDelega
         wv.loadRequest(request)
     }
 
-    deinit {
-        print("dealloc")
-        wv.removeObserver(self, forKeyPath: #keyPath(WKWebView.loading))
-    }
+    deinit { }
 
     // MARK: - UIWebViewDelegate
     func webViewDidFinishLoad(_ webView: UIWebView) {

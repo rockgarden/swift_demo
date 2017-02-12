@@ -7,6 +7,19 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4410225F1E4DE7AF0024CF75 /* WKMagicBridgeDemo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4410225E1E4DE7AF0024CF75 /* WKMagicBridgeDemo.swift */; };
+		441022611E4DEDEC0024CF75 /* BKWebBridge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 441022601E4DEDEC0024CF75 /* BKWebBridge.swift */; };
+		441022631E4DEE440024CF75 /* BKWebBridgeDemo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 441022621E4DEE440024CF75 /* BKWebBridgeDemo.swift */; };
+		441022651E4DEE8F0024CF75 /* index.html in Resources */ = {isa = PBXBuildFile; fileRef = 441022641E4DEE8F0024CF75 /* index.html */; };
+		441022671E4DEE9D0024CF75 /* shake_sound_male.wav in Resources */ = {isa = PBXBuildFile; fileRef = 441022661E4DEE9D0024CF75 /* shake_sound_male.wav */; };
+		441480FE1E508B9A00461CCE /* ScriptMessageHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 441480FD1E508B9A00461CCE /* ScriptMessageHandler.swift */; };
+		441481001E509DD100461CCE /* ZHWebViewBridge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 441480FF1E509DD100461CCE /* ZHWebViewBridge.swift */; };
+		441481021E509DD800461CCE /* ZHWebViewBridge.js in Resources */ = {isa = PBXBuildFile; fileRef = 441481011E509DD800461CCE /* ZHWebViewBridge.js */; };
+		441481071E509EDF00461CCE /* ZHData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 441481041E509EDF00461CCE /* ZHData.swift */; };
+		441481081E509EDF00461CCE /* ZHViewController1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 441481051E509EDF00461CCE /* ZHViewController1.swift */; };
+		441481091E509EDF00461CCE /* ZHViewController2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 441481061E509EDF00461CCE /* ZHViewController2.swift */; };
+		4414810C1E509F1300461CCE /* html_template.html in Resources */ = {isa = PBXBuildFile; fileRef = 4414810A1E509F1300461CCE /* html_template.html */; };
+		4414810D1E509F1300461CCE /* place_holder.png in Resources */ = {isa = PBXBuildFile; fileRef = 4414810B1E509F1300461CCE /* place_holder.png */; };
 		441D44C01E1E8DF000857C4F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 441D44BF1E1E8DF000857C4F /* AppDelegate.swift */; };
 		441D44C21E1E8DF000857C4F /* WebViewRoot.swift in Sources */ = {isa = PBXBuildFile; fileRef = 441D44C11E1E8DF000857C4F /* WebViewRoot.swift */; };
 		441D44C51E1E8DF000857C4F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 441D44C31E1E8DF000857C4F /* Main.storyboard */; };
@@ -27,10 +40,17 @@
 		441D44EB1E1E8EBF00857C4F /* test.rtfd.zip in Resources */ = {isa = PBXBuildFile; fileRef = 441D44DF1E1E8EBF00857C4F /* test.rtfd.zip */; };
 		441D44ED1E1E921000857C4F /* NoNavigationWebViewVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 441D44EC1E1E921000857C4F /* NoNavigationWebViewVC.swift */; };
 		441D44EF1E1E935B00857C4F /* WKWebViewVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 441D44EE1E1E935B00857C4F /* WKWebViewVC.swift */; };
+		44463A161E4CB40D0007306E /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 44463A121E4CB40D0007306E /* Info.plist */; };
+		44463A171E4CB40D0007306E /* WKMagicBridge.js in Resources */ = {isa = PBXBuildFile; fileRef = 44463A141E4CB40D0007306E /* WKMagicBridge.js */; };
+		44463A181E4CB40D0007306E /* WKMagicBridge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44463A151E4CB40D0007306E /* WKMagicBridge.swift */; };
 		446E40911E3900E60079559E /* WKWeb2JsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 446E40901E3900E60079559E /* WKWeb2JsVC.swift */; };
 		446E40931E3F4C1B0079559E /* UIWeb2JsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 446E40921E3F4C1B0079559E /* UIWeb2JsVC.swift */; };
 		44CFF3DF1E326C0800CABB08 /* Html.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 44CFF3DE1E326C0800CABB08 /* Html.bundle */; };
 		44CFF3E11E32801000CABB08 /* JSModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44CFF3E01E32801000CABB08 /* JSModel.swift */; };
+		44FA793A1E4C8FB300A5BD71 /* zepto.min.js in Resources */ = {isa = PBXBuildFile; fileRef = 44FA79361E4C8FB300A5BD71 /* zepto.min.js */; };
+		44FA793B1E4C8FB300A5BD71 /* config.js in Resources */ = {isa = PBXBuildFile; fileRef = 44FA79371E4C8FB300A5BD71 /* config.js */; };
+		44FA793C1E4C8FB300A5BD71 /* InputControl.js in Resources */ = {isa = PBXBuildFile; fileRef = 44FA79381E4C8FB300A5BD71 /* InputControl.js */; };
+		44FA793D1E4C8FB300A5BD71 /* script.js in Resources */ = {isa = PBXBuildFile; fileRef = 44FA79391E4C8FB300A5BD71 /* script.js */; };
 		44FB21F11E324AE000F191D3 /* readme.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 44FB21F01E324AE000F191D3 /* readme.rtf */; };
 		C2B3AC6E1E4996CA0016E9FE /* ClickMeEventRegister.js in Resources */ = {isa = PBXBuildFile; fileRef = C2B3AC6D1E4996CA0016E9FE /* ClickMeEventRegister.js */; };
 		C2B3AC701E4996D80016E9FE /* TestFile.html in Resources */ = {isa = PBXBuildFile; fileRef = C2B3AC6F1E4996D80016E9FE /* TestFile.html */; };
@@ -43,6 +63,19 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4410225E1E4DE7AF0024CF75 /* WKMagicBridgeDemo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WKMagicBridgeDemo.swift; sourceTree = "<group>"; };
+		441022601E4DEDEC0024CF75 /* BKWebBridge.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BKWebBridge.swift; sourceTree = "<group>"; };
+		441022621E4DEE440024CF75 /* BKWebBridgeDemo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BKWebBridgeDemo.swift; sourceTree = "<group>"; };
+		441022641E4DEE8F0024CF75 /* index.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = index.html; sourceTree = "<group>"; };
+		441022661E4DEE9D0024CF75 /* shake_sound_male.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = shake_sound_male.wav; sourceTree = "<group>"; };
+		441480FD1E508B9A00461CCE /* ScriptMessageHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScriptMessageHandler.swift; sourceTree = "<group>"; };
+		441480FF1E509DD100461CCE /* ZHWebViewBridge.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZHWebViewBridge.swift; sourceTree = "<group>"; };
+		441481011E509DD800461CCE /* ZHWebViewBridge.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = ZHWebViewBridge.js; sourceTree = "<group>"; };
+		441481041E509EDF00461CCE /* ZHData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZHData.swift; sourceTree = "<group>"; };
+		441481051E509EDF00461CCE /* ZHViewController1.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZHViewController1.swift; sourceTree = "<group>"; };
+		441481061E509EDF00461CCE /* ZHViewController2.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZHViewController2.swift; sourceTree = "<group>"; };
+		4414810A1E509F1300461CCE /* html_template.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = html_template.html; sourceTree = "<group>"; };
+		4414810B1E509F1300461CCE /* place_holder.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = place_holder.png; sourceTree = "<group>"; };
 		441D44BC1E1E8DF000857C4F /* WebViewDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WebViewDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		441D44BF1E1E8DF000857C4F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		441D44C11E1E8DF000857C4F /* WebViewRoot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewRoot.swift; sourceTree = "<group>"; };
@@ -65,10 +98,18 @@
 		441D44DF1E1E8EBF00857C4F /* test.rtfd.zip */ = {isa = PBXFileReference; lastKnownFileType = archive.zip; path = test.rtfd.zip; sourceTree = "<group>"; };
 		441D44EC1E1E921000857C4F /* NoNavigationWebViewVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoNavigationWebViewVC.swift; sourceTree = "<group>"; };
 		441D44EE1E1E935B00857C4F /* WKWebViewVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WKWebViewVC.swift; sourceTree = "<group>"; };
+		44463A121E4CB40D0007306E /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		44463A131E4CB40D0007306E /* WKMagicBridge.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WKMagicBridge.h; sourceTree = "<group>"; };
+		44463A141E4CB40D0007306E /* WKMagicBridge.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = WKMagicBridge.js; sourceTree = "<group>"; };
+		44463A151E4CB40D0007306E /* WKMagicBridge.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WKMagicBridge.swift; sourceTree = "<group>"; };
 		446E40901E3900E60079559E /* WKWeb2JsVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WKWeb2JsVC.swift; sourceTree = "<group>"; };
 		446E40921E3F4C1B0079559E /* UIWeb2JsVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIWeb2JsVC.swift; sourceTree = "<group>"; };
 		44CFF3DE1E326C0800CABB08 /* Html.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Html.bundle; sourceTree = "<group>"; };
 		44CFF3E01E32801000CABB08 /* JSModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSModel.swift; sourceTree = "<group>"; };
+		44FA79361E4C8FB300A5BD71 /* zepto.min.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = zepto.min.js; sourceTree = "<group>"; };
+		44FA79371E4C8FB300A5BD71 /* config.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = config.js; sourceTree = "<group>"; };
+		44FA79381E4C8FB300A5BD71 /* InputControl.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = InputControl.js; sourceTree = "<group>"; };
+		44FA79391E4C8FB300A5BD71 /* script.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = script.js; sourceTree = "<group>"; };
 		44FB21F01E324AE000F191D3 /* readme.rtf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.rtf; path = readme.rtf; sourceTree = "<group>"; };
 		C2B3AC6D1E4996CA0016E9FE /* ClickMeEventRegister.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = ClickMeEventRegister.js; sourceTree = "<group>"; };
 		C2B3AC6F1E4996D80016E9FE /* TestFile.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = TestFile.html; sourceTree = "<group>"; };
@@ -91,10 +132,24 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		441481031E509EDF00461CCE /* ZHWebViewBridgeDemo */ = {
+			isa = PBXGroup;
+			children = (
+				4414810A1E509F1300461CCE /* html_template.html */,
+				4414810B1E509F1300461CCE /* place_holder.png */,
+				441481041E509EDF00461CCE /* ZHData.swift */,
+				441481051E509EDF00461CCE /* ZHViewController1.swift */,
+				441481061E509EDF00461CCE /* ZHViewController2.swift */,
+			);
+			path = ZHWebViewBridgeDemo;
+			sourceTree = "<group>";
+		};
 		441D44B31E1E8DF000857C4F = {
 			isa = PBXGroup;
 			children = (
 				44FB21F01E324AE000F191D3 /* readme.rtf */,
+				44463A111E4CB40D0007306E /* WKMagicBridge */,
+				441481031E509EDF00461CCE /* ZHWebViewBridgeDemo */,
 				441D44BE1E1E8DF000857C4F /* WebViewDemo */,
 				441D44BD1E1E8DF000857C4F /* Products */,
 			);
@@ -115,10 +170,13 @@
 				441D44C11E1E8DF000857C4F /* WebViewRoot.swift */,
 				441D44D11E1E8E6000857C4F /* WebViewVC.swift */,
 				441D44EC1E1E921000857C4F /* NoNavigationWebViewVC.swift */,
+				441480FD1E508B9A00461CCE /* ScriptMessageHandler.swift */,
 				441D44EE1E1E935B00857C4F /* WKWebViewVC.swift */,
 				C2B3AC791E49B3C00016E9FE /* WKWebViewController.swift */,
 				446E40901E3900E60079559E /* WKWeb2JsVC.swift */,
 				446E40921E3F4C1B0079559E /* UIWeb2JsVC.swift */,
+				441022601E4DEDEC0024CF75 /* BKWebBridge.swift */,
+				441022621E4DEE440024CF75 /* BKWebBridgeDemo.swift */,
 				C2B3AC711E499DDD0016E9FE /* OldLocalHTML.swift */,
 				44CFF3E01E32801000CABB08 /* JSModel.swift */,
 				C2D38DA41E4835EB00509A5E /* PersonJSModel.swift */,
@@ -134,6 +192,8 @@
 		441D44D31E1E8EAE00857C4F /* resource */ = {
 			isa = PBXGroup;
 			children = (
+				441022661E4DEE9D0024CF75 /* shake_sound_male.wav */,
+				441022641E4DEE8F0024CF75 /* index.html */,
 				C2B3AC731E49B39E0016E9FE /* backItemImage@2x.png */,
 				C2B3AC741E49B39E0016E9FE /* backItemImage_hl@2x.png */,
 				C2B3AC751E49B39E0016E9FE /* WKJSPOST.html */,
@@ -149,11 +209,29 @@
 				441D44DB1E1E8EBF00857C4F /* test.pages */,
 				441D44DC1E1E8EBF00857C4F /* test.pages.zip */,
 				441D44DD1E1E8EBF00857C4F /* test.rtfd */,
+				44FA79361E4C8FB300A5BD71 /* zepto.min.js */,
+				44FA79371E4C8FB300A5BD71 /* config.js */,
+				44FA79381E4C8FB300A5BD71 /* InputControl.js */,
+				44FA79391E4C8FB300A5BD71 /* script.js */,
 				441D44DE1E1E8EBF00857C4F /* release.pdf */,
 				441D44DF1E1E8EBF00857C4F /* test.rtfd.zip */,
 				44CFF3DE1E326C0800CABB08 /* Html.bundle */,
 			);
 			path = resource;
+			sourceTree = "<group>";
+		};
+		44463A111E4CB40D0007306E /* WKMagicBridge */ = {
+			isa = PBXGroup;
+			children = (
+				44463A121E4CB40D0007306E /* Info.plist */,
+				44463A131E4CB40D0007306E /* WKMagicBridge.h */,
+				44463A141E4CB40D0007306E /* WKMagicBridge.js */,
+				44463A151E4CB40D0007306E /* WKMagicBridge.swift */,
+				4410225E1E4DE7AF0024CF75 /* WKMagicBridgeDemo.swift */,
+				441481011E509DD800461CCE /* ZHWebViewBridge.js */,
+				441480FF1E509DD100461CCE /* ZHWebViewBridge.swift */,
+			);
+			path = WKMagicBridge;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -221,23 +299,34 @@
 				441D44E81E1E8EBF00857C4F /* test.pages.zip in Resources */,
 				44FB21F11E324AE000F191D3 /* readme.rtf in Resources */,
 				C2B3AC761E49B39E0016E9FE /* backItemImage@2x.png in Resources */,
+				4414810C1E509F1300461CCE /* html_template.html in Resources */,
 				441D44CA1E1E8DF000857C4F /* LaunchScreen.storyboard in Resources */,
 				441D44E91E1E8EBF00857C4F /* test.rtfd in Resources */,
 				441D44E41E1E8EBF00857C4F /* test.rtf in Resources */,
 				44CFF3DF1E326C0800CABB08 /* Html.bundle in Resources */,
 				C2B3AC771E49B39E0016E9FE /* backItemImage_hl@2x.png in Resources */,
 				441D44E01E1E8EBF00857C4F /* htmlbody.txt in Resources */,
+				441481021E509DD800461CCE /* ZHWebViewBridge.js in Resources */,
+				44463A171E4CB40D0007306E /* WKMagicBridge.js in Resources */,
+				44FA793A1E4C8FB300A5BD71 /* zepto.min.js in Resources */,
 				C2B3AC781E49B39E0016E9FE /* WKJSPOST.html in Resources */,
 				441D44EB1E1E8EBF00857C4F /* test.rtfd.zip in Resources */,
 				C2B3AC6E1E4996CA0016E9FE /* ClickMeEventRegister.js in Resources */,
 				441D44C71E1E8DF000857C4F /* Assets.xcassets in Resources */,
 				441D44E31E1E8EBF00857C4F /* testing.pdf in Resources */,
 				441D44E71E1E8EBF00857C4F /* test.pages in Resources */,
+				44FA793B1E4C8FB300A5BD71 /* config.js in Resources */,
+				44FA793D1E4C8FB300A5BD71 /* script.js in Resources */,
+				44463A161E4CB40D0007306E /* Info.plist in Resources */,
+				441022671E4DEE9D0024CF75 /* shake_sound_male.wav in Resources */,
+				44FA793C1E4C8FB300A5BD71 /* InputControl.js in Resources */,
+				441022651E4DEE8F0024CF75 /* index.html in Resources */,
 				441D44E61E1E8EBF00857C4F /* test.doc in Resources */,
 				441D44EA1E1E8EBF00857C4F /* release.pdf in Resources */,
 				441D44E11E1E8EBF00857C4F /* htmlTemplate.txt in Resources */,
 				441D44C51E1E8DF000857C4F /* Main.storyboard in Resources */,
 				441D44E51E1E8EBF00857C4F /* test.docx in Resources */,
+				4414810D1E509F1300461CCE /* place_holder.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -248,16 +337,25 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				441022631E4DEE440024CF75 /* BKWebBridgeDemo.swift in Sources */,
+				441022611E4DEDEC0024CF75 /* BKWebBridge.swift in Sources */,
 				C2D38DA51E4835EB00509A5E /* PersonJSModel.swift in Sources */,
 				441D44EF1E1E935B00857C4F /* WKWebViewVC.swift in Sources */,
 				C2B3AC721E499DDD0016E9FE /* OldLocalHTML.swift in Sources */,
 				441D44C21E1E8DF000857C4F /* WebViewRoot.swift in Sources */,
 				441D44D21E1E8E6000857C4F /* WebViewVC.swift in Sources */,
 				446E40911E3900E60079559E /* WKWeb2JsVC.swift in Sources */,
+				441481081E509EDF00461CCE /* ZHViewController1.swift in Sources */,
 				441D44ED1E1E921000857C4F /* NoNavigationWebViewVC.swift in Sources */,
 				44CFF3E11E32801000CABB08 /* JSModel.swift in Sources */,
 				441D44C01E1E8DF000857C4F /* AppDelegate.swift in Sources */,
+				441481001E509DD100461CCE /* ZHWebViewBridge.swift in Sources */,
+				441481091E509EDF00461CCE /* ZHViewController2.swift in Sources */,
+				4410225F1E4DE7AF0024CF75 /* WKMagicBridgeDemo.swift in Sources */,
+				441481071E509EDF00461CCE /* ZHData.swift in Sources */,
 				446E40931E3F4C1B0079559E /* UIWeb2JsVC.swift in Sources */,
+				441480FE1E508B9A00461CCE /* ScriptMessageHandler.swift in Sources */,
+				44463A181E4CB40D0007306E /* WKMagicBridge.swift in Sources */,
 				C2B3AC7A1E49B3C00016E9FE /* WKWebViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

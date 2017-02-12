@@ -20,6 +20,7 @@ class WebViewRoot: UITableViewController {
                 self.navigationController!.pushViewController(wvc, animated:true)
             case 2 :
                 let wvc = WKWebViewVC()
+                //wvc.loadUrlSting(string: "https://www.baidu.com")
                 self.navigationController!.pushViewController(wvc, animated:true)
             case 3 :
                 let wvc = UIWeb2JsVC()
@@ -31,9 +32,10 @@ class WebViewRoot: UITableViewController {
                 let wvc = OldLocalHTML()
                 show(wvc, sender: nil)
             case 6 :
-                let web = WKWebViewController()
-                web.loadUrlSting(string: "https://www.baidu.com")
-                navigationController?.pushViewController(web, animated: true)
+                break
+            case 7 :
+                let wvc = BKWebBridgeDemo()
+                show(wvc, sender: nil)
             default:
                 break
             }

@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=no"/>
+  <style>
+    img {
+      max-width: 100% !important;
+      width: 100%;
+      touch-action: manipulation;
+    }
+  </style>
+</head>
+<body>
+<div id="image-container"><p>Image 1</p>
+  <img src="file:///default_cover"/>
+  <p>Image 2</p>
+  <img src="file:///default_cover"/>
+  <p>Image 3</p>
+  <img src="file:///default_cover"/>
+  <p>Image 4</p>
+  <img src="file:///default_cover"/>
+  <p>Image 5</p>
+  <img src="file:///default_cover"/>
+</div>
+<div>
+  <div id="native-time-btn" style="display: inline-block; padding: 6px 12px; line-height: 1.42857; text-align: center; white-space: nowrap; cursor: pointer; border: 1px solid transparent; border-radius: 4px; background-color: #337ab7;">Get Time From Native</div>
+  <p id="native-time-container">here should be time from native</p>
+</div>
+<div>
+  <div id="native-version-btn" style="display: inline-block; padding: 6px 12px; line-height: 1.42857; text-align: center; white-space: nowrap; cursor: pointer; border: 1px solid transparent; border-radius: 4px; background-color: #337ab7;">Get App Version</div>
+  <p id="native-version-container">here should be app version</p>
+</div>
+</body>
+<script>
+  var MYBusiness = window.MYBusiness || {};
+  window.MYBusiness = MYBusiness;
+  MYBusiness.Image = (function () {
+    var buildImageId = function (index) {
+      return index + "_cover_image";
+    };
+
+    var setupEvents = function () {
+      var items = document.getElementsByTagName('img');
+      for (var i = 0, count = items.length; i < count; ++i) {
+        var item = items[i];
+        if (item.src.toLocaleLowerCase() == "file:///default_cover") {
+          item.id = buildImageId(i);
+          item.onclick = function () {
+            if (this.getAttribute("data_loaded")) {
+              ZHBridge.Core.callNativeHandler("Image.ViewImage", [parseInt(this.id)]);
+            } else {
+              ZHBridge.Core.callNativeHandler("Image.DownloadImage", [parseInt(this.id)]);
+            }
+          };
+        }
+      }
+    };
+
+    var updateImageAtIndex = function (image, index) {
+      var item = document.getElementById(buildImageId(index));
+      if (item && image) {
+        item.src = image;
+        item.setAttribute("data_loaded", "true");
+      }
+    };
+
+    return {
+      setupEvents: setupEvents,
+      updateImageAtIndex: updateImageAtIndex
+    };
+  }());
+
+  MYBusiness.Time = (function () {
+    var setupEvents = function () {
+      var item = document.getElementById("native-time-btn");
+      if (item) {
+        item.onclick = function () {
+          ZHBridge.Core.callNativeHandler("Time.GetCurrentTime");
+        };
+      }
+    };
+    var updateTime = function (time) {
+      document.getElementById("native-time-container").textContent = time;
+    };
+    return {
+      setupEvents: setupEvents,
+      updateTime: updateTime,
+    };
+  }());
+
+  MYBusiness.Device = (function () {
+    var setupEvents = function () {
+      var item = document.getElementById("native-version-btn");
+      if (item) {
+        item.onclick = function () {
+          ZHBridge.Core.callNativeHandler("Device.GetAppVersion");
+        };
+      }
+    };
+    var updateAppVersion = function (version) {
+      document.getElementById("native-version-container").textContent = version;
+      return "js get version: " + version;
+    };
+    return {
+      setupEvents: setupEvents,
+      updateAppVersion: updateAppVersion,
+    };
+  }());
+
+
+
+  ZHBridge.Core.ready(function () {
+    MYBusiness.Image.setupEvents();
+    ZHBridge.Core.registerJsHandler("Image.updateImageAtIndex", MYBusiness.Image.updateImageAtIndex);
+    ZHBridge.Core.callNativeHandler(
+            "Image.updatePlaceHolder",
+            [],
+            function(placeHolder) {
+              var items = document.getElementsByTagName('img');
+              for (var i = 0, count = items.length; i < count; ++i) {
+                var item = items[i];
+                if (item.src.toLocaleLowerCase() == "file:///default_cover") {
+                  item.src = placeHolder;
+                }
+              }
+            });
+    MYBusiness.Time.setupEvents();
+    ZHBridge.Core.registerJsHandler("Time.updateTime", MYBusiness.Time.updateTime);
+
+    MYBusiness.Device.setupEvents();
+    ZHBridge.Core.registerJsHandler("Device.updateAppVersion", MYBusiness.Device.updateAppVersion);
+  });
+</script>
+</html>

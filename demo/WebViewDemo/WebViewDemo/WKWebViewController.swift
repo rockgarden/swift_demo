@@ -10,13 +10,6 @@ import UIKit
 import WebKit
 
 
-//网页加载类型
-enum WkWebLoadType{
-    case loadWebURLString
-    case loadWebHTMLString
-    case POSTWebURLString
-}
-
 class WKWebViewController: UIViewController {
     
     fileprivate var webView: WKWebView!
