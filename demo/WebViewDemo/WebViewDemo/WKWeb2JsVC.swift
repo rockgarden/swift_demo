@@ -14,7 +14,6 @@ class WKWeb2JsVC: UIViewController, UIViewControllerRestoration {
 
     weak var wv : WKWebView!
     var decoded = false
-    var loadLocal = true
     var jsContext: JSContext?
 
     required override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
@@ -33,13 +32,11 @@ class WKWeb2JsVC: UIViewController, UIViewControllerRestoration {
     }
 
     override func decodeRestorableState(with coder: NSCoder) {
-        print("decode")
         self.decoded = true
         super.decodeRestorableState(with:coder)
     }
 
     override func encodeRestorableState(with coder: NSCoder) {
-        print("encode")
         super.encodeRestorableState(with:coder)
     }
 
@@ -48,13 +45,11 @@ class WKWeb2JsVC: UIViewController, UIViewControllerRestoration {
     }
 
     override func loadView() {
-        print("loadView")
         super.loadView()
     }
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        print("viewDidLoad")
 
         let wv = WKWebView(frame: self.view.bounds, configuration: wKWVConfig())
         wv.restorationIdentifier = "wv"
@@ -93,7 +88,6 @@ class WKWeb2JsVC: UIViewController, UIViewControllerRestoration {
             if let val = change[.newKey] as? Bool {
                 if val {
                     doJS()
-                    addJScript()
                 } else {}
             }
         default:break
@@ -101,7 +95,7 @@ class WKWeb2JsVC: UIViewController, UIViewControllerRestoration {
 
         // 已经完成加载时，我们就可以做我们的事了
         if !wv.isLoading == true {
-            doJS()
+            addJScript()
         }
     }
 
@@ -111,9 +105,10 @@ class WKWeb2JsVC: UIViewController, UIViewControllerRestoration {
         let context = JSContext()
         // export Person class
         context?.setObject(Person.self, forKeyedSubscript: "Person" as (NSCopying & NSObjectProtocol)!)
-        // load Mustache.js
+        
+        // load *.js
         if let JSString = try? String(contentsOfFile:"...", encoding: .utf8) {
-            context?.evaluateScript(JSString)
+            _ = context?.evaluateScript(JSString)
         }
         
         // get JSON string 加载JSON数据，并在JSContext中调用，将其解析到Person对象数组中，再用Mustache模板渲染即可
@@ -188,23 +183,19 @@ class WKWeb2JsVC: UIViewController, UIViewControllerRestoration {
         super.viewDidAppear(animated)
         print("view did appear, req: \(self.wv.url)")
         if self.decoded { }
-
-        if loadLocal {
-            loadHTML()
-        } else { }
+        loadHTML()
     }
 
     fileprivate func loadHTML() {
         let htmlBundle = Bundle.main.url(forResource: "Html", withExtension: "bundle")
         let url = Bundle(url: htmlBundle!)?.url(forResource: "test", withExtension: "html")
-        let s = try! String(contentsOf: url!, encoding: .utf8)
+        //let s = try! String(contentsOf: url!, encoding: .utf8)
         //wv.loadHTMLString(s, baseURL: htmlBundle)
         wv.scrollView.isScrollEnabled = false
         wv.load(URLRequest(url: url!))
     }
 
     deinit {
-        print("dealloc")
         wv.removeObserver(self, forKeyPath: #keyPath(WKWebView.loading))
     }
 

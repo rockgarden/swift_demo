@@ -27,7 +27,7 @@ open class WKMagicBridgeScript {
 
 // TODO: Allow multiple bridges?
 open class WKMagicBridge: NSObject, WKScriptMessageHandler {
-    let bundle = Bundle(identifier: "com.thebnich.WKMagicBridge")!
+    let bundle = Bundle(identifier: "WKMagicBridge")!
     let secret = UUID().uuidString
     let sharedSource: String
     let webView: WKWebView

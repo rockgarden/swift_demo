@@ -1,65 +1,108 @@
 <!DOCTYPE html>
 <html>
     <head>
+        <meta charset="UTF-8">
         <title>iOS and Js</title>
-        <style type="text/css">
-            * {
-                font-size: 40px;
+        <!--initial-scale=1,minimum-scale=1, maximum-scale=1-->
+        <meta name="viewport" content="width=device-width, user-scalable=no">
+            <style>
+                .btn-block {
+                    display: block;
+                    height: 45px;
+                    line-height: 45px;
+                    margin: 10px auto;
+                    color: #fff;
+                    background: #8bc53f;
+                    border-radius: 10px;
+                    text-align: center;
+                    text-decoration: none;
+                    font-size: 14px;
+                }
+            .content {
+                text-align: left;
+                font-size: 14px;
+                margin-bottom: 30px;
             }
-        </style>
-    </head>
-
+            </style>
+            <style type="text/css">
+            * {
+                font-size: 14px;
+            }
+            </style>
+            </head>
     <body>
-
         <div style="margin-top: 100px">
             <h1>Test how to use objective-c call js</h1><br/>
             <div><input type="button" value="call js alert" onclick="callJsAlert()"></div>
-            <br/>
             <div><input type="button" value="Call js confirm" onclick="callJsConfirm()"></div>
             <br/>
-            <div><input type="button" value="Call ObjC func with JSON " onclick="OCModel.callWithDict({'name': 'testname', 'age': 10, 'height': 170})"></div>
+            <div><input type="button" value="Call ObjC system alert" onclick="OCModel.showAlertMsg('js title', 'js message')"></div>
+            <div><input type="button" value="Call ObjC system camera" onclick="OCModel.callSystemCamera()"></div>
             <br/>
-            <div><input type="button" value="Call ObjC func with JSON and ObjC call js func to pass args." onclick="OCModel.jsCallObjcAndObjcCallJsWithDict({'name': 'testname', 'age': 10, 'height': 170})"></div>
+            <div><input type="button" value="Call OC func with JSON " onclick="OCModel.callWithDict({'name': 'testname', 'age': 10, 'height': 170})"></div>
+            <div><input type="button" value="Call OC func with JSON and OC call js func to pass args." onclick="OCModel.jsCallObjcAndObjcCallJsWithDict({'name': 'testname', 'age': 10, 'height': 170})"></div>
             <br/>
         </div>
         <br/>
-        <div>
-            <div><input type="button" value="Call Js prompt " onclick="callJsInput()"></div><br/>
-            <div><input type="button" value="Swift inject js" onclick="showAlert()"></div><br/>
-            <div>Click me here: <a href="http://www.baidu.com">Jump to Baidu</a></div>
+        <div><input type="button" value="Call Js prompt " onclick="callJsInput()"></div>
+        <div><input type="button" value="Swift inject js" onclick="showAlert()"></div>
+        <br/>
+        <div>Click me here: <a href="http://www.baidu.com">Jump to Baidu</a></div>
         </div>
-
+        <br/>
+        <div class="btn-block" onclick="OCModel.wxPay('TN20160526')">
+            js调用App的微信支付方法wxPay()</div>
+        <div class="content">演示最基本的调用及参数传递</div>
+        <div class="btn-block" onclick="OCModel.wxShare({
+            'title' : '马燕龙个人博客',
+            'description' : '一个专注于编程的技术博客',
+            'url' : 'http://www.mayanlong.com'
+            })">js调用App的微信分享方法wxShare()</div>
+        <div class="content">演示字典参数的使用</div>
+        <div class="btn-block" onclick="OCModel.showDialogMessage('马燕龙个人博客', '一个专注于编程的技术博客')">
+            js调用App的弹出对话框方法showDialog()</div>
+        <div class="content">演示传递多个参数的使用，注意js调用时的方法名</div>
+        <div class="btn-block" onclick="OCModel.callHandler('jsHandlerFunc')">
+            js调用App的方法后 App再调用js函数执行回调
+        </div>
+        <div class="content" id="js-content">App调用js函数执行回调时 内容会改变</div>
+        <br/>
         <br/>
         <div id="SwiftDiv">
             <span id="jsParamFuncSpan" style="color: red; font-size: 50px;"></span>
         </div>
-
+        
         <script type="text/javascript">
+            
+            // var jsFunc = function()
             function jsFunc() {
-                alert('Objective-C call js to show alert');
+                alert('OC call js to show Camera alert');
             }
+        
         function callJsAlert() {
-            alert('Objective-C call js to show alert');
-
+            alert('OC call js to show alert');
             window.webkit.messageHandlers.AppModel.postMessage({body: 'call js alert in js'});
         }
-
+        
+        var jsParamFunc = function(argument) {
+            document.getElementById('jsParamFuncSpan').innerHTML
+            = argument['name'];
+        }
+        
         function callJsConfirm() {
-            if (confirm('confirm', 'Objective-C call js to show confirm')) {
+            if (confirm('confirm', 'OC call js to show confirm')) {
                 document.getElementById('jsParamFuncSpan').innerHTML
                 = 'true';
             } else {
                 document.getElementById('jsParamFuncSpan').innerHTML
                 = 'false';
             }
-
             window.webkit.messageHandlers.AppModel.postMessage({body: 'call js confirm in js'});
         }
         
         function callJsInput() {
             var response = prompt('Hello', 'Please input your name:');
             document.getElementById('jsParamFuncSpan').innerHTML = response;
-            
             window.webkit.messageHandlers.AppModel.postMessage({body: response});
         }
         
@@ -72,15 +115,15 @@
                 var person = Person.createWithFirstNameLastName(data[i].first, data[i].last);
                 person.birthYear = data[i].year;
                 people.push(person);
-            }  
-            return people;  
+            }
+            return people;
         }
         
-        var jsParamFunc = function(argument) {
-            document.getElementById('jsParamFuncSpan').innerHTML
-            = argument['name'];
+        function jsHandlerFunc(argument) {
+            document.getElementById('js-content').innerHTML = "App调用js回调函数啦， 我是" + argument['name'];
         }
-        showAler();
+        
+        showAlert();
             </script>
     </body>
 </html>
