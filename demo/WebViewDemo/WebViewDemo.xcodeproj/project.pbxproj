@@ -52,6 +52,13 @@
 		44FA793C1E4C8FB300A5BD71 /* InputControl.js in Resources */ = {isa = PBXBuildFile; fileRef = 44FA79381E4C8FB300A5BD71 /* InputControl.js */; };
 		44FA793D1E4C8FB300A5BD71 /* script.js in Resources */ = {isa = PBXBuildFile; fileRef = 44FA79391E4C8FB300A5BD71 /* script.js */; };
 		44FB21F11E324AE000F191D3 /* readme.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 44FB21F01E324AE000F191D3 /* readme.rtf */; };
+		C21B7E7E1E52A8710097E3C4 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = C21B7E751E52A8700097E3C4 /* Localizable.strings */; };
+		C21B7E7F1E52A8710097E3C4 /* Functions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C21B7E771E52A8700097E3C4 /* Functions.swift */; };
+		C21B7E801E52A8710097E3C4 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C21B7E781E52A8700097E3C4 /* Info.plist */; };
+		C21B7E811E52A8710097E3C4 /* WebViewObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = C21B7E7B1E52A8700097E3C4 /* WebViewObserver.swift */; };
+		C21B7E821E52A8710097E3C4 /* WKUIDelegatePlus.swift in Sources */ = {isa = PBXBuildFile; fileRef = C21B7E7C1E52A8700097E3C4 /* WKUIDelegatePlus.swift */; };
+		C21B7E831E52A8710097E3C4 /* ZenWebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C21B7E7D1E52A8700097E3C4 /* ZenWebViewController.swift */; };
+		C21B7E861E52A8E00097E3C4 /* WebKitPlusDemo.swift in Sources */ = {isa = PBXBuildFile; fileRef = C21B7E851E52A8E00097E3C4 /* WebKitPlusDemo.swift */; };
 		C2B3AC6E1E4996CA0016E9FE /* ClickMeEventRegister.js in Resources */ = {isa = PBXBuildFile; fileRef = C2B3AC6D1E4996CA0016E9FE /* ClickMeEventRegister.js */; };
 		C2B3AC701E4996D80016E9FE /* TestFile.html in Resources */ = {isa = PBXBuildFile; fileRef = C2B3AC6F1E4996D80016E9FE /* TestFile.html */; };
 		C2B3AC721E499DDD0016E9FE /* OldLocalHTML.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2B3AC711E499DDD0016E9FE /* OldLocalHTML.swift */; };
@@ -111,6 +118,15 @@
 		44FA79381E4C8FB300A5BD71 /* InputControl.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = InputControl.js; sourceTree = "<group>"; };
 		44FA79391E4C8FB300A5BD71 /* script.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = script.js; sourceTree = "<group>"; };
 		44FB21F01E324AE000F191D3 /* readme.rtf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.rtf; path = readme.rtf; sourceTree = "<group>"; };
+		C21B7E761E52A8700097E3C4 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		C21B7E771E52A8700097E3C4 /* Functions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Functions.swift; sourceTree = "<group>"; };
+		C21B7E781E52A8700097E3C4 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C21B7E791E52A8700097E3C4 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/Localizable.strings; sourceTree = "<group>"; };
+		C21B7E7A1E52A8700097E3C4 /* WebKitPlus.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WebKitPlus.h; sourceTree = "<group>"; };
+		C21B7E7B1E52A8700097E3C4 /* WebViewObserver.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebViewObserver.swift; sourceTree = "<group>"; };
+		C21B7E7C1E52A8700097E3C4 /* WKUIDelegatePlus.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WKUIDelegatePlus.swift; sourceTree = "<group>"; };
+		C21B7E7D1E52A8700097E3C4 /* ZenWebViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZenWebViewController.swift; sourceTree = "<group>"; };
+		C21B7E851E52A8E00097E3C4 /* WebKitPlusDemo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebKitPlusDemo.swift; sourceTree = "<group>"; };
 		C2B3AC6D1E4996CA0016E9FE /* ClickMeEventRegister.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = ClickMeEventRegister.js; sourceTree = "<group>"; };
 		C2B3AC6F1E4996D80016E9FE /* TestFile.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = TestFile.html; sourceTree = "<group>"; };
 		C2B3AC711E499DDD0016E9FE /* OldLocalHTML.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OldLocalHTML.swift; sourceTree = "<group>"; };
@@ -148,6 +164,7 @@
 			isa = PBXGroup;
 			children = (
 				44FB21F01E324AE000F191D3 /* readme.rtf */,
+				C21B7E741E52A8700097E3C4 /* WebKitPlus */,
 				44463A111E4CB40D0007306E /* WKMagicBridge */,
 				441481031E509EDF00461CCE /* ZHWebViewBridgeDemo */,
 				441D44BE1E1E8DF000857C4F /* WebViewDemo */,
@@ -166,6 +183,7 @@
 		441D44BE1E1E8DF000857C4F /* WebViewDemo */ = {
 			isa = PBXGroup;
 			children = (
+				C21B7E851E52A8E00097E3C4 /* WebKitPlusDemo.swift */,
 				441D44BF1E1E8DF000857C4F /* AppDelegate.swift */,
 				441D44C11E1E8DF000857C4F /* WebViewRoot.swift */,
 				441D44D11E1E8E6000857C4F /* WebViewVC.swift */,
@@ -234,6 +252,20 @@
 			path = WKMagicBridge;
 			sourceTree = "<group>";
 		};
+		C21B7E741E52A8700097E3C4 /* WebKitPlus */ = {
+			isa = PBXGroup;
+			children = (
+				C21B7E751E52A8700097E3C4 /* Localizable.strings */,
+				C21B7E771E52A8700097E3C4 /* Functions.swift */,
+				C21B7E781E52A8700097E3C4 /* Info.plist */,
+				C21B7E7A1E52A8700097E3C4 /* WebKitPlus.h */,
+				C21B7E7B1E52A8700097E3C4 /* WebViewObserver.swift */,
+				C21B7E7C1E52A8700097E3C4 /* WKUIDelegatePlus.swift */,
+				C21B7E7D1E52A8700097E3C4 /* ZenWebViewController.swift */,
+			);
+			path = WebKitPlus;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -278,6 +310,7 @@
 			knownRegions = (
 				en,
 				Base,
+				ja,
 			);
 			mainGroup = 441D44B31E1E8DF000857C4F;
 			productRefGroup = 441D44BD1E1E8DF000857C4F /* Products */;
@@ -307,10 +340,12 @@
 				C2B3AC771E49B39E0016E9FE /* backItemImage_hl@2x.png in Resources */,
 				441D44E01E1E8EBF00857C4F /* htmlbody.txt in Resources */,
 				441481021E509DD800461CCE /* ZHWebViewBridge.js in Resources */,
+				C21B7E801E52A8710097E3C4 /* Info.plist in Resources */,
 				44463A171E4CB40D0007306E /* WKMagicBridge.js in Resources */,
 				44FA793A1E4C8FB300A5BD71 /* zepto.min.js in Resources */,
 				C2B3AC781E49B39E0016E9FE /* WKJSPOST.html in Resources */,
 				441D44EB1E1E8EBF00857C4F /* test.rtfd.zip in Resources */,
+				C21B7E7E1E52A8710097E3C4 /* Localizable.strings in Resources */,
 				C2B3AC6E1E4996CA0016E9FE /* ClickMeEventRegister.js in Resources */,
 				441D44C71E1E8DF000857C4F /* Assets.xcassets in Resources */,
 				441D44E31E1E8EBF00857C4F /* testing.pdf in Resources */,
@@ -339,13 +374,16 @@
 			files = (
 				441022631E4DEE440024CF75 /* BKWebBridgeDemo.swift in Sources */,
 				441022611E4DEDEC0024CF75 /* BKWebBridge.swift in Sources */,
+				C21B7E821E52A8710097E3C4 /* WKUIDelegatePlus.swift in Sources */,
 				C2D38DA51E4835EB00509A5E /* PersonJSModel.swift in Sources */,
 				441D44EF1E1E935B00857C4F /* WKWebViewVC.swift in Sources */,
 				C2B3AC721E499DDD0016E9FE /* OldLocalHTML.swift in Sources */,
 				441D44C21E1E8DF000857C4F /* WebViewRoot.swift in Sources */,
+				C21B7E831E52A8710097E3C4 /* ZenWebViewController.swift in Sources */,
 				441D44D21E1E8E6000857C4F /* WebViewVC.swift in Sources */,
 				446E40911E3900E60079559E /* WKWeb2JsVC.swift in Sources */,
 				441481081E509EDF00461CCE /* ZHViewController1.swift in Sources */,
+				C21B7E811E52A8710097E3C4 /* WebViewObserver.swift in Sources */,
 				441D44ED1E1E921000857C4F /* NoNavigationWebViewVC.swift in Sources */,
 				44CFF3E11E32801000CABB08 /* JSModel.swift in Sources */,
 				441D44C01E1E8DF000857C4F /* AppDelegate.swift in Sources */,
@@ -354,7 +392,9 @@
 				4410225F1E4DE7AF0024CF75 /* WKMagicBridgeDemo.swift in Sources */,
 				441481071E509EDF00461CCE /* ZHData.swift in Sources */,
 				446E40931E3F4C1B0079559E /* UIWeb2JsVC.swift in Sources */,
+				C21B7E7F1E52A8710097E3C4 /* Functions.swift in Sources */,
 				441480FE1E508B9A00461CCE /* ScriptMessageHandler.swift in Sources */,
+				C21B7E861E52A8E00097E3C4 /* WebKitPlusDemo.swift in Sources */,
 				44463A181E4CB40D0007306E /* WKMagicBridge.swift in Sources */,
 				C2B3AC7A1E49B3C00016E9FE /* WKWebViewController.swift in Sources */,
 			);
@@ -377,6 +417,15 @@
 				441D44C91E1E8DF000857C4F /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		C21B7E751E52A8700097E3C4 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C21B7E761E52A8700097E3C4 /* en */,
+				C21B7E791E52A8700097E3C4 /* ja */,
+			);
+			name = Localizable.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
