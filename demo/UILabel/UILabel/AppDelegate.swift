@@ -31,4 +31,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 }
 
-
+extension UIView {
+    class func fromNib <T : UIView> () -> T {
+        return Bundle.main.loadNibNamed(String(describing: T()), owner: nil, options: nil)![0] as! T
+    }
+}

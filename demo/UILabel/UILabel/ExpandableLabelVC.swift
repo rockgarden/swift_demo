@@ -9,7 +9,7 @@
 import UIKit
 
 class ExpandableLabelVC: UIViewController {
-    @IBOutlet weak var headerTitleView: UIView!
+
     var tableView: UITableView!
     var tableViewController = UITableViewController(style: .grouped)
     var refreshControl = UIRefreshControl()
@@ -78,7 +78,7 @@ class ExpandableLabelVC: UIViewController {
             tableView.leadingAnchor.constraint(equalTo: self.view.leadingAnchor),
             tableView.topAnchor.constraint(equalTo: stackView.bottomAnchor),
             tableView.bottomAnchor.constraint(equalTo: self.bottomLayoutGuide.topAnchor),
-            stackView.topAnchor.constraint(equalTo: headerTitleView.bottomAnchor),
+            stackView.topAnchor.constraint(equalTo: self.topLayoutGuide.bottomAnchor),
             stackView.bottomAnchor.constraint(equalTo: tableView.topAnchor),
             stackView.leadingAnchor.constraint(equalTo: self.view.leadingAnchor),
             stackView.trailingAnchor.constraint(equalTo: self.view.trailingAnchor)
@@ -88,9 +88,9 @@ class ExpandableLabelVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        for i in 0...2 {
+        for i in 0...1 {
             guard let v = View_KV.newInstance() else {return}
-            v.configureItem(String(i), value: loremIpsumText())
+            v.configureItem(String(i), value: shortText())
             let label = ExpandableLabel(frame: CGRect(x: 0,y: 0,width: 60,height: 20))
             label.delegate = self
             label.text = loremIpsumText()
@@ -109,31 +109,37 @@ class ExpandableLabelVC: UIViewController {
     func loremIpsumText() -> String {
         return "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet."
     }
+
+    func shortText() -> String {
+        return "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. "
+    }
 }
 
+
 extension ExpandableLabelVC: ExpandableLabelDelegate {
+
     func willExpandLabel(_ label: ExpandableLabel) {
-        //        tableView.beginUpdates()
+        tableView.beginUpdates()
     }
     
     func didExpandLabel(_ label: ExpandableLabel) {
-        //        let point = label.convertPoint(CGPointZero, toView: tableView)
-        //        if let indexPath = tableView.indexPathForRowAtPoint(point) as NSIndexPath? {
-        //            states[indexPath.row] = false
-        //        }
-        //        tableView.endUpdates()
+        let point = label.convert(CGPoint.zero, to: tableView)
+        if let indexPath = tableView.indexPathForRow(at: point) as NSIndexPath? {
+            states[indexPath.row] = false
+        }
+        tableView.endUpdates()
     }
     
     func willCollapseLabel(_ label: ExpandableLabel) {
-        //        tableView.beginUpdates()
+        tableView.beginUpdates()
     }
     
     func didCollapseLabel(_ label: ExpandableLabel) {
-        //        let point = label.convertPoint(CGPointZero, toView: tableView)
-        //        if let indexPath = tableView.indexPathForRowAtPoint(point) as NSIndexPath? {
-        //            states[indexPath.row] = true
-        //        }
-        //        tableView.endUpdates()
+        let point = label.convert(CGPoint.zero, to: tableView)
+        if let indexPath = tableView.indexPathForRow(at: point) as NSIndexPath? {
+            states[indexPath.row] = true
+        }
+        tableView.endUpdates()
     }
     
     func shouldCollapseLabel(_ label: ExpandableLabel) -> Bool {
@@ -144,7 +150,7 @@ extension ExpandableLabelVC: ExpandableLabelDelegate {
 extension ExpandableLabelVC: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "ExpandCell") as! ExpandCell
-        //        cell.expandableLabel.delegate = self
+        cell.expandableLabel.delegate = self
         cell.expandableLabel.numberOfLines = 3
         cell.expandableLabel.collapsed = states[(indexPath as NSIndexPath).row]
         cell.expandableLabel.text = loremIpsumText()
@@ -156,9 +162,3 @@ extension ExpandableLabelVC: UITableViewDataSource, UITableViewDelegate {
     }
 }
 
-
-extension UIView {
-    class func fromNib <T : UIView> () -> T {
-        return Bundle.main.loadNibNamed(String(describing: T()), owner: nil, options: nil)![0] as! T
-    }
-}

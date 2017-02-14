@@ -81,38 +81,6 @@
             endingLineNumber = "321"
             landmarkName = "loadType()"
             landmarkType = "7">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "WebViewDemo.WKWebViewVC.(loadType in _D3460AA6F0C1FC39AD10C436C258B7A1) () -&gt; ()"
-                  moduleName = "WebViewDemo"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/rockgarden/GitHub/swift_demo/demo/WebViewDemo/WebViewDemo/WKWebViewVC.swift"
-                  timestampString = "508435160.883492"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "321"
-                  endingLineNumber = "321"
-                  offsetFromSymbolStart = "816">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "WebViewDemo.WKWebViewVC.(loadType in _D3460AA6F0C1FC39AD10C436C258B7A1) () -&gt; ()"
-                  moduleName = "WebViewDemo"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/rockgarden/GitHub/swift_demo/demo/WebViewDemo/WebViewDemo/WKWebViewVC.swift"
-                  timestampString = "508435160.887693"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "321"
-                  endingLineNumber = "321"
-                  offsetFromSymbolStart = "1112">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
