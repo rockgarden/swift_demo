@@ -15,6 +15,7 @@
 		4412116A1D9D10BC009C2046 /* View_KV.xib in Resources */ = {isa = PBXBuildFile; fileRef = 441211681D9D10BC009C2046 /* View_KV.xib */; };
 		441EB8511E2BC14D00EE9E28 /* MyLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 441EB8501E2BC14D00EE9E28 /* MyLabel.swift */; };
 		4423105C1E53486300A94A7C /* LabelTableVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4423105B1E53486300A94A7C /* LabelTableVC.swift */; };
+		4423105F1E5439AC00A94A7C /* AttributedStringtVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4423105E1E5439AC00A94A7C /* AttributedStringtVC.swift */; };
 		44790F721DC625E400AAB442 /* BoundedLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44790F711DC625E400AAB442 /* BoundedLabel.swift */; };
 		44790FD21DC790CE00AAB442 /* FuncLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44790FD11DC790CE00AAB442 /* FuncLabel.swift */; };
 		44A9C4031D96AD1E00F09E6A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44A9C4021D96AD1E00F09E6A /* AppDelegate.swift */; };
@@ -33,6 +34,7 @@
 		441211681D9D10BC009C2046 /* View_KV.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = View_KV.xib; sourceTree = "<group>"; };
 		441EB8501E2BC14D00EE9E28 /* MyLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyLabel.swift; sourceTree = "<group>"; };
 		4423105B1E53486300A94A7C /* LabelTableVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LabelTableVC.swift; sourceTree = "<group>"; };
+		4423105E1E5439AC00A94A7C /* AttributedStringtVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AttributedStringtVC.swift; sourceTree = "<group>"; };
 		44790F711DC625E400AAB442 /* BoundedLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BoundedLabel.swift; sourceTree = "<group>"; };
 		44790FD11DC790CE00AAB442 /* FuncLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FuncLabel.swift; sourceTree = "<group>"; };
 		44A9C3FF1D96AD1E00F09E6A /* UILabel.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UILabel.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -79,6 +81,7 @@
 				44A9C4041D96AD1E00F09E6A /* UILabelVC.swift */,
 				4412115B1D9CF611009C2046 /* ExpandableLabelVC.swift */,
 				4423105B1E53486300A94A7C /* LabelTableVC.swift */,
+				4423105E1E5439AC00A94A7C /* AttributedStringtVC.swift */,
 				44A9C4091D96AD1E00F09E6A /* Assets.xcassets */,
 				44A9C40B1D96AD1E00F09E6A /* LaunchScreen.storyboard */,
 				44A9C40E1D96AD1E00F09E6A /* Info.plist */,
@@ -172,6 +175,7 @@
 				44790F721DC625E400AAB442 /* BoundedLabel.swift in Sources */,
 				4412115E1D9CF924009C2046 /* ExpandableLabel.swift in Sources */,
 				441EB8511E2BC14D00EE9E28 /* MyLabel.swift in Sources */,
+				4423105F1E5439AC00A94A7C /* AttributedStringtVC.swift in Sources */,
 				44A9C4051D96AD1E00F09E6A /* UILabelVC.swift in Sources */,
 				441211641D9D06A4009C2046 /* ExpandCell.swift in Sources */,
 				4412115C1D9CF611009C2046 /* ExpandableLabelVC.swift in Sources */,

@@ -97,6 +97,11 @@
                                     <segue destination="9fF-SW-Xrn" kind="show" id="WB3-c6-MIc"/>
                                 </connections>
                             </barButtonItem>
+                            <barButtonItem title="Draw" id="Jkd-MF-yqN">
+                                <connections>
+                                    <segue destination="vjD-IA-Zkz" kind="show" id="VZs-b8-jP6"/>
+                                </connections>
+                            </barButtonItem>
                         </leftBarButtonItems>
                     </navigationItem>
                 </viewController>
@@ -148,6 +153,71 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2qE-Me-fda" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1052" y="3"/>
+        </scene>
+        <!--AttributedString-->
+        <scene sceneID="gcR-UM-jM2">
+            <objects>
+                <viewController storyboardIdentifier="AttributedStringVC" id="vjD-IA-Zkz" userLabel="AttributedString" customClass="AttributedStringVC" customModule="UILabel" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="5nf-iz-3WK"/>
+                        <viewControllerLayoutGuide type="bottom" id="ivS-y1-dDs"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="352-fn-3b5">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="lPn-X1-wJZ">
+                                <rect key="frame" x="48" y="82" width="280" height="250"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="250" id="avU-IT-Ocz"/>
+                                    <constraint firstAttribute="width" constant="280" id="od0-1P-fXw"/>
+                                </constraints>
+                            </imageView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NYQ-Ct-kDx" customClass="StringDrawer" customModule="UILabel" customModuleProvider="target">
+                                <rect key="frame" x="48" y="358" width="280" height="166"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="166" id="LlI-9r-VEH"/>
+                                    <constraint firstAttribute="width" constant="280" id="dMZ-hw-kXL"/>
+                                </constraints>
+                            </view>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="It is ^0 where I live at this moment." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="248" translatesAutoresizingMaskIntoConstraints="NO" id="BAy-eP-cxn">
+                                <rect key="frame" x="10" y="534" width="355" height="60"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="Bp8-ex-Sc4"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="0.66666666669999997" green="0.66666666669999997" blue="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="BAy-eP-cxn" firstAttribute="width" secondItem="352-fn-3b5" secondAttribute="width" constant="-20" id="7d4-WC-aNC"/>
+                            <constraint firstAttribute="centerX" secondItem="NYQ-Ct-kDx" secondAttribute="centerX" id="JAF-7g-Asi"/>
+                            <constraint firstItem="BAy-eP-cxn" firstAttribute="centerX" secondItem="352-fn-3b5" secondAttribute="centerX" id="N8w-2v-Arx"/>
+                            <constraint firstItem="NYQ-Ct-kDx" firstAttribute="top" secondItem="lPn-X1-wJZ" secondAttribute="bottom" constant="26" id="Qvp-pi-gs0"/>
+                            <constraint firstItem="lPn-X1-wJZ" firstAttribute="top" secondItem="5nf-iz-3WK" secondAttribute="bottom" constant="18" id="bHR-Fa-fYM"/>
+                            <constraint firstItem="BAy-eP-cxn" firstAttribute="top" secondItem="NYQ-Ct-kDx" secondAttribute="bottom" constant="10" id="e70-UA-i2f"/>
+                            <constraint firstAttribute="centerX" secondItem="lPn-X1-wJZ" secondAttribute="centerX" id="lwN-I9-FJS"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="Qg1-xu-dpk">
+                        <barButtonItem key="rightBarButtonItem" title="AttributedTextAsSecretMarking" id="PHq-dw-a37">
+                            <connections>
+                                <action selector="doUpdateLabel:" destination="vjD-IA-Zkz" id="J2K-Nu-CFA"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="drawer" destination="NYQ-Ct-kDx" id="IE1-U8-Crv"/>
+                        <outlet property="iv" destination="lPn-X1-wJZ" id="hdv-DP-pIx"/>
+                        <outlet property="lab" destination="BAy-eP-cxn" id="1tx-wD-76X"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="V1z-LD-dv4" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1052" y="-1367"/>
         </scene>
     </scenes>
 </document>
