@@ -1,0 +1,363 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		44C5B2FA1E573C8500E166D2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44C5B2F91E573C8500E166D2 /* AppDelegate.swift */; };
+		44C5B2FF1E573C8500E166D2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 44C5B2FD1E573C8500E166D2 /* Main.storyboard */; };
+		44C5B3011E573C8500E166D2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 44C5B3001E573C8500E166D2 /* Assets.xcassets */; };
+		44C5B3041E573C8500E166D2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 44C5B3021E573C8500E166D2 /* LaunchScreen.storyboard */; };
+		44C5B30D1E573CF300E166D2 /* FXForms.m in Sources */ = {isa = PBXBuildFile; fileRef = 44C5B30C1E573CF300E166D2 /* FXForms.m */; };
+		44C5B3121E573DD600E166D2 /* SubmitButtonCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 44C5B30F1E573DD600E166D2 /* SubmitButtonCell.xib */; };
+		44C5B3131E573DD600E166D2 /* SubmitButtonCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44C5B3101E573DD600E166D2 /* SubmitButtonCell.swift */; };
+		44C5B3161E573DED00E166D2 /* ISO3166CountryValueTransformer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44C5B3141E573DED00E166D2 /* ISO3166CountryValueTransformer.swift */; };
+		44C5B3181E573E3C00E166D2 /* RegistrationForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44C5B3171E573E3C00E166D2 /* RegistrationForm.swift */; };
+		44C5B31B1E573E6E00E166D2 /* RegistrationFormViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44C5B31A1E573E6E00E166D2 /* RegistrationFormViewController.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		44C5B2F61E573C8500E166D2 /* FXFormsSwiftDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FXFormsSwiftDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		44C5B2F91E573C8500E166D2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		44C5B2FE1E573C8500E166D2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		44C5B3001E573C8500E166D2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		44C5B3031E573C8500E166D2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		44C5B3051E573C8500E166D2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		44C5B30B1E573CF300E166D2 /* FXFormsSwiftDemo-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "FXFormsSwiftDemo-Bridging-Header.h"; sourceTree = "<group>"; };
+		44C5B30C1E573CF300E166D2 /* FXForms.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FXForms.m; sourceTree = "<group>"; };
+		44C5B30E1E573D0F00E166D2 /* FXForms.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FXForms.h; sourceTree = "<group>"; };
+		44C5B30F1E573DD600E166D2 /* SubmitButtonCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SubmitButtonCell.xib; sourceTree = "<group>"; };
+		44C5B3101E573DD600E166D2 /* SubmitButtonCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SubmitButtonCell.swift; sourceTree = "<group>"; };
+		44C5B3141E573DED00E166D2 /* ISO3166CountryValueTransformer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ISO3166CountryValueTransformer.swift; sourceTree = "<group>"; };
+		44C5B3171E573E3C00E166D2 /* RegistrationForm.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegistrationForm.swift; sourceTree = "<group>"; };
+		44C5B31A1E573E6E00E166D2 /* RegistrationFormViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegistrationFormViewController.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		44C5B2F31E573C8500E166D2 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		44C5B2ED1E573C8400E166D2 = {
+			isa = PBXGroup;
+			children = (
+				44C5B2F81E573C8500E166D2 /* FXFormsSwiftDemo */,
+				44C5B2F71E573C8500E166D2 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		44C5B2F71E573C8500E166D2 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				44C5B2F61E573C8500E166D2 /* FXFormsSwiftDemo.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		44C5B2F81E573C8500E166D2 /* FXFormsSwiftDemo */ = {
+			isa = PBXGroup;
+			children = (
+				44C5B3191E573E4200E166D2 /* Models */,
+				44C5B3151E573DED00E166D2 /* Transformers */,
+				44C5B3111E573DD600E166D2 /* Cells */,
+				44C5B2F91E573C8500E166D2 /* AppDelegate.swift */,
+				44C5B31A1E573E6E00E166D2 /* RegistrationFormViewController.swift */,
+				44C5B2FD1E573C8500E166D2 /* Main.storyboard */,
+				44C5B3001E573C8500E166D2 /* Assets.xcassets */,
+				44C5B3021E573C8500E166D2 /* LaunchScreen.storyboard */,
+				44C5B3051E573C8500E166D2 /* Info.plist */,
+				44C5B30C1E573CF300E166D2 /* FXForms.m */,
+				44C5B30E1E573D0F00E166D2 /* FXForms.h */,
+				44C5B30B1E573CF300E166D2 /* FXFormsSwiftDemo-Bridging-Header.h */,
+			);
+			path = FXFormsSwiftDemo;
+			sourceTree = "<group>";
+		};
+		44C5B3111E573DD600E166D2 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				44C5B30F1E573DD600E166D2 /* SubmitButtonCell.xib */,
+				44C5B3101E573DD600E166D2 /* SubmitButtonCell.swift */,
+			);
+			name = Cells;
+			path = ../../../../../Desktop/SwiftExample/SwiftExample;
+			sourceTree = "<group>";
+		};
+		44C5B3151E573DED00E166D2 /* Transformers */ = {
+			isa = PBXGroup;
+			children = (
+				44C5B3141E573DED00E166D2 /* ISO3166CountryValueTransformer.swift */,
+			);
+			name = Transformers;
+			path = ../../../../../Desktop/SwiftExample/SwiftExample;
+			sourceTree = "<group>";
+		};
+		44C5B3191E573E4200E166D2 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				44C5B3171E573E3C00E166D2 /* RegistrationForm.swift */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		44C5B2F51E573C8500E166D2 /* FXFormsSwiftDemo */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 44C5B3081E573C8500E166D2 /* Build configuration list for PBXNativeTarget "FXFormsSwiftDemo" */;
+			buildPhases = (
+				44C5B2F21E573C8500E166D2 /* Sources */,
+				44C5B2F31E573C8500E166D2 /* Frameworks */,
+				44C5B2F41E573C8500E166D2 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = FXFormsSwiftDemo;
+			productName = FXFormsSwiftDemo;
+			productReference = 44C5B2F61E573C8500E166D2 /* FXFormsSwiftDemo.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		44C5B2EE1E573C8400E166D2 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0820;
+				LastUpgradeCheck = 0820;
+				ORGANIZATIONNAME = rockgarden;
+				TargetAttributes = {
+					44C5B2F51E573C8500E166D2 = {
+						CreatedOnToolsVersion = 8.2.1;
+						DevelopmentTeam = W3MH7MTTSB;
+						LastSwiftMigration = 0820;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = 44C5B2F11E573C8400E166D2 /* Build configuration list for PBXProject "FXFormsSwiftDemo" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 44C5B2ED1E573C8400E166D2;
+			productRefGroup = 44C5B2F71E573C8500E166D2 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				44C5B2F51E573C8500E166D2 /* FXFormsSwiftDemo */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		44C5B2F41E573C8500E166D2 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				44C5B3041E573C8500E166D2 /* LaunchScreen.storyboard in Resources */,
+				44C5B3121E573DD600E166D2 /* SubmitButtonCell.xib in Resources */,
+				44C5B3011E573C8500E166D2 /* Assets.xcassets in Resources */,
+				44C5B2FF1E573C8500E166D2 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		44C5B2F21E573C8500E166D2 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				44C5B3161E573DED00E166D2 /* ISO3166CountryValueTransformer.swift in Sources */,
+				44C5B3181E573E3C00E166D2 /* RegistrationForm.swift in Sources */,
+				44C5B3131E573DD600E166D2 /* SubmitButtonCell.swift in Sources */,
+				44C5B30D1E573CF300E166D2 /* FXForms.m in Sources */,
+				44C5B2FA1E573C8500E166D2 /* AppDelegate.swift in Sources */,
+				44C5B31B1E573E6E00E166D2 /* RegistrationFormViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		44C5B2FD1E573C8500E166D2 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				44C5B2FE1E573C8500E166D2 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		44C5B3021E573C8500E166D2 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				44C5B3031E573C8500E166D2 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		44C5B3061E573C8500E166D2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		44C5B3071E573C8500E166D2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		44C5B3091E573C8500E166D2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				DEVELOPMENT_TEAM = W3MH7MTTSB;
+				INFOPLIST_FILE = FXFormsSwiftDemo/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.-rockgarden.FXFormsSwiftDemo";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "FXFormsSwiftDemo/FXFormsSwiftDemo-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		44C5B30A1E573C8500E166D2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				DEVELOPMENT_TEAM = W3MH7MTTSB;
+				INFOPLIST_FILE = FXFormsSwiftDemo/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.-rockgarden.FXFormsSwiftDemo";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "FXFormsSwiftDemo/FXFormsSwiftDemo-Bridging-Header.h";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		44C5B2F11E573C8400E166D2 /* Build configuration list for PBXProject "FXFormsSwiftDemo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				44C5B3061E573C8500E166D2 /* Debug */,
+				44C5B3071E573C8500E166D2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		44C5B3081E573C8500E166D2 /* Build configuration list for PBXNativeTarget "FXFormsSwiftDemo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				44C5B3091E573C8500E166D2 /* Debug */,
+				44C5B30A1E573C8500E166D2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 44C5B2EE1E573C8400E166D2 /* Project object */;
+}
