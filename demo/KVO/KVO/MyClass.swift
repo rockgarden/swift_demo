@@ -45,18 +45,18 @@ class Observer: NSObject {
     override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey: Any]?, context: UnsafeMutableRawPointer?) {
         print("-----------------start------------")
         print("I heard about the change!")
-        print((object))
+        print((object) as Any)
         // 类型判断 object 以 Any 传入 转为 AnyObject 不含有 value
         if object is ObjectToObserve {
-            print((object as! ObjectToObserve).value(forKeyPath: keyPath!))
+            print((object as! ObjectToObserve).value(forKeyPath: keyPath!) as Any)
         }
-        print(change)
+        print(change as Any)
         print(context == &con) // aha
         let c = context?.assumingMemoryBound(to: String.self)
         //context?.bindMemory(to: UInt8.self, capacity: len)  //set buffer length is safer
         //let c = UnsafeMutablePointer<String>(context)
         let s = c?.pointee
-        print(s)
+        print(s as Any)
         print("-----------------end------------")
     }
 }
@@ -98,15 +98,15 @@ class Observer1: NSObject {
     override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey: Any]?, context: UnsafeMutableRawPointer?) {
         if let change = change , context == &myContext {
             print("**************************")
-            print(keyPath, "改变了")
+            print(keyPath as Any, "改变了")
             print(change)
-            print(keyPath, "oldValue:", change[NSKeyValueChangeKey.oldKey])
+            print(keyPath as Any, "oldValue:", change[NSKeyValueChangeKey.oldKey] as Any)
         }
         if context == &myContext {
             if let newValue = change?[NSKeyValueChangeKey.newKey] {
-                print(keyPath, "Date changed: newValue ＝ \(newValue)")
-                print(object)
-                print(context)
+                print(keyPath as Any, "Date changed: newValue ＝ \(newValue)")
+                print(object as Any)
+                print(context as Any)
                 print("**************************")
             }
         } else {
@@ -149,14 +149,14 @@ class ArrayObserver: NSObject {
         print("I heard about the array change!")
         guard let keyPath = keyPath else { return }
         if object is ArrayToObserve {
-            print((object as! ArrayToObserve).value(forKeyPath: keyPath))
+            print((object as! ArrayToObserve).value(forKeyPath: keyPath) as Any)
         }
-        print(change)
+        print(change as Any)
         print(context == &Update)
         // let c = UnsafeMutablePointer<String>(context) // context 为 string 而非 Int
         let c = context?.assumingMemoryBound(to: String.self)
         let s = c?.pointee
-        print(s)
+        print(s as Any)
         print("-----------------end------------")
     }
     

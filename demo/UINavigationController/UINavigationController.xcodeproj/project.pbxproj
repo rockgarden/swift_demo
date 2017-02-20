@@ -14,6 +14,13 @@
 		4472B43F1D9975DB0087653C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4472B43D1D9975DB0087653C /* LaunchScreen.storyboard */; };
 		4472B4471D9976440087653C /* View2Controller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4472B4461D9976440087653C /* View2Controller.swift */; };
 		4472B4491D99764B0087653C /* MyNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4472B4481D99764B0087653C /* MyNavigationController.swift */; };
+		44B95E681E5B2E1600D66F39 /* CGRect+Tools.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44B95E631E5B2E1600D66F39 /* CGRect+Tools.swift */; };
+		44B95E691E5B2E1600D66F39 /* TFBackwardAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44B95E641E5B2E1600D66F39 /* TFBackwardAnimator.swift */; };
+		44B95E6A1E5B2E1600D66F39 /* TFForwardAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44B95E651E5B2E1600D66F39 /* TFForwardAnimator.swift */; };
+		44B95E6B1E5B2E1600D66F39 /* TFNavigationBarAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44B95E661E5B2E1600D66F39 /* TFNavigationBarAnimator.swift */; };
+		44B95E6C1E5B2E1600D66F39 /* TFNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44B95E671E5B2E1600D66F39 /* TFNavigationController.swift */; };
+		44B95E6E1E5B2E5C00D66F39 /* TransparentBarDemo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44B95E6D1E5B2E5C00D66F39 /* TransparentBarDemo.swift */; };
+		44B95E701E5B2E8D00D66F39 /* beach.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 44B95E6F1E5B2E8D00D66F39 /* beach.jpg */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +33,13 @@
 		4472B4401D9975DB0087653C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4472B4461D9976440087653C /* View2Controller.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = View2Controller.swift; sourceTree = "<group>"; };
 		4472B4481D99764B0087653C /* MyNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyNavigationController.swift; sourceTree = "<group>"; };
+		44B95E631E5B2E1600D66F39 /* CGRect+Tools.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CGRect+Tools.swift"; sourceTree = "<group>"; };
+		44B95E641E5B2E1600D66F39 /* TFBackwardAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TFBackwardAnimator.swift; sourceTree = "<group>"; };
+		44B95E651E5B2E1600D66F39 /* TFForwardAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TFForwardAnimator.swift; sourceTree = "<group>"; };
+		44B95E661E5B2E1600D66F39 /* TFNavigationBarAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TFNavigationBarAnimator.swift; sourceTree = "<group>"; };
+		44B95E671E5B2E1600D66F39 /* TFNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TFNavigationController.swift; sourceTree = "<group>"; };
+		44B95E6D1E5B2E5C00D66F39 /* TransparentBarDemo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransparentBarDemo.swift; sourceTree = "<group>"; };
+		44B95E6F1E5B2E8D00D66F39 /* beach.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = beach.jpg; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -42,6 +56,7 @@
 		4472B4281D9975DB0087653C = {
 			isa = PBXGroup;
 			children = (
+				44B95E621E5B2E1600D66F39 /* TransparentNavigationBar */,
 				4472B4331D9975DB0087653C /* UINavigationController */,
 				4472B4321D9975DB0087653C /* Products */,
 			);
@@ -59,15 +74,29 @@
 			isa = PBXGroup;
 			children = (
 				4472B4481D99764B0087653C /* MyNavigationController.swift */,
+				44B95E6D1E5B2E5C00D66F39 /* TransparentBarDemo.swift */,
 				4472B4461D9976440087653C /* View2Controller.swift */,
 				4472B4341D9975DB0087653C /* AppDelegate.swift */,
 				4472B4361D9975DB0087653C /* ViewController.swift */,
 				4472B4381D9975DB0087653C /* Main.storyboard */,
 				4472B43B1D9975DB0087653C /* Assets.xcassets */,
+				44B95E6F1E5B2E8D00D66F39 /* beach.jpg */,
 				4472B43D1D9975DB0087653C /* LaunchScreen.storyboard */,
 				4472B4401D9975DB0087653C /* Info.plist */,
 			);
 			path = UINavigationController;
+			sourceTree = "<group>";
+		};
+		44B95E621E5B2E1600D66F39 /* TransparentNavigationBar */ = {
+			isa = PBXGroup;
+			children = (
+				44B95E631E5B2E1600D66F39 /* CGRect+Tools.swift */,
+				44B95E641E5B2E1600D66F39 /* TFBackwardAnimator.swift */,
+				44B95E651E5B2E1600D66F39 /* TFForwardAnimator.swift */,
+				44B95E661E5B2E1600D66F39 /* TFNavigationBarAnimator.swift */,
+				44B95E671E5B2E1600D66F39 /* TFNavigationController.swift */,
+			);
+			path = TransparentNavigationBar;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -133,6 +162,7 @@
 				4472B43F1D9975DB0087653C /* LaunchScreen.storyboard in Resources */,
 				4472B43C1D9975DB0087653C /* Assets.xcassets in Resources */,
 				4472B43A1D9975DB0087653C /* Main.storyboard in Resources */,
+				44B95E701E5B2E8D00D66F39 /* beach.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -144,9 +174,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				4472B4371D9975DB0087653C /* ViewController.swift in Sources */,
+				44B95E6A1E5B2E1600D66F39 /* TFForwardAnimator.swift in Sources */,
+				44B95E6B1E5B2E1600D66F39 /* TFNavigationBarAnimator.swift in Sources */,
 				4472B4491D99764B0087653C /* MyNavigationController.swift in Sources */,
 				4472B4471D9976440087653C /* View2Controller.swift in Sources */,
+				44B95E681E5B2E1600D66F39 /* CGRect+Tools.swift in Sources */,
 				4472B4351D9975DB0087653C /* AppDelegate.swift in Sources */,
+				44B95E6E1E5B2E5C00D66F39 /* TransparentBarDemo.swift in Sources */,
+				44B95E6C1E5B2E1600D66F39 /* TFNavigationController.swift in Sources */,
+				44B95E691E5B2E1600D66F39 /* TFBackwardAnimator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

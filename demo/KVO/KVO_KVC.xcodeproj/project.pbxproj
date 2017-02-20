@@ -10,6 +10,13 @@
 		449789AF1D6C916B00A607A9 /* MyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 449789AC1D6C916B00A607A9 /* MyView.swift */; };
 		449789B01D6C916B00A607A9 /* Thing.m in Sources */ = {isa = PBXBuildFile; fileRef = 449789AE1D6C916B00A607A9 /* Thing.m */; };
 		449789B21D6C91AA00A607A9 /* KVC_VC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 449789B11D6C91AA00A607A9 /* KVC_VC.swift */; };
+		44B95E0C1E5B172E00D66F39 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 44B95E0B1E5B172E00D66F39 /* Info.plist */; };
+		44B95E0F1E5B173E00D66F39 /* KVOBlock.m in Sources */ = {isa = PBXBuildFile; fileRef = 44B95E0D1E5B173E00D66F39 /* KVOBlock.m */; };
+		44B95E1C1E5B174F00D66F39 /* KVOBlock.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 44B95E151E5B174F00D66F39 /* KVOBlock.framework */; };
+		44B95E1D1E5B174F00D66F39 /* KVOBlock.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 44B95E151E5B174F00D66F39 /* KVOBlock.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		44B95E251E5B19C600D66F39 /* KVOBlockDemo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44B95E241E5B19C600D66F39 /* KVOBlockDemo.swift */; };
+		44B95E261E5B1BE100D66F39 /* KVOBlock.m in Sources */ = {isa = PBXBuildFile; fileRef = 44B95E0D1E5B173E00D66F39 /* KVOBlock.m */; };
+		44B95E281E5B1C2200D66F39 /* KVOBlock.h in Headers */ = {isa = PBXBuildFile; fileRef = 44B95E0E1E5B173E00D66F39 /* KVOBlock.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		C20B83D41D6AEA0500C12286 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = C20B83D31D6AEA0500C12286 /* Model.swift */; };
 		C20B83D61D6AEAD100C12286 /* BasicKVOUIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C20B83D51D6AEAD100C12286 /* BasicKVOUIViewController.swift */; };
 		C20B83D81D6AEADD00C12286 /* PrincipleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C20B83D71D6AEADD00C12286 /* PrincipleViewController.swift */; };
@@ -24,12 +31,41 @@
 		C2B564AC1D6ABBA6003E2E7E /* MyClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2B564AB1D6ABBA6003E2E7E /* MyClass.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		44B95E1A1E5B174F00D66F39 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C2B5648E1D6ABB78003E2E7E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 44B95E141E5B174F00D66F39;
+			remoteInfo = KVOBlock;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		44B95E211E5B174F00D66F39 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				44B95E1D1E5B174F00D66F39 /* KVOBlock.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		449789AC1D6C916B00A607A9 /* MyView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyView.swift; sourceTree = "<group>"; };
 		449789AD1D6C916B00A607A9 /* Thing.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Thing.h; sourceTree = "<group>"; };
 		449789AE1D6C916B00A607A9 /* Thing.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Thing.m; sourceTree = "<group>"; };
 		449789B11D6C91AA00A607A9 /* KVC_VC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KVC_VC.swift; sourceTree = "<group>"; };
 		449789B51D6C930E00A607A9 /* KVO-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "KVO-Bridging-Header.h"; path = "KVC/KVO-Bridging-Header.h"; sourceTree = "<group>"; };
+		44B95E0B1E5B172E00D66F39 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		44B95E0D1E5B173E00D66F39 /* KVOBlock.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KVOBlock.m; sourceTree = "<group>"; };
+		44B95E0E1E5B173E00D66F39 /* KVOBlock.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KVOBlock.h; sourceTree = "<group>"; };
+		44B95E151E5B174F00D66F39 /* KVOBlock.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = KVOBlock.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		44B95E241E5B19C600D66F39 /* KVOBlockDemo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KVOBlockDemo.swift; sourceTree = "<group>"; };
 		C20B83D31D6AEA0500C12286 /* Model.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 		C20B83D51D6AEAD100C12286 /* BasicKVOUIViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BasicKVOUIViewController.swift; sourceTree = "<group>"; };
 		C20B83D71D6AEADD00C12286 /* PrincipleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PrincipleViewController.swift; sourceTree = "<group>"; };
@@ -47,10 +83,18 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		44B95E111E5B174F00D66F39 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		C2B564931D6ABB78003E2E7E /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				44B95E1C1E5B174F00D66F39 /* KVOBlock.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -68,9 +112,21 @@
 			path = KVC;
 			sourceTree = "<group>";
 		};
+		44B95E0A1E5B172E00D66F39 /* KVOBlock */ = {
+			isa = PBXGroup;
+			children = (
+				44B95E0D1E5B173E00D66F39 /* KVOBlock.m */,
+				44B95E0E1E5B173E00D66F39 /* KVOBlock.h */,
+				44B95E0B1E5B172E00D66F39 /* Info.plist */,
+			);
+			path = KVOBlock;
+			sourceTree = "<group>";
+		};
 		C2B5648D1D6ABB78003E2E7E = {
 			isa = PBXGroup;
 			children = (
+				44B95E241E5B19C600D66F39 /* KVOBlockDemo.swift */,
+				44B95E0A1E5B172E00D66F39 /* KVOBlock */,
 				449789B51D6C930E00A607A9 /* KVO-Bridging-Header.h */,
 				449789AB1D6C916B00A607A9 /* KVC */,
 				C2B564981D6ABB78003E2E7E /* KVO */,
@@ -82,6 +138,7 @@
 			isa = PBXGroup;
 			children = (
 				C2B564961D6ABB78003E2E7E /* KVO.app */,
+				44B95E151E5B174F00D66F39 /* KVOBlock.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -108,7 +165,36 @@
 		};
 /* End PBXGroup section */
 
+/* Begin PBXHeadersBuildPhase section */
+		44B95E121E5B174F00D66F39 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				44B95E281E5B1C2200D66F39 /* KVOBlock.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
 /* Begin PBXNativeTarget section */
+		44B95E141E5B174F00D66F39 /* KVOBlock */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 44B95E1E1E5B174F00D66F39 /* Build configuration list for PBXNativeTarget "KVOBlock" */;
+			buildPhases = (
+				44B95E101E5B174F00D66F39 /* Sources */,
+				44B95E111E5B174F00D66F39 /* Frameworks */,
+				44B95E121E5B174F00D66F39 /* Headers */,
+				44B95E131E5B174F00D66F39 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = KVOBlock;
+			productName = KVOBlock;
+			productReference = 44B95E151E5B174F00D66F39 /* KVOBlock.framework */;
+			productType = "com.apple.product-type.framework";
+		};
 		C2B564951D6ABB78003E2E7E /* KVO */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = C2B564A81D6ABB78003E2E7E /* Build configuration list for PBXNativeTarget "KVO" */;
@@ -116,10 +202,12 @@
 				C2B564921D6ABB78003E2E7E /* Sources */,
 				C2B564931D6ABB78003E2E7E /* Frameworks */,
 				C2B564941D6ABB78003E2E7E /* Resources */,
+				44B95E211E5B174F00D66F39 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				44B95E1B1E5B174F00D66F39 /* PBXTargetDependency */,
 			);
 			name = KVO;
 			productName = KVO;
@@ -136,6 +224,10 @@
 				LastUpgradeCheck = 0800;
 				ORGANIZATIONNAME = rockgarden;
 				TargetAttributes = {
+					44B95E141E5B174F00D66F39 = {
+						CreatedOnToolsVersion = 8.2.1;
+						ProvisioningStyle = Automatic;
+					};
 					C2B564951D6ABB78003E2E7E = {
 						CreatedOnToolsVersion = 7.3;
 						LastSwiftMigration = 0800;
@@ -156,15 +248,24 @@
 			projectRoot = "";
 			targets = (
 				C2B564951D6ABB78003E2E7E /* KVO */,
+				44B95E141E5B174F00D66F39 /* KVOBlock */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		44B95E131E5B174F00D66F39 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		C2B564941D6ABB78003E2E7E /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				44B95E0C1E5B172E00D66F39 /* Info.plist in Resources */,
 				C2B564A41D6ABB78003E2E7E /* LaunchScreen.storyboard in Resources */,
 				C2B564A11D6ABB78003E2E7E /* Assets.xcassets in Resources */,
 				C2B5649F1D6ABB78003E2E7E /* Main.storyboard in Resources */,
@@ -174,6 +275,14 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		44B95E101E5B174F00D66F39 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				44B95E261E5B1BE100D66F39 /* KVOBlock.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		C2B564921D6ABB78003E2E7E /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -185,15 +294,25 @@
 				C20B83D61D6AEAD100C12286 /* BasicKVOUIViewController.swift in Sources */,
 				C20B83DA1D6AEAE900C12286 /* RootTableViewController.swift in Sources */,
 				C20C02211DBF260F00729F87 /* KVOExampleVC.swift in Sources */,
+				44B95E251E5B19C600D66F39 /* KVOBlockDemo.swift in Sources */,
 				C20B83D81D6AEADD00C12286 /* PrincipleViewController.swift in Sources */,
 				C20C021F1DBF260F00729F87 /* Configuration.swift in Sources */,
 				C2B5649A1D6ABB78003E2E7E /* AppDelegate.swift in Sources */,
+				44B95E0F1E5B173E00D66F39 /* KVOBlock.m in Sources */,
 				449789AF1D6C916B00A607A9 /* MyView.swift in Sources */,
 				C20B83D41D6AEA0500C12286 /* Model.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		44B95E1B1E5B174F00D66F39 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 44B95E141E5B174F00D66F39 /* KVOBlock */;
+			targetProxy = 44B95E1A1E5B174F00D66F39 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		C2B5649D1D6ABB78003E2E7E /* Main.storyboard */ = {
@@ -215,6 +334,53 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		44B95E1F1E5B174F00D66F39 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CODE_SIGN_IDENTITY = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = KVOBlock/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.-rockgarden.KVOBlock";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_VERSION = 3.0;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		44B95E201E5B174F00D66F39 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CODE_SIGN_IDENTITY = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = KVOBlock/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.-rockgarden.KVOBlock";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
 		C2B564A61D6ABB78003E2E7E /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -336,6 +502,14 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		44B95E1E1E5B174F00D66F39 /* Build configuration list for PBXNativeTarget "KVOBlock" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				44B95E1F1E5B174F00D66F39 /* Debug */,
+				44B95E201E5B174F00D66F39 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
 		C2B564911D6ABB78003E2E7E /* Build configuration list for PBXProject "KVO_KVC" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

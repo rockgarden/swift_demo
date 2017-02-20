@@ -105,10 +105,10 @@ class testClass: NSObject {
 		context: UnsafeMutableRawPointer?){
 		if let change = change , context == &myContext {
 			print("**************************")
-			print(keyPath, "改变了")
-			print(object)
+			print(keyPath as Any, "改变了")
+			print(object as Any)
 			print(change)
-			print(context)
+			print(context as Any)
 			print("**************************")
 			return
 		}

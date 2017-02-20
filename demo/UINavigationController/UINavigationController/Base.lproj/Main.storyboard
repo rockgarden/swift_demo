@@ -1,20 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="X8J-XZ-69X">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="X8J-XZ-69X">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--My Navigation Controller-->
         <scene sceneID="vTh-IC-w0m">
             <objects>
                 <navigationController definesPresentationContext="YES" id="X8J-XZ-69X" customClass="MyNavigationController" customModule="UINavigationController" customModuleProvider="target" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Ls3-5e-AZy">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="Ls3-5e-AZy">
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="barTintColor" red="0.50076308140000003" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="barTintColor" red="0.50076308140000003" green="1" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <textAttributes key="titleTextAttributes">
                             <fontDescription key="fontDescription" name="BradleyHandITCTT-Bold" family="Bradley Hand" pointSize="30"/>
-                            <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         </textAttributes>
                     </navigationBar>
                     <connections>
@@ -34,15 +39,112 @@
                         <viewControllerLayoutGuide type="bottom" id="Niz-Ua-pup"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="rJr-mt-xoW">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zBC-bq-ZKV">
+                                <rect key="frame" x="94" y="72" width="187" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Transparent Navigation Bar"/>
+                                <connections>
+                                    <segue destination="3eo-kh-YR7" kind="show" id="UzE-OH-obB"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
-                    <navigationItem key="navigationItem" id="tnw-IV-tPq"/>
+                    <navigationItem key="navigationItem" id="tnw-IV-tPq">
+                        <nil key="title"/>
+                    </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9mF-i3-JQo" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="215" y="111"/>
         </scene>
+        <!--Im back-->
+        <scene sceneID="4Hw-Qr-wqe">
+            <objects>
+                <viewController id="Du3-he-784" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="vWl-vV-0Im"/>
+                        <viewControllerLayoutGuide type="bottom" id="YNK-lA-HX5"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="gzI-K4-cGU">
+                        <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" red="0.14901960780000001" green="0.41568627450000001" blue="0.74117647060000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Im back" id="mGT-PC-t8U"/>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="TPO-29-8Rs" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="954" y="797"/>
+        </scene>
+        <!--Transparent Bar-->
+        <scene sceneID="CWR-as-moX">
+            <objects>
+                <viewController storyboardIdentifier="TransparentBarDemo" id="3eo-kh-YR7" userLabel="Transparent Bar" customClass="TransparentBarDemo" customModule="UINavigationController" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="NfK-8d-7bP"/>
+                        <viewControllerLayoutGuide type="bottom" id="a6f-3H-2Y8"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="pzT-eN-mCh">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Nim-zS-Af9">
+                                <rect key="frame" x="172" y="270" width="32" height="30"/>
+                                <state key="normal" title="Next"/>
+                                <connections>
+                                    <segue destination="Du3-he-784" kind="show" id="y3g-8h-LtS">
+                                        <nil key="action"/>
+                                    </segue>
+                                </connections>
+                            </button>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="beach.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="WDG-Aj-U2d">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="200"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="200" id="Njd-n7-daf"/>
+                                    <constraint firstAttribute="height" constant="148" id="Sz5-gx-PWW"/>
+                                </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="Sz5-gx-PWW"/>
+                                    </mask>
+                                </variation>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="WDG-Aj-U2d" firstAttribute="top" secondItem="NfK-8d-7bP" secondAttribute="bottom" id="QFg-me-fXU"/>
+                            <constraint firstItem="WDG-Aj-U2d" firstAttribute="top" secondItem="NfK-8d-7bP" secondAttribute="bottom" id="RXo-LD-1mc"/>
+                            <constraint firstItem="WDG-Aj-U2d" firstAttribute="top" secondItem="pzT-eN-mCh" secondAttribute="top" id="TWi-0f-RG1"/>
+                            <constraint firstItem="WDG-Aj-U2d" firstAttribute="top" secondItem="NfK-8d-7bP" secondAttribute="bottom" id="hwr-Ci-cZZ"/>
+                            <constraint firstItem="Nim-zS-Af9" firstAttribute="centerX" secondItem="pzT-eN-mCh" secondAttribute="centerX" id="itS-VQ-K2I"/>
+                            <constraint firstAttribute="trailing" secondItem="WDG-Aj-U2d" secondAttribute="trailing" id="k3J-Cf-A5U"/>
+                            <constraint firstItem="WDG-Aj-U2d" firstAttribute="top" secondItem="pzT-eN-mCh" secondAttribute="topMargin" constant="22" id="nsO-xm-R7V"/>
+                            <constraint firstItem="Nim-zS-Af9" firstAttribute="top" secondItem="WDG-Aj-U2d" secondAttribute="bottom" constant="70" id="set-rE-yhv"/>
+                            <constraint firstItem="WDG-Aj-U2d" firstAttribute="leading" secondItem="pzT-eN-mCh" secondAttribute="leading" id="xgU-54-afY"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="hwr-Ci-cZZ"/>
+                                <exclude reference="QFg-me-fXU"/>
+                                <exclude reference="RXo-LD-1mc"/>
+                                <exclude reference="nsO-xm-R7V"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <navigationItem key="navigationItem" title="Beach" id="bFZ-fx-AQ4"/>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="0we-Rw-Cg7" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="214" y="797"/>
+        </scene>
     </scenes>
+    <resources>
+        <image name="beach.jpg" width="1920" height="1280"/>
+    </resources>
 </document>

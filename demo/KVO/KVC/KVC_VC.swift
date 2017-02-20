@@ -97,14 +97,14 @@ class KVC_VC: UIViewController {
 
         // NSObject.value
 		let c = self.value(forKey: "hue") as? UIColor // "someone called the getter"
-		print(c) // Optional(UIDeviceRGBColorSpace 1 0 0 1)
+		print(c as Any) // Optional(UIDeviceRGBColorSpace 1 0 0 1)
 
 		let myObject = KVC_Class()
 		let arr = myObject.value(forKeyPath: "theData.name") as! [String]
 		print(arr)
         /// 通过命名空间调用方法？
         let arr1: AnyObject = myObject.value(forKey: "pepBoys")! as AnyObject //调方法名包含pepBoys
-        debugPrint(myObject.value(forKey: "countOfPepBoys"))
+        debugPrint(myObject.value(forKey: "countOfPepBoys") as Any)
         print(arr1)
         let arr2: AnyObject = myObject.value(forKeyPath: "pepBoys.name")! as AnyObject
         print(arr2)
