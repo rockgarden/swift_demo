@@ -34,6 +34,14 @@
 		4462AC731E02C12F00A122DF /* DraggingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4462AC721E02C12F00A122DF /* DraggingVC.swift */; };
 		449B13CA1D683DE400795F70 /* HorizVertPanGestureRecognizers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 449B13C91D683DE400795F70 /* HorizVertPanGestureRecognizers.swift */; };
 		44E811331E02C406000079F7 /* DraggingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44E811321E02C406000079F7 /* DraggingView.swift */; };
+		44F030FF1E5C82CB0059B587 /* FullScreenPopGesture.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44F030FE1E5C82CB0059B587 /* FullScreenPopGesture.swift */; };
+		44F031031E5C84370059B587 /* UINavigationController+TZPopGesture.m in Sources */ = {isa = PBXBuildFile; fileRef = 44F031021E5C84370059B587 /* UINavigationController+TZPopGesture.m */; };
+		44F031111E5C845C0059B587 /* TZCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 44F031061E5C845C0059B587 /* TZCollectionViewController.m */; };
+		44F031121E5C845C0059B587 /* TZHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 44F031081E5C845C0059B587 /* TZHomeViewController.m */; };
+		44F031131E5C845C0059B587 /* TZMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 44F0310A1E5C845C0059B587 /* TZMapViewController.m */; };
+		44F031141E5C845C0059B587 /* TZNaviController.m in Sources */ = {isa = PBXBuildFile; fileRef = 44F0310C1E5C845C0059B587 /* TZNaviController.m */; };
+		44F031151E5C845C0059B587 /* TZPageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 44F0310E1E5C845C0059B587 /* TZPageViewController.m */; };
+		44F031161E5C845C0059B587 /* TZScrollViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 44F031101E5C845C0059B587 /* TZScrollViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -66,6 +74,21 @@
 		4462AC721E02C12F00A122DF /* DraggingVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DraggingVC.swift; sourceTree = "<group>"; };
 		449B13C91D683DE400795F70 /* HorizVertPanGestureRecognizers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HorizVertPanGestureRecognizers.swift; sourceTree = "<group>"; };
 		44E811321E02C406000079F7 /* DraggingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DraggingView.swift; sourceTree = "<group>"; };
+		44F030FE1E5C82CB0059B587 /* FullScreenPopGesture.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FullScreenPopGesture.swift; sourceTree = "<group>"; };
+		44F031011E5C84370059B587 /* UINavigationController+TZPopGesture.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UINavigationController+TZPopGesture.h"; sourceTree = "<group>"; };
+		44F031021E5C84370059B587 /* UINavigationController+TZPopGesture.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UINavigationController+TZPopGesture.m"; sourceTree = "<group>"; };
+		44F031051E5C845C0059B587 /* TZCollectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TZCollectionViewController.h; sourceTree = "<group>"; };
+		44F031061E5C845C0059B587 /* TZCollectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TZCollectionViewController.m; sourceTree = "<group>"; };
+		44F031071E5C845C0059B587 /* TZHomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TZHomeViewController.h; sourceTree = "<group>"; };
+		44F031081E5C845C0059B587 /* TZHomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TZHomeViewController.m; sourceTree = "<group>"; };
+		44F031091E5C845C0059B587 /* TZMapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TZMapViewController.h; sourceTree = "<group>"; };
+		44F0310A1E5C845C0059B587 /* TZMapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TZMapViewController.m; sourceTree = "<group>"; };
+		44F0310B1E5C845C0059B587 /* TZNaviController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TZNaviController.h; sourceTree = "<group>"; };
+		44F0310C1E5C845C0059B587 /* TZNaviController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TZNaviController.m; sourceTree = "<group>"; };
+		44F0310D1E5C845C0059B587 /* TZPageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TZPageViewController.h; sourceTree = "<group>"; };
+		44F0310E1E5C845C0059B587 /* TZPageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TZPageViewController.m; sourceTree = "<group>"; };
+		44F0310F1E5C845C0059B587 /* TZScrollViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TZScrollViewController.h; sourceTree = "<group>"; };
+		44F031101E5C845C0059B587 /* TZScrollViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TZScrollViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,6 +124,7 @@
 		442F31151D6831D60060942F = {
 			isa = PBXGroup;
 			children = (
+				44F031001E5C84370059B587 /* TZScrollViewPopGesture */,
 				442F31201D6831D60060942F /* UIGestureRecognizer */,
 				442F311F1D6831D60060942F /* Products */,
 			);
@@ -132,6 +156,7 @@
 				442F31281D6831D60060942F /* Assets.xcassets */,
 				442F312A1D6831D60060942F /* LaunchScreen.storyboard */,
 				442F312D1D6831D60060942F /* Info.plist */,
+				44F030FE1E5C82CB0059B587 /* FullScreenPopGesture.swift */,
 			);
 			path = UIGestureRecognizer;
 			sourceTree = "<group>";
@@ -152,6 +177,35 @@
 				4454EE2F1D69F33800DC3F04 /* RoundedImageView.swift */,
 			);
 			path = MatchItUp;
+			sourceTree = "<group>";
+		};
+		44F031001E5C84370059B587 /* TZScrollViewPopGesture */ = {
+			isa = PBXGroup;
+			children = (
+				44F031041E5C845C0059B587 /* Demo */,
+				44F031011E5C84370059B587 /* UINavigationController+TZPopGesture.h */,
+				44F031021E5C84370059B587 /* UINavigationController+TZPopGesture.m */,
+			);
+			path = TZScrollViewPopGesture;
+			sourceTree = "<group>";
+		};
+		44F031041E5C845C0059B587 /* Demo */ = {
+			isa = PBXGroup;
+			children = (
+				44F031051E5C845C0059B587 /* TZCollectionViewController.h */,
+				44F031061E5C845C0059B587 /* TZCollectionViewController.m */,
+				44F031071E5C845C0059B587 /* TZHomeViewController.h */,
+				44F031081E5C845C0059B587 /* TZHomeViewController.m */,
+				44F031091E5C845C0059B587 /* TZMapViewController.h */,
+				44F0310A1E5C845C0059B587 /* TZMapViewController.m */,
+				44F0310B1E5C845C0059B587 /* TZNaviController.h */,
+				44F0310C1E5C845C0059B587 /* TZNaviController.m */,
+				44F0310D1E5C845C0059B587 /* TZPageViewController.h */,
+				44F0310E1E5C845C0059B587 /* TZPageViewController.m */,
+				44F0310F1E5C845C0059B587 /* TZScrollViewController.h */,
+				44F031101E5C845C0059B587 /* TZScrollViewController.m */,
+			);
+			path = Demo;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -238,9 +292,13 @@
 				449B13CA1D683DE400795F70 /* HorizVertPanGestureRecognizers.swift in Sources */,
 				4420AB9B1DF1B385005D280A /* DrawView.swift in Sources */,
 				4454EE301D69F33800DC3F04 /* CircleDrawView.swift in Sources */,
+				44F030FF1E5C82CB0059B587 /* FullScreenPopGesture.swift in Sources */,
 				441F82851E2B2D0D00D6EBD4 /* PanGestureAction.swift in Sources */,
+				44F031031E5C84370059B587 /* UINavigationController+TZPopGesture.m in Sources */,
 				4454EE321D69F33800DC3F04 /* CircleGestureRecognizer.swift in Sources */,
 				4454EE341D69F33800DC3F04 /* GameViewController.swift in Sources */,
+				44F031151E5C845C0059B587 /* TZPageViewController.m in Sources */,
+				44F031131E5C845C0059B587 /* TZMapViewController.m in Sources */,
 				4454EE331D69F33800DC3F04 /* GameOverViewController.swift in Sources */,
 				441F82871E2B2D0D00D6EBD4 /* PanGestureViewDemo.swift in Sources */,
 				4454EE391D69F33800DC3F04 /* RoundedImageView.swift in Sources */,
@@ -248,6 +306,10 @@
 				441F82861E2B2D0D00D6EBD4 /* PanGestureView.swift in Sources */,
 				44E811331E02C406000079F7 /* DraggingView.swift in Sources */,
 				442F31221D6831D60060942F /* AppDelegate.swift in Sources */,
+				44F031161E5C845C0059B587 /* TZScrollViewController.m in Sources */,
+				44F031121E5C845C0059B587 /* TZHomeViewController.m in Sources */,
+				44F031141E5C845C0059B587 /* TZNaviController.m in Sources */,
+				44F031111E5C845C0059B587 /* TZCollectionViewController.m in Sources */,
 				4420AB991DF1B37E005D280A /* Line.swift in Sources */,
 				44291CA01DF1B77300D2F579 /* RootVC.swift in Sources */,
 				4454EE381D69F33800DC3F04 /* MatchingGame.swift in Sources */,
