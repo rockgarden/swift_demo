@@ -18,6 +18,7 @@ class View2Controller : UIViewController {
     }
     
     override func viewDidLoad() {
+        super.viewDidLoad()
         self.view.backgroundColor = UIColor.red // just so we know we're here
     }
     
@@ -34,5 +35,13 @@ class View2Controller : UIViewController {
     //        return false
     //    }
     
-    
+}
+
+
+//FIXME: TFTransparentNavigationBarProtocol 实现异常
+extension View2Controller: TFTransparentNavigationBarProtocol {
+   
+    func navigationControllerBarPushStyle() -> TFNavigationBarStyle {
+        return .transparent
+    }
 }

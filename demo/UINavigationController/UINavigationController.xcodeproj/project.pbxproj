@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		4472B4351D9975DB0087653C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4472B4341D9975DB0087653C /* AppDelegate.swift */; };
-		4472B4371D9975DB0087653C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4472B4361D9975DB0087653C /* ViewController.swift */; };
+		4472B4371D9975DB0087653C /* UINavigationDemo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4472B4361D9975DB0087653C /* UINavigationDemo.swift */; };
 		4472B43A1D9975DB0087653C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4472B4381D9975DB0087653C /* Main.storyboard */; };
 		4472B43C1D9975DB0087653C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4472B43B1D9975DB0087653C /* Assets.xcassets */; };
 		4472B43F1D9975DB0087653C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4472B43D1D9975DB0087653C /* LaunchScreen.storyboard */; };
@@ -20,13 +20,35 @@
 		44B95E6B1E5B2E1600D66F39 /* TFNavigationBarAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44B95E661E5B2E1600D66F39 /* TFNavigationBarAnimator.swift */; };
 		44B95E6C1E5B2E1600D66F39 /* TFNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44B95E671E5B2E1600D66F39 /* TFNavigationController.swift */; };
 		44B95E6E1E5B2E5C00D66F39 /* TransparentBarDemo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44B95E6D1E5B2E5C00D66F39 /* TransparentBarDemo.swift */; };
-		44B95E701E5B2E8D00D66F39 /* beach.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 44B95E6F1E5B2E8D00D66F39 /* beach.jpg */; };
+		C28E87481E5BE46500149654 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C28E87441E5BE46500149654 /* Info.plist */; };
+		C28E87491E5BE46500149654 /* KDInteractiveNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C28E87461E5BE46500149654 /* KDInteractiveNavigationController.swift */; };
+		C28E874A1E5BE46500149654 /* UIViewController+InteractiveNavigation.swift in Sources */ = {isa = PBXBuildFile; fileRef = C28E87471E5BE46500149654 /* UIViewController+InteractiveNavigation.swift */; };
+		C28E874C1E5BECE300149654 /* readme.rtf in Resources */ = {isa = PBXBuildFile; fileRef = C28E874B1E5BECE300149654 /* readme.rtf */; };
+		C28E87561E5C005300149654 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C28E874E1E5C005300149654 /* Info.plist */; };
+		C28E87571E5C005300149654 /* RainbowColorSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = C28E874F1E5C005300149654 /* RainbowColorSource.swift */; };
+		C28E87581E5C005300149654 /* RainbowDragPop.swift in Sources */ = {isa = PBXBuildFile; fileRef = C28E87501E5C005300149654 /* RainbowDragPop.swift */; };
+		C28E87591E5C005300149654 /* RainbowNavigation.swift in Sources */ = {isa = PBXBuildFile; fileRef = C28E87521E5C005300149654 /* RainbowNavigation.swift */; };
+		C28E875A1E5C005300149654 /* RainbowPopAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C28E87531E5C005300149654 /* RainbowPopAnimator.swift */; };
+		C28E875B1E5C005300149654 /* RainbowPushAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C28E87541E5C005300149654 /* RainbowPushAnimator.swift */; };
+		C28E875C1E5C005300149654 /* UINavigationBar+Rainbow.swift in Sources */ = {isa = PBXBuildFile; fileRef = C28E87551E5C005300149654 /* UINavigationBar+Rainbow.swift */; };
+		C28E87601E5C00B700149654 /* RainbowDemo.swift in Sources */ = {isa = PBXBuildFile; fileRef = C28E875D1E5C00B700149654 /* RainbowDemo.swift */; };
+		C28E87611E5C00B700149654 /* ColorTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C28E875E1E5C00B700149654 /* ColorTableViewController.swift */; };
+		C28E87621E5C00B700149654 /* TransparentTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C28E875F1E5C00B700149654 /* TransparentTableViewController.swift */; };
+		C28E876C1E5C0C8500149654 /* KMSwizzle.m in Sources */ = {isa = PBXBuildFile; fileRef = C28E87651E5C0C8500149654 /* KMSwizzle.m */; };
+		C28E876D1E5C0C8500149654 /* KMWeakObjectContainer.m in Sources */ = {isa = PBXBuildFile; fileRef = C28E87671E5C0C8500149654 /* KMWeakObjectContainer.m */; };
+		C28E876E1E5C0C8500149654 /* UINavigationController+KMNavigationBarTransition.m in Sources */ = {isa = PBXBuildFile; fileRef = C28E87691E5C0C8500149654 /* UINavigationController+KMNavigationBarTransition.m */; };
+		C28E876F1E5C0C8500149654 /* UIViewController+KMNavigationBarTransition.m in Sources */ = {isa = PBXBuildFile; fileRef = C28E876B1E5C0C8500149654 /* UIViewController+KMNavigationBarTransition.m */; };
+		C28E87731E5C0DCC00149654 /* KMNavigationBarTransitionDemo.swift in Sources */ = {isa = PBXBuildFile; fileRef = C28E87701E5C0DCC00149654 /* KMNavigationBarTransitionDemo.swift */; };
+		C28E87741E5C0DCC00149654 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C28E87711E5C0DCC00149654 /* SettingsViewController.swift */; };
+		C28E87751E5C0DCC00149654 /* NavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C28E87721E5C0DCC00149654 /* NavigationController.swift */; };
+		C28E87771E5C0DDB00149654 /* NavigationBarData.swift in Sources */ = {isa = PBXBuildFile; fileRef = C28E87761E5C0DDB00149654 /* NavigationBarData.swift */; };
+		C28E87791E5C0DE400149654 /* UIImage+Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = C28E87781E5C0DE400149654 /* UIImage+Color.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		4472B4311D9975DB0087653C /* UINavigationController.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UINavigationController.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4472B4341D9975DB0087653C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		4472B4361D9975DB0087653C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		4472B4361D9975DB0087653C /* UINavigationDemo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UINavigationDemo.swift; sourceTree = "<group>"; };
 		4472B4391D9975DB0087653C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		4472B43B1D9975DB0087653C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4472B43E1D9975DB0087653C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -39,7 +61,35 @@
 		44B95E661E5B2E1600D66F39 /* TFNavigationBarAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TFNavigationBarAnimator.swift; sourceTree = "<group>"; };
 		44B95E671E5B2E1600D66F39 /* TFNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TFNavigationController.swift; sourceTree = "<group>"; };
 		44B95E6D1E5B2E5C00D66F39 /* TransparentBarDemo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransparentBarDemo.swift; sourceTree = "<group>"; };
-		44B95E6F1E5B2E8D00D66F39 /* beach.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = beach.jpg; sourceTree = "<group>"; };
+		C28E87441E5BE46500149654 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C28E87451E5BE46500149654 /* KDInteractiveNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KDInteractiveNavigationController.h; sourceTree = "<group>"; };
+		C28E87461E5BE46500149654 /* KDInteractiveNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KDInteractiveNavigationController.swift; sourceTree = "<group>"; };
+		C28E87471E5BE46500149654 /* UIViewController+InteractiveNavigation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+InteractiveNavigation.swift"; sourceTree = "<group>"; };
+		C28E874B1E5BECE300149654 /* readme.rtf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.rtf; path = readme.rtf; sourceTree = "<group>"; };
+		C28E874E1E5C005300149654 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C28E874F1E5C005300149654 /* RainbowColorSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RainbowColorSource.swift; sourceTree = "<group>"; };
+		C28E87501E5C005300149654 /* RainbowDragPop.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RainbowDragPop.swift; sourceTree = "<group>"; };
+		C28E87511E5C005300149654 /* RainbowNavigation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RainbowNavigation.h; sourceTree = "<group>"; };
+		C28E87521E5C005300149654 /* RainbowNavigation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RainbowNavigation.swift; sourceTree = "<group>"; };
+		C28E87531E5C005300149654 /* RainbowPopAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RainbowPopAnimator.swift; sourceTree = "<group>"; };
+		C28E87541E5C005300149654 /* RainbowPushAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RainbowPushAnimator.swift; sourceTree = "<group>"; };
+		C28E87551E5C005300149654 /* UINavigationBar+Rainbow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UINavigationBar+Rainbow.swift"; sourceTree = "<group>"; };
+		C28E875D1E5C00B700149654 /* RainbowDemo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RainbowDemo.swift; sourceTree = "<group>"; };
+		C28E875E1E5C00B700149654 /* ColorTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorTableViewController.swift; sourceTree = "<group>"; };
+		C28E875F1E5C00B700149654 /* TransparentTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransparentTableViewController.swift; sourceTree = "<group>"; };
+		C28E87641E5C0C8500149654 /* KMSwizzle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KMSwizzle.h; sourceTree = "<group>"; };
+		C28E87651E5C0C8500149654 /* KMSwizzle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KMSwizzle.m; sourceTree = "<group>"; };
+		C28E87661E5C0C8500149654 /* KMWeakObjectContainer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KMWeakObjectContainer.h; sourceTree = "<group>"; };
+		C28E87671E5C0C8500149654 /* KMWeakObjectContainer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KMWeakObjectContainer.m; sourceTree = "<group>"; };
+		C28E87681E5C0C8500149654 /* UINavigationController+KMNavigationBarTransition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UINavigationController+KMNavigationBarTransition.h"; sourceTree = "<group>"; };
+		C28E87691E5C0C8500149654 /* UINavigationController+KMNavigationBarTransition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UINavigationController+KMNavigationBarTransition.m"; sourceTree = "<group>"; };
+		C28E876A1E5C0C8500149654 /* UIViewController+KMNavigationBarTransition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+KMNavigationBarTransition.h"; sourceTree = "<group>"; };
+		C28E876B1E5C0C8500149654 /* UIViewController+KMNavigationBarTransition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+KMNavigationBarTransition.m"; sourceTree = "<group>"; };
+		C28E87701E5C0DCC00149654 /* KMNavigationBarTransitionDemo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KMNavigationBarTransitionDemo.swift; sourceTree = "<group>"; };
+		C28E87711E5C0DCC00149654 /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		C28E87721E5C0DCC00149654 /* NavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigationController.swift; sourceTree = "<group>"; };
+		C28E87761E5C0DDB00149654 /* NavigationBarData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigationBarData.swift; sourceTree = "<group>"; };
+		C28E87781E5C0DE400149654 /* UIImage+Color.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+Color.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +106,10 @@
 		4472B4281D9975DB0087653C = {
 			isa = PBXGroup;
 			children = (
+				C28E874B1E5BECE300149654 /* readme.rtf */,
+				C28E87631E5C0C8500149654 /* KMNavigationBarTransition */,
+				C28E874D1E5C005300149654 /* RainbowNavigation */,
+				C28E87431E5BE46500149654 /* InteractiveNavigationController */,
 				44B95E621E5B2E1600D66F39 /* TransparentNavigationBar */,
 				4472B4331D9975DB0087653C /* UINavigationController */,
 				4472B4321D9975DB0087653C /* Products */,
@@ -73,14 +127,13 @@
 		4472B4331D9975DB0087653C /* UINavigationController */ = {
 			isa = PBXGroup;
 			children = (
-				4472B4481D99764B0087653C /* MyNavigationController.swift */,
-				44B95E6D1E5B2E5C00D66F39 /* TransparentBarDemo.swift */,
-				4472B4461D9976440087653C /* View2Controller.swift */,
 				4472B4341D9975DB0087653C /* AppDelegate.swift */,
-				4472B4361D9975DB0087653C /* ViewController.swift */,
+				C28E877A1E5C0E5900149654 /* KM */,
+				C28E877B1E5C0E6D00149654 /* Rain */,
+				C28E875F1E5C00B700149654 /* TransparentTableViewController.swift */,
+				C28E877C1E5C0E7800149654 /* Normal */,
 				4472B4381D9975DB0087653C /* Main.storyboard */,
 				4472B43B1D9975DB0087653C /* Assets.xcassets */,
-				44B95E6F1E5B2E8D00D66F39 /* beach.jpg */,
 				4472B43D1D9975DB0087653C /* LaunchScreen.storyboard */,
 				4472B4401D9975DB0087653C /* Info.plist */,
 			);
@@ -97,6 +150,79 @@
 				44B95E671E5B2E1600D66F39 /* TFNavigationController.swift */,
 			);
 			path = TransparentNavigationBar;
+			sourceTree = "<group>";
+		};
+		C28E87431E5BE46500149654 /* InteractiveNavigationController */ = {
+			isa = PBXGroup;
+			children = (
+				C28E87441E5BE46500149654 /* Info.plist */,
+				C28E87451E5BE46500149654 /* KDInteractiveNavigationController.h */,
+				C28E87461E5BE46500149654 /* KDInteractiveNavigationController.swift */,
+				C28E87471E5BE46500149654 /* UIViewController+InteractiveNavigation.swift */,
+			);
+			path = InteractiveNavigationController;
+			sourceTree = "<group>";
+		};
+		C28E874D1E5C005300149654 /* RainbowNavigation */ = {
+			isa = PBXGroup;
+			children = (
+				C28E874E1E5C005300149654 /* Info.plist */,
+				C28E874F1E5C005300149654 /* RainbowColorSource.swift */,
+				C28E87501E5C005300149654 /* RainbowDragPop.swift */,
+				C28E87511E5C005300149654 /* RainbowNavigation.h */,
+				C28E87521E5C005300149654 /* RainbowNavigation.swift */,
+				C28E87531E5C005300149654 /* RainbowPopAnimator.swift */,
+				C28E87541E5C005300149654 /* RainbowPushAnimator.swift */,
+				C28E87551E5C005300149654 /* UINavigationBar+Rainbow.swift */,
+			);
+			path = RainbowNavigation;
+			sourceTree = "<group>";
+		};
+		C28E87631E5C0C8500149654 /* KMNavigationBarTransition */ = {
+			isa = PBXGroup;
+			children = (
+				C28E87641E5C0C8500149654 /* KMSwizzle.h */,
+				C28E87651E5C0C8500149654 /* KMSwizzle.m */,
+				C28E87661E5C0C8500149654 /* KMWeakObjectContainer.h */,
+				C28E87671E5C0C8500149654 /* KMWeakObjectContainer.m */,
+				C28E87681E5C0C8500149654 /* UINavigationController+KMNavigationBarTransition.h */,
+				C28E87691E5C0C8500149654 /* UINavigationController+KMNavigationBarTransition.m */,
+				C28E876A1E5C0C8500149654 /* UIViewController+KMNavigationBarTransition.h */,
+				C28E876B1E5C0C8500149654 /* UIViewController+KMNavigationBarTransition.m */,
+			);
+			path = KMNavigationBarTransition;
+			sourceTree = "<group>";
+		};
+		C28E877A1E5C0E5900149654 /* KM */ = {
+			isa = PBXGroup;
+			children = (
+				C28E87701E5C0DCC00149654 /* KMNavigationBarTransitionDemo.swift */,
+				C28E87711E5C0DCC00149654 /* SettingsViewController.swift */,
+				C28E87721E5C0DCC00149654 /* NavigationController.swift */,
+				44B95E6D1E5B2E5C00D66F39 /* TransparentBarDemo.swift */,
+				C28E87761E5C0DDB00149654 /* NavigationBarData.swift */,
+				C28E87781E5C0DE400149654 /* UIImage+Color.swift */,
+			);
+			name = KM;
+			sourceTree = "<group>";
+		};
+		C28E877B1E5C0E6D00149654 /* Rain */ = {
+			isa = PBXGroup;
+			children = (
+				C28E875D1E5C00B700149654 /* RainbowDemo.swift */,
+				C28E875E1E5C00B700149654 /* ColorTableViewController.swift */,
+			);
+			name = Rain;
+			sourceTree = "<group>";
+		};
+		C28E877C1E5C0E7800149654 /* Normal */ = {
+			isa = PBXGroup;
+			children = (
+				4472B4481D99764B0087653C /* MyNavigationController.swift */,
+				4472B4361D9975DB0087653C /* UINavigationDemo.swift */,
+				4472B4461D9976440087653C /* View2Controller.swift */,
+			);
+			name = Normal;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -131,6 +257,7 @@
 				TargetAttributes = {
 					4472B4301D9975DB0087653C = {
 						CreatedOnToolsVersion = 7.3.1;
+						DevelopmentTeam = W3MH7MTTSB;
 						LastSwiftMigration = 0800;
 						ProvisioningStyle = Automatic;
 					};
@@ -159,10 +286,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C28E874C1E5BECE300149654 /* readme.rtf in Resources */,
 				4472B43F1D9975DB0087653C /* LaunchScreen.storyboard in Resources */,
 				4472B43C1D9975DB0087653C /* Assets.xcassets in Resources */,
 				4472B43A1D9975DB0087653C /* Main.storyboard in Resources */,
-				44B95E701E5B2E8D00D66F39 /* beach.jpg in Resources */,
+				C28E87481E5BE46500149654 /* Info.plist in Resources */,
+				C28E87561E5C005300149654 /* Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -173,16 +302,36 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4472B4371D9975DB0087653C /* ViewController.swift in Sources */,
+				4472B4371D9975DB0087653C /* UINavigationDemo.swift in Sources */,
+				C28E87731E5C0DCC00149654 /* KMNavigationBarTransitionDemo.swift in Sources */,
+				C28E874A1E5BE46500149654 /* UIViewController+InteractiveNavigation.swift in Sources */,
+				C28E875B1E5C005300149654 /* RainbowPushAnimator.swift in Sources */,
+				C28E87771E5C0DDB00149654 /* NavigationBarData.swift in Sources */,
+				C28E87611E5C00B700149654 /* ColorTableViewController.swift in Sources */,
+				C28E87751E5C0DCC00149654 /* NavigationController.swift in Sources */,
 				44B95E6A1E5B2E1600D66F39 /* TFForwardAnimator.swift in Sources */,
+				C28E875C1E5C005300149654 /* UINavigationBar+Rainbow.swift in Sources */,
+				C28E87491E5BE46500149654 /* KDInteractiveNavigationController.swift in Sources */,
+				C28E87581E5C005300149654 /* RainbowDragPop.swift in Sources */,
 				44B95E6B1E5B2E1600D66F39 /* TFNavigationBarAnimator.swift in Sources */,
+				C28E876F1E5C0C8500149654 /* UIViewController+KMNavigationBarTransition.m in Sources */,
+				C28E87601E5C00B700149654 /* RainbowDemo.swift in Sources */,
+				C28E876C1E5C0C8500149654 /* KMSwizzle.m in Sources */,
 				4472B4491D99764B0087653C /* MyNavigationController.swift in Sources */,
+				C28E87621E5C00B700149654 /* TransparentTableViewController.swift in Sources */,
+				C28E87791E5C0DE400149654 /* UIImage+Color.swift in Sources */,
 				4472B4471D9976440087653C /* View2Controller.swift in Sources */,
 				44B95E681E5B2E1600D66F39 /* CGRect+Tools.swift in Sources */,
 				4472B4351D9975DB0087653C /* AppDelegate.swift in Sources */,
 				44B95E6E1E5B2E5C00D66F39 /* TransparentBarDemo.swift in Sources */,
+				C28E876D1E5C0C8500149654 /* KMWeakObjectContainer.m in Sources */,
+				C28E876E1E5C0C8500149654 /* UINavigationController+KMNavigationBarTransition.m in Sources */,
+				C28E87571E5C005300149654 /* RainbowColorSource.swift in Sources */,
 				44B95E6C1E5B2E1600D66F39 /* TFNavigationController.swift in Sources */,
+				C28E87591E5C005300149654 /* RainbowNavigation.swift in Sources */,
 				44B95E691E5B2E1600D66F39 /* TFBackwardAnimator.swift in Sources */,
+				C28E875A1E5C005300149654 /* RainbowPopAnimator.swift in Sources */,
+				C28E87741E5C0DCC00149654 /* SettingsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -301,7 +450,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = W3MH7MTTSB;
 				INFOPLIST_FILE = UINavigationController/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.rockgarden.UINavigationController;
@@ -315,7 +464,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = W3MH7MTTSB;
 				INFOPLIST_FILE = UINavigationController/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.rockgarden.UINavigationController;

@@ -5,8 +5,7 @@
 //  Created by Ales Kocur on 10/03/2015.
 //  Copyright (c) 2015 Ales Kocur. All rights reserved.
 //  https://github.com/thefuntasty/TFTransparentNavigationBar
-//  https://github.com/kingiol/KDInteractiveNavigationController
-//  https://github.com/fastred/AHKNavigationController
+//
 
 import UIKit
 
@@ -37,8 +36,6 @@ open class TFNavigationController: UINavigationController, UIViewControllerTrans
         let left = UIScreenEdgePanGestureRecognizer(target: self, action: #selector(TFNavigationController.handleSwipeFromLeft(_:)))
         left.edges = .left
         self.view.addGestureRecognizer(left);
-        
-        
     }
     
     func handleSwipeFromLeft(_ gesture: UIScreenEdgePanGestureRecognizer) {

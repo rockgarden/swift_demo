@@ -2,19 +2,18 @@
 //  TransparentBarDemo.swift
 //
 
+
 import UIKit
 
 class TransparentBarDemo: UIViewController, TFTransparentNavigationBarProtocol {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
         // Do any additional setup after loading the view.
     }
 
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        
     }
     
     override func didReceiveMemoryWarning() {
@@ -22,11 +21,9 @@ class TransparentBarDemo: UIViewController, TFTransparentNavigationBarProtocol {
         // Dispose of any resources that can be recreated.
     }
     
-
     // MARK: - TFTransparentNavigationBarProtocol
-    
     func navigationControllerBarPushStyle() -> TFNavigationBarStyle {
-        return .solid
+        return .transparent
     }
     
     /*

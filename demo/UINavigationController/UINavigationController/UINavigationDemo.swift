@@ -2,7 +2,7 @@
 
 import UIKit
 
-class ViewController : UIViewController, UINavigationControllerDelegate {
+class UINavigationDemo : UIViewController, UINavigationControllerDelegate {
     
     var queryButton: UIButton {
         let button = UIButton(type: .custom)
@@ -10,12 +10,11 @@ class ViewController : UIViewController, UINavigationControllerDelegate {
         button.setBackgroundImage(UIImage(named: "files.png"), for: UIControlState())
         button.setBackgroundImage(UIImage(named: "key.png"), for: .selected)
         button.frame = CGRect(x: 0, y: 0, width: 30, height: 30)
-//        button.imageRectForContentRect(CGRect(x: 2, y: 2, width: 30, height: 30))
+        //        button.imageRectForContentRect(CGRect(x: 2, y: 2, width: 30, height: 30))
         button.imageEdgeInsets = UIEdgeInsetsMake(-4, 4, -4, 4)
         button.showsTouchWhenHighlighted = true
         button.addTarget(nil, action: #selector(navigate), for: .touchUpInside)
-        let gr = UILongPressGestureRecognizer(target: self, action: #selector(navigate))
-        gr.minimumPressDuration = 1
+        let gr = UITapGestureRecognizer(target: self, action: #selector(navigate))
         button.addGestureRecognizer(gr)
         return button
     }
@@ -26,7 +25,7 @@ class ViewController : UIViewController, UINavigationControllerDelegate {
         self.title = "First"
         _ = UIBarButtonItem(image:UIImage(named:"key.png"), style:.plain, target:self, action:#selector(navigate))
         _ = UIBarButtonItem(image:UIImage(named:"files.png"),
-                                 style:.plain, target:nil, action:nil)
+                            style:.plain, target:nil, action:nil)
         //self.navigationItem.rightBarButtonItems = [b1, b2]
         //        let button =  UIButton(type: .Custom)
         //        button.setBackgroundImage(UIImage(named: "key.png"), forState: .Normal)
@@ -53,16 +52,19 @@ class ViewController : UIViewController, UINavigationControllerDelegate {
     
     func navigate() {
         let v2c = View2Controller(nibName: nil, bundle: nil)
-        self.navigationController!.pushViewController(v2c, animated: true)
+        //self.navigationController!.pushViewController(v2c, animated: true)
         // alternatively, can use new way in iOS 8:
-        // self.showViewController(v2c, sender: self)
+        self.show(v2c, sender: self)
         // makes no difference here; the purpose is to loosen the coupling ...
         // ... in a possible split view controller situation
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        /// 若采用 TFNavigationController 则不可实现 UINavigationControllerDelegate
         self.navigationController!.delegate = self
+        
         // uncomment to get white status bar text
         // self.navigationController!.navigationBar.barStyle = .Black
         // uncomment to hide navigation bar
