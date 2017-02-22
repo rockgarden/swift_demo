@@ -129,6 +129,7 @@
 				TargetAttributes = {
 					44A9DB201D8EE1FC0040E1FC = {
 						CreatedOnToolsVersion = 7.3.1;
+						DevelopmentTeam = W3MH7MTTSB;
 						LastSwiftMigration = 0800;
 					};
 				};
@@ -299,6 +300,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = W3MH7MTTSB;
 				INFOPLIST_FILE = Constraint/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.rockgarden.Constraint;
@@ -311,6 +313,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = W3MH7MTTSB;
 				INFOPLIST_FILE = Constraint/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.rockgarden.Constraint;

@@ -12,9 +12,12 @@ import UIKit
 class AppDelegate: UIResponder, UIApplicationDelegate {
     
     var window: UIWindow?
-    
+    var tabBarController = UITabBarController()
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+        
+        return exampleCodeInit()
+        
         self.window!.tintColor = UIColor.orange // gag... Just proving this is inherited
         
         // nav bar is configured (horribly) in the storyboard
@@ -37,6 +40,24 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // also, note that if the back button is assigned a background image,
         // it is not vertically resized
         // and if it has an image, that image is resized to fit
+        return true
+    }
+    
+    /// 示例 init UITabBarController by code
+    func exampleCodeInit() -> Bool {
+        self.window = self.window ?? UIWindow()
+        var vcs = [UIViewController]()
+        let arr = ["First", "Second", "Third"]
+        for t in arr {
+            let vc = ParallaxHeaderVC()
+            vc.tabBarItem.title = t
+            vcs.append(vc)
+        }
+        self.tabBarController.viewControllers = vcs
+        self.window!.rootViewController = self.tabBarController
+
+        self.window!.backgroundColor = UIColor.white
+        self.window!.makeKeyAndVisible()
         return true
     }
     
