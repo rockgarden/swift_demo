@@ -1,5 +1,5 @@
 //
-//  HomeVC.swift
+//  HomeToolBarVC.swift
 //  HomePageDemo
 //
 //  Created by wangkan on 2017/2/22.
@@ -13,18 +13,19 @@ let SCREEN_WIDTH = UIScreen.main.bounds.size.width
 let SCREEN_HEIGHT = UIScreen.main.bounds.size.height
 
 let functionHeaderViewHeight:CGFloat = 95
-let singleAppHeaderViewHeight:CGFloat = 60
+let singleAppHeaderViewHeight:CGFloat = UIScreen.main.bounds.size.width/4
 
-class HomeVC: UIViewController,UIScrollViewDelegate,UIGestureRecognizerDelegate {
+class HomeToolBarVC: UIViewController,UIScrollViewDelegate,UIGestureRecognizerDelegate {
     
     let topOffsetY = functionHeaderViewHeight + singleAppHeaderViewHeight
     
     lazy var mainScrollView: UIScrollView = {
-        let height = SCREEN_HEIGHT - 64
         let v = UIScrollView()
         v.delegate = self
-        v.contentSize = CGSize(width: SCREEN_WIDTH, height: 100)
-        v.scrollIndicatorInsets = UIEdgeInsets(top: 155, left: 0, bottom: 0, right: 0)
+        //v.contentSize = CGSize(width: SCREEN_WIDTH, height: 100)
+        //v.scrollIndicatorInsets = UIEdgeInsets(top: 155, left: 0, bottom: 0, right: 0)
+        v.showsVerticalScrollIndicator = false
+        v.showsHorizontalScrollIndicator = false
         v.translatesAutoresizingMaskIntoConstraints = false
         return v
     }()
@@ -36,12 +37,12 @@ class HomeVC: UIViewController,UIScrollViewDelegate,UIGestureRecognizerDelegate 
         return v
     }()
     
-    lazy var mainNavView: UIView = {
-        let v = UIView(frame: CGRect(x: 0, y: 0, width: SCREEN_WIDTH, height: 64))
+    lazy var initToolBar: UIView = {
+        let v = UIView()
         v.backgroundColor = UIColor.clear
-        let payButton = UIButton(type: UIButtonType.custom)
-        payButton.setImage(#imageLiteral(resourceName: "home_bill"), for: UIControlState.normal)
-        payButton.setTitle("账单", for: UIControlState.normal)
+        let payButton = UIButton(type: .custom)
+        payButton.setImage(#imageLiteral(resourceName: "home_bill"), for: .normal)
+        payButton.setTitle("账单", for: .normal)
         payButton.titleLabel?.font = UIFont.systemFont(ofSize: 13)
         payButton.titleEdgeInsets = UIEdgeInsets(
             top: 0,
@@ -60,11 +61,11 @@ class HomeVC: UIViewController,UIScrollViewDelegate,UIGestureRecognizerDelegate 
         return v
     }()
     
-    lazy var coverNavView: UIView = {
-        let v = UIView(frame: CGRect(x: 0, y: 0, width: SCREEN_WIDTH, height: 64))
-        v.backgroundColor = UIColor.clear
-        let payButton = UIButton(type: UIButtonType.custom)
-        payButton.setImage(#imageLiteral(resourceName: "pay_mini"), for: UIControlState.normal)
+    lazy var toolBar: UIView = {
+        let v = UIView()
+        v.backgroundColor = .clear
+        let payButton = UIButton(type: .custom)
+        payButton.setImage(#imageLiteral(resourceName: "pay_mini"), for: .normal)
         payButton.sizeToFit()
         var newFrame = payButton.frame
         newFrame.origin.y = 20 + 10
@@ -150,7 +151,7 @@ class HomeVC: UIViewController,UIScrollViewDelegate,UIGestureRecognizerDelegate 
     
     lazy var appHeaderView: UIView = {
         let v = UIView(frame: CGRect(x: 0, y: functionHeaderViewHeight, width: SCREEN_WIDTH, height: singleAppHeaderViewHeight))
-        v.backgroundColor = UIColor.cyan
+        v.backgroundColor = .red
         v.translatesAutoresizingMaskIntoConstraints = false
         return v
     }()
@@ -161,15 +162,18 @@ class HomeVC: UIViewController,UIScrollViewDelegate,UIGestureRecognizerDelegate 
         v.translatesAutoresizingMaskIntoConstraints = false
         return v
     }()
-    
+
+    // MARK: View Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        self.view.addSubview(mainScrollView)
-        self.view.addSubview(navView)
-        self.view.addSubview(mainNavView)
-        self.view.addSubview(coverNavView)
-        
+
+        view.backgroundColor = .white
+
+        view.addSubview(mainScrollView)
+        view.addSubview(navView)
+        view.addSubview(initToolBar)
+        view.addSubview(toolBar)
+
         addConstraint()
         
         mainScrollView.addSubview(headerView)
@@ -270,12 +274,12 @@ class HomeVC: UIViewController,UIScrollViewDelegate,UIGestureRecognizerDelegate 
             functionHeaderView.alpha = alpha
             if alpha > 0.5 {
                 let newAlpha =  alpha*2 - 1
-                mainNavView.alpha = newAlpha
-                coverNavView.alpha = 0
+                initToolBar.alpha = newAlpha
+                toolBar.alpha = 0
             } else {
                 let newAlpha =  alpha*2
-                mainNavView.alpha = 0
-                coverNavView.alpha = 1 - newAlpha
+                initToolBar.alpha = 0
+                toolBar.alpha = 1 - newAlpha
             }
             
         }
@@ -285,14 +289,17 @@ class HomeVC: UIViewController,UIScrollViewDelegate,UIGestureRecognizerDelegate 
     
 }
 
-fileprivate extension HomeVC {
+fileprivate extension HomeToolBarVC {
     
     fileprivate func addConstraint() {
+
+        let views = ["nv":navView, "msv":mainScrollView, "itb":initToolBar, "tb":toolBar]
+
         NSLayoutConstraint.activate([
-            NSLayoutConstraint.constraints(withVisualFormat: "H:|-(0)-[v]-(0)-|", options: [], metrics: nil, views: ["v":navView]),
-            NSLayoutConstraint.constraints(withVisualFormat: "V:|-(0)-[v(64)]", options: [], metrics: nil, views: ["v":navView]),
-            NSLayoutConstraint.constraints(withVisualFormat: "H:|-(0)-[v]-(0)-|", options: [], metrics: nil, views: ["v":mainScrollView]),
-            NSLayoutConstraint.constraints(withVisualFormat: "V:[v1]-[v]-(0)-|", options: [], metrics: nil, views: ["v":mainScrollView, "v1": navView])
+            NSLayoutConstraint.constraints(withVisualFormat: "H:|-(0)-[nv]-(0)-|", options: [], metrics: nil, views: views),
+            NSLayoutConstraint.constraints(withVisualFormat: "V:|-(0)-[nv(64)]", options: [], metrics: nil, views: views),
+            NSLayoutConstraint.constraints(withVisualFormat: "H:|-(0)-[msv]-(0)-|", options: [], metrics: nil, views: views),
+            NSLayoutConstraint.constraints(withVisualFormat: "V:[nv]-(0)-[msv]-(0)-|", options: [], metrics: nil, views: views),
             ].joined().map{$0})
     }
 }

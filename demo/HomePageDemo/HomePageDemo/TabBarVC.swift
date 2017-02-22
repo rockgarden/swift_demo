@@ -22,8 +22,10 @@ class TabBarVC: UITabBarController {
 
 	fileprivate func setTabBarVC() {
 		controllers.removeAll()
-		let homeA = (vc: NSStringFromClass(HomeVC.self), title: "Pay", image: "first", selectedImage: "first")
-		controllers.append(homeA)
+		let htb = (vc: NSStringFromClass(HomeToolBarVC.self), title: "Tool", image: "first", selectedImage: "first")
+        let hab = (vc: NSStringFromClass(HomeAdBarVC.self), title: "Ad", image: "second", selectedImage: "second")
+		controllers.append(htb)
+        controllers.append(hab)
 		addController()
 	}
 
