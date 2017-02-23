@@ -19,8 +19,6 @@ class HomeAdBarVC: UIViewController,UIScrollViewDelegate,UIGestureRecognizerDele
     lazy var mainScrollView: UIScrollView = {
         let v = UIScrollView()
         v.delegate = self
-        //v.contentSize = CGSize(width: SCREEN_WIDTH, height: 100)
-        //v.scrollIndicatorInsets = UIEdgeInsets(top: 155, left: 0, bottom: 0, right: 0)
         v.showsVerticalScrollIndicator = false
         v.showsHorizontalScrollIndicator = false
         v.translatesAutoresizingMaskIntoConstraints = false
@@ -285,6 +283,7 @@ class HomeAdBarVC: UIViewController,UIScrollViewDelegate,UIGestureRecognizerDele
     }
 
 }
+
 
 fileprivate extension HomeAdBarVC {
 

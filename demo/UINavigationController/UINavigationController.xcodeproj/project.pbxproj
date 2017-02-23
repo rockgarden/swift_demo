@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		442254D41E5F173400A62376 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 442254D01E5F173400A62376 /* Info.plist */; };
+		442254D51E5F173400A62376 /* ScrollingNavbar+Sizes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 442254D11E5F173400A62376 /* ScrollingNavbar+Sizes.swift */; };
+		442254D61E5F173400A62376 /* ScrollingNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 442254D21E5F173400A62376 /* ScrollingNavigationController.swift */; };
+		442254D71E5F173400A62376 /* ScrollingNavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 442254D31E5F173400A62376 /* ScrollingNavigationViewController.swift */; };
 		4472B4351D9975DB0087653C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4472B4341D9975DB0087653C /* AppDelegate.swift */; };
 		4472B4371D9975DB0087653C /* UINavigationDemo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4472B4361D9975DB0087653C /* UINavigationDemo.swift */; };
 		4472B43A1D9975DB0087653C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4472B4381D9975DB0087653C /* Main.storyboard */; };
@@ -53,6 +57,11 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		442254CF1E5F173400A62376 /* AMScrollingNavbar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AMScrollingNavbar.h; sourceTree = "<group>"; };
+		442254D01E5F173400A62376 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		442254D11E5F173400A62376 /* ScrollingNavbar+Sizes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ScrollingNavbar+Sizes.swift"; sourceTree = "<group>"; };
+		442254D21E5F173400A62376 /* ScrollingNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScrollingNavigationController.swift; sourceTree = "<group>"; };
+		442254D31E5F173400A62376 /* ScrollingNavigationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScrollingNavigationViewController.swift; sourceTree = "<group>"; };
 		4472B4311D9975DB0087653C /* UINavigationController.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UINavigationController.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4472B4341D9975DB0087653C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4472B4361D9975DB0087653C /* UINavigationDemo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UINavigationDemo.swift; sourceTree = "<group>"; };
@@ -117,6 +126,18 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		442254CE1E5F173400A62376 /* AMScrollingNavbar */ = {
+			isa = PBXGroup;
+			children = (
+				442254CF1E5F173400A62376 /* AMScrollingNavbar.h */,
+				442254D01E5F173400A62376 /* Info.plist */,
+				442254D11E5F173400A62376 /* ScrollingNavbar+Sizes.swift */,
+				442254D21E5F173400A62376 /* ScrollingNavigationController.swift */,
+				442254D31E5F173400A62376 /* ScrollingNavigationViewController.swift */,
+			);
+			path = AMScrollingNavbar;
+			sourceTree = "<group>";
+		};
 		4472B4281D9975DB0087653C = {
 			isa = PBXGroup;
 			children = (
@@ -124,6 +145,7 @@
 				44F030F81E5C80920059B587 /* MMNavigationController.swift */,
 				44F030FA1E5C80A30059B587 /* Screen.swift */,
 				44F030FC1E5C80BC0059B587 /* ViewController.swift */,
+				442254CE1E5F173400A62376 /* AMScrollingNavbar */,
 				C28E87631E5C0C8500149654 /* KMNavigationBarTransition */,
 				C28E874D1E5C005300149654 /* RainbowNavigation */,
 				C28E87431E5BE46500149654 /* InteractiveNavigationController */,
@@ -307,6 +329,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				442254D41E5F173400A62376 /* Info.plist in Resources */,
 				C2DA0A4B1E5C25E6006C0369 /* ParallaxHeaderVC.storyboard in Resources */,
 				C28E874C1E5BECE300149654 /* readme.rtf in Resources */,
 				4472B43F1D9975DB0087653C /* LaunchScreen.storyboard in Resources */,
@@ -339,6 +362,7 @@
 				C28E87581E5C005300149654 /* RainbowDragPop.swift in Sources */,
 				C2DA0A451E5C21F0006C0369 /* ParallaxHeaderView.swift in Sources */,
 				44B95E6B1E5B2E1600D66F39 /* TFNavigationBarAnimator.swift in Sources */,
+				442254D51E5F173400A62376 /* ScrollingNavbar+Sizes.swift in Sources */,
 				C28E876F1E5C0C8500149654 /* UIViewController+KMNavigationBarTransition.m in Sources */,
 				C28E87601E5C00B700149654 /* RainbowDemo.swift in Sources */,
 				C28E876C1E5C0C8500149654 /* KMSwizzle.m in Sources */,
@@ -351,6 +375,7 @@
 				44B95E6E1E5B2E5C00D66F39 /* TransparentBarDemo.swift in Sources */,
 				C28E876D1E5C0C8500149654 /* KMWeakObjectContainer.m in Sources */,
 				C2DA0A471E5C21F8006C0369 /* NavigationBarExtension.swift in Sources */,
+				442254D71E5F173400A62376 /* ScrollingNavigationViewController.swift in Sources */,
 				C28E876E1E5C0C8500149654 /* UINavigationController+KMNavigationBarTransition.m in Sources */,
 				C28E87571E5C005300149654 /* RainbowColorSource.swift in Sources */,
 				44B95E6C1E5B2E1600D66F39 /* TFNavigationController.swift in Sources */,
@@ -358,6 +383,7 @@
 				C28E87591E5C005300149654 /* RainbowNavigation.swift in Sources */,
 				44B95E691E5B2E1600D66F39 /* TFBackwardAnimator.swift in Sources */,
 				44F030F91E5C80920059B587 /* MMNavigationController.swift in Sources */,
+				442254D61E5F173400A62376 /* ScrollingNavigationController.swift in Sources */,
 				C28E875A1E5C005300149654 /* RainbowPopAnimator.swift in Sources */,
 				C28E87741E5C0DCC00149654 /* SettingsViewController.swift in Sources */,
 			);
