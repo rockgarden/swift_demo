@@ -21,7 +21,6 @@ class IndexTableView: UITableView,UITableViewDelegate,UITableViewDataSource {
     var numberRows:Int = 50
     
     var changeContentSize:((_ contentSize:CGSize)->())?
-
     
     override init(frame: CGRect, style: UITableViewStyle) {
         super.init(frame: frame, style: style)

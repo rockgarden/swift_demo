@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="6BH-Cu-RFJ">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Page ControlVC-->
+        <scene sceneID="Gv9-JK-pBy">
+            <objects>
+                <viewController storyboardIdentifier="UIPageControlVC" id="6BH-Cu-RFJ" customClass="UIPageControlVC" customModule="UIPageControlDemo" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="XrB-co-qkp"/>
+                        <viewControllerLayoutGuide type="bottom" id="s3M-NF-cC1"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="hbQ-PA-pc5">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Q50-g3-7gL">
+                                <rect key="frame" x="16" y="66" width="343" height="155"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="155" id="EKL-lJ-c8x"/>
+                                </constraints>
+                                <connections>
+                                    <outlet property="delegate" destination="6BH-Cu-RFJ" id="flx-Ge-au4"/>
+                                </connections>
+                            </scrollView>
+                            <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="4" translatesAutoresizingMaskIntoConstraints="NO" id="6r0-wr-2UD">
+                                <rect key="frame" x="0.0" y="184" width="375" height="37"/>
+                                <color key="pageIndicatorTintColor" red="0.66666666669999997" green="0.66666666669999997" blue="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="currentPageIndicatorTintColor" red="1" green="0.21931261690000001" blue="0.45882864099999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <connections>
+                                    <action selector="userDidPage:" destination="6BH-Cu-RFJ" eventType="valueChanged" id="w7u-pB-EPR"/>
+                                </connections>
+                            </pageControl>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="Q50-g3-7gL" secondAttribute="trailing" id="CWS-El-TJA"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="Q50-g3-7gL" secondAttribute="leading" id="IR7-ES-Ap8"/>
+                            <constraint firstItem="6r0-wr-2UD" firstAttribute="leading" secondItem="hbQ-PA-pc5" secondAttribute="leading" id="J2l-XW-diY"/>
+                            <constraint firstAttribute="trailing" secondItem="6r0-wr-2UD" secondAttribute="trailing" id="RJI-e1-vXE"/>
+                            <constraint firstItem="Q50-g3-7gL" firstAttribute="top" secondItem="XrB-co-qkp" secondAttribute="bottom" constant="46" id="ViV-lE-CFV"/>
+                            <constraint firstItem="6r0-wr-2UD" firstAttribute="bottom" secondItem="Q50-g3-7gL" secondAttribute="bottom" id="rX7-aY-3nB"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="pager" destination="6r0-wr-2UD" id="E8j-7K-0uq"/>
+                        <outlet property="sv" destination="Q50-g3-7gL" id="h9k-XF-KC1"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ddZ-KR-Rge" sceneMemberID="firstResponder"/>
+            </objects>
+        </scene>
+    </scenes>
+</document>
