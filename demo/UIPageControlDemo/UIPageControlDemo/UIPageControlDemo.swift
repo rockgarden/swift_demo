@@ -1,5 +1,5 @@
 //
-//  UIPageControlVC.swift
+//  UIPageControlDemo.swift
 //  UIPageControlDemo
 //
 //  Created by wangkan on 2017/2/24.
@@ -8,29 +8,34 @@
 
 import UIKit
 
-class UIPageControlVC : UIViewController, UIScrollViewDelegate {
+class UIPageControlDemo : UIViewController, UIScrollViewDelegate {
     @IBOutlet var sv : UIScrollView!
     @IBOutlet var pager : UIPageControl!
     let colors : [UIColor] = [.purple, .green, .yellow, .blue]
     var views: [UIView] = []
+    var images = [UIImage]()
     
     var didLayout = false
     
     override func viewDidLoad() {
+        for i in 0 ..< colors.count {
+            let i = UIImage(color: colors[i], rect: CGRect(0, 0, view.bounds.width, view.bounds.height))
+            images.append(i)
+        }
         demoMU()
+        pager.numberOfPages = colors.count
     }
     
     override func viewDidLayoutSubviews() {
         if !self.didLayout {
             self.didLayout = true
             let sz = self.sv.bounds.size
-            for i in 0 ..< 4 {
-                let v = UIView(frame:CGRect(sz.width*CGFloat(i),0,sz.width,sz.height))
+            for i in 0 ..< colors.count {
+                let v = UIView(frame:CGRect(sz.width*CGFloat(i), 0, sz.width, sz.height))
                 v.backgroundColor = colors[i]
                 self.sv.addSubview(v)
-                views.append(v)
             }
-            self.sv.contentSize = CGSize(3*sz.width,sz.height)
+            self.sv.contentSize = CGSize(CGFloat(colors.count)*sz.width,sz.height)
         }
     }
     
@@ -53,15 +58,20 @@ class UIPageControlVC : UIViewController, UIScrollViewDelegate {
         let w = self.sv.bounds.size.width
         self.sv.setContentOffset(CGPoint(CGFloat(p)*w,0), animated:true)
     }
-    
+
     func demoMU() {
-        
-        let y = self.sv.frame.maxY + 40;
-        let roundCycleView: MUCycleScrollView = MUCycleScrollView(frame: CGRect(x: 0, y: y, width: self.view.bounds.size.width, height: 200))
+        let roundCycleView = MUCycleScrollView()
+        roundCycleView.translatesAutoresizingMaskIntoConstraints = false
         self.view.addSubview(roundCycleView)
+        let vs = ["rcv":roundCycleView, "sv":sv] as [String : Any]
+        NSLayoutConstraint.activate([
+            NSLayoutConstraint.constraints(withVisualFormat: "H:|-(0)-[rcv]-(0)-|", options: [], metrics: nil, views: vs),
+            NSLayoutConstraint.constraints(withVisualFormat: "V:[sv]-(2)-[rcv(200)]", options: [], metrics: nil, views: vs),
+            ].joined().map{$0})
+
         
         //设置数据源
-        roundCycleView.imageArray = views
+        roundCycleView.imageArray = images
         //无限滚动
         roundCycleView.infiniteLoop = true
         //自动滚动
@@ -73,7 +83,7 @@ class UIPageControlVC : UIViewController, UIScrollViewDelegate {
         //是否显示分页控件
         roundCycleView.showPageControl = true;
         //滚动方向
-        roundCycleView.scrollDirection = .vertical
+        roundCycleView.scrollDirection = .horizontal
         //图片填充样式
         roundCycleView.bannerImageContentMode = .scaleAspectFill
         //点击回调

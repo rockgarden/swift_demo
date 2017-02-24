@@ -1,19 +1,115 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="6BH-Cu-RFJ">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="kCa-l0-410">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Page ControlVC-->
+        <!--UIPageDemo-->
+        <scene sceneID="d5m-Ou-WIE">
+            <objects>
+                <tableViewController storyboardIdentifier="UIPageDemo" id="M1E-kp-fhT" userLabel="UIPageDemo" customClass="UIPageDemo" customModule="UIPageControlDemo" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="yke-vh-Bh2">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <sections>
+                            <tableViewSection id="oqE-x6-qoz">
+                                <cells>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" textLabel="3Od-GW-HZo" style="IBUITableViewCellStyleDefault" id="CVq-se-iPA">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="CVq-se-iPA" id="WG1-SW-L3S">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="UIPageControl" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="3Od-GW-HZo">
+                                                    <rect key="frame" x="15" y="0.0" width="345" height="43.5"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="6BH-Cu-RFJ" kind="show" id="bSD-LH-PY6"/>
+                                        </connections>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" tag="1" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" textLabel="FN0-eK-Uyp" style="IBUITableViewCellStyleDefault" id="Nqt-Is-43i">
+                                        <rect key="frame" x="0.0" y="44" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Nqt-Is-43i" id="m9H-hk-iAO">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="UIPageViewController" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="FN0-eK-Uyp">
+                                                    <rect key="frame" x="15" y="0.0" width="345" height="43.5"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" textLabel="kdb-vH-dIR" style="IBUITableViewCellStyleDefault" id="Jlf-F1-ude">
+                                        <rect key="frame" x="0.0" y="88" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Jlf-F1-ude" id="cCw-J6-EoV">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="UIPageViewController in UIVC" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="kdb-vH-dIR">
+                                                    <rect key="frame" x="15" y="0.0" width="345" height="43.5"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="t2H-Jb-rcv" kind="show" id="Tc9-kq-juL"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                        </sections>
+                        <connections>
+                            <outlet property="dataSource" destination="M1E-kp-fhT" id="ukj-nm-AVt"/>
+                            <outlet property="delegate" destination="M1E-kp-fhT" id="BcC-TB-sGV"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Root View Controller" id="0F1-NT-61W"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Hhg-o3-pYY" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1007" y="28"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="8cU-H8-fAV">
+            <objects>
+                <navigationController id="kCa-l0-410" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="SHw-cX-hYf">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="M1E-kp-fhT" kind="relationship" relationship="rootViewController" id="ZGd-M7-qlG"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Cwh-aK-C6M" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1790" y="29"/>
+        </scene>
+        <!--Page Control Demo-->
         <scene sceneID="Gv9-JK-pBy">
             <objects>
-                <viewController storyboardIdentifier="UIPageControlVC" id="6BH-Cu-RFJ" customClass="UIPageControlVC" customModule="UIPageControlDemo" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="UIPageControlDemo" id="6BH-Cu-RFJ" customClass="UIPageControlDemo" customModule="UIPageControlDemo" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="XrB-co-qkp"/>
                         <viewControllerLayoutGuide type="bottom" id="s3M-NF-cC1"/>
@@ -23,7 +119,7 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Q50-g3-7gL">
-                                <rect key="frame" x="16" y="66" width="343" height="155"/>
+                                <rect key="frame" x="0.0" y="64" width="375" height="155"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="155" id="EKL-lJ-c8x"/>
                                 </constraints>
@@ -32,7 +128,7 @@
                                 </connections>
                             </scrollView>
                             <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="4" translatesAutoresizingMaskIntoConstraints="NO" id="6r0-wr-2UD">
-                                <rect key="frame" x="0.0" y="184" width="375" height="37"/>
+                                <rect key="frame" x="0.0" y="182" width="375" height="37"/>
                                 <color key="pageIndicatorTintColor" red="0.66666666669999997" green="0.66666666669999997" blue="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <color key="currentPageIndicatorTintColor" red="1" green="0.21931261690000001" blue="0.45882864099999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <connections>
@@ -42,21 +138,41 @@
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstAttribute="trailingMargin" secondItem="Q50-g3-7gL" secondAttribute="trailing" id="CWS-El-TJA"/>
-                            <constraint firstAttribute="leadingMargin" secondItem="Q50-g3-7gL" secondAttribute="leading" id="IR7-ES-Ap8"/>
+                            <constraint firstAttribute="trailing" secondItem="Q50-g3-7gL" secondAttribute="trailing" id="CWS-El-TJA"/>
+                            <constraint firstAttribute="leading" secondItem="Q50-g3-7gL" secondAttribute="leading" id="IR7-ES-Ap8"/>
                             <constraint firstItem="6r0-wr-2UD" firstAttribute="leading" secondItem="hbQ-PA-pc5" secondAttribute="leading" id="J2l-XW-diY"/>
                             <constraint firstAttribute="trailing" secondItem="6r0-wr-2UD" secondAttribute="trailing" id="RJI-e1-vXE"/>
-                            <constraint firstItem="Q50-g3-7gL" firstAttribute="top" secondItem="XrB-co-qkp" secondAttribute="bottom" constant="46" id="ViV-lE-CFV"/>
+                            <constraint firstItem="Q50-g3-7gL" firstAttribute="top" secondItem="XrB-co-qkp" secondAttribute="bottom" id="ViV-lE-CFV"/>
                             <constraint firstItem="6r0-wr-2UD" firstAttribute="bottom" secondItem="Q50-g3-7gL" secondAttribute="bottom" id="rX7-aY-3nB"/>
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="pager" destination="6r0-wr-2UD" id="E8j-7K-0uq"/>
-                        <outlet property="sv" destination="Q50-g3-7gL" id="h9k-XF-KC1"/>
+                        <outlet property="pager" destination="6r0-wr-2UD" id="p7P-xf-fSu"/>
+                        <outlet property="sv" destination="Q50-g3-7gL" id="yeD-LV-kY8"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ddZ-KR-Rge" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="-271" y="27"/>
+        </scene>
+        <!--UIPageVC in UIVC-->
+        <scene sceneID="Dcm-NY-mjg">
+            <objects>
+                <viewController storyboardIdentifier="UIPageViewControllerDemo" id="t2H-Jb-rcv" userLabel="UIPageVC in UIVC" customClass="UIPageViewControllerDemo" customModule="UIPageControlDemo" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="QYj-Jn-jtg"/>
+                        <viewControllerLayoutGuide type="bottom" id="aWO-pp-0O1"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="ZoM-Kz-rUe">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Other interface goes here" id="DdR-dw-bCj"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Zx2-5E-qog" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1007" y="736"/>
         </scene>
     </scenes>
 </document>

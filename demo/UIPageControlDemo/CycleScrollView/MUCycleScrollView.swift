@@ -45,7 +45,7 @@ class MUCycleScrollView: UIView, UICollectionViewDelegate, UICollectionViewDataS
         }
         
         /// 图片数组
-        var imageArray: [UIView] = [] {
+        var imageArray: [UIImage] = [] {
                 willSet {
                         dataSource = newValue
                 }
