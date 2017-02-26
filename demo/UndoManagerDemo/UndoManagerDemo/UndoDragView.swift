@@ -35,6 +35,7 @@ class UndoDragView : UIView {
 
         /// 3️⃣ handler variant in iOS 9
         //self.undoer.registerUndo(withTarget: self) { myself in myself.setCenterUndoably(oldCenter) }
+        
         self.undoer.registerUndo(withTarget: self) { myself in UIView.animate(withDuration:0.4, delay: 0.1, animations: { myself.center = oldCenter}); myself.setCenterUndoably(oldCenter) }
 
         self.undoer.setActionName("Move")

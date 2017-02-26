@@ -2,6 +2,7 @@
 import UIKit
 
 class LayoutFlushVC : UICollectionViewController {
+
     required init?(coder aDecoder: NSCoder) {
         super.init(coder:aDecoder)
         self.useLayoutToLayoutNavigationTransitions = true
@@ -42,18 +43,27 @@ class LayoutFlushVC : UICollectionViewController {
         }
         return
     }
-    
+
+}
+
+
+
+// MARK: UICollectionViewDelegateFlowLayout
+extension LayoutFlushVC : UICollectionViewDelegateFlowLayout {
+
     // but I don't want to be the delegate, because I need the data for that, and I don't have it!
     // (this is what I couldn't get Apple to understand; how can the data source and delegate be different?)
     // so I forward delegation back to the other view controller
     
     func collectionView(_ collectionView: UICollectionView,
-        layout collectionViewLayout: UICollectionViewLayout,
-        sizeForItemAtIndexPath indexPath: IndexPath) -> CGSize {
-            let cv = self.navigationController!.viewControllers[1] as! LayoutNormalVC //加入了一层TableVC,所以取的是1
-            let result = cv.collectionView(collectionView, layout:collectionViewLayout,
-                sizeForItemAtIndexPath:indexPath)
-            return result
+                        layout collectionViewLayout: UICollectionViewLayout,
+                        sizeForItemAt indexPath: IndexPath) -> CGSize {
+        print("forwarding to the other view controller")
+        //let cv = self.navigationController!.viewControllers[0] as! ViewController
+        let cv = self.navigationController!.viewControllers[1] as! LayoutNormalVC //加入了一层TableVC,所以取的是1
+        let result = cv.collectionView(collectionView, layout:collectionViewLayout,
+                                       sizeForItemAt:indexPath)
+        return result
     }
     
 }

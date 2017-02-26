@@ -12,7 +12,7 @@ class LayoutNormalVC : UICollectionViewController {
         }()
 
     override func viewDidLoad() {
-        let s = try! String(contentsOfFile: Bundle.main.path(forResource: "states", ofType: "txt")!, encoding: String.Encoding.utf8)
+        let s = try! String(contentsOfFile: Bundle.main.path(forResource: "states", ofType: "txt")!, encoding: .utf8)
         let states = s.components(separatedBy: "\n")
         var previous = ""
         for aState in states {
@@ -92,32 +92,55 @@ class LayoutNormalVC : UICollectionViewController {
         if cell.lab.text == "Label" { // new cell
             cell.layer.cornerRadius = 8
             cell.layer.borderWidth = 2
-            
-            cell.backgroundColor = UIColor.gray
-            
+            cell.backgroundColor = .gray
+
             // checkmark in top left corner when selected
-            UIGraphicsBeginImageContextWithOptions(cell.bounds.size, false, 0)
-            let con = UIGraphicsGetCurrentContext()!
-            let shadow = NSShadow()
-            shadow.shadowColor = UIColor.darkGray
-            shadow.shadowOffset = CGSize(width: 2,height: 2)
-            shadow.shadowBlurRadius = 4
-            let check2 =
-            NSAttributedString(string:"\u{2714}", attributes:[
-                NSFontAttributeName: UIFont(name:"ZapfDingbatsITC", size:24)!,
-                NSForegroundColorAttributeName: UIColor.green,
-                NSStrokeColorAttributeName: UIColor.red,
-                NSStrokeWidthAttributeName: -4,
-                NSShadowAttributeName: shadow
-                ])
-            con.scaleBy(x: 1.1, y: 1)
-            check2.draw(at: CGPoint(x: 2,y: 0))
-            let im = UIGraphicsGetImageFromCurrentImageContext()
-            UIGraphicsEndImageContext()
+            var im = UIImage()
+            if #available(iOS 10.0, *) {
+                let r = UIGraphicsImageRenderer(size:cell.bounds.size)
+                im = r.image {
+                    ctx in let con = ctx.cgContext
+                    let shadow = NSShadow()
+                    shadow.shadowColor = UIColor.darkGray
+                    shadow.shadowOffset = CGSize(2,2)
+                    shadow.shadowBlurRadius = 4
+                    let check2 =
+                        NSAttributedString(string:"\u{2714}", attributes:[
+                            NSFontAttributeName: UIFont(name:"ZapfDingbatsITC", size:24)!,
+                            NSForegroundColorAttributeName: UIColor.green,
+                            NSStrokeColorAttributeName: UIColor.red,
+                            NSStrokeWidthAttributeName: -4,
+                            NSShadowAttributeName: shadow
+                            ])
+                    con.scaleBy(x:1.1, y:1)
+                    check2.draw(at:CGPoint(2,0))
+                }
+            } else {
+                // Fallback on earlier versions
+                UIGraphicsBeginImageContextWithOptions(cell.bounds.size, false, 0)
+                let con = UIGraphicsGetCurrentContext()!
+                let shadow = NSShadow()
+                shadow.shadowColor = UIColor.darkGray
+                shadow.shadowOffset = CGSize(width: 2,height: 2)
+                shadow.shadowBlurRadius = 4
+                let check2 =
+                    NSAttributedString(string:"\u{2714}", attributes:[
+                        NSFontAttributeName: UIFont(name:"ZapfDingbatsITC", size:24)!,
+                        NSForegroundColorAttributeName: UIColor.green,
+                        NSStrokeColorAttributeName: UIColor.red,
+                        NSStrokeWidthAttributeName: -4,
+                        NSShadowAttributeName: shadow
+                        ])
+                con.scaleBy(x: 1.1, y: 1)
+                check2.draw(at: CGPoint(x: 2,y: 0))
+                im = UIGraphicsGetImageFromCurrentImageContext()!
+                UIGraphicsEndImageContext()
+            }
             let iv = UIImageView(image:nil, highlightedImage:im)
             iv.isUserInteractionEnabled = false
             cell.addSubview(iv)
         }
+
         cell.lab.text = self.sectionData[(indexPath as NSIndexPath).section][(indexPath as NSIndexPath).row]
         var stateName = cell.lab.text!
         // flag in background! very cute
@@ -131,16 +154,19 @@ class LayoutNormalVC : UICollectionViewController {
         
         return cell
     }
-    
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAtIndexPath indexPath: IndexPath) -> CGSize {
-        self.modelCell.lab.text = self.sectionData[(indexPath as NSIndexPath).section][(indexPath as NSIndexPath).row]
-        var sz = self.modelCell.container.systemLayoutSizeFitting(UILayoutFittingCompressedSize)
-        sz.width = ceil(sz.width); sz.height = ceil(sz.height)
-        return sz
-    }
 
     func doPush(_ sender:AnyObject?) {
         self.performSegue(withIdentifier: "show", sender: self)
     }
 
 }
+
+extension LayoutNormalVC : UICollectionViewDelegateFlowLayout {
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        self.modelCell.lab.text = self.sectionData[(indexPath as NSIndexPath).section][(indexPath as NSIndexPath).row]
+        var sz = self.modelCell.container.systemLayoutSizeFitting(UILayoutFittingCompressedSize)
+        sz.width = ceil(sz.width); sz.height = ceil(sz.height)
+        return sz
+    }
+}
+
