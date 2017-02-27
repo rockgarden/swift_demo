@@ -1,14 +1,10 @@
 //
-//  LLCycleScrollViewCell.swift
-//  LLCycleScrollView
-//
-//  Created by LvJianfeng on 2016/11/22.
-//  Copyright © 2016年 LvJianfeng. All rights reserved.
+//  CycleScrollViewCell.swift
 //
 
 import UIKit
 
-class LLCycleScrollViewCell: UICollectionViewCell {
+class CycleScrollViewCell: UICollectionViewCell {
     
     // 标题
     var title: String = "" {

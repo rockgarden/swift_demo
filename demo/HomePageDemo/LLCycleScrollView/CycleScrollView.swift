@@ -1,9 +1,5 @@
 //
-//  LLCycleScrollView.swift
-//  LLCycleScrollView
-//
-//  Created by LvJianfeng on 2016/11/22.
-//  Copyright © 2016年 LvJianfeng. All rights reserved.
+//  CycleScrollView.swift
 //
 
 import UIKit
@@ -25,7 +21,8 @@ public enum PageControlPosition {
 
 public typealias didSelectItemAtIndexClosure = (NSInteger) -> Void
 
-@IBDesignable open class LLCycleScrollView: UIView, UICollectionViewDelegate, UICollectionViewDataSource, UIScrollViewDelegate {
+@IBDesignable open class CycleScrollView: UIView, UICollectionViewDelegate, UICollectionViewDataSource, UIScrollViewDelegate {
+
     // MARK: 控制参数
     // 是否自动滚动，默认true
     @IBInspectable open var autoScroll: Bool? = true {
@@ -140,7 +137,7 @@ public typealias didSelectItemAtIndexClosure = (NSInteger) -> Void
     
     // PageControlStyle == .fill
     // 圆大小
-    open var FillPageControlIndicatorRadius: CGFloat = 4 {
+    open var FillPageControlIndicatorRadius: CGFloat = 3 {
         didSet {
             setupPageControl()
         }
@@ -158,7 +155,7 @@ public typealias didSelectItemAtIndexClosure = (NSInteger) -> Void
     @IBInspectable open var collectionViewBackgroundColor: UIColor! = UIColor.clear
     
     // ImagePaths
-    open var imagePaths: Array<String> = [] {
+    open var imagePaths: [String] = [] {
         didSet {
             totalItemsCount = infiniteLoop! ? imagePaths.count * 100 : imagePaths.count
             if imagePaths.count != 1 {
@@ -167,7 +164,6 @@ public typealias didSelectItemAtIndexClosure = (NSInteger) -> Void
             }else{
                 collectionView.isScrollEnabled = false
             }
-            
             setupPageControl()
             collectionView.reloadData()
         }
@@ -184,22 +180,37 @@ public typealias didSelectItemAtIndexClosure = (NSInteger) -> Void
     fileprivate var totalItemsCount: NSInteger! = 1
     
     // 显示图片(CollectionView)
-    fileprivate var collectionView: UICollectionView!
-    
+    lazy var collectionView: UICollectionView = {
+        let tempCollectionView = UICollectionView(frame: self.bounds, collectionViewLayout: self.flowLayout!)
+        tempCollectionView.register(CycleScrollViewCell.self, forCellWithReuseIdentifier: self.identifier)
+        tempCollectionView.translatesAutoresizingMaskIntoConstraints = false
+        tempCollectionView.delegate = self
+        tempCollectionView.dataSource = self
+        tempCollectionView.showsVerticalScrollIndicator = false
+        tempCollectionView.showsHorizontalScrollIndicator = false
+        tempCollectionView.isPagingEnabled = true
+        tempCollectionView.scrollsToTop = false
+        tempCollectionView.backgroundColor = self.collectionViewBackgroundColor
+        return tempCollectionView
+    }()
+
+
+
     // 方向(swift后没有none，只能指定了)
     fileprivate var position: UICollectionViewScrollPosition! = .centeredHorizontally
     
     // FlowLayout
     lazy fileprivate var flowLayout: UICollectionViewFlowLayout? = {
-        let tempFlowLayout = UICollectionViewFlowLayout.init()
+        let tempFlowLayout = UICollectionViewFlowLayout()
         tempFlowLayout.minimumLineSpacing = 0
+        tempFlowLayout.minimumInteritemSpacing = 0
         tempFlowLayout.scrollDirection = .horizontal
         return tempFlowLayout
     }()
-    
+
     // 计时器
     fileprivate var timer: Timer?
-    
+
     // PageControl
     open var pageControl: UIPageControl?
     
@@ -212,52 +223,23 @@ public typealias didSelectItemAtIndexClosure = (NSInteger) -> Void
     fileprivate var coverViewImage = UIImage.init(named: "CycleScrollView.bundle/llplaceholder.png")
     
     // 回调
-    open var didSelectItemClosure: didSelectItemAtIndexClosure? = nil
+    open var didSelectItemClosure: didSelectItemAtIndexClosure?
     
     // MARK: Init
-    required public init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-    
-    override public init(frame: CGRect) {
-        super.init(frame: frame)
-        setupMainView()
-    }
-    
-    convenience init(frame: CGRect, didSelectItemAtIndex: didSelectItemAtIndexClosure? = nil) {
-        self.init(frame: frame)
+    convenience init(didSelectItemAtIndex: didSelectItemAtIndexClosure? = nil) {
+        self.init()
         if didSelectItemAtIndex != nil {
-            self.didSelectItemClosure = didSelectItemAtIndex
+            didSelectItemClosure = didSelectItemAtIndex
         }
+        initUI()
     }
-    
-    // Class func
-    open class func llCycleScrollViewWithFrame(_ frame: CGRect, imageURLPaths: Array<String>? = [], titles:Array<String>? = [], didSelectItemAtIndex: didSelectItemAtIndexClosure? = nil) -> LLCycleScrollView {
-        let llcycleScrollView: LLCycleScrollView = LLCycleScrollView.init(frame: frame)
-        if (imageURLPaths?.count)! > 0 {
-            llcycleScrollView.imagePaths = imageURLPaths!
-        }
-        if (titles?.count)! > 0 {
-            llcycleScrollView.titles = titles!
-        }
-        if didSelectItemAtIndex != nil {
-            llcycleScrollView.didSelectItemClosure = didSelectItemAtIndex
-        }
-        return llcycleScrollView
-    }
-    
-    // MARK: setupMainView
-    private func setupMainView() {
-        collectionView = UICollectionView.init(frame: self.bounds, collectionViewLayout: flowLayout!)
-        collectionView.register(LLCycleScrollViewCell.self, forCellWithReuseIdentifier: identifier)
-        collectionView.backgroundColor = collectionViewBackgroundColor
-        collectionView.isPagingEnabled = true
-        collectionView.showsHorizontalScrollIndicator = false
-        collectionView.showsVerticalScrollIndicator = false
-        collectionView.dataSource = self
-        collectionView.delegate = self
-        collectionView.scrollsToTop = false
-        self.addSubview(collectionView)
+
+    /// 适配 NSLayoutConstraint
+    fileprivate func initUI() {
+        addSubview(collectionView)
+        let views = ["cv" : collectionView] as [String : Any]
+        self.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "H:|-0-[cv]-0-|", options: [], metrics: nil, views: views))
+        self.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "V:|-0-[cv]-0-|", options: [], metrics: nil, views: views))
     }
     
     // MARK: Timer
@@ -315,12 +297,12 @@ public typealias didSelectItemAtIndexClosure = (NSInteger) -> Void
         }
         
         if customPageControlStyle == .snake {
-            customPageControl = LLSnakePageControl.init(frame: CGRect.zero)
-            (customPageControl as! LLSnakePageControl).activeTint = customPageControlTintColor
-            (customPageControl as! LLSnakePageControl).indicatorPadding = customPageControlIndicatorPadding
-            (customPageControl as! LLSnakePageControl).indicatorRadius = FillPageControlIndicatorRadius
-            (customPageControl as! LLSnakePageControl).inactiveTint = customPageControlInActiveTintColor
-            (customPageControl as! LLSnakePageControl).pageCount = self.imagePaths.count
+            customPageControl = SnakePageControl.init(frame: CGRect.zero)
+            (customPageControl as! SnakePageControl).activeTint = customPageControlTintColor
+            (customPageControl as! SnakePageControl).indicatorPadding = customPageControlIndicatorPadding
+            (customPageControl as! SnakePageControl).indicatorRadius = FillPageControlIndicatorRadius
+            (customPageControl as! SnakePageControl).inactiveTint = customPageControlInActiveTintColor
+            (customPageControl as! SnakePageControl).pageCount = self.imagePaths.count
             self.addSubview(customPageControl!)
         }
     }
@@ -402,7 +384,7 @@ public typealias didSelectItemAtIndexClosure = (NSInteger) -> Void
     }
     
     open func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell: LLCycleScrollViewCell = collectionView.dequeueReusableCell(withReuseIdentifier: identifier, for: indexPath) as! LLCycleScrollViewCell
+        let cell: CycleScrollViewCell = collectionView.dequeueReusableCell(withReuseIdentifier: identifier, for: indexPath) as! CycleScrollViewCell
         
         // 0==count 占位图
         if imagePaths.count == 0 {
@@ -438,7 +420,9 @@ public typealias didSelectItemAtIndexClosure = (NSInteger) -> Void
     
     open func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         if let didSelectItemAtIndexPath = didSelectItemClosure {
-            didSelectItemAtIndexPath(pageControlIndexWithCurrentCellIndex(index: indexPath.item))
+            while imagePaths.count > 0 {
+                didSelectItemAtIndexPath(pageControlIndexWithCurrentCellIndex(index: indexPath.item))
+            }
         }
     }
     
@@ -480,7 +464,7 @@ public typealias didSelectItemAtIndexClosure = (NSInteger) -> Void
             }else if customPageControlStyle == .pill {
                 (customPageControl as! LLPillPageControl).progress = progress
             }else if customPageControlStyle == .snake {
-                (customPageControl as! LLSnakePageControl).progress = progress
+                (customPageControl as! SnakePageControl).progress = progress
             }
         }
         

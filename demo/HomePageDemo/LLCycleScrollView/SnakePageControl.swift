@@ -1,15 +1,12 @@
 //
-//  LLSnakePageControl.swift
-//  LL 使用备注
+//  SnakePageControl.swift
+//  
 //  https://github.com/popwarsweet/PageControls
-//
-//  Created by Kyle Zaragoza on 8/5/16.
-//  Copyright © 2016 Kyle Zaragoza. All rights reserved.
 //
 
 import UIKit
 
-open class LLSnakePageControl: UIView {
+open class SnakePageControl: UIView {
     
     // MARK: - PageControl
     
