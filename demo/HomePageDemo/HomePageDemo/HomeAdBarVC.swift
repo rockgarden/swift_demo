@@ -51,7 +51,8 @@ class HomeAdBarVC: UIViewController, UIGestureRecognizerDelegate {
 
     lazy var initToolBar: UIView = {
         let v = UIView()
-        v.backgroundColor = .clear
+        v.backgroundColor = .blue
+        v.alpha = 1.0
         let defaultB = UIButton(type: .custom)
         defaultB.setImage(#imageLiteral(resourceName: "home_search"), for: .normal)
         defaultB.sizeToFit()
@@ -68,7 +69,8 @@ class HomeAdBarVC: UIViewController, UIGestureRecognizerDelegate {
 
     lazy var toolBar: UIView = {
         let v = UIView()
-        v.backgroundColor = .clear
+        v.backgroundColor = .blue
+        v.alpha = 1.0
 
         let payB = UIButton(type: .custom)
         payB.setImage(#imageLiteral(resourceName: "home_search"), for: .normal)
@@ -121,8 +123,6 @@ class HomeAdBarVC: UIViewController, UIGestureRecognizerDelegate {
         headerView.addSubview(functionBar)
 
         addConstraint()
-        AdBar.frame = AdBar.bounds
-        debugPrint(AdBar.frame)
         
         //AdBar.imagePaths = adURLStrings.count > 0 ? adURLStrings : defaultAdURLStrings
 
@@ -142,10 +142,6 @@ class HomeAdBarVC: UIViewController, UIGestureRecognizerDelegate {
         //self.updateContentSize(size: mainTableView.contentSize)
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-    }
-    
     func didAdSelectAtItem(_ index: Int) -> Void {
         print("index\(index)")
     }
@@ -177,7 +173,7 @@ fileprivate extension HomeAdBarVC {
 
         NSLayoutConstraint.activate([
             NSLayoutConstraint.constraints(withVisualFormat: "H:|-(0)-[nv]-(0)-|", options: [], metrics: nil, views: views),
-            NSLayoutConstraint.constraints(withVisualFormat: "V:|-(0)-[nv(64)]", options: [], metrics: nil, views: views),
+            NSLayoutConstraint.constraints(withVisualFormat: "V:|-(0)-[nv(60)]", options: [], metrics: nil, views: views),
             NSLayoutConstraint.constraints(withVisualFormat: "H:|-(0)-[msv]-(0)-|", options: [], metrics: nil, views: views),
             NSLayoutConstraint.constraints(withVisualFormat: "V:[hv]-(0)-[msv]-(0)-|", options: [], metrics: nil, views: views),
             ].joined().map{$0})
@@ -188,43 +184,24 @@ fileprivate extension HomeAdBarVC {
 // MARK: - UIScrollViewDelegate
 extension HomeAdBarVC: UIScrollViewDelegate {
 
-//    func scrollViewWillEndDragging(_ scrollView: UIScrollView, withVelocity velocity: CGPoint, targetContentOffset: UnsafeMutablePointer<CGPoint>) {
-//        // 松手时判断是否刷新
-//        let y = scrollView.contentOffset.y;
-//
-//        if y < -65 {
-//            self.mainTableView.mj_header.beginRefreshing()
-//        } else if y > 0 && y <= functionBarHeight {
-//            functionViewAnimation(offsetY: y)
-//        }
-//    }
-
-
-
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         let y = scrollView.contentOffset.y
         debugPrint("contentOffset:", y)
         if y <= 0 {
-            //处理功能区隐藏和视差
-            var newFrame = self.AdBar.frame
-            newFrame.origin.y = y/2
-            self.AdBar.frame = newFrame
-
+        } else if y < adBarHeight - 60 && y > 0 {
             //处理透明度
-            let alpha = (1 - y/functionBarHeight*2.5 ) > 0 ? (1 - y/functionBarHeight*2.5 ) : 0
-
+            let alpha = (1 - y/adBarHeight*2.5 ) > 0 ? (1 - y/adBarHeight*2.5 ) : 0
+            debugPrint("alpha:", alpha)
             AdBar.alpha = alpha
             if alpha > 0.5 {
                 let newAlpha =  alpha*2 - 1
                 initToolBar.alpha = newAlpha
                 toolBar.alpha = 0
             } else {
-                let newAlpha =  alpha*2
+                let newAlpha =  alpha * 2
                 initToolBar.alpha = 0
                 toolBar.alpha = 1 - newAlpha
             }
-        } else if y < adBarHeight && y > 0 {
-            debugPrint(headerView.constraints)
             headerView.constraints[0].constant = headerHeight - y
             //view.updateConstraints()
             view.setNeedsLayout()
