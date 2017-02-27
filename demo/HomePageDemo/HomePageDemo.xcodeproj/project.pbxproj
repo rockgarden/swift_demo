@@ -13,21 +13,30 @@
 		C23436B81E5D63EC00260F96 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C23436B71E5D63EC00260F96 /* Assets.xcassets */; };
 		C23436BB1E5D63EC00260F96 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C23436B91E5D63EC00260F96 /* LaunchScreen.storyboard */; };
 		C23436C31E5D64A300260F96 /* TabBarVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C23436C21E5D64A300260F96 /* TabBarVC.swift */; };
-		C265222B1E5D7547008B4C8E /* MJRefresh.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C265222A1E5D7547008B4C8E /* MJRefresh.framework */; };
 		C265222D1E5D7576008B4C8E /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C265222C1E5D7576008B4C8E /* Extension.swift */; };
 		C265222F1E5D757E008B4C8E /* IndexTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C265222E1E5D757E008B4C8E /* IndexTableView.swift */; };
 		C26522301E5D762F008B4C8E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C23436B41E5D63EC00260F96 /* Main.storyboard */; };
-		C26522321E5D7684008B4C8E /* MJRefresh.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = C265222A1E5D7547008B4C8E /* MJRefresh.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		C29E9CE21E63FF2A001B89E6 /* MJRefresh.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C265222A1E5D7547008B4C8E /* MJRefresh.framework */; };
+		C29E9CE31E63FF2A001B89E6 /* MJRefresh.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = C265222A1E5D7547008B4C8E /* MJRefresh.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		C29E9CE81E6403FD001B89E6 /* Kingfisher.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C29E9CE71E6403FD001B89E6 /* Kingfisher.framework */; };
+		C29E9CEA1E640405001B89E6 /* Kingfisher.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = C29E9CE71E6403FD001B89E6 /* Kingfisher.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		C2A67B161E63F00D00DD7FEC /* CycleScrollView.bundle in Resources */ = {isa = PBXBuildFile; fileRef = C2A67B0F1E63F00D00DD7FEC /* CycleScrollView.bundle */; };
+		C2A67B171E63F00D00DD7FEC /* LLCycleScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2A67B101E63F00D00DD7FEC /* LLCycleScrollView.swift */; };
+		C2A67B181E63F00D00DD7FEC /* LLCycleScrollViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2A67B111E63F00D00DD7FEC /* LLCycleScrollViewCell.swift */; };
+		C2A67B191E63F00D00DD7FEC /* LLFilledPageControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2A67B121E63F00D00DD7FEC /* LLFilledPageControl.swift */; };
+		C2A67B1A1E63F00D00DD7FEC /* LLPillPageControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2A67B131E63F00D00DD7FEC /* LLPillPageControl.swift */; };
+		C2A67B1B1E63F00D00DD7FEC /* LLSnakePageControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2A67B141E63F00D00DD7FEC /* LLSnakePageControl.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		C26522331E5D7684008B4C8E /* Embed Frameworks */ = {
+		C29E9CE41E63FF2A001B89E6 /* Embed Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				C26522321E5D7684008B4C8E /* MJRefresh.framework in Embed Frameworks */,
+				C29E9CEA1E640405001B89E6 /* Kingfisher.framework in Embed Frameworks */,
+				C29E9CE31E63FF2A001B89E6 /* MJRefresh.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -47,6 +56,13 @@
 		C265222A1E5D7547008B4C8E /* MJRefresh.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = MJRefresh.framework; sourceTree = "<group>"; };
 		C265222C1E5D7576008B4C8E /* Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
 		C265222E1E5D757E008B4C8E /* IndexTableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IndexTableView.swift; sourceTree = "<group>"; };
+		C29E9CE71E6403FD001B89E6 /* Kingfisher.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Kingfisher.framework; sourceTree = "<group>"; };
+		C2A67B0F1E63F00D00DD7FEC /* CycleScrollView.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = CycleScrollView.bundle; sourceTree = "<group>"; };
+		C2A67B101E63F00D00DD7FEC /* LLCycleScrollView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LLCycleScrollView.swift; sourceTree = "<group>"; };
+		C2A67B111E63F00D00DD7FEC /* LLCycleScrollViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LLCycleScrollViewCell.swift; sourceTree = "<group>"; };
+		C2A67B121E63F00D00DD7FEC /* LLFilledPageControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LLFilledPageControl.swift; sourceTree = "<group>"; };
+		C2A67B131E63F00D00DD7FEC /* LLPillPageControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LLPillPageControl.swift; sourceTree = "<group>"; };
+		C2A67B141E63F00D00DD7FEC /* LLSnakePageControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LLSnakePageControl.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,7 +70,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C265222B1E5D7547008B4C8E /* MJRefresh.framework in Frameworks */,
+				C29E9CE81E6403FD001B89E6 /* Kingfisher.framework in Frameworks */,
+				C29E9CE21E63FF2A001B89E6 /* MJRefresh.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -64,6 +81,8 @@
 		C23436A41E5D63EB00260F96 = {
 			isa = PBXGroup;
 			children = (
+				C29E9CE71E6403FD001B89E6 /* Kingfisher.framework */,
+				C2A67B0E1E63F00D00DD7FEC /* LLCycleScrollView */,
 				C265222A1E5D7547008B4C8E /* MJRefresh.framework */,
 				C23436AF1E5D63EB00260F96 /* HomePageDemo */,
 				C23436AE1E5D63EB00260F96 /* Products */,
@@ -95,6 +114,19 @@
 			path = HomePageDemo;
 			sourceTree = "<group>";
 		};
+		C2A67B0E1E63F00D00DD7FEC /* LLCycleScrollView */ = {
+			isa = PBXGroup;
+			children = (
+				C2A67B0F1E63F00D00DD7FEC /* CycleScrollView.bundle */,
+				C2A67B101E63F00D00DD7FEC /* LLCycleScrollView.swift */,
+				C2A67B111E63F00D00DD7FEC /* LLCycleScrollViewCell.swift */,
+				C2A67B121E63F00D00DD7FEC /* LLFilledPageControl.swift */,
+				C2A67B131E63F00D00DD7FEC /* LLPillPageControl.swift */,
+				C2A67B141E63F00D00DD7FEC /* LLSnakePageControl.swift */,
+			);
+			path = LLCycleScrollView;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -105,7 +137,7 @@
 				C23436A91E5D63EB00260F96 /* Sources */,
 				C23436AA1E5D63EB00260F96 /* Frameworks */,
 				C23436AB1E5D63EB00260F96 /* Resources */,
-				C26522331E5D7684008B4C8E /* Embed Frameworks */,
+				C29E9CE41E63FF2A001B89E6 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -156,6 +188,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C2A67B161E63F00D00DD7FEC /* CycleScrollView.bundle in Resources */,
 				C26522301E5D762F008B4C8E /* Main.storyboard in Resources */,
 				C23436BB1E5D63EC00260F96 /* LaunchScreen.storyboard in Resources */,
 				C23436B81E5D63EC00260F96 /* Assets.xcassets in Resources */,
@@ -169,11 +202,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C2A67B181E63F00D00DD7FEC /* LLCycleScrollViewCell.swift in Sources */,
+				C2A67B1A1E63F00D00DD7FEC /* LLPillPageControl.swift in Sources */,
 				C265222F1E5D757E008B4C8E /* IndexTableView.swift in Sources */,
+				C2A67B191E63F00D00DD7FEC /* LLFilledPageControl.swift in Sources */,
 				C23436B31E5D63EC00260F96 /* HomeToolBarVC.swift in Sources */,
 				C23436C31E5D64A300260F96 /* TabBarVC.swift in Sources */,
 				C23436B11E5D63EC00260F96 /* AppDelegate.swift in Sources */,
 				442254B91E5DD57500A62376 /* HomeAdBarVC.swift in Sources */,
+				C2A67B171E63F00D00DD7FEC /* LLCycleScrollView.swift in Sources */,
+				C2A67B1B1E63F00D00DD7FEC /* LLSnakePageControl.swift in Sources */,
 				C265222D1E5D7576008B4C8E /* Extension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
