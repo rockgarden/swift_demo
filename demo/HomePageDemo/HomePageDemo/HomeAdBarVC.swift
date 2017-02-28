@@ -20,11 +20,12 @@ class HomeAdBarVC: UIViewController, UIGestureRecognizerDelegate {
 
     lazy var headerView: UIView = {
         let v = UIView()
-        v.backgroundColor = .red
+        v.backgroundColor = .blue
         v.translatesAutoresizingMaskIntoConstraints = false
         return v
     }()
 
+    //TODO: 定义广告接口: Ad Image (Image 控制比例 2:5 小于 200k) , Ad Info
     lazy var AdBar: CycleScrollView = {
         let v = CycleScrollView(didSelectItemAtIndex: { index in
             self.didAdSelectAtItem(index)
@@ -124,9 +125,16 @@ class HomeAdBarVC: UIViewController, UIGestureRecognizerDelegate {
 
         addConstraint()
         
-        //AdBar.imagePaths = adURLStrings.count > 0 ? adURLStrings : defaultAdURLStrings
+        AdBar.imagePaths = adURLStrings.count > 0 ? adURLStrings : defaultAdURLStrings
 
         mainScrollView.contentSize = CGSize(width: SCREEN_WIDTH, height: SCREEN_HEIGHT)
+        mainScrollView.mj_header = MJRefreshStateHeader { [weak self] in
+            guard let weak = self else {return}
+            DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(2), execute: {
+                weak.mainScrollView.mj_header.endRefreshing()
+                //weak.scrollView.refreshData()
+            })
+        }
         mainScrollView.mj_footer = MJRefreshAutoNormalFooter { [weak self] in
             guard let weak = self else {return}
             DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(1), execute: {

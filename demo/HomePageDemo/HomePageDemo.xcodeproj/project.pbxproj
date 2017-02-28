@@ -16,6 +16,9 @@
 		C265222D1E5D7576008B4C8E /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C265222C1E5D7576008B4C8E /* Extension.swift */; };
 		C265222F1E5D757E008B4C8E /* IndexTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C265222E1E5D757E008B4C8E /* IndexTableView.swift */; };
 		C26522301E5D762F008B4C8E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C23436B41E5D63EC00260F96 /* Main.storyboard */; };
+		C272DFD21E655E0900E2D4C3 /* FunctionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C272DFCE1E655E0900E2D4C3 /* FunctionCell.swift */; };
+		C272DFD41E655E0900E2D4C3 /* FunctionCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C272DFD01E655E0900E2D4C3 /* FunctionCollectionView.swift */; };
+		C272DFD51E655E0900E2D4C3 /* FunctionCollectionView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C272DFD11E655E0900E2D4C3 /* FunctionCollectionView.xib */; };
 		C29E9CE21E63FF2A001B89E6 /* MJRefresh.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C265222A1E5D7547008B4C8E /* MJRefresh.framework */; };
 		C29E9CE31E63FF2A001B89E6 /* MJRefresh.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = C265222A1E5D7547008B4C8E /* MJRefresh.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		C29E9CE81E6403FD001B89E6 /* Kingfisher.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C29E9CE71E6403FD001B89E6 /* Kingfisher.framework */; };
@@ -56,6 +59,9 @@
 		C265222A1E5D7547008B4C8E /* MJRefresh.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = MJRefresh.framework; sourceTree = "<group>"; };
 		C265222C1E5D7576008B4C8E /* Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
 		C265222E1E5D757E008B4C8E /* IndexTableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IndexTableView.swift; sourceTree = "<group>"; };
+		C272DFCE1E655E0900E2D4C3 /* FunctionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FunctionCell.swift; sourceTree = "<group>"; };
+		C272DFD01E655E0900E2D4C3 /* FunctionCollectionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FunctionCollectionView.swift; sourceTree = "<group>"; };
+		C272DFD11E655E0900E2D4C3 /* FunctionCollectionView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FunctionCollectionView.xib; sourceTree = "<group>"; };
 		C29E9CE71E6403FD001B89E6 /* Kingfisher.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Kingfisher.framework; sourceTree = "<group>"; };
 		C2A67B0F1E63F00D00DD7FEC /* CycleScrollView.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = CycleScrollView.bundle; sourceTree = "<group>"; };
 		C2A67B101E63F00D00DD7FEC /* CycleScrollView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CycleScrollView.swift; sourceTree = "<group>"; };
@@ -82,6 +88,7 @@
 			isa = PBXGroup;
 			children = (
 				C29E9CE71E6403FD001B89E6 /* Kingfisher.framework */,
+				C272DFCD1E655E0900E2D4C3 /* FunctionCollectionView */,
 				C2A67B0E1E63F00D00DD7FEC /* LLCycleScrollView */,
 				C265222A1E5D7547008B4C8E /* MJRefresh.framework */,
 				C23436AF1E5D63EB00260F96 /* HomePageDemo */,
@@ -112,6 +119,16 @@
 				C23436BC1E5D63EC00260F96 /* Info.plist */,
 			);
 			path = HomePageDemo;
+			sourceTree = "<group>";
+		};
+		C272DFCD1E655E0900E2D4C3 /* FunctionCollectionView */ = {
+			isa = PBXGroup;
+			children = (
+				C272DFCE1E655E0900E2D4C3 /* FunctionCell.swift */,
+				C272DFD01E655E0900E2D4C3 /* FunctionCollectionView.swift */,
+				C272DFD11E655E0900E2D4C3 /* FunctionCollectionView.xib */,
+			);
+			path = FunctionCollectionView;
 			sourceTree = "<group>";
 		};
 		C2A67B0E1E63F00D00DD7FEC /* LLCycleScrollView */ = {
@@ -188,6 +205,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C272DFD51E655E0900E2D4C3 /* FunctionCollectionView.xib in Resources */,
 				C2A67B161E63F00D00DD7FEC /* CycleScrollView.bundle in Resources */,
 				C26522301E5D762F008B4C8E /* Main.storyboard in Resources */,
 				C23436BB1E5D63EC00260F96 /* LaunchScreen.storyboard in Resources */,
@@ -205,6 +223,8 @@
 				C2A67B181E63F00D00DD7FEC /* CycleScrollViewCell.swift in Sources */,
 				C2A67B1A1E63F00D00DD7FEC /* LLPillPageControl.swift in Sources */,
 				C265222F1E5D757E008B4C8E /* IndexTableView.swift in Sources */,
+				C272DFD21E655E0900E2D4C3 /* FunctionCell.swift in Sources */,
+				C272DFD41E655E0900E2D4C3 /* FunctionCollectionView.swift in Sources */,
 				C2A67B191E63F00D00DD7FEC /* LLFilledPageControl.swift in Sources */,
 				C23436B31E5D63EC00260F96 /* HomeToolBarVC.swift in Sources */,
 				C23436C31E5D64A300260F96 /* TabBarVC.swift in Sources */,

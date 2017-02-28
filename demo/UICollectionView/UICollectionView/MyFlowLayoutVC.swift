@@ -13,7 +13,7 @@ extension Array {
     }
 }
 
-class MyFlowLayoutVC : UICollectionViewController, UICollectionViewDelegateFlowLayout {
+class MyFlowLayoutVC: UICollectionViewController, UICollectionViewDelegateFlowLayout {
 
     var sectionNames = [String]()
     var cellData = [[String]]()

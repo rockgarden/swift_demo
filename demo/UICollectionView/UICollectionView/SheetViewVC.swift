@@ -24,7 +24,7 @@ class SheetViewVC: UIViewController {
         /// the item height must be less than the height of the UICollectionView minus the section insets top and bottom values, minus the content insets top and bottom values.
         automaticallyAdjustsScrollViewInsets = false
         bottomView.addSubview(albumView)
-        albumView.frame  = CGRect(origin: CGPoint.zero, size: bottomView.frame.size) //albumView.layoutIfNeeded()
+        albumView.frame = CGRect(origin: CGPoint.zero, size: bottomView.frame.size) //albumView.layoutIfNeeded()
         albumView.delegate  = self
     }
 
@@ -58,5 +58,6 @@ extension SheetViewVC : PhotoManagerViewDelegate, UIImagePickerControllerDelegat
         imagePickerController.modalPresentationStyle = .currentContext
         self.present(imagePickerController, animated: true, completion: nil)
     }
+    
 }
 

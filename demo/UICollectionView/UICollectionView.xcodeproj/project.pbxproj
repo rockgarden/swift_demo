@@ -18,6 +18,11 @@
 		44C3DEC21E128B3E00118938 /* CellBackgroundLayeringVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44C3DEC11E128B3E00118938 /* CellBackgroundLayeringVC.swift */; };
 		C202C0041E13AEEC00CEC12A /* CameraCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C202C0031E13AEEC00CEC12A /* CameraCell.swift */; };
 		C202C0061E13AF2B00CEC12A /* CameraCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C202C0051E13AF2B00CEC12A /* CameraCell.xib */; };
+		C27C6A331E654B780066B3C8 /* HeaderDemoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C27C6A321E654B780066B3C8 /* HeaderDemoVC.swift */; };
+		C27C6A351E654D1D0066B3C8 /* languages.plist in Resources */ = {isa = PBXBuildFile; fileRef = C27C6A341E654D1D0066B3C8 /* languages.plist */; };
+		C27C6A371E654F360066B3C8 /* StickyHeaderDemoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C27C6A361E654F360066B3C8 /* StickyHeaderDemoVC.swift */; };
+		C27C6A3A1E654F700066B3C8 /* MyCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C27C6A381E654F700066B3C8 /* MyCell.xib */; };
+		C27C6A3B1E654F700066B3C8 /* MyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C27C6A391E654F700066B3C8 /* MyCell.swift */; };
 		C2A972AB1E14DA5A0037A0EA /* readme.rtf in Resources */ = {isa = PBXBuildFile; fileRef = C2A972AA1E14DA5A0037A0EA /* readme.rtf */; };
 		C2AA3B0D1E110ADE00C9E438 /* PhotoManagerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2AA3B091E110ADE00C9E438 /* PhotoManagerView.swift */; };
 		C2AA3B0E1E110ADE00C9E438 /* PhotoManagerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C2AA3B0A1E110ADE00C9E438 /* PhotoManagerView.xib */; };
@@ -102,6 +107,11 @@
 		44C3DEC11E128B3E00118938 /* CellBackgroundLayeringVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CellBackgroundLayeringVC.swift; sourceTree = "<group>"; };
 		C202C0031E13AEEC00CEC12A /* CameraCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CameraCell.swift; sourceTree = "<group>"; };
 		C202C0051E13AF2B00CEC12A /* CameraCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CameraCell.xib; sourceTree = "<group>"; };
+		C27C6A321E654B780066B3C8 /* HeaderDemoVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeaderDemoVC.swift; sourceTree = "<group>"; };
+		C27C6A341E654D1D0066B3C8 /* languages.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = languages.plist; sourceTree = "<group>"; };
+		C27C6A361E654F360066B3C8 /* StickyHeaderDemoVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StickyHeaderDemoVC.swift; sourceTree = "<group>"; };
+		C27C6A381E654F700066B3C8 /* MyCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MyCell.xib; sourceTree = "<group>"; };
+		C27C6A391E654F700066B3C8 /* MyCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyCell.swift; sourceTree = "<group>"; };
 		C2A972AA1E14DA5A0037A0EA /* readme.rtf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.rtf; path = readme.rtf; sourceTree = "<group>"; };
 		C2AA3B091E110ADE00C9E438 /* PhotoManagerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoManagerView.swift; sourceTree = "<group>"; };
 		C2AA3B0A1E110ADE00C9E438 /* PhotoManagerView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PhotoManagerView.xib; sourceTree = "<group>"; };
@@ -245,6 +255,11 @@
 				442A3C831E1297E200DB8E17 /* MyFlowLayoutCell.swift */,
 				442A3C851E1297F800DB8E17 /* MyFlowLayoutCell.xib */,
 				446AAA1D1E12B4F0008DA395 /* SectionDemoVC.swift */,
+				C27C6A321E654B780066B3C8 /* HeaderDemoVC.swift */,
+				C27C6A361E654F360066B3C8 /* StickyHeaderDemoVC.swift */,
+				C27C6A391E654F700066B3C8 /* MyCell.swift */,
+				C27C6A381E654F700066B3C8 /* MyCell.xib */,
+				C27C6A341E654D1D0066B3C8 /* languages.plist */,
 				446AAA1F1E12B7D2008DA395 /* Papers.plist */,
 			);
 			path = UICollectionView;
@@ -382,6 +397,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				442A3C891E12A82100DB8E17 /* PhotoCell.xib in Resources */,
+				C27C6A3A1E654F700066B3C8 /* MyCell.xib in Resources */,
 				C2BC5B7E1DC6E7D1007F23F4 /* flag_wisconsin.gif in Resources */,
 				C2BC5B541DC6E7D1007F23F4 /* flag_connecticut.gif in Resources */,
 				C2BC5B5A1DC6E7D1007F23F4 /* flag_illinois.gif in Resources */,
@@ -399,6 +415,7 @@
 				C2BC5B741DC6E7D1007F23F4 /* flag_rhodeisland.gif in Resources */,
 				C2A972AB1E14DA5A0037A0EA /* readme.rtf in Resources */,
 				C2BC5B531DC6E7D1007F23F4 /* flag_colorado.gif in Resources */,
+				C27C6A351E654D1D0066B3C8 /* languages.plist in Resources */,
 				C2BC5B6F1DC6E7D1007F23F4 /* flag_northdakota.gif in Resources */,
 				C2FC430C1DC7066600CE5E1E /* Cell.xib in Resources */,
 				C2BC5B501DC6E7D1007F23F4 /* flag_arizona.gif in Resources */,
@@ -453,6 +470,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C27C6A3B1E654F700066B3C8 /* MyCell.swift in Sources */,
 				C2AA3B0F1E110ADE00C9E438 /* PhotoCell.swift in Sources */,
 				442A3C841E1297E200DB8E17 /* MyFlowLayoutCell.swift in Sources */,
 				44C3DEC21E128B3E00118938 /* CellBackgroundLayeringVC.swift in Sources */,
@@ -462,8 +480,10 @@
 				C2BC5B8E1DC6E87B007F23F4 /* LayoutNormalVC.swift in Sources */,
 				446AAA1E1E12B4F0008DA395 /* SectionDemoVC.swift in Sources */,
 				C2BC5B0B1DC6E72A007F23F4 /* SheetViewVC.swift in Sources */,
+				C27C6A331E654B780066B3C8 /* HeaderDemoVC.swift in Sources */,
 				442A3C8B1E12AA2200DB8E17 /* DecorationViewVC.swift in Sources */,
 				C2BC5B8C1DC6E87B007F23F4 /* MyFlowLayout.swift in Sources */,
+				C27C6A371E654F360066B3C8 /* StickyHeaderDemoVC.swift in Sources */,
 				C2BC5B8D1DC6E87B007F23F4 /* MyLayout.swift in Sources */,
 				442A3C821E12976D00DB8E17 /* MyFlowLayoutVC.swift in Sources */,
 				C2BC5B091DC6E72A007F23F4 /* AppDelegate.swift in Sources */,

@@ -42,7 +42,7 @@ open class SnakePageControl: UIView {
             layoutInactivePageIndicators(inactiveLayers)
         }
     }
-    open var indicatorRadius: CGFloat = 5 {
+    open var indicatorRadius: CGFloat = 4 {
         didSet {
             layoutInactivePageIndicators(inactiveLayers)
         }

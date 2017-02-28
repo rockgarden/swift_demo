@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<array>
+	<dict>
+		<key>icon</key>
+		<string>csharp_icon</string>
+		<key>name</key>
+		<string>C#</string>
+		<key>description</key>
+		<string>Microsoft language</string>
+		<key>group</key>
+		<string>Imperative</string>
+	</dict>
+	<dict>
+		<key>icon</key>
+		<string>cpp_icon</string>
+		<key>name</key>
+		<string>C++</string>
+		<key>description</key>
+		<string>Software Language</string>
+		<key>group</key>
+		<string>Imperative</string>
+	</dict>
+	<dict>
+		<key>icon</key>
+		<string>latex_icon</string>
+		<key>name</key>
+		<string>LaTeX</string>
+		<key>description</key>
+		<string>Document preparation system</string>
+		<key>group</key>
+		<string>Declarative</string>
+	</dict>
+	<dict>
+		<key>icon</key>
+		<string>html_icon</string>
+		<key>name</key>
+		<string>HTML</string>
+		<key>description</key>
+		<string>Web Site</string>
+		<key>group</key>
+		<string>Declarative</string>
+	</dict>
+	<dict>
+		<key>icon</key>
+		<string>c_icon</string>
+		<key>name</key>
+		<string>C</string>
+		<key>description</key>
+		<string>Computer Architecture</string>
+		<key>group</key>
+		<string>Imperative</string>
+	</dict>
+	<dict>
+		<key>icon</key>
+		<string>haskell_icon</string>
+		<key>name</key>
+		<string>Haskell</string>
+		<key>description</key>
+		<string>Computer Architecture</string>
+		<key>group</key>
+		<string>Functionnal</string>
+	</dict>
+	<dict>
+		<key>icon</key>
+		<string>swift_icon</string>
+		<key>name</key>
+		<string>Swift</string>
+		<key>description</key>
+		<string>iOS Language</string>
+		<key>group</key>
+		<string>Functionnal</string>
+	</dict>
+	<dict>
+		<key>icon</key>
+		<string>objc_icon</string>
+		<key>name</key>
+		<string>Objective-C</string>
+		<key>description</key>
+		<string>iOS Language</string>
+		<key>group</key>
+		<string>Imperative</string>
+	</dict>
+	<dict>
+		<key>icon</key>
+		<string>java_icon</string>
+		<key>name</key>
+		<string>Java</string>
+		<key>description</key>
+		<string>Android/Front End/Back End Language</string>
+		<key>group</key>
+		<string>Imperative</string>
+	</dict>
+	<dict>
+		<key>icon</key>
+		<string>kotlin_icon</string>
+		<key>name</key>
+		<string>Kotlin</string>
+		<key>description</key>
+		<string>Android Language</string>
+		<key>group</key>
+		<string>Functionnal</string>
+	</dict>
+	<dict>
+		<key>icon</key>
+		<string>scala_icon</string>
+		<key>name</key>
+		<string>Scala</string>
+		<key>description</key>
+		<string>iOS Language</string>
+		<key>group</key>
+		<string>Functionnal</string>
+	</dict>
+</array>
+</plist>

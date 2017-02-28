@@ -57,7 +57,7 @@ public typealias didSelectItemAtIndexClosure = (NSInteger) -> Void
     }
     
     // 滚动间隔时间,默认2s
-    @IBInspectable open var autoScrollTimeInterval: Double = 2.0 {
+    @IBInspectable open var autoScrollTimeInterval: Double = 3.0 {
         didSet {
             autoScroll = true
         }
@@ -137,7 +137,7 @@ public typealias didSelectItemAtIndexClosure = (NSInteger) -> Void
     
     // PageControlStyle == .fill
     // 圆大小
-    open var FillPageControlIndicatorRadius: CGFloat = 3 {
+    open var FillPageControlIndicatorRadius: CGFloat = 4 {
         didSet {
             setupPageControl()
         }
@@ -193,8 +193,6 @@ public typealias didSelectItemAtIndexClosure = (NSInteger) -> Void
         tempCollectionView.backgroundColor = self.collectionViewBackgroundColor
         return tempCollectionView
     }()
-
-
 
     // 方向(swift后没有none，只能指定了)
     fileprivate var position: UICollectionViewScrollPosition! = .centeredHorizontally

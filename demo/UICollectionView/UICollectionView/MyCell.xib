@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="k8N-cy-yHL" customClass="MyCell" customModule="UICollectionView" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="370" height="350"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="370" height="350"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2yo-bf-WQo">
+                        <rect key="frame" x="0.0" y="70" width="370" height="280"/>
+                        <color key="backgroundColor" red="0.94590353965759277" green="0.94046735763549805" blue="0.79328811168670654" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="280" id="ARu-8V-e3A"/>
+                            <constraint firstAttribute="height" constant="70" id="ZKu-ek-hhC"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="ZKu-ek-hhC"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7z6-Pg-3EU">
+                        <rect key="frame" x="0.0" y="0.0" width="370" height="70"/>
+                        <color key="backgroundColor" red="0.91781651973724365" green="0.75837385654449463" blue="0.71020966768264771" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="70" id="gWl-v6-Cc6"/>
+                        </constraints>
+                    </view>
+                </subviews>
+            </view>
+            <constraints>
+                <constraint firstItem="2yo-bf-WQo" firstAttribute="leading" secondItem="k8N-cy-yHL" secondAttribute="leading" id="4aw-FS-2RN"/>
+                <constraint firstAttribute="trailing" secondItem="2yo-bf-WQo" secondAttribute="trailing" id="6Ri-qJ-yJW"/>
+                <constraint firstItem="2yo-bf-WQo" firstAttribute="top" secondItem="7z6-Pg-3EU" secondAttribute="bottom" constant="70" id="JTO-BU-wZZ"/>
+                <constraint firstItem="2yo-bf-WQo" firstAttribute="top" secondItem="k8N-cy-yHL" secondAttribute="top" constant="70" id="NWg-LF-7i5"/>
+                <constraint firstItem="7z6-Pg-3EU" firstAttribute="leading" secondItem="k8N-cy-yHL" secondAttribute="leading" id="Nhc-GH-zHk"/>
+                <constraint firstAttribute="trailing" secondItem="7z6-Pg-3EU" secondAttribute="trailing" id="TcN-8M-Lhm"/>
+                <constraint firstItem="7z6-Pg-3EU" firstAttribute="top" secondItem="k8N-cy-yHL" secondAttribute="top" id="grz-8L-dAm"/>
+            </constraints>
+            <size key="customSize" width="370" height="350"/>
+            <variation key="default">
+                <mask key="constraints">
+                    <exclude reference="JTO-BU-wZZ"/>
+                </mask>
+            </variation>
+            <connections>
+                <outlet property="headerTop" destination="grz-8L-dAm" id="bYF-hT-bZy"/>
+            </connections>
+            <point key="canvasLocation" x="570" y="210"/>
+        </collectionViewCell>
+    </objects>
+</document>

@@ -5,9 +5,10 @@
 
 import UIKit
 
-class MyFlowLayoutCell : UICollectionViewCell {
-    @IBOutlet var lab : UILabel!
-    @IBOutlet var container : UIView!
+class MyFlowLayoutCell: UICollectionViewCell {
+    
+    @IBOutlet var lab: UILabel!
+    @IBOutlet var container: UIView!
 
     func capital(_ sender: Any!) {
         // find my collection view

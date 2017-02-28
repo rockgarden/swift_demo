@@ -5,7 +5,7 @@
 
 import UIKit
 
-class DecorationViewVC : UICollectionViewController, UICollectionViewDelegateFlowLayout {
+class DecorationViewVC: UICollectionViewController, UICollectionViewDelegateFlowLayout {
 
     var sectionNames = [String]()
     var cellData = [[String]]()

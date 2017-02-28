@@ -79,7 +79,6 @@ class MUCycleScrollView: UIView, UICollectionViewDelegate, UICollectionViewDataS
 
     /// 轮播图的ContentMode
     var bannerImageContentMode: UIViewContentMode = .scaleAspectFill {
-
         didSet {
             self.collectionView.reloadData()
         }
@@ -87,7 +86,6 @@ class MUCycleScrollView: UIView, UICollectionViewDelegate, UICollectionViewDataS
 
     /// 是否显示分页控件
     var showPageControl: Bool = true {
-
         didSet {
             self.pageControl.isHidden = !showPageControl
         }
@@ -95,7 +93,6 @@ class MUCycleScrollView: UIView, UICollectionViewDelegate, UICollectionViewDataS
 
     /// 是否只有一张图时，隐藏分页控件
     var hidesForSinglePage: Bool = true {
-
         didSet {
             self.pageControl.isHidden = hidesForSinglePage;
         }
@@ -103,7 +100,6 @@ class MUCycleScrollView: UIView, UICollectionViewDelegate, UICollectionViewDataS
 
     /// 分页控件位置
     var pageControlAligment: PageControlAligment = .center {
-
         didSet {
             setNeedsLayout()
         }
@@ -111,7 +107,6 @@ class MUCycleScrollView: UIView, UICollectionViewDelegate, UICollectionViewDataS
 
     /// 分页控件的偏移量
     var pageControlEdgeInsets: UIEdgeInsets = UIEdgeInsetsMake(0, 10, 0, 10) {
-
         didSet {
             setNeedsLayout()
         }
@@ -119,7 +114,6 @@ class MUCycleScrollView: UIView, UICollectionViewDelegate, UICollectionViewDataS
 
     /// 当前分页Dot颜色
     var curPageDotColor: UIColor = .orange {
-
         didSet {
             self.pageControl.pageControl.currentPageIndicatorTintColor = curPageDotColor;
         }
@@ -127,7 +121,6 @@ class MUCycleScrollView: UIView, UICollectionViewDelegate, UICollectionViewDataS
 
     /// 其他分页Dot颜色
     var pageDotColor: UIColor = .darkGray {
-
         didSet {
             self.pageControl.pageControl.pageIndicatorTintColor = pageDotColor;
         }
@@ -153,7 +146,6 @@ class MUCycleScrollView: UIView, UICollectionViewDelegate, UICollectionViewDataS
 
     /// 轮播图文字高度
     var titleLabelHeight: CGFloat = 30.0 {
-
         didSet {
             self.collectionView.reloadData()
         }
@@ -188,7 +180,6 @@ class MUCycleScrollView: UIView, UICollectionViewDelegate, UICollectionViewDataS
 
     /// 是否自动滚动,默认Yes
     var autoScroll: Bool = true {
-
         didSet {
             invalidateTimer()
             if autoScroll {
@@ -228,48 +219,40 @@ class MUCycleScrollView: UIView, UICollectionViewDelegate, UICollectionViewDataS
     }()
 
     lazy var pageControl: MUPageControl = {
-
         let tempPageControl = MUPageControl(frame: .zero)
         return tempPageControl
     }()
 
     /// private Method
-    private func setupTimer()
-    {
+    private func setupTimer() {
         let automaticMethod = #selector(automaticScroll)
-        let timer: Timer = Timer.scheduledTimer(timeInterval: autoScrollTimeInterval, target: self, selector: automaticMethod, userInfo: nil, repeats: true)
+        let timer = Timer.scheduledTimer(timeInterval: autoScrollTimeInterval, target: self, selector: automaticMethod, userInfo: nil, repeats: true)
         self.timer = timer;
         RunLoop.main.add(timer, forMode: .commonModes)
     }
 
-    private func invalidateTimer()
-    {
+    private func invalidateTimer() {
         self.timer?.invalidate()
         self.timer = nil;
     }
+    
     /// 当前滚动位置的索引
-    private func getCurrentIndex() -> Int
-    {
+    private func getCurrentIndex() -> Int {
         var index: Int = 0
         if self.scrollDirection == .horizontal {
-
             index = (Int)(self.collectionView.contentOffset.x / self.flowLayout.itemSize.width + 0.5)
-
         } else {
-
             index = (Int)(self.collectionView.contentOffset.y / self.flowLayout.itemSize.height + 0.5)
         }
         return max(index, 0)
     }
 
     /// 转化为没有放大后的索引
-    private func normalIndex(cur: Int) -> Int
-    {
+    private func normalIndex(cur: Int) -> Int {
         return (cur % dataSource.count)
     }
 
-    @objc private func automaticScroll()
-    {
+    @objc private func automaticScroll() {
         if isOnlyOne() {
             return;
         }
@@ -287,22 +270,18 @@ class MUCycleScrollView: UIView, UICollectionViewDelegate, UICollectionViewDataS
         scrollToItem(index: tarIndex)
     }
 
-    func scrollToItem(index: Int, animated: Bool = true)
-    {
+    func scrollToItem(index: Int, animated: Bool = true) {
         let scrollPosition: UICollectionViewScrollPosition = scrollDirection == .horizontal ? .centeredHorizontally : .centeredVertically
         self.collectionView.scrollToItem(at: IndexPath(item: index, section: 0), at: scrollPosition, animated: animated)
     }
 
-    private func isOnlyOne() -> Bool
-    {
+    private func isOnlyOne() -> Bool {
         return self.dataSource.count <= 1;
     }
 
-    private func setupPageController()
-    {
+    private func setupPageController() {
         self.pageControl.removeFromSuperview()
         if showPageControl {
-
             if hidesForSinglePage {
                 if self.dataSource.count <= 1 {
                     self.pageControl.removeFromSuperview()
@@ -318,8 +297,7 @@ class MUCycleScrollView: UIView, UICollectionViewDelegate, UICollectionViewDataS
         }
     }
 
-    private func contentOffset_dis() -> CGFloat
-    {
+    private func contentOffset_dis() -> CGFloat {
         if self.scrollDirection == .horizontal {
             return self.collectionView.contentOffset.x
         } else {
@@ -372,7 +350,6 @@ class MUCycleScrollView: UIView, UICollectionViewDelegate, UICollectionViewDataS
 
     /// 解决当父视图的view释放时，当前视图因为被Timer强引用而不能释放的问题
     override func willMove(toSuperview newSuperview: UIView?) {
-
         if newSuperview == nil {
             invalidateTimer()
         }
@@ -385,10 +362,8 @@ class MUCycleScrollView: UIView, UICollectionViewDelegate, UICollectionViewDataS
     }
 
     //启动计时器
-    func startTimer()
-    {
+    func startTimer() {
         if self.autoScroll {
-
             invalidateTimer()
             setupTimer()
         }
@@ -396,7 +371,6 @@ class MUCycleScrollView: UIView, UICollectionViewDelegate, UICollectionViewDataS
 
     /// 初始化UI
     func initializationUI() {
-
         self.addSubview(self.collectionView)
         let views = ["collectionView" : self.collectionView] as [String : Any]
 
@@ -408,8 +382,7 @@ class MUCycleScrollView: UIView, UICollectionViewDelegate, UICollectionViewDataS
     }
 
     ///配置collectionView
-    func configCollectionView()
-    {
+    func configCollectionView() {
         self.collectionView.scrollsToTop = false
         self.collectionView.backgroundColor = UIColor.white
         self.collectionView.register(MUCycleCell.self, forCellWithReuseIdentifier: cycleReuseIdentifier)
@@ -459,7 +432,6 @@ class MUCycleScrollView: UIView, UICollectionViewDelegate, UICollectionViewDataS
     }
 
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-
         if let tempSelectItem = selectItem {
             tempSelectItem(normalIndex(cur: indexPath.item))
         }
@@ -467,26 +439,23 @@ class MUCycleScrollView: UIView, UICollectionViewDelegate, UICollectionViewDataS
 
     // MARK: - UIScrollViewDelegate
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
-
         if self.dataSource.count == 0 {
-            return;
+            return
         }
-
-        let index: Int = getCurrentIndex();
-        self.pageControl.currentPage = normalIndex(cur: index);
+        let index: Int = getCurrentIndex()
+        self.pageControl.currentPage = normalIndex(cur: index)
     }
 
     func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
-
         if self.autoScroll {
             invalidateTimer()
         }
     }
 
     func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
-
         if self.autoScroll {
             setupTimer()
         }
     }
+    
 }

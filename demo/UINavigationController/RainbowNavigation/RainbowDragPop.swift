@@ -17,7 +17,7 @@ class RainbowDragPop: UIPercentDrivenInteractiveTransition {
             navigationController?.view.addGestureRecognizer(panGesture)
         }
     }
-    weak var popAnimator:RainbowPopAnimator!
+    weak var popAnimator: RainbowPopAnimator!
     
     override var completionSpeed: CGFloat {
         get {
