@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		44410DC51DCCC81900D8908E /* LayoutMargins.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44410DC41DCCC81900D8908E /* LayoutMargins.swift */; };
 		44A9DB251D8EE1FC0040E1FC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44A9DB241D8EE1FC0040E1FC /* AppDelegate.swift */; };
-		44A9DB271D8EE1FC0040E1FC /* ConstraintSwapping.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44A9DB261D8EE1FC0040E1FC /* ConstraintSwapping.swift */; };
+		44A9DB271D8EE1FC0040E1FC /* ConstraintSwapDemo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44A9DB261D8EE1FC0040E1FC /* ConstraintSwapDemo.swift */; };
 		44A9DB2A1D8EE1FC0040E1FC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 44A9DB281D8EE1FC0040E1FC /* Main.storyboard */; };
 		44A9DB2C1D8EE1FC0040E1FC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 44A9DB2B1D8EE1FC0040E1FC /* Assets.xcassets */; };
 		44A9DB2F1D8EE1FC0040E1FC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 44A9DB2D1D8EE1FC0040E1FC /* LaunchScreen.storyboard */; };
@@ -29,7 +29,7 @@
 		44410DC41DCCC81900D8908E /* LayoutMargins.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LayoutMargins.swift; sourceTree = "<group>"; };
 		44A9DB211D8EE1FC0040E1FC /* Constraint.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Constraint.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		44A9DB241D8EE1FC0040E1FC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		44A9DB261D8EE1FC0040E1FC /* ConstraintSwapping.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConstraintSwapping.swift; sourceTree = "<group>"; };
+		44A9DB261D8EE1FC0040E1FC /* ConstraintSwapDemo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConstraintSwapDemo.swift; sourceTree = "<group>"; };
 		44A9DB291D8EE1FC0040E1FC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		44A9DB2B1D8EE1FC0040E1FC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		44A9DB2E1D8EE1FC0040E1FC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -78,7 +78,7 @@
 			isa = PBXGroup;
 			children = (
 				44A9DB241D8EE1FC0040E1FC /* AppDelegate.swift */,
-				44A9DB261D8EE1FC0040E1FC /* ConstraintSwapping.swift */,
+				44A9DB261D8EE1FC0040E1FC /* ConstraintSwapDemo.swift */,
 				44D763491DBF869F00D7EE40 /* ConstraintsInequalitiesAndPriorities.swift */,
 				44410DC41DCCC81900D8908E /* LayoutMargins.swift */,
 				44B692B21DCF499100603FAF /* ConditionalConstraints.swift */,
@@ -177,7 +177,7 @@
 				44D7634A1DBF869F00D7EE40 /* ConstraintsInequalitiesAndPriorities.swift in Sources */,
 				44B693031DCF60A000603FAF /* ImageAndTraitCollection.swift in Sources */,
 				44410DC51DCCC81900D8908E /* LayoutMargins.swift in Sources */,
-				44A9DB271D8EE1FC0040E1FC /* ConstraintSwapping.swift in Sources */,
+				44A9DB271D8EE1FC0040E1FC /* ConstraintSwapDemo.swift in Sources */,
 				44B693051DCF619000603FAF /* ImageAndTraitCollectionView.swift in Sources */,
 				44B692B31DCF499100603FAF /* ConditionalConstraints.swift in Sources */,
 				44A9DB251D8EE1FC0040E1FC /* AppDelegate.swift in Sources */,

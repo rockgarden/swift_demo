@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  ConstraintSwapDemo.swift
 //  Constraint
 //
 //  Created by wangkan on 16/9/18.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ConstraintSwapping: UIViewController {
+class ConstraintSwapDemo: UIViewController {
 
 	let v = UIView()
 	var v0: UIView!
@@ -25,31 +25,34 @@ class ConstraintSwapping: UIViewController {
 
 	override func viewDidLoad() {
 		super.viewDidLoad()
-		let mainView = self.view
+		let mainView = view
 
-		v.backgroundColor = UIColor.red
+		v.backgroundColor = .red
 		v.translatesAutoresizingMaskIntoConstraints = false
 		mainView?.addSubview(v)
+
+        /// 示例 metrics 的用法
 		NSLayoutConstraint.activate([
-			NSLayoutConstraint.constraints(withVisualFormat: "H:|-(60)-[v]-(0)-|", options: [], metrics: nil, views: ["v": v]),
-			NSLayoutConstraint.constraints(withVisualFormat: "V:|-(20)-[v]-(0)-|", options: [], metrics: nil, views: ["v": v])
+			NSLayoutConstraint.constraints(withVisualFormat: "H:|-(mh)-[v]-(0)-|", options: [], metrics: ["mh":60], views: ["v": v]),
+			NSLayoutConstraint.constraints(withVisualFormat: "V:|-(mv)-[v]-(0)-|", options: [], metrics: ["mv":20], views: ["v": v])
 			].joined().map { $0 })
-		// experiment by commenting out this line
-		v.preservesSuperviewLayoutMargins = true
+
+        /// 一个布尔值，表示当前视图是否也尊重其superview的边距。当此属性的值为true时，在布局内容时也会考虑超级视图的边距。此边距影响布局，其中视图的边缘与其超级视图之间的距离小于对应的边距。例如，您可能有一个内容视图的帧精确匹配其superview的边界。当任何超级视图的边距在内容视图所表示的区域及其自身的边距内时，UIKit会调整内容视图的布局以尊重超级视图的边距。调整量是确保内容也在超级视图边缘内所需的最小量。此属性的默认值为false。
+		v.preservesSuperviewLayoutMargins = true //experiment by commenting out this line
 
 		let v0 = UIView()
-		v0.backgroundColor = UIColor.green
+		v0.backgroundColor = .green
 		v0.translatesAutoresizingMaskIntoConstraints = false
 		v.addSubview(v0)
 
 		let v1 = UIView()
-		v1.backgroundColor = UIColor.red
+		v1.backgroundColor = .red
 		v1.translatesAutoresizingMaskIntoConstraints = false
 		let v2 = UIView()
-		v2.backgroundColor = UIColor.yellow
+		v2.backgroundColor = .yellow
 		v2.translatesAutoresizingMaskIntoConstraints = false
 		let v3 = UIView()
-		v3.backgroundColor = UIColor.blue
+		v3.backgroundColor = .blue
 		v3.translatesAutoresizingMaskIntoConstraints = false
 		v0.addSubview(v1)
 		v0.addSubview(v2)

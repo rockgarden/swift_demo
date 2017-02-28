@@ -10,7 +10,7 @@ import UIKit
 import MJRefresh
 
 fileprivate let functionBarHeight: CGFloat = UIScreen.main.bounds.size.width/4
-fileprivate let adBarHeight: CGFloat = UIScreen.main.bounds.size.width*2/5
+fileprivate let adBarHeight: CGFloat = UIScreen.main.bounds.size.width/2
 
 class HomeAdBarVC: UIViewController, UIGestureRecognizerDelegate {
 
@@ -162,24 +162,16 @@ fileprivate extension HomeAdBarVC {
 
     fileprivate func addConstraint() {
 
-        let views = ["nv":navView, "msv":mainScrollView, "itb":initToolBar, "tb":toolBar, "ab":AdBar, "hv":headerView]
+        let views = ["nv":navView, "msv":mainScrollView, "itb":initToolBar, "tb":toolBar, "ab":AdBar, "hv":headerView, "fb":functionBar]
+        let metrics = ["hh":headerHeight, "fbh":functionBarHeight]
 
         NSLayoutConstraint.activate([
-            headerView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
-            headerView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-            headerView.topAnchor.constraint(equalTo: view.topAnchor),
-            headerView.heightAnchor.constraint(equalToConstant: headerHeight),
-            AdBar.leadingAnchor.constraint(equalTo: view.leadingAnchor),
-            AdBar.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-            AdBar.topAnchor.constraint(equalTo: headerView.topAnchor),
-            AdBar.bottomAnchor.constraint(equalTo: functionBar.topAnchor),
-            functionBar.leadingAnchor.constraint(equalTo: view.leadingAnchor),
-            functionBar.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-            functionBar.heightAnchor.constraint(equalToConstant: functionBarHeight),
-            functionBar.bottomAnchor.constraint(equalTo: headerView.bottomAnchor),
-            ])
-
-        NSLayoutConstraint.activate([
+            NSLayoutConstraint.constraints(withVisualFormat: "H:|-(0)-[hv]-(0)-|", options: [], metrics: nil, views: views),
+            NSLayoutConstraint.constraints(withVisualFormat: "V:|-(0)-[hv(hh)]", options: [], metrics: metrics, views: views),
+            NSLayoutConstraint.constraints(withVisualFormat: "H:|-(0)-[fb]-(0)-|", options: [], metrics: nil, views: views),
+            NSLayoutConstraint.constraints(withVisualFormat: "V:[fb(fbh)]-(0)-|", options: [], metrics: metrics, views: views),
+            NSLayoutConstraint.constraints(withVisualFormat: "H:|-(0)-[ab]-(0)-|", options: [], metrics: nil, views: views),
+            NSLayoutConstraint.constraints(withVisualFormat: "V:|-(0)-[ab]-(0)-[fb]", options: [], metrics: nil, views: views),
             NSLayoutConstraint.constraints(withVisualFormat: "H:|-(0)-[nv]-(0)-|", options: [], metrics: nil, views: views),
             NSLayoutConstraint.constraints(withVisualFormat: "V:|-(0)-[nv(60)]", options: [], metrics: nil, views: views),
             NSLayoutConstraint.constraints(withVisualFormat: "H:|-(0)-[msv]-(0)-|", options: [], metrics: nil, views: views),
