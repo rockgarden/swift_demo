@@ -36,9 +36,11 @@ class HomeAdBarVC: UIViewController, UIGestureRecognizerDelegate {
         return v
     }()
 
-    lazy var functionBar: UIView = {
-        let v = UIView()
-        v.backgroundColor = .blue
+    lazy var functionBar: FunctionCollectionView = {
+        let v = FunctionCollectionView(didSelectItemAtIndex: { index in
+            self.didFunctionSelectAtItem(index)
+        })
+        v.backgroundColor = .white
         v.translatesAutoresizingMaskIntoConstraints = false
         return v
     }()
@@ -147,10 +149,14 @@ class HomeAdBarVC: UIViewController, UIGestureRecognizerDelegate {
 
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        //self.updateContentSize(size: mainTableView.contentSize)
     }
 
+    // MARK: Action
     func didAdSelectAtItem(_ index: Int) -> Void {
+        print("index\(index)")
+    }
+    
+    func didFunctionSelectAtItem(_ index: Int) -> Void {
         print("index\(index)")
     }
 

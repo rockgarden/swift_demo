@@ -19,7 +19,7 @@ public enum PageControlPosition {
     case right
 }
 
-public typealias didSelectItemAtIndexClosure = (NSInteger) -> Void
+typealias didSelectItemClosure_SCV = (NSInteger) -> Void
 
 @IBDesignable open class CycleScrollView: UIView, UICollectionViewDelegate, UICollectionViewDataSource, UIScrollViewDelegate {
 
@@ -221,19 +221,19 @@ public typealias didSelectItemAtIndexClosure = (NSInteger) -> Void
     fileprivate var coverViewImage = UIImage.init(named: "CycleScrollView.bundle/llplaceholder.png")
     
     // 回调
-    open var didSelectItemClosure: didSelectItemAtIndexClosure?
+    var didSelectItemClosure: didSelectItemClosure_SCV?
     
     // MARK: Init
-    convenience init(didSelectItemAtIndex: didSelectItemAtIndexClosure? = nil) {
+    convenience init(didSelectItemAtIndex: didSelectItemClosure_SCV? = nil) {
         self.init()
         if didSelectItemAtIndex != nil {
             didSelectItemClosure = didSelectItemAtIndex
         }
-        initUI()
+        initialize()
     }
 
     /// 适配 NSLayoutConstraint
-    fileprivate func initUI() {
+    fileprivate func initialize() {
         addSubview(collectionView)
         let views = ["cv" : collectionView] as [String : Any]
         self.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "H:|-0-[cv]-0-|", options: [], metrics: nil, views: views))

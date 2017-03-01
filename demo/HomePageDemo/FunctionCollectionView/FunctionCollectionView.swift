@@ -9,123 +9,112 @@
 import UIKit
 import Photos
 
-public let NumberOfItemsOneRow: CGFloat = 4
-public let PhotoCellSize = (UIScreen.main.bounds.width - NumberOfItemsOneRow) / NumberOfItemsOneRow
-public let PhotoManagerViewHeight = PhotoCellSize
+@objc public protocol FunctionCollectionViewDelegate: class { }
 
-@objc public protocol FunctionCollectionViewDelegate: class {
-}
+typealias didSelectItemClosure_FCV = (_ index: Int)->Void
 
-final class FunctionCollectionView: UIView, UIGestureRecognizerDelegate {
+final class FunctionCollectionView: UIView {
 
-    weak var collectionView: UICollectionView!
+    lazy var collectionView: UICollectionView = {
+        let cv = UICollectionView(frame: self.bounds, collectionViewLayout: self.flowLayout!)
+        cv.register(FunctionCell.self, forCellWithReuseIdentifier: functionCellReuseId)
+        cv.register(FunctionSectionHeader.self,
+                    forSupplementaryViewOfKind: UICollectionElementKindSectionHeader,
+                    withReuseIdentifier: functionSectionHeaderReuseId)
+        cv.translatesAutoresizingMaskIntoConstraints = false
+        cv.delegate = self
+        cv.dataSource = self
+        cv.showsVerticalScrollIndicator = false
+        cv.showsHorizontalScrollIndicator = false
+        cv.isPagingEnabled = true
+        cv.scrollsToTop = false
+        cv.backgroundColor = .clear
+        return cv
+    }()
+    
+    // FlowLayout
+    lazy fileprivate var flowLayout: UICollectionViewFlowLayout? = {
+        let fl = UICollectionViewFlowLayout()
+        fl.minimumLineSpacing = 0
+        fl.minimumInteritemSpacing = 0
+        fl.scrollDirection = .horizontal
+        //fl.headerReferenceSize = CGSize(width: , height: )
+        fl.minimumInteritemSpacing = 2.0
+        fl.sectionInset = UIEdgeInsetsMake(0, 0, 0, 0)
+        fl.sectionFootersPinToVisibleBounds = false
+        return fl
+    }()
 
     weak var delegate: FunctionCollectionViewDelegate? = nil
-    var isPrivate: Bool!
 
-    var images: PHFetchResult<PHAsset>!
-    var imageManager: PHCachingImageManager?
-    var phAsset: PHAsset!
+    fileprivate var dataSource = FunctionDataSource()
+
+    // 回调
+    var didSelectItemClosure: didSelectItemClosure_FCV?
     
-    var previousPreheatRect = CGRect.zero
-    let cellSize = CGSize(width: PhotoCellSize, height: PhotoCellSize)
-
-    static func instance() -> FunctionCollectionView {
-        return UINib(nibName: "PhotoManagerView", bundle: nil).instantiate(withOwner: self, options: nil)[0] as! FunctionCollectionView
-    }
-
-    override func awakeFromNib() {
-        super.awakeFromNib()
+    // MARK: Init
+    convenience init(didSelectItemAtIndex: didSelectItemClosure_FCV? = nil) {
+        self.init()
+        if didSelectItemAtIndex != nil {
+            didSelectItemClosure = didSelectItemAtIndex
+        }
         initialize()
     }
 
-    func initialize() {
-        let flow = collectionView!.collectionViewLayout as! UICollectionViewFlowLayout
-        setUpFlowLayout(flow)
-        debugPrint("collectionView", collectionView, collectionView.contentInset)
-        collectionView.backgroundColor = UIColor.clear
-        //Bundle(for: self.classForCoder) = nil
-        collectionView.register(UINib(nibName: "PhotoCell", bundle: nil), forCellWithReuseIdentifier: "PhotoCell")
-        collectionView.register(UINib(nibName: "CameraCell", bundle: nil),
-                                forSupplementaryViewOfKind: UICollectionElementKindSectionFooter,
-                                withReuseIdentifier: "Footer")
-
-        // Never load photos Unless the user allows to access to photo album
-        checkPhotoAuth()
-
-        // Sorting condition
-        let options = PHFetchOptions()
-        options.sortDescriptors = [
-            NSSortDescriptor(key: "creationDate", ascending: false)
-        ]
-        images = PHAsset.fetchAssets(with: .image, options: options)
-        if images.count > 0 {
-            changeImage(images[0])
-            collectionView.reloadData()
-            collectionView.selectItem(at: IndexPath(row: 0, section: 0), animated: false, scrollPosition: UICollectionViewScrollPosition())
-        }
-
-        PHPhotoLibrary.shared().register(self)
+    fileprivate func initialize() {
+        addSubview(collectionView)
+        let views = ["cv" : collectionView]
+        self.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "H:|-0-[cv]-0-|", options: [], metrics: nil, views: views))
+        self.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "V:|-0-[cv]-0-|", options: [], metrics: nil, views: views))
     }
-
-    fileprivate func setUpFlowLayout(_ flow: UICollectionViewFlowLayout) {
-        flow.footerReferenceSize = cellSize
-        flow.minimumInteritemSpacing = 2.0
-        flow.sectionInset = UIEdgeInsetsMake(0, 0, 0, 0)
-        flow.sectionFootersPinToVisibleBounds = false
-        flow.scrollDirection = .horizontal
-    }
-
-
-    deinit {
-        if PHPhotoLibrary.authorizationStatus() == PHAuthorizationStatus.authorized {
-            PHPhotoLibrary.shared().unregisterChangeObserver(self)
-        }
+    
+    /// 布局
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        let width = self.frame.width / 4
+        self.flowLayout?.itemSize = CGSize(width: width, height: width)
     }
 
 }
-
-
 
 
 // MARK: UICollectionViewDelegate
 extension FunctionCollectionView: UICollectionViewDataSource, UICollectionViewDelegate {
     
     func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
-        var v : FunctionCell! = nil
-        if kind == UICollectionElementKindSectionFooter {
-            /// CameraCell.xib 中的 one top level object 不是 UICollectionReusableView 引起 Error
-            /// Error: Terminating app due to uncaught exception 'NSInternalInconsistencyException', reason: 'invalid nib registered for identifier (Footer) - nib must contain exactly one top level object which must be a UICollectionReusableView instance'
-            v = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionElementKindSectionFooter, withReuseIdentifier:"Footer", for: indexPath) as! FunctionCell
+        let sectionHeader = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: functionSectionHeaderReuseId, for: indexPath) as! FunctionSectionHeader
+        if let title = dataSource.titleForSectionAtIndexPath(indexPath) {
+            sectionHeader.title = title
         }
-        return v
+        return sectionHeader
     }
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: functionCellReuseIdentifier, for: indexPath) as! FunctionCell
-
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: functionCellReuseId, for: indexPath) as! FunctionCell
+        // Configure the cell
+        if let function = dataSource.functionForItemAtIndexPath(indexPath) {
+            cell.function = function
+        }
+        // Configure the cell Tag
         let currentTag = cell.tag + 1
         cell.tag = currentTag
-
-        _ = self.images[indexPath.item]
         return cell
-
     }
 
+    // MARK: UICollectionViewDataSource
     func numberOfSections(in collectionView: UICollectionView) -> Int {
-        return 1
+        return dataSource.numberOfSections
     }
-
+    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return images == nil ? 0 : images.count
+        return dataSource.numberOfItemsInSection(section)
     }
 
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAtIndexPath indexPath: IndexPath) -> CGSize {
-        return CGSize(width: PhotoCellSize, height: PhotoCellSize)
-    }
+//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAtIndexPath indexPath: IndexPath) -> CGSize {
+//        return CGSize(width: self.frame.width/4, height: self.frame.width/4)
+//    }
 
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        changeImage(images[indexPath.row])
         collectionView.scrollToItem(at: indexPath, at: .left, animated: true)
     }
     
@@ -133,210 +122,138 @@ extension FunctionCollectionView: UICollectionViewDataSource, UICollectionViewDe
 }
 
 
-//MARK: UIScrollViewDelegate
-extension FunctionCollectionView: UIScrollViewDelegate {
-    func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        if scrollView == collectionView {
-            self.updateCachedAssets()
-        }
+// MARK: - DataSource
+private class FunctionDataSource {
+    
+    fileprivate var functions: [Function] = []
+    fileprivate var immutableFunctions: [Function] = []
+    fileprivate var sections: [String] = [] //相当于types
+    
+    var count: Int {
+        return functions.count
     }
-}
-
-
-//MARK: PHPhotoLibraryChangeObserver
-extension FunctionCollectionView: PHPhotoLibraryChangeObserver {
-    func photoLibraryDidChange(_ changeInstance: PHChange) {
-        DispatchQueue.main.async {
-
-            let collectionChanges = changeInstance.changeDetails(for: self.images)
-            if collectionChanges != nil {
-
-                self.images = collectionChanges!.fetchResultAfterChanges
-
-                let collectionView = self.collectionView!
-
-                if !collectionChanges!.hasIncrementalChanges || collectionChanges!.hasMoves {
-                    collectionView.reloadData()
-                } else {
-                    collectionView.performBatchUpdates({
-                        let removedIndexes = collectionChanges!.removedIndexes
-                        if (removedIndexes?.count ?? 0) != 0 {
-                            collectionView.deleteItems(at: removedIndexes!.aapl_indexPathsFromIndexesWithSection(0))
-                        }
-                        let insertedIndexes = collectionChanges!.insertedIndexes
-                        if (insertedIndexes?.count ?? 0) != 0 {
-                            collectionView.insertItems(at: insertedIndexes!.aapl_indexPathsFromIndexesWithSection(0))
-                        }
-                        let changedIndexes = collectionChanges!.changedIndexes
-                        if (changedIndexes?.count ?? 0) != 0 {
-                            collectionView.reloadItems(at: changedIndexes!.aapl_indexPathsFromIndexesWithSection(0))
-                        }
-                    }, completion: nil)
-                }
-                self.resetCachedAssets()
+    
+    var numberOfSections: Int {
+        return sections.count
+    }
+    
+    // MARK: Public
+    
+    init() {
+        functions = loadPapersFromDisk()
+        immutableFunctions = functions
+    }
+    
+    func deleteItemsAtIndexPaths(_ indexPaths: [IndexPath]) {
+        var indexes: [Int] = []
+        for indexPath in indexPaths {
+            indexes.append(absoluteIndexForIndexPath(indexPath))
+        }
+        var newFunctions: [Function] = []
+        for (index, f) in functions.enumerated() {
+            if !indexes.contains(index) {
+                newFunctions.append(f)
             }
         }
+        functions = newFunctions
     }
-}
-
-// MARK: internal extension
-internal extension UICollectionView {
-    func aapl_indexPathsForElementsInRect(_ rect: CGRect) -> [IndexPath] {
-        let allLayoutAttributes = self.collectionViewLayout.layoutAttributesForElements(in: rect)
-        if (allLayoutAttributes?.count ?? 0) == 0 {return []}
-        var indexPaths: [IndexPath] = []
-        indexPaths.reserveCapacity(allLayoutAttributes!.count)
-        for layoutAttributes in allLayoutAttributes! {
-            let indexPath = layoutAttributes.indexPath
-            indexPaths.append(indexPath)
-        }
-        return indexPaths
+    
+    func indexPathForNewRandomItem() -> IndexPath {
+        let index = Int(arc4random_uniform(UInt32(immutableFunctions.count)))
+        let item = immutableFunctions[index]
+        let f = Function(copying: item)
+        functions.append(f)
+        functions.sort { $0.index < $1.index }
+        return indexPathForItem(f)
     }
-}
-
-
-internal extension IndexSet {
-    func aapl_indexPathsFromIndexesWithSection(_ section: Int) -> [IndexPath] {
-        var indexPaths: [IndexPath] = []
-        indexPaths.reserveCapacity(self.count)
-        (self as NSIndexSet).enumerate({idx, stop in
-            indexPaths.append(IndexPath(item: idx, section: section))
-        })
-        return indexPaths
-    }
-}
-
-
-// MARK: private extension
-private extension FunctionCollectionView {
-
-    func changeImage(_ asset: PHAsset) {
-        self.phAsset = asset
-
-        DispatchQueue.global(qos: .default).async(execute: {
-            let options = PHImageRequestOptions()
-            options.isNetworkAccessAllowed = true
-
-            self.imageManager?.requestImage(for: asset,
-                                            targetSize: CGSize(width: asset.pixelWidth, height: asset.pixelHeight),
-                                            contentMode: .aspectFill,
-                                            options: options) {
-                                                result, info in
-                                                DispatchQueue.main.async(execute: {
-                                                })
-            }
-        })
-    }
-
-    // Check the status of authorization for PHPhotoLibrary
-    func checkPhotoAuth() {
-        PHPhotoLibrary.requestAuthorization { (status) -> Void in
-            switch status {
-            case .authorized:
-                self.imageManager = PHCachingImageManager()
-                if self.images != nil && self.images.count > 0 {
-
-                    self.changeImage(self.images[0])
-                }
-            case .restricted, .denied:
-                DispatchQueue.main.async(execute: { () -> Void in
-                    //self.delegate?.
-                })
-            default:
+    
+    func indexPathForItem(_ function: Function) -> IndexPath {
+        let section = sections.index(of: function.type)!
+        var item = 0
+        for (index, currentFunction) in itemsForSection(section).enumerated() {
+            if currentFunction === function {
+                item = index
                 break
             }
         }
+        return IndexPath(item: item, section: section)
     }
-
-    func startCamera() {
-        DispatchQueue.main.async(execute: { () -> Void in
-            //self.delegate?.
-        })
-    }
-
-    // MARK: Asset Caching
-
-    func resetCachedAssets() {
-        imageManager?.stopCachingImagesForAllAssets()
-        previousPreheatRect = CGRect.zero
-    }
-
-    func updateCachedAssets() {
-
-        var preheatRect = self.collectionView!.bounds
-        preheatRect = preheatRect.insetBy(dx: 0.0, dy: -0.5 * preheatRect.height)
-
-        let delta = abs(preheatRect.midY - self.previousPreheatRect.midY)
-        if delta > self.collectionView!.bounds.height / 3.0 {
-
-            var addedIndexPaths: [IndexPath] = []
-            var removedIndexPaths: [IndexPath] = []
-
-            self.computeDifferenceBetweenRect(self.previousPreheatRect, andRect: preheatRect, removedHandler: {removedRect in
-                let indexPaths = self.collectionView.aapl_indexPathsForElementsInRect(removedRect)
-                removedIndexPaths += indexPaths
-            }, addedHandler: {addedRect in
-                let indexPaths = self.collectionView.aapl_indexPathsForElementsInRect(addedRect)
-                addedIndexPaths += indexPaths
-            })
-
-            let assetsToStartCaching = self.assetsAtIndexPaths(addedIndexPaths)
-            let assetsToStopCaching = self.assetsAtIndexPaths(removedIndexPaths)
-
-            self.imageManager?.startCachingImages(for: assetsToStartCaching,
-                                                  targetSize: cellSize,
-                                                  contentMode: .aspectFill,
-                                                  options: nil)
-            self.imageManager?.stopCachingImages(for: assetsToStopCaching,
-                                                 targetSize: cellSize,
-                                                 contentMode: .aspectFill,
-                                                 options: nil)
-
-            self.previousPreheatRect = preheatRect
+    
+    func moveItemAtIndexPath(_ indexPath: IndexPath, toIndexPath newIndexPath: IndexPath) {
+        if indexPath == newIndexPath {
+            return
         }
+        let index = absoluteIndexForIndexPath(indexPath)
+        let f = functions[index]
+        f.type = sections[newIndexPath.section]
+        let newIndex = absoluteIndexForIndexPath(newIndexPath)
+        functions.remove(at: index)
+        functions.insert(f, at: newIndex)
     }
-
-    func computeDifferenceBetweenRect(_ oldRect: CGRect, andRect newRect: CGRect, removedHandler: (CGRect)->Void, addedHandler: (CGRect)->Void) {
-        if newRect.intersects(oldRect) {
-            let oldMaxY = oldRect.maxY
-            let oldMinY = oldRect.minY
-            let newMaxY = newRect.maxY
-            let newMinY = newRect.minY
-            if newMaxY > oldMaxY {
-                let rectToAdd = CGRect(x: newRect.origin.x, y: oldMaxY, width: newRect.size.width, height: (newMaxY - oldMaxY))
-                addedHandler(rectToAdd)
-            }
-            if oldMinY > newMinY {
-                let rectToAdd = CGRect(x: newRect.origin.x, y: newMinY, width: newRect.size.width, height: (oldMinY - newMinY))
-                addedHandler(rectToAdd)
-            }
-            if newMaxY < oldMaxY {
-                let rectToRemove = CGRect(x: newRect.origin.x, y: newMaxY, width: newRect.size.width, height: (oldMaxY - newMaxY))
-                removedHandler(rectToRemove)
-            }
-            if oldMinY < newMinY {
-                let rectToRemove = CGRect(x: newRect.origin.x, y: oldMinY, width: newRect.size.width, height: (newMinY - oldMinY))
-                removedHandler(rectToRemove)
-            }
+    
+    func numberOfItemsInSection(_ index: Int) -> Int {
+        let fs = itemsForSection(index)
+        return fs.count
+    }
+    
+    func titleForSectionAtIndexPath(_ indexPath: IndexPath) -> String? {
+        if indexPath.section < sections.count {
+            return sections[indexPath.section]
+        }
+        return nil
+    }
+    
+    func functionForItemAtIndexPath(_ indexPath: IndexPath) -> Function? {
+        if indexPath.section > 0 {
+            let functions = itemsForSection(indexPath.section)
+            return functions[indexPath.item]
         } else {
-            addedHandler(newRect)
-            removedHandler(oldRect)
+            return functions[indexPath.item]
         }
     }
-
-    func assetsAtIndexPaths(_ indexPaths: [IndexPath]) -> [PHAsset] {
-        if indexPaths.count == 0 { return [] }
-
-        var assets: [PHAsset] = []
-        assets.reserveCapacity(indexPaths.count)
-        for indexPath in indexPaths {
-            let asset = self.images[indexPath.item] 
-            assets.append(asset)
+    
+    // MARK: Private
+    
+    fileprivate func absoluteIndexForIndexPath(_ indexPath: IndexPath) -> Int {
+        var index = 0
+        for i in 0..<indexPath.section {
+            index += numberOfItemsInSection(i)
         }
-        return assets
+        index += indexPath.item
+        return index
     }
+    
+    fileprivate func loadPapersFromDisk() -> [Function] {
+        sections.removeAll(keepingCapacity: false)
+        if let path = Bundle.main.path(forResource: "Functions", ofType: "plist") {
+            if let dictArray = NSArray(contentsOfFile: path) {
+                var fs: [Function] = []
+                for item in dictArray {
+                    if let dict = item as? NSDictionary {
+                        let name = dict["name"] as! String
+                        let iconName = dict["imageName"] as! String
+                        let type = dict["section"] as! String
+                        let index = dict["index"] as! Int
+                        let f = Function(name: name, iconName: iconName, type: type, index: index)
+                        if !sections.contains(type) {
+                            sections.append(type)
+                        }
+                        fs.append(f)
+                    }
+                }
+                return fs
+            }
+        }
+        return []
+    }
+    
+    fileprivate func itemsForSection(_ index: Int) -> [Function] {
+        let section = sections[index]
+        let itemsInSection = functions.filter { (f: Function) -> Bool in
+            return f.type == section
+        }
+        return itemsInSection
+    }
+    
 }
-
-
-
 

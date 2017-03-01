@@ -7,9 +7,10 @@
 
 import UIKit
 
-let functionCellReuseIdentifier = "FunctionCell"
+let functionCellReuseId = "FunctionCell"
 
-final class FunctionCell: UICollectionViewCell {
+// MARK: - Cell
+class FunctionCell: UICollectionViewCell {
     
     /// UI
     fileprivate let iconView = UIImageView()
@@ -37,18 +38,23 @@ final class FunctionCell: UICollectionViewCell {
         }
     }
     
-    var functionItem: FunctionItem? {
+    var function: Function? {
         didSet {
-            if let f = functionItem {
-                iconView.image = UIImage(named: f.iconName)
+            if let f = function {
                 titleLabel.text = f.name
+                guard let i = UIImage(named: f.iconName) else { return }
+                iconView.image = i
             }
         }
     }
     
     /// init
-    convenience init() {
-        self.init()
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+    override init(frame: CGRect) {
+        super.init(frame: frame)
         isSelected = false
         
         //imageView
@@ -68,7 +74,7 @@ final class FunctionCell: UICollectionViewCell {
         super.layoutSubviews()
         iconView.frame = self.bounds
         titleBackgroundView.frame = CGRect(x: 0,
-                                     y: self.self.frame.size.height - backViewHeight,
+                                     y: self.frame.size.height - backViewHeight,
                                      width: self.frame.size.width,
                                      height: backViewHeight)
         titleLabel.frame = CGRect(x: titleEdgeInsets.left,
@@ -81,31 +87,40 @@ final class FunctionCell: UICollectionViewCell {
 
 
 //TODO: 定义FunctionModule接口
-struct FunctionItem {
+// MARK: - Model
+class Function {
     
     var name: String
-    var iconName: String
+    var iconName: String = ""
+    var iconURLString: String = ""
     var type: String
     var index: Int
     var iconImage = UIImage() //TODO: 传送方式: ImageURL? 或 RawString Data?
     
-    //TODO: init(json: JSON)
+    //TODO: 实现 init(json: JSON)
     
-    init(name:String, iconName:String, type:String, index:Int, iconImage: UIImage) {
+    init(name:String, iconName:String, type:String, index:Int) {
         self.name = name
         self.iconName = iconName
         self.type = type
         self.index = index
-        self.iconImage = iconImage
     }
     
-    init(copying f: FunctionItem) {
-        self.init(name:f.name, iconName:f.iconName, type:f.type, index:f.index, iconImage:f.iconImage)
+    init(name:String, iconURLString:String, type:String, index:Int) {
+        self.name = name
+        self.iconURLString = iconURLString
+        self.type = type
+        self.index = index
+    }
+    
+    convenience init(copying f: Function) {
+        self.init(name:f.name, iconName:f.iconName, type:f.type, index:f.index)
     }
     
 }
 
 
+// MARK: - internal extension
 internal extension UIColor {
     
     convenience init!(_ hexStr: String, alpha: CGFloat = 1.0) {
@@ -118,6 +133,23 @@ internal extension UIColor {
             self.init(red: red, green: green, blue: blue, alpha: alpha) } else {
             return nil
         }
+    }
+}
+
+
+internal extension UIImage {
+    
+    convenience init?(urlString: String) {
+        guard let url = URL(string: urlString) else {
+            self.init(data: Data())
+            return
+        }
+        guard let data = try? Data(contentsOf: url) else {
+            debugPrint("No image in URL \(urlString)")
+            self.init(data: Data())
+            return
+        }
+        self.init(data: data)
     }
 }
 
