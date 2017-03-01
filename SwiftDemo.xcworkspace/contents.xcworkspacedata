@@ -2,6 +2,9 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:demo/CAAnimation/CAAnimation.xcodeproj">
+   </FileRef>
+   <FileRef
       location = "group:demo/UIPageControlDemo/UIPageControlDemo.xcodeproj">
    </FileRef>
    <FileRef
