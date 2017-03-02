@@ -72,15 +72,13 @@ class FunctionCell: UICollectionViewCell {
     
     override func layoutSubviews() {
         super.layoutSubviews()
-        iconView.frame = self.bounds
+        let width = self.frame.size.height, height = self.frame.size.height
+        iconView.frame = CGRect(x: 0+width/4, y: 0+height/4, width: width/2, height: height/2)
         titleBackgroundView.frame = CGRect(x: 0,
-                                     y: self.frame.size.height - backViewHeight,
-                                     width: self.frame.size.width,
+                                     y: height - backViewHeight,
+                                     width: width,
                                      height: backViewHeight)
-        titleLabel.frame = CGRect(x: titleEdgeInsets.left,
-                                  y: titleEdgeInsets.top,
-                                  width: titleBackgroundView.bounds.width - titleEdgeInsets.right -  titleEdgeInsets.left,
-                                  height: titleBackgroundView.bounds.height - titleEdgeInsets.bottom - titleEdgeInsets.top)
+        titleLabel.frame = titleBackgroundView.bounds
     }
     
 }

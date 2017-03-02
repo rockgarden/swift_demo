@@ -2,6 +2,9 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:demo/UIEffect/UIEffect.xcodeproj">
+   </FileRef>
+   <FileRef
       location = "group:demo/CAAnimation/CAAnimation.xcodeproj">
    </FileRef>
    <FileRef
@@ -177,9 +180,6 @@
    </FileRef>
    <FileRef
       location = "group:demo/CALayer/CALayer.xcodeproj">
-   </FileRef>
-   <FileRef
-      location = "group:demo/UIVisualEffectView/UIVisualEffectView.xcodeproj">
    </FileRef>
    <FileRef
       location = "group:demo/UINavigationBar/UINavigationBar.xcodeproj">

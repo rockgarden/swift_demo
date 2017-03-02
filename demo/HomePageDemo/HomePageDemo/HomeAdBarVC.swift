@@ -9,7 +9,7 @@
 import UIKit
 import MJRefresh
 
-fileprivate let functionBarHeight: CGFloat = UIScreen.main.bounds.size.width/4
+fileprivate let functionBarHeight: CGFloat = UIScreen.main.bounds.size.width*2/5
 fileprivate let adBarHeight: CGFloat = UIScreen.main.bounds.size.width/2
 
 class HomeAdBarVC: UIViewController, UIGestureRecognizerDelegate {

@@ -12,7 +12,7 @@ let functionSectionHeaderReuseId = "FunctionSectionHeader"
 
 class FunctionSectionHeader: UICollectionReusableView {
     
-    fileprivate var titleLabel: UILabel!
+    fileprivate let titleLabel = UILabel()
     fileprivate let iconView = UIImageView()
     
     var title: String? {
@@ -21,9 +21,19 @@ class FunctionSectionHeader: UICollectionReusableView {
         }
     }
     
+    var icon: UIImage? {
+        didSet {
+            iconView.image = icon
+        }
+    }
+    
     /// init
-    convenience init() {
-        self.init()
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+    override init(frame: CGRect) {
+        super.init(frame: frame)
         
         //imageView
         iconView.clipsToBounds = true
@@ -37,8 +47,9 @@ class FunctionSectionHeader: UICollectionReusableView {
     
     override func layoutSubviews() {
         super.layoutSubviews()
-        iconView.frame = CGRect(x:0, y:0, width: self.frame.size.height, height: self.frame.size.height)
-        titleLabel.frame = CGRect(x:0, y:self.frame.size.height, width: self.frame.size.width - self.frame.size.height, height: self.frame.size.height)
+        let width = self.frame.size.width, height = self.frame.size.height
+        iconView.frame = CGRect(x:0, y:0, width: height, height: height)
+        titleLabel.frame = CGRect(x:height, y:0, width: width - height, height: height)
     }
     
 }

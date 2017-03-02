@@ -37,9 +37,8 @@ final class FunctionCollectionView: UIView {
         let fl = UICollectionViewFlowLayout()
         fl.minimumLineSpacing = 0
         fl.minimumInteritemSpacing = 0
-        fl.scrollDirection = .horizontal
-        //fl.headerReferenceSize = CGSize(width: , height: )
-        fl.minimumInteritemSpacing = 2.0
+        fl.scrollDirection = .vertical
+        fl.minimumInteritemSpacing = 0
         fl.sectionInset = UIEdgeInsetsMake(0, 0, 0, 0)
         fl.sectionFootersPinToVisibleBounds = false
         return fl
@@ -72,7 +71,8 @@ final class FunctionCollectionView: UIView {
     override func layoutSubviews() {
         super.layoutSubviews()
         let width = self.frame.width / 4
-        self.flowLayout?.itemSize = CGSize(width: width, height: width)
+        flowLayout?.itemSize = CGSize(width: width, height: width)
+        flowLayout?.headerReferenceSize = CGSize(width: width, height: 0)
     }
 
 }
@@ -85,6 +85,7 @@ extension FunctionCollectionView: UICollectionViewDataSource, UICollectionViewDe
         let sectionHeader = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: functionSectionHeaderReuseId, for: indexPath) as! FunctionSectionHeader
         if let title = dataSource.titleForSectionAtIndexPath(indexPath) {
             sectionHeader.title = title
+            sectionHeader.icon = #imageLiteral(resourceName: "c_icon")
         }
         return sectionHeader
     }
