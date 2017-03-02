@@ -22,7 +22,9 @@ class UIPickerViewDS: UIViewController {
 
 }
 
+
 extension UIPickerViewDS: UIPickerViewDelegate, UIPickerViewDataSource {
+
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1
     }
@@ -34,5 +36,17 @@ extension UIPickerViewDS: UIPickerViewDelegate, UIPickerViewDataSource {
                     titleForRow row: Int, forComponent component: Int) -> String? {
         return "\(row+1) Stage" + ( row > 0 ? "s" : "")
     }
+
 }
 
+
+extension UIPickerViewDS: UIPopoverPresentationControllerDelegate {
+
+    // not part of this example, just showing that it now compiles
+    func popoverPresentationController(
+        _ popoverPresentationController: UIPopoverPresentationController,
+        willRepositionPopoverTo rect: UnsafeMutablePointer<CGRect>,
+        in view: AutoreleasingUnsafeMutablePointer<UIView>) {
+    }
+
+}
