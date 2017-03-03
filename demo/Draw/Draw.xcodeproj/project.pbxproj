@@ -10,6 +10,8 @@
 		44AA0DF11DEB09D400BE61E9 /* MandelbrotNoThreadingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44AA0DF01DEB09D400BE61E9 /* MandelbrotNoThreadingVC.swift */; };
 		44AA0DF51DEB147900BE61E9 /* MandelbrotManualThreadingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44AA0DF41DEB147900BE61E9 /* MandelbrotManualThreadingVC.swift */; };
 		44AA0DF71DEB17AC00BE61E9 /* MandelbrotOperationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44AA0DF61DEB17AC00BE61E9 /* MandelbrotOperationVC.swift */; };
+		44DB8C801E6853FA00F624A6 /* DrawInViewVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44DB8C7F1E6853FA00F624A6 /* DrawInViewVC.swift */; };
+		44DB8C821E6854AD00F624A6 /* RocketView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44DB8C811E6854AD00F624A6 /* RocketView.swift */; };
 		44E811351E02C841000079F7 /* ShapeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44E811341E02C841000079F7 /* ShapeView.swift */; };
 		44E811371E02C888000079F7 /* DrawShapesVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44E811361E02C888000079F7 /* DrawShapesVC.swift */; };
 		44E811391E02C95B000079F7 /* dd.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 44E811381E02C95B000079F7 /* dd.storyboard */; };
@@ -26,6 +28,8 @@
 		44AA0DF01DEB09D400BE61E9 /* MandelbrotNoThreadingVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MandelbrotNoThreadingVC.swift; sourceTree = "<group>"; };
 		44AA0DF41DEB147900BE61E9 /* MandelbrotManualThreadingVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MandelbrotManualThreadingVC.swift; sourceTree = "<group>"; };
 		44AA0DF61DEB17AC00BE61E9 /* MandelbrotOperationVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MandelbrotOperationVC.swift; sourceTree = "<group>"; };
+		44DB8C7F1E6853FA00F624A6 /* DrawInViewVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DrawInViewVC.swift; sourceTree = "<group>"; };
+		44DB8C811E6854AD00F624A6 /* RocketView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RocketView.swift; sourceTree = "<group>"; };
 		44E811341E02C841000079F7 /* ShapeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShapeView.swift; sourceTree = "<group>"; };
 		44E811361E02C888000079F7 /* DrawShapesVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DrawShapesVC.swift; sourceTree = "<group>"; };
 		44E811381E02C95B000079F7 /* dd.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = dd.storyboard; sourceTree = "<group>"; };
@@ -80,6 +84,8 @@
 				44AA0DF61DEB17AC00BE61E9 /* MandelbrotOperationVC.swift */,
 				44E811361E02C888000079F7 /* DrawShapesVC.swift */,
 				44E811341E02C841000079F7 /* ShapeView.swift */,
+				44DB8C7F1E6853FA00F624A6 /* DrawInViewVC.swift */,
+				44DB8C811E6854AD00F624A6 /* RocketView.swift */,
 				C20379F81DD43FB200631D6F /* Main.storyboard */,
 				C20379FB1DD43FB200631D6F /* Assets.xcassets */,
 				C20379FD1DD43FB200631D6F /* LaunchScreen.storyboard */,
@@ -165,10 +171,12 @@
 			files = (
 				44E811371E02C888000079F7 /* DrawShapesVC.swift in Sources */,
 				44AA0DF11DEB09D400BE61E9 /* MandelbrotNoThreadingVC.swift in Sources */,
+				44DB8C821E6854AD00F624A6 /* RocketView.swift in Sources */,
 				C20379F71DD43FB100631D6F /* ViewController.swift in Sources */,
 				44AA0DF51DEB147900BE61E9 /* MandelbrotManualThreadingVC.swift in Sources */,
 				C20379F51DD43FB100631D6F /* AppDelegate.swift in Sources */,
 				44AA0DF71DEB17AC00BE61E9 /* MandelbrotOperationVC.swift in Sources */,
+				44DB8C801E6853FA00F624A6 /* DrawInViewVC.swift in Sources */,
 				C2037A071DD43FCF00631D6F /* Views.swift in Sources */,
 				44E811351E02C841000079F7 /* ShapeView.swift in Sources */,
 			);
