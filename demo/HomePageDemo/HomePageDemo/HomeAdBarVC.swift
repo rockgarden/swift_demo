@@ -99,8 +99,8 @@ class HomeAdBarVC: UIViewController, UIGestureRecognizerDelegate {
         return v
     }()
 
-    lazy var mainScrollView: UITableView = {
-        let v = UITableView()
+    lazy var mainScrollView: UIScrollView = {
+        let v = UIScrollView()
         v.backgroundColor = .gray
         v.delegate = self
         v.showsVerticalScrollIndicator = true
@@ -109,12 +109,13 @@ class HomeAdBarVC: UIViewController, UIGestureRecognizerDelegate {
         return v
     }()
     
-//    lazy var mainSubView: UITableView = {
-//        let v = UITableView()
-//        v.isScrollEnabled = false
-//        v.translatesAutoresizingMaskIntoConstraints = false
-//        return v
-//    }()
+    lazy var mainSubView: UITableView = {
+        let v = UITableView()
+        v.isScrollEnabled = false
+    
+        v.translatesAutoresizingMaskIntoConstraints = false
+        return v
+    }()
 
     // MARK: View Life Cycle
     override func viewDidLoad() {
@@ -128,9 +129,9 @@ class HomeAdBarVC: UIViewController, UIGestureRecognizerDelegate {
         view.addSubview(initToolBar)
         view.addSubview(toolBar)
 
-
         headerView.addSubview(AdBar)
         headerView.addSubview(functionBar)
+        mainScrollView.addSubview(mainSubView)
 
         addConstraint()
         
@@ -175,7 +176,7 @@ fileprivate extension HomeAdBarVC {
 
     fileprivate func addConstraint() {
 
-        let views = ["nv":navView, "msv":mainScrollView, "itb":initToolBar, "tb":toolBar, "ab":AdBar, "hv":headerView, "fb":functionBar]
+        let views = ["nv":navView, "msv":mainScrollView, "itb":initToolBar, "tb":toolBar, "ab":AdBar, "hv":headerView, "fb":functionBar, "msv":mainSubView]
         let metrics = ["hh":headerHeight, "fbh":functionBarHeight]
 
         NSLayoutConstraint.activate([
@@ -189,6 +190,8 @@ fileprivate extension HomeAdBarVC {
             NSLayoutConstraint.constraints(withVisualFormat: "V:|-(0)-[nv(60)]", options: [], metrics: nil, views: views),
             NSLayoutConstraint.constraints(withVisualFormat: "H:|-(0)-[msv]-(0)-|", options: [], metrics: nil, views: views),
             NSLayoutConstraint.constraints(withVisualFormat: "V:[hv]-(0)-[msv]-(0)-|", options: [], metrics: nil, views: views),
+            NSLayoutConstraint.constraints(withVisualFormat: "H:|-(0)-[msv]-(0)-|", options: [], metrics: nil, views: views),
+            NSLayoutConstraint.constraints(withVisualFormat: "V:|-(0)-[msv]-(0)-|", options: [], metrics: nil, views: views),
             ].joined().map{$0})
     }
 }

@@ -7,6 +7,91 @@
 //
 
 import UIKit
+import MJRefresh
+
+class CardStyleTableView: UITableView,UITableViewDelegate,UITableViewDataSource {
+    
+    /*
+     // Only override draw() if you perform custom drawing.
+     // An empty implementation adversely affects performance during animation.
+     override func draw(_ rect: CGRect) {
+     // Drawing code
+     }
+     */
+    var numberRows:Int = 50
+    var changeContentSize:((_ contentSize:CGSize)->())?
+    
+    convenience init() {
+        self.init()
+        self.delegate = self
+        self.dataSource = self
+        self.cardStyleSource = self
+        self.rowHeight = CGFloat((1000 - 140) / 20);
+        self.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
+        self.mj_header = MJRefreshNormalHeader { [weak self] in
+            guard let weak = self else {return}
+            DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(1), execute: {
+                weak.mj_header.endRefreshing()
+                weak.reloadData()
+            })
+        }
+        
+    }
+    
+//    required init?(coder aDecoder: NSCoder) {
+//        fatalError("init(coder:) has not been implemented")
+//    }
+    
+    func loadeMoreData() {
+        self.numberRows += 10
+        self.reloadData()
+        self.changeContentSize?(self.contentSize)
+    }
+    
+    func setScrollViewContentOffSet(point:CGPoint) {
+        if !self.mj_header.isRefreshing() {
+            self.contentOffset = point
+        }
+    }
+    
+    //UITableViewDataSource
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        if let cell = tableView.dequeueReusableCell(withIdentifier: "cell") {
+            cell.textLabel?.text = "\(indexPath.row) - reusablecell"
+            return cell
+        } else {
+            let cell = UITableViewCell(style: UITableViewCellStyle.default, reuseIdentifier: "cell")
+            cell.textLabel?.text = "\(indexPath.row)"
+            return cell
+        }
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return numberRows
+    }
+}
+
+
+extension CardStyleTableView: CardStyleTableViewStyleSource {
+    func roundingCornersForCard(inSection section: Int) -> UIRectCorner {
+        return [.allCorners]
+    }
+    
+    func leftPaddingForCardStyleTableView() -> CGFloat {
+        return 10
+    }
+    
+    func rightPaddingForCardStyleTableView() -> CGFloat {
+        return 10
+    }
+    
+    func cornerRadiusForCardStyleTableView() -> CGFloat {
+        return 6
+    }
+}
+
 
 extension UITableView {
     // MARK: - Properties
@@ -14,8 +99,7 @@ extension UITableView {
         get {
             let container = objc_getAssociatedObject(self, &AssociatedKeys.cardStyleTableViewStyleSource) as? WeakObjectContainer
             return container?.object as? CardStyleTableViewStyleSource
-        }
-        set {
+        } set {
             objc_setAssociatedObject(self, &AssociatedKeys.cardStyleTableViewStyleSource, WeakObjectContainer(object: newValue), .OBJC_ASSOCIATION_RETAIN_NONATOMIC)
         }
     }
@@ -23,6 +107,7 @@ extension UITableView {
     internal var leftPadding: CGFloat? {
         return cardStyleSource?.leftPaddingForCardStyleTableView()
     }
+    
     internal var rightPadding: CGFloat? {
         return cardStyleSource?.rightPaddingForCardStyleTableView()
     }
@@ -38,7 +123,6 @@ extension UITableView {
     // MARK: - Method swizzling
     func cardStyle_tableViewSwizzledLayoutSubviews() {
         cardStyle_tableViewSwizzledLayoutSubviews()
-
         updateSubviews()
     }
 
