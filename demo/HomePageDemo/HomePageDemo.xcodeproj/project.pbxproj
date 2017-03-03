@@ -20,6 +20,13 @@
 		C272DFD41E655E0900E2D4C3 /* FunctionCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C272DFD01E655E0900E2D4C3 /* FunctionCollectionView.swift */; };
 		C27E81A61E66747200308DCB /* Functions.plist in Resources */ = {isa = PBXBuildFile; fileRef = C27E81A51E66747200308DCB /* Functions.plist */; };
 		C27E81AC1E66A86300308DCB /* FunctionSectionHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = C27E81AB1E66A86300308DCB /* FunctionSectionHeader.swift */; };
+		C282099E1E691A7E00FF0D1C /* CardStyleTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C28209971E691A7D00FF0D1C /* CardStyleTableView.swift */; };
+		C282099F1E691A7E00FF0D1C /* CardStyleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C28209981E691A7D00FF0D1C /* CardStyleTableViewCell.swift */; };
+		C28209A01E691A7E00FF0D1C /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = C28209991E691A7D00FF0D1C /* Constants.swift */; };
+		C28209A11E691A7E00FF0D1C /* Protocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = C282099A1E691A7D00FF0D1C /* Protocols.swift */; };
+		C28209A21E691A7E00FF0D1C /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C282099C1E691A7D00FF0D1C /* Info.plist */; };
+		C28209A31E691A7E00FF0D1C /* WeakObjectContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = C282099D1E691A7D00FF0D1C /* WeakObjectContainer.swift */; };
+		C28209A61E691B0400FF0D1C /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C28209A51E691B0400FF0D1C /* CardView.swift */; };
 		C29E9CE21E63FF2A001B89E6 /* MJRefresh.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C265222A1E5D7547008B4C8E /* MJRefresh.framework */; };
 		C29E9CE31E63FF2A001B89E6 /* MJRefresh.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = C265222A1E5D7547008B4C8E /* MJRefresh.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		C29E9CE81E6403FD001B89E6 /* Kingfisher.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C29E9CE71E6403FD001B89E6 /* Kingfisher.framework */; };
@@ -64,6 +71,13 @@
 		C272DFD01E655E0900E2D4C3 /* FunctionCollectionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FunctionCollectionView.swift; sourceTree = "<group>"; };
 		C27E81A51E66747200308DCB /* Functions.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Functions.plist; sourceTree = "<group>"; };
 		C27E81AB1E66A86300308DCB /* FunctionSectionHeader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FunctionSectionHeader.swift; sourceTree = "<group>"; };
+		C28209971E691A7D00FF0D1C /* CardStyleTableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardStyleTableView.swift; sourceTree = "<group>"; };
+		C28209981E691A7D00FF0D1C /* CardStyleTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardStyleTableViewCell.swift; sourceTree = "<group>"; };
+		C28209991E691A7D00FF0D1C /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		C282099A1E691A7D00FF0D1C /* Protocols.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Protocols.swift; sourceTree = "<group>"; };
+		C282099C1E691A7D00FF0D1C /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C282099D1E691A7D00FF0D1C /* WeakObjectContainer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeakObjectContainer.swift; sourceTree = "<group>"; };
+		C28209A51E691B0400FF0D1C /* CardView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
 		C29E9CE71E6403FD001B89E6 /* Kingfisher.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Kingfisher.framework; sourceTree = "<group>"; };
 		C2A67B0F1E63F00D00DD7FEC /* CycleScrollView.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = CycleScrollView.bundle; sourceTree = "<group>"; };
 		C2A67B101E63F00D00DD7FEC /* CycleScrollView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CycleScrollView.swift; sourceTree = "<group>"; };
@@ -89,6 +103,8 @@
 		C23436A41E5D63EB00260F96 = {
 			isa = PBXGroup;
 			children = (
+				C28209A41E691B0400FF0D1C /* CardCollectionView */,
+				C28209961E691A7D00FF0D1C /* CardStyleTableView */,
 				C29E9CE71E6403FD001B89E6 /* Kingfisher.framework */,
 				C272DFCD1E655E0900E2D4C3 /* FunctionCollectionView */,
 				C2A67B0E1E63F00D00DD7FEC /* LLCycleScrollView */,
@@ -132,6 +148,35 @@
 				C27E81A51E66747200308DCB /* Functions.plist */,
 			);
 			path = FunctionCollectionView;
+			sourceTree = "<group>";
+		};
+		C28209961E691A7D00FF0D1C /* CardStyleTableView */ = {
+			isa = PBXGroup;
+			children = (
+				C28209971E691A7D00FF0D1C /* CardStyleTableView.swift */,
+				C28209981E691A7D00FF0D1C /* CardStyleTableViewCell.swift */,
+				C28209991E691A7D00FF0D1C /* Constants.swift */,
+				C282099A1E691A7D00FF0D1C /* Protocols.swift */,
+				C282099B1E691A7D00FF0D1C /* Supporting Files */,
+				C282099D1E691A7D00FF0D1C /* WeakObjectContainer.swift */,
+			);
+			path = CardStyleTableView;
+			sourceTree = "<group>";
+		};
+		C282099B1E691A7D00FF0D1C /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				C282099C1E691A7D00FF0D1C /* Info.plist */,
+			);
+			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		C28209A41E691B0400FF0D1C /* CardCollectionView */ = {
+			isa = PBXGroup;
+			children = (
+				C28209A51E691B0400FF0D1C /* CardView.swift */,
+			);
+			path = CardCollectionView;
 			sourceTree = "<group>";
 		};
 		C2A67B0E1E63F00D00DD7FEC /* LLCycleScrollView */ = {
@@ -210,6 +255,7 @@
 			files = (
 				C27E81A61E66747200308DCB /* Functions.plist in Resources */,
 				C2A67B161E63F00D00DD7FEC /* CycleScrollView.bundle in Resources */,
+				C28209A21E691A7E00FF0D1C /* Info.plist in Resources */,
 				C26522301E5D762F008B4C8E /* Main.storyboard in Resources */,
 				C23436BB1E5D63EC00260F96 /* LaunchScreen.storyboard in Resources */,
 				C23436B81E5D63EC00260F96 /* Assets.xcassets in Resources */,
@@ -224,18 +270,24 @@
 			buildActionMask = 2147483647;
 			files = (
 				C2A67B181E63F00D00DD7FEC /* CycleScrollViewCell.swift in Sources */,
+				C28209A01E691A7E00FF0D1C /* Constants.swift in Sources */,
 				C2A67B1A1E63F00D00DD7FEC /* LLPillPageControl.swift in Sources */,
+				C28209A11E691A7E00FF0D1C /* Protocols.swift in Sources */,
 				C27E81AC1E66A86300308DCB /* FunctionSectionHeader.swift in Sources */,
 				C265222F1E5D757E008B4C8E /* IndexTableView.swift in Sources */,
 				C272DFD21E655E0900E2D4C3 /* FunctionCell.swift in Sources */,
+				C282099F1E691A7E00FF0D1C /* CardStyleTableViewCell.swift in Sources */,
 				C272DFD41E655E0900E2D4C3 /* FunctionCollectionView.swift in Sources */,
 				C2A67B191E63F00D00DD7FEC /* LLFilledPageControl.swift in Sources */,
 				C23436B31E5D63EC00260F96 /* HomeToolBarVC.swift in Sources */,
 				C23436C31E5D64A300260F96 /* TabBarVC.swift in Sources */,
 				C23436B11E5D63EC00260F96 /* AppDelegate.swift in Sources */,
 				442254B91E5DD57500A62376 /* HomeAdBarVC.swift in Sources */,
+				C28209A61E691B0400FF0D1C /* CardView.swift in Sources */,
+				C282099E1E691A7E00FF0D1C /* CardStyleTableView.swift in Sources */,
 				C2A67B171E63F00D00DD7FEC /* CycleScrollView.swift in Sources */,
 				C2A67B1B1E63F00D00DD7FEC /* SnakePageControl.swift in Sources */,
+				C28209A31E691A7E00FF0D1C /* WeakObjectContainer.swift in Sources */,
 				C265222D1E5D7576008B4C8E /* Extension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

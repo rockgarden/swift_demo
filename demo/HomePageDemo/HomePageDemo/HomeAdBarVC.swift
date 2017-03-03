@@ -99,8 +99,8 @@ class HomeAdBarVC: UIViewController, UIGestureRecognizerDelegate {
         return v
     }()
 
-    lazy var mainScrollView: UIScrollView = {
-        let v = UIScrollView()
+    lazy var mainScrollView: UITableView = {
+        let v = UITableView()
         v.backgroundColor = .gray
         v.delegate = self
         v.showsVerticalScrollIndicator = true
@@ -108,6 +108,13 @@ class HomeAdBarVC: UIViewController, UIGestureRecognizerDelegate {
         v.translatesAutoresizingMaskIntoConstraints = false
         return v
     }()
+    
+//    lazy var mainSubView: UITableView = {
+//        let v = UITableView()
+//        v.isScrollEnabled = false
+//        v.translatesAutoresizingMaskIntoConstraints = false
+//        return v
+//    }()
 
     // MARK: View Life Cycle
     override func viewDidLoad() {
