@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class EvenDistributionVC: UIViewController {
     @IBOutlet var views : [UIView]!
     
     override func viewDidLoad() {
