@@ -2,6 +2,9 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:demo/UIAnimator/UIAnimator.xcodeproj">
+   </FileRef>
+   <FileRef
       location = "group:demo/UIEffect/UIEffect.xcodeproj">
    </FileRef>
    <FileRef

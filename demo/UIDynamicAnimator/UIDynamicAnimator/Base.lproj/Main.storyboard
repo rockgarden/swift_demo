@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="nv8-tv-d4o">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Drag-->
+        <scene sceneID="QKg-7v-oO3">
+            <objects>
+                <viewController storyboardIdentifier="UIDA_Drag" id="nv8-tv-d4o" customClass="UIDA_Drag" customModule="UIDynamicAnimator" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="0qW-fL-5O3"/>
+                        <viewControllerLayoutGuide type="bottom" id="Jk2-bd-Kb2"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="RFd-Wq-tM0">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="lC9-Jv-7JN">
+                                <rect key="frame" x="52" y="189" width="217" height="217"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="H7U-at-zLD" appends="YES" id="HvW-aG-UkA"/>
+                                </connections>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pwh-aq-KQa">
+                                <rect key="frame" x="131.5" y="617" width="112" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="112" id="3dM-PU-Bne"/>
+                                    <constraint firstAttribute="height" constant="30" id="4ic-Ql-agi"/>
+                                </constraints>
+                                <state key="normal" title="Lift - Drop "/>
+                                <connections>
+                                    <segue destination="S2m-Fd-rZU" kind="show" id="zhL-bc-sAF"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="Pwh-aq-KQa" firstAttribute="centerX" secondItem="RFd-Wq-tM0" secondAttribute="centerX" id="Qbk-II-SPT"/>
+                            <constraint firstItem="Jk2-bd-Kb2" firstAttribute="top" secondItem="Pwh-aq-KQa" secondAttribute="bottom" constant="20" id="uyi-aK-pNX"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="7JK-Ut-R7y" sceneMemberID="firstResponder"/>
+                <panGestureRecognizer minimumNumberOfTouches="1" id="H7U-at-zLD">
+                    <connections>
+                        <action selector="dragging:" destination="nv8-tv-d4o" id="j5G-TZ-xlF"/>
+                    </connections>
+                </panGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="-25" y="-6585"/>
+        </scene>
+        <!--Constraints-->
+        <scene sceneID="bTC-D9-wyM">
+            <objects>
+                <viewController storyboardIdentifier="UIDA_Constraints" id="S2m-Fd-rZU" customClass="UIDA_Constraints" customModule="UIDynamicAnimator" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="V50-wY-q4Y"/>
+                        <viewControllerLayoutGuide type="bottom" id="Tew-KD-aNK"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="f5h-HU-1VT">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DHF-ie-tfG">
+                                <rect key="frame" x="0.0" y="539" width="375" height="128"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Lift and drop me" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nEm-PB-bjd">
+                                        <rect key="frame" x="125" y="53" width="126" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" red="1" green="0.30690508239999997" blue="0.33035034009999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <gestureRecognizers/>
+                                <constraints>
+                                    <constraint firstItem="nEm-PB-bjd" firstAttribute="centerY" secondItem="DHF-ie-tfG" secondAttribute="centerY" id="nK1-Tm-1OX"/>
+                                    <constraint firstAttribute="height" constant="128" id="szX-5d-fuF"/>
+                                    <constraint firstItem="nEm-PB-bjd" firstAttribute="centerX" secondItem="DHF-ie-tfG" secondAttribute="centerX" id="ufb-Jt-ViQ"/>
+                                </constraints>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="NHO-H2-hVy" appends="YES" id="TiD-zY-1dI"/>
+                                </connections>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="DHF-ie-tfG" firstAttribute="bottom" secondItem="Tew-KD-aNK" secondAttribute="top" id="6P4-2W-dot"/>
+                            <constraint firstItem="DHF-ie-tfG" firstAttribute="leading" secondItem="f5h-HU-1VT" secondAttribute="leading" id="EQb-yO-lam"/>
+                            <constraint firstItem="DHF-ie-tfG" firstAttribute="trailing" secondItem="f5h-HU-1VT" secondAttribute="trailing" id="ZUz-mB-2Dr"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="redView" destination="DHF-ie-tfG" id="257-vb-cT0"/>
+                        <outletCollection property="constraints" destination="ZUz-mB-2Dr" collectionClass="NSMutableArray" id="gFu-kr-Fwn"/>
+                        <outletCollection property="constraints" destination="EQb-yO-lam" collectionClass="NSMutableArray" id="jaC-ej-2lX"/>
+                        <outletCollection property="constraints" destination="6P4-2W-dot" collectionClass="NSMutableArray" id="fhS-uT-RNM"/>
+                        <outletCollection property="constraints" destination="szX-5d-fuF" collectionClass="NSMutableArray" id="aoN-v5-w9Y"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="37C-GX-1FO" sceneMemberID="firstResponder"/>
+                <panGestureRecognizer minimumNumberOfTouches="1" id="NHO-H2-hVy">
+                    <connections>
+                        <action selector="drag:" destination="S2m-Fd-rZU" id="NKI-zf-qKy"/>
+                    </connections>
+                </panGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="823" y="-6585"/>
+        </scene>
+    </scenes>
+</document>
