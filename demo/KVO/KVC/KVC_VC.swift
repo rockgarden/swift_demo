@@ -5,14 +5,16 @@
 //  Created by wangkan on 16/8/23.
 //  Copyright © 2016年 rockgarden. All rights reserved.
 //
-/// KVC，即是指 NSKeyValueCoding，一个非正式的Protocol，提供一种机制来间接访问对象的属性。而不是通过调用Setter、Getter方法访问。
+/// KVC,即是指 NSKeyValueCoding,一个非正式的Protocol,提供一种机制来间接访问对象的属性,而不是通过调用Setter/Getter方法访问.
 
 import UIKit
 
 class Dog: NSObject {
 	var name: String = ""
 }
-
+class DogOwner : NSObject {
+    var dogs = [Dog]()
+}
 class KVC_Class: NSObject {
 	var theData = [
 		[
@@ -33,8 +35,8 @@ class KVC_Class: NSObject {
 		return self.theData.count
 	}
     
-	func objectInPepBoysAtIndex(_ ix: Int) -> AnyObject {
-		return self.theData[ix] as AnyObject
+	func objectInPepBoysAtIndex(_ ix: Int) -> Any {
+		return self.theData[ix]
 	}
 
 }
@@ -55,7 +57,7 @@ class KVC_VC: UIViewController {
 	@objc(hue) var color2: UIColor {
 		get {
 			print("someone called the color2 getter")
-			return UIColor.red
+			return .red
 		}
 		set {
 			print("someone called the color2 setter")
@@ -92,25 +94,44 @@ class KVC_VC: UIViewController {
 		// obj.setValue("howdy", forKey:"keyName") // crash
 
 		let d = Dog()
-		d.setValue("Fido", forKey: "name") // no crash!
-		print(d.name) // "Fido" - it worked!
+		d.setValue("Fido", forKey: "name")
+		print("d: ",d.name) //"Fido"
 
         // NSObject.value
-		let c = self.value(forKey: "hue") as? UIColor // "someone called the getter"
-		print(c as Any) // Optional(UIDeviceRGBColorSpace 1 0 0 1)
+		let c = self.value(forKey: "hue") as? UIColor //"someone called the getter"
+		print("c: ", c as Any) //Optional(UIDeviceRGBColorSpace 1 0 0 1)
 
 		let myObject = KVC_Class()
 		let arr = myObject.value(forKeyPath: "theData.name") as! [String]
+        // NB can't do this, because Swift doesn't know about this path
+        //let arr2 = myObject.value(forKeyPath:#keyPath(KVC_Class.theData.name))
 		print(arr)
         /// 通过命名空间调用方法？
-        let arr1: AnyObject = myObject.value(forKey: "pepBoys")! as AnyObject //调方法名包含pepBoys
+        do {
+            let arr = myObject.value(forKey:"pepBoys")!
+            print(arr)
+            print(type(of:arr))
+            let arr2 = myObject.value(forKeyPath:"pepBoys.name")!
+            print(arr2)
+            print(type(of:arr2))
+        }
         debugPrint(myObject.value(forKey: "countOfPepBoys") as Any)
-        print(arr1)
-        let arr2: AnyObject = myObject.value(forKeyPath: "pepBoys.name")! as AnyObject
-        print(arr2)
 
 		_ = obj
 
+        print(#selector(setter:color2)) // setHue:
+
+        let owner = DogOwner()
+        let dog1 = Dog()
+        dog1.name = "Fido"
+        let dog2 = Dog()
+        dog2.name = "Rover"
+        owner.dogs = [dog1, dog2]
+        let names = owner.value(forKeyPath:#keyPath(DogOwner.dogs.name)) as! [String] // ["Fido", "Rover"]
+        let dog1name = dog1.value(forKey:#keyPath(Dog.name)) as! String
+
+        print(names)
+        print(dog1name)
 	}
 
 }

@@ -9,21 +9,29 @@
 import UIKit
 import MediaPlayer
 
-let which = 2 // 1 or 2
+let which = 1 // 1 or 2
 
-class ViewController: UIViewController {
+// right way to define a notification name
+
+extension Notification.Name {
+    static let cardTapped = Notification.Name("cardTapped")
+}
+
+class NotificationVC: UIViewController {
 
     var observers = Set<NSObject>()
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        NotificationCenter.default.addObserver(self, selector: #selector(ViewController.keyboardWillAppear(_:)), name: NSNotification.Name.UIKeyboardWillShow, object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(ViewController.keyboardWillDisappear(_:)), name:NSNotification.Name.UIKeyboardWillHide, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillAppear(_:)), name: NSNotification.Name.UIKeyboardWillShow, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillDisappear(_:)), name:NSNotification.Name.UIKeyboardWillHide, object: nil)
     }
 
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
+
         testUILocalNotification()
+
         self.singleTap(self)
         //FIXME: MPMusicPlayerController: Server is not running, deferring check-in
         let mp = MPMusicPlayerController.systemMusicPlayer()
@@ -71,7 +79,7 @@ class ViewController: UIViewController {
 
     func singleTap(_:AnyObject) {
         NotificationCenter.default
-            .post(name: Notification.Name(rawValue: "cardTapped"), object: self)
+            .post(name: .cardTapped, object: self)
     }
 
     // when app is already in the foreground, testUILocalNotification() show the notification delay TimeInterval(10)."
@@ -112,7 +120,7 @@ class ViewController: UIViewController {
     
 }
 
-extension ViewController: FlipsideViewControllerDelegate {
+extension NotificationVC: FlipsideViewControllerDelegate {
     func flipsideViewControllerDidFinish(_ controller: FlipsideViewController) {
         self.dismiss(animated: true, completion: nil)
     }

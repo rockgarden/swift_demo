@@ -105,9 +105,9 @@
 			isa = PBXGroup;
 			children = (
 				449789AC1D6C916B00A607A9 /* MyView.swift */,
+				449789B11D6C91AA00A607A9 /* KVC_VC.swift */,
 				449789AD1D6C916B00A607A9 /* Thing.h */,
 				449789AE1D6C916B00A607A9 /* Thing.m */,
-				449789B11D6C91AA00A607A9 /* KVC_VC.swift */,
 			);
 			path = KVC;
 			sourceTree = "<group>";
@@ -509,6 +509,7 @@
 				44B95E201E5B174F00D66F39 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		C2B564911D6ABB78003E2E7E /* Build configuration list for PBXProject "KVO_KVC" */ = {
 			isa = XCConfigurationList;
