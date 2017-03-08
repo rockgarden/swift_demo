@@ -32,6 +32,8 @@
 		4454EE391D69F33800DC3F04 /* RoundedImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4454EE2F1D69F33800DC3F04 /* RoundedImageView.swift */; };
 		4454EE3B1D69F3A800DC3F04 /* MatchItUp.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4454EE3A1D69F3A800DC3F04 /* MatchItUp.storyboard */; };
 		4462AC731E02C12F00A122DF /* DraggingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4462AC721E02C12F00A122DF /* DraggingVC.swift */; };
+		4479E0451E70367300A51660 /* DependencyVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4479E0441E70367300A51660 /* DependencyVC.swift */; };
+		4479E0471E703B2500A51660 /* ExclusiveTouchVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4479E0461E703B2500A51660 /* ExclusiveTouchVC.swift */; };
 		449B13CA1D683DE400795F70 /* HorizVertPanGestureRecognizers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 449B13C91D683DE400795F70 /* HorizVertPanGestureRecognizers.swift */; };
 		44E811331E02C406000079F7 /* DraggingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44E811321E02C406000079F7 /* DraggingView.swift */; };
 		44F030FF1E5C82CB0059B587 /* FullScreenPopGesture.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44F030FE1E5C82CB0059B587 /* FullScreenPopGesture.swift */; };
@@ -72,6 +74,8 @@
 		4454EE2F1D69F33800DC3F04 /* RoundedImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoundedImageView.swift; sourceTree = "<group>"; };
 		4454EE3A1D69F3A800DC3F04 /* MatchItUp.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MatchItUp.storyboard; sourceTree = "<group>"; };
 		4462AC721E02C12F00A122DF /* DraggingVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DraggingVC.swift; sourceTree = "<group>"; };
+		4479E0441E70367300A51660 /* DependencyVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DependencyVC.swift; sourceTree = "<group>"; };
+		4479E0461E703B2500A51660 /* ExclusiveTouchVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExclusiveTouchVC.swift; sourceTree = "<group>"; };
 		449B13C91D683DE400795F70 /* HorizVertPanGestureRecognizers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HorizVertPanGestureRecognizers.swift; sourceTree = "<group>"; };
 		44E811321E02C406000079F7 /* DraggingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DraggingView.swift; sourceTree = "<group>"; };
 		44F030FE1E5C82CB0059B587 /* FullScreenPopGesture.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FullScreenPopGesture.swift; sourceTree = "<group>"; };
@@ -151,12 +155,14 @@
 				4420AB981DF1B37E005D280A /* Line.swift */,
 				4462AC721E02C12F00A122DF /* DraggingVC.swift */,
 				44E811321E02C406000079F7 /* DraggingView.swift */,
+				4479E0441E70367300A51660 /* DependencyVC.swift */,
 				449B13C91D683DE400795F70 /* HorizVertPanGestureRecognizers.swift */,
+				44F030FE1E5C82CB0059B587 /* FullScreenPopGesture.swift */,
+				4479E0461E703B2500A51660 /* ExclusiveTouchVC.swift */,
 				442F31251D6831D60060942F /* Main.storyboard */,
 				442F31281D6831D60060942F /* Assets.xcassets */,
 				442F312A1D6831D60060942F /* LaunchScreen.storyboard */,
 				442F312D1D6831D60060942F /* Info.plist */,
-				44F030FE1E5C82CB0059B587 /* FullScreenPopGesture.swift */,
 			);
 			path = UIGestureRecognizer;
 			sourceTree = "<group>";
@@ -295,6 +301,7 @@
 				44F030FF1E5C82CB0059B587 /* FullScreenPopGesture.swift in Sources */,
 				441F82851E2B2D0D00D6EBD4 /* PanGestureAction.swift in Sources */,
 				44F031031E5C84370059B587 /* UINavigationController+TZPopGesture.m in Sources */,
+				4479E0451E70367300A51660 /* DependencyVC.swift in Sources */,
 				4454EE321D69F33800DC3F04 /* CircleGestureRecognizer.swift in Sources */,
 				4454EE341D69F33800DC3F04 /* GameViewController.swift in Sources */,
 				44F031151E5C845C0059B587 /* TZPageViewController.m in Sources */,
@@ -310,6 +317,7 @@
 				44F031121E5C845C0059B587 /* TZHomeViewController.m in Sources */,
 				44F031141E5C845C0059B587 /* TZNaviController.m in Sources */,
 				44F031111E5C845C0059B587 /* TZCollectionViewController.m in Sources */,
+				4479E0471E703B2500A51660 /* ExclusiveTouchVC.swift in Sources */,
 				4420AB991DF1B37E005D280A /* Line.swift in Sources */,
 				44291CA01DF1B77300D2F579 /* RootVC.swift in Sources */,
 				4454EE381D69F33800DC3F04 /* MatchingGame.swift in Sources */,
