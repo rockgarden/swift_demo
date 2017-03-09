@@ -1,15 +1,12 @@
 //
-//  LLFilledPageControl.swift
-//  LL 使用备注
-//  https://github.com/popwarsweet/PageControls
+//  FilledPageControl.swift
 //
-//  Created by Kyle Zaragoza on 8/6/16.
-//  Copyright © 2016 Kyle Zaragoza. All rights reserved.
+//  https://github.com/popwarsweet/PageControls
 //
 
 import UIKit
 
-open class LLFilledPageControl: UIView {
+open class FilledPageControl: UIView {
     
     // MARK: - PageControl
     

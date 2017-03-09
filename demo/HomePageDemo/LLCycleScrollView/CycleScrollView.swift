@@ -277,20 +277,20 @@ typealias didSelectItemClosure_SCV = (NSInteger) -> Void
         }
         
         if customPageControlStyle == .fill {
-            customPageControl = LLFilledPageControl.init(frame: CGRect.zero)
+            customPageControl = FilledPageControl.init(frame: CGRect.zero)
             customPageControl?.tintColor = customPageControlTintColor
-            (customPageControl as! LLFilledPageControl).indicatorPadding = customPageControlIndicatorPadding
-            (customPageControl as! LLFilledPageControl).indicatorRadius = FillPageControlIndicatorRadius
-            (customPageControl as! LLFilledPageControl).pageCount = self.imagePaths.count
+            (customPageControl as! FilledPageControl).indicatorPadding = customPageControlIndicatorPadding
+            (customPageControl as! FilledPageControl).indicatorRadius = FillPageControlIndicatorRadius
+            (customPageControl as! FilledPageControl).pageCount = self.imagePaths.count
             self.addSubview(customPageControl!)
         }
         
         if customPageControlStyle == .pill {
-            customPageControl = LLPillPageControl.init(frame: CGRect.zero)
-            (customPageControl as! LLPillPageControl).indicatorPadding = customPageControlIndicatorPadding
-            (customPageControl as! LLPillPageControl).activeTint = customPageControlTintColor
-            (customPageControl as! LLPillPageControl).inactiveTint = customPageControlInActiveTintColor
-            (customPageControl as! LLPillPageControl).pageCount = self.imagePaths.count
+            customPageControl = PillPageControl.init(frame: CGRect.zero)
+            (customPageControl as! PillPageControl).indicatorPadding = customPageControlIndicatorPadding
+            (customPageControl as! PillPageControl).activeTint = customPageControlTintColor
+            (customPageControl as! PillPageControl).inactiveTint = customPageControlInActiveTintColor
+            (customPageControl as! PillPageControl).pageCount = self.imagePaths.count
             self.addSubview(customPageControl!)
         }
         
@@ -458,9 +458,9 @@ typealias didSelectItemClosure_SCV = (NSInteger) -> Void
             }
             // progress
             if customPageControlStyle == .fill {
-                (customPageControl as! LLFilledPageControl).progress = progress
+                (customPageControl as! FilledPageControl).progress = progress
             }else if customPageControlStyle == .pill {
-                (customPageControl as! LLPillPageControl).progress = progress
+                (customPageControl as! PillPageControl).progress = progress
             }else if customPageControlStyle == .snake {
                 (customPageControl as! SnakePageControl).progress = progress
             }

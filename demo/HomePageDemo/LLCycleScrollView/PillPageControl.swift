@@ -1,15 +1,10 @@
 //
-//  LLPillPageControl.swift
-//  LL 使用备注
-//  https://github.com/popwarsweet/PageControls
-//
-//  Created by Kyle Zaragoza on 8/8/16.
-//  Copyright © 2016 Kyle Zaragoza. All rights reserved.
+//  PillPageControl.swift
 //
 
 import UIKit
 
-open class LLPillPageControl: UIView {
+open class PillPageControl: UIView {
     
     // MARK: - PageControl
     

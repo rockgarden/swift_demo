@@ -34,8 +34,8 @@
 		C2A67B161E63F00D00DD7FEC /* CycleScrollView.bundle in Resources */ = {isa = PBXBuildFile; fileRef = C2A67B0F1E63F00D00DD7FEC /* CycleScrollView.bundle */; };
 		C2A67B171E63F00D00DD7FEC /* CycleScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2A67B101E63F00D00DD7FEC /* CycleScrollView.swift */; };
 		C2A67B181E63F00D00DD7FEC /* CycleScrollViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2A67B111E63F00D00DD7FEC /* CycleScrollViewCell.swift */; };
-		C2A67B191E63F00D00DD7FEC /* LLFilledPageControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2A67B121E63F00D00DD7FEC /* LLFilledPageControl.swift */; };
-		C2A67B1A1E63F00D00DD7FEC /* LLPillPageControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2A67B131E63F00D00DD7FEC /* LLPillPageControl.swift */; };
+		C2A67B191E63F00D00DD7FEC /* FilledPageControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2A67B121E63F00D00DD7FEC /* FilledPageControl.swift */; };
+		C2A67B1A1E63F00D00DD7FEC /* PillPageControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2A67B131E63F00D00DD7FEC /* PillPageControl.swift */; };
 		C2A67B1B1E63F00D00DD7FEC /* SnakePageControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2A67B141E63F00D00DD7FEC /* SnakePageControl.swift */; };
 /* End PBXBuildFile section */
 
@@ -82,8 +82,8 @@
 		C2A67B0F1E63F00D00DD7FEC /* CycleScrollView.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = CycleScrollView.bundle; sourceTree = "<group>"; };
 		C2A67B101E63F00D00DD7FEC /* CycleScrollView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CycleScrollView.swift; sourceTree = "<group>"; };
 		C2A67B111E63F00D00DD7FEC /* CycleScrollViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CycleScrollViewCell.swift; sourceTree = "<group>"; };
-		C2A67B121E63F00D00DD7FEC /* LLFilledPageControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LLFilledPageControl.swift; sourceTree = "<group>"; };
-		C2A67B131E63F00D00DD7FEC /* LLPillPageControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LLPillPageControl.swift; sourceTree = "<group>"; };
+		C2A67B121E63F00D00DD7FEC /* FilledPageControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FilledPageControl.swift; sourceTree = "<group>"; };
+		C2A67B131E63F00D00DD7FEC /* PillPageControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PillPageControl.swift; sourceTree = "<group>"; };
 		C2A67B141E63F00D00DD7FEC /* SnakePageControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SnakePageControl.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -107,7 +107,7 @@
 				C28209961E691A7D00FF0D1C /* CardStyleTableView */,
 				C29E9CE71E6403FD001B89E6 /* Kingfisher.framework */,
 				C272DFCD1E655E0900E2D4C3 /* FunctionCollectionView */,
-				C2A67B0E1E63F00D00DD7FEC /* LLCycleScrollView */,
+				C2A67B0E1E63F00D00DD7FEC /* CycleScrollView */,
 				C265222A1E5D7547008B4C8E /* MJRefresh.framework */,
 				C23436AF1E5D63EB00260F96 /* HomePageDemo */,
 				C23436AE1E5D63EB00260F96 /* Products */,
@@ -179,16 +179,17 @@
 			path = CardCollectionView;
 			sourceTree = "<group>";
 		};
-		C2A67B0E1E63F00D00DD7FEC /* LLCycleScrollView */ = {
+		C2A67B0E1E63F00D00DD7FEC /* CycleScrollView */ = {
 			isa = PBXGroup;
 			children = (
 				C2A67B0F1E63F00D00DD7FEC /* CycleScrollView.bundle */,
 				C2A67B101E63F00D00DD7FEC /* CycleScrollView.swift */,
 				C2A67B111E63F00D00DD7FEC /* CycleScrollViewCell.swift */,
-				C2A67B121E63F00D00DD7FEC /* LLFilledPageControl.swift */,
-				C2A67B131E63F00D00DD7FEC /* LLPillPageControl.swift */,
+				C2A67B121E63F00D00DD7FEC /* FilledPageControl.swift */,
+				C2A67B131E63F00D00DD7FEC /* PillPageControl.swift */,
 				C2A67B141E63F00D00DD7FEC /* SnakePageControl.swift */,
 			);
+			name = CycleScrollView;
 			path = LLCycleScrollView;
 			sourceTree = "<group>";
 		};
@@ -271,14 +272,14 @@
 			files = (
 				C2A67B181E63F00D00DD7FEC /* CycleScrollViewCell.swift in Sources */,
 				C28209A01E691A7E00FF0D1C /* Constants.swift in Sources */,
-				C2A67B1A1E63F00D00DD7FEC /* LLPillPageControl.swift in Sources */,
+				C2A67B1A1E63F00D00DD7FEC /* PillPageControl.swift in Sources */,
 				C28209A11E691A7E00FF0D1C /* Protocols.swift in Sources */,
 				C27E81AC1E66A86300308DCB /* FunctionSectionHeader.swift in Sources */,
 				C265222F1E5D757E008B4C8E /* IndexTableView.swift in Sources */,
 				C272DFD21E655E0900E2D4C3 /* FunctionCell.swift in Sources */,
 				C282099F1E691A7E00FF0D1C /* CardStyleTableViewCell.swift in Sources */,
 				C272DFD41E655E0900E2D4C3 /* FunctionCollectionView.swift in Sources */,
-				C2A67B191E63F00D00DD7FEC /* LLFilledPageControl.swift in Sources */,
+				C2A67B191E63F00D00DD7FEC /* FilledPageControl.swift in Sources */,
 				C23436B31E5D63EC00260F96 /* HomeToolBarVC.swift in Sources */,
 				C23436C31E5D64A300260F96 /* TabBarVC.swift in Sources */,
 				C23436B11E5D63EC00260F96 /* AppDelegate.swift in Sources */,
