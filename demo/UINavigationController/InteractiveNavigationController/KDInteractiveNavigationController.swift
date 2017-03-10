@@ -22,7 +22,6 @@ open class KDInteractiveNavigationController: UINavigationController {
     
     override open func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
         self.interactivePopGestureRecognizer?.delegate = self
     }
     

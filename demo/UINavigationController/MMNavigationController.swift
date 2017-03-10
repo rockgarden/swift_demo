@@ -1,5 +1,6 @@
-//  https://github.com/MangoMade/MMNavigationController
-//FIXME: 由于Swift不能重写load方法，所以需要在AppDelegate中调用UIViewController.mm_load()?
+//
+// FIXME: 由于Swift不能重写load方法，所以需要在AppDelegate中调用UIViewController.mm_load()?
+// FIXME: Bug! Bug!
 //@UIApplicationMain
 //class AppDelegate: UIResponder, UIApplicationDelegate {
 //
@@ -16,6 +17,29 @@
 //    }
 //    
 //}
+
+//override func viewDidLoad() {
+//    super.viewDidLoad()
+//    
+//    /// 修改当前ViewContoller的导航栏的背景颜色
+//    mm_navigationBarBackgroundColor = UIColor.randomColor()
+//    
+//    /// 修改当前ViewContoller标题颜色
+//    mm_navigationBarTitleColor = UIColor.whiteColor()
+//    
+//    /// 隐藏当前ViewContoller的导航栏
+//    mm_navigationBarHidden = true
+// 
+//    /** 全屏手势相关属性 **/
+//    
+//    /// pop 手势是否可用
+//    mm_popGestrueEnable = false
+//    
+//    /// pop 手势响应的范围
+//    mm_popGestrueEnableWidth = 150
+//    
+//}
+
 
 import UIKit
 // FIXME: comparison operators with optionals were removed from the Swift Standard Libary.
@@ -55,10 +79,6 @@ fileprivate func > <T : Comparable>(lhs: T?, rhs: T?) -> Bool {
 
 
 extension UIViewController {
-    
-    fileprivate struct OnceToken {
-        static var viewWillAppearMethodsSwizzled = Int()
-    }
     
     fileprivate struct AssociatedKey {
         static var viewWillAppearInjectBlock = 0

@@ -47,7 +47,7 @@ class KMNavigationBarTransitionDemo: UITableViewController {
         navigationController?.navigationBar.setBackgroundImage(currentNavigationBarData.backgroundImageColor.toUIImage, for: .default)
         navigationController?.navigationBar.shadowImage = (currentNavigationBarData.prefersShadowImageHidden) ? UIImage() : nil
         
-        title = "Title " + "\(navigationController!.viewControllers.count)"
+        title = "KM " + "\(navigationController!.viewControllers.count)"
     }
     
     override func viewWillAppear(_ animated: Bool) {

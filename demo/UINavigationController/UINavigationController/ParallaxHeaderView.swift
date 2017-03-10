@@ -54,7 +54,7 @@ class ParallaxHeaderView: UIView {
         super.init(frame: CGRect(x: 0, y: 0, width: headerViewSize.width, height: headerViewSize.height))
         //这里是自动布局的设置，大概意思就是subView与它的superView拥有一样的frame
         subView.autoresizingMask = [.flexibleLeftMargin, .flexibleRightMargin, .flexibleTopMargin, .flexibleBottomMargin, .flexibleWidth, .flexibleHeight]
-        self.clipsToBounds = false;  //必须得设置成false
+        self.clipsToBounds = false  //必须得设置成false
         self.contentView.frame = self.bounds
         self.contentView.addSubview(subView)
         self.contentView.clipsToBounds = true
