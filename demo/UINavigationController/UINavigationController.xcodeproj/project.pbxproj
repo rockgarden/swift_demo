@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		4472B4351D9975DB0087653C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4472B4341D9975DB0087653C /* AppDelegate.swift */; };
 		4472B4371D9975DB0087653C /* UINavigationDemo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4472B4361D9975DB0087653C /* UINavigationDemo.swift */; };
-		4472B43A1D9975DB0087653C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4472B4381D9975DB0087653C /* Main.storyboard */; };
 		4472B43C1D9975DB0087653C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4472B43B1D9975DB0087653C /* Assets.xcassets */; };
 		4472B43F1D9975DB0087653C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4472B43D1D9975DB0087653C /* LaunchScreen.storyboard */; };
 		4472B4471D9976440087653C /* View2Controller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4472B4461D9976440087653C /* View2Controller.swift */; };
@@ -49,6 +48,15 @@
 		C2D584FC1E727D100068DB52 /* ScrollingNavbar+Sizes.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2D584F91E727D100068DB52 /* ScrollingNavbar+Sizes.swift */; };
 		C2D584FD1E727D100068DB52 /* ScrollingNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2D584FA1E727D100068DB52 /* ScrollingNavigationController.swift */; };
 		C2D584FE1E727D100068DB52 /* ScrollingNavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2D584FB1E727D100068DB52 /* ScrollingNavigationViewController.swift */; };
+		C2D585001E727E340068DB52 /* AMScrollViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2D584FF1E727E340068DB52 /* AMScrollViewController.swift */; };
+		C2D585051E7284880068DB52 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C2D585041E7284880068DB52 /* Main.storyboard */; };
+		C2D585091E728A460068DB52 /* HidingNavigationBarManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2D585071E728A460068DB52 /* HidingNavigationBarManager.swift */; };
+		C2D5850A1E728A460068DB52 /* HidingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2D585081E728A460068DB52 /* HidingViewController.swift */; };
+		C2D585101E728C6E0068DB52 /* MasterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2D5850B1E728C6E0068DB52 /* MasterViewController.swift */; };
+		C2D585111E728C6E0068DB52 /* HidingNavViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2D5850C1E728C6E0068DB52 /* HidingNavViewController.swift */; };
+		C2D585121E728C6E0068DB52 /* HidingNavExtensionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2D5850D1E728C6E0068DB52 /* HidingNavExtensionViewController.swift */; };
+		C2D585131E728C6E0068DB52 /* HidingNavTabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2D5850E1E728C6E0068DB52 /* HidingNavTabViewController.swift */; };
+		C2D585141E728C6E0068DB52 /* HidingNavToolbarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2D5850F1E728C6E0068DB52 /* HidingNavToolbarViewController.swift */; };
 		C2DA0A431E5C218E006C0369 /* ParallaxHeaderVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2DA0A421E5C218E006C0369 /* ParallaxHeaderVC.swift */; };
 		C2DA0A451E5C21F0006C0369 /* ParallaxHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2DA0A441E5C21F0006C0369 /* ParallaxHeaderView.swift */; };
 		C2DA0A471E5C21F8006C0369 /* NavigationBarExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2DA0A461E5C21F8006C0369 /* NavigationBarExtension.swift */; };
@@ -58,7 +66,6 @@
 		4472B4311D9975DB0087653C /* UINavigationController.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UINavigationController.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4472B4341D9975DB0087653C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4472B4361D9975DB0087653C /* UINavigationDemo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UINavigationDemo.swift; sourceTree = "<group>"; };
-		4472B4391D9975DB0087653C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		4472B43B1D9975DB0087653C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4472B43E1D9975DB0087653C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4472B4401D9975DB0087653C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -104,6 +111,15 @@
 		C2D584F91E727D100068DB52 /* ScrollingNavbar+Sizes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ScrollingNavbar+Sizes.swift"; sourceTree = "<group>"; };
 		C2D584FA1E727D100068DB52 /* ScrollingNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScrollingNavigationController.swift; sourceTree = "<group>"; };
 		C2D584FB1E727D100068DB52 /* ScrollingNavigationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScrollingNavigationViewController.swift; sourceTree = "<group>"; };
+		C2D584FF1E727E340068DB52 /* AMScrollViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AMScrollViewController.swift; sourceTree = "<group>"; };
+		C2D585041E7284880068DB52 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		C2D585071E728A460068DB52 /* HidingNavigationBarManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HidingNavigationBarManager.swift; sourceTree = "<group>"; };
+		C2D585081E728A460068DB52 /* HidingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HidingViewController.swift; sourceTree = "<group>"; };
+		C2D5850B1E728C6E0068DB52 /* MasterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MasterViewController.swift; sourceTree = "<group>"; };
+		C2D5850C1E728C6E0068DB52 /* HidingNavViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HidingNavViewController.swift; sourceTree = "<group>"; };
+		C2D5850D1E728C6E0068DB52 /* HidingNavExtensionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HidingNavExtensionViewController.swift; sourceTree = "<group>"; };
+		C2D5850E1E728C6E0068DB52 /* HidingNavTabViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HidingNavTabViewController.swift; sourceTree = "<group>"; };
+		C2D5850F1E728C6E0068DB52 /* HidingNavToolbarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HidingNavToolbarViewController.swift; sourceTree = "<group>"; };
 		C2DA0A421E5C218E006C0369 /* ParallaxHeaderVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParallaxHeaderVC.swift; sourceTree = "<group>"; };
 		C2DA0A441E5C21F0006C0369 /* ParallaxHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParallaxHeaderView.swift; sourceTree = "<group>"; };
 		C2DA0A461E5C21F8006C0369 /* NavigationBarExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigationBarExtension.swift; sourceTree = "<group>"; };
@@ -128,6 +144,7 @@
 				44F030FA1E5C80A30059B587 /* Screen.swift */,
 				C2D584F21E727CDE0068DB52 /* AMScrollingNavbar */,
 				C28E87631E5C0C8500149654 /* KMNavigationBarTransition */,
+				C2D585061E728A460068DB52 /* HidingNavigationBar */,
 				C28E874D1E5C005300149654 /* RainbowNavigation */,
 				C28E87431E5BE46500149654 /* KDInteractiveNavigationController */,
 				44B95E621E5B2E1600D66F39 /* TransparentNavigationBar */,
@@ -148,14 +165,16 @@
 			isa = PBXGroup;
 			children = (
 				4472B4341D9975DB0087653C /* AppDelegate.swift */,
+				C2D585161E728C880068DB52 /* HNB */,
+				C2D585011E727E490068DB52 /* AMSN */,
 				C2D584F11E72748A0068DB52 /* KDINC */,
 				C28E877C1E5C0E7800149654 /* Normal */,
 				C2D584DE1E7270B00068DB52 /* Parallax */,
 				C28E877A1E5C0E5900149654 /* KMNBT */,
 				C28E877B1E5C0E6D00149654 /* RN */,
 				C2D584DF1E7271970068DB52 /* TNB */,
-				4472B4381D9975DB0087653C /* Main.storyboard */,
 				4472B43B1D9975DB0087653C /* Assets.xcassets */,
+				C2D585041E7284880068DB52 /* Main.storyboard */,
 				4472B43D1D9975DB0087653C /* LaunchScreen.storyboard */,
 				4472B4401D9975DB0087653C /* Info.plist */,
 			);
@@ -283,6 +302,35 @@
 			path = AMScrollingNavbar;
 			sourceTree = "<group>";
 		};
+		C2D585011E727E490068DB52 /* AMSN */ = {
+			isa = PBXGroup;
+			children = (
+				C2D584FF1E727E340068DB52 /* AMScrollViewController.swift */,
+			);
+			name = AMSN;
+			sourceTree = "<group>";
+		};
+		C2D585061E728A460068DB52 /* HidingNavigationBar */ = {
+			isa = PBXGroup;
+			children = (
+				C2D585071E728A460068DB52 /* HidingNavigationBarManager.swift */,
+				C2D585081E728A460068DB52 /* HidingViewController.swift */,
+			);
+			path = HidingNavigationBar;
+			sourceTree = "<group>";
+		};
+		C2D585161E728C880068DB52 /* HNB */ = {
+			isa = PBXGroup;
+			children = (
+				C2D5850B1E728C6E0068DB52 /* MasterViewController.swift */,
+				C2D5850C1E728C6E0068DB52 /* HidingNavViewController.swift */,
+				C2D5850D1E728C6E0068DB52 /* HidingNavExtensionViewController.swift */,
+				C2D5850E1E728C6E0068DB52 /* HidingNavTabViewController.swift */,
+				C2D5850F1E728C6E0068DB52 /* HidingNavToolbarViewController.swift */,
+			);
+			name = HNB;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -345,9 +393,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				C28E874C1E5BECE300149654 /* readme.rtf in Resources */,
+				C2D585051E7284880068DB52 /* Main.storyboard in Resources */,
 				4472B43F1D9975DB0087653C /* LaunchScreen.storyboard in Resources */,
 				4472B43C1D9975DB0087653C /* Assets.xcassets in Resources */,
-				4472B43A1D9975DB0087653C /* Main.storyboard in Resources */,
 				C28E87561E5C005300149654 /* Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -361,19 +409,24 @@
 			files = (
 				44F030FB1E5C80A30059B587 /* Screen.swift in Sources */,
 				4472B4371D9975DB0087653C /* UINavigationDemo.swift in Sources */,
+				C2D585091E728A460068DB52 /* HidingNavigationBarManager.swift in Sources */,
 				C28E87731E5C0DCC00149654 /* KMNavigationBarTransitionDemo.swift in Sources */,
 				C28E874A1E5BE46500149654 /* UIViewController+InteractiveNavigation.swift in Sources */,
 				C28E875B1E5C005300149654 /* RainbowPushAnimator.swift in Sources */,
 				C28E87771E5C0DDB00149654 /* NavigationBarData.swift in Sources */,
 				C28E87611E5C00B700149654 /* ColorTableViewController.swift in Sources */,
+				C2D585131E728C6E0068DB52 /* HidingNavTabViewController.swift in Sources */,
+				C2D5850A1E728A460068DB52 /* HidingViewController.swift in Sources */,
 				C28E87751E5C0DCC00149654 /* NavigationController.swift in Sources */,
 				44B95E6A1E5B2E1600D66F39 /* TFForwardAnimator.swift in Sources */,
 				C2D584EE1E72747F0068DB52 /* TwoViewController.swift in Sources */,
 				C28E875C1E5C005300149654 /* UINavigationBar+Rainbow.swift in Sources */,
+				C2D585121E728C6E0068DB52 /* HidingNavExtensionViewController.swift in Sources */,
 				C2DA0A431E5C218E006C0369 /* ParallaxHeaderVC.swift in Sources */,
 				C28E87491E5BE46500149654 /* KDInteractiveNavigationController.swift in Sources */,
 				C28E87581E5C005300149654 /* RainbowDragPop.swift in Sources */,
 				C2DA0A451E5C21F0006C0369 /* ParallaxHeaderView.swift in Sources */,
+				C2D585111E728C6E0068DB52 /* HidingNavViewController.swift in Sources */,
 				44B95E6B1E5B2E1600D66F39 /* TFNavigationBarAnimator.swift in Sources */,
 				C28E876F1E5C0C8500149654 /* UIViewController+KMNavigationBarTransition.m in Sources */,
 				C28E87601E5C00B700149654 /* RainbowDemo.swift in Sources */,
@@ -381,6 +434,7 @@
 				C2D584FD1E727D100068DB52 /* ScrollingNavigationController.swift in Sources */,
 				4472B4491D99764B0087653C /* MyNavigationController.swift in Sources */,
 				C28E87621E5C00B700149654 /* TransparentTableViewController.swift in Sources */,
+				C2D585101E728C6E0068DB52 /* MasterViewController.swift in Sources */,
 				C28E87791E5C0DE400149654 /* UIImage+Color.swift in Sources */,
 				4472B4471D9976440087653C /* View2Controller.swift in Sources */,
 				44B95E681E5B2E1600D66F39 /* CGRect+Tools.swift in Sources */,
@@ -394,10 +448,12 @@
 				44B95E6C1E5B2E1600D66F39 /* TFNavigationController.swift in Sources */,
 				C2D584ED1E72747F0068DB52 /* KDINCOneVC.swift in Sources */,
 				C2D584FC1E727D100068DB52 /* ScrollingNavbar+Sizes.swift in Sources */,
+				C2D585141E728C6E0068DB52 /* HidingNavToolbarViewController.swift in Sources */,
 				C28E87591E5C005300149654 /* RainbowNavigation.swift in Sources */,
 				44B95E691E5B2E1600D66F39 /* TFBackwardAnimator.swift in Sources */,
 				44F030F91E5C80920059B587 /* MMNavigationController.swift in Sources */,
 				C28E875A1E5C005300149654 /* RainbowPopAnimator.swift in Sources */,
+				C2D585001E727E340068DB52 /* AMScrollViewController.swift in Sources */,
 				C28E87741E5C0DCC00149654 /* SettingsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -405,14 +461,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		4472B4381D9975DB0087653C /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				4472B4391D9975DB0087653C /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		4472B43D1D9975DB0087653C /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
