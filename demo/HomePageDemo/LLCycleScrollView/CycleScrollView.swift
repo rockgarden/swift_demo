@@ -44,14 +44,15 @@ typealias didSelectItemClosure_SCV = (NSInteger) -> Void
         }
     }
     
-    // 滚动方向，默认horizontal
+    /// 滚动方向，默认horizontal
+    fileprivate var _scrollPosition: UICollectionViewScrollPosition! = .centeredHorizontally
     open var scrollDirection: UICollectionViewScrollDirection? = .horizontal {
         didSet {
             flowLayout?.scrollDirection = scrollDirection!
             if scrollDirection == .horizontal {
-                position = .centeredHorizontally
+                _scrollPosition = .centeredHorizontally
             }else{
-                position = .centeredVertically
+                _scrollPosition = .centeredVertically
             }
         }
     }
@@ -193,9 +194,6 @@ typealias didSelectItemClosure_SCV = (NSInteger) -> Void
         tempCollectionView.backgroundColor = self.collectionViewBackgroundColor
         return tempCollectionView
     }()
-
-    // 方向(swift后没有none，只能指定了)
-    fileprivate var position: UICollectionViewScrollPosition! = .centeredHorizontally
     
     // FlowLayout
     lazy fileprivate var flowLayout: UICollectionViewFlowLayout? = {
@@ -337,7 +335,7 @@ typealias didSelectItemClosure_SCV = (NSInteger) -> Void
             if infiniteLoop! {
                 targetIndex = totalItemsCount/2
             }
-            collectionView.scrollToItem(at: IndexPath.init(item: targetIndex, section: 0), at: position, animated: false)
+            collectionView.scrollToItem(at: IndexPath.init(item: targetIndex, section: 0), at: _scrollPosition, animated: false)
         }
     }
     
@@ -351,11 +349,11 @@ typealias didSelectItemClosure_SCV = (NSInteger) -> Void
     func scollToIndex(targetIndex: Int) {
         if targetIndex >= totalItemsCount {
             if infiniteLoop! {
-                collectionView.scrollToItem(at: IndexPath.init(item: Int(totalItemsCount/2), section: 0), at: position, animated: false)
+                collectionView.scrollToItem(at: IndexPath.init(item: Int(totalItemsCount/2), section: 0), at: _scrollPosition, animated: false)
             }
             return
         }
-        collectionView.scrollToItem(at: IndexPath.init(item: targetIndex, section: 0), at: position, animated: true)
+        collectionView.scrollToItem(at: IndexPath.init(item: targetIndex, section: 0), at: _scrollPosition, animated: true)
     }
     
     func currentIndex() -> NSInteger {
@@ -439,7 +437,7 @@ typealias didSelectItemClosure_SCV = (NSInteger) -> Void
                     currentOffsetX = -currentOffsetX
                 }
                 if currentOffsetX >= CGFloat(self.imagePaths.count) * scrollView.frame.size.width && infiniteLoop!{
-                    collectionView.scrollToItem(at: IndexPath.init(item: Int(totalItemsCount/2), section: 0), at: position, animated: false)
+                    collectionView.scrollToItem(at: IndexPath.init(item: Int(totalItemsCount/2), section: 0), at: _scrollPosition, animated: false)
                 }
                 progress = currentOffsetX / scrollView.frame.size.width
             }else if scrollDirection == .vertical{
@@ -448,7 +446,7 @@ typealias didSelectItemClosure_SCV = (NSInteger) -> Void
                     currentOffsetY = -currentOffsetY
                 }
                 if currentOffsetY >= CGFloat(self.imagePaths.count) * scrollView.frame.size.height && infiniteLoop!{
-                    collectionView.scrollToItem(at: IndexPath.init(item: Int(totalItemsCount/2), section: 0), at: position, animated: false)
+                    collectionView.scrollToItem(at: IndexPath.init(item: Int(totalItemsCount/2), section: 0), at: _scrollPosition, animated: false)
                 }
                 progress = currentOffsetY / scrollView.frame.size.height
             }
