@@ -6,26 +6,20 @@ import UIKit
 //import Kingfisher
 
 public enum PageControlStyle {
-    case none
-    case system
-    case fill
-    case pill
-    case snake
+    case none,system,fill,pill,snake
 }
 
 public enum PageControlPosition {
-    case center
-    case left
-    case right
+    case center,left,right
 }
 
 typealias didSelectItemClosure_SCV = (NSInteger) -> Void
 
-@IBDesignable open class CycleScrollView: UIView, UICollectionViewDelegate, UICollectionViewDataSource, UIScrollViewDelegate {
-
+open class CycleScrollView: UIView, UICollectionViewDelegate, UICollectionViewDataSource, UIScrollViewDelegate {
+    
     // MARK: 控制参数
-    // 是否自动滚动，默认true
-    @IBInspectable open var autoScroll: Bool? = true {
+    /// 是否自动滚动, 默认true
+    fileprivate var autoScroll: Bool? = true {
         didSet {
             invalidateTimer()
             if autoScroll! {
@@ -34,8 +28,8 @@ typealias didSelectItemClosure_SCV = (NSInteger) -> Void
         }
     }
     
-    // 无限循环，默认true 此属性修改了就不存在轮播的意义了
-    @IBInspectable open var infiniteLoop: Bool? = true {
+    /// 轮播开关,默认true
+    fileprivate var infiniteLoop: Bool? = true {
         didSet {
             if imagePaths.count > 0 {
                 let temp = imagePaths
@@ -44,7 +38,7 @@ typealias didSelectItemClosure_SCV = (NSInteger) -> Void
         }
     }
     
-    /// 滚动方向，默认horizontal
+    /// 滚动方向, 默认horizontal
     fileprivate var _scrollPosition: UICollectionViewScrollPosition! = .centeredHorizontally
     open var scrollDirection: UICollectionViewScrollDirection? = .horizontal {
         didSet {
@@ -57,15 +51,15 @@ typealias didSelectItemClosure_SCV = (NSInteger) -> Void
         }
     }
     
-    // 滚动间隔时间,默认2s
-    @IBInspectable open var autoScrollTimeInterval: Double = 3.0 {
+    // 滚动间隔时间, 默认3s
+    open var autoScrollTimeInterval: Double = 3.0 {
         didSet {
             autoScroll = true
         }
     }
     
-    // 加载状态图 -- 这个是有数据，等待加载的占位图
-    @IBInspectable open var placeHolderImage: UIImage? = nil {
+    // 加载状态图 -- 这个是有数据, 等待加载的占位图
+    open var placeHolderImage: UIImage? = nil {
         didSet {
             if placeHolderImage != nil {
                 placeHolderViewImage = placeHolderImage
@@ -73,8 +67,8 @@ typealias didSelectItemClosure_SCV = (NSInteger) -> Void
         }
     }
     
-    // 空数据页面显示占位图 -- 这个是没有数据，整个轮播器的占位图
-    @IBInspectable open var coverImage: UIImage? = nil {
+    // 空数据页面显示占位图 -- 这个是没有数据, 整个轮播器的占位图
+    open var coverImage: UIImage? = nil {
         didSet {
             if coverImage != nil {
                 coverViewImage = coverImage
@@ -104,7 +98,7 @@ typealias didSelectItemClosure_SCV = (NSInteger) -> Void
     }
     
     // MARK: CustomPageControl
-    // 注意： 由于属性较多，所以请使用style对应的属性，如果没有标明则通用
+    // 注意： 由于属性较多, 所以请使用style对应的属性, 如果没有标明则通用
     open var customPageControlStyle: PageControlStyle = .system {
         didSet {
             setupPageControl()
@@ -123,7 +117,7 @@ typealias didSelectItemClosure_SCV = (NSInteger) -> Void
         }
     }
     
-    // PageControl 位置 （此属性目前仅支持系统默认控制器，未来会支持其他自定义PageControl）
+    // PageControl 位置 （此属性目前仅支持系统默认控制器, 未来会支持其他自定义PageControl）
     open var pageControlPosition: PageControlPosition = .center {
         didSet {
             setupPageControl()
@@ -153,7 +147,7 @@ typealias didSelectItemClosure_SCV = (NSInteger) -> Void
     }
     
     // 背景色
-    @IBInspectable open var collectionViewBackgroundColor: UIColor! = UIColor.clear
+    open var collectionViewBackgroundColor: UIColor! = UIColor.clear
     
     // ImagePaths
     open var imagePaths: [String] = [] {
@@ -203,10 +197,10 @@ typealias didSelectItemClosure_SCV = (NSInteger) -> Void
         tempFlowLayout.scrollDirection = .horizontal
         return tempFlowLayout
     }()
-
+    
     // 计时器
     fileprivate var timer: Timer?
-
+    
     // PageControl
     open var pageControl: UIPageControl?
     
@@ -229,7 +223,7 @@ typealias didSelectItemClosure_SCV = (NSInteger) -> Void
         }
         initialize()
     }
-
+    
     /// 适配 NSLayoutConstraint
     fileprivate func initialize() {
         addSubview(collectionView)
@@ -393,7 +387,7 @@ typealias didSelectItemClosure_SCV = (NSInteger) -> Void
                 cell.imageView.contentMode = imageViewContentMode
             }
             
-            // 根据imagePath，来判断是网络图片还是本地图
+            // 根据imagePath, 来判断是网络图片还是本地图
             if imagePath.hasPrefix("http") {
                 //cell.imageView.kf.setImage(with: URL(string: imagePath), placeholder: placeHolderImage)
             }else{
@@ -477,5 +471,5 @@ typealias didSelectItemClosure_SCV = (NSInteger) -> Void
             setupTimer()
         }
     }
- 
+    
 }
