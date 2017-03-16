@@ -27,9 +27,7 @@ class HomeAdBarVC: UIViewController, UIGestureRecognizerDelegate {
 
     //TODO: 定义广告接口: Ad Image (Image 控制比例 2:5 小于 200k) , Ad Info
     lazy var AdBar: CycleScrollView = {
-        let v = CycleScrollView(didSelectItemAtIndex: { index in
-            self.didAdSelectAtItem(index)
-        })
+        let v = CycleScrollView(didSelectItemAtIndex: self.didAdSelectAtItem)
         v.customPageControlStyle = .snake
         v.customPageControlInActiveTintColor = .white
         v.translatesAutoresizingMaskIntoConstraints = false
@@ -37,9 +35,7 @@ class HomeAdBarVC: UIViewController, UIGestureRecognizerDelegate {
     }()
 
     lazy var functionBar: FunctionCollectionView = {
-        let v = FunctionCollectionView(didSelectItemAtIndex: { index in
-            self.didFunctionSelectAtItem(index)
-        })
+        let v = FunctionCollectionView(didSelectItemAtIndex: self.didFunctionSelectAtItem)
         v.backgroundColor = .white
         v.translatesAutoresizingMaskIntoConstraints = false
         return v

@@ -13,13 +13,13 @@ public enum PageControlPosition {
     case center,left,right
 }
 
-typealias didSelectItemClosure_SCV = (NSInteger) -> Void
+typealias didSelectItemClosure_SCV = (_ index: Int) -> Void
 
 open class CycleScrollView: UIView, UICollectionViewDelegate, UICollectionViewDataSource, UIScrollViewDelegate {
     
     // MARK: 控制参数
-    /// 是否自动滚动, 默认true
-    fileprivate var autoScroll: Bool? = true {
+    /// 是否自动滚动, 默认false
+    fileprivate var autoScroll: Bool? = false {
         didSet {
             invalidateTimer()
             if autoScroll! {
@@ -28,10 +28,11 @@ open class CycleScrollView: UIView, UICollectionViewDelegate, UICollectionViewDa
         }
     }
     
-    /// 轮播开关,默认true
-    fileprivate var infiniteLoop: Bool? = true {
+    /// 轮播开关,默认false
+    fileprivate var infiniteLoop: Bool? = false {
         didSet {
-            if imagePaths.count > 0 {
+            if imagePaths.count > 1 {
+                infiniteLoop = true
                 let temp = imagePaths
                 imagePaths = temp
             }
@@ -52,11 +53,7 @@ open class CycleScrollView: UIView, UICollectionViewDelegate, UICollectionViewDa
     }
     
     // 滚动间隔时间, 默认3s
-    open var autoScrollTimeInterval: Double = 3.0 {
-        didSet {
-            autoScroll = true
-        }
-    }
+    open var autoScrollTimeInterval: Double = 3.0 
     
     // 加载状态图 -- 这个是有数据, 等待加载的占位图
     open var placeHolderImage: UIImage? = nil {
