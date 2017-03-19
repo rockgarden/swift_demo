@@ -1,6 +1,6 @@
 import UIKit
 
-class StatesViewController: UITableViewController, UISearchBarDelegate {
+class Pop_SRC_VC: UITableViewController, UISearchBarDelegate {
 	var sectionNames = [String]()
 	var sectionData = [[String]]()
 	var searcher: UISearchController!
@@ -28,8 +28,12 @@ class StatesViewController: UITableViewController, UISearchBarDelegate {
 		self.tableView.sectionIndexTrackingBackgroundColor = UIColor.blue
 		self.tableView.backgroundColor = UIColor.yellow
 
-		// this is the only important part of this class! create popover searcher
+        setupPop_SRC()
+    }
 
+    //FIXME: Just run on iPad
+    fileprivate func setupPop_SRC() {
+		// this is the only important part of this class! create popover searcher
 		// instantiate a view controller that will present the search results
 		let src = Pop_SRC(data: self.sectionData)
 		// instantiate a search controller and keep it alive
@@ -38,7 +42,7 @@ class StatesViewController: UITableViewController, UISearchBarDelegate {
 		// no effect in this situation:
 		searcher.hidesNavigationBarDuringPresentation = false
 		// searcher.dimsBackgroundDuringPresentation = false
-		//FIXME: make it a popover! 设置definesPresentationContext为true，我们保证在UISearchController在激活状态下用户push到下一个view controller之后search bar仍留在界面上。
+		// FIXME: make it a popover! 设置definesPresentationContext为true，我们保证在UISearchController在激活状态下用户push到下一个view controller之后search bar仍留在界面上。
 		self.definesPresentationContext = true
 		searcher.modalPresentationStyle = .popover
 		searcher.preferredContentSize = CGSize(width: 400, height: 400)
@@ -63,7 +67,7 @@ class StatesViewController: UITableViewController, UISearchBarDelegate {
 			print("setting presentation controller delegate")
 			pres.delegate = self
 		}
-		(searcher.presentationController as! UIPopoverPresentationController).delegate = self
+		//(searcher.presentationController as! UIPopoverPresentationController).delegate = self
 	}
 
 	override func numberOfSections(in tableView: UITableView) -> Int {
@@ -140,7 +144,7 @@ class StatesViewController: UITableViewController, UISearchBarDelegate {
 
 }
 
-extension StatesViewController: UISearchControllerDelegate {
+extension Pop_SRC_VC: UISearchControllerDelegate {
 	func presentSearchController(_ searchController: UISearchController) { print(#function) }
 	func willPresentSearchController(_ searchController: UISearchController) { print(#function) }
 	func didPresentSearchController(_ searchController: UISearchController) { print(#function) }
@@ -149,7 +153,7 @@ extension StatesViewController: UISearchControllerDelegate {
 	func didDismissSearchController(_ searchController: UISearchController) { print(#function) }
 }
 
-extension StatesViewController: UIPopoverPresentationControllerDelegate {
+extension Pop_SRC_VC: UIPopoverPresentationControllerDelegate {
 	func prepareForPopoverPresentation(_ pop: UIPopoverPresentationController) {
 		print("prepare")
 		// print(pop.sourceView)
@@ -170,7 +174,7 @@ extension StatesViewController: UIPopoverPresentationControllerDelegate {
 }
 
 // not called, seems like a bug to me
-extension StatesViewController: UIAdaptivePresentationControllerDelegate {
+extension Pop_SRC_VC: UIAdaptivePresentationControllerDelegate {
 	func adaptivePresentationStyle(for controller: UIPresentationController, traitCollection: UITraitCollection) -> UIModalPresentationStyle {
 		return .none
 	}

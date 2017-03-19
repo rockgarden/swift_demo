@@ -179,6 +179,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4471472F1E7EC614005BDB4D /* SearchInPopover_iPad */ = {
+			isa = PBXGroup;
+			children = (
+				44DF2F2F1D9FE2F7001AFE2D /* StatesViewController.swift */,
+				44ED802E1D9FB97200DC6182 /* Pop_SRC.swift */,
+			);
+			name = SearchInPopover_iPad;
+			sourceTree = "<group>";
+		};
 		44BCAB601D954A8C0019B333 = {
 			isa = PBXGroup;
 			children = (
@@ -215,8 +224,7 @@
 				44BF4E8D1D9800FC000B33D9 /* CandyNewTableViewController.swift */,
 				44BF4E8E1D9800FC000B33D9 /* CandyViewController.swift */,
 				44BF4E8F1D9800FC000B33D9 /* CollectionViewCell.swift */,
-				44ED802E1D9FB97200DC6182 /* Pop_SRC.swift */,
-				44DF2F2F1D9FE2F7001AFE2D /* StatesViewController.swift */,
+				4471472F1E7EC614005BDB4D /* SearchInPopover_iPad */,
 				44BF4E901D9800FC000B33D9 /* IntExtension.swift */,
 				44BF4E921D9800FC000B33D9 /* MultiSectionCollectionViewDataSource.swift */,
 				44BCAB701D954A8D0019B333 /* Main.storyboard */,
