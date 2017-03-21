@@ -45,7 +45,10 @@ open class KDInteractiveNavigationController: UINavigationController {
 // MARK: UIGestureRecognizerDelegate
 
 extension KDInteractiveNavigationController: UIGestureRecognizerDelegate {
-    
+    public func gestureRecognizerShouldBegin(_ gestureRecognizer: UIGestureRecognizer) -> Bool {
+        /// Ignore interactive pop gesture when there is only one view controller on the navigation stack
+        return viewControllers.count <= 1
+    }
 }
 
 // MARK: Private Methods

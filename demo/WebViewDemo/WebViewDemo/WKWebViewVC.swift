@@ -23,7 +23,7 @@ let jsGetHotelLikeSpanString = "function oc_getSpanLikeEle() {var spans = docume
 let jsChangeHotelLikeSpanMethod = "\(jsGetHotelLikeSpanString) function oc_changeLikeSpan(isLike) {var target = oc_getSpanLikeEle();if (isLike == 0 && $(target).hasClass('like-act')) {$(target).removeClass('like-act');}else if (isLike == 1 && $(target).hasClass('like')){$(target).removeClass('like-act');$(target).addClass('like-act');}}"
 
 class WKWebViewVC: UIViewController, UIViewControllerRestoration {
-    
+
     fileprivate var activity = UIActivityIndicatorView()
     fileprivate weak var webView : WKWebView!
     fileprivate var progressView: UIProgressView!
@@ -145,7 +145,7 @@ class WKWebViewVC: UIViewController, UIViewControllerRestoration {
 
         //内容自适应
         wv.sizeToFit()
-        
+
         webView = wv
     }
 
@@ -196,7 +196,7 @@ class WKWebViewVC: UIViewController, UIViewControllerRestoration {
             if let val = change[.newKey] as? String {
                 self.navigationItem.title = val
             }
-            //self.title = wv.title
+        //self.title = wv.title
         case "estimatedProgress":
             if let val = change[.newKey] as? Float {
                 //progressView.isHidden = false
@@ -204,18 +204,18 @@ class WKWebViewVC: UIViewController, UIViewControllerRestoration {
             } else {
                 //progressView.isHidden = true
             }
-/*
-            progressView.alpha = 1.0
-            let animated = Float(webView.estimatedProgress) > progressView.progress
-            progressView.setProgress(Float(webView.estimatedProgress), animated: animated)
-            if Float(webView.estimatedProgress) >= 1.0{
-                UIView.animate(withDuration: 1, delay: 0.01, options: .curveEaseOut, animations:{()-> Void in
-                    self.progressView.alpha = 0.0
-                },completion:{(finished:Bool) -> Void in
-                    self.progressView.setProgress(0.0, animated: false)
-                })
-            }
-*/
+            /*
+             progressView.alpha = 1.0
+             let animated = Float(webView.estimatedProgress) > progressView.progress
+             progressView.setProgress(Float(webView.estimatedProgress), animated: animated)
+             if Float(webView.estimatedProgress) >= 1.0{
+             UIView.animate(withDuration: 1, delay: 0.01, options: .curveEaseOut, animations:{()-> Void in
+             self.progressView.alpha = 0.0
+             },completion:{(finished:Bool) -> Void in
+             self.progressView.setProgress(0.0, animated: false)
+             })
+             }
+             */
         default:
             break
         }
@@ -583,17 +583,17 @@ extension WKWebViewVC: WKUIDelegate {
         }))
         self.present(alert, animated: true, completion: nil)
     }
-    
+
     func webViewDidClose(_ webView: WKWebView) {
         print(#function)
     }
-    
+
 }
 
 
 // MARK: WKScriptMessageHandler
 extension WKWebViewVC: WKScriptMessageHandler {
-
+    
     func userContentController(_ userContentController: WKUserContentController, didReceive message: WKScriptMessage) {
         print(message.body)
         if message.name == "AppModel" {
