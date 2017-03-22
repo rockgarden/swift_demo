@@ -172,7 +172,7 @@ fileprivate extension HomeAdBarVC {
 
     fileprivate func addConstraint() {
 
-        let views = ["nv":navView, "msv":mainScrollView, "itb":initToolBar, "tb":toolBar, "ab":AdBar, "hv":headerView, "fb":functionBar, "msv":mainSubView]
+        let views = ["nv":navView, "msv":mainScrollView, "itb":initToolBar, "tb":toolBar, "ab":AdBar, "hv":headerView, "fb":functionBar, "msb":mainSubView]
         let metrics = ["hh":headerHeight, "fbh":functionBarHeight]
 
         NSLayoutConstraint.activate([

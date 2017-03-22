@@ -193,7 +193,6 @@ class HomeToolBarVC: UIViewController,UIScrollViewDelegate,UIGestureRecognizerDe
                 weak.mainTableView.loadeMoreData()
             })
         }
-        
     }
     
     override func viewDidAppear(_ animated: Bool) {

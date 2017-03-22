@@ -38,7 +38,7 @@ open class TFNavigationController: UINavigationController, UIViewControllerTrans
         self.view.addGestureRecognizer(left);
     }
     
-    filepriavte func handleSwipeFromLeft(_ gesture: UIScreenEdgePanGestureRecognizer) {
+    func handleSwipeFromLeft(_ gesture: UIScreenEdgePanGestureRecognizer) {
         let percent = gesture.translation(in: gesture.view!).x / gesture.view!.bounds.size.width
         
         if gesture.state == .began {
