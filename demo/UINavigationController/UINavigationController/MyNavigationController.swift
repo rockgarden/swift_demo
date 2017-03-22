@@ -35,14 +35,20 @@ extension MyNavigationController {
     */
     
     /// didShow
-    ///
-    /// - Parameters:
-    ///   - navigationController: navigationController
-    ///   - viewController: child viewController
-    ///   - animated: animated description
     func navigationController(_ navigationController: UINavigationController, didShow viewController: UIViewController, animated: Bool) {
         interactivePopGestureRecognizer?.isEnabled = viewControllers.count > 1
         debugPrint(viewControllers, viewControllers.count)
+    }
+    
+    /*
+     App—>RootViewController—>UINavigationController—>UIViewController
+     当UINavigationController 作为 child viewController 加入 rootViewController (UITabViewController), 则会导致 UINavigationController 加载的第一个 viewController 不执行 viewWillAppear.
+     将UINavigationController作为subview添加到了其他viewController的view中, 或者把UINavigationController添加到UITabbarController中了; 此时，UINavigationController的stack里面的viewController 将收不到 viewWillAppear 等4个方法的调用?
+     建议在 RootViewController 中处理
+     */
+    /// willShow
+    func navigationController(_ navigationController: UINavigationController, willShow viewController: UIViewController, animated: Bool) {
+        viewController.viewWillAppear(false)
     }
 }
 

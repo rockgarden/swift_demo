@@ -181,13 +181,13 @@ extension UIViewController {
         get {
             return objc_getAssociatedObject(self, &AssociatedKey.viewWillAppearInjectBlock) as? ViewControllerInjectBlockWrapper
         }
-
         set {
             objc_setAssociatedObject(self, &AssociatedKey.viewWillAppearInjectBlock, newValue, .OBJC_ASSOCIATION_RETAIN_NONATOMIC)
         }
     }
 
 }
+
 
 class MMNavigationController: UINavigationController {
 
@@ -321,7 +321,6 @@ private class MMNavigationControllerPopGestrueDelegate: NSObject {
 
 // MARK: - UIGestureRecognizerDelegate
 extension MMNavigationControllerPopGestrueDelegate: UIGestureRecognizerDelegate {
-
 
     /// 这里主要参考了 FDFullscreenPopGesture
     @objc fileprivate func gestureRecognizerShouldBegin(_ gestureRecognizer: UIGestureRecognizer) -> Bool {
