@@ -18,7 +18,7 @@ class IndexTableView: UITableView,UITableViewDelegate,UITableViewDataSource {
         // Drawing code
     }
     */
-    var numberRows:Int = 50
+    var numberRows:Int = 0
     
     var changeContentSize:((_ contentSize:CGSize)->())?
     
@@ -67,7 +67,7 @@ class IndexTableView: UITableView,UITableViewDelegate,UITableViewDataSource {
             return cell
         } else {
             
-            let cell = UITableViewCell(style: UITableViewCellStyle.default, reuseIdentifier: "cell")
+            let cell = UITableViewCell(style: .default, reuseIdentifier: "cell")
             cell.textLabel?.text = "\(indexPath.row)"
             
             return cell
