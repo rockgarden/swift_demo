@@ -189,7 +189,7 @@ class HomeToolBarVC: UIViewController,UIScrollViewDelegate,UIGestureRecognizerDe
             guard let weak = self else {return}
             DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(2), execute: {
                 weak.mainScrollView.mj_footer.endRefreshing()
-                weak.mainTableView.loadeMoreData()
+//                weak.mainTableView.loadeMoreData()
             })
         }
     }
@@ -197,6 +197,12 @@ class HomeToolBarVC: UIViewController,UIScrollViewDelegate,UIGestureRecognizerDe
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         self.updateContentSize(size: self.mainTableView.contentSize)
+        debugPrint("test mainScrollView contentSize",mainScrollView.contentSize)
+        debugPrint("test mainScrollView contentOffset",mainScrollView.contentOffset)
+        debugPrint("test mainScrollView frame",mainScrollView.frame)
+        debugPrint("test mainTableView contentSize",mainTableView.contentSize)
+        debugPrint("test mainTableView contentOffset",mainTableView.contentOffset)
+        debugPrint("test mainTableView frame",mainTableView.frame)
     }
     
     override func didReceiveMemoryWarning() {
@@ -231,7 +237,6 @@ class HomeToolBarVC: UIViewController,UIScrollViewDelegate,UIGestureRecognizerDe
         // 松手时判断是否刷新
         let y = scrollView.contentOffset.y;
         
-        
         if y < -65 {
             self.mainTableView.mj_header.beginRefreshing()
         } else if y > 0 && y <= functionHeaderViewHeight {
@@ -241,8 +246,14 @@ class HomeToolBarVC: UIViewController,UIScrollViewDelegate,UIGestureRecognizerDe
     }
     
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        
+        debugPrint("test scrollView contentSize",scrollView.contentSize)
+        debugPrint("test scrollView contentOffset",scrollView.contentOffset)
+        debugPrint("test scrollView frame",scrollView.frame)
+        debugPrint("test mainTableView contentSize",mainTableView.contentSize)
+        debugPrint("test mainTableView contentOffset",mainTableView.contentOffset)
+        debugPrint("test mainTableView frame",mainTableView.frame)
         let y = scrollView.contentOffset.y
+        guard scrollView.contentSize.height > 0 else {return}
         if y <= 0 {
             var newFrame = self.headerView.frame
             newFrame.origin.y = y
