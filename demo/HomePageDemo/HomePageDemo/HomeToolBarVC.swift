@@ -159,7 +159,6 @@ class HomeToolBarVC: UIViewController,UIScrollViewDelegate,UIGestureRecognizerDe
     lazy var headerView: UIView = {
         let v = UIView(frame: CGRect(x: 0, y: 0, width: SCREEN_WIDTH, height: functionHeaderViewHeight + singleAppHeaderViewHeight))
         v.backgroundColor = UIColor(red: 65/255.0, green: 128/255.0, blue: 1, alpha: 1)
-        v.translatesAutoresizingMaskIntoConstraints = false
         return v
     }()
 
@@ -298,7 +297,7 @@ fileprivate extension HomeToolBarVC {
             NSLayoutConstraint.constraints(withVisualFormat: "H:|-(0)-[nv]-(0)-|", options: [], metrics: nil, views: views),
             NSLayoutConstraint.constraints(withVisualFormat: "V:|-(0)-[nv(64)]", options: [], metrics: nil, views: views),
             NSLayoutConstraint.constraints(withVisualFormat: "H:|-(0)-[msv]-(0)-|", options: [], metrics: nil, views: views),
-            NSLayoutConstraint.constraints(withVisualFormat: "V:[nv]-(0)-[msv]-(0)-|", options: [], metrics: nil, views: views),
+            NSLayoutConstraint.constraints(withVisualFormat: "V:|-(0)-[msv]-(0)-|", options: [], metrics: nil, views: views),
             ].joined().map{$0})
     }
 }

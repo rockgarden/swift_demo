@@ -328,7 +328,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AlO-VH-lq8" customClass="MyView" customModule="ch18p556exclusiveTouch" customModuleProvider="target">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AlO-VH-lq8" customClass="MyView" customModule="UIGestureRecognizer" customModuleProvider="target">
                                 <rect key="frame" x="17" y="256" width="137" height="156"/>
                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
@@ -336,7 +336,7 @@
                                     <constraint firstAttribute="width" constant="137" id="nrJ-Sk-U0A"/>
                                 </constraints>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fE3-k9-lj7" customClass="MyView" customModule="ch18p556exclusiveTouch" customModuleProvider="target">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fE3-k9-lj7" customClass="MyView" customModule="UIGestureRecognizer" customModuleProvider="target">
                                 <rect key="frame" x="222" y="256" width="137" height="156"/>
                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </view>

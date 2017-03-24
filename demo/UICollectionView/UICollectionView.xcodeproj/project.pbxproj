@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		44226FCE1E857549003734D3 /* HorizontalFloatingHeaderLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44226FC91E857549003734D3 /* HorizontalFloatingHeaderLayout.swift */; };
+		44226FCF1E857549003734D3 /* HorizontalVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44226FCA1E857549003734D3 /* HorizontalVC.swift */; };
+		44226FD01E857549003734D3 /* Header.xib in Resources */ = {isa = PBXBuildFile; fileRef = 44226FCB1E857549003734D3 /* Header.xib */; };
+		44226FD21E857549003734D3 /* HorizontalVC.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 44226FCD1E857549003734D3 /* HorizontalVC.storyboard */; };
 		442A3C801E1294F400DB8E17 /* FlowLayoutVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 442A3C7F1E1294F400DB8E17 /* FlowLayoutVC.swift */; };
 		442A3C821E12976D00DB8E17 /* MyFlowLayoutVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 442A3C811E12976D00DB8E17 /* MyFlowLayoutVC.swift */; };
 		442A3C841E1297E200DB8E17 /* MyFlowLayoutCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 442A3C831E1297E200DB8E17 /* MyFlowLayoutCell.swift */; };
@@ -93,6 +97,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		44226FC91E857549003734D3 /* HorizontalFloatingHeaderLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HorizontalFloatingHeaderLayout.swift; sourceTree = "<group>"; };
+		44226FCA1E857549003734D3 /* HorizontalVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HorizontalVC.swift; sourceTree = "<group>"; };
+		44226FCB1E857549003734D3 /* Header.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Header.xib; sourceTree = "<group>"; };
+		44226FCD1E857549003734D3 /* HorizontalVC.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = HorizontalVC.storyboard; sourceTree = "<group>"; };
 		4424D4241E11627D00EF3D0A /* Photos.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Photos.framework; path = System/Library/Frameworks/Photos.framework; sourceTree = SDKROOT; };
 		4424D4261E11628700EF3D0A /* PhotosUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = PhotosUI.framework; path = System/Library/Frameworks/PhotosUI.framework; sourceTree = SDKROOT; };
 		4424D4281E1162EE00EF3D0A /* AssetsLibrary.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AssetsLibrary.framework; path = System/Library/Frameworks/AssetsLibrary.framework; sourceTree = SDKROOT; };
@@ -194,6 +202,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		44226FC81E857549003734D3 /* HorizontalFloatingHeaderLayout */ = {
+			isa = PBXGroup;
+			children = (
+				44226FC91E857549003734D3 /* HorizontalFloatingHeaderLayout.swift */,
+				44226FCA1E857549003734D3 /* HorizontalVC.swift */,
+				44226FCB1E857549003734D3 /* Header.xib */,
+				44226FCD1E857549003734D3 /* HorizontalVC.storyboard */,
+			);
+			path = HorizontalFloatingHeaderLayout;
+			sourceTree = "<group>";
+		};
 		4424D4231E11627D00EF3D0A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -221,6 +240,7 @@
 			isa = PBXGroup;
 			children = (
 				C2A972AA1E14DA5A0037A0EA /* readme.rtf */,
+				44226FC81E857549003734D3 /* HorizontalFloatingHeaderLayout */,
 				C2BC5B071DC6E729007F23F4 /* UICollectionView */,
 				C2BC5B061DC6E729007F23F4 /* Products */,
 				4424D4231E11627D00EF3D0A /* Frameworks */,
@@ -455,8 +475,10 @@
 				C2BC5B821DC6E7ED007F23F4 /* states.txt in Resources */,
 				C2BC5B6A1DC6E7D1007F23F4 /* flag_newhampshire.gif in Resources */,
 				C2BC5B611DC6E7D1007F23F4 /* flag_maryland.gif in Resources */,
+				44226FD01E857549003734D3 /* Header.xib in Resources */,
 				C2AA3B0E1E110ADE00C9E438 /* PhotoManagerView.xib in Resources */,
 				C202C0061E13AF2B00CEC12A /* CameraCell.xib in Resources */,
+				44226FD21E857549003734D3 /* HorizontalVC.storyboard in Resources */,
 				C2BC5B581DC6E7D1007F23F4 /* flag_hawaii.gif in Resources */,
 				C2BC5B771DC6E7D1007F23F4 /* flag_tennessee.gif in Resources */,
 				C2BC5B751DC6E7D1007F23F4 /* flag_southcarolina.gif in Resources */,
@@ -474,6 +496,7 @@
 				C2AA3B0F1E110ADE00C9E438 /* PhotoCell.swift in Sources */,
 				442A3C841E1297E200DB8E17 /* MyFlowLayoutCell.swift in Sources */,
 				44C3DEC21E128B3E00118938 /* CellBackgroundLayeringVC.swift in Sources */,
+				44226FCE1E857549003734D3 /* HorizontalFloatingHeaderLayout.swift in Sources */,
 				C202C0041E13AEEC00CEC12A /* CameraCell.swift in Sources */,
 				442A3C801E1294F400DB8E17 /* FlowLayoutVC.swift in Sources */,
 				C2BC5B8F1DC6E87B007F23F4 /* LayoutFlushVC.swift in Sources */,
@@ -489,6 +512,7 @@
 				C2BC5B091DC6E72A007F23F4 /* AppDelegate.swift in Sources */,
 				C2AA3B0D1E110ADE00C9E438 /* PhotoManagerView.swift in Sources */,
 				C2BC5B8A1DC6E87B007F23F4 /* Cell.swift in Sources */,
+				44226FCF1E857549003734D3 /* HorizontalVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

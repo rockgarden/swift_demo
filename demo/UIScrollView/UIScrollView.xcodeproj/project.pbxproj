@@ -14,6 +14,7 @@
 		4420AB8D1DF19D8F005D280A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4420AB8B1DF19D8F005D280A /* LaunchScreen.storyboard */; };
 		4420AB951DF19DC1005D280A /* MyScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4420AB941DF19DC1005D280A /* MyScrollView.swift */; };
 		4420AB971DF1A283005D280A /* readme.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 4420AB961DF1A283005D280A /* readme.rtf */; };
+		44226FC51E85687F003734D3 /* SeamlessScrollingHeaderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44226FC41E85687F003734D3 /* SeamlessScrollingHeaderViewController.swift */; };
 		442C40E31E630165009E6609 /* DragInSV.swift in Sources */ = {isa = PBXBuildFile; fileRef = 442C40E21E630165009E6609 /* DragInSV.swift */; };
 		442C40E51E63016F009E6609 /* MyFlagView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 442C40E41E63016F009E6609 /* MyFlagView.swift */; };
 		442C40E71E6305BD009E6609 /* DragInSV_Constraint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 442C40E61E6305BD009E6609 /* DragInSV_Constraint.swift */; };
@@ -29,6 +30,7 @@
 		4420AB8E1DF19D8F005D280A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4420AB941DF19DC1005D280A /* MyScrollView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyScrollView.swift; sourceTree = "<group>"; };
 		4420AB961DF1A283005D280A /* readme.rtf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.rtf; path = readme.rtf; sourceTree = "<group>"; };
+		44226FC41E85687F003734D3 /* SeamlessScrollingHeaderViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SeamlessScrollingHeaderViewController.swift; sourceTree = "<group>"; };
 		442C40E21E630165009E6609 /* DragInSV.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DragInSV.swift; sourceTree = "<group>"; };
 		442C40E41E63016F009E6609 /* MyFlagView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyFlagView.swift; sourceTree = "<group>"; };
 		442C40E61E6305BD009E6609 /* DragInSV_Constraint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DragInSV_Constraint.swift; sourceTree = "<group>"; };
@@ -49,6 +51,7 @@
 			isa = PBXGroup;
 			children = (
 				4420AB961DF1A283005D280A /* readme.rtf */,
+				44226FC41E85687F003734D3 /* SeamlessScrollingHeaderViewController.swift */,
 				4420AB811DF19D8F005D280A /* UIScrollView */,
 				4420AB801DF19D8F005D280A /* Products */,
 			);
@@ -159,6 +162,7 @@
 				4420AB951DF19DC1005D280A /* MyScrollView.swift in Sources */,
 				442C40E31E630165009E6609 /* DragInSV.swift in Sources */,
 				4420AB831DF19D8F005D280A /* AppDelegate.swift in Sources */,
+				44226FC51E85687F003734D3 /* SeamlessScrollingHeaderViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
