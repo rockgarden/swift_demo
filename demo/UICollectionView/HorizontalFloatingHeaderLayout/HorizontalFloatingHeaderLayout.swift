@@ -159,6 +159,7 @@ open class HorizontalFloatingHeaderLayout: UICollectionViewLayout {
         let fromIndexPath = IndexPath(row: indexPath.row, section: indexPath.section)
         return itemsAttributes[fromIndexPath]
     }
+
     //MARK: For SupplementaryViewOfKind
     override open func layoutAttributesForSupplementaryView(ofKind elementKind: String, at indexPath: IndexPath) -> UICollectionViewLayoutAttributes? {
         if elementKind == UICollectionElementKindSectionHeader{

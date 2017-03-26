@@ -157,16 +157,16 @@ open class SeamlessScrollingHeaderViewController: UIViewController, UITableViewD
                                       y: statusBarHeight + navBarHeight,
                                       width: headerView.bounds.size.width,
                                       height: headerView.bounds.size.height)
-//            headerView.constraints[0].constant = statusBarHeight + navBarHeight
-//            view.updateConstraints()
+            //            headerView.constraints[0].constant = statusBarHeight + navBarHeight
+            //            view.updateConstraints()
             setColorWithAlpha(0.0)
         } else {
             headerView.frame = CGRect(x: headerView.bounds.origin.x,
                                       y: -(tableView.contentOffset.y + headerViewHeight),
                                       width: headerView.bounds.size.width,
                                       height: headerViewHeight)
-//            headerView.constraints[0].constant = -(tableView.contentOffset.y + headerViewHeight)
-//            view.updateConstraints()
+            //            headerView.constraints[0].constant = -(tableView.contentOffset.y + headerViewHeight)
+            //            view.updateConstraints()
             let alpha = (tableView.contentOffset.y + tableViewOriginY) / tableViewOriginY
             setColorWithAlpha(alpha)
         }

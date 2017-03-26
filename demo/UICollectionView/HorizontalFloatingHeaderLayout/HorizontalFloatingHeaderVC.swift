@@ -9,7 +9,7 @@
 import UIKit
 
 
-class CollectionViewController: UICollectionViewController,HorizontalFloatingHeaderLayoutDelegate {
+class HorizontalFloatingHeaderVC: UICollectionViewController {
 
     //MARK: - Configure methods
     override func viewDidLoad() {
@@ -27,24 +27,19 @@ class CollectionViewController: UICollectionViewController,HorizontalFloatingHea
             collectionView?.register(headerNib, forSupplementaryViewOfKind: UICollectionElementKindSectionHeader, withReuseIdentifier: "headerView")
         }
         
-        //
         configureCollectionView()
         configureHeaderCell()
     }
 
     // MARK: - UICollectionView methods
-    //MARK: Datasource
-    //Number of Sections
     override func numberOfSections(in collectionView: UICollectionView) -> Int {
         return 6
     }
 
-    //Number of Items
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return 34
     }
 
-    //Cells
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath as IndexPath)
         return cell
@@ -55,10 +50,13 @@ class CollectionViewController: UICollectionViewController,HorizontalFloatingHea
         let header = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "headerView", for: indexPath as IndexPath)
         return header
     }
+}
+
+
+extension HorizontalFloatingHeaderVC: HorizontalFloatingHeaderLayoutDelegate {
 
     //MARK: Delegate (HorizontalFloatingHeaderDelegate)
     //Item Size
-
     func collectionView(_ collectionView: UICollectionView,horizontalFloatingHeaderItemSizeForItemAtIndexPath indexPath:IndexPath) -> CGSize {
         return CGSize(width: 48, height: 48)
     }

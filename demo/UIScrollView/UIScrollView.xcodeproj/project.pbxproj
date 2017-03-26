@@ -18,6 +18,8 @@
 		442C40E31E630165009E6609 /* DragInSV.swift in Sources */ = {isa = PBXBuildFile; fileRef = 442C40E21E630165009E6609 /* DragInSV.swift */; };
 		442C40E51E63016F009E6609 /* MyFlagView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 442C40E41E63016F009E6609 /* MyFlagView.swift */; };
 		442C40E71E6305BD009E6609 /* DragInSV_Constraint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 442C40E61E6305BD009E6609 /* DragInSV_Constraint.swift */; };
+		446C03871E87F7DC001622C6 /* ParallaxHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 446C03861E87F7DC001622C6 /* ParallaxHeader.swift */; };
+		446C03891E87F9E3001622C6 /* ParallaxHeaderVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 446C03881E87F9E3001622C6 /* ParallaxHeaderVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +36,8 @@
 		442C40E21E630165009E6609 /* DragInSV.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DragInSV.swift; sourceTree = "<group>"; };
 		442C40E41E63016F009E6609 /* MyFlagView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyFlagView.swift; sourceTree = "<group>"; };
 		442C40E61E6305BD009E6609 /* DragInSV_Constraint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DragInSV_Constraint.swift; sourceTree = "<group>"; };
+		446C03861E87F7DC001622C6 /* ParallaxHeader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParallaxHeader.swift; sourceTree = "<group>"; };
+		446C03881E87F9E3001622C6 /* ParallaxHeaderVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParallaxHeaderVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,6 +55,7 @@
 			isa = PBXGroup;
 			children = (
 				4420AB961DF1A283005D280A /* readme.rtf */,
+				446C03861E87F7DC001622C6 /* ParallaxHeader.swift */,
 				44226FC41E85687F003734D3 /* SeamlessScrollingHeaderViewController.swift */,
 				4420AB811DF19D8F005D280A /* UIScrollView */,
 				4420AB801DF19D8F005D280A /* Products */,
@@ -71,6 +76,7 @@
 				4420AB821DF19D8F005D280A /* AppDelegate.swift */,
 				4420AB861DF19D8F005D280A /* Main.storyboard */,
 				4420AB841DF19D8F005D280A /* TwoWayScrollViewVC.swift */,
+				446C03881E87F9E3001622C6 /* ParallaxHeaderVC.swift */,
 				4420AB941DF19DC1005D280A /* MyScrollView.swift */,
 				442C40E21E630165009E6609 /* DragInSV.swift */,
 				442C40E61E6305BD009E6609 /* DragInSV_Constraint.swift */,
@@ -109,7 +115,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0810;
-				LastUpgradeCheck = 0810;
+				LastUpgradeCheck = 0820;
 				ORGANIZATIONNAME = rockgarden;
 				TargetAttributes = {
 					4420AB7E1DF19D8F005D280A = {
@@ -158,6 +164,8 @@
 			files = (
 				442C40E71E6305BD009E6609 /* DragInSV_Constraint.swift in Sources */,
 				442C40E51E63016F009E6609 /* MyFlagView.swift in Sources */,
+				446C03871E87F7DC001622C6 /* ParallaxHeader.swift in Sources */,
+				446C03891E87F9E3001622C6 /* ParallaxHeaderVC.swift in Sources */,
 				4420AB851DF19D8F005D280A /* TwoWayScrollViewVC.swift in Sources */,
 				4420AB951DF19DC1005D280A /* MyScrollView.swift in Sources */,
 				442C40E31E630165009E6609 /* DragInSV.swift in Sources */,
@@ -206,6 +214,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -255,6 +264,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;

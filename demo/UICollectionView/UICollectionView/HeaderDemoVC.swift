@@ -5,7 +5,7 @@
 
 import UIKit
 
-private let reuseIdentifier = "Cell"
+private let HDreuseIdentifier = "Cell"
 
 class HeaderDemoVC: UICollectionViewController {
     
