@@ -7,7 +7,7 @@ import UIKit
 
 class StickyHeaderDemoVC: UICollectionViewController, UICollectionViewDelegateFlowLayout {
 
-    let cellIdentifier: String = "cell"
+    let cellIdentifier: String = "StickyCell"
     
     override func viewDidLoad() {
         super.viewDidLoad()

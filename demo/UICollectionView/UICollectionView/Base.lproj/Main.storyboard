@@ -24,7 +24,7 @@
                             <inset key="sectionInset" minX="20" minY="30" maxX="20" maxY="30"/>
                         </collectionViewFlowLayout>
                         <cells>
-                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" restorationIdentifier="SwiftCollectionViewCell" reuseIdentifier="Cell" id="i7R-n7-3VX" customClass="SwiftCollectionViewCell" customModule="UICollectionView" customModuleProvider="target">
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" restorationIdentifier="SwiftCollectionViewCell" reuseIdentifier="HDCell" id="i7R-n7-3VX" customClass="SwiftCollectionViewCell" customModule="UICollectionView" customModuleProvider="target">
                                 <rect key="frame" x="20" y="105" width="160" height="160"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
@@ -393,7 +393,7 @@
         <!--Layout NormalVC-->
         <scene sceneID="Agf-ZK-aN7">
             <objects>
-                <collectionViewController storyboardIdentifier="LayoutNormalVC" autoresizesArchivedViewToFullSize="NO" id="dDf-dQ-QLZ" customClass="LayoutNormalVC" customModule="UICollectionView" sceneMemberID="viewController">
+                <collectionViewController storyboardIdentifier="LayoutNormalVC" autoresizesArchivedViewToFullSize="NO" id="dDf-dQ-QLZ" customClass="LayoutNormalVC" customModule="UICollectionView" customModuleProvider="target" sceneMemberID="viewController">
                     <collectionView key="view" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" minimumZoomScale="0.0" maximumZoomScale="0.0" dataMode="prototypes" id="e10-ii-Okd">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -796,7 +796,7 @@
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ChH-sE-49B" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3383" y="695"/>
+            <point key="canvasLocation" x="3182" y="695"/>
         </scene>
     </scenes>
     <resources>

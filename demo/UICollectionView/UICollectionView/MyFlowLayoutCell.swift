@@ -6,7 +6,7 @@
 import UIKit
 
 class MyFlowLayoutCell: UICollectionViewCell {
-    
+
     @IBOutlet var lab: UILabel!
     @IBOutlet var container: UIView!
 
@@ -22,23 +22,30 @@ class MyFlowLayoutCell: UICollectionViewCell {
     }
 
     /*
-     override func sizeThatFits(_ size: CGSize) -> CGSize {
-     var sz = self.systemLayoutSizeFitting(UILayoutFittingCompressedSize)
-     sz.width = ceil(sz.width); sz.height = ceil(sz.height)
-     return sz
-     }
+    override func sizeThatFits(_ size: CGSize) -> CGSize {
+        var sz = self.systemLayoutSizeFitting(UILayoutFittingCompressedSize)
+        sz.width = ceil(sz.width); sz.height = ceil(sz.height)
+        return sz
+    }
      */
 
     /*
-     override func preferredLayoutAttributesFitting(_ layoutAttributes: UICollectionViewLayoutAttributes) -> UICollectionViewLayoutAttributes {
-     var sz = self.systemLayoutSizeFitting(UILayoutFittingCompressedSize)
-     sz.width = ceil(sz.width); sz.height = ceil(sz.height)
-     let atts = layoutAttributes.copy() as! UICollectionViewLayoutAttributes
-     atts.size = sz
-     return atts
-     }
+    override func preferredLayoutAttributesFitting(_ layoutAttributes: UICollectionViewLayoutAttributes) -> UICollectionViewLayoutAttributes {
+        setNeedsLayout()
+        layoutIfNeeded()
+        let sz = contentView.systemLayoutSizeFitting(UILayoutFittingCompressedSize)
+        //sz.width = ceil(sz.width); sz.height = ceil(sz.height)
+        let atts = layoutAttributes.copy() as! UICollectionViewLayoutAttributes
+        atts.size = sz
+        //var newFrame = layoutAttributes.frame
+        //newFrame.size.height = sz.height
+        //newFrame.size.width = sz.width
+        //layoutAttributes.frame = newFrame
+        return atts
+    }
      */
 
+    
 }
 
 

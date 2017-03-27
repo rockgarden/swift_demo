@@ -76,7 +76,11 @@ class MyFlowLayoutVC: UICollectionViewController, UICollectionViewDelegateFlowLa
         // cripes, now we don't crash, but the layout is wrong! can these guys never get this implemented???
         // also tried doing this by overriding sizeThatFits in the cell, but with the same wrong layout
         // also tried doing it by overriding preferredAttributes in the cell, same wrong layout
-        // flow.estimatedItemSize = UICollectionViewFlowLayoutAutomaticSize
+        if #available(iOS 10.0, *) {
+            flow.estimatedItemSize = UICollectionViewFlowLayoutAutomaticSize
+        } else {
+            flow.estimatedItemSize = CGSize(60,20)
+        }
     }
 
     override func numberOfSections(in collectionView: UICollectionView) -> Int {
@@ -169,7 +173,6 @@ class MyFlowLayoutVC: UICollectionViewController, UICollectionViewDelegateFlowLa
                 check2.draw(at:CGPoint(2,0))
                 im = UIGraphicsGetImageFromCurrentImageContext()!
                 UIGraphicsEndImageContext()
-
             }
 
             let iv = UIImageView(image:nil, highlightedImage:im)
@@ -195,6 +198,7 @@ class MyFlowLayoutVC: UICollectionViewController, UICollectionViewDelegateFlowLa
     // NB According to Apple, in iOS 8 I should be able to eliminate this code;
     // simply turning on estimatedItemSize should do it for me (sizing according to constraints)
     // but I have not been able to get that feature to work
+    /*
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         // note; this approach didn't work on iOS 8...
         // ...until I introduced the "container" view
@@ -208,6 +212,7 @@ class MyFlowLayoutVC: UICollectionViewController, UICollectionViewDelegateFlowLa
         sz.width = ceil(sz.width); sz.height = ceil(sz.height)
         return sz
     }
+     */
 
     // selection: nothing to do!
     // we get automatic highlighting of whatever can be highlighted (i.e. our UILabel)
