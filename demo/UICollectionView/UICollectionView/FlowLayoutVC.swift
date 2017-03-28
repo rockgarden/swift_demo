@@ -91,7 +91,6 @@ extension FlowLayoutVC : UICollectionViewDelegateFlowLayout {
     }
 }
 
-// that duplication is exactly what iOS 8 is supposed to fix with _automatic_ variable cell size
-// but I can't get that to work (see next example for my workaround using constraints)
+/// that duplication is exactly what iOS 8 is supposed to fix with _automatic_ variable cell size but I can't get that to work (see next example for my workaround using constraints)
 
 

@@ -5,6 +5,7 @@
 
 import UIKit
 
+/// EstimatedItemSize & Section Demo
 class SectionDemoVC: UICollectionViewController {
 
     fileprivate var papersDataSource = PapersDataSource()
@@ -13,9 +14,10 @@ class SectionDemoVC: UICollectionViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        let width = collectionView!.frame.width / 3
+        let width = collectionView!.frame.width
         let layout = collectionViewLayout as! UICollectionViewFlowLayout
-        layout.itemSize = CGSize(width: width, height: width)
+        /// 启用自适应contentView的内容
+        layout.estimatedItemSize = CGSize(width: width, height: width)
     }
 
     override func didReceiveMemoryWarning() {
@@ -73,7 +75,8 @@ class SectionDemoVC: UICollectionViewController {
         if let paper = papersDataSource.paperForItemAtIndexPath(indexPath) {
             cell.paper = paper
         }
-
+        /// 若从网络下载图片,则可在完成后调用
+        collectionView.reloadItems(at: [indexPath])
         return cell
     }
 
@@ -119,9 +122,7 @@ class SectionDemoVC: UICollectionViewController {
 }
 
 
-//
-//MARK: PapersDataSource.swift
-
+// MARK: Data Source
 class PapersDataSource {
 
     fileprivate var papers: [Paper] = []
@@ -212,7 +213,6 @@ class PapersDataSource {
     }
 
     // MARK: Private
-
     fileprivate func absoluteIndexForIndexPath(_ indexPath: IndexPath) -> Int {
         var index = 0
         for i in 0..<indexPath.section {
@@ -256,7 +256,8 @@ class PapersDataSource {
     
 }
 
-// MARK: - SectionDemoDetailVC
+
+// MARK: - Detail VC
 class SectionDemoDetailVC: UIViewController {
 
     @IBOutlet fileprivate weak var imageView: UIImageView!
@@ -274,6 +275,8 @@ class SectionDemoDetailVC: UIViewController {
     
 }
 
+
+// MARK: - Model Paper
 class Paper {
 
     var caption: String
@@ -295,22 +298,44 @@ class Paper {
 }
 
 
+// MARK: - Cell View
 class PaperCell: UICollectionViewCell {
 
-    @IBOutlet weak var paperImageView: UIImageView!
+    @IBOutlet weak var paperImageView: UIImageView! {
+        didSet {
+            paperImageView.layer.cornerRadius = 8
+            paperImageView.layer.masksToBounds = true
+            /// 自适应图片宽高比例
+            paperImageView.contentMode = UIViewContentMode.scaleAspectFit
+        }
+    }
     @IBOutlet fileprivate weak var gradientView: GradientView!
     @IBOutlet fileprivate weak var captionLabel: UILabel!
 
     var paper: Paper? {
         didSet {
             if let paper = paper {
-                paperImageView.image = UIImage(named:  paper.imageName)
+                if let i = UIImage(named: paper.imageName) {
+                    paperImageView.image = i
+                } else {
+                    /// 若是 image = nil 则 调整 paperImageView constraints 从而让 contentView 适应内容, 但会导致 在cell view 复用时 布局异常; 所以最优的办法是加载一张图片, 以内容驱动!
+                    debugPrint(captionLabel.constraints)
+                    debugPrint(paperImageView.constraints)
+                    //paperImageView.constraints[0].constant = captionLabel.constraints[0].constant
+                    //paperImageView.constraints[1].constant = captionLabel.constraints[2].constant
+                    let i = UIImage(color: .clear, size: CGSize(width:captionLabel.constraints[0].constant, height: captionLabel.constraints[1].constant))
+                    paperImageView.image = i
+                }
                 captionLabel.text = paper.caption
             }
         }
     }
+
+
 }
 
+
+// MARK: - Header View
 class SectionHeaderView: UICollectionReusableView {
 
     @IBOutlet weak var titleLabel: UILabel!
@@ -322,6 +347,8 @@ class SectionHeaderView: UICollectionReusableView {
     }
 }
 
+
+// MARK: - GradientView
 class GradientView: UIView {
 
     lazy fileprivate var gradientLayer: CAGradientLayer = {
@@ -341,5 +368,27 @@ class GradientView: UIView {
         super.layoutSubviews()
         gradientLayer.frame = bounds
     }
-    
+}
+
+fileprivate extension UIImage {
+
+    convenience init(color: UIColor, size: CGSize = CGSize(width: 1, height: 1)) {
+        let rect = CGRect(x: 0, y: 0, width: size.width, height: size.height)
+        UIGraphicsBeginImageContextWithOptions(rect.size, false, 0)
+        color.setFill()
+        UIRectFill(rect)
+        let image = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+        self.init(cgImage: (image?.cgImage)!)
+        //self(cgImage: (image?.cgImage!)!)
+    }
+
+    convenience init(color: UIColor, rect: CGRect) {
+        UIGraphicsBeginImageContextWithOptions(rect.size, false, 0)
+        color.setFill()
+        UIRectFill(rect)
+        let image = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+        self.init(cgImage: (image?.cgImage!)!)
+    }
 }

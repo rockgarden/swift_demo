@@ -20,6 +20,15 @@
 		443ED7961E87FE1F0095C980 /* MultiDirectionLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 443ED7951E87FE1F0095C980 /* MultiDirectionLayout.swift */; };
 		446AAA1E1E12B4F0008DA395 /* SectionDemoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 446AAA1D1E12B4F0008DA395 /* SectionDemoVC.swift */; };
 		446AAA201E12B7D2008DA395 /* Papers.plist in Resources */ = {isa = PBXBuildFile; fileRef = 446AAA1F1E12B7D2008DA395 /* Papers.plist */; };
+		44966FE71E8AA40000222F3E /* ELWaterFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44966FE61E8AA40000222F3E /* ELWaterFlowLayout.swift */; };
+		44966FEC1E8AA49B00222F3E /* ELWaterFlowLayoutVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44966FEA1E8AA49B00222F3E /* ELWaterFlowLayoutVC.swift */; };
+		44966FED1E8AA49B00222F3E /* ELWaterFlowLayoutVC.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 44966FEB1E8AA49B00222F3E /* ELWaterFlowLayoutVC.storyboard */; };
+		44966FEF1E8AA9C000222F3E /* LCWaterfallLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44966FEE1E8AA9C000222F3E /* LCWaterfallLayout.swift */; };
+		44966FF11E8AAD9F00222F3E /* SectionWaterFallLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44966FF01E8AAD9F00222F3E /* SectionWaterFallLayout.swift */; };
+		44966FF31E8AAF4000222F3E /* WCLWaterFallLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44966FF21E8AAF4000222F3E /* WCLWaterFallLayout.swift */; };
+		44966FF61E8AB41500222F3E /* SCCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44966FF51E8AB41500222F3E /* SCCollectionViewController.swift */; };
+		44966FF81E8AB42E00222F3E /* SubclassExampleController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44966FF71E8AB42E00222F3E /* SubclassExampleController.swift */; };
+		44966FFA1E8AB4F400222F3E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44966FF91E8AB4F400222F3E /* ViewController.swift */; };
 		44C3DEC21E128B3E00118938 /* CellBackgroundLayeringVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44C3DEC11E128B3E00118938 /* CellBackgroundLayeringVC.swift */; };
 		44DCE4841E8936C3000597B0 /* LineLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44DCE4811E8936C3000597B0 /* LineLayout.swift */; };
 		44DCE4851E8936C3000597B0 /* WaterFallLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44DCE4821E8936C3000597B0 /* WaterFallLayout.swift */; };
@@ -118,6 +127,15 @@
 		443ED7951E87FE1F0095C980 /* MultiDirectionLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MultiDirectionLayout.swift; sourceTree = "<group>"; };
 		446AAA1D1E12B4F0008DA395 /* SectionDemoVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SectionDemoVC.swift; sourceTree = "<group>"; };
 		446AAA1F1E12B7D2008DA395 /* Papers.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Papers.plist; sourceTree = "<group>"; };
+		44966FE61E8AA40000222F3E /* ELWaterFlowLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ELWaterFlowLayout.swift; sourceTree = "<group>"; };
+		44966FEA1E8AA49B00222F3E /* ELWaterFlowLayoutVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ELWaterFlowLayoutVC.swift; sourceTree = "<group>"; };
+		44966FEB1E8AA49B00222F3E /* ELWaterFlowLayoutVC.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = ELWaterFlowLayoutVC.storyboard; sourceTree = "<group>"; };
+		44966FEE1E8AA9C000222F3E /* LCWaterfallLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LCWaterfallLayout.swift; sourceTree = "<group>"; };
+		44966FF01E8AAD9F00222F3E /* SectionWaterFallLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SectionWaterFallLayout.swift; sourceTree = "<group>"; };
+		44966FF21E8AAF4000222F3E /* WCLWaterFallLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WCLWaterFallLayout.swift; sourceTree = "<group>"; };
+		44966FF51E8AB41500222F3E /* SCCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SCCollectionViewController.swift; sourceTree = "<group>"; };
+		44966FF71E8AB42E00222F3E /* SubclassExampleController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SubclassExampleController.swift; sourceTree = "<group>"; };
+		44966FF91E8AB4F400222F3E /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		44C3DEC11E128B3E00118938 /* CellBackgroundLayeringVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CellBackgroundLayeringVC.swift; sourceTree = "<group>"; };
 		44DCE4811E8936C3000597B0 /* LineLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LineLayout.swift; sourceTree = "<group>"; };
 		44DCE4821E8936C3000597B0 /* WaterFallLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WaterFallLayout.swift; sourceTree = "<group>"; };
@@ -249,10 +267,19 @@
 			isa = PBXGroup;
 			children = (
 				C2A972AA1E14DA5A0037A0EA /* readme.rtf */,
+				44966FF91E8AB4F400222F3E /* ViewController.swift */,
 				44DCE4811E8936C3000597B0 /* LineLayout.swift */,
+				44966FEE1E8AA9C000222F3E /* LCWaterfallLayout.swift */,
+				44966FE61E8AA40000222F3E /* ELWaterFlowLayout.swift */,
+				44966FEA1E8AA49B00222F3E /* ELWaterFlowLayoutVC.swift */,
+				44966FEB1E8AA49B00222F3E /* ELWaterFlowLayoutVC.storyboard */,
 				44DCE4821E8936C3000597B0 /* WaterFallLayout.swift */,
+				44966FF01E8AAD9F00222F3E /* SectionWaterFallLayout.swift */,
+				44966FF21E8AAF4000222F3E /* WCLWaterFallLayout.swift */,
 				44DCE4831E8936C3000597B0 /* CirCleLayout.swift */,
 				443ED7951E87FE1F0095C980 /* MultiDirectionLayout.swift */,
+				44966FF71E8AB42E00222F3E /* SubclassExampleController.swift */,
+				44966FF51E8AB41500222F3E /* SCCollectionViewController.swift */,
 				C2AA3B081E110ADE00C9E438 /* SheetView */,
 				C2BC5B831DC6E87B007F23F4 /* LayoutFromScratch */,
 				44226FC81E857549003734D3 /* HorizontalFloatingHeaderLayout */,
@@ -291,12 +318,12 @@
 				442A3C831E1297E200DB8E17 /* MyFlowLayoutCell.swift */,
 				442A3C851E1297F800DB8E17 /* MyFlowLayoutCell.xib */,
 				446AAA1D1E12B4F0008DA395 /* SectionDemoVC.swift */,
+				446AAA1F1E12B7D2008DA395 /* Papers.plist */,
 				C27C6A321E654B780066B3C8 /* HeaderDemoVC.swift */,
 				C27C6A361E654F360066B3C8 /* StickyHeaderDemoVC.swift */,
 				C27C6A391E654F700066B3C8 /* MyCell.swift */,
 				C27C6A381E654F700066B3C8 /* MyCell.xib */,
 				C27C6A341E654D1D0066B3C8 /* languages.plist */,
-				446AAA1F1E12B7D2008DA395 /* Papers.plist */,
 			);
 			path = UICollectionView;
 			sourceTree = "<group>";
@@ -439,6 +466,7 @@
 				C2BC5B541DC6E7D1007F23F4 /* flag_connecticut.gif in Resources */,
 				C2BC5B5A1DC6E7D1007F23F4 /* flag_illinois.gif in Resources */,
 				C2BC5B521DC6E7D1007F23F4 /* flag_california.gif in Resources */,
+				44966FED1E8AA49B00222F3E /* ELWaterFlowLayoutVC.storyboard in Resources */,
 				C2BC5B791DC6E7D1007F23F4 /* flag_utah.gif in Resources */,
 				C2BC5B6B1DC6E7D1007F23F4 /* flag_newjersey.gif in Resources */,
 				C2BC5B621DC6E7D1007F23F4 /* flag_massachusetts.gif in Resources */,
@@ -512,6 +540,7 @@
 				44DCE4851E8936C3000597B0 /* WaterFallLayout.swift in Sources */,
 				C2AA3B0F1E110ADE00C9E438 /* PhotoCell.swift in Sources */,
 				442A3C841E1297E200DB8E17 /* MyFlowLayoutCell.swift in Sources */,
+				44966FE71E8AA40000222F3E /* ELWaterFlowLayout.swift in Sources */,
 				44C3DEC21E128B3E00118938 /* CellBackgroundLayeringVC.swift in Sources */,
 				44226FCE1E857549003734D3 /* HorizontalFloatingHeaderLayout.swift in Sources */,
 				C202C0041E13AEEC00CEC12A /* CameraCell.swift in Sources */,
@@ -522,13 +551,20 @@
 				446AAA1E1E12B4F0008DA395 /* SectionDemoVC.swift in Sources */,
 				C2BC5B0B1DC6E72A007F23F4 /* SheetViewVC.swift in Sources */,
 				44DCE4861E8936C3000597B0 /* CirCleLayout.swift in Sources */,
+				44966FF61E8AB41500222F3E /* SCCollectionViewController.swift in Sources */,
+				44966FF11E8AAD9F00222F3E /* SectionWaterFallLayout.swift in Sources */,
 				C27C6A331E654B780066B3C8 /* HeaderDemoVC.swift in Sources */,
+				44966FF81E8AB42E00222F3E /* SubclassExampleController.swift in Sources */,
 				442A3C8B1E12AA2200DB8E17 /* DecorationViewVC.swift in Sources */,
 				443ED7961E87FE1F0095C980 /* MultiDirectionLayout.swift in Sources */,
 				C2BC5B8C1DC6E87B007F23F4 /* FlushFlowLayout.swift in Sources */,
+				44966FEF1E8AA9C000222F3E /* LCWaterfallLayout.swift in Sources */,
 				C27C6A371E654F360066B3C8 /* StickyHeaderDemoVC.swift in Sources */,
 				44DCE4841E8936C3000597B0 /* LineLayout.swift in Sources */,
+				44966FFA1E8AB4F400222F3E /* ViewController.swift in Sources */,
 				C2BC5B8D1DC6E87B007F23F4 /* MyLayout.swift in Sources */,
+				44966FEC1E8AA49B00222F3E /* ELWaterFlowLayoutVC.swift in Sources */,
+				44966FF31E8AAF4000222F3E /* WCLWaterFallLayout.swift in Sources */,
 				44DCE4881E89390D000597B0 /* ViewController.swift in Sources */,
 				442A3C821E12976D00DB8E17 /* MyFlowLayoutVC.swift in Sources */,
 				C2BC5B091DC6E72A007F23F4 /* AppDelegate.swift in Sources */,
