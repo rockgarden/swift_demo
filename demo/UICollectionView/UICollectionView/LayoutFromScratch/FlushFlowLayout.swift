@@ -12,7 +12,7 @@ func delay(_ delay:Double, closure:@escaping ()->()) {
         deadline: DispatchTime.now() + Double(Int64(delay * Double(NSEC_PER_SEC))) / Double(NSEC_PER_SEC), execute: closure)
 }
 
-class MyFlowLayout : UICollectionViewFlowLayout {
+class FlushFlowLayout : UICollectionViewFlowLayout {
     
     var animating = false
     var animator : UIDynamicAnimator!
@@ -126,7 +126,7 @@ class MyFlowLayout : UICollectionViewFlowLayout {
     }
 }
 
-extension MyFlowLayout : UICollisionBehaviorDelegate {
+extension FlushFlowLayout : UICollisionBehaviorDelegate {
     func collisionBehavior(_ behavior: UICollisionBehavior, beganContactFor item: UIDynamicItem, withBoundaryIdentifier identifier: NSCopying?, at p: CGPoint) {
     
         let push = UIPushBehavior(items:[item], mode:.continuous)

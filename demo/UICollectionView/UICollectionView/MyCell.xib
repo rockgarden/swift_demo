@@ -42,18 +42,12 @@
             <constraints>
                 <constraint firstItem="2yo-bf-WQo" firstAttribute="leading" secondItem="k8N-cy-yHL" secondAttribute="leading" id="4aw-FS-2RN"/>
                 <constraint firstAttribute="trailing" secondItem="2yo-bf-WQo" secondAttribute="trailing" id="6Ri-qJ-yJW"/>
-                <constraint firstItem="2yo-bf-WQo" firstAttribute="top" secondItem="7z6-Pg-3EU" secondAttribute="bottom" constant="70" id="JTO-BU-wZZ"/>
                 <constraint firstItem="2yo-bf-WQo" firstAttribute="top" secondItem="k8N-cy-yHL" secondAttribute="top" constant="70" id="NWg-LF-7i5"/>
                 <constraint firstItem="7z6-Pg-3EU" firstAttribute="leading" secondItem="k8N-cy-yHL" secondAttribute="leading" id="Nhc-GH-zHk"/>
                 <constraint firstAttribute="trailing" secondItem="7z6-Pg-3EU" secondAttribute="trailing" id="TcN-8M-Lhm"/>
                 <constraint firstItem="7z6-Pg-3EU" firstAttribute="top" secondItem="k8N-cy-yHL" secondAttribute="top" id="grz-8L-dAm"/>
             </constraints>
             <size key="customSize" width="370" height="350"/>
-            <variation key="default">
-                <mask key="constraints">
-                    <exclude reference="JTO-BU-wZZ"/>
-                </mask>
-            </variation>
             <connections>
                 <outlet property="headerTop" destination="grz-8L-dAm" id="bYF-hT-bZy"/>
             </connections>

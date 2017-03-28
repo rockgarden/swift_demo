@@ -46,10 +46,8 @@ class WaterFallLayout: UICollectionViewLayout {
     }
 
     // Apple建议要重写这个方法, 因为某些情况下(delete insert...)系统可能需要调用这个方法来布局
-
     override func layoutAttributesForItem(at indexPath: IndexPath) -> UICollectionViewLayoutAttributes? {
         return layoutAttributes[indexPath.row]
-
     }
 
     // 必须重写这个方法来返回计算好的LayoutAttributes
@@ -69,8 +67,8 @@ class WaterFallLayout: UICollectionViewLayout {
     override func shouldInvalidateLayout(forBoundsChange newBounds: CGRect) -> Bool {
         // 旋转屏幕后刷新视图
         return newBounds.width != oldScreenWidth
-
     }
+    
     // 计算所有的UICollectionViewLayoutAttributes
     func computeLayoutAttributes() -> [UICollectionViewLayoutAttributes] {
         let totalNums = collectionView!.numberOfItems(inSection: 0)
@@ -104,7 +102,7 @@ class WaterFallLayout: UICollectionViewLayout {
                 let minMaxY = maxYOfColums.min()!
                 currentColum = maxYOfColums.index(of: minMaxY)!
             }
-            //            currentColum = currentIndex % numberOfColums
+            // currentColum = currentIndex % numberOfColums
             x = itemSpace + CGFloat(currentColum) * (width + itemSpace)
             // 每个cell的y
             y = itemSpace + maxYOfColums[currentColum]

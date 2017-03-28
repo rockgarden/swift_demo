@@ -94,7 +94,7 @@
 		C2BC5B801DC6E7D1007F23F4 /* us_flag_small.gif in Resources */ = {isa = PBXBuildFile; fileRef = C2BC5B4D1DC6E7D1007F23F4 /* us_flag_small.gif */; };
 		C2BC5B821DC6E7ED007F23F4 /* states.txt in Resources */ = {isa = PBXBuildFile; fileRef = C2BC5B811DC6E7ED007F23F4 /* states.txt */; };
 		C2BC5B8A1DC6E87B007F23F4 /* Cell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2BC5B841DC6E87B007F23F4 /* Cell.swift */; };
-		C2BC5B8C1DC6E87B007F23F4 /* MyFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2BC5B861DC6E87B007F23F4 /* MyFlowLayout.swift */; };
+		C2BC5B8C1DC6E87B007F23F4 /* FlushFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2BC5B861DC6E87B007F23F4 /* FlushFlowLayout.swift */; };
 		C2BC5B8D1DC6E87B007F23F4 /* MyLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2BC5B871DC6E87B007F23F4 /* MyLayout.swift */; };
 		C2BC5B8E1DC6E87B007F23F4 /* LayoutNormalVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2BC5B881DC6E87B007F23F4 /* LayoutNormalVC.swift */; };
 		C2BC5B8F1DC6E87B007F23F4 /* LayoutFlushVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2BC5B891DC6E87B007F23F4 /* LayoutFlushVC.swift */; };
@@ -194,7 +194,7 @@
 		C2BC5B4D1DC6E7D1007F23F4 /* us_flag_small.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = us_flag_small.gif; sourceTree = "<group>"; };
 		C2BC5B811DC6E7ED007F23F4 /* states.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = states.txt; sourceTree = "<group>"; };
 		C2BC5B841DC6E87B007F23F4 /* Cell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Cell.swift; sourceTree = "<group>"; };
-		C2BC5B861DC6E87B007F23F4 /* MyFlowLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyFlowLayout.swift; sourceTree = "<group>"; };
+		C2BC5B861DC6E87B007F23F4 /* FlushFlowLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlushFlowLayout.swift; sourceTree = "<group>"; };
 		C2BC5B871DC6E87B007F23F4 /* MyLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyLayout.swift; sourceTree = "<group>"; };
 		C2BC5B881DC6E87B007F23F4 /* LayoutNormalVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LayoutNormalVC.swift; sourceTree = "<group>"; };
 		C2BC5B891DC6E87B007F23F4 /* LayoutFlushVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LayoutFlushVC.swift; sourceTree = "<group>"; };
@@ -364,10 +364,10 @@
 			children = (
 				C2BC5B841DC6E87B007F23F4 /* Cell.swift */,
 				C2FC430B1DC7066600CE5E1E /* Cell.xib */,
-				C2BC5B861DC6E87B007F23F4 /* MyFlowLayout.swift */,
 				C2BC5B871DC6E87B007F23F4 /* MyLayout.swift */,
 				C2BC5B881DC6E87B007F23F4 /* LayoutNormalVC.swift */,
 				C2BC5B891DC6E87B007F23F4 /* LayoutFlushVC.swift */,
+				C2BC5B861DC6E87B007F23F4 /* FlushFlowLayout.swift */,
 			);
 			name = LayoutFromScratch;
 			path = UICollectionView/LayoutFromScratch;
@@ -525,7 +525,7 @@
 				C27C6A331E654B780066B3C8 /* HeaderDemoVC.swift in Sources */,
 				442A3C8B1E12AA2200DB8E17 /* DecorationViewVC.swift in Sources */,
 				443ED7961E87FE1F0095C980 /* MultiDirectionLayout.swift in Sources */,
-				C2BC5B8C1DC6E87B007F23F4 /* MyFlowLayout.swift in Sources */,
+				C2BC5B8C1DC6E87B007F23F4 /* FlushFlowLayout.swift in Sources */,
 				C27C6A371E654F360066B3C8 /* StickyHeaderDemoVC.swift in Sources */,
 				44DCE4841E8936C3000597B0 /* LineLayout.swift in Sources */,
 				C2BC5B8D1DC6E87B007F23F4 /* MyLayout.swift in Sources */,

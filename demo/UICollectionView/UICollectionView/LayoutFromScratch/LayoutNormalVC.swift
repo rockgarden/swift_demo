@@ -27,20 +27,21 @@ class LayoutNormalVC : UICollectionViewController {
             }
             sectionData[sectionData.count-1].append( aState )
         }
+        
         self.navigationItem.title = "States"
         let bb = UIBarButtonItem(title:"Push", style:.plain, target:self, action:#selector(doPush))
         self.navigationItem.rightBarButtonItem = bb
-        self.collectionView!.backgroundColor = UIColor.white
-        self.collectionView!.allowsMultipleSelection = true
         
+        let cv = self.collectionView!
+        
+        cv.backgroundColor = UIColor.lightGray
+        cv.allowsMultipleSelection = true
         // register cell, comes from a nib even though we are using a storyboard
-        self.collectionView!.register(UINib(nibName:"Cell", bundle:nil), forCellWithReuseIdentifier:"Cell")
+        cv.register(UINib(nibName:"Cell", bundle:nil), forCellWithReuseIdentifier:"Cell")
         // register headers (for the other view controller!)
-        self.collectionView!.register(UICollectionReusableView.self,
+        cv.register(UICollectionReusableView.self,
             forSupplementaryViewOfKind:UICollectionElementKindSectionHeader,
             withReuseIdentifier:"Header")
-
-        // no supplementary views or anything
     }
     
     override func numberOfSections(in collectionView: UICollectionView) -> Int {
@@ -51,9 +52,7 @@ class LayoutNormalVC : UICollectionViewController {
         return self.sectionData[section].count
     }
 
-    
     // headers
-    
     override func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
         
         var v : UICollectionReusableView! = nil
@@ -85,7 +84,6 @@ class LayoutNormalVC : UICollectionViewController {
     }
     
     // cells
-    
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath) as! Cell
@@ -158,10 +156,10 @@ class LayoutNormalVC : UICollectionViewController {
     func doPush(_ sender:AnyObject?) {
         self.performSegue(withIdentifier: "show", sender: self)
     }
-
 }
 
-extension LayoutNormalVC : UICollectionViewDelegateFlowLayout {
+
+extension LayoutNormalVC: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         self.modelCell.lab.text = self.sectionData[(indexPath as NSIndexPath).section][(indexPath as NSIndexPath).row]
         var sz = self.modelCell.container.systemLayoutSizeFitting(UILayoutFittingCompressedSize)

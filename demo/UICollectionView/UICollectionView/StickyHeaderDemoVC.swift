@@ -8,6 +8,7 @@ import UIKit
 class StickyHeaderDemoVC: UICollectionViewController, UICollectionViewDelegateFlowLayout {
 
     let cellIdentifier: String = "StickyCell"
+    let data: [CGFloat] = [100,200,300,300,200,100]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -19,7 +20,7 @@ class StickyHeaderDemoVC: UICollectionViewController, UICollectionViewDelegateFl
     }
     
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 20
+        return 6
     }
     
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -28,7 +29,8 @@ class StickyHeaderDemoVC: UICollectionViewController, UICollectionViewDelegateFl
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: UIScreen.main.bounds.width, height: 350)
+        debugPrint(collectionView.contentSize)
+        return CGSize(width: UIScreen.main.bounds.width, height: data[indexPath.item])
     }
     
     override func scrollViewDidScroll(_ scrollView: UIScrollView) {

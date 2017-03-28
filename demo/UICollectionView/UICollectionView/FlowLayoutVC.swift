@@ -50,7 +50,6 @@ class FlowLayoutVC : UICollectionViewController {
     // minimal formatting; this is just to prove we can show the data at all
 
     // headers
-
     override func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
         var v : UICollectionReusableView! = nil
         if kind == UICollectionElementKindSectionHeader {
@@ -66,7 +65,6 @@ class FlowLayoutVC : UICollectionViewController {
     }
 
     // cells
-
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier:"Cell", for: indexPath)
         if cell.contentView.subviews.count == 0 {
@@ -76,14 +74,13 @@ class FlowLayoutVC : UICollectionViewController {
         lab.text = (self.cellData)[indexPath.section][indexPath.row] // "item" synonym for "row"
         lab.sizeToFit()
         return cell
-
     }
 }
+
 
 // but the above is not sufficient to see the entire name of a state
 // the state names are stepping on each other; let's fix that
 // adjust the size of each cell, as a UICollectionViewDelegateFlowLayout
-
 extension FlowLayoutVC : UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         // note horrible duplication of code here

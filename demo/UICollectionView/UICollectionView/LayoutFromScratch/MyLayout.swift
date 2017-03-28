@@ -7,7 +7,6 @@ class MyLayout : UICollectionViewLayout {
     var atts = [IndexPath:UICollectionViewLayoutAttributes]()
     
     // absolute rock-bottom layout from scratch, shows minimal responsibilities
-    
     override func prepare() {
         print("prepare")
         let sections = self.collectionView!.numberOfSections
@@ -52,23 +51,23 @@ class MyLayout : UICollectionViewLayout {
     }
     
     override var collectionViewContentSize : CGSize {
-        //        println("size")
+        print("collectionViewContentSize", self.sz)
         return self.sz
     }
     
     override func shouldInvalidateLayout(forBoundsChange newBounds: CGRect) -> Bool {
         let ok = newBounds.size.width != self.sz.width
-        print("should \(ok)")
+        print("shouldInvalidateLayout \(ok)",newBounds.size.width)
         return ok
     }
     
     override func layoutAttributesForItem(at indexPath: IndexPath) -> UICollectionViewLayoutAttributes? {
-        print("atts")
+        print("layoutAttributesForItem", atts[indexPath]!)
         return self.atts[indexPath]
     }
     
     override func layoutAttributesForElements(in rect: CGRect) -> [UICollectionViewLayoutAttributes]? {
-        //        println("rect")
+//        print("layoutAttributesForElements", Array(self.atts.values))
         return Array(self.atts.values)
     }
 }

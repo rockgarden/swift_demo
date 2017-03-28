@@ -15,13 +15,13 @@ class LayoutFlushVC : UICollectionViewController {
         self.navigationItem.rightBarButtonItem = b
         if let flow = self.collectionViewLayout as? UICollectionViewFlowLayout {
             flow.headerReferenceSize = CGSize(width: 50,height: 50)
-            flow.sectionInset = UIEdgeInsetsMake(0, 10, 10, 10)
+            flow.sectionInset = UIEdgeInsetsMake(10, 10, 10, 10)
         }
         self.collectionView!.reloadData()
     }
     
     func doFlush (_ sender:AnyObject) {
-        if let layout = self.collectionView!.collectionViewLayout as? MyFlowLayout {
+        if let layout = self.collectionView!.collectionViewLayout as? FlushFlowLayout {
             layout.flush()
         }
     }
@@ -47,7 +47,6 @@ class LayoutFlushVC : UICollectionViewController {
 }
 
 
-
 // MARK: UICollectionViewDelegateFlowLayout
 extension LayoutFlushVC : UICollectionViewDelegateFlowLayout {
 
@@ -60,7 +59,7 @@ extension LayoutFlushVC : UICollectionViewDelegateFlowLayout {
                         sizeForItemAt indexPath: IndexPath) -> CGSize {
         print("forwarding to the other view controller")
         //let cv = self.navigationController!.viewControllers[0] as! ViewController
-        let cv = self.navigationController!.viewControllers[1] as! LayoutNormalVC //加入了一层TableVC,所以取的是1
+        let cv = self.navigationController!.viewControllers[1] as! LayoutNormalVC //加入了TableVC, 所以取的是1
         let result = cv.collectionView(collectionView, layout:collectionViewLayout,
                                        sizeForItemAt:indexPath)
         return result
