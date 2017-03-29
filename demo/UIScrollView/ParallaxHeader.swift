@@ -54,7 +54,7 @@ class ParallaxHeader: UIView {
 
     // MARK:- 私有函数
     ///  滑动时添加效果
-    fileprivate func layoutHeaderViewForScrollViewOffset(offset:CGPoint) {
+    fileprivate func layoutHeaderViewForScrollViewOffset(offset: CGPoint) {
         var frametemp = imageScrollView!.frame
         if offset.y > 0 {
             frametemp.origin.y = max(offset.y * kParallaxDeltaFactor, 0)
@@ -140,6 +140,7 @@ class ParallaxHeader: UIView {
             layoutHeaderViewForScrollViewOffset(offset: dependTableView!.contentOffset)
         }
     }
+
     private var dependTableView : UITableView?{
         didSet{
             watchDependViewScrolled()
@@ -230,7 +231,7 @@ private extension UIImage{
                 let inputRadius = blurRadius * UIScreen.main.scale
                 //                var radius = UInt32(floor(Double(inputRadius) * 3 * sqrt(2 * M_PI)/4 +0.5))
                 var radiusd = Double(inputRadius) * 3;
-                radiusd = radiusd * 3 * sqrt(2 * M_PI) / 4
+                radiusd = radiusd * 3 * sqrt(2 * Double.pi) / 4
                 radiusd = radiusd + 0.5
                 var radius = UInt32(floor(radiusd))
                 if radius % 2 != 1 {

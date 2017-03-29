@@ -12,14 +12,15 @@
 		4420AB881DF19D8F005D280A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4420AB861DF19D8F005D280A /* Main.storyboard */; };
 		4420AB8A1DF19D8F005D280A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4420AB891DF19D8F005D280A /* Assets.xcassets */; };
 		4420AB8D1DF19D8F005D280A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4420AB8B1DF19D8F005D280A /* LaunchScreen.storyboard */; };
-		4420AB951DF19DC1005D280A /* MyScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4420AB941DF19DC1005D280A /* MyScrollView.swift */; };
 		4420AB971DF1A283005D280A /* readme.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 4420AB961DF1A283005D280A /* readme.rtf */; };
 		44226FC51E85687F003734D3 /* SeamlessScrollingHeaderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44226FC41E85687F003734D3 /* SeamlessScrollingHeaderViewController.swift */; };
 		442C40E31E630165009E6609 /* DragInSV.swift in Sources */ = {isa = PBXBuildFile; fileRef = 442C40E21E630165009E6609 /* DragInSV.swift */; };
-		442C40E51E63016F009E6609 /* MyFlagView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 442C40E41E63016F009E6609 /* MyFlagView.swift */; };
 		442C40E71E6305BD009E6609 /* DragInSV_Constraint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 442C40E61E6305BD009E6609 /* DragInSV_Constraint.swift */; };
 		446C03871E87F7DC001622C6 /* ParallaxHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 446C03861E87F7DC001622C6 /* ParallaxHeader.swift */; };
 		446C03891E87F9E3001622C6 /* ParallaxHeaderVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 446C03881E87F9E3001622C6 /* ParallaxHeaderVC.swift */; };
+		44A30FD51E8B722F00215421 /* BringSubviewVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44A30FD41E8B722F00215421 /* BringSubviewVC.swift */; };
+		44A30FDB1E8B723D00215421 /* PhotoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 44A30FD71E8B723D00215421 /* PhotoCell.xib */; };
+		44A30FDD1E8B723D00215421 /* DetailView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 44A30FD91E8B723D00215421 /* DetailView.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,14 +31,15 @@
 		4420AB891DF19D8F005D280A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4420AB8C1DF19D8F005D280A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4420AB8E1DF19D8F005D280A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		4420AB941DF19DC1005D280A /* MyScrollView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyScrollView.swift; sourceTree = "<group>"; };
 		4420AB961DF1A283005D280A /* readme.rtf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.rtf; path = readme.rtf; sourceTree = "<group>"; };
 		44226FC41E85687F003734D3 /* SeamlessScrollingHeaderViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SeamlessScrollingHeaderViewController.swift; sourceTree = "<group>"; };
 		442C40E21E630165009E6609 /* DragInSV.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DragInSV.swift; sourceTree = "<group>"; };
-		442C40E41E63016F009E6609 /* MyFlagView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyFlagView.swift; sourceTree = "<group>"; };
 		442C40E61E6305BD009E6609 /* DragInSV_Constraint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DragInSV_Constraint.swift; sourceTree = "<group>"; };
 		446C03861E87F7DC001622C6 /* ParallaxHeader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParallaxHeader.swift; sourceTree = "<group>"; };
 		446C03881E87F9E3001622C6 /* ParallaxHeaderVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParallaxHeaderVC.swift; sourceTree = "<group>"; };
+		44A30FD41E8B722F00215421 /* BringSubviewVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BringSubviewVC.swift; sourceTree = "<group>"; };
+		44A30FD71E8B723D00215421 /* PhotoCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PhotoCell.xib; sourceTree = "<group>"; };
+		44A30FD91E8B723D00215421 /* DetailView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DetailView.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,15 +79,24 @@
 				4420AB861DF19D8F005D280A /* Main.storyboard */,
 				4420AB841DF19D8F005D280A /* TwoWayScrollViewVC.swift */,
 				446C03881E87F9E3001622C6 /* ParallaxHeaderVC.swift */,
-				4420AB941DF19DC1005D280A /* MyScrollView.swift */,
 				442C40E21E630165009E6609 /* DragInSV.swift */,
 				442C40E61E6305BD009E6609 /* DragInSV_Constraint.swift */,
-				442C40E41E63016F009E6609 /* MyFlagView.swift */,
+				44A30FD41E8B722F00215421 /* BringSubviewVC.swift */,
+				44A30FD71E8B723D00215421 /* PhotoCell.xib */,
+				44A30FD91E8B723D00215421 /* DetailView.xib */,
+				44A30FD31E8B671700215421 /* Support Files */,
+			);
+			path = UIScrollView;
+			sourceTree = "<group>";
+		};
+		44A30FD31E8B671700215421 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
 				4420AB891DF19D8F005D280A /* Assets.xcassets */,
 				4420AB8B1DF19D8F005D280A /* LaunchScreen.storyboard */,
 				4420AB8E1DF19D8F005D280A /* Info.plist */,
 			);
-			path = UIScrollView;
+			name = "Support Files";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -151,7 +162,9 @@
 				4420AB8D1DF19D8F005D280A /* LaunchScreen.storyboard in Resources */,
 				4420AB8A1DF19D8F005D280A /* Assets.xcassets in Resources */,
 				4420AB971DF1A283005D280A /* readme.rtf in Resources */,
+				44A30FDD1E8B723D00215421 /* DetailView.xib in Resources */,
 				4420AB881DF19D8F005D280A /* Main.storyboard in Resources */,
+				44A30FDB1E8B723D00215421 /* PhotoCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -163,11 +176,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				442C40E71E6305BD009E6609 /* DragInSV_Constraint.swift in Sources */,
-				442C40E51E63016F009E6609 /* MyFlagView.swift in Sources */,
+				44A30FD51E8B722F00215421 /* BringSubviewVC.swift in Sources */,
 				446C03871E87F7DC001622C6 /* ParallaxHeader.swift in Sources */,
 				446C03891E87F9E3001622C6 /* ParallaxHeaderVC.swift in Sources */,
 				4420AB851DF19D8F005D280A /* TwoWayScrollViewVC.swift in Sources */,
-				4420AB951DF19DC1005D280A /* MyScrollView.swift in Sources */,
 				442C40E31E630165009E6609 /* DragInSV.swift in Sources */,
 				4420AB831DF19D8F005D280A /* AppDelegate.swift in Sources */,
 				44226FC51E85687F003734D3 /* SeamlessScrollingHeaderViewController.swift in Sources */,

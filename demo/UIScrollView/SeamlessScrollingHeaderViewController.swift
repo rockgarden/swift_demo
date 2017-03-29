@@ -133,11 +133,7 @@ open class SeamlessScrollingHeaderViewController: UIViewController, UITableViewD
         self.navigationController?.setNavigationBarHidden(true, animated: true)
         UIApplication.shared.statusBarStyle = previousStatusBarStyle
     }
-
-    override open func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
+    
     open
     func headerViewInView(_ view: SeamlessScrollingHeaderViewController) -> UIView {
         return headerView
