@@ -100,45 +100,45 @@ class ConstraintSwapDemo: UIViewController {
 		let c5without = NSLayoutConstraint.constraints(withVisualFormat: "V:[v1]-(20)-[v3(20)]", options: [], metrics: nil, views: ["v1": v1, "v3": v3])
 
 		// first set of constraints
-		self.constraintsWith.append(contentsOf: c1)
-		self.constraintsWith.append(contentsOf: c2)
-		self.constraintsWith.append(contentsOf: c3)
-		self.constraintsWith.append(contentsOf: c4)
-		self.constraintsWith.append(contentsOf: c5with)
+		constraintsWith.append(contentsOf: c1)
+		constraintsWith.append(contentsOf: c2)
+		constraintsWith.append(contentsOf: c3)
+		constraintsWith.append(contentsOf: c4)
+		constraintsWith.append(contentsOf: c5with)
 
 		// second set of constraints
-		self.constraintsWithout.append(contentsOf: c1)
-		self.constraintsWithout.append(contentsOf: c3)
-		self.constraintsWithout.append(contentsOf: c4)
-		self.constraintsWithout.append(contentsOf: c5without)
+		constraintsWithout.append(contentsOf: c1)
+		constraintsWithout.append(contentsOf: c3)
+		constraintsWithout.append(contentsOf: c4)
+		constraintsWithout.append(contentsOf: c5without)
 
 		// apply first set
 		NSLayoutConstraint.activate(self.constraintsWith)
 
 		/*
 		 // just experimenting, pay no attention
-		 let g = UILayoutGuide()
-		 self.view.addLayoutGuide(g)
-		 NSLayoutConstraint.activateConstraints([
-		 g.topAnchor.constraintEqualToAnchor(self.topLayoutGuide.bottomAnchor),
-		 g.leftAnchor.constraintEqualToAnchor(self.view.leftAnchor),
-		 g.widthAnchor.constraintEqualToConstant(100),
-		 g.heightAnchor.constraintEqualToConstant(100)
-		 ])
+         let g = UILayoutGuide()
+         self.view.addLayoutGuide(g)
+         NSLayoutConstraint.activate([
+         g.topAnchor.constraint(equalTo:self.topLayoutGuide.bottomAnchor),
+         g.leftAnchor.constraint(equalTo:self.view.leftAnchor),
+         g.widthAnchor.constraint(equalToConstant:100),
+         g.heightAnchor.constraint(equalToConstant:100)
+         ])
 
 		 // still experimenting
-		 let v = UIView()
-		 let arr = NSLayoutConstraint.constraintsWithVisualFormat(
-		 "V:[tlg]-0-[v]", options: [], metrics: nil,
-		 views: ["tlg":self.topLayoutGuide, "v":v])
-		 let tlg = self.topLayoutGuide
-		 let c = v.topAnchor.constraintEqualToAnchor(tlg.bottomAnchor)
+         let v = UIView()
+         let arr = NSLayoutConstraint.constraints(withVisualFormat:
+         "V:[tlg]-0-[v]", metrics: nil,
+         views: ["tlg":self.topLayoutGuide, "v":v])
+         let tlg = self.topLayoutGuide
+         let c = v.topAnchor.constraint(equalTo:tlg.bottomAnchor)
 
-		 // still experimenting
-		 NSLayoutConstraint.activateConstraints(
-		 NSLayoutConstraint.constraintsWithVisualFormat(
-		 "V:|-0-[v]", options: [], metrics: nil, views: ["v":v])
-		 )
+         // still experimenting
+         NSLayoutConstraint.activate(
+         NSLayoutConstraint.constraints(withVisualFormat:
+         "V:|-0-[v]", metrics: nil, views: ["v":v])
+         )
 		 */
 
 		let v4 = UIView(frame: CGRect(x: 100, y: 250, width: 132, height: 194))

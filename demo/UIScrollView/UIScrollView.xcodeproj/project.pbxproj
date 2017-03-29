@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		440662411E8BD2EF00FF8108 /* RootVC_ScroolView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 440662401E8BD2EF00FF8108 /* RootVC_ScroolView.swift */; };
+		440662431E8BD49300FF8108 /* ScrollViewVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 440662421E8BD49300FF8108 /* ScrollViewVC.swift */; };
 		4420AB831DF19D8F005D280A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4420AB821DF19D8F005D280A /* AppDelegate.swift */; };
 		4420AB851DF19D8F005D280A /* TwoWayScrollViewVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4420AB841DF19D8F005D280A /* TwoWayScrollViewVC.swift */; };
 		4420AB881DF19D8F005D280A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4420AB861DF19D8F005D280A /* Main.storyboard */; };
@@ -24,6 +26,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		440662401E8BD2EF00FF8108 /* RootVC_ScroolView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootVC_ScroolView.swift; sourceTree = "<group>"; };
+		440662421E8BD49300FF8108 /* ScrollViewVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScrollViewVC.swift; sourceTree = "<group>"; };
 		4420AB7F1DF19D8F005D280A /* UIScrollView.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UIScrollView.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4420AB821DF19D8F005D280A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4420AB841DF19D8F005D280A /* TwoWayScrollViewVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TwoWayScrollViewVC.swift; sourceTree = "<group>"; };
@@ -76,7 +80,9 @@
 			isa = PBXGroup;
 			children = (
 				4420AB821DF19D8F005D280A /* AppDelegate.swift */,
+				440662401E8BD2EF00FF8108 /* RootVC_ScroolView.swift */,
 				4420AB861DF19D8F005D280A /* Main.storyboard */,
+				440662421E8BD49300FF8108 /* ScrollViewVC.swift */,
 				4420AB841DF19D8F005D280A /* TwoWayScrollViewVC.swift */,
 				446C03881E87F9E3001622C6 /* ParallaxHeaderVC.swift */,
 				442C40E21E630165009E6609 /* DragInSV.swift */,
@@ -175,12 +181,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				440662431E8BD49300FF8108 /* ScrollViewVC.swift in Sources */,
 				442C40E71E6305BD009E6609 /* DragInSV_Constraint.swift in Sources */,
 				44A30FD51E8B722F00215421 /* BringSubviewVC.swift in Sources */,
 				446C03871E87F7DC001622C6 /* ParallaxHeader.swift in Sources */,
 				446C03891E87F9E3001622C6 /* ParallaxHeaderVC.swift in Sources */,
 				4420AB851DF19D8F005D280A /* TwoWayScrollViewVC.swift in Sources */,
 				442C40E31E630165009E6609 /* DragInSV.swift in Sources */,
+				440662411E8BD2EF00FF8108 /* RootVC_ScroolView.swift in Sources */,
 				4420AB831DF19D8F005D280A /* AppDelegate.swift in Sources */,
 				44226FC51E85687F003734D3 /* SeamlessScrollingHeaderViewController.swift in Sources */,
 			);

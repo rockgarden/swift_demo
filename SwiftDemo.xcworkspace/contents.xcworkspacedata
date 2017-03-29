@@ -2,6 +2,9 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:demo/IBDemo/IBDemo.xcodeproj">
+   </FileRef>
+   <FileRef
       location = "group:demo/PlistDemo/PlistDemo.xcodeproj">
    </FileRef>
    <FileRef
@@ -119,9 +122,6 @@
       location = "group:demo/BundleResource/BundleResource.xcodeproj">
    </FileRef>
    <FileRef
-      location = "group:demo/IBDesignable/IBDesignable.xcodeproj">
-   </FileRef>
-   <FileRef
       location = "group:demo/EvenDistribution/EvenDistribution.xcodeproj">
    </FileRef>
    <FileRef
@@ -161,22 +161,13 @@
       location = "group:demo/UnitTesting/UnitTesting.xcodeproj">
    </FileRef>
    <FileRef
-      location = "group:demo/NibLoading/NibLoading.xcodeproj">
-   </FileRef>
-   <FileRef
       location = "group:demo/UIApplicationMain/UIApplicationMain.xcodeproj">
-   </FileRef>
-   <FileRef
-      location = "group:demo/action/action.xcodeproj">
    </FileRef>
    <FileRef
       location = "group:demo/TodayExtension/TodayExtension.xcodeproj">
    </FileRef>
    <FileRef
       location = "group:demo/transform/transform.xcodeproj">
-   </FileRef>
-   <FileRef
-      location = "group:demo/IBInspectable/IBInspectable.xcodeproj">
    </FileRef>
    <FileRef
       location = "group:demo/Init/Init.xcodeproj">

@@ -11,7 +11,7 @@ Thus, even though this view adds its own subviews in code, you can still see the
 The representation is not perfect but it's pretty good.
 */
 
-@IBDesignable class IBDesignableView: UIView {
+@IBDesignable class IBDesignable_View: UIView {
     
     @IBInspectable var name : String!
     
@@ -60,8 +60,7 @@ The representation is not perfect but it's pretty good.
     }
     
     override func willMove(toSuperview newSuperview: UIView!) {
-        // self.configure()
+        self.configure()
     }
-    
-    
+
 }

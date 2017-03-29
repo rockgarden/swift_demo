@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12118" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="t5r-Lf-zxW">
+    <device id="retina4_0" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Outlet Collection And ActionVC-->
+        <scene sceneID="ypA-3T-oZL">
+            <objects>
+                <viewController storyboardIdentifier="OutletCollectionAndActionVC" id="yT3-yc-7EU" customClass="OutletCollectionAndActionVC" customModule="IBDemo" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="eFc-TX-ZPi"/>
+                        <viewControllerLayoutGuide type="bottom" id="XTZ-g9-Eld"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="r6t-A0-7eO">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="8FV-cE-Pgn">
+                                <rect key="frame" x="0.0" y="105" width="320" height="300"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="T2a-XX-7eJ">
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="30"/>
+                                        <state key="normal" title="Button">
+                                            <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7ed-U7-HDn">
+                                        <rect key="frame" x="0.0" y="30" width="320" height="30"/>
+                                        <state key="normal" title="Button">
+                                            <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WKa-gh-0I6">
+                                        <rect key="frame" x="0.0" y="60" width="320" height="30"/>
+                                        <state key="normal" title="Button">
+                                            <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="buttonPressed:" destination="6pN-nD-fWj" eventType="touchUpInside" id="GsD-Nf-3eO"/>
+                                            <action selector="buttonPressed:" destination="yT3-yc-7EU" eventType="touchUpInside" id="Iz1-h7-Wl7"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XVs-fb-W9A">
+                                        <rect key="frame" x="0.0" y="90" width="320" height="30"/>
+                                        <state key="normal" title="Responder Chain">
+                                            <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="showResponderChain:" destination="yT3-yc-7EU" eventType="touchUpInside" id="YyA-qt-rfg"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="p2i-yN-Vgr">
+                                        <rect key="frame" x="0.0" y="120" width="320" height="30"/>
+                                        <state key="normal" title="CoolButton">
+                                            <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="buttonPressed:" destination="yT3-yc-7EU" eventType="touchUpInside" id="NOu-gN-sa7"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jKq-Dg-X4r">
+                                        <rect key="frame" x="0.0" y="150" width="320" height="30"/>
+                                        <state key="normal" title="CoolButton">
+                                            <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="buttonPressed:" destination="yT3-yc-7EU" eventType="touchUpInside" id="e6M-5s-FgQ"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZLp-rv-bS4">
+                                        <rect key="frame" x="0.0" y="180" width="320" height="30"/>
+                                        <state key="normal" title="CoolButton">
+                                            <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8Rs-8W-vbU" userLabel="Show NibLoading">
+                                        <rect key="frame" x="0.0" y="210" width="320" height="30"/>
+                                        <state key="normal" title="Show NibLoading"/>
+                                        <connections>
+                                            <action selector="showVC:" destination="yT3-yc-7EU" eventType="touchUpInside" id="EYT-qU-xEY"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bAB-eK-5Mk" customClass="IBInspectable_Button" customModule="IBDemo" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="240" width="320" height="30"/>
+                                        <state key="normal" title="IBInspectable_Button"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                <real key="value" value="2"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                <color key="value" red="0.19215686269999999" green="0.76078431369999999" blue="0.96470588239999999" alpha="1" colorSpace="calibratedRGB"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uln-i2-EVZ" customClass="IBInspectable_Button" customModule="IBDemo" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="270" width="320" height="30"/>
+                                        <state key="normal" title="IBDesignable_View"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                <real key="value" value="2"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                <color key="value" red="0.8862745098" green="0.67450980390000004" blue="0.1137254902" alpha="1" colorSpace="calibratedRGB"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <segue destination="2N9-Kw-KJe" kind="show" id="cJi-NH-S9y"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="8FV-cE-Pgn" firstAttribute="width" secondItem="r6t-A0-7eO" secondAttribute="width" id="6gH-Yg-8no"/>
+                            <constraint firstItem="8FV-cE-Pgn" firstAttribute="top" secondItem="eFc-TX-ZPi" secondAttribute="bottom" constant="41" id="J2o-8u-QIL"/>
+                            <constraint firstItem="8FV-cE-Pgn" firstAttribute="centerX" secondItem="r6t-A0-7eO" secondAttribute="centerX" id="OXQ-s1-50r"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="VkE-tN-3Ue"/>
+                    <connections>
+                        <outlet property="button" destination="T2a-XX-7eJ" id="erm-de-khD"/>
+                        <outlet property="button2" destination="7ed-U7-HDn" id="t0o-N8-Qqd"/>
+                        <outletCollection property="coolviews" destination="p2i-yN-Vgr" collectionClass="NSMutableArray" id="sU1-ND-92i"/>
+                        <outletCollection property="coolviews" destination="jKq-Dg-X4r" collectionClass="NSMutableArray" id="nmr-5S-Cbc"/>
+                        <outletCollection property="coolviews" destination="ZLp-rv-bS4" collectionClass="NSMutableArray" id="pq4-dL-fsJ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6pN-nD-fWj" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="398" y="113"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="jtk-1M-Jw9">
+            <objects>
+                <navigationController id="t5r-Lf-zxW" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="vd3-eG-B6S">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="yT3-yc-7EU" kind="relationship" relationship="rootViewController" id="ZdS-hS-biY"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vxZ-4h-46A" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-420" y="113"/>
+        </scene>
+        <!--IBDesignable-->
+        <scene sceneID="U2L-Q6-Cr4">
+            <objects>
+                <viewController storyboardIdentifier="IBDesignableVC" id="2N9-Kw-KJe" userLabel="IBDesignable" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Z4f-9X-WIg"/>
+                        <viewControllerLayoutGuide type="bottom" id="ILz-8L-DGM"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="IXR-lb-XvX">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FNc-Ct-WZZ" customClass="IBDesignable_View" customModule="IBDemo" customModuleProvider="target">
+                                <rect key="frame" x="100" y="164" width="120" height="304"/>
+                                <color key="backgroundColor" red="0.59999999999999998" green="0.84705882349999995" blue="0.98823529409999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="tintColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="name" value="Matt"/>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="FNc-Ct-WZZ" firstAttribute="leading" secondItem="IXR-lb-XvX" secondAttribute="leading" constant="100" id="5Ur-Zc-ehe"/>
+                            <constraint firstItem="FNc-Ct-WZZ" firstAttribute="top" secondItem="Z4f-9X-WIg" secondAttribute="bottom" constant="100" id="6r7-yn-BXd"/>
+                            <constraint firstItem="ILz-8L-DGM" firstAttribute="top" secondItem="FNc-Ct-WZZ" secondAttribute="bottom" constant="100" id="TVB-zy-saX"/>
+                            <constraint firstAttribute="trailing" secondItem="FNc-Ct-WZZ" secondAttribute="trailing" constant="100" id="V5j-zy-qqt"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="S1C-lo-MWN" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="398" y="817"/>
+        </scene>
+    </scenes>
+</document>
