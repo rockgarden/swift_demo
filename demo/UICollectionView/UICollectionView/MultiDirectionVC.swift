@@ -8,7 +8,7 @@
 
 import UIKit
 
-let reuseIdentifier = "MultiDirectionCell"
+fileprivate let reuseIdentifier = "MultiDirectionCell"
 
 class MultiDirectionVC: UICollectionViewController {
 

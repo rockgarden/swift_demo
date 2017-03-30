@@ -46,7 +46,7 @@ class CircleLayout: UICollectionViewLayout {
         attributes.size = CGSize(width: 60.0, height: 60.0)
         // 当前cell的角度
         // 注意类型转换
-        let angle = 2 * CGFloat(M_PI) * CGFloat(indexPath.row) / CGFloat(totalNum)
+        let angle = 2 * CGFloat(Float.pi) * CGFloat(indexPath.row) / CGFloat(totalNum)
         // 一点点数学转换
         attributes.center = CGPoint(x: center.x + radius*cos(angle), y: center.y + radius*sin(angle))
         return attributes

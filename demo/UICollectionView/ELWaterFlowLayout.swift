@@ -144,8 +144,6 @@ open class ELWaterFlowLayout: UICollectionViewFlowLayout {
                 a.frame = CGRect(x: x, y: y, width: width!, height: height)
 
                 self.updateLineHeightRec(at: sl.index, with: x + width!)
-            default:
-                print("unkown scroll direction");
             }
 
 

@@ -31,15 +31,15 @@ class LayoutFlushVC : UICollectionViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        print("\(self.collectionView!.dataSource) \(self.collectionView!.delegate)")
+        print("\(String(describing: self.collectionView!.dataSource)) \(String(describing: self.collectionView!.delegate))")
         return
     }
     
     override func viewDidAppear(_ animated: Bool)  {
         super.viewDidAppear(animated)
-        print("\(self.collectionView!.dataSource) \(self.collectionView!.delegate)")
+        print("\(String(describing: self.collectionView!.dataSource)) \(String(describing: self.collectionView!.delegate))")
         delay(2) {
-            print("\(self.collectionView!.dataSource) \(self.collectionView!.delegate)")
+            print("\(String(describing: self.collectionView!.dataSource)) \(String(describing: self.collectionView!.delegate))")
         }
         return
     }

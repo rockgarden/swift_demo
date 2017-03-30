@@ -35,7 +35,7 @@ class HeaderDemoVC: UICollectionViewController {
     }
     
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as! SwiftCollectionViewCell
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: HDreuseIdentifier, for: indexPath) as! SwiftCollectionViewCell
         // Configure the cell
         let languages = dataSource.fruitsInGroup(indexPath.section)
         let language = languages[indexPath.row]
