@@ -33,7 +33,7 @@
 		44DCE4841E8936C3000597B0 /* LineLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44DCE4811E8936C3000597B0 /* LineLayout.swift */; };
 		44DCE4851E8936C3000597B0 /* WaterFallLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44DCE4821E8936C3000597B0 /* WaterFallLayout.swift */; };
 		44DCE4861E8936C3000597B0 /* CirCleLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44DCE4831E8936C3000597B0 /* CirCleLayout.swift */; };
-		44DCE4881E89390D000597B0 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44DCE4871E89390D000597B0 /* ViewController.swift */; };
+		44DCE4881E89390D000597B0 /* FlowLayoutTestVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44DCE4871E89390D000597B0 /* FlowLayoutTestVC.swift */; };
 		C202C0041E13AEEC00CEC12A /* CameraCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C202C0031E13AEEC00CEC12A /* CameraCell.swift */; };
 		C202C0061E13AF2B00CEC12A /* CameraCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C202C0051E13AF2B00CEC12A /* CameraCell.xib */; };
 		C27C6A331E654B780066B3C8 /* HeaderDemoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C27C6A321E654B780066B3C8 /* HeaderDemoVC.swift */; };
@@ -140,7 +140,7 @@
 		44DCE4811E8936C3000597B0 /* LineLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LineLayout.swift; sourceTree = "<group>"; };
 		44DCE4821E8936C3000597B0 /* WaterFallLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WaterFallLayout.swift; sourceTree = "<group>"; };
 		44DCE4831E8936C3000597B0 /* CirCleLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CirCleLayout.swift; sourceTree = "<group>"; };
-		44DCE4871E89390D000597B0 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		44DCE4871E89390D000597B0 /* FlowLayoutTestVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlowLayoutTestVC.swift; sourceTree = "<group>"; };
 		C202C0031E13AEEC00CEC12A /* CameraCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CameraCell.swift; sourceTree = "<group>"; };
 		C202C0051E13AF2B00CEC12A /* CameraCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CameraCell.xib; sourceTree = "<group>"; };
 		C27C6A321E654B780066B3C8 /* HeaderDemoVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeaderDemoVC.swift; sourceTree = "<group>"; };
@@ -300,7 +300,7 @@
 		C2BC5B071DC6E729007F23F4 /* UICollectionView */ = {
 			isa = PBXGroup;
 			children = (
-				44DCE4871E89390D000597B0 /* ViewController.swift */,
+				44DCE4871E89390D000597B0 /* FlowLayoutTestVC.swift */,
 				C2BC5B1A1DC6E7D1007F23F4 /* flag */,
 				C2BC5B081DC6E72A007F23F4 /* AppDelegate.swift */,
 				C2BC5B0A1DC6E72A007F23F4 /* SheetViewVC.swift */,
@@ -565,7 +565,7 @@
 				C2BC5B8D1DC6E87B007F23F4 /* MyLayout.swift in Sources */,
 				44966FEC1E8AA49B00222F3E /* ELWaterFlowLayoutVC.swift in Sources */,
 				44966FF31E8AAF4000222F3E /* WCLWaterFallLayout.swift in Sources */,
-				44DCE4881E89390D000597B0 /* ViewController.swift in Sources */,
+				44DCE4881E89390D000597B0 /* FlowLayoutTestVC.swift in Sources */,
 				442A3C821E12976D00DB8E17 /* MyFlowLayoutVC.swift in Sources */,
 				C2BC5B091DC6E72A007F23F4 /* AppDelegate.swift in Sources */,
 				C2AA3B0D1E110ADE00C9E438 /* PhotoManagerView.swift in Sources */,
