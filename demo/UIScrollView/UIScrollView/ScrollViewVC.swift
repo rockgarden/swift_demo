@@ -6,6 +6,10 @@ class ScrollViewVC : UIViewController {
 
     var which = 0
     var subWhich = 1
+    var sv : UIScrollView!
+
+    //／ 在 svByConstraints() 中 示例_ContentInset_A 或 示例_ContentInset_B
+    fileprivate let isE_ContentInset_A = false
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -13,6 +17,20 @@ class ScrollViewVC : UIViewController {
         if which == 0 { svByFrame() }
         if which == 1 { svByConstraints() }
         if which == 2 { svByConstraintsSubView() }
+    }
+
+    override func viewWillLayoutSubviews() {
+
+        /// 示例_ContentInset_B
+        do {
+            guard !isE_ContentInset_A else {return}
+            if let sv = self.sv {
+                let top = topLayoutGuide.length
+                let bot = bottomLayoutGuide.length
+                sv.contentInset = UIEdgeInsetsMake(top, 0, bot, 0)
+                sv.scrollIndicatorInsets = self.sv.contentInset
+            }
+        }
     }
 
     fileprivate func svByConstraintsSubView() {
@@ -179,9 +197,22 @@ class ScrollViewVC : UIViewController {
 
     fileprivate func svByConstraints() {
         let sv = UIScrollView()
+
         // sv.alwaysBounceHorizontal = true
+
+        /// 示例_ContentInset_A
+        do {
+            if isE_ContentInset_A {
+                sv.contentInset = UIEdgeInsetsMake(20, 0, 0, 0)
+                sv.scrollIndicatorInsets = sv.contentInset
+            } else {
+                self.sv = sv
+            }
+        }
+
         sv.backgroundColor = .white
         sv.translatesAutoresizingMaskIntoConstraints = false
+
         self.view.addSubview(sv)
         var con = [NSLayoutConstraint]()
         con.append(contentsOf:

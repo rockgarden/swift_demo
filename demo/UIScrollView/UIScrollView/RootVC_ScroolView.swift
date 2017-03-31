@@ -12,7 +12,7 @@ class RootVC_ScroolView: UITableViewController {
             case 0:
                 let vcClass = classes[id]
                 let vcInstance = vcClass.init() as! ScrollViewVC
-                vcInstance.which = 2
+                vcInstance.which = 1
                 vcInstance.subWhich = 4
                 vcInstance.title = vcInstance.description
                 self.navigationController?.pushViewController(vcInstance, animated: true)
