@@ -46,6 +46,7 @@
 		C27C6A3A1E654F700066B3C8 /* MyCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C27C6A381E654F700066B3C8 /* MyCell.xib */; };
 		C27C6A3B1E654F700066B3C8 /* MyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C27C6A391E654F700066B3C8 /* MyCell.swift */; };
 		C2A972AB1E14DA5A0037A0EA /* readme.rtf in Resources */ = {isa = PBXBuildFile; fileRef = C2A972AA1E14DA5A0037A0EA /* readme.rtf */; };
+		C2AA12011E8E3A8700037FE0 /* CustomLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2AA12001E8E3A8700037FE0 /* CustomLayout.swift */; };
 		C2AA3B0D1E110ADE00C9E438 /* PhotoManagerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2AA3B091E110ADE00C9E438 /* PhotoManagerView.swift */; };
 		C2AA3B0E1E110ADE00C9E438 /* PhotoManagerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C2AA3B0A1E110ADE00C9E438 /* PhotoManagerView.xib */; };
 		C2AA3B0F1E110ADE00C9E438 /* PhotoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2AA3B0B1E110ADE00C9E438 /* PhotoCell.swift */; };
@@ -157,6 +158,7 @@
 		C27C6A381E654F700066B3C8 /* MyCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MyCell.xib; sourceTree = "<group>"; };
 		C27C6A391E654F700066B3C8 /* MyCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyCell.swift; sourceTree = "<group>"; };
 		C2A972AA1E14DA5A0037A0EA /* readme.rtf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.rtf; path = readme.rtf; sourceTree = "<group>"; };
+		C2AA12001E8E3A8700037FE0 /* CustomLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomLayout.swift; sourceTree = "<group>"; };
 		C2AA3B091E110ADE00C9E438 /* PhotoManagerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoManagerView.swift; sourceTree = "<group>"; };
 		C2AA3B0A1E110ADE00C9E438 /* PhotoManagerView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PhotoManagerView.xib; sourceTree = "<group>"; };
 		C2AA3B0B1E110ADE00C9E438 /* PhotoCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoCell.swift; sourceTree = "<group>"; };
@@ -286,6 +288,7 @@
 			isa = PBXGroup;
 			children = (
 				C2A972AA1E14DA5A0037A0EA /* readme.rtf */,
+				C2AA12001E8E3A8700037FE0 /* CustomLayout.swift */,
 				44966FF91E8AB4F400222F3E /* ViewController.swift */,
 				44DCE4811E8936C3000597B0 /* LineLayout.swift */,
 				44966FEE1E8AA9C000222F3E /* LCWaterfallLayout.swift */,
@@ -562,6 +565,7 @@
 				443F52AC1E8D45A500C8E029 /* ASCollectionViewParallaxCell.swift in Sources */,
 				442A3C841E1297E200DB8E17 /* MyFlowLayoutCell.swift in Sources */,
 				44966FE71E8AA40000222F3E /* ELWaterFlowLayout.swift in Sources */,
+				C2AA12011E8E3A8700037FE0 /* CustomLayout.swift in Sources */,
 				44C3DEC21E128B3E00118938 /* CellBackgroundLayeringVC.swift in Sources */,
 				44226FCE1E857549003734D3 /* HorizontalFloatingHeaderLayout.swift in Sources */,
 				C202C0041E13AEEC00CEC12A /* CameraCell.swift in Sources */,

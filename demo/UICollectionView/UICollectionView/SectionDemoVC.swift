@@ -46,7 +46,7 @@ class SectionDemoVC: UIViewController, UICollectionViewDelegate, UICollectionVie
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        // 若不用 StoryBoard 中的 View 就不用关闭 automaticallyAdjust
         //automaticallyAdjustsScrollViewInsets = false
 
         view.addSubview(collectionView)
@@ -519,15 +519,6 @@ fileprivate extension UIImage {
         UIGraphicsEndImageContext()
         self.init(cgImage: (image?.cgImage)!)
         //self(cgImage: (image?.cgImage!)!)
-    }
-
-    convenience init(color: UIColor, rect: CGRect) {
-        UIGraphicsBeginImageContextWithOptions(rect.size, false, 0)
-        color.setFill()
-        UIRectFill(rect)
-        let image = UIGraphicsGetImageFromCurrentImageContext()
-        UIGraphicsEndImageContext()
-        self.init(cgImage: (image?.cgImage!)!)
     }
 
     class func scaleTo(image: UIImage, w: CGFloat, h: CGFloat) -> UIImage {
