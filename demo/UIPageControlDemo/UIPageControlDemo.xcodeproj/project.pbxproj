@@ -12,7 +12,7 @@
 		442C40E11E6160FC009E6609 /* UIPageVCJumpDemo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 442C40E01E6160FC009E6609 /* UIPageVCJumpDemo.swift */; };
 		4494B6B21E604F5200ADE0BE /* UIPageViewControllerDemo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4494B6B11E604F5200ADE0BE /* UIPageViewControllerDemo.swift */; };
 		4494B6B51E60502200ADE0BE /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4494B6B31E60502200ADE0BE /* Person.swift */; };
-		4494B6B81E6050AA00ADE0BE /* UIPageDemo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4494B6B71E6050AA00ADE0BE /* UIPageDemo.swift */; };
+		4494B6B81E6050AA00ADE0BE /* RootVC_PageControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4494B6B71E6050AA00ADE0BE /* RootVC_PageControl.swift */; };
 		4494B6BD1E606A3E00ADE0BE /* Person.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4494B6BC1E606A3E00ADE0BE /* Person.xib */; };
 		C2FA16E91E6013F3000366B3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2FA16E81E6013F3000366B3 /* AppDelegate.swift */; };
 		C2FA16EB1E6013F3000366B3 /* UIPageControlDemo.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2FA16EA1E6013F3000366B3 /* UIPageControlDemo.swift */; };
@@ -32,7 +32,7 @@
 		442C40E01E6160FC009E6609 /* UIPageVCJumpDemo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIPageVCJumpDemo.swift; sourceTree = "<group>"; };
 		4494B6B11E604F5200ADE0BE /* UIPageViewControllerDemo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIPageViewControllerDemo.swift; sourceTree = "<group>"; };
 		4494B6B31E60502200ADE0BE /* Person.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Person.swift; sourceTree = "<group>"; };
-		4494B6B71E6050AA00ADE0BE /* UIPageDemo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIPageDemo.swift; sourceTree = "<group>"; };
+		4494B6B71E6050AA00ADE0BE /* RootVC_PageControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootVC_PageControl.swift; sourceTree = "<group>"; };
 		4494B6BC1E606A3E00ADE0BE /* Person.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Person.xib; sourceTree = "<group>"; };
 		C2FA16E51E6013F2000366B3 /* UIPageControlDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UIPageControlDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C2FA16E81E6013F3000366B3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -80,7 +80,7 @@
 			isa = PBXGroup;
 			children = (
 				C2FA16E81E6013F3000366B3 /* AppDelegate.swift */,
-				4494B6B71E6050AA00ADE0BE /* UIPageDemo.swift */,
+				4494B6B71E6050AA00ADE0BE /* RootVC_PageControl.swift */,
 				C2FA16EA1E6013F3000366B3 /* UIPageControlDemo.swift */,
 				4494B6B11E604F5200ADE0BE /* UIPageViewControllerDemo.swift */,
 				442C40E01E6160FC009E6609 /* UIPageVCJumpDemo.swift */,
@@ -193,7 +193,7 @@
 				C2FA17021E602118000366B3 /* MUPageControl.swift in Sources */,
 				C2FA16E91E6013F3000366B3 /* AppDelegate.swift in Sources */,
 				C2FA17011E602118000366B3 /* MUCycleScrollView.swift in Sources */,
-				4494B6B81E6050AA00ADE0BE /* UIPageDemo.swift in Sources */,
+				4494B6B81E6050AA00ADE0BE /* RootVC_PageControl.swift in Sources */,
 				C2FA17001E602118000366B3 /* MUCycleCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

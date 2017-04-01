@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		440662411E8BD2EF00FF8108 /* RootVC_ScroolView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 440662401E8BD2EF00FF8108 /* RootVC_ScroolView.swift */; };
+		440662411E8BD2EF00FF8108 /* RootVC_ScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 440662401E8BD2EF00FF8108 /* RootVC_ScrollView.swift */; };
 		440662431E8BD49300FF8108 /* ScrollViewVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 440662421E8BD49300FF8108 /* ScrollViewVC.swift */; };
 		4420AB831DF19D8F005D280A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4420AB821DF19D8F005D280A /* AppDelegate.swift */; };
 		4420AB851DF19D8F005D280A /* TwoWayScrollViewVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4420AB841DF19D8F005D280A /* TwoWayScrollViewVC.swift */; };
@@ -21,13 +21,18 @@
 		443F52B11E8E9E6500C8E029 /* ContentSizeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 443F52B01E8E9E6500C8E029 /* ContentSizeVC.swift */; };
 		446C03871E87F7DC001622C6 /* ParallaxHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 446C03861E87F7DC001622C6 /* ParallaxHeader.swift */; };
 		446C03891E87F9E3001622C6 /* ParallaxHeaderVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 446C03881E87F9E3001622C6 /* ParallaxHeaderVC.swift */; };
+		4471DE011E8FD80700DBF25C /* CuriousFrog_500_3_0.png in Resources */ = {isa = PBXBuildFile; fileRef = 4471DDF81E8FD80700DBF25C /* CuriousFrog_500_3_0.png */; };
+		4471DE021E8FD80700DBF25C /* CuriousFrog_500_3_1.png in Resources */ = {isa = PBXBuildFile; fileRef = 4471DDF91E8FD80700DBF25C /* CuriousFrog_500_3_1.png */; };
+		4471DE041E8FD80700DBF25C /* CuriousFrog_500_4_0.png in Resources */ = {isa = PBXBuildFile; fileRef = 4471DDFB1E8FD80700DBF25C /* CuriousFrog_500_4_0.png */; };
+		4471DE051E8FD80700DBF25C /* CuriousFrog_500_4_1.png in Resources */ = {isa = PBXBuildFile; fileRef = 4471DDFC1E8FD80700DBF25C /* CuriousFrog_500_4_1.png */; };
 		44A30FD51E8B722F00215421 /* BringSubviewVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44A30FD41E8B722F00215421 /* BringSubviewVC.swift */; };
 		44A30FDB1E8B723D00215421 /* PhotoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 44A30FD71E8B723D00215421 /* PhotoCell.xib */; };
 		44A30FDD1E8B723D00215421 /* DetailView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 44A30FD91E8B723D00215421 /* DetailView.xib */; };
+		44BEB3741E8FCF65001D5702 /* ScrollWithTilingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44BEB3731E8FCF65001D5702 /* ScrollWithTilingVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		440662401E8BD2EF00FF8108 /* RootVC_ScroolView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootVC_ScroolView.swift; sourceTree = "<group>"; };
+		440662401E8BD2EF00FF8108 /* RootVC_ScrollView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootVC_ScrollView.swift; sourceTree = "<group>"; };
 		440662421E8BD49300FF8108 /* ScrollViewVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScrollViewVC.swift; sourceTree = "<group>"; };
 		4420AB7F1DF19D8F005D280A /* UIScrollView.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UIScrollView.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4420AB821DF19D8F005D280A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -43,9 +48,14 @@
 		443F52B01E8E9E6500C8E029 /* ContentSizeVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentSizeVC.swift; sourceTree = "<group>"; };
 		446C03861E87F7DC001622C6 /* ParallaxHeader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParallaxHeader.swift; sourceTree = "<group>"; };
 		446C03881E87F9E3001622C6 /* ParallaxHeaderVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParallaxHeaderVC.swift; sourceTree = "<group>"; };
+		4471DDF81E8FD80700DBF25C /* CuriousFrog_500_3_0.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = CuriousFrog_500_3_0.png; sourceTree = "<group>"; };
+		4471DDF91E8FD80700DBF25C /* CuriousFrog_500_3_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = CuriousFrog_500_3_1.png; sourceTree = "<group>"; };
+		4471DDFB1E8FD80700DBF25C /* CuriousFrog_500_4_0.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = CuriousFrog_500_4_0.png; sourceTree = "<group>"; };
+		4471DDFC1E8FD80700DBF25C /* CuriousFrog_500_4_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = CuriousFrog_500_4_1.png; sourceTree = "<group>"; };
 		44A30FD41E8B722F00215421 /* BringSubviewVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BringSubviewVC.swift; sourceTree = "<group>"; };
 		44A30FD71E8B723D00215421 /* PhotoCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PhotoCell.xib; sourceTree = "<group>"; };
 		44A30FD91E8B723D00215421 /* DetailView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DetailView.xib; sourceTree = "<group>"; };
+		44BEB3731E8FCF65001D5702 /* ScrollWithTilingVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScrollWithTilingVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,10 +92,11 @@
 			isa = PBXGroup;
 			children = (
 				4420AB821DF19D8F005D280A /* AppDelegate.swift */,
-				440662401E8BD2EF00FF8108 /* RootVC_ScroolView.swift */,
+				440662401E8BD2EF00FF8108 /* RootVC_ScrollView.swift */,
 				4420AB861DF19D8F005D280A /* Main.storyboard */,
 				440662421E8BD49300FF8108 /* ScrollViewVC.swift */,
 				443F52B01E8E9E6500C8E029 /* ContentSizeVC.swift */,
+				44BEB3731E8FCF65001D5702 /* ScrollWithTilingVC.swift */,
 				4420AB841DF19D8F005D280A /* TwoWayScrollViewVC.swift */,
 				446C03881E87F9E3001622C6 /* ParallaxHeaderVC.swift */,
 				442C40E21E630165009E6609 /* DragInSV.swift */,
@@ -98,9 +109,21 @@
 			path = UIScrollView;
 			sourceTree = "<group>";
 		};
+		4471DDF71E8FD80700DBF25C /* TilePics */ = {
+			isa = PBXGroup;
+			children = (
+				4471DDF81E8FD80700DBF25C /* CuriousFrog_500_3_0.png */,
+				4471DDF91E8FD80700DBF25C /* CuriousFrog_500_3_1.png */,
+				4471DDFB1E8FD80700DBF25C /* CuriousFrog_500_4_0.png */,
+				4471DDFC1E8FD80700DBF25C /* CuriousFrog_500_4_1.png */,
+			);
+			path = TilePics;
+			sourceTree = "<group>";
+		};
 		44A30FD31E8B671700215421 /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
+				4471DDF71E8FD80700DBF25C /* TilePics */,
 				4420AB891DF19D8F005D280A /* Assets.xcassets */,
 				4420AB8B1DF19D8F005D280A /* LaunchScreen.storyboard */,
 				4420AB8E1DF19D8F005D280A /* Info.plist */,
@@ -168,11 +191,15 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4471DE021E8FD80700DBF25C /* CuriousFrog_500_3_1.png in Resources */,
 				4420AB8D1DF19D8F005D280A /* LaunchScreen.storyboard in Resources */,
+				4471DE041E8FD80700DBF25C /* CuriousFrog_500_4_0.png in Resources */,
 				4420AB8A1DF19D8F005D280A /* Assets.xcassets in Resources */,
 				4420AB971DF1A283005D280A /* readme.rtf in Resources */,
 				44A30FDD1E8B723D00215421 /* DetailView.xib in Resources */,
 				4420AB881DF19D8F005D280A /* Main.storyboard in Resources */,
+				4471DE011E8FD80700DBF25C /* CuriousFrog_500_3_0.png in Resources */,
+				4471DE051E8FD80700DBF25C /* CuriousFrog_500_4_1.png in Resources */,
 				44A30FDB1E8B723D00215421 /* PhotoCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -190,9 +217,10 @@
 				446C03871E87F7DC001622C6 /* ParallaxHeader.swift in Sources */,
 				443F52B11E8E9E6500C8E029 /* ContentSizeVC.swift in Sources */,
 				446C03891E87F9E3001622C6 /* ParallaxHeaderVC.swift in Sources */,
+				44BEB3741E8FCF65001D5702 /* ScrollWithTilingVC.swift in Sources */,
 				4420AB851DF19D8F005D280A /* TwoWayScrollViewVC.swift in Sources */,
 				442C40E31E630165009E6609 /* DragInSV.swift in Sources */,
-				440662411E8BD2EF00FF8108 /* RootVC_ScroolView.swift in Sources */,
+				440662411E8BD2EF00FF8108 /* RootVC_ScrollView.swift in Sources */,
 				4420AB831DF19D8F005D280A /* AppDelegate.swift in Sources */,
 				44226FC51E85687F003734D3 /* SeamlessScrollingHeaderViewController.swift in Sources */,
 			);

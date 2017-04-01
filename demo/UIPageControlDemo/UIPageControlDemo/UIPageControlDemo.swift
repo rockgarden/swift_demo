@@ -8,7 +8,7 @@
 
 import UIKit
 
-class UIPageControlDemo : UIViewController, UIScrollViewDelegate {
+class UIPageControlDemo : UIViewController {
     @IBOutlet var sv : UIScrollView!
     @IBOutlet var pager : UIPageControl!
     let colors : [UIColor] = [.purple, .green, .yellow, .blue]
@@ -18,48 +18,26 @@ class UIPageControlDemo : UIViewController, UIScrollViewDelegate {
     var didLayout = false
     
     override func viewDidLoad() {
+        /// for MUCycleScrollView data
         for i in 0 ..< colors.count {
             let i = UIImage(color: colors[i], rect: CGRect(0, 0, view.bounds.width, view.bounds.height))
             images.append(i)
         }
         demoMU()
+
+        /// 在 StoryBoard 中关闭 Adjusts ScrollView Insets
         pager.numberOfPages = colors.count
     }
     
     override func viewDidLayoutSubviews() {
-        if !self.didLayout {
-            self.didLayout = true
-            let sz = self.sv.bounds.size
-            for i in 0 ..< colors.count {
-                let v = UIView(frame:CGRect(sz.width*CGFloat(i), 0, sz.width, sz.height))
-                v.backgroundColor = colors[i]
-                self.sv.addSubview(v)
-            }
-            self.sv.contentSize = CGSize(CGFloat(colors.count)*sz.width,sz.height)
-        }
+        setContentSize()
     }
-    
-    
-    func scrollViewWillBeginDecelerating(_ scrollView: UIScrollView) {
-        print("begin")
-    }
-    
-    func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
-        print("end")
-        let x = self.sv.contentOffset.x
-        let w = self.sv.bounds.size.width
-        let p = self.pager.currentPage
-        debugPrint("x:",x,"w:",w,"p:",p)
-        self.pager.currentPage = Int(x/w)
-    }
-    
-    @IBAction func userDidPage(_ sender: Any?) {
-        let p = self.pager.currentPage
-        let w = self.sv.bounds.size.width
-        self.sv.setContentOffset(CGPoint(CGFloat(p)*w,0), animated:true)
-    }
+}
 
-    func demoMU() {
+
+// MARK: - MUCycleScrollView Demo
+extension UIPageControlDemo {
+    fileprivate func demoMU() {
         let roundCycleView = MUCycleScrollView()
         roundCycleView.translatesAutoresizingMaskIntoConstraints = false
         self.view.addSubview(roundCycleView)
@@ -92,6 +70,43 @@ class UIPageControlDemo : UIViewController, UIScrollViewDelegate {
     
     func didSelectItem(index: Int) -> Void {
         print("index\(index)")
+    }
+}
+
+
+// MARK: - PageControl Demo
+extension UIPageControlDemo: UIScrollViewDelegate {
+
+    fileprivate func setContentSize() {
+        if !self.didLayout {
+            self.didLayout = true
+            let sz = self.sv.bounds.size
+            for i in 0 ..< colors.count {
+                let v = UIView(frame:CGRect(sz.width*CGFloat(i), 0, sz.width, sz.height))
+                v.backgroundColor = colors[i]
+                self.sv.addSubview(v)
+            }
+            self.sv.contentSize = CGSize(CGFloat(colors.count)*sz.width,sz.height)
+        }
+    }
+
+    func scrollViewWillBeginDecelerating(_ scrollView: UIScrollView) {
+        print("begin")
+    }
+
+    func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
+        print("end")
+        let x = self.sv.contentOffset.x
+        let w = self.sv.bounds.size.width
+        let p = self.pager.currentPage
+        debugPrint("x:",x,"w:",w,"p:",p)
+        self.pager.currentPage = Int(x/w)
+    }
+
+    @IBAction func userDidPage(_ sender: Any?) {
+        let p = self.pager.currentPage
+        let w = self.sv.bounds.size.width
+        self.sv.setContentOffset(CGPoint(CGFloat(p)*w,0), animated:true)
     }
 }
 

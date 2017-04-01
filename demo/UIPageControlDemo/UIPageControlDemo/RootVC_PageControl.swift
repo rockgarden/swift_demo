@@ -8,7 +8,7 @@
 
 import UIKit
 
-class UIPageDemo: UITableViewController {
+class RootVC_PageControl: UITableViewController {
 
     let pep : [String] = ["Manny", "Moe", "Jack"]
 
@@ -41,7 +41,7 @@ class UIPageDemo: UITableViewController {
 }
 
 
-extension UIPageDemo: UIPageViewControllerDataSource {
+extension RootVC_PageControl: UIPageViewControllerDataSource {
 
     func pageViewController(_ pvc: UIPageViewController, viewControllerAfter vc: UIViewController) -> UIViewController? {
         let boy = (vc as! Person).boy
