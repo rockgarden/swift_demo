@@ -170,9 +170,6 @@
       location = "group:demo/transform/transform.xcodeproj">
    </FileRef>
    <FileRef
-      location = "group:demo/Init/Init.xcodeproj">
-   </FileRef>
-   <FileRef
       location = "group:demo/UINavigationController/UINavigationController.xcodeproj">
    </FileRef>
    <FileRef
