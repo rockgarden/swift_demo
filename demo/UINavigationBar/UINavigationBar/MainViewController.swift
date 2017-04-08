@@ -52,7 +52,6 @@ class MainViewController: UITableViewController, UIActionSheetDelegate {
             break
         }
         
-        // Ask the system to re-query our -preferredStatusBarStyle.
         self.setNeedsStatusBarAppearanceUpdate()
     }
     

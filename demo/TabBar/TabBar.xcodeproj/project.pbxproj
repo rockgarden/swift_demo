@@ -103,11 +103,8 @@
 			isa = PBXGroup;
 			children = (
 				449789C41D6DD33200A607A9 /* AppDelegate.swift */,
-				449789C81D6DD33200A607A9 /* Main.storyboard */,
-				449E5D7F1E13E9CF009F2915 /* TabBarVC.swift */,
+				449D1CA91E9929ED000C7446 /* tabbedInterface */,
 				449789C61D6DD33200A607A9 /* SubVC.swift */,
-				449718171DBB608A009C1868 /* FirstVC.swift */,
-				449718191DBB60DB009C1868 /* SecondVC.swift */,
 				449718251DBBA0AF009C1868 /* exampleNoController */,
 				449718241DBBA057009C1868 /* exampleCodeInit */,
 				449718231DBBA01B009C1868 /* Unwind */,
@@ -116,6 +113,17 @@
 				449789D01D6DD33200A607A9 /* Info.plist */,
 			);
 			path = TabBar;
+			sourceTree = "<group>";
+		};
+		449D1CA91E9929ED000C7446 /* tabbedInterface */ = {
+			isa = PBXGroup;
+			children = (
+				449789C81D6DD33200A607A9 /* Main.storyboard */,
+				449E5D7F1E13E9CF009F2915 /* TabBarVC.swift */,
+				449718171DBB608A009C1868 /* FirstVC.swift */,
+				449718191DBB60DB009C1868 /* SecondVC.swift */,
+			);
+			name = tabbedInterface;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
