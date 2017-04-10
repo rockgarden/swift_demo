@@ -7,6 +7,7 @@ import UIKit
 import AVFoundation
 import AVKit
 
+/// AVKit Composition
 class AVPlayerLayerVC: UIViewController {
     var synchLayer : AVSynchronizedLayer!
 

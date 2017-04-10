@@ -7,6 +7,7 @@ import UIKit
 import AVFoundation
 import AVKit
 
+/// Test for AVPlayerLayer
 class PlayerLayerVC: UIViewController {
 
     @IBOutlet var player : AVPlayer!
