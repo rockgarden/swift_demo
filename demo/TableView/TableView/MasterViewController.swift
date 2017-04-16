@@ -70,7 +70,19 @@ class MasterViewController: UITableViewController {
     //    lab.highlightedTextColor = UIColor.redColor()
     //    cell.contentView.addSubview(lab)
     //    }
-    
+
+    /*
+     let viewTag = 101
+     var lab: UILabel!
+     if let v = v.viewWithTag(viewTag) as? UILabel{
+     lab = v
+     }else{
+     lab = UILabel(frame: v.bounds)
+     lab.tag = 101
+     v.addSubview(lab)
+     }
+     */
+
     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
         // Return false if you do not want the specified item to be editable.
         return true

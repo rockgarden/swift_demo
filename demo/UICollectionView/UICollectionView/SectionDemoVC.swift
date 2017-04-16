@@ -57,6 +57,8 @@ class SectionDemoVC: UIViewController, UICollectionViewDelegate, UICollectionVie
             NSLayoutConstraint.constraints(
                 withVisualFormat: "V:|-(0)-[cv]-(0)-|", options: [], metrics: nil, views: views),
             ].joined().map { $0 })
+
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.edit, target: self, action: #selector(self.rightBarBtnItemAction(sender:)))
     }
 
     // MARK: Navigation
@@ -73,6 +75,16 @@ class SectionDemoVC: UIViewController, UICollectionViewDelegate, UICollectionVie
     //        }
     //      }
     //  }
+
+    fileprivate var cellCanDel = false
+    func rightBarBtnItemAction(sender: Any?){
+        cellCanDel = !cellCanDel
+        for cell in collectionView.visibleCells{
+            if cell is PaperCell{
+                (cell as! PaperCell).showDel(cellCanDel)
+            }
+        }
+    }
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "MasterToDetail" {
@@ -102,13 +114,15 @@ class SectionDemoVC: UIViewController, UICollectionViewDelegate, UICollectionVie
     }
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellReuseIdentifier, for: indexPath) as! PaperCell
+
+        cell.delegate = self
 
         // Configure the cell
         if let paper = papersDataSource.paperForItemAtIndexPath(indexPath) {
             cell.paper = paper
         }
+        cell.showDel(cellCanDel)
         /// 若从网络下载图片,则可在完成后调用
         //collectionView.reloadItems(at: [indexPath])
         return cell
@@ -150,6 +164,26 @@ class SectionDemoVC: UIViewController, UICollectionViewDelegate, UICollectionVie
         }
     }
 
+    func collectionView(_ collectionView: UICollectionView, canMoveItemAt indexPath: IndexPath) -> Bool {
+        return true
+    }
+
+    func collectionView(_ collectionView: UICollectionView, moveItemAt sourceIndexPath: IndexPath, to destinationIndexPath: IndexPath) {
+        debugPrint("\(sourceIndexPath) \(destinationIndexPath)")
+    }
+
+}
+
+extension SectionDemoVC: PaperCellDelegate {
+    func deleteActionByCell(cell: PaperCell) {
+        if let indexPath = collectionView.indexPath(for: cell){
+            collectionView.performBatchUpdates({ [weak self] in
+                self?.papersDataSource.deleteItemsAtIndexPaths([indexPath])
+                self?.collectionView.deleteItems(at: [indexPath])
+                }, completion: { (res: Bool) in
+            })
+        }
+    }
 }
 
 
@@ -330,6 +364,9 @@ class Paper {
 
 
 // MARK: - Cell View
+protocol PaperCellDelegate: NSObjectProtocol {
+    func deleteActionByCell(cell: PaperCell)
+}
 class PaperCell: UICollectionViewCell {
     /// willSet and didSet observers are not called when a property is first initialized. They are only called when the property’s value is set outside of an initialization context. 也就是说 initialization 时不调用!!! 只有在新的值被设定后立即调用
     /*:
@@ -359,6 +396,18 @@ class PaperCell: UICollectionViewCell {
         v.translatesAutoresizingMaskIntoConstraints = false
         return v
     }()
+
+    fileprivate var delButton: UIButton = {
+        let v = UIButton()
+        v.translatesAutoresizingMaskIntoConstraints = false
+        v.setTitle("X", for: .normal)
+        v.setTitleColor(.blue, for: .normal)
+        v.setTitleColor(.lightGray, for: .highlighted)
+        v.isHidden = true
+        return v
+    }()
+
+    var delegate: PaperCellDelegate?
 
     var paper: Paper? {
         didSet {
@@ -393,6 +442,9 @@ class PaperCell: UICollectionViewCell {
         clipsToBounds = true
         backgroundColor = UIColor.white
 
+        // FIXME: 不加self无法找到Action
+        delButton.addTarget(self, action: #selector(btnAction(_:)), for: .touchUpInside)
+        
         setupViews()
     }
 
@@ -407,10 +459,11 @@ class PaperCell: UICollectionViewCell {
         contentView.addSubview(paperImageView)
         contentView.addSubview(gradientView)
         contentView.addSubview(captionLabel)
+        contentView.addSubview(delButton)
 
         debugPrint(contentView.bounds)
 
-        let views = ["piv":paperImageView, "gv":gradientView, "cl":captionLabel] as [String : Any]
+        let views = ["piv":paperImageView, "gv":gradientView, "cl":captionLabel, "db": delButton] as [String : Any]
         let metrics = ["maxW": maxW]
         NSLayoutConstraint.activate([
             NSLayoutConstraint.constraints(
@@ -426,7 +479,25 @@ class PaperCell: UICollectionViewCell {
                 withVisualFormat: "H:|-(0)-[cl]-(0)-|", options: [], metrics: nil, views: views),
             NSLayoutConstraint.constraints(
                 withVisualFormat: "V:[cl(20)]-(0)-|", options: [], metrics: nil, views: views),
+            NSLayoutConstraint.constraints(
+                withVisualFormat: "H:[db(20)]-(0)-|", options: [], metrics: nil, views: views),
+            NSLayoutConstraint.constraints(
+                withVisualFormat: "V:|-(0)-[db(20)]", options: [], metrics: nil, views: views),
             ].joined().map { $0 })
+    }
+
+    @objc fileprivate func btnAction(_ sender: Any) {
+        delegate?.deleteActionByCell(cell: self)
+    }
+
+    /// 由数据驱动 Cell 是否允许删除
+    func showDel(_ canDel: Bool){
+        if canDel == true {
+            // 编辑模式，显示删除
+            delButton.isHidden = false
+        }else {
+            delButton.isHidden = true
+        }
     }
 
     // TODO: 能否解决 复用时 没有 新的 image 造成的图片重复显示？
