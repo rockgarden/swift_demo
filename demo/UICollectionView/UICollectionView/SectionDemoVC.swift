@@ -116,13 +116,15 @@ class SectionDemoVC: UIViewController, UICollectionViewDelegate, UICollectionVie
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellReuseIdentifier, for: indexPath) as! PaperCell
 
+        /// Cell class delegate
         cell.delegate = self
 
-        // Configure the cell
+        /// Configure the cell
         if let paper = papersDataSource.paperForItemAtIndexPath(indexPath) {
             cell.paper = paper
         }
         cell.showDel(cellCanDel)
+
         /// 若从网络下载图片,则可在完成后调用
         //collectionView.reloadItems(at: [indexPath])
         return cell
@@ -174,6 +176,7 @@ class SectionDemoVC: UIViewController, UICollectionViewDelegate, UICollectionVie
 
 }
 
+// MARK: Delete Item
 extension SectionDemoVC: PaperCellDelegate {
     func deleteActionByCell(cell: PaperCell) {
         if let indexPath = collectionView.indexPath(for: cell){
