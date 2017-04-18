@@ -11,10 +11,20 @@ class FlowLayoutTestVC: UICollectionViewController {
         }
         return arr
     }()
-    
+
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder:aDecoder)
+        self.useLayoutToLayoutNavigationTransitions = true
+    }
+
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        if let flow = self.collectionViewLayout as? UICollectionViewFlowLayout {
+            flow.headerReferenceSize = CGSize(width: 50,height: 50)
+            flow.sectionInset = UIEdgeInsetsMake(10, 10, 10, 10)
+        }
+        self.collectionView!.reloadData()
+        collectionView?.register(FlowLayoutTestCell.self, forCellWithReuseIdentifier: "FlowLayoutTestCellID")
         collectionView?.backgroundColor = UIColor.red //deleted ()
         print(cellHeight)
         // 瀑布流
@@ -28,7 +38,8 @@ class FlowLayoutTestVC: UICollectionViewController {
     func setLineLayout() {
         let layout = LineLayout()
         layout.itemSize = CGSize(width: 100.0, height: 100.0)
-        collectionView?.collectionViewLayout = layout
+        //collectionView?.collectionViewLayout = layout
+        self.collectionView = UICollectionView(frame: view.frame, collectionViewLayout: layout)
     }
 
 
@@ -53,7 +64,9 @@ extension FlowLayoutTestVC: WaterFallLayoutDelegate {
     }
 }
 
+
 extension FlowLayoutTestVC {
+
     override func numberOfSections(in collectionView: UICollectionView) -> Int {
         return 1
     }
@@ -61,8 +74,9 @@ extension FlowLayoutTestVC {
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return cellCount
     }
+
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cellID", for: indexPath)
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "FlowLayoutTestCellID", for: indexPath) as! FlowLayoutTestCell
         return cell
     }
 
@@ -82,7 +96,41 @@ extension FlowLayoutTestVC {
             }, completion: nil)
         }
     }
-    
-    
+
+}
+
+
+internal final class FlowLayoutTestCell: UICollectionViewCell {
+
+    // MARK: - Internal Properties
+    internal var colorView: UIView!
+    internal var label: UILabel!
+
+    // MARK: - Object Lifecycle
+    internal override init(frame: CGRect) {
+        super.init(frame: frame)
+
+        self.colorView = UIView()
+        self.label = UILabel()
+
+        self.contentView.addSubview(self.colorView)
+        self.contentView.addSubview(self.label)
+    }
+
+    internal required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+
+    // MARK: - Layout
+    internal override func layoutSubviews() {
+        super.layoutSubviews()
+
+        self.colorView.frame = CGRect(origin: CGPoint.zero, size: self.contentView.bounds.size)
+        self.label.frame = CGRect(origin: CGPoint.zero, size: self.contentView.bounds.size)
+    }
+
+    internal override class var requiresConstraintBasedLayout: Bool {
+        return false
+    }
 }
 

@@ -19,7 +19,8 @@ class Main_UICollectionView: UITableViewController {
                 let pvc = RetractableFirstItemLayoutVC()
                 self.show(pvc, sender: nil)
             case 12 :
-                let pvc = FlowLayoutTestVC()
+                let layout = LineLayout()
+                let pvc = FlowLayoutTestVC(collectionViewLayout: layout)
                 self.show(pvc, sender: nil)
             default:
                 break

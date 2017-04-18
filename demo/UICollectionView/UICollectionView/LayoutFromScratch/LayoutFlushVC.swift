@@ -1,7 +1,7 @@
 
 import UIKit
 
-class LayoutFlushVC : UICollectionViewController {
+class LayoutFlushVC: UICollectionViewController {
 
     required init?(coder aDecoder: NSCoder) {
         super.init(coder:aDecoder)
