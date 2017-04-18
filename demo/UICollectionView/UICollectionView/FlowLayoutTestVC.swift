@@ -1,13 +1,5 @@
-//
-//  ViewController.swift
-//  ColloectionLayout
-//
-//  Created by jasnig on 16/6/10.
-//  Copyright © 2016年 ZeroJ. All rights reserved.
-//
 
 import UIKit
-
 
 class FlowLayoutTestVC: UICollectionViewController {
     var cellCount = 50
@@ -19,6 +11,7 @@ class FlowLayoutTestVC: UICollectionViewController {
         }
         return arr
     }()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -50,7 +43,6 @@ class FlowLayoutTestVC: UICollectionViewController {
         layout.delegate = self
         layout.numberOfColums = 4
         collectionView?.collectionViewLayout = layout
-
     }
 
 }
