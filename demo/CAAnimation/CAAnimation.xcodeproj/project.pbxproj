@@ -18,6 +18,8 @@
 		44E665861E670D2500B6A02F /* cell-image.png in Resources */ = {isa = PBXBuildFile; fileRef = 44E665831E670D2500B6A02F /* cell-image.png */; };
 		44E665871E670D2500B6A02F /* RippleEffectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44E665841E670D2500B6A02F /* RippleEffectView.swift */; };
 		44E665881E670D2500B6A02F /* RippleVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44E665851E670D2500B6A02F /* RippleVC.swift */; };
+		C2FDFD161EA72F3D0063ABA8 /* Main_CAAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2FDFD151EA72F3D0063ABA8 /* Main_CAAnimation.swift */; };
+		C2FDFD181EA730280063ABA8 /* CAEmitterLayerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2FDFD171EA730280063ABA8 /* CAEmitterLayerVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,6 +37,8 @@
 		44E665831E670D2500B6A02F /* cell-image.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "cell-image.png"; sourceTree = "<group>"; };
 		44E665841E670D2500B6A02F /* RippleEffectView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RippleEffectView.swift; sourceTree = "<group>"; };
 		44E665851E670D2500B6A02F /* RippleVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RippleVC.swift; sourceTree = "<group>"; };
+		C2FDFD151EA72F3D0063ABA8 /* Main_CAAnimation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Main_CAAnimation.swift; sourceTree = "<group>"; };
+		C2FDFD171EA730280063ABA8 /* CAEmitterLayerVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CAEmitterLayerVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,11 +73,13 @@
 			isa = PBXGroup;
 			children = (
 				44E6657A1E670D1200B6A02F /* AppDelegate.swift */,
+				C2FDFD151EA72F3D0063ABA8 /* Main_CAAnimation.swift */,
 				44E665751E670CCB00B6A02F /* Main.storyboard */,
 				44E665781E670D1200B6A02F /* FrozenAnimationVC.swift */,
 				44E665791E670D1200B6A02F /* AnimateWithDurationVC.swift */,
 				44E6657B1E670D1200B6A02F /* CancelAnimation.swift */,
 				44E6657C1E670D1200B6A02F /* ExpandableByConstraint.swift */,
+				C2FDFD171EA730280063ABA8 /* CAEmitterLayerVC.swift */,
 				44E6656A1E670CA300B6A02F /* Assets.xcassets */,
 				44E6656C1E670CA300B6A02F /* LaunchScreen.storyboard */,
 				44E6656F1E670CA300B6A02F /* Info.plist */,
@@ -168,7 +174,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				44E665881E670D2500B6A02F /* RippleVC.swift in Sources */,
+				C2FDFD161EA72F3D0063ABA8 /* Main_CAAnimation.swift in Sources */,
 				44E6657F1E670D1200B6A02F /* AppDelegate.swift in Sources */,
+				C2FDFD181EA730280063ABA8 /* CAEmitterLayerVC.swift in Sources */,
 				44E6657E1E670D1200B6A02F /* AnimateWithDurationVC.swift in Sources */,
 				44E665801E670D1200B6A02F /* CancelAnimation.swift in Sources */,
 				44E665811E670D1200B6A02F /* ExpandableByConstraint.swift in Sources */,
@@ -289,8 +297,9 @@
 				CLANG_ENABLE_MODULES = YES;
 				DEVELOPMENT_TEAM = W3MH7MTTSB;
 				INFOPLIST_FILE = CAAnimation/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.-rockgarden.CAAnimation";
+				PRODUCT_BUNDLE_IDENTIFIER = com.rockgarden.CAAnimation;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "CAAnimation/CAAnimation-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -305,8 +314,9 @@
 				CLANG_ENABLE_MODULES = YES;
 				DEVELOPMENT_TEAM = W3MH7MTTSB;
 				INFOPLIST_FILE = CAAnimation/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.-rockgarden.CAAnimation";
+				PRODUCT_BUNDLE_IDENTIFIER = com.rockgarden.CAAnimation;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "CAAnimation/CAAnimation-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
@@ -332,6 +342,7 @@
 				44E665741E670CA300B6A02F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
