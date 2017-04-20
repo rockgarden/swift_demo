@@ -405,7 +405,7 @@ class MUCycleScrollView: UIView, UICollectionViewDelegate, UICollectionViewDataS
             cycleCell.imageView.image = data as? UIImage
         }
         else if data is String {
-            let url: URL? = URL.init(string: data as! String)
+            //            let url: URL? = URL.init(string: data as! String)
             //                        if let tempUrl = url {
             //                                cycleCell.imageView.kf.setImage(with: ImageResource(downloadURL: tempUrl), placeholder: self.placeHolderImage)
             //                        }

@@ -17,7 +17,7 @@ class RootVC_PageControl: UITableViewController {
         let cell = tableView.cellForRow(at: indexPath)
         if let id = cell?.tag {
             switch id {
-            case 1 :
+            case 1:
                 // make a page view controller - NB try both .pageCurl and .scroll
                 let pvc = UIPageViewController(transitionStyle: .scroll, navigationOrientation: .horizontal)
                 // give it an initial page
@@ -26,6 +26,10 @@ class RootVC_PageControl: UITableViewController {
                 // give it a data source
                 pvc.dataSource = self
                 // put its view into the interface
+                self.show(pvc, sender: nil)
+                // FIXME: 高度不对,没有低于navbar
+            case 4:
+                let pvc = TabPageVC()
                 self.show(pvc, sender: nil)
             default:
                 break

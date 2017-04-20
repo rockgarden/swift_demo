@@ -14,6 +14,13 @@
 		4494B6B51E60502200ADE0BE /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4494B6B31E60502200ADE0BE /* Person.swift */; };
 		4494B6B81E6050AA00ADE0BE /* RootVC_PageControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4494B6B71E6050AA00ADE0BE /* RootVC_PageControl.swift */; };
 		4494B6BD1E606A3E00ADE0BE /* Person.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4494B6BC1E606A3E00ADE0BE /* Person.xib */; };
+		C2019BE11EA89CC1006C04FE /* TabCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2019BDA1EA89CC1006C04FE /* TabCollectionCell.swift */; };
+		C2019BE21EA89CC1006C04FE /* TabCollectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C2019BDB1EA89CC1006C04FE /* TabCollectionCell.xib */; };
+		C2019BE31EA89CC1006C04FE /* TabPageOption.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2019BDC1EA89CC1006C04FE /* TabPageOption.swift */; };
+		C2019BE41EA89CC1006C04FE /* TabPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2019BDE1EA89CC1006C04FE /* TabPageViewController.swift */; };
+		C2019BE51EA89CC1006C04FE /* TabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2019BDF1EA89CC1006C04FE /* TabView.swift */; };
+		C2019BE61EA89CC1006C04FE /* TabView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C2019BE01EA89CC1006C04FE /* TabView.xib */; };
+		C2019BE81EA89D63006C04FE /* TabPageVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2019BE71EA89D63006C04FE /* TabPageVC.swift */; };
 		C2FA16E91E6013F3000366B3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2FA16E81E6013F3000366B3 /* AppDelegate.swift */; };
 		C2FA16EB1E6013F3000366B3 /* UIPageControlDemo.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2FA16EA1E6013F3000366B3 /* UIPageControlDemo.swift */; };
 		C2FA16EE1E6013F3000366B3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C2FA16EC1E6013F3000366B3 /* Main.storyboard */; };
@@ -34,6 +41,13 @@
 		4494B6B31E60502200ADE0BE /* Person.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Person.swift; sourceTree = "<group>"; };
 		4494B6B71E6050AA00ADE0BE /* RootVC_PageControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootVC_PageControl.swift; sourceTree = "<group>"; };
 		4494B6BC1E606A3E00ADE0BE /* Person.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Person.xib; sourceTree = "<group>"; };
+		C2019BDA1EA89CC1006C04FE /* TabCollectionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabCollectionCell.swift; sourceTree = "<group>"; };
+		C2019BDB1EA89CC1006C04FE /* TabCollectionCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TabCollectionCell.xib; sourceTree = "<group>"; };
+		C2019BDC1EA89CC1006C04FE /* TabPageOption.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabPageOption.swift; sourceTree = "<group>"; };
+		C2019BDE1EA89CC1006C04FE /* TabPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabPageViewController.swift; sourceTree = "<group>"; };
+		C2019BDF1EA89CC1006C04FE /* TabView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabView.swift; sourceTree = "<group>"; };
+		C2019BE01EA89CC1006C04FE /* TabView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TabView.xib; sourceTree = "<group>"; };
+		C2019BE71EA89D63006C04FE /* TabPageVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabPageVC.swift; sourceTree = "<group>"; };
 		C2FA16E51E6013F2000366B3 /* UIPageControlDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UIPageControlDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C2FA16E81E6013F3000366B3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C2FA16EA1E6013F3000366B3 /* UIPageControlDemo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIPageControlDemo.swift; sourceTree = "<group>"; };
@@ -59,9 +73,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		C2019BD91EA89CC1006C04FE /* TabPageViewController */ = {
+			isa = PBXGroup;
+			children = (
+				C2019BDA1EA89CC1006C04FE /* TabCollectionCell.swift */,
+				C2019BDB1EA89CC1006C04FE /* TabCollectionCell.xib */,
+				C2019BDC1EA89CC1006C04FE /* TabPageOption.swift */,
+				C2019BDE1EA89CC1006C04FE /* TabPageViewController.swift */,
+				C2019BDF1EA89CC1006C04FE /* TabView.swift */,
+				C2019BE01EA89CC1006C04FE /* TabView.xib */,
+			);
+			path = TabPageViewController;
+			sourceTree = "<group>";
+		};
 		C2FA16DC1E6013F2000366B3 = {
 			isa = PBXGroup;
 			children = (
+				C2019BD91EA89CC1006C04FE /* TabPageViewController */,
 				C2FA16FA1E602118000366B3 /* CycleScrollView */,
 				C2FA16E71E6013F2000366B3 /* UIPageControlDemo */,
 				C2FA16E61E6013F2000366B3 /* Products */,
@@ -81,6 +109,8 @@
 			children = (
 				C2FA16E81E6013F3000366B3 /* AppDelegate.swift */,
 				4494B6B71E6050AA00ADE0BE /* RootVC_PageControl.swift */,
+				C2FA16EC1E6013F3000366B3 /* Main.storyboard */,
+				C2019BE71EA89D63006C04FE /* TabPageVC.swift */,
 				C2FA16EA1E6013F3000366B3 /* UIPageControlDemo.swift */,
 				4494B6B11E604F5200ADE0BE /* UIPageViewControllerDemo.swift */,
 				442C40E01E6160FC009E6609 /* UIPageVCJumpDemo.swift */,
@@ -88,7 +118,6 @@
 				4494B6BC1E606A3E00ADE0BE /* Person.xib */,
 				442C40DC1E615FBC009E6609 /* MyPage.swift */,
 				442C40DD1E615FBC009E6609 /* MyPage.xib */,
-				C2FA16EC1E6013F3000366B3 /* Main.storyboard */,
 				C2FA16EF1E6013F4000366B3 /* Assets.xcassets */,
 				C2FA16F11E6013F4000366B3 /* LaunchScreen.storyboard */,
 				C2FA16F41E6013F4000366B3 /* Info.plist */,
@@ -172,7 +201,9 @@
 				4494B6BD1E606A3E00ADE0BE /* Person.xib in Resources */,
 				C2FA16F31E6013F4000366B3 /* LaunchScreen.storyboard in Resources */,
 				C2FA17041E602118000366B3 /* placeholderImg.png in Resources */,
+				C2019BE21EA89CC1006C04FE /* TabCollectionCell.xib in Resources */,
 				C2FA16F01E6013F4000366B3 /* Assets.xcassets in Resources */,
+				C2019BE61EA89CC1006C04FE /* TabView.xib in Resources */,
 				C2FA16EE1E6013F3000366B3 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -185,14 +216,19 @@
 			buildActionMask = 2147483647;
 			files = (
 				442C40DE1E615FBC009E6609 /* MyPage.swift in Sources */,
+				C2019BE11EA89CC1006C04FE /* TabCollectionCell.swift in Sources */,
 				C2FA17031E602118000366B3 /* MUSizeTool.swift in Sources */,
+				C2019BE31EA89CC1006C04FE /* TabPageOption.swift in Sources */,
 				4494B6B51E60502200ADE0BE /* Person.swift in Sources */,
 				4494B6B21E604F5200ADE0BE /* UIPageViewControllerDemo.swift in Sources */,
 				442C40E11E6160FC009E6609 /* UIPageVCJumpDemo.swift in Sources */,
+				C2019BE81EA89D63006C04FE /* TabPageVC.swift in Sources */,
 				C2FA16EB1E6013F3000366B3 /* UIPageControlDemo.swift in Sources */,
 				C2FA17021E602118000366B3 /* MUPageControl.swift in Sources */,
 				C2FA16E91E6013F3000366B3 /* AppDelegate.swift in Sources */,
+				C2019BE51EA89CC1006C04FE /* TabView.swift in Sources */,
 				C2FA17011E602118000366B3 /* MUCycleScrollView.swift in Sources */,
+				C2019BE41EA89CC1006C04FE /* TabPageViewController.swift in Sources */,
 				4494B6B81E6050AA00ADE0BE /* RootVC_PageControl.swift in Sources */,
 				C2FA17001E602118000366B3 /* MUCycleCell.swift in Sources */,
 			);
