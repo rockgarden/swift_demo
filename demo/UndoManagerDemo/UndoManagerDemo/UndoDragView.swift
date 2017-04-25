@@ -8,6 +8,7 @@ import UIKit
 class UndoDragView : UIView {
 
     let undoer = UndoManager()
+
     override var undoManager : UndoManager? {
         return self.undoer
     }
@@ -81,8 +82,7 @@ class UndoDragView : UIView {
         }
     }
 
-    // ===== press-and-hold, menu
-
+    /// press-and-hold -> menu
     func longPress (_ g : UIGestureRecognizer) {
         if g.state == .began {
             let m = UIMenuController.shared

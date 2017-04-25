@@ -1,7 +1,7 @@
 
 import UIKit
 
-let arr = ["First", "Second", "Third", "Fourth", "Fifth", "Sixth", "Seventh", "Eighth", "Ninth", "Tenth"]
+fileprivate let arr = ["First", "Second", "Third", "Fourth", "Fifth", "Sixth", "Seventh", "Eighth", "Ninth", "Tenth"]
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -13,7 +13,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 	func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         //exampleTabUnwind()
         //exampleNoController()
-        //exampleCodeInit()
+        exampleCodeInit()
         //setTabBar()
         /// no func run Main.storyboard
 		return true
@@ -42,7 +42,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     /// 示例 init UITabBarController by code
     func exampleCodeInit() {
         self.window = self.window ?? UIWindow()
-        // to see an interesting bug on iPhone 6 Plus, pick "Eighth", rotate to landscape, rotate back to portrait
         var vcs = [UIViewController]()
         for t in arr {
             let vc = SubVC()
@@ -62,7 +61,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             list.title = ""
             let b = UIBarButtonItem()
             b.title = "Back"
-            list.navigationItem.backBarButtonItem = b // so user can navigation back
+            list.navigationItem.backBarButtonItem = b //so user can navigation back
             more.navigationBar.barTintColor = UIColor.red
             more.navigationBar.tintColor = UIColor.white
             // break doneCustomizing

@@ -10,6 +10,7 @@
 import UIKit
 
 class TabViewController: UIViewController {
+    
 	@IBOutlet var tabbar: UITabBar!
 	var items: [UITabBarItem] = {
 		Array(1..<8).map {
@@ -22,7 +23,7 @@ class TabViewController: UIViewController {
 	fileprivate var _vcs: [UIViewController] = []
 	var vcs: [UIViewController] {
 		get {
-			return _vcs // 在类里加self._p
+			return _vcs //在类里加self._p
 		}
 		set {
 			for t in arr {
@@ -41,10 +42,11 @@ class TabViewController: UIViewController {
 	}
 }
 
+
 extension TabViewController: UITabBarDelegate {
 
 	func tabBar(_ tabBar: UITabBar, didSelect item: UITabBarItem) {
-		print("did select item with tag \(item.tag)")
+		debugPrint("did select item with tag \(item.tag)")
 		if item.tag == 0 {
 			// More button
 			tabBar.selectedItem = nil

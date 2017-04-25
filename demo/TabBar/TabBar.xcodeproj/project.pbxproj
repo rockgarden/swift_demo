@@ -22,6 +22,8 @@
 		449789D71D6DD38B00A607A9 /* MyDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 449789D61D6DD38B00A607A9 /* MyDataSource.swift */; };
 		449789D91D6DD6A500A607A9 /* TabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 449789D81D6DD6A500A607A9 /* TabViewController.swift */; };
 		449E5D801E13E9CF009F2915 /* TabBarVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 449E5D7F1E13E9CF009F2915 /* TabBarVC.swift */; };
+		44C5B9E21EAF7D3C000F3B1E /* TTTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44C5B9E01EAF7D3C000F3B1E /* TTTabBar.swift */; };
+		44C5B9E31EAF7D3C000F3B1E /* TTTabBarItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44C5B9E11EAF7D3C000F3B1E /* TTTabBarItem.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +44,8 @@
 		449789D61D6DD38B00A607A9 /* MyDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyDataSource.swift; sourceTree = "<group>"; };
 		449789D81D6DD6A500A607A9 /* TabViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabViewController.swift; sourceTree = "<group>"; };
 		449E5D7F1E13E9CF009F2915 /* TabBarVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarVC.swift; sourceTree = "<group>"; };
+		44C5B9E01EAF7D3C000F3B1E /* TTTabBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TTTabBar.swift; sourceTree = "<group>"; };
+		44C5B9E11EAF7D3C000F3B1E /* TTTabBarItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TTTabBarItem.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,6 +90,7 @@
 		449789B81D6DD33200A607A9 = {
 			isa = PBXGroup;
 			children = (
+				44C5B9DF1EAF7D3C000F3B1E /* TTTabBar */,
 				449789C31D6DD33200A607A9 /* TabBar */,
 				449789C21D6DD33200A607A9 /* Products */,
 			);
@@ -103,8 +108,8 @@
 			isa = PBXGroup;
 			children = (
 				449789C41D6DD33200A607A9 /* AppDelegate.swift */,
-				449D1CA91E9929ED000C7446 /* tabbedInterface */,
 				449789C61D6DD33200A607A9 /* SubVC.swift */,
+				449D1CA91E9929ED000C7446 /* tabbedInterface */,
 				449718251DBBA0AF009C1868 /* exampleNoController */,
 				449718241DBBA057009C1868 /* exampleCodeInit */,
 				449718231DBBA01B009C1868 /* Unwind */,
@@ -124,6 +129,15 @@
 				449718191DBB60DB009C1868 /* SecondVC.swift */,
 			);
 			name = tabbedInterface;
+			sourceTree = "<group>";
+		};
+		44C5B9DF1EAF7D3C000F3B1E /* TTTabBar */ = {
+			isa = PBXGroup;
+			children = (
+				44C5B9E01EAF7D3C000F3B1E /* TTTabBar.swift */,
+				44C5B9E11EAF7D3C000F3B1E /* TTTabBarItem.swift */,
+			);
+			path = TTTabBar;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -201,6 +215,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				44C5B9E31EAF7D3C000F3B1E /* TTTabBarItem.swift in Sources */,
 				449789D91D6DD6A500A607A9 /* TabViewController.swift in Sources */,
 				449718201DBB9FD5009C1868 /* TabbedUnwindSecondVC.swift in Sources */,
 				449E5D801E13E9CF009F2915 /* TabBarVC.swift in Sources */,
@@ -209,6 +224,7 @@
 				449789D71D6DD38B00A607A9 /* MyDataSource.swift in Sources */,
 				4497181E1DBB9F63009C1868 /* TabbedUnwindFirstVC.swift in Sources */,
 				449718181DBB608A009C1868 /* FirstVC.swift in Sources */,
+				44C5B9E21EAF7D3C000F3B1E /* TTTabBar.swift in Sources */,
 				4497181A1DBB60DB009C1868 /* SecondVC.swift in Sources */,
 				449789C51D6DD33200A607A9 /* AppDelegate.swift in Sources */,
 			);
