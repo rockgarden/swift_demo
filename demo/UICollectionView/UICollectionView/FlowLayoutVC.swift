@@ -30,6 +30,9 @@ class FlowLayoutVC : UICollectionViewController {
             }
             self.cellData[self.cellData.count-1].append(aState)
         }
+        sectionNames.append("familyNames")
+        cellData.append(UIFont.familyNames)
+        
         self.navigationItem.title = "States"
 
         self.collectionView!.register(UICollectionReusableView.self, forSupplementaryViewOfKind: UICollectionElementKindSectionHeader, withReuseIdentifier: "Header")

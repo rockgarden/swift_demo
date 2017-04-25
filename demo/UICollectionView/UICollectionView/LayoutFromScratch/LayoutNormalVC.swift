@@ -163,7 +163,8 @@ extension LayoutNormalVC: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         self.modelCell.lab.text = self.sectionData[(indexPath as NSIndexPath).section][(indexPath as NSIndexPath).row]
         var sz = self.modelCell.container.systemLayoutSizeFitting(UILayoutFittingCompressedSize)
-        sz.width = ceil(sz.width); sz.height = ceil(sz.height)
+        sz.width = ceil(sz.width)
+        sz.height = ceil(sz.height)
         return sz
     }
 }

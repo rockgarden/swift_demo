@@ -12,34 +12,35 @@ class FlowLayoutTestVC: UICollectionViewController {
         return arr
     }()
 
-    required init?(coder aDecoder: NSCoder) {
-        super.init(coder:aDecoder)
-        self.useLayoutToLayoutNavigationTransitions = true
-    }
+//    required init?(coder aDecoder: NSCoder) {
+//        super.init(coder:aDecoder)
+//        self.useLayoutToLayoutNavigationTransitions = true
+//    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        if let flow = self.collectionViewLayout as? UICollectionViewFlowLayout {
+        if let flow = collectionView!.collectionViewLayout as? UICollectionViewFlowLayout {
             flow.headerReferenceSize = CGSize(width: 50,height: 50)
             flow.sectionInset = UIEdgeInsetsMake(10, 10, 10, 10)
         }
-        self.collectionView!.reloadData()
+        
         collectionView?.register(FlowLayoutTestCell.self, forCellWithReuseIdentifier: "FlowLayoutTestCellID")
         collectionView?.backgroundColor = UIColor.red //deleted ()
-        print(cellHeight)
+        
         // 瀑布流
         //setWaterFallLayout()
         // 圆形
         //setCircleLayout()
         // 线性
         setLineLayout()
+        
+        self.collectionView!.reloadData()
     }
 
     func setLineLayout() {
         let layout = LineLayout()
         layout.itemSize = CGSize(width: 100.0, height: 100.0)
-        //collectionView?.collectionViewLayout = layout
-        self.collectionView = UICollectionView(frame: view.frame, collectionViewLayout: layout)
+        collectionView!.collectionViewLayout = layout
     }
 
 

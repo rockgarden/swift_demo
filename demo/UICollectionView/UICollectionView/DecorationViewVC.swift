@@ -195,7 +195,8 @@ class DecorationViewVC: UICollectionViewController, UICollectionViewDelegateFlow
         //the "container" workaround is no longer needed
         //var sz = self.modelCell.container.systemLayoutSizeFittingSize(UILayoutFittingCompressedSize)
         var sz = self.modelCell.systemLayoutSizeFitting(UILayoutFittingCompressedSize)
-        sz.width = ceil(sz.width); sz.height = ceil(sz.height)
+        sz.width = ceil(sz.width)
+        sz.height = ceil(sz.height)
         return sz
     }
 

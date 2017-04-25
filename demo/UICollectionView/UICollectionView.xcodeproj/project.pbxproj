@@ -41,6 +41,7 @@
 		44DCE4881E89390D000597B0 /* FlowLayoutTestVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44DCE4871E89390D000597B0 /* FlowLayoutTestVC.swift */; };
 		C202C0041E13AEEC00CEC12A /* CameraCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C202C0031E13AEEC00CEC12A /* CameraCell.swift */; };
 		C202C0061E13AF2B00CEC12A /* CameraCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C202C0051E13AF2B00CEC12A /* CameraCell.xib */; };
+		C24AA8161EAF32CD00091AB2 /* UIFontFamilyVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C24AA8151EAF32CD00091AB2 /* UIFontFamilyVC.swift */; };
 		C27C6A331E654B780066B3C8 /* HeaderDemoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C27C6A321E654B780066B3C8 /* HeaderDemoVC.swift */; };
 		C27C6A351E654D1D0066B3C8 /* languages.plist in Resources */ = {isa = PBXBuildFile; fileRef = C27C6A341E654D1D0066B3C8 /* languages.plist */; };
 		C27C6A371E654F360066B3C8 /* StickyHeaderDemoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C27C6A361E654F360066B3C8 /* StickyHeaderDemoVC.swift */; };
@@ -154,6 +155,7 @@
 		44DCE4871E89390D000597B0 /* FlowLayoutTestVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlowLayoutTestVC.swift; sourceTree = "<group>"; };
 		C202C0031E13AEEC00CEC12A /* CameraCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CameraCell.swift; sourceTree = "<group>"; };
 		C202C0051E13AF2B00CEC12A /* CameraCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CameraCell.xib; sourceTree = "<group>"; };
+		C24AA8151EAF32CD00091AB2 /* UIFontFamilyVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIFontFamilyVC.swift; sourceTree = "<group>"; };
 		C27C6A321E654B780066B3C8 /* HeaderDemoVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeaderDemoVC.swift; sourceTree = "<group>"; };
 		C27C6A341E654D1D0066B3C8 /* languages.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = languages.plist; sourceTree = "<group>"; };
 		C27C6A361E654F360066B3C8 /* StickyHeaderDemoVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StickyHeaderDemoVC.swift; sourceTree = "<group>"; };
@@ -350,6 +352,7 @@
 				C27C6A381E654F700066B3C8 /* MyCell.xib */,
 				C27C6A341E654D1D0066B3C8 /* languages.plist */,
 				4462AEA01EA5F5F9006299C8 /* RetractableFirstItemLayoutVC.swift */,
+				C24AA8151EAF32CD00091AB2 /* UIFontFamilyVC.swift */,
 			);
 			path = UICollectionView;
 			sourceTree = "<group>";
@@ -567,6 +570,7 @@
 				C2AA3B0F1E110ADE00C9E438 /* PhotoCell.swift in Sources */,
 				443F52AC1E8D45A500C8E029 /* ASCollectionViewParallaxCell.swift in Sources */,
 				44966FE71E8AA40000222F3E /* ELWaterFlowLayout.swift in Sources */,
+				C24AA8161EAF32CD00091AB2 /* UIFontFamilyVC.swift in Sources */,
 				C2AA12011E8E3A8700037FE0 /* CustomLayout.swift in Sources */,
 				44C3DEC21E128B3E00118938 /* CellBackgroundLayeringVC.swift in Sources */,
 				44226FCE1E857549003734D3 /* HorizontalFloatingHeaderLayout.swift in Sources */,
