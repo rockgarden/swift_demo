@@ -10,7 +10,30 @@ import UIKit
 
 class UIFontFamilyVC: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
     
-    weak var collectionView: UICollectionView!
+    // FlowLayout
+    lazy fileprivate var flowLayout: UICollectionViewFlowLayout? = {
+        let fl = UICollectionViewFlowLayout()
+        fl.minimumLineSpacing = 10
+        fl.minimumInteritemSpacing = 0
+        fl.scrollDirection = .vertical
+        fl.minimumInteritemSpacing = 0
+        fl.sectionInset = UIEdgeInsetsMake(10, 0, 10, 0)
+        fl.sectionFootersPinToVisibleBounds = false
+        return fl
+    }()
+    
+    lazy var collectionView: UICollectionView = {
+        let cv = UICollectionView(frame: .zero, collectionViewLayout: self.flowLayout!)
+        cv.translatesAutoresizingMaskIntoConstraints = false
+        cv.delegate = self
+        cv.dataSource = self
+        cv.showsVerticalScrollIndicator = false
+        cv.showsHorizontalScrollIndicator = false
+        cv.isPagingEnabled = true
+        cv.scrollsToTop = false
+        cv.backgroundColor = UIColor.lightGray
+        return cv
+    }()
     
     let kCellIdentifier = "FontCell"
     
@@ -19,7 +42,7 @@ class UIFontFamilyVC: UIViewController, UICollectionViewDataSource, UICollection
     
     var exampleTitle = "字体名称"
     
-    var exampleContent = "Are you ok? 你好吗? He’s right.\n The world doesn’t need another Dell or HP.  It doesn’t need another manufacturer of plain, beige, boring PCs.  If that’s all we’re going to do, then we should really pack up now.\n."
+    var exampleContent = "Are you ok? 你好吗? \n I’m right. 我很好.\n."
     
     var numberOfSections = 1
     var numberOfCells = 3
@@ -32,11 +55,17 @@ class UIFontFamilyVC: UIViewController, UICollectionViewDataSource, UICollection
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        view.addSubview(collectionView)
         
-        collectionView.dataSource = self
-        collectionView.delegate = self
-        let myCellNib = UINib(nibName: "MyCollectionViewCell", bundle: nil)
-        collectionView.register(myCellNib, forCellWithReuseIdentifier: kCellIdentifier)
+        let views = ["cv":collectionView] as [String:Any]
+        NSLayoutConstraint.activate([
+            NSLayoutConstraint.constraints(
+                withVisualFormat: "H:|-(0)-[cv]-(0)-|", options: [], metrics: nil, views: views),
+            NSLayoutConstraint.constraints(
+                withVisualFormat: "V:|-(0)-[cv]-(0)-|", options: [], metrics: nil, views: views),
+            ].joined().map { $0 })
+        
+        collectionView.register(MyCollectionViewCell.self, forCellWithReuseIdentifier: kCellIdentifier)
     }
     
     // MARK: - UICollectionViewDataSource
@@ -110,22 +139,6 @@ class UIFontFamilyVC: UIViewController, UICollectionViewDataSource, UICollection
         return list
     }
     
-    // Adds a new cell
-    @IBAction func add(_ sender: AnyObject) {
-        addNewOne()
-        self.shuffle(fontArray)
-        collectionView.reloadData()
-        collectionView.collectionViewLayout.invalidateLayout()
-    }
-    // Deletes a cell
-    @IBAction func deleteOne(_ sender: AnyObject) {
-        if titleData.count > 0 { titleData.removeLast() }
-        if contentData.count > 0 { contentData.removeLast() }
-        self.shuffle(fontArray)
-        collectionView.reloadData()
-        collectionView.collectionViewLayout.invalidateLayout()
-    }
-    
     // MARK: - Rotation
     // iOS7
     override func willRotate(to toInterfaceOrientation: UIInterfaceOrientation, duration: TimeInterval) {
@@ -151,14 +164,42 @@ class MyCollectionViewCell: UICollectionViewCell {
     let kLabelVerticalInsets: CGFloat = 8.0
     let kLabelHorizontalInsets: CGFloat = 8.0
     
-    override func awakeFromNib() {
-        super.awakeFromNib()
+    override init(frame: CGRect) {
+        super.init(frame: frame)
         // Initialization code
         if isIOS7 {
             // Need set autoresizingMask to let contentView always occupy this view's bounds, key for iOS7
             self.contentView.autoresizingMask = [.flexibleHeight, .flexibleWidth]
         }
-        self.layer.masksToBounds = true
+
+        layer.masksToBounds = true
+        setupViews()
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+        setupViews()
+    }
+    
+    fileprivate func setupViews() {
+        isSelected = false
+        
+        contentView.addSubview(titleLabel)
+        contentView.addSubview(contentLabel)
+        titleLabel.translatesAutoresizingMaskIntoConstraints = false
+        contentLabel.translatesAutoresizingMaskIntoConstraints = false
+        
+        let views = ["tl":titleLabel, "cl":contentLabel] as [String : Any]
+        NSLayoutConstraint.activate([
+            NSLayoutConstraint.constraints(
+                withVisualFormat: "H:|-(0)-[tl]-(0)-|", options: [], metrics: nil, views: views),
+            NSLayoutConstraint.constraints(
+                withVisualFormat: "V:|-(0)-[tl(>=40)]", options: [], metrics: nil, views: views),
+            NSLayoutConstraint.constraints(
+                withVisualFormat: "H:|-(0)-[cl]-(0)-|", options: [], metrics: nil, views: views),
+            NSLayoutConstraint.constraints(
+                withVisualFormat: "V:[tl]-[cl]-(0)-|", options: [], metrics: nil, views: views),
+            ].joined().map { $0 })
     }
     
     // In layoutSubViews, need set preferredMaxLayoutWidth for multiple lines label

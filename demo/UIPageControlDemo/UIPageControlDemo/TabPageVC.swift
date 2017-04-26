@@ -69,7 +69,8 @@ internal class ListViewController: UITableViewController {
         super.viewDidLayoutSubviews()
         
         let navigationHeight = topLayoutGuide.length
-        tableView.contentInset.top = navigationHeight + TabPageOption().tabHeight
+        tableView.frame = CGRect(x: 0, y: navigationHeight + TabPageOption().tabHeight, width: view.bounds.width, height: view.bounds.height)
+        //tableView.contentInset.top = navigationHeight + TabPageOption().tabHeight
     }
     
     fileprivate func updateNavigationBarOrigin(velocity: CGPoint) {

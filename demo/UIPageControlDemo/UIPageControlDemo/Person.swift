@@ -7,7 +7,7 @@ class Person: UIViewController {
     let boy : String
     @IBOutlet var name : UILabel!
     @IBOutlet var pic : UIImageView!
-
+    
     init(pepBoy boy:String) {
         self.boy = boy
         // TODO: In my project, when nibName = nil, the name and pic don't init()
@@ -18,11 +18,11 @@ class Person: UIViewController {
     required init(coder: NSCoder) {
         fatalError("NSCoding not supported")
     }
-
+    
     override func awakeFromNib() {
         super.awakeFromNib()
     }
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.name.text = self.boy
@@ -31,12 +31,12 @@ class Person: UIViewController {
     }
     
     override var description : String {
-    return self.boy
+        return self.boy
     }
     
     @IBAction func tap (_ sender: UIGestureRecognizer?) {
         NotificationCenter.default.post(name:.tap, object: sender)
     }
-
-
+    
+    
 }

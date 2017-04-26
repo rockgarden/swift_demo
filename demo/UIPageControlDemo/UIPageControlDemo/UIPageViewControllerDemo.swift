@@ -23,7 +23,6 @@ class UIPageViewControllerDemo: UIViewController, UIPageViewControllerDataSource
         proxy.currentPageIndicatorTintColor = .red
         proxy.backgroundColor = .yellow
 
-
         let pvc = UIPageViewController(transitionStyle: .scroll, navigationOrientation: .horizontal)
         pvc.dataSource = self
         self.addChildViewController(pvc)
