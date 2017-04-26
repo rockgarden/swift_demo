@@ -31,6 +31,10 @@ class RootVC_PageControl: UITableViewController {
             case 4:
                 let pvc = TabPageVC()
                 self.show(pvc, sender: nil)
+            case 5:
+                let pageController = UIPageViewController(transitionStyle: .scroll, navigationOrientation: .horizontal, options: nil)
+                let vc = SwipeVC(rootViewController: pageController)
+                self.show(vc, sender: nil)
             default:
                 break
             }
