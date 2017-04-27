@@ -44,6 +44,8 @@
 		44F031141E5C845C0059B587 /* TZNaviController.m in Sources */ = {isa = PBXBuildFile; fileRef = 44F0310C1E5C845C0059B587 /* TZNaviController.m */; };
 		44F031151E5C845C0059B587 /* TZPageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 44F0310E1E5C845C0059B587 /* TZPageViewController.m */; };
 		44F031161E5C845C0059B587 /* TZScrollViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 44F031101E5C845C0059B587 /* TZScrollViewController.m */; };
+		C2D2E6CC1EB1CAB100200CEB /* CheckmarkGestureRecognizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2D2E6CB1EB1CAB100200CEB /* CheckmarkGestureRecognizer.swift */; };
+		C2D2E6CE1EB1D53400200CEB /* TouchCaptureGesture.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2D2E6CD1EB1D53400200CEB /* TouchCaptureGesture.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -93,6 +95,8 @@
 		44F0310E1E5C845C0059B587 /* TZPageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TZPageViewController.m; sourceTree = "<group>"; };
 		44F0310F1E5C845C0059B587 /* TZScrollViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TZScrollViewController.h; sourceTree = "<group>"; };
 		44F031101E5C845C0059B587 /* TZScrollViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TZScrollViewController.m; sourceTree = "<group>"; };
+		C2D2E6CB1EB1CAB100200CEB /* CheckmarkGestureRecognizer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CheckmarkGestureRecognizer.swift; sourceTree = "<group>"; };
+		C2D2E6CD1EB1D53400200CEB /* TouchCaptureGesture.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TouchCaptureGesture.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -157,6 +161,8 @@
 				44E811321E02C406000079F7 /* DraggingView.swift */,
 				4479E0441E70367300A51660 /* DependencyVC.swift */,
 				449B13C91D683DE400795F70 /* HorizVertPanGestureRecognizers.swift */,
+				C2D2E6CB1EB1CAB100200CEB /* CheckmarkGestureRecognizer.swift */,
+				C2D2E6CD1EB1D53400200CEB /* TouchCaptureGesture.swift */,
 				44F030FE1E5C82CB0059B587 /* FullScreenPopGesture.swift */,
 				4479E0461E703B2500A51660 /* ExclusiveTouchVC.swift */,
 				442F31251D6831D60060942F /* Main.storyboard */,
@@ -303,11 +309,13 @@
 				44F031031E5C84370059B587 /* UINavigationController+TZPopGesture.m in Sources */,
 				4479E0451E70367300A51660 /* DependencyVC.swift in Sources */,
 				4454EE321D69F33800DC3F04 /* CircleGestureRecognizer.swift in Sources */,
+				C2D2E6CE1EB1D53400200CEB /* TouchCaptureGesture.swift in Sources */,
 				4454EE341D69F33800DC3F04 /* GameViewController.swift in Sources */,
 				44F031151E5C845C0059B587 /* TZPageViewController.m in Sources */,
 				44F031131E5C845C0059B587 /* TZMapViewController.m in Sources */,
 				4454EE331D69F33800DC3F04 /* GameOverViewController.swift in Sources */,
 				441F82871E2B2D0D00D6EBD4 /* PanGestureViewDemo.swift in Sources */,
+				C2D2E6CC1EB1CAB100200CEB /* CheckmarkGestureRecognizer.swift in Sources */,
 				4454EE391D69F33800DC3F04 /* RoundedImageView.swift in Sources */,
 				4454EE311D69F33800DC3F04 /* CircleFit.swift in Sources */,
 				441F82861E2B2D0D00D6EBD4 /* PanGestureView.swift in Sources */,

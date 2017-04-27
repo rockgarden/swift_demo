@@ -23,7 +23,7 @@ public class FullScreenPopGestureNavigationController: UINavigationController, U
     }
 
     // 每次触发手势之前判断导航控制器是否只有一个子控制器,若是则拦截手势触发 return false
-    public func gestureRecognizerShouldBegin(gestureRecognizer: UIGestureRecognizer) -> Bool {
+    public func gestureRecognizerShouldBegin(_ gestureRecognizer: UIGestureRecognizer) -> Bool {
         return self.childViewControllers.count == 1 ? false : true
     }
 

@@ -15,7 +15,7 @@ class GestureRecognizerVC: UIViewController {
     var lastScaleFactor: CGFloat = 1
     let which = 1
     
-    @IBOutlet var longPresser : UILongPressGestureRecognizer!
+    @IBOutlet var longPresser: UILongPressGestureRecognizer!
     @IBOutlet weak var image: UIImageView!
     
     var pan: UIPanGestureRecognizer!
@@ -37,13 +37,17 @@ class GestureRecognizerVC: UIViewController {
         let pinchGesture: UIPinchGestureRecognizer =
             UIPinchGestureRecognizer(target: self, action: #selector(pinchGesture(_:)))
         image.addGestureRecognizer(pinchGesture)
-        super.viewDidLoad()
         
         // Double Tap
         let tapGesture = UITapGestureRecognizer(target: self, action:
             #selector(handleTap(_:))) // 本地方法不用指明所有者
         tapGesture.numberOfTapsRequired = 2;
         image.addGestureRecognizer(tapGesture)
+        
+        //FIXME: Check mark 和 Tap 冲突
+        let checkGesture = CheckmarkGestureRecognizer(target: self, action:
+            #selector(handleTap(_:)))
+        view.addGestureRecognizer(checkGesture)
         
         // view that can be single-tapped, double-tapped, or dragged
         
@@ -206,7 +210,7 @@ class GestureRecognizerVC: UIViewController {
     func doubleTap () {
         print("double tap")
     }
-
+    
     /// Pan
     func dragging(_ p: UIPanGestureRecognizer) {
         let v = p.view!
