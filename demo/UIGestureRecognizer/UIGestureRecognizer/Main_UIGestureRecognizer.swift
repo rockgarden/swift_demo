@@ -1,5 +1,5 @@
 //
-//  Main.swift
+//  Main_UIGestureRecognizer.swift
 //  UIGestureRecognizer
 //
 //  Created by wangkan on 2016/12/2.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class RootVC: UITableViewController {
+class Main_UIGestureRecognizer: UITableViewController {
 
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let cell = tableView.cellForRow(at: indexPath)

@@ -13,7 +13,7 @@
 		441F82871E2B2D0D00D6EBD4 /* PanGestureViewDemo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 441F82831E2B2D0D00D6EBD4 /* PanGestureViewDemo.swift */; };
 		4420AB991DF1B37E005D280A /* Line.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4420AB981DF1B37E005D280A /* Line.swift */; };
 		4420AB9B1DF1B385005D280A /* DrawView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4420AB9A1DF1B385005D280A /* DrawView.swift */; };
-		44291CA01DF1B77300D2F579 /* RootVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44291C9F1DF1B77300D2F579 /* RootVC.swift */; };
+		44291CA01DF1B77300D2F579 /* Main_UIGestureRecognizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44291C9F1DF1B77300D2F579 /* Main_UIGestureRecognizer.swift */; };
 		442F31221D6831D60060942F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 442F31211D6831D60060942F /* AppDelegate.swift */; };
 		442F31241D6831D60060942F /* GestureRecognizerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 442F31231D6831D60060942F /* GestureRecognizerVC.swift */; };
 		442F31271D6831D60060942F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 442F31251D6831D60060942F /* Main.storyboard */; };
@@ -46,6 +46,7 @@
 		44F031161E5C845C0059B587 /* TZScrollViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 44F031101E5C845C0059B587 /* TZScrollViewController.m */; };
 		C2D2E6CC1EB1CAB100200CEB /* CheckmarkGestureRecognizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2D2E6CB1EB1CAB100200CEB /* CheckmarkGestureRecognizer.swift */; };
 		C2D2E6CE1EB1D53400200CEB /* TouchCaptureGesture.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2D2E6CD1EB1D53400200CEB /* TouchCaptureGesture.swift */; };
+		C2D2E6D11EB3150D00200CEB /* TouchableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2D2E6D01EB3150D00200CEB /* TouchableView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -55,7 +56,7 @@
 		441F82831E2B2D0D00D6EBD4 /* PanGestureViewDemo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PanGestureViewDemo.swift; sourceTree = "<group>"; };
 		4420AB981DF1B37E005D280A /* Line.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Line.swift; sourceTree = "<group>"; };
 		4420AB9A1DF1B385005D280A /* DrawView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DrawView.swift; sourceTree = "<group>"; };
-		44291C9F1DF1B77300D2F579 /* RootVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootVC.swift; sourceTree = "<group>"; };
+		44291C9F1DF1B77300D2F579 /* Main_UIGestureRecognizer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Main_UIGestureRecognizer.swift; sourceTree = "<group>"; };
 		442F311E1D6831D60060942F /* UIGestureRecognizer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UIGestureRecognizer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		442F31211D6831D60060942F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		442F31231D6831D60060942F /* GestureRecognizerVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GestureRecognizerVC.swift; sourceTree = "<group>"; };
@@ -97,6 +98,7 @@
 		44F031101E5C845C0059B587 /* TZScrollViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TZScrollViewController.m; sourceTree = "<group>"; };
 		C2D2E6CB1EB1CAB100200CEB /* CheckmarkGestureRecognizer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CheckmarkGestureRecognizer.swift; sourceTree = "<group>"; };
 		C2D2E6CD1EB1D53400200CEB /* TouchCaptureGesture.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TouchCaptureGesture.swift; sourceTree = "<group>"; };
+		C2D2E6D01EB3150D00200CEB /* TouchableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TouchableView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -152,7 +154,8 @@
 				441F827E1E2B2D0D00D6EBD4 /* PanGestureView */,
 				4454EE251D69F33800DC3F04 /* MatchItUp */,
 				442F31211D6831D60060942F /* AppDelegate.swift */,
-				44291C9F1DF1B77300D2F579 /* RootVC.swift */,
+				44291C9F1DF1B77300D2F579 /* Main_UIGestureRecognizer.swift */,
+				442F31251D6831D60060942F /* Main.storyboard */,
 				442F31231D6831D60060942F /* GestureRecognizerVC.swift */,
 				442F5D5C1DF1B59D00B2DD3F /* DrawVC.swift */,
 				4420AB9A1DF1B385005D280A /* DrawView.swift */,
@@ -161,14 +164,14 @@
 				44E811321E02C406000079F7 /* DraggingView.swift */,
 				4479E0441E70367300A51660 /* DependencyVC.swift */,
 				449B13C91D683DE400795F70 /* HorizVertPanGestureRecognizers.swift */,
-				C2D2E6CB1EB1CAB100200CEB /* CheckmarkGestureRecognizer.swift */,
-				C2D2E6CD1EB1D53400200CEB /* TouchCaptureGesture.swift */,
 				44F030FE1E5C82CB0059B587 /* FullScreenPopGesture.swift */,
 				4479E0461E703B2500A51660 /* ExclusiveTouchVC.swift */,
-				442F31251D6831D60060942F /* Main.storyboard */,
 				442F31281D6831D60060942F /* Assets.xcassets */,
 				442F312A1D6831D60060942F /* LaunchScreen.storyboard */,
 				442F312D1D6831D60060942F /* Info.plist */,
+				C2D2E6CD1EB1D53400200CEB /* TouchCaptureGesture.swift */,
+				C2D2E6CB1EB1CAB100200CEB /* CheckmarkGestureRecognizer.swift */,
+				C2D2E6D01EB3150D00200CEB /* TouchableView.swift */,
 			);
 			path = UIGestureRecognizer;
 			sourceTree = "<group>";
@@ -298,6 +301,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C2D2E6D11EB3150D00200CEB /* TouchableView.swift in Sources */,
 				442F5D5D1DF1B59D00B2DD3F /* DrawVC.swift in Sources */,
 				4462AC731E02C12F00A122DF /* DraggingVC.swift in Sources */,
 				442F31241D6831D60060942F /* GestureRecognizerVC.swift in Sources */,
@@ -327,7 +331,7 @@
 				44F031111E5C845C0059B587 /* TZCollectionViewController.m in Sources */,
 				4479E0471E703B2500A51660 /* ExclusiveTouchVC.swift in Sources */,
 				4420AB991DF1B37E005D280A /* Line.swift in Sources */,
-				44291CA01DF1B77300D2F579 /* RootVC.swift in Sources */,
+				44291CA01DF1B77300D2F579 /* Main_UIGestureRecognizer.swift in Sources */,
 				4454EE381D69F33800DC3F04 /* MatchingGame.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

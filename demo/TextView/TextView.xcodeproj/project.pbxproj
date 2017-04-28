@@ -28,6 +28,11 @@
 		44D348961E24643000F953D7 /* MyTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44D348951E24643000F953D7 /* MyTextField.swift */; };
 		44D348981E24643B00F953D7 /* abbreviations.txt in Resources */ = {isa = PBXBuildFile; fileRef = 44D348971E24643B00F953D7 /* abbreviations.txt */; };
 		44D3489A1E24649000F953D7 /* TextFieldVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44D348991E24649000F953D7 /* TextFieldVC.swift */; };
+		C2D2E6D51EB320AC00200CEB /* KeyboardAvoiding.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2D2E6D31EB320AC00200CEB /* KeyboardAvoiding.swift */; };
+		C2D2E6D61EB320AC00200CEB /* KeyboardDismissingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2D2E6D41EB320AC00200CEB /* KeyboardDismissingView.swift */; };
+		C2D2E6D81EB3218300200CEB /* KeyboardAvoidingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2D2E6D71EB3218300200CEB /* KeyboardAvoidingVC.swift */; };
+		C2D2E6DA1EB327EC00200CEB /* KeyboardMan.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2D2E6D91EB327EC00200CEB /* KeyboardMan.swift */; };
+		C2D2E6DC1EB3282600200CEB /* MessageVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2D2E6DB1EB3282600200CEB /* MessageVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -54,6 +59,11 @@
 		44D348951E24643000F953D7 /* MyTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyTextField.swift; sourceTree = "<group>"; };
 		44D348971E24643B00F953D7 /* abbreviations.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = abbreviations.txt; sourceTree = "<group>"; };
 		44D348991E24649000F953D7 /* TextFieldVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextFieldVC.swift; sourceTree = "<group>"; };
+		C2D2E6D31EB320AC00200CEB /* KeyboardAvoiding.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyboardAvoiding.swift; sourceTree = "<group>"; };
+		C2D2E6D41EB320AC00200CEB /* KeyboardDismissingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyboardDismissingView.swift; sourceTree = "<group>"; };
+		C2D2E6D71EB3218300200CEB /* KeyboardAvoidingVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyboardAvoidingVC.swift; sourceTree = "<group>"; };
+		C2D2E6D91EB327EC00200CEB /* KeyboardMan.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyboardMan.swift; sourceTree = "<group>"; };
+		C2D2E6DB1EB3282600200CEB /* MessageVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,6 +80,7 @@
 		4428499A1D8837D50044DCF5 = {
 			isa = PBXGroup;
 			children = (
+				C2D2E6D21EB320AC00200CEB /* KeyboardAvoiding */,
 				442849A51D8837D50044DCF5 /* TextView */,
 				442849A41D8837D50044DCF5 /* Products */,
 			);
@@ -87,6 +98,7 @@
 			isa = PBXGroup;
 			children = (
 				442849A61D8837D50044DCF5 /* AppDelegate.swift */,
+				442849AA1D8837D50044DCF5 /* Main.storyboard */,
 				442849A81D8837D50044DCF5 /* TextViewVC.swift */,
 				4474E0621E2262640013290C /* ExclusionPathVC.swift */,
 				446B0D771E2111BE0012140C /* TextKitStacksVC.swift */,
@@ -99,7 +111,6 @@
 				444150081E2909D000760959 /* KeyboardAccessoryVC.swift */,
 				4441500C1E2910AA00760959 /* TextFieldSlidingVC.swift */,
 				4441500A1E290E1600760959 /* AccessoryView.xib */,
-				442849AA1D8837D50044DCF5 /* Main.storyboard */,
 				442849AD1D8837D50044DCF5 /* Assets.xcassets */,
 				446B0D711E20D0EA0012140C /* states.txt */,
 				44D348971E24643B00F953D7 /* abbreviations.txt */,
@@ -108,8 +119,20 @@
 				442849B91D8839A60044DCF5 /* onion.jpg */,
 				442849AF1D8837D50044DCF5 /* LaunchScreen.storyboard */,
 				442849B21D8837D50044DCF5 /* Info.plist */,
+				C2D2E6D71EB3218300200CEB /* KeyboardAvoidingVC.swift */,
+				C2D2E6DB1EB3282600200CEB /* MessageVC.swift */,
 			);
 			path = TextView;
+			sourceTree = "<group>";
+		};
+		C2D2E6D21EB320AC00200CEB /* KeyboardAvoiding */ = {
+			isa = PBXGroup;
+			children = (
+				C2D2E6D91EB327EC00200CEB /* KeyboardMan.swift */,
+				C2D2E6D31EB320AC00200CEB /* KeyboardAvoiding.swift */,
+				C2D2E6D41EB320AC00200CEB /* KeyboardDismissingView.swift */,
+			);
+			path = KeyboardAvoiding;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -191,12 +214,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C2D2E6D81EB3218300200CEB /* KeyboardAvoidingVC.swift in Sources */,
 				446B0D701E20CB280012140C /* StyledTextVC.swift in Sources */,
 				4474E0651E2272060013290C /* MyTextContainer.swift in Sources */,
 				44D3489A1E24649000F953D7 /* TextFieldVC.swift in Sources */,
 				442849A91D8837D50044DCF5 /* TextViewVC.swift in Sources */,
 				44D348961E24643000F953D7 /* MyTextField.swift in Sources */,
 				444150091E2909D000760959 /* KeyboardAccessoryVC.swift in Sources */,
+				C2D2E6D51EB320AC00200CEB /* KeyboardAvoiding.swift in Sources */,
+				C2D2E6D61EB320AC00200CEB /* KeyboardDismissingView.swift in Sources */,
+				C2D2E6DC1EB3282600200CEB /* MessageVC.swift in Sources */,
+				C2D2E6DA1EB327EC00200CEB /* KeyboardMan.swift in Sources */,
 				4474E0631E2262640013290C /* ExclusionPathVC.swift in Sources */,
 				4441500D1E2910AA00760959 /* TextFieldSlidingVC.swift in Sources */,
 				4474E0691E23B73C0013290C /* SelfSizingTextViewVC.swift in Sources */,
