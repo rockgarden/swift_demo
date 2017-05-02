@@ -2,6 +2,9 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:demo/CoreMotionDemo/CoreMotionDemo.xcodeproj">
+   </FileRef>
+   <FileRef
       location = "group:demo/UIViewController/UIViewController.xcodeproj">
    </FileRef>
    <FileRef
@@ -78,9 +81,6 @@
    </FileRef>
    <FileRef
       location = "group:demo/NetServiceBrowser/NetServiceBrowser.xcodeproj">
-   </FileRef>
-   <FileRef
-      location = "group:demo/CMMotionActivity/CMMotionActivity.xcodeproj">
    </FileRef>
    <FileRef
       location = "group:demo/CoreData/CoreDataExample.xcodeproj">

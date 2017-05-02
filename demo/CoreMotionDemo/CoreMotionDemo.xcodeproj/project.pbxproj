@@ -1,0 +1,368 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		C2A94DB91EB85B5F00F8FF48 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2A94DB81EB85B5F00F8FF48 /* AppDelegate.swift */; };
+		C2A94DBE1EB85B5F00F8FF48 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C2A94DBC1EB85B5F00F8FF48 /* Main.storyboard */; };
+		C2A94DC01EB85B5F00F8FF48 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C2A94DBF1EB85B5F00F8FF48 /* Assets.xcassets */; };
+		C2A94DC31EB85B5F00F8FF48 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C2A94DC11EB85B5F00F8FF48 /* LaunchScreen.storyboard */; };
+		C2A94DD51EB85C7F00F8FF48 /* AccelerometerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2A94DCC1EB85C7F00F8FF48 /* AccelerometerViewController.swift */; };
+		C2A94DD61EB85C7F00F8FF48 /* CGContext+GraphLines.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2A94DCD1EB85C7F00F8FF48 /* CGContext+GraphLines.swift */; };
+		C2A94DD71EB85C7F00F8FF48 /* DeviceMotionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2A94DCE1EB85C7F00F8FF48 /* DeviceMotionViewController.swift */; };
+		C2A94DD81EB85C7F00F8FF48 /* GraphSegment.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2A94DCF1EB85C7F00F8FF48 /* GraphSegment.swift */; };
+		C2A94DD91EB85C7F00F8FF48 /* GraphView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2A94DD01EB85C7F00F8FF48 /* GraphView.swift */; };
+		C2A94DDA1EB85C7F00F8FF48 /* GyroscopeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2A94DD11EB85C7F00F8FF48 /* GyroscopeViewController.swift */; };
+		C2A94DDB1EB85C7F00F8FF48 /* MagnetometerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2A94DD21EB85C7F00F8FF48 /* MagnetometerViewController.swift */; };
+		C2A94DDC1EB85C7F00F8FF48 /* MotionGraphContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2A94DD31EB85C7F00F8FF48 /* MotionGraphContainer.swift */; };
+		C2A94DDD1EB85C7F00F8FF48 /* UIViewController+Enumerate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2A94DD41EB85C7F00F8FF48 /* UIViewController+Enumerate.swift */; };
+		C2A94DE31EB85FCC00F8FF48 /* CMMotionManagerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2A94DDE1EB85FCC00F8FF48 /* CMMotionManagerVC.swift */; };
+		C2A94DE51EB85FCC00F8FF48 /* CMMotionActivityVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2A94DE01EB85FCC00F8FF48 /* CMMotionActivityVC.swift */; };
+		C2A94DE61EB85FCC00F8FF48 /* MyTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2A94DE11EB85FCC00F8FF48 /* MyTimer.swift */; };
+		C2A94DE71EB85FCC00F8FF48 /* MyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2A94DE21EB85FCC00F8FF48 /* MyView.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		C2A94DB51EB85B5E00F8FF48 /* CoreMotionDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CoreMotionDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		C2A94DB81EB85B5F00F8FF48 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		C2A94DBD1EB85B5F00F8FF48 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		C2A94DBF1EB85B5F00F8FF48 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		C2A94DC21EB85B5F00F8FF48 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		C2A94DC41EB85B5F00F8FF48 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C2A94DCC1EB85C7F00F8FF48 /* AccelerometerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccelerometerViewController.swift; sourceTree = "<group>"; };
+		C2A94DCD1EB85C7F00F8FF48 /* CGContext+GraphLines.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CGContext+GraphLines.swift"; sourceTree = "<group>"; };
+		C2A94DCE1EB85C7F00F8FF48 /* DeviceMotionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeviceMotionViewController.swift; sourceTree = "<group>"; };
+		C2A94DCF1EB85C7F00F8FF48 /* GraphSegment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GraphSegment.swift; sourceTree = "<group>"; };
+		C2A94DD01EB85C7F00F8FF48 /* GraphView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GraphView.swift; sourceTree = "<group>"; };
+		C2A94DD11EB85C7F00F8FF48 /* GyroscopeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GyroscopeViewController.swift; sourceTree = "<group>"; };
+		C2A94DD21EB85C7F00F8FF48 /* MagnetometerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MagnetometerViewController.swift; sourceTree = "<group>"; };
+		C2A94DD31EB85C7F00F8FF48 /* MotionGraphContainer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MotionGraphContainer.swift; sourceTree = "<group>"; };
+		C2A94DD41EB85C7F00F8FF48 /* UIViewController+Enumerate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+Enumerate.swift"; sourceTree = "<group>"; };
+		C2A94DDE1EB85FCC00F8FF48 /* CMMotionManagerVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CMMotionManagerVC.swift; sourceTree = "<group>"; };
+		C2A94DE01EB85FCC00F8FF48 /* CMMotionActivityVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CMMotionActivityVC.swift; sourceTree = "<group>"; };
+		C2A94DE11EB85FCC00F8FF48 /* MyTimer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyTimer.swift; sourceTree = "<group>"; };
+		C2A94DE21EB85FCC00F8FF48 /* MyView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyView.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		C2A94DB21EB85B5E00F8FF48 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		C2A94DAC1EB85B5E00F8FF48 = {
+			isa = PBXGroup;
+			children = (
+				C2A94DB71EB85B5E00F8FF48 /* CoreMotionDemo */,
+				C2A94DB61EB85B5E00F8FF48 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		C2A94DB61EB85B5E00F8FF48 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				C2A94DB51EB85B5E00F8FF48 /* CoreMotionDemo.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		C2A94DB71EB85B5E00F8FF48 /* CoreMotionDemo */ = {
+			isa = PBXGroup;
+			children = (
+				C2A94DCB1EB85C7F00F8FF48 /* MotionGraphs */,
+				C2A94DB81EB85B5F00F8FF48 /* AppDelegate.swift */,
+				C2A94DDE1EB85FCC00F8FF48 /* CMMotionManagerVC.swift */,
+				C2A94DE01EB85FCC00F8FF48 /* CMMotionActivityVC.swift */,
+				C2A94DE11EB85FCC00F8FF48 /* MyTimer.swift */,
+				C2A94DE21EB85FCC00F8FF48 /* MyView.swift */,
+				C2A94DBC1EB85B5F00F8FF48 /* Main.storyboard */,
+				C2A94DBF1EB85B5F00F8FF48 /* Assets.xcassets */,
+				C2A94DC11EB85B5F00F8FF48 /* LaunchScreen.storyboard */,
+				C2A94DC41EB85B5F00F8FF48 /* Info.plist */,
+			);
+			path = CoreMotionDemo;
+			sourceTree = "<group>";
+		};
+		C2A94DCB1EB85C7F00F8FF48 /* MotionGraphs */ = {
+			isa = PBXGroup;
+			children = (
+				C2A94DCC1EB85C7F00F8FF48 /* AccelerometerViewController.swift */,
+				C2A94DCD1EB85C7F00F8FF48 /* CGContext+GraphLines.swift */,
+				C2A94DCE1EB85C7F00F8FF48 /* DeviceMotionViewController.swift */,
+				C2A94DCF1EB85C7F00F8FF48 /* GraphSegment.swift */,
+				C2A94DD01EB85C7F00F8FF48 /* GraphView.swift */,
+				C2A94DD11EB85C7F00F8FF48 /* GyroscopeViewController.swift */,
+				C2A94DD21EB85C7F00F8FF48 /* MagnetometerViewController.swift */,
+				C2A94DD31EB85C7F00F8FF48 /* MotionGraphContainer.swift */,
+				C2A94DD41EB85C7F00F8FF48 /* UIViewController+Enumerate.swift */,
+			);
+			path = MotionGraphs;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		C2A94DB41EB85B5E00F8FF48 /* CoreMotionDemo */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C2A94DC71EB85B5F00F8FF48 /* Build configuration list for PBXNativeTarget "CoreMotionDemo" */;
+			buildPhases = (
+				C2A94DB11EB85B5E00F8FF48 /* Sources */,
+				C2A94DB21EB85B5E00F8FF48 /* Frameworks */,
+				C2A94DB31EB85B5E00F8FF48 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = CoreMotionDemo;
+			productName = CoreMotionDemo;
+			productReference = C2A94DB51EB85B5E00F8FF48 /* CoreMotionDemo.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		C2A94DAD1EB85B5E00F8FF48 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0830;
+				LastUpgradeCheck = 0830;
+				ORGANIZATIONNAME = rockgarden;
+				TargetAttributes = {
+					C2A94DB41EB85B5E00F8FF48 = {
+						CreatedOnToolsVersion = 8.3;
+						DevelopmentTeam = W3MH7MTTSB;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = C2A94DB01EB85B5E00F8FF48 /* Build configuration list for PBXProject "CoreMotionDemo" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = C2A94DAC1EB85B5E00F8FF48;
+			productRefGroup = C2A94DB61EB85B5E00F8FF48 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				C2A94DB41EB85B5E00F8FF48 /* CoreMotionDemo */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		C2A94DB31EB85B5E00F8FF48 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C2A94DC31EB85B5F00F8FF48 /* LaunchScreen.storyboard in Resources */,
+				C2A94DC01EB85B5F00F8FF48 /* Assets.xcassets in Resources */,
+				C2A94DBE1EB85B5F00F8FF48 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		C2A94DB11EB85B5E00F8FF48 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C2A94DD81EB85C7F00F8FF48 /* GraphSegment.swift in Sources */,
+				C2A94DE51EB85FCC00F8FF48 /* CMMotionActivityVC.swift in Sources */,
+				C2A94DD61EB85C7F00F8FF48 /* CGContext+GraphLines.swift in Sources */,
+				C2A94DDA1EB85C7F00F8FF48 /* GyroscopeViewController.swift in Sources */,
+				C2A94DE61EB85FCC00F8FF48 /* MyTimer.swift in Sources */,
+				C2A94DD91EB85C7F00F8FF48 /* GraphView.swift in Sources */,
+				C2A94DE31EB85FCC00F8FF48 /* CMMotionManagerVC.swift in Sources */,
+				C2A94DE71EB85FCC00F8FF48 /* MyView.swift in Sources */,
+				C2A94DDB1EB85C7F00F8FF48 /* MagnetometerViewController.swift in Sources */,
+				C2A94DDD1EB85C7F00F8FF48 /* UIViewController+Enumerate.swift in Sources */,
+				C2A94DB91EB85B5F00F8FF48 /* AppDelegate.swift in Sources */,
+				C2A94DD71EB85C7F00F8FF48 /* DeviceMotionViewController.swift in Sources */,
+				C2A94DDC1EB85C7F00F8FF48 /* MotionGraphContainer.swift in Sources */,
+				C2A94DD51EB85C7F00F8FF48 /* AccelerometerViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		C2A94DBC1EB85B5F00F8FF48 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C2A94DBD1EB85B5F00F8FF48 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		C2A94DC11EB85B5F00F8FF48 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C2A94DC21EB85B5F00F8FF48 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		C2A94DC51EB85B5F00F8FF48 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		C2A94DC61EB85B5F00F8FF48 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		C2A94DC81EB85B5F00F8FF48 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = W3MH7MTTSB;
+				INFOPLIST_FILE = CoreMotionDemo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.rockgarden.CoreMotionDemo;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		C2A94DC91EB85B5F00F8FF48 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = W3MH7MTTSB;
+				INFOPLIST_FILE = CoreMotionDemo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.rockgarden.CoreMotionDemo;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		C2A94DB01EB85B5E00F8FF48 /* Build configuration list for PBXProject "CoreMotionDemo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C2A94DC51EB85B5F00F8FF48 /* Debug */,
+				C2A94DC61EB85B5F00F8FF48 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C2A94DC71EB85B5F00F8FF48 /* Build configuration list for PBXNativeTarget "CoreMotionDemo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C2A94DC81EB85B5F00F8FF48 /* Debug */,
+				C2A94DC91EB85B5F00F8FF48 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = C2A94DAD1EB85B5E00F8FF48 /* Project object */;
+}
