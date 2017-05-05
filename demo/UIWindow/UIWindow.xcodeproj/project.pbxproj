@@ -7,19 +7,19 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		449A22101EBCBC5B00F2C1CF /* AppWindowNavVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 449A220F1EBCBC5B00F2C1CF /* AppWindowNavVC.swift */; };
 		44E718621DCB60FE00F357BC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44E718611DCB60FE00F357BC /* AppDelegate.swift */; };
-		44E718641DCB60FE00F357BC /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44E718631DCB60FE00F357BC /* ViewController.swift */; };
-		44E718671DCB60FE00F357BC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 44E718651DCB60FE00F357BC /* Main.storyboard */; };
+		44E718641DCB60FE00F357BC /* WindowTestVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44E718631DCB60FE00F357BC /* WindowTestVC.swift */; };
 		44E718691DCB60FE00F357BC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 44E718681DCB60FE00F357BC /* Assets.xcassets */; };
 		44E7186C1DCB60FE00F357BC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 44E7186A1DCB60FE00F357BC /* LaunchScreen.storyboard */; };
 		44E718741DCB614700F357BC /* MyWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44E718731DCB614700F357BC /* MyWindow.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		449A220F1EBCBC5B00F2C1CF /* AppWindowNavVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppWindowNavVC.swift; sourceTree = "<group>"; };
 		44E7185E1DCB60FE00F357BC /* UIWindow.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UIWindow.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		44E718611DCB60FE00F357BC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		44E718631DCB60FE00F357BC /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		44E718661DCB60FE00F357BC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		44E718631DCB60FE00F357BC /* WindowTestVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WindowTestVC.swift; sourceTree = "<group>"; };
 		44E718681DCB60FE00F357BC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		44E7186B1DCB60FE00F357BC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		44E7186D1DCB60FE00F357BC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -57,9 +57,9 @@
 			isa = PBXGroup;
 			children = (
 				44E718611DCB60FE00F357BC /* AppDelegate.swift */,
-				44E718631DCB60FE00F357BC /* ViewController.swift */,
+				449A220F1EBCBC5B00F2C1CF /* AppWindowNavVC.swift */,
+				44E718631DCB60FE00F357BC /* WindowTestVC.swift */,
 				44E718731DCB614700F357BC /* MyWindow.swift */,
-				44E718651DCB60FE00F357BC /* Main.storyboard */,
 				44E718681DCB60FE00F357BC /* Assets.xcassets */,
 				44E7186A1DCB60FE00F357BC /* LaunchScreen.storyboard */,
 				44E7186D1DCB60FE00F357BC /* Info.plist */,
@@ -94,12 +94,12 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0810;
-				LastUpgradeCheck = 0810;
+				LastUpgradeCheck = 0830;
 				ORGANIZATIONNAME = rockgarden;
 				TargetAttributes = {
 					44E7185D1DCB60FE00F357BC = {
 						CreatedOnToolsVersion = 8.1;
-						ProvisioningStyle = Automatic;
+						ProvisioningStyle = Manual;
 					};
 				};
 			};
@@ -128,7 +128,6 @@
 			files = (
 				44E7186C1DCB60FE00F357BC /* LaunchScreen.storyboard in Resources */,
 				44E718691DCB60FE00F357BC /* Assets.xcassets in Resources */,
-				44E718671DCB60FE00F357BC /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -139,8 +138,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				449A22101EBCBC5B00F2C1CF /* AppWindowNavVC.swift in Sources */,
 				44E718741DCB614700F357BC /* MyWindow.swift in Sources */,
-				44E718641DCB60FE00F357BC /* ViewController.swift in Sources */,
+				44E718641DCB60FE00F357BC /* WindowTestVC.swift in Sources */,
 				44E718621DCB60FE00F357BC /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -148,14 +148,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		44E718651DCB60FE00F357BC /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				44E718661DCB60FE00F357BC /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		44E7186A1DCB60FE00F357BC /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -185,6 +177,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -234,6 +227,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -262,10 +256,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = UIWindow/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.rockgarden.UIWindow;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
@@ -274,10 +270,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = UIWindow/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.rockgarden.UIWindow;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
@@ -301,6 +299,7 @@
 				44E718721DCB60FE00F357BC /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

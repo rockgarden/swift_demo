@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  WindowTestVC.swift
 //  UIWindow
 //
 //  Created by wangkan on 2016/11/3.
@@ -8,10 +8,20 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class WindowTestVC: UIViewController {
 
+    private var nav: AppWindowNavVC!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+
+        var rightItem = UIBarButtonItem()
+        rightItem = UIBarButtonItem(title: "Menu", style: .plain, target: self, action: #selector(showBack))
+        self.navigationItem.rightBarButtonItem = rightItem
+
+        nav = self.navigationController as! AppWindowNavVC
+        nav.setNavigationBarHidden(false, animated: false)
+        
         let mainview = self.view
         let lay1 = CALayer()
         lay1.backgroundColor = UIColor(red: 1, green: 0.4, blue: 1, alpha: 1).cgColor
@@ -42,6 +52,9 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
+    @objc private func showBack() {
+        nav.openAndClose()
+    }
 
 }
 
