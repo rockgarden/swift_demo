@@ -2,29 +2,29 @@
 import UIKit
 
 class CoinSlider: UISlider {
-
+    
     required init?(coder: NSCoder) {
         super.init(coder:coder)
-
+        
         let t = UITapGestureRecognizer(target: self, action: #selector(tapped))
         self.addGestureRecognizer(t)
-
+        
         //    self.superview.tintColor = .red
         //    self.minimumTrackTintColor = .yellow
         //    self.maximumTrackTintColor = .green
         //    self.thumbTintColor = UIColor.orange()
-
+        
         self.setThumbImage(UIImage(named:"moneybag1.png")!, for:.normal)
-
+        
         let coinEnd = UIImage(named:"coin2.png")!.resizableImage(withCapInsets:
             UIEdgeInsetsMake(0,7,0,7), resizingMode: .stretch)
-
+        
         self.setMinimumTrackImage(coinEnd, for:.normal)
         self.setMaximumTrackImage(coinEnd, for:.normal)
-
+        
         // self.bounds.size.height += 30
     }
-
+    
     // supply sufficient height to make new thumb image touchable
     // we are using autolayout so this works
     // otherwise we'd use the bound, above
@@ -33,7 +33,7 @@ class CoinSlider: UISlider {
         sz.height += 30
         return sz
     }
-
+    
     func tapped(_ g:UIGestureRecognizer) {
         let s = g.view as! UISlider
         if s.isHighlighted {
@@ -53,29 +53,28 @@ class CoinSlider: UISlider {
             }
         }
     }
-
+    
     override func maximumValueImageRect(forBounds bounds: CGRect) -> CGRect {
         return super.maximumValueImageRect(forBounds:bounds).offsetBy(dx: 31, dy: 0)
     }
-
+    
     override func minimumValueImageRect(forBounds bounds: CGRect) -> CGRect {
         return super.minimumValueImageRect(forBounds: bounds).offsetBy(dx: -31, dy: 0)
     }
-
+    
     override func trackRect(forBounds bounds: CGRect) -> CGRect {
         var result = super.trackRect(forBounds: bounds)
         result.origin.x = 0
         result.size.width = bounds.size.width
         return result
     }
-
+    
     override func thumbRect(forBounds bounds: CGRect, trackRect rect: CGRect, value: Float) -> CGRect {
         return super.thumbRect(forBounds:
             bounds, trackRect: rect, value: value)
             .offsetBy(dx: 0, dy: -7)
     }
-
-
+    
     //    override func hitTest(_ point: CGPoint, with event: UIEvent?) -> UIView? {
     //        let tr = self.trackRect(forBounds: self.bounds)
     //        if tr.contains(point) { return self }
@@ -83,6 +82,5 @@ class CoinSlider: UISlider {
     //        if r.contains(point) { return self }
     //        return nil
     //    }
-    
     
 }

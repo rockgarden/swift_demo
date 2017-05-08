@@ -7,7 +7,7 @@ import UIKit
 
 class WebViewRoot: UITableViewController {
     
-    // MARK: - Navigation
+    // MARK: Navigation
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath){
         let cell = tableView.cellForRow(at: indexPath)
         if let id = cell?.tag {
@@ -36,6 +36,9 @@ class WebViewRoot: UITableViewController {
             case 7 :
                 let wvc = BKWebBridgeDemo()
                 show(wvc, sender: nil)
+            case 8 :
+                let wvc = SaveWebImageVC()
+                show(wvc, sender: nil)
             default:
                 break
             }
@@ -44,7 +47,7 @@ class WebViewRoot: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.title = "Start"
+        self.title = "WebView Start"
     }
 
 }

@@ -19,6 +19,14 @@
 		44D68A0E1E19FB5B00AB4C19 /* CoinSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44D68A0D1E19FB5B00AB4C19 /* CoinSlider.swift */; };
 		44D68A101E19FD8000AB4C19 /* DataPickerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44D68A0F1E19FD8000AB4C19 /* DataPickerVC.swift */; };
 		44D68A121E19FF8800AB4C19 /* UIStepperVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44D68A111E19FF8800AB4C19 /* UIStepperVC.swift */; };
+		C29089601EC01A8A001E02FB /* ButtonVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C290895F1EC01A8A001E02FB /* ButtonVC.swift */; };
+		C29089621EC01A9A001E02FB /* FloatingButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = C29089611EC01A9A001E02FB /* FloatingButton.swift */; };
+		C29089641EC01AAE001E02FB /* RoundBorderedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = C29089631EC01AAE001E02FB /* RoundBorderedButton.swift */; };
+		C29089661EC01AB6001E02FB /* SqueezeButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = C29089651EC01AB6001E02FB /* SqueezeButton.swift */; };
+		C290896D1EC0393F001E02FB /* CGRectEx.swift in Sources */ = {isa = PBXBuildFile; fileRef = C29089681EC0393F001E02FB /* CGRectEx.swift */; };
+		C290896E1EC0393F001E02FB /* FadeTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = C29089691EC0393F001E02FB /* FadeTransition.swift */; };
+		C290896F1EC0393F001E02FB /* SpinerLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = C290896A1EC0393F001E02FB /* SpinerLayer.swift */; };
+		C29089711EC0393F001E02FB /* TransitionSubmitButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = C290896C1EC0393F001E02FB /* TransitionSubmitButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +44,14 @@
 		44D68A0D1E19FB5B00AB4C19 /* CoinSlider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoinSlider.swift; sourceTree = "<group>"; };
 		44D68A0F1E19FD8000AB4C19 /* DataPickerVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataPickerVC.swift; sourceTree = "<group>"; };
 		44D68A111E19FF8800AB4C19 /* UIStepperVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIStepperVC.swift; sourceTree = "<group>"; };
+		C290895F1EC01A8A001E02FB /* ButtonVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ButtonVC.swift; sourceTree = "<group>"; };
+		C29089611EC01A9A001E02FB /* FloatingButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FloatingButton.swift; sourceTree = "<group>"; };
+		C29089631EC01AAE001E02FB /* RoundBorderedButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoundBorderedButton.swift; sourceTree = "<group>"; };
+		C29089651EC01AB6001E02FB /* SqueezeButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SqueezeButton.swift; sourceTree = "<group>"; };
+		C29089681EC0393F001E02FB /* CGRectEx.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CGRectEx.swift; sourceTree = "<group>"; };
+		C29089691EC0393F001E02FB /* FadeTransition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FadeTransition.swift; sourceTree = "<group>"; };
+		C290896A1EC0393F001E02FB /* SpinerLayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpinerLayer.swift; sourceTree = "<group>"; };
+		C290896C1EC0393F001E02FB /* TransitionSubmitButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransitionSubmitButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -52,6 +68,7 @@
 		449E5D811E13FC6B009F2915 = {
 			isa = PBXGroup;
 			children = (
+				C29089671EC0393F001E02FB /* TransitionSubmitButton */,
 				449E5D8C1E13FC6B009F2915 /* UIControlDemo */,
 				449E5D8B1E13FC6B009F2915 /* Products */,
 			);
@@ -69,8 +86,8 @@
 			isa = PBXGroup;
 			children = (
 				449E5D8D1E13FC6B009F2915 /* AppDelegate.swift */,
-				449E5D8F1E13FC6B009F2915 /* UIControlVC.swift */,
 				449E5D911E13FC6B009F2915 /* Main.storyboard */,
+				449E5D8F1E13FC6B009F2915 /* UIControlVC.swift */,
 				449BD95B1E192CE8003A0762 /* UISegmentedControlVC.swift */,
 				449BD9591E19280C003A0762 /* MyShrinkingButton.swift */,
 				449BD9571E192470003A0762 /* MyKnob.swift */,
@@ -78,11 +95,26 @@
 				44D68A0F1E19FD8000AB4C19 /* DataPickerVC.swift */,
 				44D68A0D1E19FB5B00AB4C19 /* CoinSlider.swift */,
 				44D68A111E19FF8800AB4C19 /* UIStepperVC.swift */,
+				C290895F1EC01A8A001E02FB /* ButtonVC.swift */,
+				C29089611EC01A9A001E02FB /* FloatingButton.swift */,
+				C29089631EC01AAE001E02FB /* RoundBorderedButton.swift */,
+				C29089651EC01AB6001E02FB /* SqueezeButton.swift */,
 				449E5D941E13FC6B009F2915 /* Assets.xcassets */,
 				449E5D961E13FC6B009F2915 /* LaunchScreen.storyboard */,
 				449E5D991E13FC6B009F2915 /* Info.plist */,
 			);
 			path = UIControlDemo;
+			sourceTree = "<group>";
+		};
+		C29089671EC0393F001E02FB /* TransitionSubmitButton */ = {
+			isa = PBXGroup;
+			children = (
+				C29089681EC0393F001E02FB /* CGRectEx.swift */,
+				C29089691EC0393F001E02FB /* FadeTransition.swift */,
+				C290896A1EC0393F001E02FB /* SpinerLayer.swift */,
+				C290896C1EC0393F001E02FB /* TransitionSubmitButton.swift */,
+			);
+			path = TransitionSubmitButton;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -159,14 +191,22 @@
 			buildActionMask = 2147483647;
 			files = (
 				449E5DA01E13FC87009F2915 /* MySlider.swift in Sources */,
+				C290896E1EC0393F001E02FB /* FadeTransition.swift in Sources */,
 				44D68A121E19FF8800AB4C19 /* UIStepperVC.swift in Sources */,
 				44D68A0E1E19FB5B00AB4C19 /* CoinSlider.swift in Sources */,
 				449BD95A1E19280C003A0762 /* MyShrinkingButton.swift in Sources */,
 				449E5D901E13FC6B009F2915 /* UIControlVC.swift in Sources */,
 				449BD95C1E192CE8003A0762 /* UISegmentedControlVC.swift in Sources */,
+				C290896D1EC0393F001E02FB /* CGRectEx.swift in Sources */,
+				C29089661EC01AB6001E02FB /* SqueezeButton.swift in Sources */,
 				449E5D8E1E13FC6B009F2915 /* AppDelegate.swift in Sources */,
+				C290896F1EC0393F001E02FB /* SpinerLayer.swift in Sources */,
 				44D68A101E19FD8000AB4C19 /* DataPickerVC.swift in Sources */,
+				C29089601EC01A8A001E02FB /* ButtonVC.swift in Sources */,
+				C29089711EC0393F001E02FB /* TransitionSubmitButton.swift in Sources */,
 				449BD9581E192470003A0762 /* MyKnob.swift in Sources */,
+				C29089621EC01A9A001E02FB /* FloatingButton.swift in Sources */,
+				C29089641EC01AAE001E02FB /* RoundBorderedButton.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

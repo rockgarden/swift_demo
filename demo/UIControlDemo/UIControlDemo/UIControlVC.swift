@@ -56,15 +56,6 @@ class UIControlVC: UIViewController {
         self.button2.titleLabel!.textAlignment = .center
         self.button2.setTitle("Button with a title that wraps", for:.normal)
 
-        let con = UIGraphicsGetCurrentContext()!
-        con.addArc(center: <#T##CGPoint#>, radius: <#T##CGFloat#>, startAngle: <#T##CGFloat#>, endAngle: <#T##CGFloat#>, clockwise: <#T##Bool#>) //(in: CGRect(0,0,size.width,size.height))
-        //con.setFillColor(UIColor.applicationAlphaLightGray.cgColor)
-        //con.fillPath()
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
 
     @IBAction func doKnob (_ sender: Any!) {

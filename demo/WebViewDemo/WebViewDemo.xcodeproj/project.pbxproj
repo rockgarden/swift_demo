@@ -52,6 +52,10 @@
 		44FA793C1E4C8FB300A5BD71 /* InputControl.js in Resources */ = {isa = PBXBuildFile; fileRef = 44FA79381E4C8FB300A5BD71 /* InputControl.js */; };
 		44FA793D1E4C8FB300A5BD71 /* script.js in Resources */ = {isa = PBXBuildFile; fileRef = 44FA79391E4C8FB300A5BD71 /* script.js */; };
 		44FB21F11E324AE000F191D3 /* readme.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 44FB21F01E324AE000F191D3 /* readme.rtf */; };
+		C21A0BED1EC0581300EE2C26 /* SaveWebImageVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C21A0BEC1EC0581300EE2C26 /* SaveWebImageVC.swift */; };
+		C21A0C0B1EC058C300EE2C26 /* Drop.swift in Sources */ = {isa = PBXBuildFile; fileRef = C21A0C081EC058C300EE2C26 /* Drop.swift */; };
+		C21A0C0C1EC058C300EE2C26 /* Hokusai.swift in Sources */ = {isa = PBXBuildFile; fileRef = C21A0C091EC058C300EE2C26 /* Hokusai.swift */; };
+		C21A0C0D1EC058C300EE2C26 /* Just.swift in Sources */ = {isa = PBXBuildFile; fileRef = C21A0C0A1EC058C300EE2C26 /* Just.swift */; };
 		C21B7E7E1E52A8710097E3C4 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = C21B7E751E52A8700097E3C4 /* Localizable.strings */; };
 		C21B7E7F1E52A8710097E3C4 /* Functions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C21B7E771E52A8700097E3C4 /* Functions.swift */; };
 		C21B7E801E52A8710097E3C4 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C21B7E781E52A8700097E3C4 /* Info.plist */; };
@@ -118,6 +122,10 @@
 		44FA79381E4C8FB300A5BD71 /* InputControl.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = InputControl.js; sourceTree = "<group>"; };
 		44FA79391E4C8FB300A5BD71 /* script.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = script.js; sourceTree = "<group>"; };
 		44FB21F01E324AE000F191D3 /* readme.rtf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.rtf; path = readme.rtf; sourceTree = "<group>"; };
+		C21A0BEC1EC0581300EE2C26 /* SaveWebImageVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SaveWebImageVC.swift; sourceTree = "<group>"; };
+		C21A0C081EC058C300EE2C26 /* Drop.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Drop.swift; sourceTree = "<group>"; };
+		C21A0C091EC058C300EE2C26 /* Hokusai.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Hokusai.swift; sourceTree = "<group>"; };
+		C21A0C0A1EC058C300EE2C26 /* Just.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Just.swift; sourceTree = "<group>"; };
 		C21B7E761E52A8700097E3C4 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		C21B7E771E52A8700097E3C4 /* Functions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Functions.swift; sourceTree = "<group>"; };
 		C21B7E781E52A8700097E3C4 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -164,6 +172,7 @@
 			isa = PBXGroup;
 			children = (
 				44FB21F01E324AE000F191D3 /* readme.rtf */,
+				C21A0C071EC058C300EE2C26 /* Third_Parties */,
 				C21B7E741E52A8700097E3C4 /* WebKitPlus */,
 				44463A111E4CB40D0007306E /* WKMagicBridge */,
 				441481031E509EDF00461CCE /* ZHWebViewBridgeDemo */,
@@ -187,6 +196,7 @@
 				441D44BF1E1E8DF000857C4F /* AppDelegate.swift */,
 				441D44C11E1E8DF000857C4F /* WebViewRoot.swift */,
 				441D44D11E1E8E6000857C4F /* WebViewVC.swift */,
+				C21A0BEC1EC0581300EE2C26 /* SaveWebImageVC.swift */,
 				441D44EC1E1E921000857C4F /* NoNavigationWebViewVC.swift */,
 				441480FD1E508B9A00461CCE /* ScriptMessageHandler.swift */,
 				441D44EE1E1E935B00857C4F /* WKWebViewVC.swift */,
@@ -252,6 +262,16 @@
 			path = WKMagicBridge;
 			sourceTree = "<group>";
 		};
+		C21A0C071EC058C300EE2C26 /* Third_Parties */ = {
+			isa = PBXGroup;
+			children = (
+				C21A0C081EC058C300EE2C26 /* Drop.swift */,
+				C21A0C091EC058C300EE2C26 /* Hokusai.swift */,
+				C21A0C0A1EC058C300EE2C26 /* Just.swift */,
+			);
+			path = Third_Parties;
+			sourceTree = "<group>";
+		};
 		C21B7E741E52A8700097E3C4 /* WebKitPlus */ = {
 			isa = PBXGroup;
 			children = (
@@ -293,7 +313,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0820;
-				LastUpgradeCheck = 0820;
+				LastUpgradeCheck = 0830;
 				ORGANIZATIONNAME = apple;
 				TargetAttributes = {
 					441D44BB1E1E8DF000857C4F = {
@@ -380,11 +400,15 @@
 				C2B3AC721E499DDD0016E9FE /* OldLocalHTML.swift in Sources */,
 				441D44C21E1E8DF000857C4F /* WebViewRoot.swift in Sources */,
 				C21B7E831E52A8710097E3C4 /* ZenWebViewController.swift in Sources */,
+				C21A0C0C1EC058C300EE2C26 /* Hokusai.swift in Sources */,
+				C21A0BED1EC0581300EE2C26 /* SaveWebImageVC.swift in Sources */,
 				441D44D21E1E8E6000857C4F /* WebViewVC.swift in Sources */,
 				446E40911E3900E60079559E /* WKWeb2JsVC.swift in Sources */,
 				441481081E509EDF00461CCE /* ZHViewController1.swift in Sources */,
 				C21B7E811E52A8710097E3C4 /* WebViewObserver.swift in Sources */,
 				441D44ED1E1E921000857C4F /* NoNavigationWebViewVC.swift in Sources */,
+				C21A0C0D1EC058C300EE2C26 /* Just.swift in Sources */,
+				C21A0C0B1EC058C300EE2C26 /* Drop.swift in Sources */,
 				44CFF3E11E32801000CABB08 /* JSModel.swift in Sources */,
 				441D44C01E1E8DF000857C4F /* AppDelegate.swift in Sources */,
 				441481001E509DD100461CCE /* ZHWebViewBridge.swift in Sources */,
@@ -435,6 +459,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
@@ -484,6 +509,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";

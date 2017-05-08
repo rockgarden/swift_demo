@@ -10,13 +10,19 @@ class ButtonVC: UIViewController {
     @IBOutlet weak var roundButton: RoundButton!
     @IBOutlet weak var roundBorderedbutton: RoundBorderedButton!
     @IBOutlet weak var fpButton: FPButton!
+    @IBOutlet weak var tsButton: TransitionSubmitButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-    }
-    
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
+        
+        //tsButton = TransitionSubmitButton(frame: CGRect(x: 0, y: 0, width: self.view.frame.size.width - 64, height: 44))
+        //tsButton.center = self.view.center
+        //tsButton.frame.bottom = self.view.frame.height - 60
+        tsButton.spinnerColor = .white
+        tsButton.backgroundColor = .red
+        tsButton.setTitle("Sign in", for: UIControlState())
+        tsButton.titleLabel?.font = UIFont(name: "HelveticaNeue-Light", size: 14)
+        tsButton.addTarget(self, action: #selector(onTapButton(_:)), for: .touchUpInside)
     }
     
     @IBAction func buttonPressed(sender: AnyObject) {
@@ -33,19 +39,29 @@ class ButtonVC: UIViewController {
         fpButton.isSelected = !fpButton.isSelected
     }
     
-    override var prefersStatusBarHidden: Bool {
-        return true
+    func onTapButton(_ button: TransitionSubmitButton) {
+        button.animate(1, completion: { () -> () in
+            let vc = FadeInAnimatorVC()
+            vc.transitioningDelegate = self
+            self.present(vc, animated: true, completion: nil)
+        })
     }
     
 }
 
+extension ButtonVC: UIViewControllerTransitioningDelegate {
 
-//
-//  RoundButton.swift
-//
+    func animationController(forPresented presented: UIViewController, presenting: UIViewController, source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+        return FadeInAnimator(transitionDuration: 0.5, startingAlpha: 0.8)
+    }
+    
+    func animationController(forDismissed dismissed: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+        return nil
+    }
+}
 
-import UIKit
 
+///  RoundButton.swift
 public class RoundButton: UIButton {
     
     var borderColor: UIColor = UIColor.red {
@@ -68,15 +84,11 @@ public class RoundButton: UIButton {
 }
 
 
-//
-//  FPButton.swift
-//
-import UIKit
+///  FPButton.swift
 //FIXME: isSelected 样式异常
 public class FPButton: UIButton {
     
     // MARK: Properties
-    
     var isAlwaysChecked : Bool = false {
         didSet {
             if isAlwaysChecked {
@@ -123,15 +135,16 @@ public class FPButton: UIButton {
     }
     
     // MARK: Init
-    
     required public init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         _init()
     }
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         _init()
     }
+    
     init() {
         let defaultFrame = CGRect(x: 0, y: 0, width: 100, height: 44)
         super.init(frame: defaultFrame)
@@ -145,9 +158,7 @@ public class FPButton: UIButton {
         addTarget(self, action: #selector(FPButton.buttonClicked), for: .touchUpInside)
     }
     
-    
     // MARK: Actions
-    
     func buttonClicked() {
         UIView.animate(withDuration: 0.2, delay: 0, usingSpringWithDamping: 0.2, initialSpringVelocity: 0, options: .curveEaseIn, animations: { () in
             self.transform = CGAffineTransform(scaleX: 1.03, y: 1.03)
@@ -161,9 +172,7 @@ public class FPButton: UIButton {
         }, completion: nil)
     }
     
-    
     // MARK: Helpers
-    
     func setColor(color : UIColor) {
         setTitleColor(color, for: .normal)
         layer.borderColor = color.cgColor
