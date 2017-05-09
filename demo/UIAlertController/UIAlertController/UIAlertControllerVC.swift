@@ -8,10 +8,11 @@
 
 import UIKit
 
-class UIAlertControllerVC: UIViewController {
+class UIAlertControllerVC: UIViewController, UIPopoverPresentationController {
 
     @IBOutlet weak var horizontalStackView: UIStackView!
     @IBOutlet var toolbar : UIToolbar!
+    @IBOutlet weak var showPopoverButton: UIButton!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -122,7 +123,7 @@ class UIAlertControllerVC: UIViewController {
         let alert = UIAlertController(title: "Enter a number:", message: nil, preferredStyle: .alert)
         alert.addTextField { tf in
             tf.keyboardType = .numberPad // ??? not on iPad
-            tf.addTarget(self, action: #selector(self.textChanged), for: .editingChanged)
+            tf.addTarget(self, action: #selector(textChanged), for: .editingChanged)
         }
         func handler(_ act:UIAlertAction) {
             // it's a closure so we have a reference to the alert
@@ -186,24 +187,88 @@ class UIAlertControllerVC: UIViewController {
             }
         }
     }
+    
+    @IBAction func showPopover(_ sender: Any) {
+        let storyboard = UIStoryboard(name: "PopoverVC", bundle: nil)
+        let pc = storyboard.instantiateViewController(withIdentifier: "Popover") as? PopoverVC
+        pc?.modalPresentationStyle = .popover
+        
+        let popoverViewController = pc!.popoverPresentationController
+        popoverViewController?.permittedArrowDirections = .any
+        popoverViewController?.delegate = self
+        popoverViewController?.sourceView = self.showPopoverButton
+        popoverViewController?.sourceRect = CGRect(
+            x: self.view.bounds.origin.x + 30,
+            y: self.view.bounds.origin.y + 10,
+            width: 1,
+            height: 1)
+        present(pc!, animated: true, completion: nil)
+    }
+    
+    @IBAction func showAlertCustomize(_ sender: AnyObject) {
+        let alertController = UIAlertController(title: "Hello, I'm alert! \n\n\n\n\n\n\n", message: "", preferredStyle: .alert)
+        
+        let rect        = CGRect(x: 15, y: 50, width: 240, height: 150.0)
+        let textView    = UITextView(frame: rect)
+        
+        textView.font               = UIFont(name: "Helvetica", size: 15)
+        textView.textColor          = UIColor.lightGray
+        textView.backgroundColor    = UIColor.white
+        textView.layer.borderColor  = UIColor.lightGray.cgColor
+        textView.layer.borderWidth  = 1.0
+        textView.text               = "Enter message here"
+        textView.delegate           = self
+        
+        alertController.view.addSubview(textView)
+        
+        let cancel = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+        let action = UIAlertAction(title: "Ok", style: .default, handler: { action in
+            
+            let msg = (textView.textColor == UIColor.lightGray) ? "" : textView.text
+            
+            print(msg as Any)
+            
+        })
+        alertController.addAction(cancel)
+        alertController.addAction(action)
+        
+        self.present(alertController, animated: true, completion: {})
+    }
 
 }
 
-// not needed in iOS 8.3
-// but needed again in iOS 9
 
-extension UIAlertControllerVC : UIPopoverPresentationControllerDelegate {
+// not needed in iOS 8.3 but needed again in iOS 9
+extension UIAlertControllerVC: UIPopoverPresentationControllerDelegate {
     func popoverPresentationControllerShouldDismissPopover(
         _ pop: UIPopoverPresentationController) -> Bool {
         let ok = pop.presentedViewController.presentedViewController == nil
         return ok
     }
+    
+    func adaptivePresentationStyle(for controller: UIPresentationController) -> UIModalPresentationStyle {
+        return .none
+    }
 }
 
-extension UIAlertControllerVC : UIToolbarDelegate {
+
+extension UIAlertControllerVC: UIToolbarDelegate {
     func position(for bar: UIBarPositioning) -> UIBarPosition {
         return .topAttached
     }
 }
 
 
+extension UIAlertControllerVC: UITextViewDelegate {
+    func textViewDidBeginEditing(_ textView: UITextView) {
+        if textView.textColor == UIColor.lightGray{
+            textView.text = ""
+            textView.textColor = UIColor.darkGray
+        }
+    }
+    
+    func textViewShouldEndEditing(_ textView: UITextView) -> Bool {
+        textView.resignFirstResponder()
+        return true
+    }
+}

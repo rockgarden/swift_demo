@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16C67" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="rzv-JC-O2o">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12118" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="rzv-JC-O2o">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -39,7 +39,7 @@
                                 </items>
                             </toolbar>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="9" translatesAutoresizingMaskIntoConstraints="NO" id="qng-bH-vTO">
-                                <rect key="frame" x="16" y="82" width="343" height="225"/>
+                                <rect key="frame" x="16" y="82" width="343" height="303"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8ys-xS-oAI">
                                         <rect key="frame" x="134" y="0.0" width="75" height="30"/>
@@ -48,39 +48,56 @@
                                             <action selector="actionAlert:" destination="rzv-JC-O2o" eventType="touchUpInside" id="Qcp-iE-lWs"/>
                                         </connections>
                                     </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jCj-nT-lXb">
+                                        <rect key="frame" x="95.5" y="39" width="152" height="30"/>
+                                        <state key="normal" title="Show Alert Customize"/>
+                                        <connections>
+                                            <action selector="doAlertViewAddTextField:" destination="rzv-JC-O2o" eventType="touchUpInside" id="AoQ-qn-ANe"/>
+                                            <action selector="showAlertCustomize:" destination="rzv-JC-O2o" eventType="touchUpInside" id="JGv-Lh-fQL"/>
+                                            <action selector="showPopover:" destination="rzv-JC-O2o" eventType="touchUpInside" id="CUy-vV-YxV"/>
+                                        </connections>
+                                    </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="659-Qh-5FA">
-                                        <rect key="frame" x="88" y="39" width="167" height="30"/>
+                                        <rect key="frame" x="88" y="78" width="167" height="30"/>
                                         <state key="normal" title="Show Alert have handler"/>
                                         <connections>
                                             <action selector="doAlertView:" destination="rzv-JC-O2o" eventType="touchUpInside" id="abq-OW-Kzo"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aMv-sL-a82">
-                                        <rect key="frame" x="106.5" y="78" width="130" height="30"/>
+                                        <rect key="frame" x="106.5" y="117" width="130" height="30"/>
                                         <state key="normal" title="Show Action Sheet"/>
                                         <connections>
                                             <action selector="actionSheet:" destination="rzv-JC-O2o" eventType="touchUpInside" id="Fd3-he-RhX"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4VM-I1-Yko">
-                                        <rect key="frame" x="47" y="117" width="249" height="30"/>
+                                        <rect key="frame" x="47" y="156" width="249" height="30"/>
                                         <state key="normal" title="Show Action Sheet have sourceView"/>
                                         <connections>
                                             <action selector="doActionSheet:" destination="rzv-JC-O2o" eventType="touchUpInside" id="elK-54-W02"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3Uf-q1-aaj">
-                                        <rect key="frame" x="120.5" y="156" width="102" height="30"/>
+                                        <rect key="frame" x="120.5" y="195" width="102" height="30"/>
                                         <state key="normal" title="Alert with form"/>
                                         <connections>
                                             <action selector="actionAlertWithForm:" destination="rzv-JC-O2o" eventType="touchUpInside" id="ws1-OP-Aj2"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a1s-T6-cFb">
-                                        <rect key="frame" x="105.5" y="195" width="132" height="30"/>
+                                        <rect key="frame" x="105.5" y="234" width="132" height="30"/>
                                         <state key="normal" title="Alert with TextField"/>
                                         <connections>
                                             <action selector="doAlertViewAddTextField:" destination="rzv-JC-O2o" eventType="touchUpInside" id="vH4-MQ-a79"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SlX-Md-PCy">
+                                        <rect key="frame" x="112" y="273" width="119" height="30"/>
+                                        <state key="normal" title="Show PopoverVC"/>
+                                        <connections>
+                                            <action selector="doAlertViewAddTextField:" destination="rzv-JC-O2o" eventType="touchUpInside" id="xHU-ei-cp1"/>
+                                            <action selector="showPopover:" destination="rzv-JC-O2o" eventType="touchUpInside" id="e1y-uG-qaT"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -97,6 +114,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="showPopoverButton" destination="SlX-Md-PCy" id="ARE-3U-fla"/>
                         <outlet property="toolbar" destination="b0C-1W-Oeq" id="lWl-7Q-55J"/>
                     </connections>
                 </viewController>

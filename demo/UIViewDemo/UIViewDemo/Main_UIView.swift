@@ -2,31 +2,29 @@
 import UIKit
 
 class MyPickerView : UIPickerView {
-    
     override var intrinsicContentSize : CGSize {
         return super.intrinsicContentSize
         
         // no need for trickery or testing; in iOS 9 you can just set the height constraint
-//        debugPrint("intrinsic")
-//        var sz = super.intrinsicContentSize
-//        let h : CGFloat = 140
-//        print("trying to set to \(h)")
-//        sz.height = h // but it only goes down to 162, maximum 180
-//        sz.width = 250 // just proving this actually does something
-//        return sz
+        //        debugPrint("intrinsic")
+        //        var sz = super.intrinsicContentSize
+        //        let h : CGFloat = 140
+        //        print("trying to set to \(h)")
+        //        sz.height = h // but it only goes down to 162, maximum 180
+        //        sz.width = 250 // just proving this actually does something
+        //        return sz
     }
-    
 }
 
-class PickerVC: UIViewController {
-    @IBOutlet var picker : UIPickerView!
-    var states : [String]!
+class Main_UIView: UIViewController {
+    @IBOutlet var picker: UIPickerView!
+    var vcList: [String]!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        let f = Bundle.main.path(forResource: "states", ofType: "txt")!
+        let f = Bundle.main.path(forResource: "vcList", ofType: "txt")!
         let s = try! String(contentsOfFile: f)
-        self.states = s.components(separatedBy:"\n")
+        self.vcList = s.components(separatedBy:"\n")
         picker.delegate = self
         picker.dataSource  = self
     }
@@ -36,7 +34,7 @@ class PickerVC: UIViewController {
     }
 }
 
-extension PickerVC : UIPickerViewDelegate, UIPickerViewDataSource {
+extension Main_UIView: UIPickerViewDelegate, UIPickerViewDataSource {
     
     // returns the number of 'columns' to display.
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
@@ -45,7 +43,11 @@ extension PickerVC : UIPickerViewDelegate, UIPickerViewDataSource {
     
     // returns the # of rows in each component..
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        return self.states.count
+        return vcList.count
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, didSelectRow: Int, inComponent: Int) {
+        //TODO: 传入 vc.self
     }
     
     // bug: no views are reused
@@ -64,7 +66,7 @@ extension PickerVC : UIPickerViewDelegate, UIPickerViewDataSource {
             lab = MyLabel()
             print("making new label")
         }
-        lab.text = self.states[row]
+        lab.text = self.vcList[row]
         lab.backgroundColor = .clear
         lab.sizeToFit()
         return lab

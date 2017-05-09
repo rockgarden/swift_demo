@@ -14,6 +14,8 @@
 		C25DAA571D66F30B005D60C6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C25DAA551D66F30B005D60C6 /* Main.storyboard */; };
 		C25DAA591D66F30B005D60C6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C25DAA581D66F30B005D60C6 /* Assets.xcassets */; };
 		C25DAA5C1D66F30B005D60C6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C25DAA5A1D66F30B005D60C6 /* LaunchScreen.storyboard */; };
+		C2A50CE11EC1AF3400ECB058 /* PopoverVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2A50CDF1EC1AF3400ECB058 /* PopoverVC.swift */; };
+		C2A50CE21EC1AF3400ECB058 /* PopoverVC.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C2A50CE01EC1AF3400ECB058 /* PopoverVC.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +28,8 @@
 		C25DAA581D66F30B005D60C6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C25DAA5B1D66F30B005D60C6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C25DAA5D1D66F30B005D60C6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C2A50CDF1EC1AF3400ECB058 /* PopoverVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopoverVC.swift; sourceTree = "<group>"; };
+		C2A50CE01EC1AF3400ECB058 /* PopoverVC.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = PopoverVC.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,10 +63,12 @@
 			isa = PBXGroup;
 			children = (
 				C25DAA511D66F30A005D60C6 /* AppDelegate.swift */,
+				C25DAA551D66F30B005D60C6 /* Main.storyboard */,
 				C25DAA531D66F30B005D60C6 /* UIAlertControllerVC.swift */,
 				443181181E0E9A6C00CC69A1 /* PopoverViewController.swift */,
 				4431811A1E0E9A7B00CC69A1 /* PopoverViewController.xib */,
-				C25DAA551D66F30B005D60C6 /* Main.storyboard */,
+				C2A50CDF1EC1AF3400ECB058 /* PopoverVC.swift */,
+				C2A50CE01EC1AF3400ECB058 /* PopoverVC.storyboard */,
 				C25DAA581D66F30B005D60C6 /* Assets.xcassets */,
 				C25DAA5A1D66F30B005D60C6 /* LaunchScreen.storyboard */,
 				C25DAA5D1D66F30B005D60C6 /* Info.plist */,
@@ -132,6 +138,7 @@
 			files = (
 				4431811B1E0E9A7B00CC69A1 /* PopoverViewController.xib in Resources */,
 				C25DAA5C1D66F30B005D60C6 /* LaunchScreen.storyboard in Resources */,
+				C2A50CE21EC1AF3400ECB058 /* PopoverVC.storyboard in Resources */,
 				C25DAA591D66F30B005D60C6 /* Assets.xcassets in Resources */,
 				C25DAA571D66F30B005D60C6 /* Main.storyboard in Resources */,
 			);
@@ -146,6 +153,7 @@
 			files = (
 				C25DAA541D66F30B005D60C6 /* UIAlertControllerVC.swift in Sources */,
 				443181191E0E9A6C00CC69A1 /* PopoverViewController.swift in Sources */,
+				C2A50CE11EC1AF3400ECB058 /* PopoverVC.swift in Sources */,
 				C25DAA521D66F30B005D60C6 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
