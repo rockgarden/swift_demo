@@ -7,8 +7,8 @@ import Swift
 
 class DrawView: UIView, UIGestureRecognizerDelegate {
     
-    var currentLines = [NSValue:Line]()
-    var finishedLines = [Line]()
+    var currentLines = [NSValue:LineStruct]()
+    var finishedLines = [LineStruct]()
     var selectedLineIndex: Int? {
         didSet {
             if selectedLineIndex == nil {
@@ -166,7 +166,7 @@ class DrawView: UIView, UIGestureRecognizerDelegate {
 
     //MARK: - Touch Tracker
     
-    func strokeLine(_ line: Line) {
+    func strokeLine(_ line: LineStruct) {
         let path = UIBezierPath()
         path.lineWidth = lineThickness
         path.lineCapStyle = CGLineCap.round
@@ -217,7 +217,7 @@ class DrawView: UIView, UIGestureRecognizerDelegate {
         print(#function)
         for touch in touches {
             let location = touch.location(in: self)
-            let newLine = Line(begin: location, end: location)
+            let newLine = LineStruct(begin: location, end: location)
             let key = NSValue(nonretainedObject: touch)
             currentLines[key] = newLine
         }

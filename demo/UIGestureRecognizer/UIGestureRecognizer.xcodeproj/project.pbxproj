@@ -46,6 +46,9 @@
 		44F031161E5C845C0059B587 /* TZScrollViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 44F031101E5C845C0059B587 /* TZScrollViewController.m */; };
 		C23914EA1EB84E2600A830EC /* TouchCanvasUsing3DTouchVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C23914E91EB84E2600A830EC /* TouchCanvasUsing3DTouchVC.swift */; };
 		C23914EC1EB84EA200A830EC /* ReticleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C23914EB1EB84EA200A830EC /* ReticleView.swift */; };
+		C27AFBE41EC449390017A840 /* ScratchUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C27AFBE21EC449380017A840 /* ScratchUIView.swift */; };
+		C27AFBE51EC449390017A840 /* ScratchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C27AFBE31EC449380017A840 /* ScratchView.swift */; };
+		C27AFBE71EC44A690017A840 /* ScratchViewVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C27AFBE61EC44A690017A840 /* ScratchViewVC.swift */; };
 		C2A94DAB1EB84F5900F8FF48 /* CanvasView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2A94DAA1EB84F5900F8FF48 /* CanvasView.swift */; };
 		C2D2E6CC1EB1CAB100200CEB /* CheckmarkGestureRecognizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2D2E6CB1EB1CAB100200CEB /* CheckmarkGestureRecognizer.swift */; };
 		C2D2E6CE1EB1D53400200CEB /* TouchCaptureGesture.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2D2E6CD1EB1D53400200CEB /* TouchCaptureGesture.swift */; };
@@ -101,6 +104,9 @@
 		44F031101E5C845C0059B587 /* TZScrollViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TZScrollViewController.m; sourceTree = "<group>"; };
 		C23914E91EB84E2600A830EC /* TouchCanvasUsing3DTouchVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TouchCanvasUsing3DTouchVC.swift; sourceTree = "<group>"; };
 		C23914EB1EB84EA200A830EC /* ReticleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReticleView.swift; sourceTree = "<group>"; };
+		C27AFBE21EC449380017A840 /* ScratchUIView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScratchUIView.swift; sourceTree = "<group>"; };
+		C27AFBE31EC449380017A840 /* ScratchView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScratchView.swift; sourceTree = "<group>"; };
+		C27AFBE61EC44A690017A840 /* ScratchViewVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScratchViewVC.swift; sourceTree = "<group>"; };
 		C2A94DAA1EB84F5900F8FF48 /* CanvasView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CanvasView.swift; sourceTree = "<group>"; };
 		C2D2E6CB1EB1CAB100200CEB /* CheckmarkGestureRecognizer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CheckmarkGestureRecognizer.swift; sourceTree = "<group>"; };
 		C2D2E6CD1EB1D53400200CEB /* TouchCaptureGesture.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TouchCaptureGesture.swift; sourceTree = "<group>"; };
@@ -140,6 +146,7 @@
 		442F31151D6831D60060942F = {
 			isa = PBXGroup;
 			children = (
+				C27AFBE11EC449380017A840 /* ScratchView */,
 				44F031001E5C84370059B587 /* TZScrollViewPopGesture */,
 				442F31201D6831D60060942F /* UIGestureRecognizer */,
 				442F311F1D6831D60060942F /* Products */,
@@ -172,6 +179,7 @@
 				449B13C91D683DE400795F70 /* HorizVertPanGestureRecognizers.swift */,
 				44F030FE1E5C82CB0059B587 /* FullScreenPopGesture.swift */,
 				4479E0461E703B2500A51660 /* ExclusiveTouchVC.swift */,
+				C27AFBE61EC44A690017A840 /* ScratchViewVC.swift */,
 				442F31281D6831D60060942F /* Assets.xcassets */,
 				442F312A1D6831D60060942F /* LaunchScreen.storyboard */,
 				442F312D1D6831D60060942F /* Info.plist */,
@@ -230,6 +238,15 @@
 				44F031101E5C845C0059B587 /* TZScrollViewController.m */,
 			);
 			path = Demo;
+			sourceTree = "<group>";
+		};
+		C27AFBE11EC449380017A840 /* ScratchView */ = {
+			isa = PBXGroup;
+			children = (
+				C27AFBE21EC449380017A840 /* ScratchUIView.swift */,
+				C27AFBE31EC449380017A840 /* ScratchView.swift */,
+			);
+			path = ScratchView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -330,6 +347,7 @@
 				44F031131E5C845C0059B587 /* TZMapViewController.m in Sources */,
 				4454EE331D69F33800DC3F04 /* GameOverViewController.swift in Sources */,
 				441F82871E2B2D0D00D6EBD4 /* PanGestureViewDemo.swift in Sources */,
+				C27AFBE71EC44A690017A840 /* ScratchViewVC.swift in Sources */,
 				C2D2E6CC1EB1CAB100200CEB /* CheckmarkGestureRecognizer.swift in Sources */,
 				4454EE391D69F33800DC3F04 /* RoundedImageView.swift in Sources */,
 				C2A94DAB1EB84F5900F8FF48 /* CanvasView.swift in Sources */,
@@ -342,9 +360,11 @@
 				44F031141E5C845C0059B587 /* TZNaviController.m in Sources */,
 				44F031111E5C845C0059B587 /* TZCollectionViewController.m in Sources */,
 				4479E0471E703B2500A51660 /* ExclusiveTouchVC.swift in Sources */,
+				C27AFBE51EC449390017A840 /* ScratchView.swift in Sources */,
 				4420AB991DF1B37E005D280A /* Line.swift in Sources */,
 				44291CA01DF1B77300D2F579 /* Main_UIGestureRecognizer.swift in Sources */,
 				4454EE381D69F33800DC3F04 /* MatchingGame.swift in Sources */,
+				C27AFBE41EC449390017A840 /* ScratchUIView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

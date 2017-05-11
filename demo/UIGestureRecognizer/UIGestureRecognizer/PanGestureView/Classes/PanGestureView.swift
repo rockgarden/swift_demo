@@ -72,7 +72,7 @@ open class PanGestureView: UIView {
     
     func addConstraintsToActionView(_ actionView:PanGestureActionView, direction:PanGestureViewSwipeDirection) {
         
-        let views = ["view":actionView,"contentView":contentView]
+        let views = ["view":actionView,"contentView":contentView] as [String : Any]
         
         let orientation1 = (horizontalSwipeDirections.contains(direction)) ? "H" : "V"
         let orientation2 = (orientation1 == "H") ? "V" : "H"
@@ -84,7 +84,7 @@ open class PanGestureView: UIView {
         else {
             constraint1 = "\(orientation1):|-0-[view(>=0)]-(<=0@250,0@750)-[contentView]"
         }
-        let constraints1 = NSLayoutConstraint.constraints(withVisualFormat: constraint1, options: [], metrics: [:], views: views)
+        let constraints1 = NSLayoutConstraint.constraints(withVisualFormat: constraint1, options: [], metrics: [:], views: views  )
         
         let constraint2 = "\(orientation2):|-0-[view]-0-|"
         let constraints2 = NSLayoutConstraint.constraints(withVisualFormat: constraint2, options: [], metrics: [:], views: views)
@@ -327,7 +327,7 @@ class PanGestureActionView: UIView {
     }
     
     fileprivate func setupConstraints(){
-        let views = ["imageView":imageView]
+        let views = ["imageView":imageView] as [String : Any]
         
         let orientation1 = (horizontalSwipeDirections.contains(self.action.swipeDirection)) ? "H" : "V"
         let orientation2 = (orientation1 == "H") ? "V" : "H"

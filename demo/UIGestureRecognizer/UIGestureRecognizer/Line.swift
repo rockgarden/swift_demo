@@ -5,7 +5,7 @@
 import Foundation
 import CoreGraphics
 
-struct Line {    
+struct LineStruct {
     var begin = CGPoint.zero
     var end = CGPoint.zero
 }

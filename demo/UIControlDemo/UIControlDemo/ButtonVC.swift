@@ -11,6 +11,7 @@ class ButtonVC: UIViewController {
     @IBOutlet weak var roundBorderedbutton: RoundBorderedButton!
     @IBOutlet weak var fpButton: FPButton!
     @IBOutlet weak var tsButton: TransitionSubmitButton!
+    @IBOutlet weak var activityButton: ActivityButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,6 +24,39 @@ class ButtonVC: UIViewController {
         tsButton.setTitle("Sign in", for: UIControlState())
         tsButton.titleLabel?.font = UIFont(name: "HelveticaNeue-Light", size: 14)
         tsButton.addTarget(self, action: #selector(onTapButton(_:)), for: .touchUpInside)
+        
+        let middleMain: CGFloat = self.view.bounds.size.width / 2
+        var middleButton: CGFloat = 100.0 / 2
+        
+        //activityButton = ActivityButton(frame: CGRect(x: middleMain - middleButton, y: 60, width: 100, height: 100))
+        activityButton.backgroundColor = UIColor.blue
+        activityButton.titleLabel.text = "Process"
+        activityButton.activityTitle = "Processing"
+        activityButton.rotatorColor = UIColor.black
+        activityButton.rotatorSize = 12.0
+        activityButton.rotatorSpeed = 8.0
+        
+//        activityButton2 = ActivityButton(frame: CGRect(x: middleMain - middleButton, y: 227, width: 76, height: 76))
+//        activityButton2.backgroundColor = UIColor.orange
+//        activityButton2.titleLabel.text = "Load"
+//        activityButton2.activityTitle = "Loading"
+//        activityButton2.rotatorColor = UIColor.darkGray
+//        activityButton2.rotatorSize = 12.0
+//        activityButton2.rotatorSpeed = 8.0
+//        activityButton2.rotatorPadding = 15.0
+//        view.addSubview(activityButton2)
+//        
+//        middleButton = 150.0 / 2
+//        
+//        activityButton3 = ActivityButton(frame: CGRect(x: middleMain - middleButton, y: 375, width: 150, height: 150))
+//        activityButton3.backgroundColor = UIColor(white: 0.85, alpha: 1.0)
+//        activityButton3.titleLabel.text = "Download";
+//        activityButton3.activityTitle = "Downloading"
+//        activityButton3.rotatorColor = UIColor.blue
+//        activityButton3.rotatorSize = 16.0
+//        activityButton3.rotatorSpeed = 8.0
+//        activityButton3.rotatorPadding = -7.0
+//        view.addSubview(activityButton3)
     }
     
     @IBAction func buttonPressed(sender: AnyObject) {
@@ -45,6 +79,10 @@ class ButtonVC: UIViewController {
             vc.transitioningDelegate = self
             self.present(vc, animated: true, completion: nil)
         })
+    }
+    
+    override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
+        activityButton.stopActivity()
     }
     
 }
