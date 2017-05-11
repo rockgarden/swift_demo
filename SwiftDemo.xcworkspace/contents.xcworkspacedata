@@ -2,6 +2,9 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:demo/CoreGraphicsDemo/CoreGraphicsDemo.xcodeproj">
+   </FileRef>
+   <FileRef
       location = "group:demo/CoreDataDemo_Mac/CoreDataDemo_Mac.xcodeproj">
    </FileRef>
    <FileRef
