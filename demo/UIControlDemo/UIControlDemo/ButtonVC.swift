@@ -12,6 +12,7 @@ class ButtonVC: UIViewController {
     @IBOutlet weak var fpButton: FPButton!
     @IBOutlet weak var tsButton: TransitionSubmitButton!
     @IBOutlet weak var activityButton: ActivityButton!
+    @IBOutlet weak var cpButton: CircleRippleButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,7 +24,7 @@ class ButtonVC: UIViewController {
         tsButton.backgroundColor = .red
         tsButton.setTitle("Sign in", for: UIControlState())
         tsButton.titleLabel?.font = UIFont(name: "HelveticaNeue-Light", size: 14)
-        tsButton.addTarget(self, action: #selector(onTapButton(_:)), for: .touchUpInside)
+        tsButton.addTarget(self, action: #selector(onTapActivityButton), for: .touchUpInside)
         
         let middleMain: CGFloat = self.view.bounds.size.width / 2
         var middleButton: CGFloat = 100.0 / 2
@@ -73,12 +74,19 @@ class ButtonVC: UIViewController {
         fpButton.isSelected = !fpButton.isSelected
     }
     
-    func onTapButton(_ button: TransitionSubmitButton) {
+    func onTapActivityButton(_ button: TransitionSubmitButton) {
         button.animate(1, completion: { () -> () in
             let vc = FadeInAnimatorVC()
             vc.transitioningDelegate = self
             self.present(vc, animated: true, completion: nil)
         })
+    }
+    
+    @IBAction func runCircleRipple(_ sender: Any) {
+        cpButton.startAction()
+        GCD.delay(3) { () -> () in
+            self.cpButton.stopAction(true)
+        }
     }
     
     override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {

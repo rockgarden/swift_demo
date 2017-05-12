@@ -116,9 +116,6 @@
       location = "group:demo/Func/Func.xcodeproj">
    </FileRef>
    <FileRef
-      location = "group:demo/Draw/Draw.xcodeproj">
-   </FileRef>
-   <FileRef
       location = "group:demo/Appendix/Appendix.xcodeproj">
    </FileRef>
    <FileRef
@@ -156,9 +153,6 @@
    </FileRef>
    <FileRef
       location = "group:demo/UICollectionView/UICollectionView.xcodeproj">
-   </FileRef>
-   <FileRef
-      location = "group:demo/SubClass/SubClass.xcodeproj">
    </FileRef>
    <FileRef
       location = "group:demo/Localization/Localization.xcodeproj">

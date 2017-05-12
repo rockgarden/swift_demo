@@ -9,7 +9,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class RectGridVC: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -17,7 +17,6 @@ class ViewController: UIViewController {
         //gridLayoutWithPadding()
         gridLayoutByOOP()
     }
-
 
     // 生成小网格
     private func addGrid(_ rect: CGRect) {

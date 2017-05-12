@@ -47,13 +47,11 @@ class DrawInViewVC : UIViewController {
         )
 
         // comment out to experiment with resizing
-
         delay(2) {
             mv.bounds.size.height *= 2
         }
         
     }
-    
     
 }
 

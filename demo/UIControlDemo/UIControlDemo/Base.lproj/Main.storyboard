@@ -325,7 +325,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="ekp-aq-4kK">
-                                <rect key="frame" x="127" y="64" width="120" height="290"/>
+                                <rect key="frame" x="127" y="64" width="120" height="320"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HZW-68-Zha" customClass="RoundButton" customModule="UIControlDemo" customModuleProvider="target">
                                         <rect key="frame" x="30" y="0.0" width="60" height="30"/>
@@ -388,6 +388,29 @@
                                             <constraint firstAttribute="width" constant="80" id="ixS-V3-hf0"/>
                                         </constraints>
                                     </view>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="z3G-U2-1LY" customClass="CircleRippleButton" customModule="UIControlDemo" customModuleProvider="target">
+                                        <rect key="frame" x="30" y="290" width="60" height="30"/>
+                                        <color key="backgroundColor" red="0.96078431369999995" green="0.3921568627" blue="0.3921568627" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="60" id="1Nd-y4-bBU"/>
+                                            <constraint firstAttribute="height" constant="30" id="nof-xF-ugD"/>
+                                        </constraints>
+                                        <state key="normal" title="Button"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="5"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                <real key="value" value="2"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                <color key="value" red="0.16078431369999999" green="0.67450980390000004" blue="0.89411764709999997" alpha="0.5" colorSpace="custom" customColorSpace="sRGB"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="runCircleRipple:" destination="RSF-CP-Uhu" eventType="touchUpInside" id="VfX-EG-cy4"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                             </stackView>
                         </subviews>
@@ -399,6 +422,7 @@
                     </view>
                     <connections>
                         <outlet property="activityButton" destination="Uux-BO-dVA" id="rlF-q2-Hkb"/>
+                        <outlet property="cpButton" destination="z3G-U2-1LY" id="Kfu-Q3-QSp"/>
                         <outlet property="fpButton" destination="N3B-vK-S6A" id="gg2-tB-BlZ"/>
                         <outlet property="roundBorderedbutton" destination="Zwb-Ra-45b" id="Jkq-pN-OQ5"/>
                         <outlet property="roundButton" destination="HZW-68-Zha" id="UEC-P7-Qif"/>
