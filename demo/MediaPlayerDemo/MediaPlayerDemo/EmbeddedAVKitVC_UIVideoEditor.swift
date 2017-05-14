@@ -119,6 +119,7 @@ class EmbeddedAVKitVC_UIVideoEditor: UIViewController {
         }
     }
 
+    /// SimplestAV Demo
     @IBAction func doPresent(_ sender: Any) {
         switch which {
         case 1:
@@ -141,6 +142,7 @@ class EmbeddedAVKitVC_UIVideoEditor: UIViewController {
             //                iv.trailingAnchor.constraint(equalTo:v.trailingAnchor),
             //                ])
 
+            /// Set AVPlayerViewControllerDelegate
             av.delegate = self
             av.allowsPictureInPicturePlayback = true
             av.updatesNowPlayingInfoCenter = true // what does this do?

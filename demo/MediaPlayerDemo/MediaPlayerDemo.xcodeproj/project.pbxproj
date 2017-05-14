@@ -20,7 +20,7 @@
 		4453DCF11E06C95E00299EA8 /* RemoteControlVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4453DCF01E06C95E00299EA8 /* RemoteControlVC.swift */; };
 		4453DCF31E06CC1600299EA8 /* test.aif in Resources */ = {isa = PBXBuildFile; fileRef = 4453DCF21E06C9E500299EA8 /* test.aif */; };
 		447DDCE91E02D674000CEA4F /* BackgroundPlayerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 447DDCE81E02D674000CEA4F /* BackgroundPlayerVC.swift */; };
-		4486869B1E08029100917B06 /* RootVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4486869A1E08029100917B06 /* RootVC.swift */; };
+		4486869B1E08029100917B06 /* Root_MediaDemo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4486869A1E08029100917B06 /* Root_MediaDemo.swift */; };
 		44C070B61DFAFB4E0093BC1E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44C070B51DFAFB4E0093BC1E /* AppDelegate.swift */; };
 		44C070B81DFAFB4E0093BC1E /* MediaPickerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44C070B71DFAFB4E0093BC1E /* MediaPickerVC.swift */; };
 		44C070BB1DFAFB4E0093BC1E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 44C070B91DFAFB4E0093BC1E /* Main.storyboard */; };
@@ -48,7 +48,7 @@
 		4453DCF01E06C95E00299EA8 /* RemoteControlVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RemoteControlVC.swift; sourceTree = "<group>"; };
 		4453DCF21E06C9E500299EA8 /* test.aif */ = {isa = PBXFileReference; lastKnownFileType = file; path = test.aif; sourceTree = "<group>"; };
 		447DDCE81E02D674000CEA4F /* BackgroundPlayerVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BackgroundPlayerVC.swift; sourceTree = "<group>"; };
-		4486869A1E08029100917B06 /* RootVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootVC.swift; sourceTree = "<group>"; };
+		4486869A1E08029100917B06 /* Root_MediaDemo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Root_MediaDemo.swift; sourceTree = "<group>"; };
 		44C070B21DFAFB4E0093BC1E /* MediaPlayerDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MediaPlayerDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		44C070B51DFAFB4E0093BC1E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		44C070B71DFAFB4E0093BC1E /* MediaPickerVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaPickerVC.swift; sourceTree = "<group>"; };
@@ -95,7 +95,9 @@
 			isa = PBXGroup;
 			children = (
 				44C070B51DFAFB4E0093BC1E /* AppDelegate.swift */,
-				4486869A1E08029100917B06 /* RootVC.swift */,
+				4486869A1E08029100917B06 /* Root_MediaDemo.swift */,
+				44C070B91DFAFB4E0093BC1E /* Main.storyboard */,
+				44C070C71DFAFD700093BC1E /* Main_iPad.storyboard */,
 				4453DCF01E06C95E00299EA8 /* RemoteControlVC.swift */,
 				44C070B71DFAFB4E0093BC1E /* MediaPickerVC.swift */,
 				4453579B1DFAFF8300F996A2 /* AVKitVC.swift */,
@@ -108,8 +110,6 @@
 				C2D48F5F1E010195008D4F90 /* MIDITestVC.swift */,
 				44CCDBE21E017CDA00C7163A /* AVAudioEngineTestVC.swift */,
 				447DDCE81E02D674000CEA4F /* BackgroundPlayerVC.swift */,
-				44C070B91DFAFB4E0093BC1E /* Main.storyboard */,
-				44C070C71DFAFD700093BC1E /* Main_iPad.storyboard */,
 				4453DCF21E06C9E500299EA8 /* test.aif */,
 				44CCDBE41E017E7200C7163A /* Hooded.mp3 */,
 				4435E9D11DFEC8FF0003196A /* wilhelm.aiff */,
@@ -218,7 +218,7 @@
 				4453DCF11E06C95E00299EA8 /* RemoteControlVC.swift in Sources */,
 				4435E9D01DFEC6CF0003196A /* AVPlayerLayerVC.swift in Sources */,
 				C2D48F601E010195008D4F90 /* MIDITestVC.swift in Sources */,
-				4486869B1E08029100917B06 /* RootVC.swift in Sources */,
+				4486869B1E08029100917B06 /* Root_MediaDemo.swift in Sources */,
 				4453579C1DFAFF8300F996A2 /* AVKitVC.swift in Sources */,
 				44C070B61DFAFB4E0093BC1E /* AppDelegate.swift in Sources */,
 				447DDCE91E02D674000CEA4F /* BackgroundPlayerVC.swift in Sources */,

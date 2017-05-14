@@ -1,15 +1,6 @@
-//
-//  RootVC.swift
-//  MediaPlayerDemo
-//
-//  Created by wangkan on 2016/12/19.
-//  Copyright © 2016年 rockgarden. All rights reserved.
-//
 
 import UIKit
 import AudioToolbox
-
-// can be top level...
 
 func SoundFinished(_ snd:UInt32, _ c:UnsafeMutableRawPointer?) -> Void {
     print("finished!")
@@ -18,7 +9,7 @@ func SoundFinished(_ snd:UInt32, _ c:UnsafeMutableRawPointer?) -> Void {
 }
 
 
-class RootVC: UITableViewController {
+class Root_MediaDemo: UITableViewController {
 
     // test on device (doesn't work in simulator)
 
@@ -58,7 +49,5 @@ class RootVC: UITableViewController {
             print("finished!")
         }
     }
-
-    
     
 }
