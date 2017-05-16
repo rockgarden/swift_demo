@@ -1,15 +1,14 @@
 
-
 import UIKit
 
-/*
-Logging to prove that on a partial gesture (with cancellation),
-viewWillAppear (1st) and viewWillDisappear(2nd) are called...
-...without the corresponding "did"
-*/
-
 class FirstViewController : UIViewController {
-    
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        print(view)
+        print(nibName as Any)
+    }
+
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         print("\(self) " + #function)
@@ -26,7 +25,21 @@ class FirstViewController : UIViewController {
         super.viewDidDisappear(animated)
         print("\(self) " + #function)
     }
-    
+
+    private var hide = false
+
+    override var prefersStatusBarHidden : Bool {
+        return self.hide
+    }
+
+    @IBAction func underlapButton(_ sender: Any) {
+        self.hide = !self.hide
+        UIView.animate(withDuration:0.4) {
+            /// Ask the system to re-query our -preferredStatusBarStyle.
+            self.setNeedsStatusBarAppearanceUpdate()
+            self.view.layoutIfNeeded()
+        }
+    }
     
 }
 

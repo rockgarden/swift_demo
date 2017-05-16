@@ -8,9 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		446A26901EC9C54D0024230D /* ViewControllers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 446A268F1EC9C54C0024230D /* ViewControllers.swift */; };
-		446A26B21EC9F0330024230D /* NavigationTransitioning.swift in Sources */ = {isa = PBXBuildFile; fileRef = 446A26B11EC9F0330024230D /* NavigationTransitioning.swift */; };
 		449D1CB71E992C57000C7446 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 449D1CB61E992C57000C7446 /* AppDelegate.swift */; };
-		449D1CB91E992C57000C7446 /* UnderlappingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 449D1CB81E992C57000C7446 /* UnderlappingVC.swift */; };
 		449D1CBC1E992C57000C7446 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 449D1CBA1E992C57000C7446 /* Main.storyboard */; };
 		449D1CBE1E992C57000C7446 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 449D1CBD1E992C57000C7446 /* Assets.xcassets */; };
 		449D1CC11E992C57000C7446 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 449D1CBF1E992C57000C7446 /* LaunchScreen.storyboard */; };
@@ -36,10 +34,8 @@
 
 /* Begin PBXFileReference section */
 		446A268F1EC9C54C0024230D /* ViewControllers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewControllers.swift; sourceTree = "<group>"; };
-		446A26B11EC9F0330024230D /* NavigationTransitioning.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigationTransitioning.swift; sourceTree = "<group>"; };
 		449D1CB31E992C57000C7446 /* UIViewController.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UIViewController.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		449D1CB61E992C57000C7446 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		449D1CB81E992C57000C7446 /* UnderlappingVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnderlappingVC.swift; sourceTree = "<group>"; };
 		449D1CBB1E992C57000C7446 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		449D1CBD1E992C57000C7446 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		449D1CC01E992C57000C7446 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -101,12 +97,10 @@
 				C29FFCC11ECACB340034587E /* TransitionImageCollectionVC.swift */,
 				C29FFCCF1ECADC8D0034587E /* TransitionImage.swift */,
 				C29FFCD11ECADE2F0034587E /* EvernoteTransition */,
-				449D1CB81E992C57000C7446 /* UnderlappingVC.swift */,
 				446A268F1EC9C54C0024230D /* ViewControllers.swift */,
 				449D1CBD1E992C57000C7446 /* Assets.xcassets */,
 				449D1CBF1E992C57000C7446 /* LaunchScreen.storyboard */,
 				449D1CC21E992C57000C7446 /* Info.plist */,
-				446A26B11EC9F0330024230D /* NavigationTransitioning.swift */,
 			);
 			path = UIViewController;
 			sourceTree = "<group>";
@@ -215,7 +209,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				449D1CB91E992C57000C7446 /* UnderlappingVC.swift in Sources */,
 				C29FFCDE1ECAECA40034587E /* CHTCollectionViewWaterfallLayout.swift in Sources */,
 				C29FFCC41ECAD7640034587E /* EvernoteTransition.swift in Sources */,
 				C29FFCDF1ECAECA40034587E /* Extension.swift in Sources */,
@@ -225,7 +218,6 @@
 				C29FFCC61ECAD7980034587E /* EvernoteCollectionVC.swift in Sources */,
 				C29FFCE51ECAECA40034587E /* NTTransitionProtocol.swift in Sources */,
 				C29FFCE01ECAECA40034587E /* Macro.swift in Sources */,
-				446A26B21EC9F0330024230D /* NavigationTransitioning.swift in Sources */,
 				C29FFCE61ECAECA40034587E /* NTWaterfallViewCell.swift in Sources */,
 				C29FFCD01ECADC8D0034587E /* TransitionImage.swift in Sources */,
 				C29FFCC21ECACB340034587E /* TransitionImageCollectionVC.swift in Sources */,

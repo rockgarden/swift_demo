@@ -8,7 +8,7 @@
 
 import UIKit
 
-class MainViewController: UITableViewController, UIActionSheetDelegate {
+class Main_NavigationBar: UITableViewController, UIActionSheetDelegate {
     
     struct ActionSheetOption {
         static let standard = 1
@@ -72,4 +72,78 @@ class MainViewController: UITableViewController, UIActionSheetDelegate {
         
         styleSheet.show(in: view)
     }
+
+
+    struct CellModel {
+        let name = "manny"
+        var visible = true
+    }
+    var model = [CellModel()]
+    var lastSelection = IndexPath()
+
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let cell = tableView.cellForRow(at: indexPath)
+        if let id = cell?.tag {
+            if indexPath.section == 0 && id == 0 {
+                model[indexPath.row].visible = false
+                tableView.reloadRows(at: [indexPath], with: .none)
+                lastSelection = indexPath
+                performSegue(withIdentifier: "showDetail", sender: self)
+            }
+        }
+    }
+
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        print(self.tableView.indexPathForSelectedRow as Any)
+        if let dest = segue.destination as? ImageDetailVC {
+            let cm = model[lastSelection.row]
+            dest.detailItem = UIImage(named:cm.name)
+        }
+    }
+
 }
+
+
+class ImageDetailVC : UIViewController {
+    var detailItem : Any?
+    @IBOutlet var iv : UIImageView!
+
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        if let im = self.detailItem as? UIImage {
+            self.iv.image = im
+        }
+
+        print("\(self) " + #function)
+        if let tc = self.transitionCoordinator {
+            print(tc)
+        }
+    }
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        print("\(self) " + #function)
+        if let tc = self.transitionCoordinator {
+            print(tc)
+        }
+
+    }
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        print("\(self) " + #function)
+
+        if let tc = self.transitionCoordinator {
+            print(tc)
+        }
+
+    }
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        print("\(self) " + #function)
+        if let tc = self.transitionCoordinator {
+            print(tc)
+        }
+
+    }
+
+}
+

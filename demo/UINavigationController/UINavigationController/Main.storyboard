@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12118" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="TZZ-aT-crn">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="TZZ-aT-crn">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -139,7 +139,7 @@
             <objects>
                 <navigationController definesPresentationContext="YES" id="NcS-ia-6UY" customClass="TFNavigationController" customModule="UINavigationController" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="TNB" id="zE0-WO-URn"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="zjG-lJ-6a4">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="zjG-lJ-6a4">
                         <autoresizingMask key="autoresizingMask"/>
                         <textAttributes key="titleTextAttributes">
                             <fontDescription key="fontDescription" name="BradleyHandITCTT-Bold" family="Bradley Hand" pointSize="30"/>
@@ -196,7 +196,7 @@
             <objects>
                 <navigationController id="8sp-IL-VcV" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Rain" id="h4i-UC-yIC"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="EED-pC-mtu">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="EED-pC-mtu">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="tintColor" red="1" green="0.99997437" blue="0.99999129769999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -324,7 +324,7 @@
             <objects>
                 <navigationController id="JSG-dk-fsR" customClass="NavigationController" customModule="UINavigationController" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="KM" id="eSy-mb-MEH"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="IyK-4h-hGZ">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="IyK-4h-hGZ">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="barTintColor" red="0.0" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -857,7 +857,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="beach" width="1920" height="1280"/>
+        <image name="beach" width="960" height="640"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="fO5-53-7Hs"/>

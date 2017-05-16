@@ -14,7 +14,7 @@
 		44CEA5E11DF9910E00CD023A /* MaterialNavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44CEA5E01DF9910E00CD023A /* MaterialNavigationBar.swift */; };
 		44CEA5E31DF9944300CD023A /* Cities.json in Resources */ = {isa = PBXBuildFile; fileRef = 44CEA5E21DF9944300CD023A /* Cities.json */; };
 		44CEA5E51DF9945E00CD023A /* ReadMe.md in Sources */ = {isa = PBXBuildFile; fileRef = 44CEA5E41DF9945E00CD023A /* ReadMe.md */; };
-		44CEA5E71DF9947400CD023A /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44CEA5E61DF9947400CD023A /* MainViewController.swift */; };
+		44CEA5E71DF9947400CD023A /* Main_NavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44CEA5E61DF9947400CD023A /* Main_NavigationBar.swift */; };
 		44CEA5F81DF994AC00CD023A /* CustomAppearanceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44CEA5E91DF994AC00CD023A /* CustomAppearanceViewController.swift */; };
 		44CEA5F91DF994AC00CD023A /* CustomBackButtonDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44CEA5EB1DF994AC00CD023A /* CustomBackButtonDetailViewController.swift */; };
 		44CEA5FA1DF994AC00CD023A /* CustomBackButtonNavController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44CEA5EC1DF994AC00CD023A /* CustomBackButtonNavController.swift */; };
@@ -38,7 +38,7 @@
 		44CEA5E01DF9910E00CD023A /* MaterialNavigationBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MaterialNavigationBar.swift; sourceTree = "<group>"; };
 		44CEA5E21DF9944300CD023A /* Cities.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Cities.json; sourceTree = "<group>"; };
 		44CEA5E41DF9945E00CD023A /* ReadMe.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = ReadMe.md; sourceTree = "<group>"; };
-		44CEA5E61DF9947400CD023A /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		44CEA5E61DF9947400CD023A /* Main_NavigationBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Main_NavigationBar.swift; sourceTree = "<group>"; };
 		44CEA5E91DF994AC00CD023A /* CustomAppearanceViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomAppearanceViewController.swift; sourceTree = "<group>"; };
 		44CEA5EB1DF994AC00CD023A /* CustomBackButtonDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomBackButtonDetailViewController.swift; sourceTree = "<group>"; };
 		44CEA5EC1DF994AC00CD023A /* CustomBackButtonNavController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomBackButtonNavController.swift; sourceTree = "<group>"; };
@@ -85,9 +85,9 @@
 		44A9C41F1D96B72400F09E6A /* UINavigationBar */ = {
 			isa = PBXGroup;
 			children = (
-				44CEA6011DF994E300CD023A /* Main.storyboard */,
-				44CEA5E61DF9947400CD023A /* MainViewController.swift */,
 				44A9C4201D96B72400F09E6A /* AppDelegate.swift */,
+				44CEA6011DF994E300CD023A /* Main.storyboard */,
+				44CEA5E61DF9947400CD023A /* Main_NavigationBar.swift */,
 				44CEA5E81DF994AC00CD023A /* CustomAppearance */,
 				44CEA5EA1DF994AC00CD023A /* CustomBackButton */,
 				44CEA5EF1DF994AC00CD023A /* CustomRightView */,
@@ -240,7 +240,7 @@
 				44CEA5E51DF9945E00CD023A /* ReadMe.md in Sources */,
 				44CEA5E11DF9910E00CD023A /* MaterialNavigationBar.swift in Sources */,
 				44CEA6001DF994AD00CD023A /* NavigationPromptViewController.swift in Sources */,
-				44CEA5E71DF9947400CD023A /* MainViewController.swift in Sources */,
+				44CEA5E71DF9947400CD023A /* Main_NavigationBar.swift in Sources */,
 				44CEA5F81DF994AC00CD023A /* CustomAppearanceViewController.swift in Sources */,
 				44CEA5FA1DF994AC00CD023A /* CustomBackButtonNavController.swift in Sources */,
 				44CEA5FF1DF994AD00CD023A /* ExtendedNavBarViewController.swift in Sources */,

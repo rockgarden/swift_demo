@@ -1,5 +1,5 @@
 //
-//  TransitionDismissAnimator.swift
+//  TransitionImage.swift
 //
 //  Created by Beomseok Seo on 3/26/16.
 //  Copyright © 2016 Predle. All rights reserved.
@@ -10,13 +10,11 @@ import UIKit
 class TransitionDelegate: NSObject, UIViewControllerTransitioningDelegate {
     
     func animationController(forPresented presented: UIViewController, presenting: UIViewController, source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
-        let presentationAnimator = TransitionPresentationAnimator()
-        return presentationAnimator
+        return TransitionPresentationAnimator()
     }
     
     func animationController(forDismissed dismissed: UIViewController) -> UIViewControllerAnimatedTransitioning? {
-        let dismissalAnimator = TransitionDismissalAnimator()
-        return dismissalAnimator
+        return TransitionPresentationAnimator()
     }
 }
 
@@ -33,12 +31,12 @@ class TransitionDismissalAnimator: NSObject, UIViewControllerAnimatedTransitioni
         let toVC = ctx.viewController(forKey: UITransitionContextViewControllerKey.to)!
         let containerView = ctx.containerView
         
-        let masterVC = toVC as? TransitionImageCollectionVC
-        let detailVC = fromVC as? ImageDetailVC
+        guard let masterVC = toVC as? TransitionImageCollectionVC else { return }
+        guard let detailVC = fromVC as? ImageDetailVC else { return }
         
-        let originalFrame = detailVC?.getOriginalImageFrame()
+        let originalFrame = detailVC.getOriginalImageFrame()
         
-        let imageView = (detailVC?.getImageView())!
+        guard let imageView = detailVC.getImageView() else { return }
         imageView.contentMode = .scaleAspectFill
         containerView.addSubview(imageView)
         
@@ -51,11 +49,10 @@ class TransitionDismissalAnimator: NSObject, UIViewControllerAnimatedTransitioni
                         imageView.frame = originalFrame!
                         fromVC.view.alpha = 0.0
         }, completion: { (finished) -> Void in
-            masterVC?.showSelectedImageView(originalFrame!)
+            masterVC.showSelectedImageView(originalFrame!)
             imageView.removeFromSuperview()
             ctx.completeTransition(!ctx.transitionWasCancelled)
         })
-        
     }
 }
 

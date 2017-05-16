@@ -68,15 +68,15 @@ class EvernoteCollectionVC: UIViewController, UICollectionViewDelegate, UICollec
         let cell = collectionView.cellForItem(at: indexPath) as! EvernoteCell
         let visibleCells = collectionView.visibleCells as! [EvernoteCell]
         let storyBoard = UIStoryboard(name: "evernote", bundle: nil)
-        let viewController = storyBoard.instantiateViewController(withIdentifier: "Note") as! NoteViewController
-        viewController.titleName = cell.titleLabel.text!
-        viewController.domainColor = cell.backgroundColor!
+        let v = storyBoard.instantiateViewController(withIdentifier: "Note") as! NoteViewController
+        v.titleName = cell.titleLabel.text!
+        v.domainColor = cell.backgroundColor!
 
         let finalFrame = CGRect(x: 10, y: collectionView.contentOffset.y + 10, width: screenWidth - 20, height: screenHeight - 40)
-        self.customTransition.EvernoteTransitionWith(selectCell: cell, visibleCells: visibleCells, originFrame: cell.frame, finalFrame: finalFrame, panViewController:viewController, listViewController: self)
-        viewController.transitioningDelegate = self.customTransition
-        viewController.delegate = self.customTransition
-        self.present(viewController, animated: true) { () -> Void in
+        self.customTransition.EvernoteTransitionWith(selectCell: cell, visibleCells: visibleCells, originFrame: cell.frame, finalFrame: finalFrame, panViewController:v, listViewController: self)
+        v.transitioningDelegate = self.customTransition
+        v.delegate = self.customTransition
+        self.present(v, animated: true) { () -> Void in
         }
     }
 

@@ -2,10 +2,13 @@
 import UIKit
 
 class TransitionImageCollectionVC: UICollectionViewController {
+
+    private let screenW = UIScreen.main.bounds.size.width
+    private let screenH = UIScreen.main.bounds.size.width
     
-    var layout : UICollectionViewFlowLayout {
+    var layout: UICollectionViewFlowLayout {
         let layout = UICollectionViewFlowLayout()
-        layout.itemSize = CGSize(width: UIScreen.main.bounds.size.width/4 - 4, height: UIScreen.main.bounds.size.width/4 - 4)
+        layout.itemSize = CGSize(width: screenW/4 - 4, height: screenH/4 - 4)
         layout.minimumInteritemSpacing = 4.0
         layout.minimumLineSpacing = 4.0
         return layout
@@ -19,9 +22,9 @@ class TransitionImageCollectionVC: UICollectionViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.collectionView?.backgroundColor = UIColor.white
-        self.collectionView?.collectionViewLayout = self.layout
-        self.navigationController?.delegate = self
+        collectionView?.backgroundColor = .white
+        collectionView?.collectionViewLayout = layout
+        navigationController?.delegate = self
     }
     
     override func numberOfSections(in collectionView: UICollectionView) -> Int {
@@ -39,38 +42,41 @@ class TransitionImageCollectionVC: UICollectionViewController {
     }
     
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let viewController = ImageDetailVC()
-        self.navigationController?.pushViewController(viewController, animated: true)
+        let vc = ImageDetailVC()
+        navigationController?.pushViewController(vc, animated: true)
     }
 }
 
+
 extension TransitionImageCollectionVC: UINavigationControllerDelegate {
+
     func navigationController(_ navigationController: UINavigationController, animationControllerFor operation: UINavigationControllerOperation, from fromVC: UIViewController, to toVC: UIViewController) -> UIViewControllerAnimatedTransitioning? {
-        
+
         if operation == .push {
-            let selectedIndexPaths = self.collectionView?.indexPathsForSelectedItems
-            let indexPath: IndexPath = selectedIndexPaths![0]
-            let collectionViewCell = self.collectionView?.cellForItem(at: indexPath)
-            let imageView = (collectionViewCell as! CollectionViewCell).imageView
-            imageView?.isHidden = true
+            guard let indexPath = (collectionView?.indexPathsForSelectedItems?[0]) else {return nil}
+            let cell = collectionView?.cellForItem(at: indexPath) as! CollectionViewCell
+            let iv = cell.imageView
+            iv?.isHidden = true
             let imageName = images[indexPath.row]
             
-            var cellRect = collectionViewCell!.frame
-            cellRect.origin.y += (self.collectionView?.contentInset.top)!
+            var cellRect = cell.frame
+            cellRect.origin.y += (collectionView?.contentInset.top)!
             return TransitionPresentationAnimator(frame: cellRect, imageName: imageName)
         }
         
         if operation == .pop {
-            return TransitionDismissalAnimator()
+            if toVC is TransitionImageCollectionVC {
+                return TransitionDismissalAnimator()
+            }
         }
-        
+
         return nil
     }
     
     func showSelectedImageView(_ frame: CGRect){
-        let indexPath: IndexPath = (self.collectionView?.indexPathForItem(at: frame.origin))!
-        let collectionViewCell = self.collectionView?.cellForItem(at: indexPath)
-        let imageView = (collectionViewCell as! CollectionViewCell).imageView
+        let indexPath = (collectionView?.indexPathForItem(at: frame.origin))!
+        let cell = collectionView?.cellForItem(at: indexPath) as! CollectionViewCell
+        let imageView = cell.imageView
         imageView?.isHidden = false
     }
 }
@@ -80,19 +86,20 @@ class CollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var imageView: UIImageView!
 }
 
+
 class ImageDetailVC: UIViewController {
     
     fileprivate var imageView: UIImageView?
     
     func setImageView(_ imageView: UIImageView?) {
-        if let imgView = imageView {
-            self.imageView = imgView
-            self.view.addSubview(imgView)
+        if let iv = imageView {
+            self.imageView = iv
+            view.addSubview(iv)
         }
     }
     
     func getImageView() -> UIImageView? {
-        return self.imageView
+        return imageView
     }
     
     // set original image frame

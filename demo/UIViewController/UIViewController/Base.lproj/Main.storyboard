@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12118" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="zgN-fu-qHb">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="zgN-fu-qHb">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -25,93 +25,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Y7q-9v-Sze" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1118" y="-183"/>
-        </scene>
-        <!--Master-->
-        <scene sceneID="wfC-wC-EFx">
-            <objects>
-                <tableViewController storyboardIdentifier="UnderlappingVC" title="Master" id="sMZ-6r-7nb" customClass="UnderlappingVC" customModule="UIViewController" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="Prm-iw-jUX">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" id="fbb-tf-tEi" customClass="MyCell" customModule="UIViewController" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="22" width="375" height="44"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="fbb-tf-tEi" id="JLN-BZ-O7z">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                    <subviews>
-                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="poppy" translatesAutoresizingMaskIntoConstraints="NO" id="2sO-Po-xoP">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
-                                        </imageView>
-                                    </subviews>
-                                    <constraints>
-                                        <constraint firstAttribute="bottom" secondItem="2sO-Po-xoP" secondAttribute="bottom" id="GlS-fH-EVq"/>
-                                        <constraint firstItem="2sO-Po-xoP" firstAttribute="leading" secondItem="JLN-BZ-O7z" secondAttribute="leading" id="IQX-sV-Iqv"/>
-                                        <constraint firstItem="2sO-Po-xoP" firstAttribute="top" secondItem="JLN-BZ-O7z" secondAttribute="top" id="dS3-RF-WuO"/>
-                                        <constraint firstAttribute="trailing" secondItem="2sO-Po-xoP" secondAttribute="trailing" id="r2G-kj-t71"/>
-                                    </constraints>
-                                </tableViewCellContentView>
-                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <connections>
-                                    <outlet property="iv" destination="2sO-Po-xoP" id="yq5-kU-g1f"/>
-                                </connections>
-                            </tableViewCell>
-                        </prototypes>
-                        <sections/>
-                        <connections>
-                            <outlet property="dataSource" destination="sMZ-6r-7nb" id="gft-Yx-sKA"/>
-                            <outlet property="delegate" destination="sMZ-6r-7nb" id="u4N-fY-0Ai"/>
-                        </connections>
-                    </tableView>
-                    <navigationItem key="navigationItem" title="Master" id="eJw-4G-ufQ">
-                        <barButtonItem key="rightBarButtonItem" title="Hide StatusBar" id="gzg-sr-ak8">
-                            <connections>
-                                <action selector="doButton:" destination="sMZ-6r-7nb" id="5Zh-es-yKy"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
-                    <connections>
-                        <segue destination="5LR-za-V7v" kind="show" identifier="showDetail" id="npo-lE-r3h"/>
-                    </connections>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="5du-0n-4AH" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2854" y="-183"/>
-        </scene>
-        <!--Detail-->
-        <scene sceneID="ISL-v8-apI">
-            <objects>
-                <viewController title="Detail" hidesBottomBarWhenPushed="YES" id="5LR-za-V7v" customClass="DetailViewController" customModule="UIViewController" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="E6z-z2-mrm"/>
-                        <viewControllerLayoutGuide type="bottom" id="5cM-3r-Dao"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="aRi-g5-qo9">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="B35-NY-nTA">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                            </imageView>
-                        </subviews>
-                        <color key="backgroundColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                        <constraints>
-                            <constraint firstItem="B35-NY-nTA" firstAttribute="top" secondItem="aRi-g5-qo9" secondAttribute="top" id="gIJ-t6-QdF"/>
-                            <constraint firstItem="B35-NY-nTA" firstAttribute="trailing" secondItem="aRi-g5-qo9" secondAttribute="trailing" id="iLv-Y2-pQx"/>
-                            <constraint firstItem="B35-NY-nTA" firstAttribute="leading" secondItem="aRi-g5-qo9" secondAttribute="leading" id="moh-Nq-Utk"/>
-                            <constraint firstItem="B35-NY-nTA" firstAttribute="bottom" secondItem="aRi-g5-qo9" secondAttribute="bottom" id="xrz-4k-CAH"/>
-                        </constraints>
-                    </view>
-                    <navigationItem key="navigationItem" title="Detail" id="HV7-74-sy5"/>
-                    <connections>
-                        <outlet property="iv" destination="B35-NY-nTA" id="1F8-5M-esB"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="bXM-Ao-M8K" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="3604" y="-183"/>
         </scene>
         <!--First-->
         <scene sceneID="kjq-Ih-gFS">
@@ -141,8 +54,11 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yCy-Ze-fs2">
-                                <rect key="frame" x="309" y="43" width="46" height="30"/>
-                                <state key="normal" title="Button"/>
+                                <rect key="frame" x="262" y="43" width="93" height="30"/>
+                                <state key="normal" title="Underlapping"/>
+                                <connections>
+                                    <action selector="underlapButton:" destination="I53-QB-Jd6" eventType="touchUpInside" id="aVv-Lv-auO"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -359,7 +275,6 @@
     </scenes>
     <resources>
         <image name="first" width="30" height="30"/>
-        <image name="poppy" width="120" height="64"/>
         <image name="second" width="30" height="30"/>
     </resources>
 </document>

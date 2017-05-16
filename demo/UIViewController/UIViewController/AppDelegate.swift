@@ -5,6 +5,8 @@
 //  Created by wangkan on 2017/4/8.
 //  Copyright © 2017年 rockgarden. All rights reserved.
 //
+//  另一个 AppDelegate UINavigationControllerDelegate UIGestureRecognizerDelegate demo 在 UINavigationBar 项目中实现.
+//
 
 import UIKit
 
@@ -55,6 +57,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
 extension AppDelegate : UITabBarControllerDelegate {
+
     func tabBarController(_ tabBarController: UITabBarController, animationControllerForTransitionFrom fromVC: UIViewController, to toVC: UIViewController) -> UIViewControllerAnimatedTransitioning? {
         return self
     }
@@ -68,7 +71,7 @@ extension AppDelegate : UITabBarControllerDelegate {
         /// will be nil if we didn't use g.r.
         if useContext {return self.interacting ? self : nil}
         
-        return self.inter
+        return result
     }
 }
 
