@@ -13,6 +13,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window : UIWindow?
     var anim : UIViewImplicitlyAnimating? //cannot be weak, vanishes before end of gesture
+    var rightEdger : UIScreenEdgePanGestureRecognizer!
+    var leftEdger : UIScreenEdgePanGestureRecognizer!
     
     /// 采用 UIPercentDrivenInteractiveTransition 实现
     var inter : UIPercentDrivenInteractiveTransition!
@@ -34,12 +36,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         sep.edges = UIRectEdge.right
         tbc.view.addGestureRecognizer(sep)
         sep.delegate = self
+        rightEdger = sep
 
         let sep2 = UIScreenEdgePanGestureRecognizer(target:self, action:#selector(pan))
         sep2.edges = UIRectEdge.left
         tbc.view.addGestureRecognizer(sep2)
         sep2.delegate = self
-
+        leftEdger = sep2
+        
         return true
     }
 
@@ -57,8 +61,14 @@ extension AppDelegate : UITabBarControllerDelegate {
 
     func tabBarController(_ tabBarController: UITabBarController, interactionControllerFor animationController: UIViewControllerAnimatedTransitioning) -> UIViewControllerInteractiveTransitioning? {
         print("interaction controller")
+        
+        /// no interaction if we didn't use g.r.
+        let result : UIViewControllerInteractiveTransitioning? = self.interacting ? self.inter : nil
+        
+        /// will be nil if we didn't use g.r.
         if useContext {return self.interacting ? self : nil}
-        return self.inter // will be nil if we didn't use g.r.
+        
+        return self.inter
     }
 }
 
@@ -76,8 +86,43 @@ extension AppDelegate : UIGestureRecognizerDelegate {
         }
         return result
     }
+    
+    func pan_old(_ g: UIScreenEdgePanGestureRecognizer) {
+        let v = g.view!
+        let tbc = self.window!.rootViewController as! UITabBarController
+        let delta = g.translation(in: v)
+        let percent = fabs(delta.x/v.bounds.size.width)
+        switch g.state {
+        case .began:
+            self.inter = UIPercentDrivenInteractiveTransition()
+            self.interacting = true
+            if g == self.rightEdger {
+                tbc.selectedIndex = tbc.selectedIndex + 1
+            } else {
+                tbc.selectedIndex = tbc.selectedIndex - 1
+            }
+        case .changed:
+            self.inter.update(percent)
+        case .ended:
+            // self.inter.completionSpeed = 0.5
+            // (try completionSpeed = 2 to see "ghosting" problem after a partial)
+            // (can occur with 1 as well)
+            // (setting to 0.5 seems to fix it)
+            // now using delay in completion handler to solve the issue
+            if percent > 0.5 {
+                self.inter.finish()
+            } else {
+                self.inter.cancel()
+            }
+            self.interacting = false
+        case .cancelled:
+            self.inter.cancel()
+            self.interacting = false
+        default: break
+        }
+    }
 
-    func pan(_ g:UIScreenEdgePanGestureRecognizer) {
+    func pan(_ g: UIScreenEdgePanGestureRecognizer) {
         let v = g.view!
         // according to the docs, calling self.inter.update(percent)
         // should update the percent driver's percentComplete
@@ -135,11 +180,6 @@ extension AppDelegate : UIGestureRecognizerDelegate {
                 self.context?.updateInteractiveTransition(percent)
             }
         case .ended:
-            // self.inter.completionSpeed = 0.5
-            // (try completionSpeed = 2 to see "ghosting" problem after a partial)
-            // (can occur with 1 as well)
-            // (setting to 0.5 seems to fix it)
-            // now using delay in completion handler to solve the issue
             print(self.inter.percentComplete) // zero, that's a bug
             if percent > 0.5 {
                 self.inter.finish()

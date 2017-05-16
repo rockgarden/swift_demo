@@ -1,6 +1,5 @@
 //
 //  LLRainbowColorSource.swift
-//  Pods
 //
 //  Created by Danis on 15/11/25.
 //

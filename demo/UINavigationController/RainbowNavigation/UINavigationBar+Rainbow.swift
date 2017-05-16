@@ -1,9 +1,8 @@
 //
 //  UINavigationBar+Rainbow.swift
-//  Pods
+//  https://github.com/DanisFabric/RainbowNavigation
 //
 //  Created by Danis on 15/11/25.
-//
 //
 
 import Foundation

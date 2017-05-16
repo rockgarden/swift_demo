@@ -20,10 +20,6 @@ class TransparentTableViewController: UITableViewController, RainbowColorSource 
         imageView.frame = CGRect(x: 0, y: 0, width: self.view.bounds.width, height: self.view.bounds.width * 0.75)
         tableView.tableHeaderView = imageView
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-    }
     
     override func numberOfSections(in tableView: UITableView) -> Int {
         return 1
