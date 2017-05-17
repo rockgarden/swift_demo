@@ -31,6 +31,8 @@
 		C290896E1EC0393F001E02FB /* FadeTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = C29089691EC0393F001E02FB /* FadeTransition.swift */; };
 		C290896F1EC0393F001E02FB /* SpinerLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = C290896A1EC0393F001E02FB /* SpinerLayer.swift */; };
 		C29089711EC0393F001E02FB /* TransitionSubmitButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = C290896C1EC0393F001E02FB /* TransitionSubmitButton.swift */; };
+		C2C04C211ECC182900F0A10B /* RefreshControlVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2C04C201ECC182900F0A10B /* RefreshControlVC.swift */; };
+		C2C04C231ECC18C700F0A10B /* Main_UIControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2C04C221ECC18C700F0A10B /* Main_UIControl.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -60,6 +62,8 @@
 		C29089691EC0393F001E02FB /* FadeTransition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FadeTransition.swift; sourceTree = "<group>"; };
 		C290896A1EC0393F001E02FB /* SpinerLayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpinerLayer.swift; sourceTree = "<group>"; };
 		C290896C1EC0393F001E02FB /* TransitionSubmitButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransitionSubmitButton.swift; sourceTree = "<group>"; };
+		C2C04C201ECC182900F0A10B /* RefreshControlVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RefreshControlVC.swift; sourceTree = "<group>"; };
+		C2C04C221ECC18C700F0A10B /* Main_UIControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Main_UIControl.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,6 +100,7 @@
 			children = (
 				449E5D8D1E13FC6B009F2915 /* AppDelegate.swift */,
 				449E5D911E13FC6B009F2915 /* Main.storyboard */,
+				C2C04C221ECC18C700F0A10B /* Main_UIControl.swift */,
 				C27AFC131EC592A10017A840 /* GCD.swift */,
 				449E5D8F1E13FC6B009F2915 /* UIControlVC.swift */,
 				449BD95B1E192CE8003A0762 /* UISegmentedControlVC.swift */,
@@ -111,6 +116,7 @@
 				C29089631EC01AAE001E02FB /* RoundBorderedButton.swift */,
 				C29089651EC01AB6001E02FB /* SqueezeButton.swift */,
 				C27AFC111EC58F910017A840 /* CircleRippleButton.swift */,
+				C2C04C201ECC182900F0A10B /* RefreshControlVC.swift */,
 				449E5D941E13FC6B009F2915 /* Assets.xcassets */,
 				449E5D961E13FC6B009F2915 /* LaunchScreen.storyboard */,
 				449E5D991E13FC6B009F2915 /* Info.plist */,
@@ -202,8 +208,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C2C04C231ECC18C700F0A10B /* Main_UIControl.swift in Sources */,
 				C27AFC121EC58F910017A840 /* CircleRippleButton.swift in Sources */,
 				449E5DA01E13FC87009F2915 /* MySlider.swift in Sources */,
+				C2C04C211ECC182900F0A10B /* RefreshControlVC.swift in Sources */,
 				C290896E1EC0393F001E02FB /* FadeTransition.swift in Sources */,
 				44D68A121E19FF8800AB4C19 /* UIStepperVC.swift in Sources */,
 				44D68A0E1E19FB5B00AB4C19 /* CoinSlider.swift in Sources */,

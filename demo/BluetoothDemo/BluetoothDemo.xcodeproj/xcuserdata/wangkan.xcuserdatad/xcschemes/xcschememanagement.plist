@@ -4,15 +4,20 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
-		<key>CoreDataDemo_Mac.xcscheme</key>
+		<key>BTScanner.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>76</integer>
+			<integer>86</integer>
 		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>C260ACE81EBB1A4300ADCD2B</key>
+		<key>C2A13ACD1ECBF265000ABB71</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>C2C04BD81ECC091A00F0A10B</key>
 		<dict>
 			<key>primary</key>
 			<true/>

@@ -14,10 +14,10 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "C260ACE81EBB1A4300ADCD2B"
-               BuildableName = "CoreDataDemo_Mac.app"
-               BlueprintName = "CoreDataDemo_Mac"
-               ReferencedContainer = "container:CoreDataDemo_Mac.xcodeproj">
+               BlueprintIdentifier = "C2A13ACD1ECBF265000ABB71"
+               BuildableName = "BTScanner"
+               BlueprintName = "BTScanner"
+               ReferencedContainer = "container:BluetoothDemo.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -32,10 +32,10 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "C260ACE81EBB1A4300ADCD2B"
-            BuildableName = "CoreDataDemo_Mac.app"
-            BlueprintName = "CoreDataDemo_Mac"
-            ReferencedContainer = "container:CoreDataDemo_Mac.xcodeproj">
+            BlueprintIdentifier = "C2A13ACD1ECBF265000ABB71"
+            BuildableName = "BTScanner"
+            BlueprintName = "BTScanner"
+            ReferencedContainer = "container:BluetoothDemo.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <AdditionalOptions>
@@ -55,10 +55,10 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "C260ACE81EBB1A4300ADCD2B"
-            BuildableName = "CoreDataDemo_Mac.app"
-            BlueprintName = "CoreDataDemo_Mac"
-            ReferencedContainer = "container:CoreDataDemo_Mac.xcodeproj">
+            BlueprintIdentifier = "C2A13ACD1ECBF265000ABB71"
+            BuildableName = "BTScanner"
+            BlueprintName = "BTScanner"
+            ReferencedContainer = "container:BluetoothDemo.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -74,10 +74,10 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "C260ACE81EBB1A4300ADCD2B"
-            BuildableName = "CoreDataDemo_Mac.app"
-            BlueprintName = "CoreDataDemo_Mac"
-            ReferencedContainer = "container:CoreDataDemo_Mac.xcodeproj">
+            BlueprintIdentifier = "C2A13ACD1ECBF265000ABB71"
+            BuildableName = "BTScanner"
+            BlueprintName = "BTScanner"
+            ReferencedContainer = "container:BluetoothDemo.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

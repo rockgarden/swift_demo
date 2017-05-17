@@ -14,10 +14,10 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "44A9DB021D8ED5030040E1FC"
-               BuildableName = "RefreshControl.app"
-               BlueprintName = "RefreshControl"
-               ReferencedContainer = "container:RefreshControl.xcodeproj">
+               BlueprintIdentifier = "C2C04BEB1ECC09DB00F0A10B"
+               BuildableName = "Quake_macOS.app"
+               BlueprintName = "Quake_macOS"
+               ReferencedContainer = "container:CoreDataExample.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -32,10 +32,10 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "44A9DB021D8ED5030040E1FC"
-            BuildableName = "RefreshControl.app"
-            BlueprintName = "RefreshControl"
-            ReferencedContainer = "container:RefreshControl.xcodeproj">
+            BlueprintIdentifier = "C2C04BEB1ECC09DB00F0A10B"
+            BuildableName = "Quake_macOS.app"
+            BlueprintName = "Quake_macOS"
+            ReferencedContainer = "container:CoreDataExample.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <AdditionalOptions>
@@ -55,10 +55,10 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "44A9DB021D8ED5030040E1FC"
-            BuildableName = "RefreshControl.app"
-            BlueprintName = "RefreshControl"
-            ReferencedContainer = "container:RefreshControl.xcodeproj">
+            BlueprintIdentifier = "C2C04BEB1ECC09DB00F0A10B"
+            BuildableName = "Quake_macOS.app"
+            BlueprintName = "Quake_macOS"
+            ReferencedContainer = "container:CoreDataExample.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -74,10 +74,10 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "44A9DB021D8ED5030040E1FC"
-            BuildableName = "RefreshControl.app"
-            BlueprintName = "RefreshControl"
-            ReferencedContainer = "container:RefreshControl.xcodeproj">
+            BlueprintIdentifier = "C2C04BEB1ECC09DB00F0A10B"
+            BuildableName = "Quake_macOS.app"
+            BlueprintName = "Quake_macOS"
+            ReferencedContainer = "container:CoreDataExample.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

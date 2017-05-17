@@ -18,6 +18,15 @@
 		440E06721DE5E02B00F175DB /* MainVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 440E06711DE5E02B00F175DB /* MainVC.swift */; };
 		C243E4831DE6B337008C9D38 /* CoreDataExample.xcdatamodel in Sources */ = {isa = PBXBuildFile; fileRef = C243E4821DE6B337008C9D38 /* CoreDataExample.xcdatamodel */; };
 		C243E4851DE6CC08008C9D38 /* SearchGroupListerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C243E4841DE6CC08008C9D38 /* SearchGroupListerVC.swift */; };
+		C2C04BEF1ECC09DB00F0A10B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2C04BEE1ECC09DB00F0A10B /* AppDelegate.swift */; };
+		C2C04BF31ECC09DC00F0A10B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C2C04BF21ECC09DC00F0A10B /* Assets.xcassets */; };
+		C2C04BF61ECC09DC00F0A10B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C2C04BF41ECC09DC00F0A10B /* Main.storyboard */; };
+		C2C04C031ECC09FA00F0A10B /* CoreDataStackManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2C04BFB1ECC09FA00F0A10B /* CoreDataStackManager.swift */; };
+		C2C04C041ECC09FA00F0A10B /* Document.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2C04BFC1ECC09FA00F0A10B /* Document.swift */; };
+		C2C04C051ECC09FA00F0A10B /* Document.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = C2C04BFD1ECC09FA00F0A10B /* Document.xcdatamodeld */; };
+		C2C04C061ECC09FA00F0A10B /* Earthquakes.xcdatamodel in Sources */ = {isa = PBXBuildFile; fileRef = C2C04C001ECC09FA00F0A10B /* Earthquakes.xcdatamodel */; };
+		C2C04C071ECC09FA00F0A10B /* Quake.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2C04C011ECC09FA00F0A10B /* Quake.swift */; };
+		C2C04C081ECC09FA00F0A10B /* QuakesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2C04C021ECC09FA00F0A10B /* QuakesViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,10 +43,29 @@
 		440E06711DE5E02B00F175DB /* MainVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainVC.swift; sourceTree = "<group>"; };
 		C243E4821DE6B337008C9D38 /* CoreDataExample.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CoreDataExample.xcdatamodel; sourceTree = "<group>"; };
 		C243E4841DE6CC08008C9D38 /* SearchGroupListerVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchGroupListerVC.swift; sourceTree = "<group>"; };
+		C2C04BEC1ECC09DB00F0A10B /* Quake_macOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Quake_macOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		C2C04BEE1ECC09DB00F0A10B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		C2C04BF21ECC09DC00F0A10B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		C2C04BF51ECC09DC00F0A10B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		C2C04BF71ECC09DC00F0A10B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C2C04BFB1ECC09FA00F0A10B /* CoreDataStackManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataStackManager.swift; sourceTree = "<group>"; };
+		C2C04BFC1ECC09FA00F0A10B /* Document.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Document.swift; sourceTree = "<group>"; };
+		C2C04BFE1ECC09FA00F0A10B /* Document.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Document.xcdatamodel; sourceTree = "<group>"; };
+		C2C04BFF1ECC09FA00F0A10B /* Earthquakes.entitlements */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.entitlements; path = Earthquakes.entitlements; sourceTree = "<group>"; };
+		C2C04C001ECC09FA00F0A10B /* Earthquakes.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Earthquakes.xcdatamodel; sourceTree = "<group>"; };
+		C2C04C011ECC09FA00F0A10B /* Quake.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Quake.swift; sourceTree = "<group>"; };
+		C2C04C021ECC09FA00F0A10B /* QuakesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuakesViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		440E064E1DE5DE4400F175DB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C2C04BE91ECC09DB00F0A10B /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -51,6 +79,7 @@
 			isa = PBXGroup;
 			children = (
 				440E06531DE5DE4400F175DB /* CoreData */,
+				C2C04BED1ECC09DB00F0A10B /* Quake_macOS */,
 				440E06521DE5DE4400F175DB /* Products */,
 			);
 			sourceTree = "<group>";
@@ -59,6 +88,7 @@
 			isa = PBXGroup;
 			children = (
 				440E06511DE5DE4400F175DB /* CoreDataExample.app */,
+				C2C04BEC1ECC09DB00F0A10B /* Quake_macOS.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -82,6 +112,24 @@
 			path = CoreData;
 			sourceTree = "<group>";
 		};
+		C2C04BED1ECC09DB00F0A10B /* Quake_macOS */ = {
+			isa = PBXGroup;
+			children = (
+				C2C04BEE1ECC09DB00F0A10B /* AppDelegate.swift */,
+				C2C04BF41ECC09DC00F0A10B /* Main.storyboard */,
+				C2C04C021ECC09FA00F0A10B /* QuakesViewController.swift */,
+				C2C04C011ECC09FA00F0A10B /* Quake.swift */,
+				C2C04BFB1ECC09FA00F0A10B /* CoreDataStackManager.swift */,
+				C2C04BFC1ECC09FA00F0A10B /* Document.swift */,
+				C2C04BFD1ECC09FA00F0A10B /* Document.xcdatamodeld */,
+				C2C04C001ECC09FA00F0A10B /* Earthquakes.xcdatamodel */,
+				C2C04BFF1ECC09FA00F0A10B /* Earthquakes.entitlements */,
+				C2C04BF21ECC09DC00F0A10B /* Assets.xcassets */,
+				C2C04BF71ECC09DC00F0A10B /* Info.plist */,
+			);
+			path = Quake_macOS;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -102,18 +150,40 @@
 			productReference = 440E06511DE5DE4400F175DB /* CoreDataExample.app */;
 			productType = "com.apple.product-type.application";
 		};
+		C2C04BEB1ECC09DB00F0A10B /* Quake_macOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C2C04BFA1ECC09DC00F0A10B /* Build configuration list for PBXNativeTarget "Quake_macOS" */;
+			buildPhases = (
+				C2C04BE81ECC09DB00F0A10B /* Sources */,
+				C2C04BE91ECC09DB00F0A10B /* Frameworks */,
+				C2C04BEA1ECC09DB00F0A10B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Quake_macOS;
+			productName = Quake_macOS;
+			productReference = C2C04BEC1ECC09DB00F0A10B /* Quake_macOS.app */;
+			productType = "com.apple.product-type.application";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
 		440E06491DE5DE4400F175DB /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 0810;
+				LastSwiftUpdateCheck = 0830;
 				LastUpgradeCheck = 0810;
 				ORGANIZATIONNAME = rockgarden;
 				TargetAttributes = {
 					440E06501DE5DE4400F175DB = {
 						CreatedOnToolsVersion = 8.1;
+						DevelopmentTeam = W3MH7MTTSB;
+						ProvisioningStyle = Automatic;
+					};
+					C2C04BEB1ECC09DB00F0A10B = {
+						CreatedOnToolsVersion = 8.3;
 						DevelopmentTeam = W3MH7MTTSB;
 						ProvisioningStyle = Automatic;
 					};
@@ -133,6 +203,7 @@
 			projectRoot = "";
 			targets = (
 				440E06501DE5DE4400F175DB /* CoreDataExample */,
+				C2C04BEB1ECC09DB00F0A10B /* Quake_macOS */,
 			);
 		};
 /* End PBXProject section */
@@ -150,6 +221,15 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		C2C04BEA1ECC09DB00F0A10B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C2C04BF31ECC09DC00F0A10B /* Assets.xcassets in Resources */,
+				C2C04BF61ECC09DC00F0A10B /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -163,6 +243,20 @@
 				440E066C1DE5DF1200F175DB /* GroupLister.swift in Sources */,
 				440E06551DE5DE4400F175DB /* AppDelegate.swift in Sources */,
 				440E066E1DE5DF1200F175DB /* PeopleLister.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C2C04BE81ECC09DB00F0A10B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C2C04C071ECC09FA00F0A10B /* Quake.swift in Sources */,
+				C2C04C041ECC09FA00F0A10B /* Document.swift in Sources */,
+				C2C04BEF1ECC09DB00F0A10B /* AppDelegate.swift in Sources */,
+				C2C04C051ECC09FA00F0A10B /* Document.xcdatamodeld in Sources */,
+				C2C04C031ECC09FA00F0A10B /* CoreDataStackManager.swift in Sources */,
+				C2C04C081ECC09FA00F0A10B /* QuakesViewController.swift in Sources */,
+				C2C04C061ECC09FA00F0A10B /* Earthquakes.xcdatamodel in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -183,6 +277,14 @@
 				440E065E1DE5DE4400F175DB /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		C2C04BF41ECC09DC00F0A10B /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C2C04BF51ECC09DC00F0A10B /* Base */,
+			);
+			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -305,6 +407,44 @@
 			};
 			name = Release;
 		};
+		C2C04BF81ECC09DC00F0A10B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = W3MH7MTTSB;
+				INFOPLIST_FILE = Quake_macOS/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.rockgarden.Quake-macOS";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		C2C04BF91ECC09DC00F0A10B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = W3MH7MTTSB;
+				INFOPLIST_FILE = Quake_macOS/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.rockgarden.Quake-macOS";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -326,7 +466,29 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
+		C2C04BFA1ECC09DC00F0A10B /* Build configuration list for PBXNativeTarget "Quake_macOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C2C04BF81ECC09DC00F0A10B /* Debug */,
+				C2C04BF91ECC09DC00F0A10B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		C2C04BFD1ECC09FA00F0A10B /* Document.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				C2C04BFE1ECC09FA00F0A10B /* Document.xcdatamodel */,
+			);
+			currentVersion = C2C04BFE1ECC09FA00F0A10B /* Document.xcdatamodel */;
+			path = Document.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 440E06491DE5DE4400F175DB /* Project object */;
 }

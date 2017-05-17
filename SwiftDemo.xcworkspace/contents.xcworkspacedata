@@ -2,13 +2,13 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:demo/BluetoothDemo/BluetoothDemo.xcodeproj">
+   </FileRef>
+   <FileRef
       location = "group:demo/UIPreviewInteractionDemo/UIPreviewInteractionDemo.xcodeproj">
    </FileRef>
    <FileRef
       location = "group:demo/CoreGraphicsDemo/CoreGraphicsDemo.xcodeproj">
-   </FileRef>
-   <FileRef
-      location = "group:demo/CoreDataDemo_Mac/CoreDataDemo_Mac.xcodeproj">
    </FileRef>
    <FileRef
       location = "group:demo/CoreMotionDemo/CoreMotionDemo.xcodeproj">
@@ -189,9 +189,6 @@
    </FileRef>
    <FileRef
       location = "group:demo/Constraint/Constraint.xcodeproj">
-   </FileRef>
-   <FileRef
-      location = "group:demo/RefreshControl/RefreshControl.xcodeproj">
    </FileRef>
    <FileRef
       location = "group:demo/TextView/TextView.xcodeproj">
