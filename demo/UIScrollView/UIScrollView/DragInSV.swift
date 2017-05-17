@@ -9,7 +9,7 @@ class DragInSV : UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.sv.contentSize = self.map.bounds.size
+        sv.contentSize = map.bounds.size
     }
     
     @IBAction func dragging (_ p: UIPanGestureRecognizer) {
@@ -94,18 +94,23 @@ class MyFlagView : UIImageView {
         let inside = self.point(inside: point, with:event)
         if !inside { return nil }
 
-        let r = UIGraphicsImageRenderer(size:self.bounds.size)
-        let im = r.image {
-            ctx in let con = ctx.cgContext
-            let lay = self.layer
-            lay.render(in:con)
-        }
+        var im: UIImage!
 
-        //        UIGraphicsBeginImageContextWithOptions(self.bounds.size, false, 0)
-        //        let lay = self.layer
-        //        lay.render(in:UIGraphicsGetCurrentContext()!)
-        //        let im = UIGraphicsGetImageFromCurrentImageContext()!
-        //        UIGraphicsEndImageContext()
+        if #available(iOS 10.0, *) {
+            let r = UIGraphicsImageRenderer(size:self.bounds.size)
+            im = r.image {
+                ctx in let con = ctx.cgContext
+                let lay = self.layer
+                lay.render(in:con)
+            }
+        } else {
+            // Fallback on earlier versions
+            UIGraphicsBeginImageContextWithOptions(self.bounds.size, false, 0)
+            let lay = self.layer
+            lay.render(in:UIGraphicsGetCurrentContext()!)
+            im = UIGraphicsGetImageFromCurrentImageContext()!
+            UIGraphicsEndImageContext()
+        }
 
         let info = CGImageAlphaInfo.alphaOnly.rawValue
         let pixel = UnsafeMutablePointer<UInt8>.allocate(capacity:1)
