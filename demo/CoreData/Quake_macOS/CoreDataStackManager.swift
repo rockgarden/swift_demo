@@ -1,57 +1,47 @@
 /*
-    Copyright (C) 2016 Apple Inc. All Rights Reserved.
-    See LICENSE.txt for this sample’s licensing information
-    
-    Abstract:
-    Singleton controller to manage the main Core Data stack for the application. It vends a persistent store coordinator, the managed object model, and a URL for the persistent store.
-*/
+ Copyright (C) 2016 Apple Inc. All Rights Reserved.
+ See LICENSE.txt for this sample’s licensing information
+ 
+ Abstract:
+ Singleton controller to manage the main Core Data stack for the application. It vends a persistent store coordinator, the managed object model, and a URL for the persistent store.
+ */
 
 import Cocoa
 
 class CoreDataStackManager {
-    // MARK: Properties
     
+    // MARK: Properties
     static let sharedManager = CoreDataStackManager()
-    static let applicationDocumentsDirectoryName = "com.example.apple-samplecode.Earthquakes"
+    static let applicationDocumentsDirectoryName = "com.rockgarden.Quake-macOS"
     static let mainStoreFileName = "Earthquakes.storedata"
     static let errorDomain = "CoreDataStackManager"
-
+    
     // The managed object model for the application.
-    //
     lazy var managedObjectModel: NSManagedObjectModel = {
-
-        // This property is not optional. It is a fatal error for the application
-        // not to be able to find and load its model.
-        //
-        let modelURL = Bundle.main.url(forResource: "Earthquakes", withExtension: "momd")!
-
+        /// This property is not optional. It is a fatal error for the application not to be able to find and load its model.
+        /// 神奇: 若 数据库配置文件 错误的命名为 *.xcdatamodel 其运行时生成的数据库文件的扩展名 "mom"！！
+        /// 正确 配置文件扩展名为 .xcdatamodeld 生成的数据库文件的扩展名 "momd".
+        let modelURL = Bundle.main.url(forResource: "Earthquakes", withExtension: "mom")!
         return NSManagedObjectModel(contentsOf: modelURL)!
     }()
-
+    
     // Primary persistent store coordinator for the application.
-    //
     lazy var persistentStoreCoordinator: NSPersistentStoreCoordinator = {
-
         // This implementation creates and return a coordinator, having added the
         // store for the application to it. (The directory for the store is created, if necessary.)
-        //
         let persistentStoreCoordinator = NSPersistentStoreCoordinator(managedObjectModel: self.managedObjectModel)
-        
         do {
             let options = [
                 NSMigratePersistentStoresAutomaticallyOption: true,
                 NSInferMappingModelAutomaticallyOption: true
             ]
-
             try persistentStoreCoordinator.addPersistentStore(ofType: NSSQLiteStoreType, configurationName: nil, at: self.storeURL, options: options)
         }
         catch {
             fatalError("Could not add the persistent store: \(error).")
         }
-
         return persistentStoreCoordinator
     }()
-    
     
     lazy var mainQueueContext: NSManagedObjectContext = {
         
@@ -73,21 +63,17 @@ class CoreDataStackManager {
         
         return moc
     }()
-
-    
     
     /// The directory the application uses to store the Core Data store file.
-    //
     lazy var applicationSupportDirectory: URL = {
         
         let fileManager = FileManager.default
-
+        
         // Use the app support directory directly if URLByAppendingPathComponent failed.
-        //
         let supportDirectory = fileManager.urls(for: .applicationSupportDirectory, in: .userDomainMask).last!
         
         let applicationSupportDirectory = supportDirectory.appendingPathComponent(applicationDocumentsDirectoryName)
-            //else{ return supportDirectory }
+        //else{ return supportDirectory }
         
         do {
             let properties = try (applicationSupportDirectory as NSURL).resourceValues(forKeys: [URLResourceKey.isDirectoryKey])
@@ -100,7 +86,7 @@ class CoreDataStackManager {
                 throw NSError(domain: errorDomain, code: 201, userInfo: [
                     NSLocalizedDescriptionKey: description,
                     NSLocalizedFailureReasonErrorKey: reason
-                ])
+                    ])
             }
         }
         catch let error as NSError where error.code != NSFileReadNoSuchFileError {
@@ -108,7 +94,7 @@ class CoreDataStackManager {
         }
         catch {
             let path = applicationSupportDirectory.path
-
+            
             do {
                 try fileManager.createDirectory(atPath: path, withIntermediateDirectories:true, attributes:nil)
             }
@@ -130,7 +116,7 @@ class CoreDataStackManager {
     // Creates a new Core Data stack and returns a managed object context associated with a private queue.
     //
     func newPrivateQueueContextWithNewPSC() throws -> NSManagedObjectContext {
-    
+        
         // Stack uses the same store and model, but a new persistent store coordinator and context.
         //
         let coordinator = NSPersistentStoreCoordinator(managedObjectModel: CoreDataStackManager.sharedManager.managedObjectModel)
@@ -141,25 +127,23 @@ class CoreDataStackManager {
         try coordinator.addPersistentStore(ofType: NSSQLiteStoreType, configurationName: nil, at: CoreDataStackManager.sharedManager.storeURL, options: nil)
         
         let context = NSManagedObjectContext(concurrencyType: .privateQueueConcurrencyType)
-    
+        
         context.performAndWait() {
-        
+            
             context.persistentStoreCoordinator = coordinator
-        
+            
             // Avoid using default merge policy in multi-threading environment:
             // when we delete (and save) a record in one context,
             // and try to save edits on the same record in the other context before merging the changes,
             // an exception will be thrown because Core Data by default uses NSErrorMergePolicy.
             // Setting a reasonable mergePolicy is a good practice to avoid that kind of exception.
-            //
             context.mergePolicy = NSMergeByPropertyObjectTrumpMergePolicy
             
             // In macOS, a context provides an undo manager by default
             // Disable it for performance benefit
-            //
             context.undoManager = nil
         }
-    
+        
         return context
     }
 }

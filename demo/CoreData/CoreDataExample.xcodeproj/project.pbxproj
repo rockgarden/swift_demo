@@ -22,8 +22,6 @@
 		C2C04BF31ECC09DC00F0A10B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C2C04BF21ECC09DC00F0A10B /* Assets.xcassets */; };
 		C2C04BF61ECC09DC00F0A10B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C2C04BF41ECC09DC00F0A10B /* Main.storyboard */; };
 		C2C04C031ECC09FA00F0A10B /* CoreDataStackManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2C04BFB1ECC09FA00F0A10B /* CoreDataStackManager.swift */; };
-		C2C04C041ECC09FA00F0A10B /* Document.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2C04BFC1ECC09FA00F0A10B /* Document.swift */; };
-		C2C04C051ECC09FA00F0A10B /* Document.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = C2C04BFD1ECC09FA00F0A10B /* Document.xcdatamodeld */; };
 		C2C04C061ECC09FA00F0A10B /* Earthquakes.xcdatamodel in Sources */ = {isa = PBXBuildFile; fileRef = C2C04C001ECC09FA00F0A10B /* Earthquakes.xcdatamodel */; };
 		C2C04C071ECC09FA00F0A10B /* Quake.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2C04C011ECC09FA00F0A10B /* Quake.swift */; };
 		C2C04C081ECC09FA00F0A10B /* QuakesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2C04C021ECC09FA00F0A10B /* QuakesViewController.swift */; };
@@ -49,8 +47,6 @@
 		C2C04BF51ECC09DC00F0A10B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		C2C04BF71ECC09DC00F0A10B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C2C04BFB1ECC09FA00F0A10B /* CoreDataStackManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataStackManager.swift; sourceTree = "<group>"; };
-		C2C04BFC1ECC09FA00F0A10B /* Document.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Document.swift; sourceTree = "<group>"; };
-		C2C04BFE1ECC09FA00F0A10B /* Document.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Document.xcdatamodel; sourceTree = "<group>"; };
 		C2C04BFF1ECC09FA00F0A10B /* Earthquakes.entitlements */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.entitlements; path = Earthquakes.entitlements; sourceTree = "<group>"; };
 		C2C04C001ECC09FA00F0A10B /* Earthquakes.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Earthquakes.xcdatamodel; sourceTree = "<group>"; };
 		C2C04C011ECC09FA00F0A10B /* Quake.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Quake.swift; sourceTree = "<group>"; };
@@ -120,8 +116,6 @@
 				C2C04C021ECC09FA00F0A10B /* QuakesViewController.swift */,
 				C2C04C011ECC09FA00F0A10B /* Quake.swift */,
 				C2C04BFB1ECC09FA00F0A10B /* CoreDataStackManager.swift */,
-				C2C04BFC1ECC09FA00F0A10B /* Document.swift */,
-				C2C04BFD1ECC09FA00F0A10B /* Document.xcdatamodeld */,
 				C2C04C001ECC09FA00F0A10B /* Earthquakes.xcdatamodel */,
 				C2C04BFF1ECC09FA00F0A10B /* Earthquakes.entitlements */,
 				C2C04BF21ECC09DC00F0A10B /* Assets.xcassets */,
@@ -251,9 +245,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C2C04C071ECC09FA00F0A10B /* Quake.swift in Sources */,
-				C2C04C041ECC09FA00F0A10B /* Document.swift in Sources */,
 				C2C04BEF1ECC09DB00F0A10B /* AppDelegate.swift in Sources */,
-				C2C04C051ECC09FA00F0A10B /* Document.xcdatamodeld in Sources */,
 				C2C04C031ECC09FA00F0A10B /* CoreDataStackManager.swift in Sources */,
 				C2C04C081ECC09FA00F0A10B /* QuakesViewController.swift in Sources */,
 				C2C04C061ECC09FA00F0A10B /* Earthquakes.xcdatamodel in Sources */,
@@ -413,6 +405,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CODE_SIGN_ENTITLEMENTS = Quake_macOS/Earthquakes.entitlements;
 				CODE_SIGN_IDENTITY = "-";
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = W3MH7MTTSB;
@@ -432,6 +425,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CODE_SIGN_ENTITLEMENTS = Quake_macOS/Earthquakes.entitlements;
 				CODE_SIGN_IDENTITY = "-";
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = W3MH7MTTSB;
@@ -476,19 +470,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCVersionGroup section */
-		C2C04BFD1ECC09FA00F0A10B /* Document.xcdatamodeld */ = {
-			isa = XCVersionGroup;
-			children = (
-				C2C04BFE1ECC09FA00F0A10B /* Document.xcdatamodel */,
-			);
-			currentVersion = C2C04BFE1ECC09FA00F0A10B /* Document.xcdatamodel */;
-			path = Document.xcdatamodeld;
-			sourceTree = "<group>";
-			versionGroupType = wrapper.xcdatamodel;
-		};
-/* End XCVersionGroup section */
 	};
 	rootObject = 440E06491DE5DE4400F175DB /* Project object */;
 }
