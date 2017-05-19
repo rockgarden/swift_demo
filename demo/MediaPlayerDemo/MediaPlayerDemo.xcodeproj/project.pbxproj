@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		4435E9D01DFEC6CF0003196A /* AVPlayerLayerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4435E9CF1DFEC6CF0003196A /* AVPlayerLayerVC.swift */; };
+		4435E9D01DFEC6CF0003196A /* AVCompositionVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4435E9CF1DFEC6CF0003196A /* AVCompositionVC.swift */; };
 		4435E9D21DFEC8FF0003196A /* wilhelm.aiff in Resources */ = {isa = PBXBuildFile; fileRef = 4435E9D11DFEC8FF0003196A /* wilhelm.aiff */; };
 		4435E9D41DFECA9B0003196A /* EmbeddedAVKitVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4435E9D31DFECA9B0003196A /* EmbeddedAVKitVC.swift */; };
 		4435E9D61DFED0D30003196A /* EmbeddedAVKitVC_UIVideoEditor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4435E9D51DFED0D30003196A /* EmbeddedAVKitVC_UIVideoEditor.swift */; };
@@ -35,7 +35,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		4435E9CF1DFEC6CF0003196A /* AVPlayerLayerVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AVPlayerLayerVC.swift; sourceTree = "<group>"; };
+		4435E9CF1DFEC6CF0003196A /* AVCompositionVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AVCompositionVC.swift; sourceTree = "<group>"; };
 		4435E9D11DFEC8FF0003196A /* wilhelm.aiff */ = {isa = PBXFileReference; lastKnownFileType = audio.aiff; path = wilhelm.aiff; sourceTree = "<group>"; };
 		4435E9D31DFECA9B0003196A /* EmbeddedAVKitVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmbeddedAVKitVC.swift; sourceTree = "<group>"; };
 		4435E9D51DFED0D30003196A /* EmbeddedAVKitVC_UIVideoEditor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmbeddedAVKitVC_UIVideoEditor.swift; sourceTree = "<group>"; };
@@ -104,7 +104,7 @@
 				4453579D1DFB000800F996A2 /* Player.swift */,
 				4453579F1DFD332300F996A2 /* MediaQueryVC.swift */,
 				445357A11DFD487000F996A2 /* PlayerLayerVC.swift */,
-				4435E9CF1DFEC6CF0003196A /* AVPlayerLayerVC.swift */,
+				4435E9CF1DFEC6CF0003196A /* AVCompositionVC.swift */,
 				4435E9D31DFECA9B0003196A /* EmbeddedAVKitVC.swift */,
 				4435E9D51DFED0D30003196A /* EmbeddedAVKitVC_UIVideoEditor.swift */,
 				C2D48F5F1E010195008D4F90 /* MIDITestVC.swift */,
@@ -216,7 +216,7 @@
 				44C070B81DFAFB4E0093BC1E /* MediaPickerVC.swift in Sources */,
 				44CCDBE31E017CDA00C7163A /* AVAudioEngineTestVC.swift in Sources */,
 				4453DCF11E06C95E00299EA8 /* RemoteControlVC.swift in Sources */,
-				4435E9D01DFEC6CF0003196A /* AVPlayerLayerVC.swift in Sources */,
+				4435E9D01DFEC6CF0003196A /* AVCompositionVC.swift in Sources */,
 				C2D48F601E010195008D4F90 /* MIDITestVC.swift in Sources */,
 				4486869B1E08029100917B06 /* Root_MediaDemo.swift in Sources */,
 				4453579C1DFAFF8300F996A2 /* AVKitVC.swift in Sources */,

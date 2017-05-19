@@ -9,23 +9,25 @@ import AVFoundation
 
 class EmbeddedAVKitVC: UIViewController {
 
+    let url = Bundle.main.url(forResource:"ElMirage", withExtension:"mp4")!
+
     override var prefersStatusBarHidden : Bool {
         return true
     }
 
-    //    override var supportedInterfaceOrientations : UIInterfaceOrientationMask {
-    //        if UIDevice.currentDevice().userInterfaceIdiom == .Pad {
-    //            return UIInterfaceOrientationMask.All
-    //        }
-    //        return UIInterfaceOrientationMask.Landscape
-    //    }
+    override var supportedInterfaceOrientations : UIInterfaceOrientationMask {
+        if UIDevice.current.userInterfaceIdiom == .pad {
+            return .all
+        }
+        return .landscape
+    }
 
     let which = 2
 
+    // FIXME: AVPlayer 可多次创建
     @IBAction func go() {
         switch which {
         case 1:
-            let url = Bundle.main.url(forResource:"ElMirage", withExtension:"mp4")!
             let asset = AVURLAsset(url:url)
             let item = AVPlayerItem(asset:asset)
             let player = AVPlayer(playerItem:item)
@@ -36,13 +38,12 @@ class EmbeddedAVKitVC: UIViewController {
             self.view.addSubview(av.view)
             av.didMove(toParentViewController: self)
         case 2:
-            self.setUpChild()
+            setUpChild()
         default: break
         }
     }
 
-    func setUpChild() {
-        let url = Bundle.main.url(forResource:"ElMirage", withExtension:"mp4")!
+    private func setUpChild() {
         let asset = AVURLAsset(url:url)
         let track = #keyPath(AVURLAsset.tracks)
         asset.loadValuesAsynchronously(forKeys:[track]) {
@@ -55,7 +56,7 @@ class EmbeddedAVKitVC: UIViewController {
         }
     }
 
-    func getVideoTrack(_ asset:AVAsset) {
+    private func getVideoTrack(_ asset:AVAsset) {
         // we have tracks or we wouldn't be here
         let visual = AVMediaCharacteristicVisual
         let vtrack = asset.tracks(withMediaCharacteristic: visual)[0]
@@ -70,7 +71,7 @@ class EmbeddedAVKitVC: UIViewController {
         }
     }
 
-    func getNaturalSize(_ vtrack:AVAssetTrack, _ asset:AVAsset) {
+    private func getNaturalSize(_ vtrack:AVAssetTrack, _ asset:AVAsset) {
         // we have a natural size or we wouldn't be here
         let sz = vtrack.naturalSize
         let item = AVPlayerItem(asset:asset)
