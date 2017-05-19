@@ -12,23 +12,23 @@ class AVAudioEngineTestVC: UIViewController {
 
     var audioPlayer : AVAudioPlayer!
     var engine = AVAudioEngine()
+    let m4aUrl = Bundle.main.url(forResource:"aboutTiagol", withExtension:"m4a")!
+    let mp3Url = Bundle.main.url(forResource:"Hooded", withExtension: "mp3")!
 
+    /// AVAudioPlayerNode
     @IBAction func doButton(_ sender: Any) {
         self.engine.stop()
         self.engine = AVAudioEngine()
-
-        // simplest possible "play a file" scenario
-        // construct a graph
         // take out a player node
         let player = AVAudioPlayerNode()
-        // open a file to play on the player node
-        let url = Bundle.main.url(forResource:"aboutTiagol", withExtension:"m4a")!
-        let f = try! AVAudioFile(forReading: url)
-        // hook the player's output to the self.engine's mixer node
-        // alternatively, could use the self.engine's output node (mixer is hooked to output already)
-        let mixer = self.engine.mainMixerNode
         self.engine.attach(player)
+
+        // open a file to play on the player node
+        let f = try! AVAudioFile(forReading: m4aUrl)
+        /// 将播放器的输出挂接到self.engine的混音器节点; 或者，可以使用self.engine的输出节点（混合器已挂接输出）hook the player's output to the self.engine's mixer node. alternatively, could use the self.engine's output node (mixer is hooked to output already)
+        let mixer = self.engine.mainMixerNode
         self.engine.connect(player, to: mixer, format: f.processingFormat)
+
         // schedule the file on the player
         player.scheduleFile(f, at:nil)
         // start the self.engine
@@ -37,38 +37,37 @@ class AVAudioEngineTestVC: UIViewController {
         player.play()
     }
 
-
+    /// AVAudioPCMBuffer
     @IBAction func doButton2(_ sender: Any) {
         self.engine.stop()
         self.engine = AVAudioEngine()
+        let player = AVAudioPlayerNode()
+        self.engine.attach(player)
 
-        // simplest possible "play a buffer" scenario
-        let url2 = Bundle.main.url(forResource:"Hooded", withExtension: "mp3")!
-        let f2 = try! AVAudioFile(forReading: url2)
-        let buffer = AVAudioPCMBuffer(pcmFormat: f2.processingFormat, frameCapacity: UInt32(f2.length /* /3 */)) // only need 1/3 of the original recording
-        try! f2.read(into:buffer)
+        /// simplest possible "play a buffer" scenario
+        let f = try! AVAudioFile(forReading: mp3Url)
+        let buffer = AVAudioPCMBuffer(pcmFormat: f.processingFormat, frameCapacity: UInt32(f.length /* /3 */)) // only need 1/3 of the original recording
+        try! f.read(into:buffer)
 
-        let player2 = AVAudioPlayerNode()
-        self.engine.attach(player2)
         let mixer = self.engine.mainMixerNode
-        self.engine.connect(player2, to: mixer, format: f2.processingFormat)
+        self.engine.connect(player, to: mixer, format: f.processingFormat)
 
-        player2.scheduleBuffer(buffer)
-
+        player.scheduleBuffer(buffer)
         self.engine.prepare()
-
         try! self.engine.start()
-        player2.play()
+        player.play()
     }
 
+    private func basePlayer(_ f: AVAudioFile) {
+
+    }
 
     @IBAction func doButton3(_ sender: Any) {
         self.engine.stop()
         self.engine = AVAudioEngine()
 
         let player = AVAudioPlayerNode()
-        let url = Bundle.main.url(forResource:"aboutTiagol", withExtension: "m4a")!
-        let f = try! AVAudioFile(forReading: url)
+        let f = try! AVAudioFile(forReading: m4aUrl)
         let mixer = self.engine.mainMixerNode
         self.engine.attach(player)
         self.engine.connect(player, to: mixer, format: f.processingFormat)
@@ -77,16 +76,16 @@ class AVAudioEngineTestVC: UIViewController {
         try! self.engine.start()
         player.play()
 
-        let url2 = Bundle.main.url(forResource:"Hooded", withExtension: "mp3")!
-        let f2 = try! AVAudioFile(forReading: url2)
+        let f2 = try! AVAudioFile(forReading: mp3Url)
         let buffer = AVAudioPCMBuffer(pcmFormat: f2.processingFormat, frameCapacity: UInt32(f2.length/3))
         try! f2.read(into:buffer)
         let player2 = AVAudioPlayerNode()
         self.engine.attach(player2)
         self.engine.connect(player2, to: mixer, format: f2.processingFormat)
         player2.scheduleBuffer(buffer, at: nil, options: .loops)
+
         // mix down a little
-        player2.volume = 0.5
+        player2.volume = 0.3
         player2.play()
     }
 
@@ -97,8 +96,7 @@ class AVAudioEngineTestVC: UIViewController {
 
         // first sound
         let player = AVAudioPlayerNode()
-        let url = Bundle.main.url(forResource:"aboutTiagol", withExtension: "m4a")!
-        let f = try! AVAudioFile(forReading: url)
+        let f = try! AVAudioFile(forReading: m4aUrl)
         self.engine.attach(player)
 
         // add some effect nodes to the chain
@@ -122,8 +120,7 @@ class AVAudioEngineTestVC: UIViewController {
         player.play()
 
         // second sound; loop it this time
-        let url2 = Bundle.main.url(forResource:"Hooded", withExtension: "mp3")!
-        let f2 = try! AVAudioFile(forReading: url2)
+        let f2 = try! AVAudioFile(forReading: mp3Url)
         let buffer = AVAudioPCMBuffer(pcmFormat: f2.processingFormat, frameCapacity: UInt32(f2.length /* /3 */))
         try! f2.read(into:buffer)
         let player2 = AVAudioPlayerNode()
@@ -137,19 +134,19 @@ class AVAudioEngineTestVC: UIViewController {
         player2.pan = 0.5
         player2.play()
 
-        print(player.volume)
+        print("volume: \(player.volume)")
     }
 
-    // new iOS 9 feature: split node
 
+    /// new iOS 9 feature: split node
     @IBAction func doButton4a(_ sender: Any) {
         self.engine.stop()
         self.engine = AVAudioEngine()
 
         // first sound
         let player = AVAudioPlayerNode()
-        let url = Bundle.main.url(forResource:"aboutTiagol", withExtension: "m4a")!
-        let f = try! AVAudioFile(forReading: url)
+
+        let f = try! AVAudioFile(forReading: m4aUrl)
         self.engine.attach(player)
 
         // add some effect nodes to the chain
@@ -184,19 +181,17 @@ class AVAudioEngineTestVC: UIViewController {
     }
 
 
+    /// create the output file
     @IBAction func doButton5(_ sender: Any) {
         self.engine.stop()
         self.engine = AVAudioEngine()
 
         // simple minimal file-writing example
-        // not difficult, but you have to form a valid file format or you'll get an error up front
+        // you have to form a valid file format or you'll get an error up front
         // also, it's a little disappointing to find that you must _play_ the sound...
-        // you can't just process it directly into a file, which is what I was hoping to do
-
-        let url2 = Bundle.main.url(forResource:"Hooded", withExtension: "mp3")!
-        let f2 = try! AVAudioFile(forReading: url2)
-        let buffer = AVAudioPCMBuffer(pcmFormat: f2.processingFormat, frameCapacity: UInt32(f2.length /* /3 */)) // only need 1/3 of the original recording
-        try! f2.read(into:buffer)
+        let f = try! AVAudioFile(forReading: mp3Url)
+        let buffer = AVAudioPCMBuffer(pcmFormat: f.processingFormat, frameCapacity: UInt32(f.length /* /3 */)) // only need 1/3 of the original recording
+        try! f.read(into:buffer)
 
         let player2 = AVAudioPlayerNode()
         self.engine.attach(player2)
@@ -206,12 +201,11 @@ class AVAudioEngineTestVC: UIViewController {
         effect.wetDryMix = 40
         self.engine.attach(effect)
 
-        self.engine.connect(player2, to: effect, format: f2.processingFormat)
+        self.engine.connect(player2, to: effect, format: f.processingFormat)
         let mixer = self.engine.mainMixerNode
-        self.engine.connect(effect, to: mixer, format: f2.processingFormat)
+        self.engine.connect(effect, to: mixer, format: f.processingFormat)
 
-        // create the output file
-
+        /// create the output file
         let fm = FileManager.default
         let doc = try! fm.url(for:.documentDirectory, in: .userDomainMask, appropriateFor: nil, create: true)
         let outurl = doc.appendingPathComponent("myfile.aac", isDirectory:false)
@@ -222,9 +216,7 @@ class AVAudioEngineTestVC: UIViewController {
             AVSampleRateKey : 22050,
             ])
 
-        // we'll know when the input buffer is emptied, but the sound will still be going on
-        // because of the reverb; so to detect when the sound has faded away,
-        // we watch for the last output buffer value to become very small
+        /// we'll know when the input buffer is emptied, but the sound will still be going on, because of the reverb; so to detect when the sound has faded away, we watch for the last output buffer value to become very small
 
         // install a tap on the reverb effect node
         var done = false // flag: don't stop until input buffer is empty!
@@ -249,6 +241,7 @@ class AVAudioEngineTestVC: UIViewController {
                 print(error)
             }
         }
+
         player2.scheduleBuffer(buffer) {
             done = true
         }
@@ -262,9 +255,12 @@ class AVAudioEngineTestVC: UIViewController {
     @IBAction func doStop(_ sender: Any) {
         self.engine.stop()
         self.engine = AVAudioEngine()
+
+        guard (audioPlayer != nil) else {return}
+        audioPlayer.stop()
     }
 
-    func playSound(_ url:URL) {
+    private func playSound(_ url: URL) {
         do {
             try self.audioPlayer = AVAudioPlayer(contentsOf: url)
             self.audioPlayer.prepareToPlay()
@@ -275,9 +271,9 @@ class AVAudioEngineTestVC: UIViewController {
     }
 }
 
+
 extension AVAudioEngineTestVC : AVAudioPlayerDelegate {
     func audioPlayerDidFinishPlaying(_ player: AVAudioPlayer, successfully flag: Bool) {
         print("finished")
     }
-    
 }

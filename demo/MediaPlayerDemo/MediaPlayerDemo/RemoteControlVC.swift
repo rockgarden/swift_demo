@@ -75,21 +75,19 @@ class RemoteControlVC: UIViewController {
             scc.likeCommand.addTarget(self, action:#selector(doLike))
             scc.likeCommand.localizedTitle = "Fantastic"
         case 1:
+            let p = self.player.avPlayer!
             opaques["playPause"] = scc.togglePlayPauseCommand.addTarget {
-                [unowned self] _ in
-                let p = self.player.player!
+                _ in //必须用 [unowned self] 
                 if p.isPlaying { p.pause() } else { p.play() }
                 return .success
             }
             opaques["play"] = scc.playCommand.addTarget {
-                [unowned self] _ in
-                let p = self.player.player!
+                _ in
                 p.play()
                 return .success
             }
             opaques["pause"] = scc.pauseCommand.addTarget {
-                [unowned self] _ in
-                let p = self.player.player!
+                _ in
                 p.pause()
                 return .success
             }
@@ -99,7 +97,7 @@ class RemoteControlVC: UIViewController {
 
     override func remoteControlReceived(with event: UIEvent?) { // *
         let rc = event!.subtype
-        let p = self.player.player!
+        let p = self.player.avPlayer!
         print("received remote control \(rc.rawValue)") // 101 = pause, 100 = play
         switch rc {
         case .remoteControlTogglePlayPause:
@@ -117,19 +115,22 @@ class RemoteControlVC: UIViewController {
 
     func doPlayPause(_ event:MPRemoteCommandEvent) {
         print("playpause")
-        let p = self.player.player!
+        let p = self.player.avPlayer!
         if p.isPlaying { p.pause() } else { p.play() }
     }
+
     func doPlay(_ event:MPRemoteCommandEvent) {
         print("play")
-        let p = self.player.player!
+        let p = self.player.avPlayer!
         p.play()
     }
+
     func doPause(_ event:MPRemoteCommandEvent) {
         print("pause")
-        let p = self.player.player!
+        let p = self.player.avPlayer!
         p.pause()
     }
+    
     func doLike(_ event:MPRemoteCommandEvent) {
         print("like")
     }

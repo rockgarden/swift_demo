@@ -312,7 +312,7 @@
         <scene sceneID="hHc-mp-NMd">
             <objects>
                 <navigationController id="Hf2-6R-6Wt" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="5fx-Jx-tBy">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="5fx-Jx-tBy">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>

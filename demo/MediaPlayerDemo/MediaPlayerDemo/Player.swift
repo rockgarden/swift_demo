@@ -9,15 +9,17 @@ protocol PlayerDelegate : class {
 }
 
 class Player : NSObject, AVAudioPlayerDelegate {
-    var player : AVAudioPlayer!
+
+    var avPlayer : AVAudioPlayer!
     var forever = false
     weak var delegate : PlayerDelegate?
     var observer : NSObjectProtocol! //addObserver
 
     override init() {
         super.init()
-        // interruption notification
-        // note (irrelevant for bk 2, but useful for bk 1) how to prevent retain cycle
+
+        /// interruption notification
+        // note (irrelevant无关 for playFile, but useful for bk 1) how to prevent retain cycle
         self.observer = NotificationCenter.default.addObserver(forName:
         .AVAudioSessionInterruption, object: nil, queue: nil) {
             [weak self] n in
@@ -31,9 +33,9 @@ class Player : NSObject, AVAudioPlayerDelegate {
                 let opts = AVAudioSessionInterruptionOptions(rawValue: opt)
                 if opts.contains(.shouldResume) {
                     print("should resume")
-                    self?.player.prepareToPlay()
-                    let ok = self?.player.play()
-                    print("bp tried to resume play: did I? \(ok)")
+                    self?.avPlayer.prepareToPlay()
+                    let ok = self?.avPlayer.play()
+                    print("bp tried to resume play: did I? \(String(describing: ok))")
                 } else {
                     print("not should resume")
                 }
@@ -41,64 +43,78 @@ class Player : NSObject, AVAudioPlayerDelegate {
         }
     }
 
-    func playFile(atPath path:String) {
-        self.player?.delegate = nil
-        self.player?.stop()
+    private func newPlayer(_ path: String) {
+        self.avPlayer?.delegate = nil
+        self.avPlayer?.stop()
         let fileURL = URL(fileURLWithPath: path)
         print("bp making a new Player")
-        guard let p = try? AVAudioPlayer(contentsOf: fileURL) else {return} // nicer
-        self.player = p
-        // error-checking omitted
+        guard let p = try? AVAudioPlayer(contentsOf: fileURL) else {return}
+        self.avPlayer = p
+    }
+
+    func bPlayFile(atPath path: String) {
+        newPlayer(path)
 
         try? AVAudioSession.sharedInstance().setCategory(AVAudioSessionCategoryPlayback)
-        // try this, to prove that mixable _background_ sound is not interrupted by nonmixable foreground sound
-        // I find this kind of weird; you aren't allowed to interrupt any sound you want to interrupt?
-        // try? AVAudioSession.sharedInstance().setCategory(AVAudioSessionCategoryPlayback, with: .mixWithOthers)
         try? AVAudioSession.sharedInstance().setActive(true)
 
-        self.player.prepareToPlay()
-        self.player.delegate = self
+        self.avPlayer.prepareToPlay()
+        self.avPlayer.delegate = self
+        let ok = avPlayer.play()
+        print("bp trying to play \(path): \(ok)")
+    }
+
+    func playFile(atPath path: String) {
+        newPlayer(path)
+
+        /// switch to playback category while playing, interrupt background audio
+        try? AVAudioSession.sharedInstance().setCategory(AVAudioSessionCategoryPlayback)
+
+        /// TODO: 尝试这个，以证明可混合的_background_声音不会被不可混合的前景声音中断
+        /// test this, to prove that mixable _background_ sound is not interrupted by nonmixable foreground sound. This mean you aren't allowed to interrupt any sound you want to interrupt?
+        //try? AVAudioSession.sharedInstance().setCategory(AVAudioSessionCategoryPlayback, with: .mixWithOthers)
+
+        try? AVAudioSession.sharedInstance().setActive(true)
+
+        self.avPlayer.prepareToPlay()
+        self.avPlayer.delegate = self
 
         if self.forever {
-            self.player.numberOfLoops = -1
+            self.avPlayer.numberOfLoops = -1
         }
 
-        /// cool feature
-        //player.enableRate = true
-        //player.rate = 1.2
+        /// 一个布尔值，指定是否为音频播放器启用播放速率调整。要为音频播放器启用可调节播放速率，请在初始化播放器之后，以及在调用播放器的prepareToPlay()实例方法之前将此属性设置为true。
+        avPlayer.enableRate = true
+        avPlayer.rate = 1.2
 
-        let ok = player.play() //player.play()
-        print("bp or interrupter trying to play \(path): \(ok)")
-
-        // cute little demo
-        let mpic = MPNowPlayingInfoCenter.default()
-        mpic.nowPlayingInfo = [
-            MPMediaItemPropertyTitle:"This Is a Test",
-            MPMediaItemPropertyArtist:"Matt Neuburg"
-        ]
+        let ok = avPlayer.play()
+        print("interrupter trying to play \(path): \(ok)")
     }
 
 
-    func playFile(at fileURL:URL) {
-        player?.delegate = nil
-        player?.stop()
-        player = try! AVAudioPlayer(contentsOf: fileURL)
-        // error-checking omitted
-        player.prepareToPlay()
-        player.delegate = self
+    func playFile(at fileURL: URL) {
+        avPlayer?.delegate = nil
+        avPlayer?.stop()
+        avPlayer = try! AVAudioPlayer(contentsOf: fileURL)
+        avPlayer.prepareToPlay()
+        avPlayer.delegate = self
         if self.forever {
-            self.player.numberOfLoops = -1
+            self.avPlayer.numberOfLoops = -1
         }
-        player.play()
+        avPlayer.play()
     }
 
-    // to hear about interruptions, in iOS 8, use the session notifications
+    // TODO: Test to hear about interruptions, in iOS 8, use the session notifications
     func stop () {
-        player?.pause()
+        avPlayer?.pause()
     }
 
     deinit {
-        player?.delegate = nil
+        print("bp player dealloc")
+        if self.observer != nil {
+            NotificationCenter.default.removeObserver(self.observer)
+        }
+        avPlayer?.delegate = nil
     }
 
     // MARK: - delegate method

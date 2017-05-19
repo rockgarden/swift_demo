@@ -11,6 +11,11 @@ func SoundFinished(_ snd:UInt32, _ c:UnsafeMutableRawPointer?) -> Void {
 
 class Root_MediaDemo: UITableViewController {
 
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        title = "main"
+    }
+
     // test on device (doesn't work in simulator)
 
     // NB AudioServicesPlaySystemSound will be deprecated! This is just to show the old way

@@ -92,7 +92,7 @@ class AVKitVC: UIViewController {
         checkForMusicLibraryAccess {
             if let url = self.oneSong() {
                 self.player.playFile(at:url)
-                self.curplayer = self.player.player
+                self.curplayer = self.player.avPlayer
                 //                MPNowPlayingInfoCenter.default().nowPlayingInfo = [
                 //                    MPMediaItemPropertyTitle : "Some Song",
                 //                    MPMediaItemPropertyPlaybackDuration : self.player.player.duration,
