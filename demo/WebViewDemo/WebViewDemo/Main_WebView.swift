@@ -1,11 +1,7 @@
-//
-//  ViewController.swift
-//  WebViewDemo
-//
 
 import UIKit
 
-class WebViewRoot: UITableViewController {
+class Main_WebView: UITableViewController {
     
     // MARK: Navigation
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath){
@@ -13,7 +9,7 @@ class WebViewRoot: UITableViewController {
         if let id = cell?.tag {
             switch id {
             case 0 :
-                let wvc = WebViewVC()
+                let wvc = UIWebViewVC()
                 self.navigationController!.pushViewController(wvc, animated:true)
             case 1 :
                 let wvc = NoNavigationWebViewVC()

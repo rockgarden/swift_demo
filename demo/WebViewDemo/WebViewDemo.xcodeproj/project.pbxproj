@@ -21,11 +21,11 @@
 		4414810C1E509F1300461CCE /* html_template.html in Resources */ = {isa = PBXBuildFile; fileRef = 4414810A1E509F1300461CCE /* html_template.html */; };
 		4414810D1E509F1300461CCE /* place_holder.png in Resources */ = {isa = PBXBuildFile; fileRef = 4414810B1E509F1300461CCE /* place_holder.png */; };
 		441D44C01E1E8DF000857C4F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 441D44BF1E1E8DF000857C4F /* AppDelegate.swift */; };
-		441D44C21E1E8DF000857C4F /* WebViewRoot.swift in Sources */ = {isa = PBXBuildFile; fileRef = 441D44C11E1E8DF000857C4F /* WebViewRoot.swift */; };
+		441D44C21E1E8DF000857C4F /* Main_WebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 441D44C11E1E8DF000857C4F /* Main_WebView.swift */; };
 		441D44C51E1E8DF000857C4F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 441D44C31E1E8DF000857C4F /* Main.storyboard */; };
 		441D44C71E1E8DF000857C4F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 441D44C61E1E8DF000857C4F /* Assets.xcassets */; };
 		441D44CA1E1E8DF000857C4F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 441D44C81E1E8DF000857C4F /* LaunchScreen.storyboard */; };
-		441D44D21E1E8E6000857C4F /* WebViewVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 441D44D11E1E8E6000857C4F /* WebViewVC.swift */; };
+		441D44D21E1E8E6000857C4F /* UIWebViewVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 441D44D11E1E8E6000857C4F /* UIWebViewVC.swift */; };
 		441D44E01E1E8EBF00857C4F /* htmlbody.txt in Resources */ = {isa = PBXBuildFile; fileRef = 441D44D41E1E8EBF00857C4F /* htmlbody.txt */; };
 		441D44E11E1E8EBF00857C4F /* htmlTemplate.txt in Resources */ = {isa = PBXBuildFile; fileRef = 441D44D51E1E8EBF00857C4F /* htmlTemplate.txt */; };
 		441D44E21E1E8EBF00857C4F /* listen.png in Resources */ = {isa = PBXBuildFile; fileRef = 441D44D61E1E8EBF00857C4F /* listen.png */; };
@@ -89,12 +89,12 @@
 		4414810B1E509F1300461CCE /* place_holder.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = place_holder.png; sourceTree = "<group>"; };
 		441D44BC1E1E8DF000857C4F /* WebViewDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WebViewDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		441D44BF1E1E8DF000857C4F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		441D44C11E1E8DF000857C4F /* WebViewRoot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewRoot.swift; sourceTree = "<group>"; };
+		441D44C11E1E8DF000857C4F /* Main_WebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Main_WebView.swift; sourceTree = "<group>"; };
 		441D44C41E1E8DF000857C4F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		441D44C61E1E8DF000857C4F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		441D44C91E1E8DF000857C4F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		441D44CB1E1E8DF000857C4F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		441D44D11E1E8E6000857C4F /* WebViewVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebViewVC.swift; sourceTree = "<group>"; };
+		441D44D11E1E8E6000857C4F /* UIWebViewVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIWebViewVC.swift; sourceTree = "<group>"; };
 		441D44D41E1E8EBF00857C4F /* htmlbody.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = htmlbody.txt; sourceTree = "<group>"; };
 		441D44D51E1E8EBF00857C4F /* htmlTemplate.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = htmlTemplate.txt; sourceTree = "<group>"; };
 		441D44D61E1E8EBF00857C4F /* listen.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = listen.png; sourceTree = "<group>"; };
@@ -192,10 +192,10 @@
 		441D44BE1E1E8DF000857C4F /* WebViewDemo */ = {
 			isa = PBXGroup;
 			children = (
-				C21B7E851E52A8E00097E3C4 /* WebKitPlusDemo.swift */,
 				441D44BF1E1E8DF000857C4F /* AppDelegate.swift */,
-				441D44C11E1E8DF000857C4F /* WebViewRoot.swift */,
-				441D44D11E1E8E6000857C4F /* WebViewVC.swift */,
+				441D44C31E1E8DF000857C4F /* Main.storyboard */,
+				441D44C11E1E8DF000857C4F /* Main_WebView.swift */,
+				441D44D11E1E8E6000857C4F /* UIWebViewVC.swift */,
 				C21A0BEC1EC0581300EE2C26 /* SaveWebImageVC.swift */,
 				441D44EC1E1E921000857C4F /* NoNavigationWebViewVC.swift */,
 				441480FD1E508B9A00461CCE /* ScriptMessageHandler.swift */,
@@ -208,11 +208,11 @@
 				C2B3AC711E499DDD0016E9FE /* OldLocalHTML.swift */,
 				44CFF3E01E32801000CABB08 /* JSModel.swift */,
 				C2D38DA41E4835EB00509A5E /* PersonJSModel.swift */,
-				441D44C31E1E8DF000857C4F /* Main.storyboard */,
+				C21B7E851E52A8E00097E3C4 /* WebKitPlusDemo.swift */,
+				441D44D31E1E8EAE00857C4F /* resource */,
 				441D44C61E1E8DF000857C4F /* Assets.xcassets */,
 				441D44C81E1E8DF000857C4F /* LaunchScreen.storyboard */,
 				441D44CB1E1E8DF000857C4F /* Info.plist */,
-				441D44D31E1E8EAE00857C4F /* resource */,
 			);
 			path = WebViewDemo;
 			sourceTree = "<group>";
@@ -398,11 +398,11 @@
 				C2D38DA51E4835EB00509A5E /* PersonJSModel.swift in Sources */,
 				441D44EF1E1E935B00857C4F /* WKWebViewVC.swift in Sources */,
 				C2B3AC721E499DDD0016E9FE /* OldLocalHTML.swift in Sources */,
-				441D44C21E1E8DF000857C4F /* WebViewRoot.swift in Sources */,
+				441D44C21E1E8DF000857C4F /* Main_WebView.swift in Sources */,
 				C21B7E831E52A8710097E3C4 /* ZenWebViewController.swift in Sources */,
 				C21A0C0C1EC058C300EE2C26 /* Hokusai.swift in Sources */,
 				C21A0BED1EC0581300EE2C26 /* SaveWebImageVC.swift in Sources */,
-				441D44D21E1E8E6000857C4F /* WebViewVC.swift in Sources */,
+				441D44D21E1E8E6000857C4F /* UIWebViewVC.swift in Sources */,
 				446E40911E3900E60079559E /* WKWeb2JsVC.swift in Sources */,
 				441481081E509EDF00461CCE /* ZHViewController1.swift in Sources */,
 				C21B7E811E52A8710097E3C4 /* WebViewObserver.swift in Sources */,

@@ -75,6 +75,20 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		446E05B81ECFE2DF001DC014 /* resource */ = {
+			isa = PBXGroup;
+			children = (
+				4453DCF21E06C9E500299EA8 /* test.aif */,
+				44CCDBE41E017E7200C7163A /* Hooded.mp3 */,
+				4435E9D11DFEC8FF0003196A /* wilhelm.aiff */,
+				445357A31DFD48E500F996A2 /* aboutTiagol.m4a */,
+				445357A41DFD48E500F996A2 /* ElMirage.mp4 */,
+				C2D48F611E0101B4008D4F90 /* presto.mid */,
+				C2D48F621E0101B4008D4F90 /* PianoBell.sf2 */,
+			);
+			name = resource;
+			sourceTree = "<group>";
+		};
 		44C070A91DFAFB4E0093BC1E = {
 			isa = PBXGroup;
 			children = (
@@ -110,13 +124,7 @@
 				C2D48F5F1E010195008D4F90 /* MIDITestVC.swift */,
 				44CCDBE21E017CDA00C7163A /* AVAudioEngineTestVC.swift */,
 				447DDCE81E02D674000CEA4F /* BackgroundPlayerVC.swift */,
-				4453DCF21E06C9E500299EA8 /* test.aif */,
-				44CCDBE41E017E7200C7163A /* Hooded.mp3 */,
-				4435E9D11DFEC8FF0003196A /* wilhelm.aiff */,
-				445357A31DFD48E500F996A2 /* aboutTiagol.m4a */,
-				445357A41DFD48E500F996A2 /* ElMirage.mp4 */,
-				C2D48F611E0101B4008D4F90 /* presto.mid */,
-				C2D48F621E0101B4008D4F90 /* PianoBell.sf2 */,
+				446E05B81ECFE2DF001DC014 /* resource */,
 				44C070BC1DFAFB4E0093BC1E /* Assets.xcassets */,
 				44C070BE1DFAFB4E0093BC1E /* LaunchScreen.storyboard */,
 				44C070C11DFAFB4E0093BC1E /* Info.plist */,
