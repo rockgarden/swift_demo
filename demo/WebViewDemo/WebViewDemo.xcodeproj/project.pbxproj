@@ -38,7 +38,7 @@
 		441D44E91E1E8EBF00857C4F /* test.rtfd in Resources */ = {isa = PBXBuildFile; fileRef = 441D44DD1E1E8EBF00857C4F /* test.rtfd */; };
 		441D44EA1E1E8EBF00857C4F /* release.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 441D44DE1E1E8EBF00857C4F /* release.pdf */; };
 		441D44EB1E1E8EBF00857C4F /* test.rtfd.zip in Resources */ = {isa = PBXBuildFile; fileRef = 441D44DF1E1E8EBF00857C4F /* test.rtfd.zip */; };
-		441D44ED1E1E921000857C4F /* NoNavigationWebViewVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 441D44EC1E1E921000857C4F /* NoNavigationWebViewVC.swift */; };
+		441D44ED1E1E921000857C4F /* NoNavigationWKWebViewVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 441D44EC1E1E921000857C4F /* NoNavigationWKWebViewVC.swift */; };
 		441D44EF1E1E935B00857C4F /* WKWebViewVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 441D44EE1E1E935B00857C4F /* WKWebViewVC.swift */; };
 		44463A161E4CB40D0007306E /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 44463A121E4CB40D0007306E /* Info.plist */; };
 		44463A171E4CB40D0007306E /* WKMagicBridge.js in Resources */ = {isa = PBXBuildFile; fileRef = 44463A141E4CB40D0007306E /* WKMagicBridge.js */; };
@@ -107,7 +107,7 @@
 		441D44DD1E1E8EBF00857C4F /* test.rtfd */ = {isa = PBXFileReference; lastKnownFileType = wrapper.rtfd; path = test.rtfd; sourceTree = "<group>"; };
 		441D44DE1E1E8EBF00857C4F /* release.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = release.pdf; sourceTree = "<group>"; };
 		441D44DF1E1E8EBF00857C4F /* test.rtfd.zip */ = {isa = PBXFileReference; lastKnownFileType = archive.zip; path = test.rtfd.zip; sourceTree = "<group>"; };
-		441D44EC1E1E921000857C4F /* NoNavigationWebViewVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoNavigationWebViewVC.swift; sourceTree = "<group>"; };
+		441D44EC1E1E921000857C4F /* NoNavigationWKWebViewVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoNavigationWKWebViewVC.swift; sourceTree = "<group>"; };
 		441D44EE1E1E935B00857C4F /* WKWebViewVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WKWebViewVC.swift; sourceTree = "<group>"; };
 		44463A121E4CB40D0007306E /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		44463A131E4CB40D0007306E /* WKMagicBridge.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WKMagicBridge.h; sourceTree = "<group>"; };
@@ -197,7 +197,7 @@
 				441D44C11E1E8DF000857C4F /* Main_WebView.swift */,
 				441D44D11E1E8E6000857C4F /* UIWebViewVC.swift */,
 				C21A0BEC1EC0581300EE2C26 /* SaveWebImageVC.swift */,
-				441D44EC1E1E921000857C4F /* NoNavigationWebViewVC.swift */,
+				441D44EC1E1E921000857C4F /* NoNavigationWKWebViewVC.swift */,
 				441480FD1E508B9A00461CCE /* ScriptMessageHandler.swift */,
 				441D44EE1E1E935B00857C4F /* WKWebViewVC.swift */,
 				C2B3AC791E49B3C00016E9FE /* WKWebViewController.swift */,
@@ -406,7 +406,7 @@
 				446E40911E3900E60079559E /* WKWeb2JsVC.swift in Sources */,
 				441481081E509EDF00461CCE /* ZHViewController1.swift in Sources */,
 				C21B7E811E52A8710097E3C4 /* WebViewObserver.swift in Sources */,
-				441D44ED1E1E921000857C4F /* NoNavigationWebViewVC.swift in Sources */,
+				441D44ED1E1E921000857C4F /* NoNavigationWKWebViewVC.swift in Sources */,
 				C21A0C0D1EC058C300EE2C26 /* Just.swift in Sources */,
 				C21A0C0B1EC058C300EE2C26 /* Drop.swift in Sources */,
 				44CFF3E11E32801000CABB08 /* JSModel.swift in Sources */,

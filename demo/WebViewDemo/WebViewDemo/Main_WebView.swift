@@ -12,7 +12,7 @@ class Main_WebView: UITableViewController {
                 let wvc = UIWebViewVC()
                 self.navigationController!.pushViewController(wvc, animated:true)
             case 1 :
-                let wvc = NoNavigationWebViewVC()
+                let wvc = NoNavigationWKWebViewVC()
                 self.navigationController!.pushViewController(wvc, animated:true)
             case 2 :
                 let wvc = WKWebViewVC()

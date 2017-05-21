@@ -182,6 +182,16 @@ class UIWebViewVC: UIViewController, UIViewControllerRestoration {
         }
     }
 
+    func goBack(_ sender: Any) {
+        if self.wv.canGoBack {
+            self.wv.goBack()
+        }
+    }
+}
+
+
+extension UIWebViewVC: UIWebViewDelegate {
+
     func webViewDidStartLoad(_ wv: UIWebView) {
         self.activity.startAnimating()
     }
@@ -200,16 +210,6 @@ class UIWebViewVC: UIViewController, UIViewControllerRestoration {
         self.activity.stopAnimating()
     }
 
-    func goBack(_ sender: Any) {
-        if self.wv.canGoBack {
-            self.wv.goBack()
-        }
-    }
-}
-
-
-extension UIWebViewVC: UIWebViewDelegate {
-    // FIXME: can't open url
     /// 在Web视图开始加载frame之前判断，如果网页视图可以开始加载内容，则为true; 否则，false.
     func webView(_ webView: UIWebView, shouldStartLoadWith r: URLRequest, navigationType nt: UIWebViewNavigationType) -> Bool {
         if let scheme = r.url?.scheme, scheme == "play" {

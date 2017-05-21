@@ -68,7 +68,7 @@ class WKWebViewVC: UIViewController, UIViewControllerRestoration {
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
         self.restorationIdentifier = "wvc"
         self.restorationClass = type(of:self)
-        self.edgesForExtendedLayout = [] // none, get accurate offset restoration
+        self.edgesForExtendedLayout = []
     }
     
     required init(coder: NSCoder) {
@@ -79,9 +79,7 @@ class WKWebViewVC: UIViewController, UIViewControllerRestoration {
         return self.init(nibName:nil, bundle:nil)
     }
     
-    // unfortunately I see no evidence that the web view is assisting us at all!
-    // the view is not coming back with its URL restored etc, as a UIWebView does
-    
+    // FIXME: unfortunately I see no evidence that the web view is assisting us at all! the view is not coming back with its URL restored etc, as a UIWebView does.
     override func decodeRestorableState(with coder: NSCoder) {
         self.decoded = true
         super.decodeRestorableState(with:coder)
@@ -107,13 +105,14 @@ class WKWebViewVC: UIViewController, UIViewControllerRestoration {
     /// 添加 WKWebView
     fileprivate func addWkWebView() {
         // 创建 WKWebView 实例, frame 一般为 CGRect.zero
-        let wv = WKWebView(frame: view.bounds, configuration: makeConfig())
+        let wv = WKWebView(frame: view.bounds)
         wv.restorationIdentifier = "wv"
-        view.restorationIdentifier = "wvcontainer" // shouldn't be necessary...
+        view.restorationIdentifier = "wvcontainer"
         view.addSubview(wv)
         
-        wv.scrollView.backgroundColor = .black // web view alone, ineffective
-        wv.backgroundColor = UIColor.clear
+        wv.scrollView.backgroundColor = .black
+        wv.backgroundColor = .clear
+
         wv.scrollView.bounces = false
         wv.scrollView.alwaysBounceVertical = false
         wv.scrollView.isScrollEnabled = false
@@ -130,7 +129,6 @@ class WKWebViewVC: UIViewController, UIViewControllerRestoration {
         
         /// webkit uses KVO 监听支持KVO的属性
         wv.addObserver(self, forKeyPath: #keyPath(WKWebView.loading), options: .new, context: nil)
-        // show title first
         wv.addObserver(self, forKeyPath: #keyPath(WKWebView.title), options: .new, context: nil)
         wv.addObserver(self, forKeyPath: #keyPath(WKWebView.estimatedProgress), options: [.new], context: nil)
         
@@ -236,15 +234,14 @@ class WKWebViewVC: UIViewController, UIViewControllerRestoration {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        debugPrint("view did appear, req: \(self.webView.url)") // no evidence that restoration is being done for us
-        
-        // 添加前进、后退按钮
+        debugPrint("view did appear, req: \(String(describing: self.webView.url))") // no evidence that restoration is being done for us
+
         let b = UIBarButtonItem(title:"后退", style:.done, target:self, action:#selector(goBack))
         let b1 = UIBarButtonItem(title: "前进", style:.done, target: self, action: #selector(goForward))
         self.navigationItem.rightBarButtonItems = [b,b1]
         
         if self.decoded {
-            // return // forget it, just trying to see if I was in restoration's way, but I'm not
+            // return // FIXME: forget it, just trying to see if I was in restoration's way, but I'm not
         }
         loadType()
         
@@ -268,11 +265,9 @@ class WKWebViewVC: UIViewController, UIViewControllerRestoration {
     }
     
     deinit {
-        // using KVO, always tear down, take no chances
         webView.removeObserver(self, forKeyPath: #keyPath(WKWebView.loading))
         webView.removeObserver(self, forKeyPath: #keyPath(WKWebView.title))
         webView.removeObserver(self, forKeyPath: #keyPath(WKWebView.estimatedProgress))
-        // with webkit, probably no need for this, but no harm done
         webView.stopLoading()
     }
     
@@ -304,7 +299,7 @@ extension WKWebViewVC {
             ])
     }
     
-    // prepare nice activity indicator to cover loading
+    /// prepare nice activity indicator to cover loading
     fileprivate func addIndicatorView(_ wv: UIView) {
         let act = UIActivityIndicatorView(activityIndicatorStyle:.whiteLarge)
         act.backgroundColor = UIColor(white:0.1, alpha:0.5)
@@ -413,11 +408,8 @@ extension WKWebViewVC : WKNavigationDelegate {
         debugPrint(#function)
         
         let hostname = (navigationAction.request as NSURLRequest).url?.host?.lowercased()
-        debugPrint(hostname as Any)
-        
         switch navigationAction.navigationType {
         case WKNavigationType.linkActivated:
-            
             // 处理跨域问题
             if !hostname!.contains(".baidu.com") {
                 // 手动跳转
@@ -443,12 +435,12 @@ extension WKWebViewVC : WKNavigationDelegate {
             pushCurrentSnapshotView(navigationAction.request as NSURLRequest)
             break
         }
-        //更新左边返回按钮
+        // 更新左边返回按钮
         updateNavigationItems()
         decisionHandler(.allow)
     }
     
-    //请求链接处理
+    /// 请求链接处理
     fileprivate func pushCurrentSnapshotView(_ request: NSURLRequest) -> Void {
         guard let urlStr = snapShotsArray?.last else {
             return
@@ -469,7 +461,7 @@ extension WKWebViewVC : WKNavigationDelegate {
         let currentSnapShotView = webView.snapshotView(afterScreenUpdates: true);
         
         //向数组添加字典
-        snapShotsArray = [["request":request, "snapShotView":currentSnapShotView]]
+        snapShotsArray = [["request": request, "snapShotView": currentSnapShotView]]
     }
     
     fileprivate func updateNavigationItems(){

@@ -8,11 +8,6 @@ import UIKit
 import WebKit
 import SafariServices
 
-func delay(_ delay:Double, closure:@escaping ()->()) {
-    let when = DispatchTime.now() + delay
-    DispatchQueue.main.asyncAfter(deadline: when, execute: closure)
-}
-
 /*
  A simple no-navigation web view - we just show our own custom content and that's all.
  Demonstrates basic web kit configuration and some cool features.
@@ -33,7 +28,8 @@ class MyMessageHandler : NSObject, WKScriptMessageHandler {
     }
 }
 
-class NoNavigationWebViewVC: UIViewController, WKNavigationDelegate, WKScriptMessageHandler, UIViewControllerRestoration, SFSafariViewControllerDelegate {
+
+class NoNavigationWKWebViewVC: UIViewController, WKNavigationDelegate, WKScriptMessageHandler, UIViewControllerRestoration, SFSafariViewControllerDelegate {
 
     var activity = UIActivityIndicatorView()
     var oldOffset : NSValue? // use nil as indicator
@@ -54,7 +50,7 @@ class NoNavigationWebViewVC: UIViewController, WKNavigationDelegate, WKScriptMes
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
         self.restorationIdentifier = "wvc"
         self.restorationClass = type(of:self)
-        self.edgesForExtendedLayout = [] // none, get accurate offset restoration
+        self.edgesForExtendedLayout = []
     }
 
     required init(coder: NSCoder) {
@@ -71,16 +67,11 @@ class NoNavigationWebViewVC: UIViewController, WKNavigationDelegate, WKScriptMes
         return nil
     }
 
-    // we must save and restore offset ourselves
-    // note that I don't touch the web view at this point: just an ivar
-    // we don't have any web content yet!
-
     override func decodeRestorableState(with coder: NSCoder) {
         print("decode")
         super.decodeRestorableState(with:coder)
         if let oldOffset = coder.decodeObject(forKey:"oldOffset") as? NSValue {
-            print("retrieved old offset as \(oldOffset)")
-            self.oldOffset = oldOffset // for local example
+            self.oldOffset = oldOffset
         }
 
         let fontsize = coder.decodeInteger(forKey:"fontsize")
@@ -92,7 +83,6 @@ class NoNavigationWebViewVC: UIViewController, WKNavigationDelegate, WKScriptMes
     }
 
     override func encodeRestorableState(with coder: NSCoder) {
-        print("encode")
         super.encodeRestorableState(with:coder)
         // we have to manage offset ourselves
         let off = self.wv.scrollView.contentOffset
@@ -103,29 +93,23 @@ class NoNavigationWebViewVC: UIViewController, WKNavigationDelegate, WKScriptMes
     }
 
     override func applicationFinishedRestoringState() {
-        print("finished restoring state") // still too soon to fix offset, not loaded yet
+        print("finished restoring state")
+        // still too soon to fix offset, not loaded yet
     }
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // a configuration consists of preferences (e.g. JavaScript behavior),
-        // and a user content controller that allows JavaScript messages to be sent/received
-        // it is copied, so if we supply one we can't change it later
-        // alternatively, to use a default configuration, use frame alone
-
+        // a configuration consists of preferences (e.g. JavaScript behavior), and a user content controller that allows JavaScript messages to be sent/received it is copied, so if we supply one we can't change it later alternatively, to use a default configuration, use frame alone?
         // here, frame unimportant, we will be sized automatically
-        //        let config = WKWebViewConfiguration()
-        //        let wv = WKWebView(frame: .zero, configuration:config)
-
+        //let config = WKWebViewConfiguration()
+        //let wv = WKWebView(frame: .zero, configuration:config)
+        // 相当于
         let wv = WKWebView(frame: .zero)
 
         self.wv = wv
 
-        // prepare to receive messages under the "playbutton" name
-        // unfortunately there's a bug: the script message handler cannot be self,
-        // or we will leak
-
+        /// prepare to receive messages under the "playbutton" name unfortunately there's a bug: the script message handler cannot be self, or we will leak
         var leak : Bool { return false }
         switch leak {
         case true:
@@ -133,13 +117,13 @@ class NoNavigationWebViewVC: UIViewController, WKNavigationDelegate, WKScriptMes
             config.userContentController.add(self, name: "playbutton")
         case false:
             let config = self.wv.configuration
-            let handler = MyMessageHandler(delegate:self)
+            let handler = MyMessageHandler(delegate: self)
             config.userContentController.add(handler, name: "playbutton")
         }
 
         wv.restorationIdentifier = "wv"
-        wv.scrollView.backgroundColor = .black // web view alone, ineffective
-        self.view.addSubview(wv)
+        wv.scrollView.backgroundColor = .black
+        view.addSubview(wv)
         wv.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
             NSLayoutConstraint.constraints(withVisualFormat:"H:|[wv]|", metrics: nil, views: ["wv":wv]),
@@ -147,17 +131,15 @@ class NoNavigationWebViewVC: UIViewController, WKNavigationDelegate, WKScriptMes
             ].flatMap{$0})
         wv.navigationDelegate = self
 
-        // sorry, missing this feature
-        //        wv.paginationMode = .LeftToRight
-        //        wv.scrollView.pagingEnabled = true
+        // WKWebView missing .paginationMode feature
+        //wv.paginationMode = .leftToRight
+        wv.scrollView.isPagingEnabled = true
 
-        // prove we can attach gesture recognizer to web view's scroll view
         let swipe = UISwipeGestureRecognizer(target:self, action:#selector(swiped))
         swipe.direction = .left
         wv.scrollView.addGestureRecognizer(swipe)
         wv.allowsBackForwardNavigationGestures = false
 
-        // prepare nice activity indicator to cover loading
         let act = UIActivityIndicatorView(activityIndicatorStyle:.whiteLarge)
         act.backgroundColor = UIColor(white:0.1, alpha:0.5)
         self.activity = act
@@ -189,7 +171,7 @@ class NoNavigationWebViewVC: UIViewController, WKNavigationDelegate, WKScriptMes
                     // for our *local* example, restoring offset is up to us
                     if self.oldOffset != nil { // local example
                         if wv.estimatedProgress == 1 {
-                            delay(0.1) { // had to introduce delay; there's a flash but there's nothing I can do
+                            delay(0.1) {
                                 print("finished loading! restoring offset")
                                 wv.scrollView.contentOffset = self.oldOffset!.cgPointValue
                                 self.oldOffset = nil
@@ -207,64 +189,68 @@ class NoNavigationWebViewVC: UIViewController, WKNavigationDelegate, WKScriptMes
     }
 
     func swiped(_ g:UIGestureRecognizer) {
-        print("swiped") // okay, you proved it!
+        print("swiped")
     }
 
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        print("view did appear, req: \(self.wv.url)")
+        print("view did appear, req: \(String(describing: self.wv.url))")
 
         if !self.isMovingToParentViewController {
-            return // so we don't do this again when a presented view controller is dismissed
+            return
         }
 
-        var which : Int { return 1 }
-        switch which {
-        case 1:
-            let b = UIBarButtonItem(title: "Size", style: .plain, target: self, action: #selector(doDecreaseSize))
-            self.navigationItem.rightBarButtonItems = [b]
+        let b = UIBarButtonItem(title: "Size", style: .plain, target: self, action: #selector(doDecreaseSize))
+        let a = UIBarButtonItem(title:"Other", style:.plain, target:self, action:#selector(loadOther))
+        let c = UIBarButtonItem(title:"Nav", style:.plain, target:self, action:#selector(setWhichNav))
+        navigationItem.setRightBarButtonItems([a,b,c], animated: true)
 
-            // inject a CSS rule (example taken from WWDC 2014 video)
-            // (instead of body style containing font-size:<fontsize>px; in template)
+        /// inject a CSS rule: (instead of body style containing font-size:<fontsize>px; in template)
+        do {
+            _ = "var meta = document.createElement('meta'); meta.setAttribute('name', 'viewport'); meta.setAttribute('content', 'width=device-width, user-scalable=no'); document.getElementsByTagName('head')[0].appendChild(meta);"
+            let rule = self.cssrule
+            let script = WKUserScript(source: rule, injectionTime: .atDocumentStart, forMainFrameOnly: true)
+            let config = self.wv.configuration
+            config.userContentController.addUserScript(script)
+        }
 
-            do {
-                let jscript = "var meta = document.createElement('meta'); meta.setAttribute('name', 'viewport'); meta.setAttribute('content', 'width=device-width, user-scalable=no'); document.getElementsByTagName('head')[0].appendChild(meta);"
-                let rule = self.cssrule
-                let script = WKUserScript(source: rule, injectionTime: .atDocumentStart, forMainFrameOnly: true)
-                let config = self.wv.configuration
-                config.userContentController.addUserScript(script)
-            }
-
-
-            if let oldHTMLString = self.oldHTMLString {
-                print("restoring html")
-
-                let templatepath = Bundle.main.path(forResource: "htmlTemplate", ofType:"txt")!
-                let oldBase = URL(fileURLWithPath:templatepath)
-
-                self.wv.loadHTMLString(oldHTMLString, baseURL:oldBase)
-                return
-            }
-
-            let bodypath = Bundle.main.path(forResource: "htmlbody", ofType:"txt")!
-            let ss = try! String(contentsOfFile:bodypath)
-
+        if let oldHTMLString = self.oldHTMLString {
+            print("restoring html")
             let templatepath = Bundle.main.path(forResource: "htmlTemplate", ofType:"txt")!
-            let base = URL(fileURLWithPath:templatepath)
-            var s = try! String(contentsOfFile:templatepath)
+            let oldBase = URL(fileURLWithPath: templatepath)
+            self.wv.loadHTMLString(oldHTMLString, baseURL:oldBase)
+            return
+        }
 
-            s = s.replacingOccurrences(of:"<maximagewidth>", with:"80%")
-            s = s.replacingOccurrences(of:"<margin>", with:"10")
-            s = s.replacingOccurrences(of:"<guid>", with:"http://tidbits.com/article/12228")
-            s = s.replacingOccurrences(of:"<ourtitle>", with:"Lion Details Revealed with Shipping Date and Price")
-            // note way to set up messaging from web page's javascript to us
-            s = s.replacingOccurrences(of:"<playbutton>", with:"<img src=\"listen.png\" onclick=\"window.webkit.messageHandlers.playbutton.postMessage('play')\">")
-            s = s.replacingOccurrences(of:"<author>", with:"TidBITS Staff")
-            s = s.replacingOccurrences(of:"<date>", with:"Mon, 06 Jun 2011 13:00:39 PDT")
-            s = s.replacingOccurrences(of:"<content>", with:ss)
+        let bodypath = Bundle.main.path(forResource: "htmlbody", ofType:"txt")!
+        let ss = try! String(contentsOfFile: bodypath)
 
-            self.wv.loadHTMLString(s, baseURL:base) // works in iOS 9! local and remote images are loading
-            self.oldHTMLString = s
+        let templatepath = Bundle.main.path(forResource: "htmlTemplate", ofType: "txt")!
+        let base = URL(fileURLWithPath: templatepath)
+        var s = try! String(contentsOfFile: templatepath)
+
+        s = s.replacingOccurrences(of:"<maximagewidth>", with: "80%")
+        s = s.replacingOccurrences(of:"<margin>", with:"10")
+        s = s.replacingOccurrences(of:"<guid>", with:"http://tidbits.com/article/12228")
+        s = s.replacingOccurrences(of:"<ourtitle>", with:"Lion Details Revealed with Shipping Date and Price")
+        // note way to set up messaging from web page's javascript to us
+        s = s.replacingOccurrences(of:"<playbutton>", with:"<img src=\"listen.png\" onclick=\"window.webkit.messageHandlers.playbutton.postMessage('play')\">")
+        s = s.replacingOccurrences(of:"<author>", with:"TidBITS Staff")
+        s = s.replacingOccurrences(of:"<date>", with:"Mon, 06 Jun 2011 13:00:39 PDT")
+        s = s.replacingOccurrences(of:"<content>", with:ss)
+
+        self.wv.loadHTMLString(s, baseURL:base) // works in iOS 9! local and remote images are loading
+        self.oldHTMLString = s
+    }
+
+    var which = 1
+    func loadOther() {
+        if which < 18 {
+            which += 1
+        } else {
+            which = 1
+        }
+        switch which {
         case 2:
             let path = Bundle.main.path(forResource: "release", ofType:"pdf")!
             let url = URL(fileURLWithPath:path)
@@ -326,13 +312,12 @@ class NoNavigationWebViewVC: UIViewController, WKNavigationDelegate, WKScriptMes
         case 18:
             let url = URL(string: "http://www.apeth.com/rez/test.rtfd.zip")! // iOS 10, text but not image
             self.wv.load(URLRequest(url: url))
-
-        default: break
+        default:
+            break
         }
     }
 
-    // showing how to inject JavaScript dynamically (as opposed to at page-load time)
-
+    /// showing how to inject JavaScript dynamically (as opposed to at page-load time)
     func doDecreaseSize (_ sender: Any) {
         self.fontsize -= 1
         if self.fontsize < 10 {
@@ -352,16 +337,15 @@ class NoNavigationWebViewVC: UIViewController, WKNavigationDelegate, WKScriptMes
         // break all retains
         let ucc = self.wv.configuration.userContentController
         ucc.removeAllUserScripts()
-        ucc.removeScriptMessageHandler(forName:"playbutton")
+        ucc.removeScriptMessageHandler(forName: "playbutton")
     }
 
-    let whichNav = 1
-
+    var whichNav = 0
     func webView(_ webView: WKWebView, decidePolicyFor navigationAction: WKNavigationAction, decisionHandler: @escaping (WKNavigationActionPolicy) -> Swift.Void) {
         if navigationAction.navigationType == .linkActivated {
             if let url = navigationAction.request.url {
                 print("user would like to navigate to \(url)")
-                // this is how you would open in Mobile Safari
+                /// open in Mobile Safari
                 switch whichNav {
                 case 0:
                     if #available(iOS 10.0, *) {
@@ -372,7 +356,7 @@ class NoNavigationWebViewVC: UIViewController, WKNavigationDelegate, WKScriptMes
                     decisionHandler(.cancel)
                     return
                 case 1:
-                    // this is how to use the new Safari view controller
+                    /// use the new Safari view controller
                     let svc = SFSafariViewController(url: url)
                     svc.restorationIdentifier = "sf" // doesn't help
                     // svc.delegate = self
@@ -387,8 +371,17 @@ class NoNavigationWebViewVC: UIViewController, WKNavigationDelegate, WKScriptMes
         decisionHandler(.allow)
     }
 
-    func webViewWebContentProcessDidTerminate(_ webView: WKWebView) { // new in iOS 9
-        print("process did terminate") // but I do not know under what circumstances this will actually be called
+    func setWhichNav() {
+        if whichNav == 0 {
+            whichNav = 1
+        } else {
+            whichNav = 0
+        }
+    }
+
+    /// new in iOS 9
+    func webViewWebContentProcessDidTerminate(_ webView: WKWebView) {
+        print("process did terminate")
     }
 
     func safariViewControllerDidFinish(_ controller: SFSafariViewController) {
