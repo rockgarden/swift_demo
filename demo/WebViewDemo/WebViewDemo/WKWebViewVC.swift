@@ -49,7 +49,7 @@ class WKWebViewVC: UIViewController, UIViewControllerRestoration {
     }()
     
     //返回按钮
-    fileprivate lazy var customBackBarItem:UIBarButtonItem = {
+    fileprivate lazy var customBackBarItem: UIBarButtonItem = {
         let backItemImage = UIImage.init(named: "backItemImage")
         let backItemHlImage = UIImage.init(named: "backItemImage-hl")
         let backButton = UIButton.init(type: .system)
@@ -105,7 +105,7 @@ class WKWebViewVC: UIViewController, UIViewControllerRestoration {
     /// 添加 WKWebView
     fileprivate func addWkWebView() {
         // 创建 WKWebView 实例, frame 一般为 CGRect.zero
-        let wv = WKWebView(frame: view.bounds)
+        let wv = WKWebView(frame: .zero, configuration: makeConfig())
         wv.restorationIdentifier = "wv"
         view.restorationIdentifier = "wvcontainer"
         view.addSubview(wv)
@@ -163,13 +163,14 @@ class WKWebViewVC: UIViewController, UIViewControllerRestoration {
         // 通过js与webview内容交互配置
         config.userContentController = WKUserContentController()
         
-        // 添加一个JS到HTML中，这样就可以直接在JS中调用我们添加的JS方法
-        let script = WKUserScript(
-            source: "function showAlert() { alert('在载入WKWebview时注入的JS方法'); }",
-            injectionTime: .atDocumentStart,// 在载入时就添加JS
-            forMainFrameOnly: true) // 只添加到mainFrame中
-        config.userContentController.addUserScript(script)
-        
+        // FIXME: 调用JS Crash!
+        /// 添加一个JS到HTML中，这样就可以直接在JS中调用我们添加的JS方法
+//        let script = WKUserScript(
+//            source: "function showAlert() { alert('在载入WKWebview时注入的JS方法'); }",
+//            injectionTime: .atDocumentStart, //在载入时就添加JS
+//            forMainFrameOnly: true) //只添加到mainFrame中
+//        config.userContentController.addUserScript(script)
+
         // 添加messageHandlers.name,就可以在JS通过这个名称发送消息
         // JS code: window.webkit.messageHandlers.AppModel.postMessage({body: 'xxx'})
         config.userContentController.add(self, name: "AppModel")
@@ -189,6 +190,9 @@ class WKWebViewVC: UIViewController, UIViewControllerRestoration {
                     activity.startAnimating()
                 } else {
                     activity.stopAnimating()
+                    UIView.animate(withDuration: 0.55, animations: { [weak self] in
+                        self?.progressView.alpha = 0.0;
+                    })
                 }
             }
         case "title":
@@ -219,16 +223,13 @@ class WKWebViewVC: UIViewController, UIViewControllerRestoration {
             break
         }
         
-        // 已经完成加载时，我们就可以做我们的事了
+        /// 完成加载时才可处理JS
         if !webView.isLoading == true {
-            // 手动调用JS代码
-            let js = "callJsAlert()";
-            webView.evaluateJavaScript(js) { (_, _) -> Void in
-                debugPrint("call js alert")
-            }
-            UIView.animate(withDuration: 0.55, animations: { () -> Void in
-                self.progressView.alpha = 0.0;
-            })
+            // FIXME: 手动调用JS代码, 导致crash
+//            let js = "callJsAlert()";
+//            webView.evaluateJavaScript(js) { (_, _) -> Void in
+//                debugPrint("call js alert")
+//            }
         }
     }
     
@@ -245,7 +246,7 @@ class WKWebViewVC: UIViewController, UIViewControllerRestoration {
         }
         loadType()
         
-        //webView.reload()
+        webView.reload()
     }
     
     // webView is weak so viewDidDisappear & deinit don't need?

@@ -10,11 +10,11 @@ import UIKit
 import ImageIO
 
 
-/// tabStops 示例 NSTextTab 的用法
+/// tabStops 示例 NSTextTab 和 NSLayoutManager 用法
 class TextViewVC: UIViewController {
-    
+
     @IBOutlet var tv: UITextView!
-    @IBOutlet var tv1 : UITextView!
+    @IBOutlet var tv1: UITextView!
 
     let which = 1
 
@@ -22,11 +22,12 @@ class TextViewVC: UIViewController {
         super.viewDidLoad()
         automaticallyAdjustsScrollViewInsets = false
         textLayoutGeometry()
-        TextTabDemo()
+        TextTabDemo(false)
     }
 
-    func TextTabDemo() {
+    private func TextTabDemo(_ isMore: Bool) {
         let s = "Onions\t$2.34\nPeppers\t$15.2\n"
+
         let mas = NSMutableAttributedString(string: s, attributes: [
             NSFontAttributeName: UIFont(name: "GillSans", size: 15)!,
             NSParagraphStyleAttributeName: lend {
@@ -48,46 +49,57 @@ class TextViewVC: UIViewController {
             }
             ])
         self.tv.attributedText = mas
-        
-        // return;
-        
+
+        if !isMore {
+            return
+        }
+
         let onions = self.thumbnailOfImageWithName("onion", withExtension: "jpg")
         let peppers = self.thumbnailOfImageWithName("peppers", withExtension: "jpg")
-        
+
         let onionatt = NSTextAttachment()
         onionatt.image = onions
         onionatt.bounds = CGRect(x: 0, y: -5, width: onions.size.width, height: onions.size.height)
         let onionattchar = NSAttributedString(attachment: onionatt)
-        
+
         let pepperatt = NSTextAttachment()
         pepperatt.image = peppers
         pepperatt.bounds = CGRect(x: 0, y: -1, width: peppers.size.width, height: peppers.size.height)
         let pepperattchar = NSAttributedString(attachment: pepperatt)
-        
+
         let r = (mas.string as NSString).range(of: "Onions")
         mas.insert(onionattchar, at: (r.location + r.length))
         let r2 = (mas.string as NSString).range(of: "Peppers")
         mas.insert(pepperattchar, at: (r2.location + r2.length))
-        
+
         mas.append(NSAttributedString(string: "\n\n", attributes: nil))
         mas.append(NSAttributedString(string: "LINK", attributes: [
-            NSLinkAttributeName: URL(string: "http://www.apple.com")!
+            NSLinkAttributeName: URL(string: "http://www.apple.com")!,
+            NSForegroundColorAttributeName : UIColor.orange, // FIXME: not working
             ]))
-        mas.append(NSAttributedString(string: "\n\n", attributes: nil))
+        mas.append(NSAttributedString(string: "\n", attributes: nil))
         mas.append(NSAttributedString(string: "(805)-123-4567", attributes: nil))
-        mas.append(NSAttributedString(string: "\n\n", attributes: nil))
+        mas.append(NSAttributedString(string: "\n", attributes: nil))
         mas.append(NSAttributedString(string: "123 Main Street, Anytown, CA 91234", attributes: nil))
-        mas.append(NSAttributedString(string: "\n\n", attributes: nil))
+        mas.append(NSAttributedString(string: "\n", attributes: nil))
         mas.append(NSAttributedString(string: "tomorrow at 4 PM", attributes: nil))
-        
+
         self.tv.attributedText = mas
-        
-        // print(NSAttachmentCharacter)
-        // print(0xFFFC)
-        
+
+        /// linkTextAttributes is working but it applies to all links
+        self.tv.linkTextAttributes = [NSForegroundColorAttributeName : UIColor.orange]
+
+        /// 指定一个表示附件的字符
+        print(NSAttachmentCharacter)
+        print(0xFFFC)
+
         self.tv.isSelectable = true
         self.tv.isEditable = false
         self.tv.delegate = self
+    }
+
+    @IBAction func addMore(_ sender: Any) {
+        TextTabDemo(true)
     }
 
     override func viewDidAppear(_ animated: Bool) {
@@ -101,20 +113,20 @@ class TextViewVC: UIViewController {
         let menu = UIMenuController()
         menu.menuItems = [mail,weixin]
     }
-    
+
     func onMail(){
         print("mail")
     }
-    
+
     func onWeiXin(){
         print("weixin")
     }
-    
+
     //TODO: public func classNamed(className: String) -> AnyClass?
-    
+
     func thumbnailOfImageWithName(_ name: String, withExtension ext: String) -> UIImage {
         let url = Bundle.main.url(forResource: name,
-                                                       withExtension: ext)!
+                                  withExtension: ext)!
         let src = CGImageSourceCreateWithURL(url as CFURL, nil)!
         let scale = UIScreen.main.scale
         let w: CGFloat = 20 * scale
@@ -129,7 +141,7 @@ class TextViewVC: UIViewController {
         let im = UIImage(cgImage: imref, scale: scale, orientation: .up)
         return im
     }
-    
+
 }
 
 
@@ -137,10 +149,24 @@ extension TextViewVC: UITextViewDelegate {
     func textView(_ textView: UITextView, shouldInteractWith textAttachment: NSTextAttachment, in characterRange: NSRange) -> Bool {
         return true
     }
-    
+
     func textView(_ textView: UITextView, shouldInteractWith URL: URL, in characterRange: NSRange) -> Bool {
         print(URL)
         print((textView.text as NSString).substring(with: characterRange))
+        return true
+    }
+
+    @available(iOS 10.0, *)
+    func textView(_ textView: UITextView, shouldInteractWith textAttachment: NSTextAttachment, in characterRange: NSRange, interaction:UITextItemInteraction) -> Bool {
+        print(interaction.rawValue)
+        return true
+    }
+
+    @available(iOS 10.0, *)
+    func textView(_ textView: UITextView, shouldInteractWith URL: Foundation.URL, in characterRange: NSRange, interaction:UITextItemInteraction) -> Bool {
+        print(URL)
+        print((textView.text as NSString).substring(with:characterRange))
+        print(interaction.rawValue)
         return true
     }
 
@@ -226,9 +252,9 @@ extension TextViewVC {
         let lm = self.tv1.layoutManager as! MyLayoutManager
         lm.wordRange = r
         lm.invalidateDisplay(forCharacterRange:r)
-
+        
     }
-
+    
 }
 
 

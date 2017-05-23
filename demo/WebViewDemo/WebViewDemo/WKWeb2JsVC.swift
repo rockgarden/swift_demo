@@ -20,7 +20,7 @@ class WKWeb2JsVC: UIViewController, UIViewControllerRestoration {
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
         self.restorationIdentifier = "wvc"
         self.restorationClass = type(of:self)
-        self.edgesForExtendedLayout = [] // none, get accurate offset restoration
+        self.edgesForExtendedLayout = []
     }
 
     required init(coder: NSCoder) {
@@ -181,7 +181,6 @@ class WKWeb2JsVC: UIViewController, UIViewControllerRestoration {
 
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        print("view did appear, req: \(self.wv.url)")
         if self.decoded { }
         loadHTML()
     }

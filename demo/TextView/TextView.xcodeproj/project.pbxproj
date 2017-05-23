@@ -111,18 +111,26 @@
 				444150081E2909D000760959 /* KeyboardAccessoryVC.swift */,
 				4441500C1E2910AA00760959 /* TextFieldSlidingVC.swift */,
 				4441500A1E290E1600760959 /* AccessoryView.xib */,
-				442849AD1D8837D50044DCF5 /* Assets.xcassets */,
-				446B0D711E20D0EA0012140C /* states.txt */,
-				44D348971E24643B00F953D7 /* abbreviations.txt */,
-				442849B81D8839A60044DCF5 /* peppers.jpg */,
-				446B0D751E210FB60012140C /* brillig.txt */,
-				442849B91D8839A60044DCF5 /* onion.jpg */,
+				44F7B4391ED481290028D0DF /* resources */,
 				442849AF1D8837D50044DCF5 /* LaunchScreen.storyboard */,
 				442849B21D8837D50044DCF5 /* Info.plist */,
 				C2D2E6D71EB3218300200CEB /* KeyboardAvoidingVC.swift */,
 				C2D2E6DB1EB3282600200CEB /* MessageVC.swift */,
 			);
 			path = TextView;
+			sourceTree = "<group>";
+		};
+		44F7B4391ED481290028D0DF /* resources */ = {
+			isa = PBXGroup;
+			children = (
+				442849AD1D8837D50044DCF5 /* Assets.xcassets */,
+				446B0D711E20D0EA0012140C /* states.txt */,
+				44D348971E24643B00F953D7 /* abbreviations.txt */,
+				442849B81D8839A60044DCF5 /* peppers.jpg */,
+				446B0D751E210FB60012140C /* brillig.txt */,
+				442849B91D8839A60044DCF5 /* onion.jpg */,
+			);
+			name = resources;
 			sourceTree = "<group>";
 		};
 		C2D2E6D21EB320AC00200CEB /* KeyboardAvoiding */ = {
