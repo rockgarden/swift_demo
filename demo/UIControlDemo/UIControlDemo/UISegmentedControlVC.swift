@@ -3,11 +3,18 @@ import UIKit
 
 class UISegmentedControlVC: UIViewController {
 
-    @IBOutlet var seg : UISegmentedControl!
+    lazy var seg : UISegmentedControl = {
+        let s = UISegmentedControl(items: ["1","2","3"])
+        s.frame.origin = CGPoint(40,160)
+        s.frame.size.width = 200
+        return s
+    }()
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        view.addSubview(seg)
 
+        /// 指定从父时间空间将时间映射到接收者的时间空间。如下如果速度为0.2，本地时间的进度是父时间的5分之一。
         self.seg.layer.speed = 0.2
         delay(1) {
             UIView.animate(withDuration:0.4) {
@@ -15,11 +22,16 @@ class UISegmentedControlVC: UIViewController {
             }
         }
 
-        // self.seg.tintColor = .red
-        // return
+        /// 设置前景色
+        self.seg.tintColor = .red
 
-        /// background, set desired height but make width resizable sufficient to set for Normal only
-        let sz = CGSize(100,60)
+        mixingItems()
+    }
+
+    func optSeg() {
+
+        /// Set background, set desired(期望) height but make width(可调整大小) resizable sufficient to set for Normal only.
+        let sz = CGSize(80,60)
         var im : UIImage!
         if #available(iOS 10.0, *) {
             im = UIGraphicsImageRenderer(size:sz).image {_ in
@@ -50,12 +62,12 @@ class UISegmentedControlVC: UIViewController {
             self.seg.setWidth(80, forSegmentAt: i)
         }
 
-        // divider, set at desired width, sufficient to set for Normal only
+        /// Set divider, set at desired width, sufficient to set for Normal only
         let sz2 = CGSize(2,10)
         var div : UIImage!
         if #available(iOS 10.0, *) {
             div = UIGraphicsImageRenderer(size:sz2).image { ctx in
-                UIColor.white.set()
+                UIColor.red.set()
                 ctx.fill(CGRect(origin: .zero, size: sz2))
             }
         } else {
@@ -65,11 +77,14 @@ class UISegmentedControlVC: UIViewController {
             }
         }
         self.seg.setDividerImage(div, forLeftSegmentState: .normal, rightSegmentState: .normal, barMetrics: .default)
+    }
 
+    func mixingItems() {
+        /// 混合的items
         let seg = UISegmentedControl(
             items: [
                 UIImage(named:"smiley")!.withRenderingMode(.alwaysOriginal),
-                "Two"
+                "Two",
             ])
         seg.frame.origin = CGPoint(40,100)
         seg.frame.size.width = 200

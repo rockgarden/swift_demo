@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12118" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="O7t-cB-ryr">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="O7t-cB-ryr">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -39,7 +39,7 @@
                                 <attributedString key="userComments">
                                     <fragment content="Proving that the thumbTintColor now works once again.">
                                         <attributes>
-                                            <font key="NSFont" metaFont="smallSystem"/>
+                                            <font key="NSFont" metaFont="system" size="11"/>
                                             <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
                                         </attributes>
                                     </fragment>
@@ -126,11 +126,8 @@
                                                 </label>
                                             </subviews>
                                         </tableViewCellContentView>
-                                        <connections>
-                                            <segue destination="VH9-t6-7wm" kind="show" id="Rtx-nD-5qZ"/>
-                                        </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" textLabel="4cU-AB-ygL" style="IBUITableViewCellStyleDefault" id="3YL-my-HzF">
+                                    <tableViewCell clipsSubviews="YES" tag="1" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" textLabel="4cU-AB-ygL" style="IBUITableViewCellStyleDefault" id="3YL-my-HzF">
                                         <rect key="frame" x="0.0" y="44" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="3YL-my-HzF" id="jA6-oT-99k">
@@ -150,7 +147,7 @@
                                             <segue destination="BYZ-38-t0r" kind="show" id="1u6-Rs-VIw"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" textLabel="JKf-Q8-mtC" style="IBUITableViewCellStyleDefault" id="vgA-Tk-QDB">
+                                    <tableViewCell clipsSubviews="YES" tag="2" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" textLabel="JKf-Q8-mtC" style="IBUITableViewCellStyleDefault" id="vgA-Tk-QDB">
                                         <rect key="frame" x="0.0" y="88" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="vgA-Tk-QDB" id="y2K-ft-jcs">
@@ -170,7 +167,7 @@
                                             <segue destination="SJz-bH-aYo" kind="show" id="ZAY-OZ-msX"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" textLabel="lRj-ms-VDp" style="IBUITableViewCellStyleDefault" id="Lwl-jx-Nbg">
+                                    <tableViewCell clipsSubviews="YES" tag="3" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" textLabel="lRj-ms-VDp" style="IBUITableViewCellStyleDefault" id="Lwl-jx-Nbg">
                                         <rect key="frame" x="0.0" y="132" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Lwl-jx-Nbg" id="n0e-uh-EBn">
@@ -190,7 +187,7 @@
                                             <segue destination="zSb-xu-F9x" kind="show" id="gxO-TU-HpP"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" textLabel="EA9-aC-nZ7" style="IBUITableViewCellStyleDefault" id="YXd-IX-umA">
+                                    <tableViewCell clipsSubviews="YES" tag="4" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" textLabel="EA9-aC-nZ7" style="IBUITableViewCellStyleDefault" id="YXd-IX-umA">
                                         <rect key="frame" x="0.0" y="176" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="YXd-IX-umA" id="uqj-Ak-ZZG">
@@ -256,41 +253,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SVa-y7-05L" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-1132" y="-125"/>
-        </scene>
-        <!--Segmented ControlVC-->
-        <scene sceneID="6Fp-53-ToT">
-            <objects>
-                <viewController id="VH9-t6-7wm" customClass="UISegmentedControlVC" customModule="UIControlDemo" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="W26-up-6pw"/>
-                        <viewControllerLayoutGuide type="bottom" id="sb4-sL-A64"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="0e6-72-3TG">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <subviews>
-                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="Yrw-xB-YEX">
-                                <rect key="frame" x="97" y="209" width="182" height="29"/>
-                                <segments>
-                                    <segment title="First"/>
-                                    <segment title="Second"/>
-                                    <segment title="Third"/>
-                                </segments>
-                            </segmentedControl>
-                        </subviews>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <constraints>
-                            <constraint firstAttribute="centerX" secondItem="Yrw-xB-YEX" secondAttribute="centerX" constant="-0.5" id="5IY-Ce-Gag"/>
-                            <constraint firstItem="Yrw-xB-YEX" firstAttribute="top" secondItem="W26-up-6pw" secondAttribute="bottom" constant="145" id="tC8-Aw-fsX"/>
-                        </constraints>
-                    </view>
-                    <connections>
-                        <outlet property="seg" destination="Yrw-xB-YEX" id="R2X-Zo-U4J"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Feh-fh-y1k" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="366" y="-125"/>
         </scene>
         <!--Data PickerVC-->
         <scene sceneID="FcJ-uU-T3L">
