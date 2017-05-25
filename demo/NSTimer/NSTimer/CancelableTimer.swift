@@ -20,7 +20,6 @@ class CancelableTimer: NSObject {
         self.cancel()
         self.timer = DispatchSource.makeTimerSource(queue: self.q)
         self.timer.scheduleRepeating(wallDeadline: .now(), interval: interval)
-        // self.timer.scheduleRepeating(deadline: .now(), interval: 1, leeway: .milliseconds(1))
         self.timer.setEventHandler {
             if self.firsttime {
                 self.firsttime = false

@@ -36,7 +36,7 @@ extension Timer {
         return self.scheduledTimer(timeInterval: ti, target: self, selector: #selector(Timer.excuteTimerClosure(_:)), userInfo: TimerActionBlockWrapper(block: closure), repeats: true)
     }
     
-    /// 老版本的Swift：NSTimer的userInfo的类型是AnyObject，这意味这你不能直接把closure传给它，需要用unsafeBitCast来转一下: timer.userInfo as? TimerActionBlockWrapper
+    /// NSTimer的userInfo的类型是AnyObject，这意味这你不能直接把closure传给它，需要用unsafeBitCast来转一下: timer.userInfo as? TimerActionBlockWrapper
     @objc private class func excuteTimerClosure(_ timer: Timer) {
         if let action = timer.userInfo as? TimerActionBlockWrapper {
             action.block()

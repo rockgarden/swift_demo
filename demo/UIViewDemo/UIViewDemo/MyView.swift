@@ -32,7 +32,7 @@ class MyView : UIView {
         ]
         let sp = CGColorSpaceCreateDeviceGray()
         let grad = CGGradient (colorSpace: sp, colorComponents: colors, locations: locs, count: 3)
-        con.drawLinearGradient (grad!, start: CGPoint(x: 89,y: 0), end: CGPoint(x: 111,y: 0), options: [])
+        con.drawLinearGradient (grad!, start: CGPoint(x: 20,y: 0), end: CGPoint(x: 30,y: 0), options: [])
     }
     
 }

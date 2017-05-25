@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		444A63211ED711D200FD1751 /* MyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 444A63201ED711D200FD1751 /* MyView.swift */; };
 		C2A50CDC1EC19F9900ECB058 /* ActivityIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2A50CDB1EC19F9900ECB058 /* ActivityIndicator.swift */; };
 		C2A50CDE1EC1A03500ECB058 /* ActivityIndicatorVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2A50CDD1EC1A03500ECB058 /* ActivityIndicatorVC.swift */; };
 		C2E0A7501E1B6BE6004E78B4 /* Main_UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2F842031E1B68CB000F8DD3 /* Main_UIView.swift */; };
@@ -19,6 +20,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		444A63201ED711D200FD1751 /* MyView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyView.swift; sourceTree = "<group>"; };
 		C2A50CDB1EC19F9900ECB058 /* ActivityIndicator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityIndicator.swift; sourceTree = "<group>"; };
 		C2A50CDD1EC1A03500ECB058 /* ActivityIndicatorVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityIndicatorVC.swift; sourceTree = "<group>"; };
 		C2E0A7521E1B6D7B004E78B4 /* ProgressVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProgressVC.swift; sourceTree = "<group>"; };
@@ -66,6 +68,7 @@
 				C2F842161E1B691F000F8DD3 /* Main.storyboard */,
 				C2F842031E1B68CB000F8DD3 /* Main_UIView.swift */,
 				C2E0A7521E1B6D7B004E78B4 /* ProgressVC.swift */,
+				444A63201ED711D200FD1751 /* MyView.swift */,
 				C2A50CDD1EC1A03500ECB058 /* ActivityIndicatorVC.swift */,
 				C2A50CDB1EC19F9900ECB058 /* ActivityIndicator.swift */,
 				C2F842191E1B691F000F8DD3 /* Assets.xcassets */,
@@ -150,6 +153,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				444A63211ED711D200FD1751 /* MyView.swift in Sources */,
 				C2A50CDC1EC19F9900ECB058 /* ActivityIndicator.swift in Sources */,
 				C2A50CDE1EC1A03500ECB058 /* ActivityIndicatorVC.swift in Sources */,
 				C2E0A7501E1B6BE6004E78B4 /* Main_UIView.swift in Sources */,

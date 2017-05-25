@@ -9,20 +9,30 @@ protocol FlipsideViewControllerDelegate: class {
 class FlipsideViewController: UIViewController {
 
 	weak var delegate: FlipsideViewControllerDelegate!
-    var timer : CancelableTimer!
+    var cancelTimer : CancelableTimer!
+    var timer : Timer!
     
     let useOld = false
 	var timerOld: Timer!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        if #available(iOS 10.0, *) {
+            self.timer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true) {
+                _ in print("fired")
+            }
+        } else {
+            // Fallback on earlier versions
+            self.timer = Timer.scheduledTimerWithTimeInterval(1, closure: {print("fired")}, repeats: true)
+        }
+
         print("creating timer")
-        self.timer = CancelableTimer(once: false) {
+        self.cancelTimer = CancelableTimer(once: false) {
             [unowned self] in // comment out this line to leak
             self.dummy()
         }
         print("starting timer")
-        self.timer.start(withInterval:1)
+        self.cancelTimer.start(withInterval:1)
     }
 
 	override func viewWillAppear(_ animated: Bool) {
@@ -32,12 +42,12 @@ class FlipsideViewController: UIViewController {
             self.timerOld = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(dummy), userInfo: nil, repeats: true)
             self.timerOld.tolerance = 0.1
             
-            self.timer = CancelableTimer(once: false) {
+            self.cancelTimer = CancelableTimer(once: false) {
                 [unowned self] in // comment out this line to leak
                 self.dummy()
             }
             print("starting timer")
-            self.timer.startWithIntervalOld(1)
+            self.cancelTimer.startWithIntervalOld(1)
         }
 	}
     
@@ -62,7 +72,7 @@ class FlipsideViewController: UIViewController {
 	// if deinit is not called when you tap Done, we are leaking
 	deinit {
 		print("deinit")
-        self.timer?.cancel()
+        self.cancelTimer?.cancel()
 	}
 
 }
