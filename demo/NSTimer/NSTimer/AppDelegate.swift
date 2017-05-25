@@ -13,34 +13,33 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
 
-
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+        
         return true
     }
 
-    func applicationWillResignActive(_ application: UIApplication) {
-        // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
-        // Use this method to pause ongoing tasks, disable timers, and throttle down OpenGL ES frame rates. Games should use this method to pause the game.
-    }
-
-    func applicationDidEnterBackground(_ application: UIApplication) {
-        // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later.
-        // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
-    }
-
-    func applicationWillEnterForeground(_ application: UIApplication) {
-        // Called as part of the transition from the background to the inactive state; here you can undo many of the changes made on entering the background.
-    }
-
-    func applicationDidBecomeActive(_ application: UIApplication) {
-        // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
-    }
-
-    func applicationWillTerminate(_ application: UIApplication) {
-        // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
-    }
-
-
 }
 
+public typealias TimerExcuteClosure = @convention(block) () -> ()
+
+/// 把想要执行的操作放到了一个闭包里，然后把它设为userInfo。比较关键的地方在于这里的target是NSTimer自己了，这里防止了它去持有外部调用者的引用计数，比如我们的ViewController。切断了之前的联系之后，deinit就能正常调用了，也能正常调用timer.invalidate()了，timer失效的时候也会释放它对target的引用，从而能够正确的释放资源。
+extension Timer {
+    
+    private class TimerActionBlockWrapper : NSObject {
+        var block : TimerExcuteClosure
+        init(block: @escaping TimerExcuteClosure) {
+            self.block = block
+        }
+    }
+    
+    public class func scheduledTimerWithTimeInterval(_ ti:TimeInterval, closure: @escaping TimerExcuteClosure, repeats yesOrNo: Bool) -> Timer {
+        return self.scheduledTimer(timeInterval: ti, target: self, selector: #selector(Timer.excuteTimerClosure(_:)), userInfo: TimerActionBlockWrapper(block: closure), repeats: true)
+    }
+    
+    /// 老版本的Swift：NSTimer的userInfo的类型是AnyObject，这意味这你不能直接把closure传给它，需要用unsafeBitCast来转一下: timer.userInfo as? TimerActionBlockWrapper
+    @objc private class func excuteTimerClosure(_ timer: Timer) {
+        if let action = timer.userInfo as? TimerActionBlockWrapper {
+            action.block()
+        }
+    }
+}

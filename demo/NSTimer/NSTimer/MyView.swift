@@ -15,13 +15,13 @@ class StringDrawer {
             self.attributedString = newValue
         }
     }
+    
 }
 
 
 class MyView : UIView {
     
     // showing how no memory management is needed on CFTypeRefs
-    
     override func draw(_ rect: CGRect) {
         let con = UIGraphicsGetCurrentContext()!
         let locs : [CGFloat] = [ 0.0, 0.5, 1.0 ]
@@ -33,6 +33,6 @@ class MyView : UIView {
         let sp = CGColorSpaceCreateDeviceGray()
         let grad = CGGradient (colorSpace: sp, colorComponents: colors, locations: locs, count: 3)
         con.drawLinearGradient (grad!, start: CGPoint(x: 89,y: 0), end: CGPoint(x: 111,y: 0), options: [])
-
     }
+    
 }
