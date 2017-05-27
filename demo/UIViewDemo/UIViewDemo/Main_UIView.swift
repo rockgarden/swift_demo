@@ -35,7 +35,6 @@ class Main_UIView: UIViewController {
     }
 
     @IBAction func jumpNext(_ sender: Any) {
-        guard which != nil else {return}
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         switch which {
         case 0:
@@ -43,6 +42,9 @@ class Main_UIView: UIViewController {
             present(vc, animated: true, completion: nil)
         case 1:
             let vc = storyboard.instantiateViewController(withIdentifier: "ActivityIndicatorVC")
+            present(vc, animated: true, completion: nil)
+        case 2:
+            let vc = storyboard.instantiateViewController(withIdentifier: "Root_UIImageView")
             present(vc, animated: true, completion: nil)
         default:
             break

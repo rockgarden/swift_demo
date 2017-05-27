@@ -39,4 +39,14 @@ extension CGVector {
         self.init(dx:dx, dy:dy)
     }
 }
+extension CGRect {
+    var center : CGPoint {
+        return CGPoint(x: self.midX, y: self.midY)
+    }
+}
+
+func delay(_ delay:Double, closure:@escaping ()->()) {
+    DispatchQueue.main.asyncAfter(
+        deadline: DispatchTime.now() + Double(Int64(delay * Double(NSEC_PER_SEC))) / Double(NSEC_PER_SEC), execute: closure)
+}
 

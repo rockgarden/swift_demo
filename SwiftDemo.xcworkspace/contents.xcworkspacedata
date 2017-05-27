@@ -122,9 +122,6 @@
       location = "group:demo/Appendix/Appendix.xcodeproj">
    </FileRef>
    <FileRef
-      location = "group:demo/UIImageVIew/UIImageVIew.xcodeproj">
-   </FileRef>
-   <FileRef
       location = "group:demo/BundleResource/BundleResource.xcodeproj">
    </FileRef>
    <FileRef

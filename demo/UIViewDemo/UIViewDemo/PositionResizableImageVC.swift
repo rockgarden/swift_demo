@@ -1,19 +1,12 @@
-//
-//  ViewController.swift
-//  UIImageVIew
-//
-//  Created by wangkan on 2016/11/7.
-//  Copyright © 2016年 rockgarden. All rights reserved.
-//
 
 import UIKit
 
-class ViewController: UIViewController {
+class PositionResizableImageVC: UIViewController {
 
     @IBOutlet weak var iv: UIImageView!
     @IBOutlet weak var iv2: UIImageView!
-    let which = 2
-    let which1 = 1
+    let which = 1
+    let which1 = 2
     var v: UIView!
 
     override func viewDidLoad() {
@@ -55,8 +48,8 @@ class ViewController: UIViewController {
         }
 
         // showing what happens when a different image is assigned
-        delay (10) {
-            iv1.image = UIImage(named:"bottle5.png")
+        delay (5) {
+            iv1.image = UIImage(named:"bottle5")
             // if we're using constraints...
             // the image view is resized, because setting the image changes the intrinsic content size
         }
@@ -94,12 +87,6 @@ class ViewController: UIViewController {
         self.iv2.image = marsTiled
 
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-
 
 }
 
