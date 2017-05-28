@@ -7,10 +7,15 @@ class ContainerVC_Constraints : UIViewController {
     var cur : Int = 0
     var swappers = [UIViewController]()
     var constraints = [NSLayoutConstraint]()
+    var vc1: UIViewController {
+        let vc = UIViewController()
+        vc.view.backgroundColor = .lightGray
+        return vc
+    }
 
     override func awakeFromNib() {
         super.awakeFromNib()
-        self.swappers += [UIViewController()]
+        self.swappers += [vc1]
         self.swappers += [UIViewController()]
     }
 
@@ -54,8 +59,57 @@ class ContainerVC_Constraints : UIViewController {
         }
     }
 
+    @IBAction func doFlip_Custom(_ sender: Any?) {
+        UIApplication.shared.beginIgnoringInteractionEvents()
+        let fromvc = self.swappers[cur]
+        cur = cur == 0 ? 1 : 0
+        let tovc = self.swappers[cur]
+        tovc.view.frame = self.panel.bounds
+
+        var im: UIImage!
+        if #available(iOS 10.0, *) {
+            let r = UIGraphicsImageRenderer(size:tovc.view.bounds.size)
+            im = r.image { ctx in
+                let con = ctx.cgContext
+                tovc.view.layer.render(in:con)
+            }
+        } else {
+            // Fallback on earlier versions
+            UIGraphicsBeginImageContextWithOptions(tovc.view.bounds.size, false, 0)
+            im = UIGraphicsGetImageFromCurrentImageContext()!
+            UIGraphicsEndImageContext()
+        }
+
+        let iv = UIImageView(image:im)
+        iv.frame = CGRect.zero
+        self.panel.addSubview(iv)
+        tovc.view.alpha = 0 // hide the real view
+
+        // must have both as children before we can transition between them
+        self.addChildViewController(tovc) // "will" called for us
+        // when we call remove, we must call "will" (with nil) beforehand
+        fromvc.willMove(toParentViewController: nil)
+        // then perform the transition
+        self.transition(
+            from:fromvc,
+            to:tovc,
+            duration:0.4,
+            // no options:
+            animations: {
+                iv.frame = tovc.view.frame // *
+                self.constrainInPanel(tovc.view) // *
+        }) { _ in
+            tovc.view.alpha = 1
+            iv.removeFromSuperview()
+            // when we call add, we must call "did" afterwards
+            tovc.didMove(toParentViewController: self)
+            fromvc.removeFromParentViewController() // "did" called for us
+            UIApplication.shared.endIgnoringInteractionEvents()
+        }
+    }
+
     func constrainInPanel(_ v: UIView) {
-        print("constrain")
+        print("constraint")
         v.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
             NSLayoutConstraint.constraints(withVisualFormat:"H:|[v]|", metrics:nil, views:["v":v]),
@@ -63,18 +117,14 @@ class ContainerVC_Constraints : UIViewController {
             ].flatMap{$0})
     }
 
-    // a different way (don't use both!)
-    // however, I like the first way better, as it is called just once
-    // at exactly the right moment
-
+    /// constraintInPanel() is called just once, but constrainInPanel2 is called twice.
     override func viewWillLayoutSubviews() {
-        // if you uncomment this, comment out the two calls to constrainInPanel()
-        // and vice versa
-        // self.constrainInPanel2(self.panel.subviews[0] as UIView)
+        /// if you uncomment this, comment out the two calls to constraintInPanel() and vice versa
+        //self.constrainInPanel2(self.panel.subviews[0] as UIView)
     }
 
     func constrainInPanel2(_ v:UIView) {
-        print("constrain2")
+        print("constraint2")
         v.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.deactivate(self.constraints)
         self.constraints.removeAll()

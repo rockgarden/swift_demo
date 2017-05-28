@@ -69,12 +69,12 @@ class ImageRenderingVC : UIViewController {
         print(iv2.alignmentRectInsets)
 
 
-         let im5 = UIImage(named:"smiley2")!
-         let b = UIButton(type: .system)
-         b.setImage(im5.withAlignmentRectInsets(UIEdgeInsetsMake(0, 0, 40, 0)), for: .normal)
-         b.setTitle("Howdy", for:.normal)
-         b.sizeToFit()
-         self.view.addSubview(b)
+        let im5 = UIImage(named:"smiley2")!
+        let b = UIButton(type: .system)
+        b.setImage(im5.withAlignmentRectInsets(UIEdgeInsetsMake(0, 0, 40, 0)), for: .normal)
+        b.setTitle("Howdy", for:.normal)
+        b.sizeToFit()
+        self.view.addSubview(b)
         
     }
 }

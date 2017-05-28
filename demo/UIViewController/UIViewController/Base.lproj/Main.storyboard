@@ -6,6 +6,7 @@
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Navigation items with more than one left or right bar item" minToolsVersion="7.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -155,7 +156,7 @@
                                             <segue destination="KdS-73-Zgk" kind="presentation" id="vSb-DP-gE3"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" textLabel="BrS-YX-v9F" style="IBUITableViewCellStyleDefault" id="6pB-Xt-4UL">
+                                    <tableViewCell clipsSubviews="YES" tag="1" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" textLabel="BrS-YX-v9F" style="IBUITableViewCellStyleDefault" id="6pB-Xt-4UL">
                                         <rect key="frame" x="0.0" y="44" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="6pB-Xt-4UL" id="ghA-bl-vmn">
@@ -175,7 +176,7 @@
                                             <segue destination="XDM-CG-xhT" kind="show" id="As2-hE-ynH"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ContainerVC_Constraints" textLabel="JSO-5s-2VL" style="IBUITableViewCellStyleDefault" id="Yxo-44-K8q">
+                                    <tableViewCell clipsSubviews="YES" tag="2" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" textLabel="JSO-5s-2VL" style="IBUITableViewCellStyleDefault" id="Yxo-44-K8q">
                                         <rect key="frame" x="0.0" y="88" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Yxo-44-K8q" id="MEM-cx-FCA">
@@ -183,7 +184,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="ContainerView use Constraints" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="JSO-5s-2VL">
-                                                    <rect key="frame" x="15" y="0.0" width="345" height="43"/>
+                                                    <rect key="frame" x="15" y="0.0" width="345" height="43.5"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
@@ -193,6 +194,26 @@
                                         </tableViewCellContentView>
                                         <connections>
                                             <segue destination="fHC-B3-UZC" kind="show" id="xqn-Xg-vCn"/>
+                                        </connections>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" tag="3" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" textLabel="xw7-n1-Sa8" style="IBUITableViewCellStyleDefault" id="RQU-4N-owF">
+                                        <rect key="frame" x="0.0" y="132" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="RQU-4N-owF" id="hLr-I2-crC">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="ContainerView SizeMessaging" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="xw7-n1-Sa8">
+                                                    <rect key="frame" x="15" y="0.0" width="345" height="43.5"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="La4-df-rSL" kind="show" id="76T-ci-5L0"/>
                                         </connections>
                                     </tableViewCell>
                                 </cells>
@@ -421,6 +442,24 @@
             </objects>
             <point key="canvasLocation" x="2853.5999999999999" y="1893.1034482758623"/>
         </scene>
+        <!--ContainerVC Size-->
+        <scene sceneID="0jx-FH-TZV">
+            <objects>
+                <viewController storyboardIdentifier="ContainerVC_Size" hidesBottomBarWhenPushed="YES" id="La4-df-rSL" customClass="ContainerVC_Size" customModule="UIViewController" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="cMG-Cd-DbH"/>
+                        <viewControllerLayoutGuide type="bottom" id="b01-nF-C8d"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="pgr-iz-iOH">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="oWy-40-l3O" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1998" y="2597"/>
+        </scene>
         <!--ContainerVC-->
         <scene sceneID="B7T-e4-aZ2">
             <objects>
@@ -555,11 +594,18 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="pTc-BN-QY0">
-                        <barButtonItem key="rightBarButtonItem" title="Flip" id="LUc-8D-f71">
-                            <connections>
-                                <action selector="doFlip:" destination="fHC-B3-UZC" id="ZyS-Vs-DpY"/>
-                            </connections>
-                        </barButtonItem>
+                        <rightBarButtonItems>
+                            <barButtonItem title="Flip" id="LUc-8D-f71">
+                                <connections>
+                                    <action selector="doFlip:" destination="fHC-B3-UZC" id="ZyS-Vs-DpY"/>
+                                </connections>
+                            </barButtonItem>
+                            <barButtonItem title="FlipCustomAnim" id="Pct-L5-egq">
+                                <connections>
+                                    <action selector="doFlip_Custom:" destination="fHC-B3-UZC" id="TM8-A6-4qA"/>
+                                </connections>
+                            </barButtonItem>
+                        </rightBarButtonItems>
                     </navigationItem>
                     <connections>
                         <outlet property="panel" destination="yzi-Bn-94N" id="K1Z-Ws-YmB"/>

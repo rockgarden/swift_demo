@@ -11,6 +11,9 @@
 		441721331EDA729D00933908 /* CVCS_ChildVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 441721321EDA729D00933908 /* CVCS_ChildVC.swift */; };
 		441721361EDAB82A00933908 /* ContainerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 441721351EDAB82A00933908 /* ContainerVC.swift */; };
 		441721391EDAC25600933908 /* ContainerVC_Constraints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 441721381EDAC25600933908 /* ContainerVC_Constraints.swift */; };
+		4417213E1EDB154800933908 /* ContainerVC_Size.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4417213D1EDB154800933908 /* ContainerVC_Size.swift */; };
+		441721411EDB161E00933908 /* ContainerVC_Size_Child.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4417213F1EDB161E00933908 /* ContainerVC_Size_Child.swift */; };
+		441721421EDB161E00933908 /* ContainerVC_Size_Child.xib in Resources */ = {isa = PBXBuildFile; fileRef = 441721401EDB161E00933908 /* ContainerVC_Size_Child.xib */; };
 		446A26901EC9C54D0024230D /* ViewControllers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 446A268F1EC9C54C0024230D /* ViewControllers.swift */; };
 		449D1CB71E992C57000C7446 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 449D1CB61E992C57000C7446 /* AppDelegate.swift */; };
 		449D1CBC1E992C57000C7446 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 449D1CBA1E992C57000C7446 /* Main.storyboard */; };
@@ -41,6 +44,9 @@
 		441721321EDA729D00933908 /* CVCS_ChildVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CVCS_ChildVC.swift; sourceTree = "<group>"; };
 		441721351EDAB82A00933908 /* ContainerVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContainerVC.swift; sourceTree = "<group>"; };
 		441721381EDAC25600933908 /* ContainerVC_Constraints.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContainerVC_Constraints.swift; sourceTree = "<group>"; };
+		4417213D1EDB154800933908 /* ContainerVC_Size.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContainerVC_Size.swift; sourceTree = "<group>"; };
+		4417213F1EDB161E00933908 /* ContainerVC_Size_Child.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContainerVC_Size_Child.swift; sourceTree = "<group>"; };
+		441721401EDB161E00933908 /* ContainerVC_Size_Child.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ContainerVC_Size_Child.xib; sourceTree = "<group>"; };
 		446A268F1EC9C54C0024230D /* ViewControllers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewControllers.swift; sourceTree = "<group>"; };
 		449D1CB31E992C57000C7446 /* UIViewController.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UIViewController.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		449D1CB61E992C57000C7446 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -86,6 +92,9 @@
 				441721381EDAC25600933908 /* ContainerVC_Constraints.swift */,
 				441721301EDA71B200933908 /* ContainerVC_Storyboard.swift */,
 				441721321EDA729D00933908 /* CVCS_ChildVC.swift */,
+				4417213D1EDB154800933908 /* ContainerVC_Size.swift */,
+				4417213F1EDB161E00933908 /* ContainerVC_Size_Child.swift */,
+				441721401EDB161E00933908 /* ContainerVC_Size_Child.xib */,
 			);
 			name = ContainerView;
 			sourceTree = "<group>";
@@ -223,6 +232,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				449D1CC11E992C57000C7446 /* LaunchScreen.storyboard in Resources */,
+				441721421EDB161E00933908 /* ContainerVC_Size_Child.xib in Resources */,
 				449D1CBE1E992C57000C7446 /* Assets.xcassets in Resources */,
 				C29FFCC81ECAD7DA0034587E /* evernote.storyboard in Resources */,
 				449D1CBC1E992C57000C7446 /* Main.storyboard in Resources */,
@@ -244,6 +254,7 @@
 				441721391EDAC25600933908 /* ContainerVC_Constraints.swift in Sources */,
 				C29FFCCE1ECADAF40034587E /* Main_Transition.swift in Sources */,
 				441721331EDA729D00933908 /* CVCS_ChildVC.swift in Sources */,
+				4417213E1EDB154800933908 /* ContainerVC_Size.swift in Sources */,
 				C29FFCE41ECAECA40034587E /* NTTransition.swift in Sources */,
 				C29FFCCA1ECAD7E90034587E /* NoteViewController.swift in Sources */,
 				C29FFCC61ECAD7980034587E /* EvernoteCollectionVC.swift in Sources */,
@@ -251,6 +262,7 @@
 				C29FFCE01ECAECA40034587E /* Macro.swift in Sources */,
 				C29FFCE61ECAECA40034587E /* NTWaterfallViewCell.swift in Sources */,
 				C29FFCD01ECADC8D0034587E /* TransitionImage.swift in Sources */,
+				441721411EDB161E00933908 /* ContainerVC_Size_Child.swift in Sources */,
 				C29FFCC21ECACB340034587E /* TransitionImageCollectionVC.swift in Sources */,
 				C29FFCE11ECAECA40034587E /* NTHorizontalPageViewCell.swift in Sources */,
 				449D1CB71E992C57000C7446 /* AppDelegate.swift in Sources */,
