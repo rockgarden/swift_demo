@@ -56,7 +56,7 @@ import UIKit
 class TabbedUnwindFirstVC: UIViewController {
 
     /// Step: 8 
-    // @IBAction,是UnwindSegue的入口
+    // @IBAction(_ sender: UIStoryboardSegue!), 是UnwindSegue的入口
     // 若只有一个unwind处理函数, 在生成UnwindSegue就不需要选择了对应的@IBAction,所以不弹出菜单
     @IBAction func iAmFirst (_ sender: UIStoryboardSegue!) {
         print("\(type(of: self)) \(#function)")
