@@ -7,13 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		44ABF2861EDC607B004A353A /* cup2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 44ABF2851EDC607B004A353A /* cup2.jpg */; };
 		44C811A21E0D6345000BC6AE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44C811A11E0D6345000BC6AE /* AppDelegate.swift */; };
 		44C811A41E0D6345000BC6AE /* LocalNotificationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44C811A31E0D6345000BC6AE /* LocalNotificationVC.swift */; };
 		44C811A71E0D6345000BC6AE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 44C811A51E0D6345000BC6AE /* Main.storyboard */; };
 		44C811A91E0D6345000BC6AE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 44C811A81E0D6345000BC6AE /* Assets.xcassets */; };
 		44C811AC1E0D6345000BC6AE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 44C811AA1E0D6345000BC6AE /* LaunchScreen.storyboard */; };
-		44C811B41E0D64C1000BC6AE /* cup.png in Resources */ = {isa = PBXBuildFile; fileRef = 44C811B31E0D64C1000BC6AE /* cup.png */; };
-		44C811B61E0D64C9000BC6AE /* cup2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 44C811B51E0D64C9000BC6AE /* cup2.jpg */; };
 		44C811BE1E0D6577000BC6AE /* NotificationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44C811BD1E0D6577000BC6AE /* NotificationViewController.swift */; };
 		44C811C11E0D6577000BC6AE /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 44C811BF1E0D6577000BC6AE /* MainInterface.storyboard */; };
 		44C811C51E0D6577000BC6AE /* CoffeeTime.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 44C811BB1E0D6576000BC6AE /* CoffeeTime.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
@@ -46,6 +45,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		44ABF2851EDC607B004A353A /* cup2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = cup2.jpg; sourceTree = "<group>"; };
 		44C8119E1E0D6345000BC6AE /* UserNotificationsDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UserNotificationsDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		44C811A11E0D6345000BC6AE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		44C811A31E0D6345000BC6AE /* LocalNotificationVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalNotificationVC.swift; sourceTree = "<group>"; };
@@ -53,8 +53,6 @@
 		44C811A81E0D6345000BC6AE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		44C811AB1E0D6345000BC6AE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		44C811AD1E0D6345000BC6AE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		44C811B31E0D64C1000BC6AE /* cup.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cup.png; sourceTree = "<group>"; };
-		44C811B51E0D64C9000BC6AE /* cup2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = cup2.jpg; sourceTree = "<group>"; };
 		44C811BB1E0D6576000BC6AE /* CoffeeTime.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = CoffeeTime.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		44C811BD1E0D6577000BC6AE /* NotificationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationViewController.swift; sourceTree = "<group>"; };
 		44C811C01E0D6577000BC6AE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
@@ -109,12 +107,11 @@
 			children = (
 				44C811CB1E0D6756000BC6AE /* UserNotificationsDemo.entitlements */,
 				44C811A11E0D6345000BC6AE /* AppDelegate.swift */,
-				44C811A31E0D6345000BC6AE /* LocalNotificationVC.swift */,
 				44C811A51E0D6345000BC6AE /* Main.storyboard */,
+				44C811A31E0D6345000BC6AE /* LocalNotificationVC.swift */,
+				44ABF2851EDC607B004A353A /* cup2.jpg */,
 				44C811A81E0D6345000BC6AE /* Assets.xcassets */,
-				44C811B51E0D64C9000BC6AE /* cup2.jpg */,
 				44C811AA1E0D6345000BC6AE /* LaunchScreen.storyboard */,
-				44C811B31E0D64C1000BC6AE /* cup.png */,
 				44C811AD1E0D6345000BC6AE /* Info.plist */,
 			);
 			path = UserNotificationsDemo;
@@ -236,9 +233,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				44C811AC1E0D6345000BC6AE /* LaunchScreen.storyboard in Resources */,
-				44C811B61E0D64C9000BC6AE /* cup2.jpg in Resources */,
+				44ABF2861EDC607B004A353A /* cup2.jpg in Resources */,
 				44C811A91E0D6345000BC6AE /* Assets.xcassets in Resources */,
-				44C811B41E0D64C1000BC6AE /* cup.png in Resources */,
 				44C811A71E0D6345000BC6AE /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -477,6 +473,7 @@
 				44C811B21E0D6345000BC6AE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		44C811C61E0D6577000BC6AE /* Build configuration list for PBXNativeTarget "CoffeeTime" */ = {
 			isa = XCConfigurationList;
@@ -485,6 +482,7 @@
 				44C811C81E0D6577000BC6AE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

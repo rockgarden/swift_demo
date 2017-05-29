@@ -3,12 +3,6 @@ import UIKit
 import UserNotifications
 import UserNotificationsUI
 
-extension CGSize {
-    init(_ width:CGFloat, _ height:CGFloat) {
-        self.init(width:width, height:height)
-    }
-}
-
 /* Info.plist must contain these keys:
  UNNotificationExtensionCategory
  UNNotificationExtensionInitialContentSizeRatio
@@ -22,7 +16,7 @@ class NotificationViewController: UIViewController, UNNotificationContentExtensi
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.preferredContentSize = CGSize(320, 80)
+        self.preferredContentSize = CGSize(width:320, height:80)
     }
 
     func didReceive(_ notification: UNNotification) {

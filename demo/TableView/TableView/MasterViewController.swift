@@ -12,9 +12,8 @@ class MasterViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.navigationItem.leftBarButtonItem = self.editButtonItem
         let addButton = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(insertNewObject))
-        self.navigationItem.rightBarButtonItem = addButton
+        self.navigationItem.rightBarButtonItems = [addButton,editButtonItem]
     }
     
     func insertNewObject(_ sender: AnyObject) {

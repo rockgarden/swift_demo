@@ -15,14 +15,14 @@ class UISearchBarVC: UIViewController {
         self.sb.barTintColor = UIColor.green // unseen in this example
         // self.sb.backgroundColor = UIColor.redColor()
         
-        let lin = UIImage(named:"linen.png")!
+        let lin = UIImage(named: "linen")!
         let linim = lin.resizableImage(withCapInsets: UIEdgeInsetsMake(1,1,1,1), resizingMode:.stretch)
         self.sb.setBackgroundImage(linim, for:.any, barMetrics:.default)
         self.sb.setBackgroundImage(linim, for:.any, barMetrics:.defaultPrompt)
         
         let sepim = imageOfSize(CGSize(320,20)) {
             UIBezierPath(roundedRect:CGRect(5,0,320-5*2,20), cornerRadius:8).addClip()
-            UIImage(named:"sepia.jpg")!.draw(in:CGRect(0,0,320,20))
+            UIImage(named: "sepia")!.draw(in:CGRect(0,0,320,20))
         }
         self.sb.setSearchFieldBackgroundImage(sepim, for:UIControlState())
         // just to show what it does:
@@ -44,14 +44,14 @@ class UISearchBarVC: UIViewController {
         //    self.sb.showsSearchResultsButton = true
         //    self.sb.searchResultsButtonSelected = true
         
-        let manny = UIImage(named:"manny.jpg")!
+        let manny = UIImage(named:"manny")!
         self.sb.setImage(manny, for:.search, state:UIControlState())
         let mannyim = imageOfSize(CGSize(20,20)) {
             manny.draw(in:CGRect(0,0,20,20))
         }
         self.sb.setImage(mannyim, for:.clear, state:UIControlState())
         
-        let moe = UIImage(named:"moe.jpg")!
+        let moe = UIImage(named:"moe")!
         let moeim = imageOfSize(CGSize(20,20)) {
             moe.draw(in:CGRect(0,0,20,20))
         }
@@ -60,7 +60,7 @@ class UISearchBarVC: UIViewController {
         self.sb.showsScopeBar = true
         self.sb.scopeButtonTitles = ["Manny", "Moe", "Jack"]
         
-        self.sb.scopeBarBackgroundImage = UIImage(named:"sepia.jpg")
+        self.sb.scopeBarBackgroundImage = UIImage(named:"sepia")
         
         self.sb.setScopeBarButtonBackgroundImage(linim, for:UIControlState())
         

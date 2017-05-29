@@ -1,5 +1,5 @@
 //
-//  DynamicTable.swift
+//  DynamicTableVC.swift
 //  TableView
 //
 //  Created by wangkan on 16/9/12.
@@ -15,7 +15,7 @@ class MyHeaderView: UITableViewHeaderFooterView {
     }
 }
 
-class DynamicTable: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class DynamicTableVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     var sectionNames = [String]()
     var sectionData = [[String]]()
     var hiddenSections = Set<Int>()

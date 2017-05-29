@@ -21,10 +21,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     let notifHelper = MyUserNotificationHelper()
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        // must set user notification center delegate before we finish launching!
         let center = UNUserNotificationCenter.current()
         center.delegate = self.notifHelper
         return true
+    }
+
+    func applicationDidBecomeActive(_ application: UIApplication) {
+        print("start \(#function)")
+        print("end \(#function)")
     }
 
     /// cute feature, but it's a pity we can't prevent ourselves from being activated
