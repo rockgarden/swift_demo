@@ -34,7 +34,7 @@ class IndividualCellsVC: UITableViewController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         print("cell", indexPath.row)
-        let cell = tableView.dequeueReusableCell(withIdentifier:"Cell", for: indexPath) as! MyCell
+        let cell = tableView.dequeueReusableCell(withIdentifier:"Cell", for: indexPath) as! IndividualCell
 
         let lab = cell.theLabel!
         // TODO: 证明许多行并不意味着很多单元格对象. prove that many rows does not mean many cell objects
@@ -80,7 +80,7 @@ extension IndividualCellsVC : UITableViewDataSourcePrefetching {
 
 
 /// cell subclass 仅存在于我们可以通过名称而不是标签号来接收子视图
-class MyCell : UITableViewCell {
+class IndividualCell : UITableViewCell {
     @IBOutlet var theLabel : UILabel!
     @IBOutlet var theImageView : UIImageView!
 }

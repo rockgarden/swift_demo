@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class BundleVC: UIViewController {
     
     @IBOutlet weak var iv3: UIImageView!
     @IBOutlet weak var iv4: UIImageView!

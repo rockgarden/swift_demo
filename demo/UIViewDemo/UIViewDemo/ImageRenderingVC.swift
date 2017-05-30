@@ -1,10 +1,3 @@
-//
-//  ImageRenderingVC.swift
-//  UIImageVIew
-//
-//  Created by wangkan on 2016/11/9.
-//  Copyright © 2016年 rockgarden. All rights reserved.
-//
 
 import UIKit
 
@@ -19,9 +12,10 @@ class ImageRenderingVC : UIViewController {
             window.tintColor = UIColor.red
         }
 
+        /// 使用指定的渲染模式创建并返回一个新的图像对象。
+        /// alwaysTemplate: 始终绘制图像作为模板图像，忽略其颜色信息.
         let im = UIImage(named:"Smiley")!.withRenderingMode(.alwaysTemplate)
         self.b.setBackgroundImage(im, for: UIControlState())
-
         let im2 = UIImage(named:"smiley2")!.withRenderingMode(.alwaysOriginal)
         self.tbi.image = im2
 
@@ -32,17 +26,14 @@ class ImageRenderingVC : UIViewController {
         // one size fits all, without rasterization
         // apparently only vector PDFs are acceptable
 
-        // not demonstrated: setting alignment rectangle in asset catalog
-        // (haven't figured this out yet)
-
-
-        let im3 = UIImage(named:"photo")!.withAlignmentRectInsets(UIEdgeInsetsMake(0, 0, 24, 0))
-        let iv = UIImageView(image:im3)
+        /// withAlignmentRectInsets可用于去除图片的特定区域: setting alignment rectangle in asset catalog
+        let im3 = UIImage(named:"photo")!.withAlignmentRectInsets(UIEdgeInsetsMake(0, 0, 18, 0))
+        let iv = UIImageView(image: im3)
         self.view.addSubview(iv)
         iv.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
-            iv.leadingAnchor.constraint(equalTo: self.view.leadingAnchor),
-            iv.bottomAnchor.constraint(equalTo: self.view.bottomAnchor)
+            iv.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            iv.bottomAnchor.constraint(equalTo: view.bottomAnchor)
             ])
 
         // the previous code aligns to bottom correctly
@@ -56,11 +47,11 @@ class ImageRenderingVC : UIViewController {
         self.view.addSubview(iv2)
         iv2.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
-            iv2.trailingAnchor.constraint(equalTo: self.view.trailingAnchor),
-            iv2.bottomAnchor.constraint(equalTo: self.view.bottomAnchor)
+            iv2.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            iv2.bottomAnchor.constraint(equalTo: view.bottomAnchor)
             ])
 
-        // In the asset catalog, it is the Top, not the Bottom, that I have set
+        // FIXME: In the asset catalog, it is the Top, not the Bottom, that I have set
         // Moreover, if I don't also set the Left, nothing happens at all;
         // a Left of 0 turns off the whole thing
 

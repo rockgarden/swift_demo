@@ -48,3 +48,21 @@ extension CGVector {
         self.init(dx:dx, dy:dy)
     }
 }
+
+
+func shrinkImage() -> UIImage {
+    let im = UIImage(named: "image1")!
+    let im2: UIImage!
+    if #available(iOS 10.0, *) {
+        let r = UIGraphicsImageRenderer(size: CGSize(36,36))
+        im2 = r.image {
+            _ in im.draw(in:CGRect(0,0,36,36))
+        }
+    } else {
+        UIGraphicsBeginImageContextWithOptions(CGSize(36,36), true, 0.0)
+        im.draw(in:CGRect(0,0,36,36))
+        im2 = UIGraphicsGetImageFromCurrentImageContext()!
+        UIGraphicsEndImageContext()
+    }
+    return im2
+}
