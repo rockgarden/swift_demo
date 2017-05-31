@@ -23,11 +23,12 @@ class CMMotionManagerVC: UIViewController {
     var state = State.unknown
 
     @IBAction func doButton (_ sender: Any!) {
-        self.ref = nil // start over if user presses button again
+        self.ref = nil //重新初始化, start over if user presses button again
         guard self.motman.isDeviceMotionAvailable else {
             print("oh well")
             return
         }
+        /// Describes the same reference frame as xArbitraryZVertical except that the magnetometer, when available and calibrated, is used to improve long-term yaw accuracy. Using this constant instead of xArbitraryZVertical results in increased CPU usage. 描述与xArbitraryZVertical相同的参考系，除非在磁力计可用和校准的情况下，用于提高长期偏航精度。 使用这个常量而不是xArbitraryZVertical导致CPU使用率的增加。
         let ref = CMAttitudeReferenceFrame.xArbitraryCorrectedZVertical
         let avail = CMMotionManager.availableAttitudeReferenceFrames()
         guard avail.contains(ref) else {

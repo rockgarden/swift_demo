@@ -95,8 +95,8 @@
 			isa = PBXGroup;
 			children = (
 				449116D91DE4753E00430E31 /* AppDelegate.swift */,
-				449116DB1DE4753E00430E31 /* ViewController.swift */,
 				449116DD1DE4753E00430E31 /* Main.storyboard */,
+				449116DB1DE4753E00430E31 /* ViewController.swift */,
 				449116EB1DE4757400430E31 /* FileManagerVC.swift */,
 				449116F11DE490E000430E31 /* FileHandoffVC.swift */,
 				C29499B71DE564BE0035CD62 /* DocumentLister.swift */,
@@ -106,8 +106,8 @@
 				C29499B81DE564BE0035CD62 /* PeopleDocument.swift */,
 				C29499C11DE584140035CD62 /* ParseXmlVC.swift */,
 				C29499C41DE585470035CD62 /* MyPeopleParser.swift */,
-				C29499C51DE585470035CD62 /* MyPersonParser.swift */,
 				C29499C61DE585470035CD62 /* MyXMLParserDelegate.swift */,
+				C29499C51DE585470035CD62 /* MyPersonParser.swift */,
 				449116ED1DE477FF00430E31 /* Person.swift */,
 				448F1A111DE71B020076F6F8 /* ImageIOVC.swift */,
 				449116E01DE4753E00430E31 /* Assets.xcassets */,

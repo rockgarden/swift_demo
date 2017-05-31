@@ -80,11 +80,11 @@
 			children = (
 				C2A94DCB1EB85C7F00F8FF48 /* MotionGraphs */,
 				C2A94DB81EB85B5F00F8FF48 /* AppDelegate.swift */,
+				C2A94DBC1EB85B5F00F8FF48 /* Main.storyboard */,
 				C2A94DDE1EB85FCC00F8FF48 /* CMMotionManagerVC.swift */,
 				C2A94DE01EB85FCC00F8FF48 /* CMMotionActivityVC.swift */,
 				C2A94DE11EB85FCC00F8FF48 /* MyTimer.swift */,
 				C2A94DE21EB85FCC00F8FF48 /* MyView.swift */,
-				C2A94DBC1EB85B5F00F8FF48 /* Main.storyboard */,
 				C2A94DBF1EB85B5F00F8FF48 /* Assets.xcassets */,
 				C2A94DC11EB85B5F00F8FF48 /* LaunchScreen.storyboard */,
 				C2A94DC41EB85B5F00F8FF48 /* Info.plist */,

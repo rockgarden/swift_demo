@@ -24,11 +24,11 @@ class FMDBVC: UIViewController {
 
         do {
             let fm = FileManager.default
-            try fm.removeItem(atPath: self.dbpath) // in case we did this once already
+            try fm.removeItem(atPath: self.dbpath)
         } catch {}
 
         guard let db = FMDatabase(path:self.dbpath), db.open()
-            else {print("Ooooops"); return}
+            else {print("Can't open DB!"); return}
 
         db.executeUpdate("create table people (lastname text, firstname text)", withArgumentsIn:[])
         db.beginTransaction()
@@ -44,7 +44,7 @@ class FMDBVC: UIViewController {
 
     @IBAction func searchDB (_ sender: Any!) {
         guard let db = FMDatabase(path:self.dbpath), db.open()
-            else {print("Ooooops"); return}
+            else {print("Can't open DB!"); return}
 
         if let rs = db.executeQuery("select * from people", withArgumentsIn:[]) {
             while rs.next() {

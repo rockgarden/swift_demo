@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16C67" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="wfN-zN-Xup">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="wfN-zN-Xup">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Root View Controller-->
+        <!--File Operations-->
         <scene sceneID="fjX-Je-HQy">
             <objects>
                 <tableViewController id="2Ge-WH-kqg" sceneMemberID="viewController">
@@ -128,7 +128,7 @@
                             <outlet property="delegate" destination="2Ge-WH-kqg" id="yBa-cZ-oqX"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Root View Controller" id="lWe-VK-jPn"/>
+                    <navigationItem key="navigationItem" title="File Operations" id="lWe-VK-jPn"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9nG-rF-zhL" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -370,7 +370,20 @@
                     <view key="view" contentMode="scaleToFill" id="cbn-fa-zAW">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="xTI-gV-Z31">
+                                <rect key="frame" x="10" y="72" width="355" height="17"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="xTI-gV-Z31" firstAttribute="centerX" secondItem="cbn-fa-zAW" secondAttribute="centerX" id="OrX-kP-Jad"/>
+                            <constraint firstItem="xTI-gV-Z31" firstAttribute="top" secondItem="HW6-mE-fNh" secondAttribute="bottom" constant="8" id="j6J-Yf-4dj"/>
+                            <constraint firstItem="xTI-gV-Z31" firstAttribute="width" secondItem="cbn-fa-zAW" secondAttribute="width" constant="-20" id="nL5-y4-thQ"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="GzG-1c-UqQ">
                         <nil key="title"/>
@@ -386,6 +399,9 @@
                         </button>
                         <barButtonItem key="rightBarButtonItem" systemItem="refresh" id="ChH-Xn-X9c"/>
                     </navigationItem>
+                    <connections>
+                        <outlet property="tv" destination="xTI-gV-Z31" id="TWS-YI-BW3"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gGn-uR-cPB" sceneMemberID="firstResponder"/>
             </objects>

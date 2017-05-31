@@ -9,8 +9,8 @@
 import UIKit
 
 class ParseXmlVC: UIViewController {
-    
-    // if this works, you'll see a list of people appear in the console
+
+    @IBOutlet var tv: UITextField!
     
     @IBAction func doButton (_ sender: Any!) {
         if let url = Bundle.main.url(forResource:"folks", withExtension: "xml") {
@@ -18,9 +18,7 @@ class ParseXmlVC: UIViewController {
                 let people = MyPeopleParser(name: "", parent: nil)
                 parser.delegate = people
                 parser.parse()
-                
-                // ... done, do something with people.people ...
-                print(people.people)
+                tv.text = people.people.description
             }
         }
     }
