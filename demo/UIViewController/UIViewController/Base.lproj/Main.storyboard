@@ -40,14 +40,14 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" text="First View" textAlignment="center" lineBreakMode="tailTruncation" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="cK4-WN-zUu">
-                                <rect key="frame" x="20" y="208" width="335" height="41.5"/>
+                                <rect key="frame" x="20" y="208" width="335" height="42"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="36"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" delaysContentTouches="NO" canCancelContentTouches="NO" minimumZoomScale="0.0" maximumZoomScale="0.0" bouncesZoom="NO" editable="NO" text="Loaded by the first view controller — an instance of FirstViewController — specified in the app delegate." textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="5Br-vH-BJj">
-                                <rect key="frame" x="20" y="289.5" width="335" height="88"/>
+                                <rect key="frame" x="20" y="290" width="335" height="88"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="88" id="2TU-bc-3ZI"/>
                                 </constraints>
@@ -61,11 +61,19 @@
                                     <action selector="underlapButton:" destination="I53-QB-Jd6" eventType="touchUpInside" id="aVv-Lv-auO"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mRf-PE-YgD">
+                                <rect key="frame" x="102" y="580" width="171" height="30"/>
+                                <state key="normal" title="Popover On Phone demo"/>
+                                <connections>
+                                    <segue destination="fHI-Rt-Ppn" kind="presentation" id="orh-bj-a7Z"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <gestureRecognizers/>
                         <constraints>
                             <constraint firstItem="cK4-WN-zUu" firstAttribute="leading" secondItem="mbC-rp-qfh" secondAttribute="leading" constant="20" symbolic="YES" id="0jA-yC-u1L"/>
+                            <constraint firstItem="vNT-bn-8Pj" firstAttribute="top" secondItem="mRf-PE-YgD" secondAttribute="bottom" constant="8" symbolic="YES" id="28G-Uv-nVQ"/>
                             <constraint firstItem="5Br-vH-BJj" firstAttribute="leading" secondItem="mbC-rp-qfh" secondAttribute="leading" constant="20" symbolic="YES" id="5Y6-jc-ag7"/>
                             <constraint firstItem="5Br-vH-BJj" firstAttribute="top" secondItem="cK4-WN-zUu" secondAttribute="bottom" constant="40" id="6jk-uw-s5k"/>
                             <constraint firstAttribute="trailingMargin" secondItem="yCy-Ze-fs2" secondAttribute="trailing" constant="4" id="KqC-Ar-JRM"/>
@@ -73,6 +81,7 @@
                             <constraint firstAttribute="trailing" secondItem="5Br-vH-BJj" secondAttribute="trailing" constant="20" symbolic="YES" id="YgN-Ob-UEN"/>
                             <constraint firstAttribute="trailing" secondItem="cK4-WN-zUu" secondAttribute="trailing" constant="20" symbolic="YES" id="g3t-f0-1oY"/>
                             <constraint firstItem="yCy-Ze-fs2" firstAttribute="top" secondItem="gln-uC-BuC" secondAttribute="bottom" constant="23" id="mUV-cV-Fdj"/>
+                            <constraint firstItem="mRf-PE-YgD" firstAttribute="centerX" secondItem="5Br-vH-BJj" secondAttribute="centerX" id="uwg-iT-9EB"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="First" image="first" id="BEj-4e-Vbp"/>
@@ -80,6 +89,48 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CPA-UO-Kcg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1118" y="518"/>
+        </scene>
+        <!--Popover On PhoneVC-->
+        <scene sceneID="Ygo-7z-Csa">
+            <objects>
+                <viewController storyboardIdentifier="PopoverOnPhoneVC" id="fHI-Rt-Ppn" customClass="PopoverOnPhoneVC" customModule="UIViewController" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="huL-UE-tdE"/>
+                        <viewControllerLayoutGuide type="bottom" id="pvs-X0-wqq"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="DA0-4X-ZNN">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tjM-wQ-EHj">
+                                <rect key="frame" x="323" y="617" width="32" height="30"/>
+                                <state key="normal" title="Help">
+                                    <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="doButton:" destination="fHI-Rt-Ppn" eventType="touchUpInside" id="ySf-Ai-8wq"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8Pl-gn-jR3">
+                                <rect key="frame" x="16" y="617" width="39" height="30"/>
+                                <state key="normal" title="Close"/>
+                                <connections>
+                                    <action selector="dismissHelp:" destination="fHI-Rt-Ppn" eventType="touchUpInside" id="ynE-z4-KsN"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="8Pl-gn-jR3" firstAttribute="baseline" secondItem="tjM-wQ-EHj" secondAttribute="baseline" id="0Wh-xU-dul"/>
+                            <constraint firstAttribute="trailing" secondItem="tjM-wQ-EHj" secondAttribute="trailing" constant="20" id="IQq-Ps-zUQ"/>
+                            <constraint firstItem="pvs-X0-wqq" firstAttribute="top" secondItem="tjM-wQ-EHj" secondAttribute="bottom" constant="20" id="UXN-tD-1CF"/>
+                            <constraint firstItem="8Pl-gn-jR3" firstAttribute="leading" secondItem="DA0-4X-ZNN" secondAttribute="leadingMargin" id="dcB-Yl-4tg"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="XmE-3d-Eti" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1998" y="519"/>
         </scene>
         <!--Second-->
         <scene sceneID="rjh-Z4-EyK">
@@ -514,7 +565,7 @@
                                     <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
-                                    <segue destination="Peq-QF-WKW" kind="modal" id="890-U9-j1N"/>
+                                    <segue destination="Peq-QF-WKW" kind="presentation" id="890-U9-j1N"/>
                                 </connections>
                             </button>
                         </subviews>

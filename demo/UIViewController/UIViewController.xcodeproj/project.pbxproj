@@ -14,6 +14,18 @@
 		4417213E1EDB154800933908 /* ContainerVC_Size.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4417213D1EDB154800933908 /* ContainerVC_Size.swift */; };
 		441721411EDB161E00933908 /* ContainerVC_Size_Child.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4417213F1EDB161E00933908 /* ContainerVC_Size_Child.swift */; };
 		441721421EDB161E00933908 /* ContainerVC_Size_Child.xib in Resources */ = {isa = PBXBuildFile; fileRef = 441721401EDB161E00933908 /* ContainerVC_Size_Child.xib */; };
+		4459BC941EE0631700717B8D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4459BC931EE0631700717B8D /* AppDelegate.swift */; };
+		4459BC961EE0631700717B8D /* PopoverVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4459BC951EE0631700717B8D /* PopoverVC.swift */; };
+		4459BC991EE0631700717B8D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4459BC971EE0631700717B8D /* Main.storyboard */; };
+		4459BC9B1EE0631700717B8D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4459BC9A1EE0631700717B8D /* Assets.xcassets */; };
+		4459BC9E1EE0631700717B8D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4459BC9C1EE0631700717B8D /* LaunchScreen.storyboard */; };
+		4459BCA81EE0638F00717B8D /* PopoverViewControllers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4459BCA31EE0638F00717B8D /* PopoverViewControllers.swift */; };
+		4459BCA91EE0638F00717B8D /* Popover1View1.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4459BCA41EE0638F00717B8D /* Popover1View1.xib */; };
+		4459BCAA1EE0638F00717B8D /* MyPopoverBackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4459BCA51EE0638F00717B8D /* MyPopoverBackgroundView.swift */; };
+		4459BCAB1EE0638F00717B8D /* ExtraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4459BCA61EE0638F00717B8D /* ExtraViewController.swift */; };
+		4459BCAC1EE0638F00717B8D /* ExtraViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4459BCA71EE0638F00717B8D /* ExtraViewController.xib */; };
+		4459BCAF1EE06BE100717B8D /* PopoverOnPhoneVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4459BCAE1EE06BE100717B8D /* PopoverOnPhoneVC.swift */; };
+		4459BCB11EE06EE600717B8D /* linkhelp.html in Resources */ = {isa = PBXBuildFile; fileRef = 4459BCB01EE06EE600717B8D /* linkhelp.html */; };
 		446A26901EC9C54D0024230D /* ViewControllers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 446A268F1EC9C54C0024230D /* ViewControllers.swift */; };
 		449D1CB71E992C57000C7446 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 449D1CB61E992C57000C7446 /* AppDelegate.swift */; };
 		449D1CBC1E992C57000C7446 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 449D1CBA1E992C57000C7446 /* Main.storyboard */; };
@@ -47,6 +59,20 @@
 		4417213D1EDB154800933908 /* ContainerVC_Size.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContainerVC_Size.swift; sourceTree = "<group>"; };
 		4417213F1EDB161E00933908 /* ContainerVC_Size_Child.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContainerVC_Size_Child.swift; sourceTree = "<group>"; };
 		441721401EDB161E00933908 /* ContainerVC_Size_Child.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ContainerVC_Size_Child.xib; sourceTree = "<group>"; };
+		4459BC911EE0631600717B8D /* PoppverDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PoppverDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		4459BC931EE0631700717B8D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		4459BC951EE0631700717B8D /* PopoverVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopoverVC.swift; sourceTree = "<group>"; };
+		4459BC981EE0631700717B8D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		4459BC9A1EE0631700717B8D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		4459BC9D1EE0631700717B8D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		4459BC9F1EE0631700717B8D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4459BCA31EE0638F00717B8D /* PopoverViewControllers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopoverViewControllers.swift; sourceTree = "<group>"; };
+		4459BCA41EE0638F00717B8D /* Popover1View1.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Popover1View1.xib; sourceTree = "<group>"; };
+		4459BCA51EE0638F00717B8D /* MyPopoverBackgroundView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyPopoverBackgroundView.swift; sourceTree = "<group>"; };
+		4459BCA61EE0638F00717B8D /* ExtraViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExtraViewController.swift; sourceTree = "<group>"; };
+		4459BCA71EE0638F00717B8D /* ExtraViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ExtraViewController.xib; sourceTree = "<group>"; };
+		4459BCAE1EE06BE100717B8D /* PopoverOnPhoneVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopoverOnPhoneVC.swift; sourceTree = "<group>"; };
+		4459BCB01EE06EE600717B8D /* linkhelp.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = linkhelp.html; sourceTree = "<group>"; };
 		446A268F1EC9C54C0024230D /* ViewControllers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewControllers.swift; sourceTree = "<group>"; };
 		449D1CB31E992C57000C7446 /* UIViewController.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UIViewController.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		449D1CB61E992C57000C7446 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -75,6 +101,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		4459BC8E1EE0631600717B8D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		449D1CB01E992C57000C7446 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -110,11 +143,30 @@
 			name = Transition;
 			sourceTree = "<group>";
 		};
+		4459BC921EE0631700717B8D /* PoppverDemo */ = {
+			isa = PBXGroup;
+			children = (
+				4459BC931EE0631700717B8D /* AppDelegate.swift */,
+				4459BC971EE0631700717B8D /* Main.storyboard */,
+				4459BC951EE0631700717B8D /* PopoverVC.swift */,
+				4459BCA31EE0638F00717B8D /* PopoverViewControllers.swift */,
+				4459BCA41EE0638F00717B8D /* Popover1View1.xib */,
+				4459BCA51EE0638F00717B8D /* MyPopoverBackgroundView.swift */,
+				4459BCA61EE0638F00717B8D /* ExtraViewController.swift */,
+				4459BCA71EE0638F00717B8D /* ExtraViewController.xib */,
+				4459BC9A1EE0631700717B8D /* Assets.xcassets */,
+				4459BC9C1EE0631700717B8D /* LaunchScreen.storyboard */,
+				4459BC9F1EE0631700717B8D /* Info.plist */,
+			);
+			path = PoppverDemo;
+			sourceTree = "<group>";
+		};
 		449D1CAA1E992C57000C7446 = {
 			isa = PBXGroup;
 			children = (
 				C29FFCD31ECAECA40034587E /* PinterestSwift */,
 				449D1CB51E992C57000C7446 /* UIViewController */,
+				4459BC921EE0631700717B8D /* PoppverDemo */,
 				449D1CB41E992C57000C7446 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -123,6 +175,7 @@
 			isa = PBXGroup;
 			children = (
 				449D1CB31E992C57000C7446 /* UIViewController.app */,
+				4459BC911EE0631600717B8D /* PoppverDemo.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -132,10 +185,12 @@
 			children = (
 				449D1CB61E992C57000C7446 /* AppDelegate.swift */,
 				449D1CBA1E992C57000C7446 /* Main.storyboard */,
+				4459BCAE1EE06BE100717B8D /* PopoverOnPhoneVC.swift */,
 				446A268F1EC9C54C0024230D /* ViewControllers.swift */,
 				441721371EDABAA600933908 /* Transition */,
 				441721341EDAB16500933908 /* ContainerView */,
 				449D1CBD1E992C57000C7446 /* Assets.xcassets */,
+				4459BCB01EE06EE600717B8D /* linkhelp.html */,
 				449D1CBF1E992C57000C7446 /* LaunchScreen.storyboard */,
 				449D1CC21E992C57000C7446 /* Info.plist */,
 			);
@@ -174,6 +229,23 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		4459BC901EE0631600717B8D /* PoppverDemo */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4459BCA21EE0631700717B8D /* Build configuration list for PBXNativeTarget "PoppverDemo" */;
+			buildPhases = (
+				4459BC8D1EE0631600717B8D /* Sources */,
+				4459BC8E1EE0631600717B8D /* Frameworks */,
+				4459BC8F1EE0631600717B8D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = PoppverDemo;
+			productName = PoppverDemo;
+			productReference = 4459BC911EE0631600717B8D /* PoppverDemo.app */;
+			productType = "com.apple.product-type.application";
+		};
 		449D1CB21E992C57000C7446 /* UIViewController */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 449D1CC51E992C57000C7446 /* Build configuration list for PBXNativeTarget "UIViewController" */;
@@ -201,6 +273,11 @@
 				LastUpgradeCheck = 0830;
 				ORGANIZATIONNAME = rockgarden;
 				TargetAttributes = {
+					4459BC901EE0631600717B8D = {
+						CreatedOnToolsVersion = 8.3.2;
+						DevelopmentTeam = W3MH7MTTSB;
+						ProvisioningStyle = Automatic;
+					};
 					449D1CB21E992C57000C7446 = {
 						CreatedOnToolsVersion = 8.3;
 						DevelopmentTeam = W3MH7MTTSB;
@@ -222,11 +299,24 @@
 			projectRoot = "";
 			targets = (
 				449D1CB21E992C57000C7446 /* UIViewController */,
+				4459BC901EE0631600717B8D /* PoppverDemo */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		4459BC8F1EE0631600717B8D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4459BC9E1EE0631700717B8D /* LaunchScreen.storyboard in Resources */,
+				4459BCAC1EE0638F00717B8D /* ExtraViewController.xib in Resources */,
+				4459BC9B1EE0631700717B8D /* Assets.xcassets in Resources */,
+				4459BCA91EE0638F00717B8D /* Popover1View1.xib in Resources */,
+				4459BC991EE0631700717B8D /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		449D1CB11E992C57000C7446 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -237,16 +327,30 @@
 				C29FFCC81ECAD7DA0034587E /* evernote.storyboard in Resources */,
 				449D1CBC1E992C57000C7446 /* Main.storyboard in Resources */,
 				C29FFCCC1ECAD8340034587E /* EvernoteCell.xib in Resources */,
+				4459BCB11EE06EE600717B8D /* linkhelp.html in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		4459BC8D1EE0631600717B8D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4459BCAA1EE0638F00717B8D /* MyPopoverBackgroundView.swift in Sources */,
+				4459BC961EE0631700717B8D /* PopoverVC.swift in Sources */,
+				4459BCA81EE0638F00717B8D /* PopoverViewControllers.swift in Sources */,
+				4459BCAB1EE0638F00717B8D /* ExtraViewController.swift in Sources */,
+				4459BC941EE0631700717B8D /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		449D1CAF1E992C57000C7446 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4459BCAF1EE06BE100717B8D /* PopoverOnPhoneVC.swift in Sources */,
 				C29FFCDE1ECAECA40034587E /* CHTCollectionViewWaterfallLayout.swift in Sources */,
 				C29FFCC41ECAD7640034587E /* EvernoteTransition.swift in Sources */,
 				441721311EDA71B200933908 /* ContainerVC_Storyboard.swift in Sources */,
@@ -277,6 +381,22 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
+		4459BC971EE0631700717B8D /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				4459BC981EE0631700717B8D /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		4459BC9C1EE0631700717B8D /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				4459BC9D1EE0631700717B8D /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
 		449D1CBA1E992C57000C7446 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -296,6 +416,36 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		4459BCA01EE0631700717B8D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = W3MH7MTTSB;
+				INFOPLIST_FILE = PoppverDemo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.rockgarden.PoppverDemo;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = 2;
+			};
+			name = Debug;
+		};
+		4459BCA11EE0631700717B8D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = W3MH7MTTSB;
+				INFOPLIST_FILE = PoppverDemo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.rockgarden.PoppverDemo;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = 2;
+			};
+			name = Release;
+		};
 		449D1CC31E992C57000C7446 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -422,6 +572,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		4459BCA21EE0631700717B8D /* Build configuration list for PBXNativeTarget "PoppverDemo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4459BCA01EE0631700717B8D /* Debug */,
+				4459BCA11EE0631700717B8D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		449D1CAE1E992C57000C7446 /* Build configuration list for PBXProject "UIViewController" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
