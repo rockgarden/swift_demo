@@ -104,7 +104,6 @@ class MyFlagView : UIImageView {
                 lay.render(in:con)
             }
         } else {
-            // Fallback on earlier versions
             UIGraphicsBeginImageContextWithOptions(self.bounds.size, false, 0)
             let lay = self.layer
             lay.render(in:UIGraphicsGetCurrentContext()!)

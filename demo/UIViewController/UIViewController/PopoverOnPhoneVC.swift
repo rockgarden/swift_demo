@@ -25,8 +25,9 @@ class PopoverOnPhoneVC: UIViewController {
         vc.modalPresentationStyle = .popover
         
         // declare the delegate _before_ presentation!
-        if let pres = vc.presentationController {
-            pres.delegate = self // comment out to see what the defaults are
+        if let pC = vc.presentationController {
+            pC.delegate = self
+            /// 实现UIAdaptivePresentationControllerDelegate协议。
         }
 
         self.present(vc, animated: true)
@@ -37,22 +38,13 @@ class PopoverOnPhoneVC: UIViewController {
             pop.sourceRect = (sender as! UIView).bounds
             pop.backgroundColor = .white
         }
-        
-        // that alone is completely sufficient, on iOS 8, for iPad and iPhone!
-        // on iPhone the v.c. will be modal fullscreen by default
-        // thus there is no need for conditional code about what device this is!
-        
-        // however, there's no way to dismiss the fullscreen web view on iPhone
-        // the way we take care of this is thru the popover presentation controller's delegate
-        // it substitutes a different view controller with a Done button
+        /// iPhone上的vc默认情况下将全屏模式, ？而且没有办法在iPhone上关闭全屏网页视图
     }
 }
 
+
+/// UIPopoverPresentationControllerDelegate conforms to UIAdaptivePresentationControllerDelegate
 extension PopoverOnPhoneVC : UIPopoverPresentationControllerDelegate {
-    
-    // UIPopoverPresentationControllerDelegate conforms to UIAdaptivePresentationControllerDelegate
-    
-    // no need to call this any longer, though you can if you want to
     
     func adaptivePresentationStyle(for controller: UIPresentationController, traitCollection: UITraitCollection) -> UIModalPresentationStyle {
         if traitCollection.horizontalSizeClass == .compact {
@@ -66,7 +58,7 @@ extension PopoverOnPhoneVC : UIPopoverPresentationControllerDelegate {
     }
     
     func presentationController(_ controller: UIPresentationController, viewControllerForAdaptivePresentationStyle style: UIModalPresentationStyle) -> UIViewController? {
-        // we actually get the chance to swap out the v.c. for another!
+        // TODO: 自定义VC
         if style != .popover {
             let vc = controller.presentedViewController
             let nav = UINavigationController(rootViewController: vc)

@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="Psg-mI-jXl">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--CIFilter-->
+        <scene sceneID="2YO-j0-uDq">
+            <objects>
+                <viewController storyboardIdentifier="CIFilterVC" id="Psg-mI-jXl" userLabel="CIFilter" customClass="CIFilterVC" customModule="CoreImageDemo" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="bJY-5h-Tp6"/>
+                        <viewControllerLayoutGuide type="bottom" id="qRP-8H-6eF"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="VF6-Xm-JVP">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Cgz-0D-HRd">
+                                <rect key="frame" x="79.5" y="44" width="215" height="215"/>
+                                <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="Cgz-0D-HRd" secondAttribute="height" id="eae-7x-oxb"/>
+                                </constraints>
+                            </view>
+                            <imageView userInteractionEnabled="NO" contentMode="top" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="RfK-Oc-vp2">
+                                <rect key="frame" x="59.5" y="392" width="255" height="255"/>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="RfK-Oc-vp2" secondAttribute="height" id="uHy-x0-bGL"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZXr-JX-v7F">
+                                <rect key="frame" x="170" y="269" width="34" height="30"/>
+                                <state key="normal" title="Start">
+                                    <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="doButton:" destination="Psg-mI-jXl" eventType="touchUpInside" id="ch2-0K-2ez"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="RfK-Oc-vp2" firstAttribute="centerX" secondItem="VF6-Xm-JVP" secondAttribute="centerX" id="3eC-fY-eq8"/>
+                            <constraint firstItem="Cgz-0D-HRd" firstAttribute="top" secondItem="bJY-5h-Tp6" secondAttribute="bottom" constant="24" id="4zZ-RZ-hMV"/>
+                            <constraint firstItem="RfK-Oc-vp2" firstAttribute="width" secondItem="VF6-Xm-JVP" secondAttribute="width" constant="-120" id="Ibs-Hg-dRQ"/>
+                            <constraint firstItem="Cgz-0D-HRd" firstAttribute="centerX" secondItem="VF6-Xm-JVP" secondAttribute="centerX" id="JMl-Tf-lT6"/>
+                            <constraint firstItem="ZXr-JX-v7F" firstAttribute="centerX" secondItem="VF6-Xm-JVP" secondAttribute="centerX" id="eAI-vQ-1oi"/>
+                            <constraint firstItem="Cgz-0D-HRd" firstAttribute="width" secondItem="VF6-Xm-JVP" secondAttribute="width" constant="-160" id="pjn-P4-B2P"/>
+                            <constraint firstItem="ZXr-JX-v7F" firstAttribute="top" secondItem="Cgz-0D-HRd" secondAttribute="bottom" constant="10" id="s2A-WN-ZVV"/>
+                            <constraint firstItem="qRP-8H-6eF" firstAttribute="top" secondItem="RfK-Oc-vp2" secondAttribute="bottom" constant="20" id="zs4-M6-ZAf"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="iv" destination="RfK-Oc-vp2" id="NkT-mT-aix"/>
+                        <outlet property="v" destination="Cgz-0D-HRd" id="ta7-ad-3p6"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="kJx-ye-z2r" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2242.4000000000001" y="-25635.832083958023"/>
+        </scene>
+    </scenes>
+</document>
