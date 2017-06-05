@@ -20,15 +20,12 @@ class LayoutFlushVC: UICollectionViewController {
         self.collectionView!.reloadData()
     }
     
-    func doFlush (_ sender:AnyObject) {
+    func doFlush (_ sender: Any) {
         if let layout = self.collectionView!.collectionViewLayout as? FlushFlowLayout {
             layout.flush()
         }
     }
-    
-    // extremely weird transfer of responsibilities
-    // I filed a bug on this but Apple insists this is how they want it...
-    
+
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         print("\(String(describing: self.collectionView!.dataSource)) \(String(describing: self.collectionView!.delegate))")
@@ -41,6 +38,14 @@ class LayoutFlushVC: UICollectionViewController {
         delay(2) {
             print("\(String(describing: self.collectionView!.dataSource)) \(String(describing: self.collectionView!.delegate))")
         }
+        let oldDelegate = self.collectionView!.delegate
+        DispatchQueue.main.async {
+                        print("right after")
+                        print("layout is \(self.collectionView!.collectionViewLayout)")
+                        print("data source is \(String(describing: self.collectionView!.dataSource))")
+                        print("delegate is \(String(describing: self.collectionView!.delegate))")
+            self.collectionView!.delegate = oldDelegate
+        }
         return
     }
 
@@ -49,10 +54,6 @@ class LayoutFlushVC: UICollectionViewController {
 
 // MARK: UICollectionViewDelegateFlowLayout
 extension LayoutFlushVC : UICollectionViewDelegateFlowLayout {
-
-    // but I don't want to be the delegate, because I need the data for that, and I don't have it!
-    // (this is what I couldn't get Apple to understand; how can the data source and delegate be different?)
-    // so I forward delegation back to the other view controller
     
     func collectionView(_ collectionView: UICollectionView,
                         layout collectionViewLayout: UICollectionViewLayout,

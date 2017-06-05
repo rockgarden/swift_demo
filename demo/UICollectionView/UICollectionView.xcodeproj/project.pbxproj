@@ -244,6 +244,27 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		440E82F21EE5944000DF4718 /* support files */ = {
+			isa = PBXGroup;
+			children = (
+				C2BC5B111DC6E72B007F23F4 /* LaunchScreen.storyboard */,
+				C2BC5B141DC6E72B007F23F4 /* Info.plist */,
+			);
+			name = "support files";
+			sourceTree = "<group>";
+		};
+		440E82F31EE5946300DF4718 /* resource */ = {
+			isa = PBXGroup;
+			children = (
+				C2BC5B0F1DC6E72A007F23F4 /* Assets.xcassets */,
+				C2BC5B1A1DC6E7D1007F23F4 /* flag */,
+				C2BC5B811DC6E7ED007F23F4 /* states.txt */,
+				446AAA1F1E12B7D2008DA395 /* Papers.plist */,
+				C27C6A341E654D1D0066B3C8 /* languages.plist */,
+			);
+			name = resource;
+			sourceTree = "<group>";
+		};
 		44226FC81E857549003734D3 /* HorizontalFloatingHeaderLayout */ = {
 			isa = PBXGroup;
 			children = (
@@ -327,16 +348,11 @@
 		C2BC5B071DC6E729007F23F4 /* UICollectionView */ = {
 			isa = PBXGroup;
 			children = (
-				44DCE4871E89390D000597B0 /* FlowLayoutTestVC.swift */,
-				C2BC5B1A1DC6E7D1007F23F4 /* flag */,
 				C2BC5B081DC6E72A007F23F4 /* AppDelegate.swift */,
-				C2BC5B0A1DC6E72A007F23F4 /* SheetViewVC.swift */,
-				4462AE9E1EA5F496006299C8 /* Main_UICollectionView.swift */,
 				C2BC5B0C1DC6E72A007F23F4 /* Main.storyboard */,
-				C2BC5B0F1DC6E72A007F23F4 /* Assets.xcassets */,
-				C2BC5B111DC6E72B007F23F4 /* LaunchScreen.storyboard */,
-				C2BC5B811DC6E7ED007F23F4 /* states.txt */,
-				C2BC5B141DC6E72B007F23F4 /* Info.plist */,
+				4462AE9E1EA5F496006299C8 /* Main_UICollectionView.swift */,
+				44DCE4871E89390D000597B0 /* FlowLayoutTestVC.swift */,
+				C2BC5B0A1DC6E72A007F23F4 /* SheetViewVC.swift */,
 				44C3DEC11E128B3E00118938 /* CellBackgroundLayeringVC.swift */,
 				44226FCA1E857549003734D3 /* HorizontalFloatingHeaderVC.swift */,
 				443ED7931E87FDF00095C980 /* MultiDirectionVC.swift */,
@@ -345,14 +361,14 @@
 				442A3C851E1297F800DB8E17 /* MyFlowLayoutCell.xib */,
 				442A3C8A1E12AA2200DB8E17 /* DecorationViewVC.swift */,
 				446AAA1D1E12B4F0008DA395 /* SectionDemoVC.swift */,
-				446AAA1F1E12B7D2008DA395 /* Papers.plist */,
 				C27C6A321E654B780066B3C8 /* HeaderDemoVC.swift */,
 				C27C6A361E654F360066B3C8 /* StickyHeaderDemoVC.swift */,
 				C27C6A391E654F700066B3C8 /* MyCell.swift */,
 				C27C6A381E654F700066B3C8 /* MyCell.xib */,
-				C27C6A341E654D1D0066B3C8 /* languages.plist */,
 				4462AEA01EA5F5F9006299C8 /* RetractableFirstItemLayoutVC.swift */,
 				C24AA8151EAF32CD00091AB2 /* UIFontFamilyVC.swift */,
+				440E82F31EE5946300DF4718 /* resource */,
+				440E82F21EE5944000DF4718 /* support files */,
 			);
 			path = UICollectionView;
 			sourceTree = "<group>";

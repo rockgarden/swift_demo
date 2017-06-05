@@ -20,3 +20,22 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 }
 
+func delay(_ delay:Double, closure:@escaping ()->()) {
+    let when = DispatchTime.now() + delay
+    DispatchQueue.main.asyncAfter(deadline: when, execute: closure)
+}
+
+func imageOfSize(_ size:CGSize, opaque:Bool = false, closure: () -> ()) -> UIImage {
+    if #available(iOS 10.0, *) {
+        let f = UIGraphicsImageRendererFormat.default()
+        f.opaque = opaque
+        let r = UIGraphicsImageRenderer(size: size, format: f)
+        return r.image {_ in closure()}
+    } else {
+        UIGraphicsBeginImageContextWithOptions(size, opaque, 0)
+        closure()
+        let result = UIGraphicsGetImageFromCurrentImageContext()!
+        UIGraphicsEndImageContext()
+        return result
+    }
+}

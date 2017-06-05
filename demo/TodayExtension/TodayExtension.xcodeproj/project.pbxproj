@@ -7,14 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		440E82EF1EE592B000DF4718 /* NotificationCenter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 440E82EE1EE592B000DF4718 /* NotificationCenter.framework */; };
+		440E82F11EE5933300DF4718 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 440E82F01EE5933300DF4718 /* LaunchScreen.storyboard */; };
 		449718351DBCF2AE009C1868 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 449718341DBCF2AE009C1868 /* AppDelegate.swift */; };
-		449718371DBCF2AE009C1868 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 449718361DBCF2AE009C1868 /* ViewController.swift */; };
+		449718371DBCF2AE009C1868 /* TodayExtensionVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 449718361DBCF2AE009C1868 /* TodayExtensionVC.swift */; };
 		4497183A1DBCF2AE009C1868 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 449718381DBCF2AE009C1868 /* Main.storyboard */; };
 		4497183C1DBCF2AE009C1868 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4497183B1DBCF2AE009C1868 /* Assets.xcassets */; };
-		4497183F1DBCF2AE009C1868 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4497183D1DBCF2AE009C1868 /* LaunchScreen.storyboard */; };
-		4497184D1DBCF345009C1868 /* NotificationCenter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4497184C1DBCF345009C1868 /* NotificationCenter.framework */; };
 		449718501DBCF345009C1868 /* TodayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4497184F1DBCF345009C1868 /* TodayViewController.swift */; };
-		449718531DBCF345009C1868 /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 449718511DBCF345009C1868 /* MainInterface.storyboard */; };
+		449718531DBCF345009C1868 /* CoffeeTime.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 449718511DBCF345009C1868 /* CoffeeTime.storyboard */; };
 		449718571DBCF345009C1868 /* CoffeeTime.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 4497184A1DBCF345009C1868 /* CoffeeTime.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		4497185D1DBCF47B009C1868 /* cup.png in Resources */ = {isa = PBXBuildFile; fileRef = 4497185C1DBCF47B009C1868 /* cup.png */; };
 		C235AAED1DBDAC9900CDA7F8 /* TodayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4497184F1DBCF345009C1868 /* TodayViewController.swift */; };
@@ -46,17 +46,17 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		440E82EE1EE592B000DF4718 /* NotificationCenter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NotificationCenter.framework; path = System/Library/Frameworks/NotificationCenter.framework; sourceTree = SDKROOT; };
+		440E82F01EE5933300DF4718 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		449718311DBCF2AE009C1868 /* TodayExtension.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TodayExtension.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		449718341DBCF2AE009C1868 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		449718361DBCF2AE009C1868 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		449718361DBCF2AE009C1868 /* TodayExtensionVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayExtensionVC.swift; sourceTree = "<group>"; };
 		449718391DBCF2AE009C1868 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		4497183B1DBCF2AE009C1868 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		4497183E1DBCF2AE009C1868 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		449718401DBCF2AE009C1868 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4497184A1DBCF345009C1868 /* CoffeeTime.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = CoffeeTime.appex; sourceTree = BUILT_PRODUCTS_DIR; };
-		4497184C1DBCF345009C1868 /* NotificationCenter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NotificationCenter.framework; path = System/Library/Frameworks/NotificationCenter.framework; sourceTree = SDKROOT; };
 		4497184F1DBCF345009C1868 /* TodayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayViewController.swift; sourceTree = "<group>"; };
-		449718521DBCF345009C1868 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
+		449718521DBCF345009C1868 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/CoffeeTime.storyboard; sourceTree = "<group>"; };
 		449718541DBCF345009C1868 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4497185C1DBCF47B009C1868 /* cup.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cup.png; sourceTree = "<group>"; };
 		C235AAEE1DBDB6ED00CDA7F8 /* TodayExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = TodayExtension.entitlements; sourceTree = "<group>"; };
@@ -77,21 +77,29 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4497184D1DBCF345009C1868 /* NotificationCenter.framework in Frameworks */,
+				440E82EF1EE592B000DF4718 /* NotificationCenter.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		440E82ED1EE592AF00DF4718 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				440E82EE1EE592B000DF4718 /* NotificationCenter.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		449718281DBCF2AE009C1868 = {
 			isa = PBXGroup;
 			children = (
 				C235AAF01DBDDDF600CDA7F8 /* readme.rtfd */,
 				449718331DBCF2AE009C1868 /* TodayExtension */,
 				4497184E1DBCF345009C1868 /* CoffeeTime */,
-				4497184B1DBCF345009C1868 /* Frameworks */,
 				449718321DBCF2AE009C1868 /* Products */,
+				440E82ED1EE592AF00DF4718 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -109,21 +117,13 @@
 			children = (
 				C235AAEE1DBDB6ED00CDA7F8 /* TodayExtension.entitlements */,
 				449718341DBCF2AE009C1868 /* AppDelegate.swift */,
-				449718361DBCF2AE009C1868 /* ViewController.swift */,
 				449718381DBCF2AE009C1868 /* Main.storyboard */,
+				440E82F01EE5933300DF4718 /* LaunchScreen.storyboard */,
+				449718361DBCF2AE009C1868 /* TodayExtensionVC.swift */,
 				4497183B1DBCF2AE009C1868 /* Assets.xcassets */,
-				4497183D1DBCF2AE009C1868 /* LaunchScreen.storyboard */,
 				449718401DBCF2AE009C1868 /* Info.plist */,
 			);
 			path = TodayExtension;
-			sourceTree = "<group>";
-		};
-		4497184B1DBCF345009C1868 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				4497184C1DBCF345009C1868 /* NotificationCenter.framework */,
-			);
-			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		4497184E1DBCF345009C1868 /* CoffeeTime */ = {
@@ -132,7 +132,7 @@
 				C235AAEF1DBDB79200CDA7F8 /* CoffeeTime.entitlements */,
 				4497184F1DBCF345009C1868 /* TodayViewController.swift */,
 				4497185C1DBCF47B009C1868 /* cup.png */,
-				449718511DBCF345009C1868 /* MainInterface.storyboard */,
+				449718511DBCF345009C1868 /* CoffeeTime.storyboard */,
 				449718541DBCF345009C1868 /* Info.plist */,
 				C235AAF21DBDDFC700CDA7F8 /* TodayService.swift */,
 			);
@@ -185,7 +185,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0800;
-				LastUpgradeCheck = 0800;
+				LastUpgradeCheck = 0830;
 				ORGANIZATIONNAME = rockgarden;
 				TargetAttributes = {
 					449718301DBCF2AE009C1868 = {
@@ -234,7 +234,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4497183F1DBCF2AE009C1868 /* LaunchScreen.storyboard in Resources */,
+				440E82F11EE5933300DF4718 /* LaunchScreen.storyboard in Resources */,
 				4497183C1DBCF2AE009C1868 /* Assets.xcassets in Resources */,
 				4497183A1DBCF2AE009C1868 /* Main.storyboard in Resources */,
 			);
@@ -245,7 +245,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4497185D1DBCF47B009C1868 /* cup.png in Resources */,
-				449718531DBCF345009C1868 /* MainInterface.storyboard in Resources */,
+				449718531DBCF345009C1868 /* CoffeeTime.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -256,7 +256,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				449718371DBCF2AE009C1868 /* ViewController.swift in Sources */,
+				449718371DBCF2AE009C1868 /* TodayExtensionVC.swift in Sources */,
 				449718351DBCF2AE009C1868 /* AppDelegate.swift in Sources */,
 				C235AAED1DBDAC9900CDA7F8 /* TodayViewController.swift in Sources */,
 			);
@@ -290,20 +290,12 @@
 			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
-		4497183D1DBCF2AE009C1868 /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				4497183E1DBCF2AE009C1868 /* Base */,
-			);
-			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
-		449718511DBCF345009C1868 /* MainInterface.storyboard */ = {
+		449718511DBCF345009C1868 /* CoffeeTime.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				449718521DBCF345009C1868 /* Base */,
 			);
-			name = MainInterface.storyboard;
+			name = CoffeeTime.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -327,6 +319,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -376,6 +369,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -408,6 +402,7 @@
 				CODE_SIGN_ENTITLEMENTS = TodayExtension/TodayExtension.entitlements;
 				DEVELOPMENT_TEAM = W3MH7MTTSB;
 				INFOPLIST_FILE = TodayExtension/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.rockgarden.TodayExtension;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -423,6 +418,7 @@
 				CODE_SIGN_ENTITLEMENTS = TodayExtension/TodayExtension.entitlements;
 				DEVELOPMENT_TEAM = W3MH7MTTSB;
 				INFOPLIST_FILE = TodayExtension/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.rockgarden.TodayExtension;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -436,6 +432,7 @@
 				CODE_SIGN_ENTITLEMENTS = CoffeeTime/CoffeeTime.entitlements;
 				DEVELOPMENT_TEAM = W3MH7MTTSB;
 				INFOPLIST_FILE = CoffeeTime/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.rockgarden.TodayExtension.CoffeeTime;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -450,6 +447,7 @@
 				CODE_SIGN_ENTITLEMENTS = CoffeeTime/CoffeeTime.entitlements;
 				DEVELOPMENT_TEAM = W3MH7MTTSB;
 				INFOPLIST_FILE = CoffeeTime/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.rockgarden.TodayExtension.CoffeeTime;
 				PRODUCT_NAME = "$(TARGET_NAME)";

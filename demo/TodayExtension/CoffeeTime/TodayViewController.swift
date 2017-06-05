@@ -38,11 +38,11 @@ class TodayViewController: UIViewController, NCWidgetProviding {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // self.preferredContentSize = CGSizeMake(320,113)
-        self.iv.image = UIImage(named:"cup.png").withRenderingMode(.alwaysTemplate)
+        //self.preferredContentSize = CGSizeMake(320,113)
+        self.iv.image = UIImage(named:"cup.png")?.withRenderingMode(.alwaysTemplate)
     }
     
-    /// After updating the constraint, you must reload the chart’s data so that it redraws based on the new layout.
+    /// 更新约束后，您必须重新加载图表的数据，以便根据新布局重新绘制。After updating the constraint, you must reload the chart’s data so that it redraws based on the new layout.
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         //update view
