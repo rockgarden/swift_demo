@@ -67,12 +67,7 @@ class AppendixVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         NSLog("%@", #function)
-
         do {
-            delay(0.4) {
-                // do something here
-            }
-
             let d = dictionaryOfNames(self.view, self.v)
             debugPrint(d)
 

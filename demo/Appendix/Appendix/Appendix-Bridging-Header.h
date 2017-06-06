@@ -3,3 +3,4 @@
 //
 
 #import "Thing.h"
+#import "UIApplicationCategory.h"

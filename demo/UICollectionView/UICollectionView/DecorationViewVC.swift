@@ -9,7 +9,8 @@ class DecorationViewVC: UICollectionViewController, UICollectionViewDelegateFlow
 
     var sectionNames = [String]()
     var cellData = [[String]]()
-    lazy var modelCell : MyFlowLayoutCell = { // load lazily from nib
+
+    lazy var modelCell : MyFlowLayoutCell = {
         () -> MyFlowLayoutCell in
         let arr = UINib(nibName:"MyFlowLayoutCell", bundle:nil).instantiate(withOwner:nil)
         return arr[0] as! MyFlowLayoutCell
@@ -24,20 +25,20 @@ class DecorationViewVC: UICollectionViewController, UICollectionViewDelegateFlow
         let states = s.components(separatedBy:"\n")
         var previous = ""
         for aState in states {
-            // get the first letter
             let c = String(aState.characters.prefix(1))
-            // only add a letter to sectionNames when it's a different letter
             if c != previous {
                 previous = c
                 self.sectionNames.append(c.uppercased())
-                // and in that case also add new subarray to our array of subarrays
                 self.cellData.append([String]())
             }
             self.cellData[self.cellData.count-1].append(aState)
         }
 
-        let b = UIBarButtonItem(title:"Show", style:.plain, target:self, action:#selector(doSwitch(_:)))
-        self.navigationItem.setRightBarButtonItems([b], animated: true)
+        let a = UIBarButtonItem(title:"Switch", style:.plain, target:self, action:#selector(doSwitch(_:)))
+        let b = UIBarButtonItem(title:"Delete", style:.plain, target:self, action:#selector(doDelete(_:)))
+        let c = UIBarButtonItem(title:"Drag", style:.plain, target:self, action:#selector(doDrag(_:)))
+
+        self.navigationItem.setRightBarButtonItems([a,b,c], animated: true)
 
         self.collectionView!.backgroundColor = .white
         self.collectionView!.allowsMultipleSelection = true
@@ -51,19 +52,16 @@ class DecorationViewVC: UICollectionViewController, UICollectionViewDelegateFlow
 
         self.navigationItem.title = "States"
 
-        // if you don't do something about header size...
-        // ...you won't see any headers
         let flow = self.collectionView!.collectionViewLayout as! UICollectionViewFlowLayout
         self.setUpFlowLayout(flow)
 
     }
 
-    func setUpFlowLayout(_ flow:UICollectionViewFlowLayout) {
-        flow.headerReferenceSize = CGSize(50,50) // larger - we will place label within this
+    func setUpFlowLayout(_ flow: UICollectionViewFlowLayout) {
+        /// 必须设置 header 大小
+        flow.headerReferenceSize = CGSize(50,50)
         flow.sectionInset = UIEdgeInsetsMake(0, 10, 10, 10) // looks nicer
-
-        // flow.sectionHeadersPinToVisibleBounds = true // try cool new iOS 9 feature
-
+        flow.sectionHeadersPinToVisibleBounds = true // try cool new iOS 9 feature
         (flow as? DecorationViewFlowLayout)?.title = "States"
 
     }
@@ -119,30 +117,7 @@ class DecorationViewVC: UICollectionViewController, UICollectionViewDelegateFlow
 
             cell.backgroundColor = .gray
 
-            let im: UIImage!
-
-            // checkmark in top left corner when selected
-            if #available(iOS 10.0, *) {
-                let r = UIGraphicsImageRenderer(size:cell.bounds.size)
-                im = r.image {
-                    ctx in let con = ctx.cgContext
-                    let shadow = NSShadow()
-                    shadow.shadowColor = UIColor.darkGray
-                    shadow.shadowOffset = CGSize(2,2)
-                    shadow.shadowBlurRadius = 4
-                    let check2 =
-                        NSAttributedString(string:"\u{2714}", attributes:[
-                            NSFontAttributeName: UIFont(name:"ZapfDingbatsITC", size:24)!,
-                            NSForegroundColorAttributeName: UIColor.green,
-                            NSStrokeColorAttributeName: UIColor.red,
-                            NSStrokeWidthAttributeName: -4,
-                            NSShadowAttributeName: shadow
-                            ])
-                    con.scaleBy(x:1.1, y:1)
-                    check2.draw(at:CGPoint(2,0))
-                }
-            } else {
-                UIGraphicsBeginImageContextWithOptions(cell.bounds.size, false, 0)
+            let im = imageOfSize(cell.bounds.size) {
                 let con = UIGraphicsGetCurrentContext()!
                 let shadow = NSShadow()
                 shadow.shadowColor = UIColor.darkGray
@@ -158,8 +133,6 @@ class DecorationViewVC: UICollectionViewController, UICollectionViewDelegateFlow
                         ])
                 con.scaleBy(x:1.1, y:1)
                 check2.draw(at:CGPoint(2,0))
-                im = UIGraphicsGetImageFromCurrentImageContext()!
-                UIGraphicsEndImageContext()
             }
 
             let iv = UIImageView(image:nil, highlightedImage:im)
@@ -180,17 +153,8 @@ class DecorationViewVC: UICollectionViewController, UICollectionViewDelegateFlow
         return cell
     }
 
-    // what's the minimum size each cell can be? its constraints will figure it out for us!
-
-    // NB According to Apple, in iOS 8 I should be able to eliminate this code;
-    // simply turning on estimatedItemSize should do it for me (sizing according to constraints)
-    // but I have not been able to get that feature to work
+    /// > iOS 8 启用 estimatedItemSize 根据约束调整大小
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        // note; this approach didn't work on iOS 8...
-        // ...until I introduced the "container" view
-        // systemLayoutSize works on the container view but not on the cell itself in iOS 8
-        // (perhaps because the nib lacks a contentView)
-        // Oooh, fixed (6.1)!
         self.modelCell.lab.text = self.cellData[indexPath.section][indexPath.row]
         //the "container" workaround is no longer needed
         //var sz = self.modelCell.container.systemLayoutSizeFittingSize(UILayoutFittingCompressedSize)
@@ -200,16 +164,11 @@ class DecorationViewVC: UICollectionViewController, UICollectionViewDelegateFlow
         return sz
     }
 
+    // Switch =======================
 
-    // selection: nothing to do!
-    // we get automatic highlighting of whatever can be highlighted (i.e. our UILabel)
-    // we get automatic overlay of the selectedBackgroundView
-
-    // =======================
-
-    // can just change layouts on the fly! with built-in animation!!!
-    func doSwitch(_ sender: Any!) { // button
-        // new iOS 7 property collectionView.collectionViewLayout points to *original* layout, which is preserved
+    // MARK: Change layouts - can just change layouts on the fly! with built-in animation!!!
+    func doSwitch(_ sender: Any!) {
+        // 新的iOS 7属性collectionView.collectionViewLayout指向原始布局
         let oldLayout = self.collectionView!.collectionViewLayout as! UICollectionViewFlowLayout
         var newLayout = self.collectionViewLayout as! UICollectionViewFlowLayout
         if newLayout == oldLayout {
@@ -219,19 +178,53 @@ class DecorationViewVC: UICollectionViewController, UICollectionViewDelegateFlow
         self.collectionView!.setCollectionViewLayout(newLayout, animated:true)
     }
 
-    // menu =================
 
-    // exactly as for table views
+    // Delete =======================
+
+    // MARK: Deletion - really quite similar to a table view
+    /// delete selected cells
+    func doDelete(_ sender: Any) {
+        guard var arr = self.collectionView!.indexPathsForSelectedItems,
+            arr.count > 0 else {return}
+        // sort
+        arr.sort()
+        // delete data
+        var empties : Set<Int> = [] // keep track of what sections get emptied
+        for ip in arr.reversed() {
+            self.cellData[ip.section].remove(at:ip.item)
+            if self.cellData[ip.section].count == 0 {
+                empties.insert(ip.section)
+            }
+        }
+        // 从视图中请求删除 request the deletion from the view; notice the slick automatic animation
+        self.collectionView!.performBatchUpdates({
+            self.collectionView!.deleteItems(at:arr)
+            if empties.count > 0 { //delete empty sections
+                self.sectionNames.remove(at: empties)
+                self.cellData.remove(at: empties)
+                self.collectionView!.deleteSections(IndexSet(empties))
+            }
+        })
+    }
+
+    // Menu =================
+    // Menu 与 Drag 是系统自带的事件, 但相互屏蔽
+    // MARK: Menu - exactly as for table views
 
     @nonobjc private let capital = #selector(MyFlowLayoutCell.capital)
     @nonobjc private let copy = #selector(UIResponderStandardEditActions.copy)
 
+    var isDrag = false
+    func doDrag(_ sender: Any!) {
+        isDrag = !isDrag
+        self.collectionView!.reloadData()
+    }
+
     override func collectionView(_ collectionView: UICollectionView, shouldShowMenuForItemAt indexPath: IndexPath) -> Bool {
         let mi = UIMenuItem(title:"Capital", action:capital)
         UIMenuController.shared.menuItems = [mi]
-        // return false // uncomment to do dragging; you can't have both menus and dragging
-        // (because they both use the long press gesture, I presume)
-        return true
+        /// false 执行拖动，true 显示菜单; 不能同时使用这菜单和拖动
+        return isDrag
     }
 
     override func collectionView(_ collectionView: UICollectionView, canPerformAction action: Selector, forItemAt indexPath: IndexPath, withSender sender: Any?) -> Bool {
@@ -249,12 +242,10 @@ class DecorationViewVC: UICollectionViewController, UICollectionViewDelegateFlow
         }
     }
 
-    // dragging ===============
+    // Dragging ===============
 
-    // on by default; data source merely has to permit
-
-    // -------- interactive moving, data source methods
-
+    // MARK: Dragging -  data source merely has to permit interactive moving, data source methods
+    /// 数据源只需要允许交互式移动
     override func collectionView(_ collectionView: UICollectionView, canMoveItemAt indexPath: IndexPath) -> Bool {
         return true
     }
@@ -266,9 +257,8 @@ class DecorationViewVC: UICollectionViewController, UICollectionViewDelegateFlow
         cv.reloadSections(IndexSet(integer:source.section))
     }
 
-    // modify using delegate methods
-    // here, prevent moving outside your own section
-    
+    /// modify using delegate methods
+    /// 禁止段间移动 here, prevent moving outside your own section
     override func collectionView(_ collectionView: UICollectionView, targetIndexPathForMoveFromItemAt orig: IndexPath, toProposedIndexPath prop: IndexPath) -> IndexPath {
         if orig.section != prop.section {
             return orig
@@ -300,9 +290,11 @@ class MyTitleView : UICollectionReusableView {
     }
 }
 
+
 class MyTitleViewLayoutAttributes : UICollectionViewLayoutAttributes {
     var title = ""
 }
+
 
 class DecorationViewFlowLayout: UICollectionViewFlowLayout {
 
@@ -311,7 +303,7 @@ class DecorationViewFlowLayout: UICollectionViewFlowLayout {
     private var titleRect : CGRect {
         return CGRect(10,0,200,self.titleHeight)
     }
-    var title = "" // this is public API, client should set
+    var title = "" //this is public API, client should set
 
     override init() {
         super.init()
@@ -336,18 +328,18 @@ class DecorationViewFlowLayout: UICollectionViewFlowLayout {
             switch atts.representedElementCategory {
             case .cell:
                 let ip = atts.indexPath
-                atts = self.layoutAttributesForItem(at:ip)!
+                atts = layoutAttributesForItem(at:ip)!
             case .supplementaryView:
                 let ip = atts.indexPath
                 let kind = atts.representedElementKind!
-                atts = self.layoutAttributesForSupplementaryView(ofKind: kind, at: ip)!
-            default:break
+                atts = layoutAttributesForSupplementaryView(ofKind: kind, at: ip)!
+            default: break
             }
             return atts
         }
-        // include attributes for decoration view
+        // 包括装饰视图的属性 include attributes for decoration view
         if let decatts = self.layoutAttributesForDecorationView(
-            ofKind:self.titleKind, at: IndexPath(item: 0, section: 0)) {
+            ofKind: self.titleKind, at: IndexPath(item: 0, section: 0)) {
             if rect.contains(decatts.frame) {
                 arr.append(decatts)
             }
@@ -379,7 +371,7 @@ class DecorationViewFlowLayout: UICollectionViewFlowLayout {
         return atts
     }
 
-    // this is where the action is
+    // TODO: this is where the action is
     override func layoutAttributesForDecorationView(ofKind elementKind: String, at indexPath: IndexPath) -> UICollectionViewLayoutAttributes? {
         if elementKind == self.titleKind {
             // how to create layout attributes
@@ -391,6 +383,6 @@ class DecorationViewFlowLayout: UICollectionViewFlowLayout {
         }
         return nil
     }
-
+    
 }
 

@@ -3,15 +3,16 @@ import UIKit
 
 //TODO: Use Constraint
 class DragInSV : UIViewController {
+
     @IBOutlet var sv : UIScrollView!
     @IBOutlet var flag : UIImageView!
     @IBOutlet weak var map: UIImageView!
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         sv.contentSize = map.bounds.size
     }
-    
+
     @IBAction func dragging (_ p: UIPanGestureRecognizer) {
         let v = p.view!
         switch p.state {
@@ -20,7 +21,7 @@ class DragInSV : UIViewController {
             v.center.x += delta.x
             v.center.y += delta.y
             p.setTranslation(.zero, in: v.superview)
-            if p.state == .changed {fallthrough} // comment out to prevent autoscroll
+            if p.state == .changed {fallthrough} //comment out to prevent autoscroll
         case .changed:
             // autoscroll
             let sv = self.sv!
@@ -73,42 +74,30 @@ class DragInSV : UIViewController {
                     self.keepDragging(p)
                 }
             }
-
         default: break
         }
     }
-    
+
     func keepDragging (_ p: UIPanGestureRecognizer) {
-        // the delay here, combined with the change in offset, determines the speed of autoscrolling
+        /// 延迟结合偏移量的变化决定了自动滚动的速度
         let del = 0.1
         delay(del) {
             self.dragging(p)
         }
     }
-    
+
 }
 
 class MyFlagView : UIImageView {
-    // use our hit test from chapter 5 so that user must tap actual flag drawing
+
     override func hitTest(_ point: CGPoint, with event: UIEvent!) -> UIView? {
         let inside = self.point(inside: point, with:event)
         if !inside { return nil }
 
-        var im: UIImage!
-
-        if #available(iOS 10.0, *) {
-            let r = UIGraphicsImageRenderer(size:self.bounds.size)
-            im = r.image {
-                ctx in let con = ctx.cgContext
-                let lay = self.layer
-                lay.render(in:con)
-            }
-        } else {
-            UIGraphicsBeginImageContextWithOptions(self.bounds.size, false, 0)
+        var im = imageOfSize(self.bounds.size) {
+            let con = UIGraphicsGetCurrentContext()
             let lay = self.layer
-            lay.render(in:UIGraphicsGetCurrentContext()!)
-            im = UIGraphicsGetImageFromCurrentImageContext()!
-            UIGraphicsEndImageContext()
+            lay.render(in: con!)
         }
 
         let info = CGImageAlphaInfo.alphaOnly.rawValue

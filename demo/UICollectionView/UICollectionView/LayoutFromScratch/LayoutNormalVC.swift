@@ -14,21 +14,7 @@ class LayoutNormalVC : UICollectionViewController {
     }()
 
     override func viewDidLoad() {
-        let s = try! String(contentsOfFile: Bundle.main.path(forResource: "states", ofType: "txt")!, encoding: .utf8)
-        let states = s.components(separatedBy: "\n")
-        var previous = ""
-        for aState in states {
-            // get the first letter
-            let c = String(aState.characters.prefix(1))
-            // only add a letter to sectionNames when it's a different letter
-            if c != previous {
-                previous = c
-                self.sectionNames.append( c.uppercased() )
-                // Add new subarray to our array of subarrays
-                self.sectionData.append( [String]() )
-            }
-            sectionData[sectionData.count-1].append( aState )
-        }
+        prepareData(sectionNames: &sectionNames, cellData: &sectionData)
 
         self.navigationItem.title = "States"
         let bb = UIBarButtonItem(title:"Push", style:.plain, target:self, action:#selector(doPush))

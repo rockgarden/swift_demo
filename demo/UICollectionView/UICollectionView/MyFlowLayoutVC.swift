@@ -5,14 +5,6 @@
 
 import UIKit
 
-fileprivate extension Array {
-    mutating func remove(at ixs:Set<Int>) -> () {
-        for i in Array<Int>(ixs).sorted(by:>) {
-            self.remove(at:i)
-        }
-    }
-}
-
 class MyFlowLayoutVC: UICollectionViewController, UICollectionViewDelegateFlowLayout {
 
     var sectionNames = [String]()
@@ -23,7 +15,6 @@ class MyFlowLayoutVC: UICollectionViewController, UICollectionViewDelegateFlowLa
         }
     }
 
-    /// load lazily from nib
     lazy var modelCell : MyFlowLayoutCell = {
         () -> MyFlowLayoutCell in
         let arr = UINib(nibName:"MyFlowLayoutCell", bundle:nil).instantiate(withOwner:nil)
@@ -35,21 +26,7 @@ class MyFlowLayoutVC: UICollectionViewController, UICollectionViewDelegateFlowLa
     }
 
     override func viewDidLoad() {
-        let s = try! String(contentsOfFile: Bundle.main.path(forResource: "states", ofType: "txt")!)
-        let states = s.components(separatedBy:"\n")
-        var previous = ""
-        for aState in states {
-            // get the first letter
-            let c = String(aState.characters.prefix(1))
-            // only add a letter to sectionNames when it's a different letter
-            if c != previous {
-                previous = c
-                self.sectionNames.append(c.uppercased())
-                // and in that case also add new subarray to our array of subarrays
-                self.cellData.append([String]())
-            }
-            self.cellData[self.cellData.count-1].append(aState)
-        }
+        prepareData(sectionNames: &sectionNames, cellData: &cellData)
 
         self.navigationItem.title = "States"
         let b = UIBarButtonItem(title:"Switch", style:.plain, target:self, action:#selector(self.doSwitch(_:)))
@@ -59,15 +36,12 @@ class MyFlowLayoutVC: UICollectionViewController, UICollectionViewDelegateFlowLa
 
         self.collectionView!.backgroundColor = .white
         self.collectionView!.allowsMultipleSelection = true
-        // register cell, comes from a nib even though we are using a storyboard
+
         self.collectionView!.register(UINib(nibName:"MyFlowLayoutCell", bundle:nil), forCellWithReuseIdentifier:"MyFlowLayoutCell")
-        // register headers
         self.collectionView!.register(UICollectionReusableView.self,
                                       forSupplementaryViewOfKind:UICollectionElementKindSectionHeader,
                                       withReuseIdentifier:"Header")
 
-        // if you don't do something about header size...
-        // ...you won't see any headers
         let flow = self.collectionView!.collectionViewLayout as! UICollectionViewFlowLayout
         self.setUpFlowLayout(flow)
 
@@ -98,15 +72,8 @@ class MyFlowLayoutVC: UICollectionViewController, UICollectionViewDelegateFlowLa
     }
 
     func setUpFlowLayout(_ flow: UICollectionViewFlowLayout) {
-        flow.headerReferenceSize = CGSize(50,50) // larger - we will place label within this
-        flow.sectionInset = UIEdgeInsetsMake(0, 10, 10, 10) // looks nicer
-
-        // flow.sectionHeadersPinToVisibleBounds = true // try cool new iOS 9 feature
-
-        // uncomment to crash
-        // cripes, now we don't crash, but the layout is wrong! can these guys never get this implemented???
-        // also tried doing this by overriding sizeThatFits in the cell, but with the same wrong layout
-        // also tried doing it by overriding preferredAttributes in the cell, same wrong layout
+        flow.headerReferenceSize = CGSize(50,50)
+        flow.sectionInset = UIEdgeInsetsMake(0, 10, 10, 10)
         if #available(iOS 10.0, *) {
             flow.estimatedItemSize = UICollectionViewFlowLayoutAutomaticSize
         } else {
@@ -162,30 +129,10 @@ class MyFlowLayoutVC: UICollectionViewController, UICollectionViewDelegateFlowLa
             cell.layer.borderWidth = 2
 
             cell.backgroundColor = .gray
-            let im: UIImage!
+
             let imSize = CGSize(width:cell.bounds.width, height:cell.bounds.height + CGFloat(indexPath.item) * 2)
-            // checkmark in top left corner when selected
-            if #available(iOS 10.0, *) {
-                let r = UIGraphicsImageRenderer(size:imSize)
-                im = r.image {
-                    ctx in let con = ctx.cgContext
-                    let shadow = NSShadow()
-                    shadow.shadowColor = UIColor.darkGray
-                    shadow.shadowOffset = CGSize(2,2)
-                    shadow.shadowBlurRadius = 4
-                    let check2 =
-                        NSAttributedString(string:"\u{2714}", attributes:[
-                            NSFontAttributeName: UIFont(name:"ZapfDingbatsITC", size:24)!,
-                            NSForegroundColorAttributeName: UIColor.green,
-                            NSStrokeColorAttributeName: UIColor.red,
-                            NSStrokeWidthAttributeName: -4,
-                            NSShadowAttributeName: shadow
-                            ])
-                    con.scaleBy(x:1.1, y:1)
-                    check2.draw(at:CGPoint(2,0))
-                }
-            } else {
-                UIGraphicsBeginImageContextWithOptions(imSize, false, 0)
+
+            let im = imageOfSize(imSize) {
                 let con = UIGraphicsGetCurrentContext()!
                 let shadow = NSShadow()
                 shadow.shadowColor = UIColor.darkGray
@@ -199,10 +146,8 @@ class MyFlowLayoutVC: UICollectionViewController, UICollectionViewDelegateFlowLa
                         NSStrokeWidthAttributeName: -4,
                         NSShadowAttributeName: shadow
                         ])
-                con.scaleBy(x: 1.1, y: 1)
+                con.scaleBy(x:1.1, y:1)
                 check2.draw(at:CGPoint(2,0))
-                im = UIGraphicsGetImageFromCurrentImageContext()!
-                UIGraphicsEndImageContext()
             }
 
             let iv = UIImageView(image:nil, highlightedImage:im)
@@ -340,7 +285,7 @@ class MyFlowLayoutVC: UICollectionViewController, UICollectionViewDelegateFlowLa
     }
 
     // MARK: Dragging
-    /// on by default; data source merely has to permit -------- interactive moving, data source methods
+    
     override func collectionView(_ collectionView: UICollectionView, canMoveItemAt indexPath: IndexPath) -> Bool {
         return true
     }
@@ -352,8 +297,6 @@ class MyFlowLayoutVC: UICollectionViewController, UICollectionViewDelegateFlowLa
         cv.reloadSections(IndexSet(integer:source.section))
     }
 
-    /// modify using delegate methods
-    /// 禁止段间移动 here, prevent moving outside your own section
     override func collectionView(_ collectionView: UICollectionView, targetIndexPathForMoveFromItemAt orig: IndexPath, toProposedIndexPath prop: IndexPath) -> IndexPath {
         if orig.section != prop.section {
             return orig
@@ -363,9 +306,8 @@ class MyFlowLayoutVC: UICollectionViewController, UICollectionViewDelegateFlowLa
 }
 
 
+/// FlowLayout - how to left-justify every "line" of the layout
 class MyFlowLayoutPrivate: UICollectionViewFlowLayout {
-    // how to left-justify every "line" of the layout
-    // looks much nicer, in my humble opinion
 
     override func layoutAttributesForElements(in rect: CGRect) -> [UICollectionViewLayoutAttributes]? {
         let attrs = super.layoutAttributesForElements(in: rect)!
@@ -411,91 +353,3 @@ class MyFlowLayoutPrivate: UICollectionViewFlowLayout {
 }
 
 
-class MyFlowLayoutCell: UICollectionViewCell {
-
-    @IBOutlet var lab: UILabel!
-    @IBOutlet var container: UIView!
-
-    private let deleteButton = UIButton(type: .contactAdd)
-    private var deleteClosure: ((String) -> ())?
-
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        layer.borderWidth = 1
-        layer.cornerRadius = 3
-        layer.borderColor = UIColor.blue.cgColor
-
-        deleteButton.isHidden = true
-        deleteButton.addTarget(self, action: #selector(self.deleteText), for: .touchUpInside)
-        contentView.addSubview(deleteButton)
-    }
-
-    func capital(_ sender: Any!) {
-        // find my collection view
-        var v : UIView = self
-        repeat { v = v.superview! } while !(v is UICollectionView)
-        let cv = v as! UICollectionView
-        // ask it what index path we are
-        let ip = cv.indexPath(for: self)!
-        // relay to its delegate
-        cv.delegate?.collectionView?(cv, performAction:#selector(capital), forItemAt: ip, withSender: sender)
-    }
-
-    func deleteText() {
-        deleteClosure?(lab.text!)
-    }
-
-    func observeDelete(closure: @escaping (String) -> ()) {
-        deleteClosure = closure
-    }
-
-    func startEdit() {
-        deleteButton.isHidden = false
-        startShake()
-    }
-
-    func stopEdit() {
-        deleteButton.isHidden = true
-        stopShake()
-    }
-
-    private func startShake() {
-        let animation =  CAKeyframeAnimation(keyPath: "transform.rotation.z")
-        animation.values = [2 / self.frame.width, -2 / self.frame.width]
-        animation.duration = 0.3
-        animation.isAdditive = true
-        animation.autoreverses = true
-        animation.repeatCount = Float.infinity
-        self.layer.add(animation, forKey: "shake")
-    }
-
-    private func stopShake() {
-        self.layer.removeAnimation(forKey: "shake")
-    }
-
-    /*
-     override func sizeThatFits(_ size: CGSize) -> CGSize {
-     var sz = self.systemLayoutSizeFitting(UILayoutFittingCompressedSize)
-     sz.width = ceil(sz.width); sz.height = ceil(sz.height)
-     return sz
-     }
-     */
-
-    /*
-     override func preferredLayoutAttributesFitting(_ layoutAttributes: UICollectionViewLayoutAttributes) -> UICollectionViewLayoutAttributes {
-     setNeedsLayout()
-     layoutIfNeeded()
-     let sz = contentView.systemLayoutSizeFitting(UILayoutFittingCompressedSize)
-     //sz.width = ceil(sz.width); sz.height = ceil(sz.height)
-     let atts = layoutAttributes.copy() as! UICollectionViewLayoutAttributes
-     atts.size = sz
-     //var newFrame = layoutAttributes.frame
-     //newFrame.size.height = sz.height
-     //newFrame.size.width = sz.width
-     //layoutAttributes.frame = newFrame
-     return atts
-     }
-     */
-    
-    
-}

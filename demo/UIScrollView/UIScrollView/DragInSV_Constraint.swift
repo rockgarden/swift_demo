@@ -1,20 +1,24 @@
 
 import UIKit
 
+
+/// map.jpg若是加入Assets中，只能作为1x资源，否则会缩收，也就是说若要显业原图大小最作为独立的资源文件。
 class DragInSV_Constraint : UIViewController, UIGestureRecognizerDelegate {
+
     @IBOutlet var sv : UIScrollView!
     @IBOutlet var flag : UIImageView!
-    @IBOutlet weak var map: UIImageView!
     @IBOutlet weak var swipe: UISwipeGestureRecognizer!
 
     override func viewDidLoad() {
         super.viewDidLoad()
         automaticallyAdjustsScrollViewInsets = false
 
-        flag.translatesAutoresizingMaskIntoConstraints = true // tricky-wicky
-        sv.panGestureRecognizer.require(toFail: swipe) // *
+        /// 关闭Constraints，允许拖动
+        flag.translatesAutoresizingMaskIntoConstraints = true
 
-        let iv = UIImageView(image:UIImage(named:"smiley.png"))
+        sv.panGestureRecognizer.require(toFail: swipe)
+
+        let iv = UIImageView(image: UIImage(named:"smiley"))
         iv.translatesAutoresizingMaskIntoConstraints = false
         sv.addSubview(iv)
         let sup = sv.superview!
@@ -33,8 +37,8 @@ class DragInSV_Constraint : UIViewController, UIGestureRecognizerDelegate {
     // perhaps this was a bug? I can't reproduce the problem any more
 
     //    func gestureRecognizer(g: UIGestureRecognizer!, shouldBeRequiredToFailByGestureRecognizer og: UIGestureRecognizer!) -> Bool {
-    //        println(g)
-    //        println(og)
+    //        print(g)
+    //        print(og)
     //        return true // keep our flag gesture recognizer first
     //        // trying to avoid weird behavior where sometimes pan gesture fails
     //    }
@@ -48,7 +52,6 @@ class DragInSV_Constraint : UIViewController, UIGestureRecognizerDelegate {
 
         UIView.animate(withDuration:0.25) {
             self.flag.frame.origin.x = p.x
-            // thanks for the flag, now stop operating altogether
             g.isEnabled = false
         }
     }
@@ -114,13 +117,11 @@ class DragInSV_Constraint : UIViewController, UIGestureRecognizerDelegate {
                     self.keepDragging(p)
                 }
             }
-
         default: break
         }
     }
 
     func keepDragging (_ p: UIPanGestureRecognizer) {
-        // the delay here, combined with the change in offset, determines the speed of autoscrolling
         let del = 0.1
         delay(del) {
             self.dragging(p)

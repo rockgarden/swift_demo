@@ -34,6 +34,8 @@
 		44966FF31E8AAF4000222F3E /* WCLWaterFallLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44966FF21E8AAF4000222F3E /* WCLWaterFallLayout.swift */; };
 		44966FF61E8AB41500222F3E /* SCCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44966FF51E8AB41500222F3E /* SCCollectionViewController.swift */; };
 		44966FF81E8AB42E00222F3E /* SubclassExampleController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44966FF71E8AB42E00222F3E /* SubclassExampleController.swift */; };
+		44B8084D1EE6E482004B7610 /* WorkspaceGlobal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44B8084C1EE6E482004B7610 /* WorkspaceGlobal.swift */; };
+		44B8084F1EE6F58D004B7610 /* MyFlowLayoutCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44B8084E1EE6F58D004B7610 /* MyFlowLayoutCell.swift */; };
 		44C3DEC21E128B3E00118938 /* CellBackgroundLayeringVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44C3DEC11E128B3E00118938 /* CellBackgroundLayeringVC.swift */; };
 		44DCE4841E8936C3000597B0 /* LineLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44DCE4811E8936C3000597B0 /* LineLayout.swift */; };
 		44DCE4851E8936C3000597B0 /* WaterFallLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44DCE4821E8936C3000597B0 /* WaterFallLayout.swift */; };
@@ -148,6 +150,8 @@
 		44966FF21E8AAF4000222F3E /* WCLWaterFallLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WCLWaterFallLayout.swift; sourceTree = "<group>"; };
 		44966FF51E8AB41500222F3E /* SCCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SCCollectionViewController.swift; sourceTree = "<group>"; };
 		44966FF71E8AB42E00222F3E /* SubclassExampleController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SubclassExampleController.swift; sourceTree = "<group>"; };
+		44B8084C1EE6E482004B7610 /* WorkspaceGlobal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = WorkspaceGlobal.swift; path = ../WorkspaceGlobal.swift; sourceTree = "<group>"; };
+		44B8084E1EE6F58D004B7610 /* MyFlowLayoutCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyFlowLayoutCell.swift; sourceTree = "<group>"; };
 		44C3DEC11E128B3E00118938 /* CellBackgroundLayeringVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CellBackgroundLayeringVC.swift; sourceTree = "<group>"; };
 		44DCE4811E8936C3000597B0 /* LineLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LineLayout.swift; sourceTree = "<group>"; };
 		44DCE4821E8936C3000597B0 /* WaterFallLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WaterFallLayout.swift; sourceTree = "<group>"; };
@@ -312,6 +316,7 @@
 		C2BC5AFC1DC6E729007F23F4 = {
 			isa = PBXGroup;
 			children = (
+				44B8084C1EE6E482004B7610 /* WorkspaceGlobal.swift */,
 				4462AE9C1EA5F335006299C8 /* RetractableFirstItemLayout.swift */,
 				C2A972AA1E14DA5A0037A0EA /* readme.rtf */,
 				C2AA12001E8E3A8700037FE0 /* CustomLayout.swift */,
@@ -358,6 +363,7 @@
 				443ED7931E87FDF00095C980 /* MultiDirectionVC.swift */,
 				442A3C7F1E1294F400DB8E17 /* FlowLayoutVC.swift */,
 				442A3C811E12976D00DB8E17 /* MyFlowLayoutVC.swift */,
+				44B8084E1EE6F58D004B7610 /* MyFlowLayoutCell.swift */,
 				442A3C851E1297F800DB8E17 /* MyFlowLayoutCell.xib */,
 				442A3C8A1E12AA2200DB8E17 /* DecorationViewVC.swift */,
 				446AAA1D1E12B4F0008DA395 /* SectionDemoVC.swift */,
@@ -581,6 +587,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				44B8084D1EE6E482004B7610 /* WorkspaceGlobal.swift in Sources */,
 				C27C6A3B1E654F700066B3C8 /* MyCell.swift in Sources */,
 				44DCE4851E8936C3000597B0 /* WaterFallLayout.swift in Sources */,
 				C2AA3B0F1E110ADE00C9E438 /* PhotoCell.swift in Sources */,
@@ -597,6 +604,7 @@
 				443ED7941E87FDF00095C980 /* MultiDirectionVC.swift in Sources */,
 				446AAA1E1E12B4F0008DA395 /* SectionDemoVC.swift in Sources */,
 				C2BC5B0B1DC6E72A007F23F4 /* SheetViewVC.swift in Sources */,
+				44B8084F1EE6F58D004B7610 /* MyFlowLayoutCell.swift in Sources */,
 				44DCE4861E8936C3000597B0 /* CirCleLayout.swift in Sources */,
 				44966FF61E8AB41500222F3E /* SCCollectionViewController.swift in Sources */,
 				44966FF11E8AAD9F00222F3E /* SectionWaterFallLayout.swift in Sources */,

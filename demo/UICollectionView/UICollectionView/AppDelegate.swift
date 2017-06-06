@@ -14,28 +14,25 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
         return true
     }
 
 }
 
-func delay(_ delay:Double, closure:@escaping ()->()) {
-    let when = DispatchTime.now() + delay
-    DispatchQueue.main.asyncAfter(deadline: when, execute: closure)
-}
-
-func imageOfSize(_ size:CGSize, opaque:Bool = false, closure: () -> ()) -> UIImage {
-    if #available(iOS 10.0, *) {
-        let f = UIGraphicsImageRendererFormat.default()
-        f.opaque = opaque
-        let r = UIGraphicsImageRenderer(size: size, format: f)
-        return r.image {_ in closure()}
-    } else {
-        UIGraphicsBeginImageContextWithOptions(size, opaque, 0)
-        closure()
-        let result = UIGraphicsGetImageFromCurrentImageContext()!
-        UIGraphicsEndImageContext()
-        return result
+func prepareData(sectionNames: inout [String], cellData: inout [[String]]) {
+    let s = try! String(contentsOfFile: Bundle.main.path(forResource: "states", ofType: "txt")!)
+    let states = s.components(separatedBy:"\n")
+    var previous = ""
+    for aState in states {
+        // get the first letter
+        let c = String(aState.characters.prefix(1))
+        // only add a letter to sectionNames when it's a different letter
+        if c != previous {
+            previous = c
+            sectionNames.append(c.uppercased())
+            //Add new subarray to our array of subarrays
+            cellData.append([String]())
+        }
+        cellData[cellData.count-1].append(aState)
     }
 }

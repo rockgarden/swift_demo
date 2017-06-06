@@ -1,6 +1,9 @@
 //
-//  AppendixGlobal.swift
-//  Appendix
+//  WorkspaceGlobal.swift
+//
+//
+//  Created by wangkan on 2017/6/6.
+//
 //
 
 import UIKit
@@ -171,5 +174,3 @@ extension Array {
         }
     }
 }
-
-
