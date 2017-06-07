@@ -18,49 +18,22 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 }
 
-func imageFromContextOfSize(_ size:CGSize, closure:() -> ()) -> UIImage {
-    UIGraphicsBeginImageContextWithOptions(size, false, 0)
-    closure()
-    let result = UIGraphicsGetImageFromCurrentImageContext()
-    UIGraphicsEndImageContext()
-    return result!
-}
 
-func imageOfSize(_ size:CGSize, closure:() -> ()) -> UIImage {
-    if #available(iOS 10.0, *) {
-        let r = UIGraphicsImageRenderer(size:size)
-        return r.image {
-            _ in closure()
+
+func prepareData(sectionNames: inout [String], cellData: inout [[String]]) {
+    let s = try! String(contentsOfFile: Bundle.main.path(forResource: "states", ofType: "txt")!, encoding: String.Encoding.utf8)
+    let states = s.components(separatedBy:"\n")
+    var previous = ""
+    for aState in states {
+        // get the first letter
+        let c = String(aState.characters.prefix(1))
+        // only add a letter to sectionNames when it's a different letter
+        if c != previous {
+            previous = c
+            sectionNames.append(c.uppercased())
+            //Add new subarray to our array of subarrays
+            cellData.append([String]())
         }
-    } else {
-        return imageFromContextOfSize(size, closure: closure)
+        cellData[cellData.count-1].append(aState)
     }
 }
-
-func lend<T> (_ closure:(T)->()) -> T where T:NSObject {
-    let orig = T()
-    closure(orig)
-    return orig
-}
-
-extension CGRect {
-    init(_ x:CGFloat, _ y:CGFloat, _ w:CGFloat, _ h:CGFloat) {
-        self.init(x:x, y:y, width:w, height:h)
-    }
-}
-extension CGSize {
-    init(_ width:CGFloat, _ height:CGFloat) {
-        self.init(width:width, height:height)
-    }
-}
-extension CGPoint {
-    init(_ x:CGFloat, _ y:CGFloat) {
-        self.init(x:x, y:y)
-    }
-}
-extension CGVector {
-    init (_ dx:CGFloat, _ dy:CGFloat) {
-        self.init(dx:dx, dy:dy)
-    }
-}
-

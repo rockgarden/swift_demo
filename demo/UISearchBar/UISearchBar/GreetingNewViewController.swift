@@ -84,7 +84,7 @@ class GreetingNewViewController: UIViewController, UISearchResultsUpdating, UISe
     // 定义searchBar样式
     func configureSearchBar(_ searchBar: UISearchBar) {
         searchBar.placeholder = "请输入名称"
-        debugPrint("searchBar.text", searchBar.text) //searchBar.text不会为nil
+        debugPrint("searchBar.text", searchBar.text as Any) //searchBar.text不会为nil
         searchBar.sizeToFit()
         searchBar.tintColor = UIColor.white
         searchBar.backgroundColor = UIColor.clear

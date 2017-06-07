@@ -1,37 +1,25 @@
 
-
 import UIKit
-
-/*
- No law whatever says that the search results controller must be a table view controller,
- or that the search results must be shown in a table;
- it's just a convenient thing to do.
-
- This is the rock-bottom simplest implementation I could think of:
- a default table with the search results in each cell's textLabel.
- */
 
 class Pop_SRC: UITableViewController {
 	var originalData: [String]
 	var filteredData = [String]()
 
 	init(data: [[String]]) {
-		// we don't use sections, so flatten the data into a single array of strings
+
 		var flattened = [String]()
 		for arr in data {
 			for s in arr {
 				flattened += [s]
 			}
 		}
-		self.originalData = flattened
+		self.originalData = data.flatMap{$0}
 		super.init(nibName: nil, bundle: nil)
 	}
 
 	required init(coder: NSCoder) {
 		fatalError("NSCoding not supported")
 	}
-
-	// all boilerplate; note that our data is _filteredData_, which is initially empty
 
 	override func viewDidLoad() {
 		super.viewDidLoad()
@@ -48,19 +36,11 @@ class Pop_SRC: UITableViewController {
 
 	override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 		let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
-		cell.textLabel!.text = self.filteredData[(indexPath as NSIndexPath).row]
+		cell.textLabel!.text = self.filteredData[indexPath.row]
 		return cell
 	}
 }
 
-/*
- This is the only other interesting part!
- We are the searchResultsUpdater, which simply means that our
- updateSearchResultsForSearchController is called every time something happens
- in the search bar. So, every time it is called,
- filter the original data in accordance with what's in the search bar,
- and reload the table.
- */
 
 extension Pop_SRC: UISearchResultsUpdating {
 	func updateSearchResults(for searchController: UISearchController) {
@@ -76,10 +56,3 @@ extension Pop_SRC: UISearchResultsUpdating {
 		self.tableView.reloadData()
 	}
 }
-
-/*
- We are not _doing_ anything with the search results.
- We are not acting as the search controller's delegate.
- We are not even bothering to be the search bar's delegate.
- It's just a demonstration of super-basic use of a search controller.
- */

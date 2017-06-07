@@ -10,6 +10,9 @@
 		44226FCE1E857549003734D3 /* HorizontalFloatingHeaderLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44226FC91E857549003734D3 /* HorizontalFloatingHeaderLayout.swift */; };
 		44226FCF1E857549003734D3 /* HorizontalFloatingHeaderVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44226FCA1E857549003734D3 /* HorizontalFloatingHeaderVC.swift */; };
 		44226FD01E857549003734D3 /* HeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 44226FCB1E857549003734D3 /* HeaderView.xib */; };
+		4424EDCC1EE818AC0093984B /* CalculateVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4424EDCB1EE818AC0093984B /* CalculateVC.swift */; };
+		4424EDCF1EE818D80093984B /* LabelCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4424EDCD1EE818D80093984B /* LabelCell.xib */; };
+		4424EDD01EE818D80093984B /* LabelCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4424EDCE1EE818D80093984B /* LabelCell.swift */; };
 		442A3C801E1294F400DB8E17 /* FlowLayoutVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 442A3C7F1E1294F400DB8E17 /* FlowLayoutVC.swift */; };
 		442A3C821E12976D00DB8E17 /* MyFlowLayoutVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 442A3C811E12976D00DB8E17 /* MyFlowLayoutVC.swift */; };
 		442A3C861E1297F800DB8E17 /* MyFlowLayoutCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 442A3C851E1297F800DB8E17 /* MyFlowLayoutCell.xib */; };
@@ -126,6 +129,9 @@
 		4424D4241E11627D00EF3D0A /* Photos.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Photos.framework; path = System/Library/Frameworks/Photos.framework; sourceTree = SDKROOT; };
 		4424D4261E11628700EF3D0A /* PhotosUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = PhotosUI.framework; path = System/Library/Frameworks/PhotosUI.framework; sourceTree = SDKROOT; };
 		4424D4281E1162EE00EF3D0A /* AssetsLibrary.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AssetsLibrary.framework; path = System/Library/Frameworks/AssetsLibrary.framework; sourceTree = SDKROOT; };
+		4424EDCB1EE818AC0093984B /* CalculateVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalculateVC.swift; sourceTree = "<group>"; };
+		4424EDCD1EE818D80093984B /* LabelCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LabelCell.xib; sourceTree = "<group>"; };
+		4424EDCE1EE818D80093984B /* LabelCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LabelCell.swift; sourceTree = "<group>"; };
 		442A3C7F1E1294F400DB8E17 /* FlowLayoutVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlowLayoutVC.swift; sourceTree = "<group>"; };
 		442A3C811E12976D00DB8E17 /* MyFlowLayoutVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyFlowLayoutVC.swift; sourceTree = "<group>"; };
 		442A3C851E1297F800DB8E17 /* MyFlowLayoutCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MyFlowLayoutCell.xib; sourceTree = "<group>"; };
@@ -373,6 +379,9 @@
 				C27C6A381E654F700066B3C8 /* MyCell.xib */,
 				4462AEA01EA5F5F9006299C8 /* RetractableFirstItemLayoutVC.swift */,
 				C24AA8151EAF32CD00091AB2 /* UIFontFamilyVC.swift */,
+				4424EDCB1EE818AC0093984B /* CalculateVC.swift */,
+				4424EDCD1EE818D80093984B /* LabelCell.xib */,
+				4424EDCE1EE818D80093984B /* LabelCell.swift */,
 				440E82F31EE5946300DF4718 /* resource */,
 				440E82F21EE5944000DF4718 /* support files */,
 			);
@@ -557,6 +566,7 @@
 				C2BC5B781DC6E7D1007F23F4 /* flag_texas.gif in Resources */,
 				C2BC5B561DC6E7D1007F23F4 /* flag_florida.gif in Resources */,
 				C2BC5B731DC6E7D1007F23F4 /* flag_pennsylvania.gif in Resources */,
+				4424EDCF1EE818D80093984B /* LabelCell.xib in Resources */,
 				C2BC5B711DC6E7D1007F23F4 /* flag_oklahoma.gif in Resources */,
 				C2BC5B661DC6E7D1007F23F4 /* flag_missouri.gif in Resources */,
 				C2BC5B5E1DC6E7D1007F23F4 /* flag_kentucky.gif in Resources */,
@@ -625,8 +635,10 @@
 				44966FF31E8AAF4000222F3E /* WCLWaterFallLayout.swift in Sources */,
 				44DCE4881E89390D000597B0 /* FlowLayoutTestVC.swift in Sources */,
 				442A3C821E12976D00DB8E17 /* MyFlowLayoutVC.swift in Sources */,
+				4424EDCC1EE818AC0093984B /* CalculateVC.swift in Sources */,
 				C2BC5B091DC6E72A007F23F4 /* AppDelegate.swift in Sources */,
 				4462AE9F1EA5F496006299C8 /* Main_UICollectionView.swift in Sources */,
+				4424EDD01EE818D80093984B /* LabelCell.swift in Sources */,
 				C2AA3B0D1E110ADE00C9E438 /* PhotoManagerView.swift in Sources */,
 				C2BC5B8A1DC6E87B007F23F4 /* Cell.swift in Sources */,
 				4462AE9D1EA5F335006299C8 /* RetractableFirstItemLayout.swift in Sources */,

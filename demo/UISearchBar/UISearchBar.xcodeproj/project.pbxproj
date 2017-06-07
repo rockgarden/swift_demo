@@ -7,6 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4424EDD21EE81E9F0093984B /* WorkspaceGlobal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4424EDD11EE81E9F0093984B /* WorkspaceGlobal.swift */; };
+		4424EDD61EE82D710093984B /* AppNavigationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4424EDD51EE82D710093984B /* AppNavigationVC.swift */; };
+		4424EDD81EE82F1E0093984B /* AppTableVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4424EDD71EE82F1E0093984B /* AppTableVC.swift */; };
+		4424EDDA1EE838CE0093984B /* AppSearchController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4424EDD91EE838CE0093984B /* AppSearchController.swift */; };
+		4424EDDC1EE83F890093984B /* Main_UISearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4424EDDB1EE83F890093984B /* Main_UISearchBar.swift */; };
+		4424EDDE1EE83FFC0093984B /* SearchResultsControllerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4424EDDD1EE83FFC0093984B /* SearchResultsControllerVC.swift */; };
+		4424EDE01EE8406A0093984B /* SearchResultsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4424EDDF1EE8406A0093984B /* SearchResultsController.swift */; };
+		4424EDE91EE861330093984B /* UISearchControllerDelegateVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4424EDE81EE861330093984B /* UISearchControllerDelegateVC.swift */; };
+		4424EDEB1EE862D30093984B /* SearchResultsController_Take.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4424EDEA1EE862D30093984B /* SearchResultsController_Take.swift */; };
 		44BCAB6D1D954A8D0019B333 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44BCAB6C1D954A8D0019B333 /* AppDelegate.swift */; };
 		44BCAB6F1D954A8D0019B333 /* UISearchBarVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44BCAB6E1D954A8D0019B333 /* UISearchBarVC.swift */; };
 		44BCAB721D954A8D0019B333 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 44BCAB701D954A8D0019B333 /* Main.storyboard */; };
@@ -87,6 +96,15 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4424EDD11EE81E9F0093984B /* WorkspaceGlobal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = WorkspaceGlobal.swift; path = ../WorkspaceGlobal.swift; sourceTree = "<group>"; };
+		4424EDD51EE82D710093984B /* AppNavigationVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppNavigationVC.swift; sourceTree = "<group>"; };
+		4424EDD71EE82F1E0093984B /* AppTableVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppTableVC.swift; sourceTree = "<group>"; };
+		4424EDD91EE838CE0093984B /* AppSearchController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppSearchController.swift; sourceTree = "<group>"; };
+		4424EDDB1EE83F890093984B /* Main_UISearchBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Main_UISearchBar.swift; sourceTree = "<group>"; };
+		4424EDDD1EE83FFC0093984B /* SearchResultsControllerVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchResultsControllerVC.swift; sourceTree = "<group>"; };
+		4424EDDF1EE8406A0093984B /* SearchResultsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchResultsController.swift; sourceTree = "<group>"; };
+		4424EDE81EE861330093984B /* UISearchControllerDelegateVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UISearchControllerDelegateVC.swift; sourceTree = "<group>"; };
+		4424EDEA1EE862D30093984B /* SearchResultsController_Take.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchResultsController_Take.swift; sourceTree = "<group>"; };
 		44BCAB691D954A8C0019B333 /* UISearchBar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UISearchBar.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		44BCAB6C1D954A8D0019B333 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		44BCAB6E1D954A8D0019B333 /* UISearchBarVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UISearchBarVC.swift; sourceTree = "<group>"; };
@@ -179,18 +197,31 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		4471472F1E7EC614005BDB4D /* SearchInPopover_iPad */ = {
+		4424EDD31EE82C560093984B /* resource */ = {
 			isa = PBXGroup;
 			children = (
-				44DF2F2F1D9FE2F7001AFE2D /* StatesViewController.swift */,
-				44ED802E1D9FB97200DC6182 /* Pop_SRC.swift */,
+				44DF2F331D9FE416001AFE2D /* flag */,
+				44DF2F311D9FE3D4001AFE2D /* states.txt */,
+				44BF4E9E1D9802D0000B33D9 /* Greeting.swift */,
+				44BF4E9F1D9802D0000B33D9 /* greetings.json */,
 			);
-			name = SearchInPopover_iPad;
+			name = resource;
+			sourceTree = "<group>";
+		};
+		4424EDD41EE82C670093984B /* support files */ = {
+			isa = PBXGroup;
+			children = (
+				44BCAB731D954A8D0019B333 /* Assets.xcassets */,
+				44BCAB751D954A8D0019B333 /* LaunchScreen.storyboard */,
+				44BCAB781D954A8D0019B333 /* Info.plist */,
+			);
+			name = "support files";
 			sourceTree = "<group>";
 		};
 		44BCAB601D954A8C0019B333 = {
 			isa = PBXGroup;
 			children = (
+				4424EDD11EE81E9F0093984B /* WorkspaceGlobal.swift */,
 				44BCAB6B1D954A8D0019B333 /* UISearchBar */,
 				44BCAB6A1D954A8C0019B333 /* Products */,
 			);
@@ -208,31 +239,35 @@
 			isa = PBXGroup;
 			children = (
 				44BCAB6C1D954A8D0019B333 /* AppDelegate.swift */,
+				4424EDD51EE82D710093984B /* AppNavigationVC.swift */,
+				4424EDD71EE82F1E0093984B /* AppTableVC.swift */,
+				4424EDD91EE838CE0093984B /* AppSearchController.swift */,
+				44BCAB701D954A8D0019B333 /* Main.storyboard */,
+				4424EDDB1EE83F890093984B /* Main_UISearchBar.swift */,
+				4424EDDD1EE83FFC0093984B /* SearchResultsControllerVC.swift */,
+				4424EDDF1EE8406A0093984B /* SearchResultsController.swift */,
+				4424EDE81EE861330093984B /* UISearchControllerDelegateVC.swift */,
+				4424EDEA1EE862D30093984B /* SearchResultsController_Take.swift */,
 				44BF4E9A1D9802D0000B33D9 /* Candy.swift */,
 				44BF4E9B1D9802D0000B33D9 /* GreetingObjectHandler.swift */,
 				44BF4E9C1D9802D0000B33D9 /* ColorExtension.swift */,
 				44BF4E9D1D9802D0000B33D9 /* MD.swift */,
-				44BF4E9E1D9802D0000B33D9 /* Greeting.swift */,
-				44BF4E9F1D9802D0000B33D9 /* greetings.json */,
 				44BF4EA61D9802E0000B33D9 /* GreetingDetailViewController.swift */,
 				44BF4EA71D9802E0000B33D9 /* CandyTableViewController.swift */,
 				44BCAB6E1D954A8D0019B333 /* UISearchBarVC.swift */,
 				C299B7D51DC83C8D001E45A9 /* A_TableVC.swift */,
 				C299B7D71DC83D69001E45A9 /* A_SearchResultsC.swift */,
 				C299B7DB1DC8639E001E45A9 /* B_TableVC.swift */,
+				44DF2F2F1D9FE2F7001AFE2D /* StatesViewController.swift */,
+				44ED802E1D9FB97200DC6182 /* Pop_SRC.swift */,
 				44BF4E8C1D9800FC000B33D9 /* GreetingNewViewController.swift */,
 				44BF4E8D1D9800FC000B33D9 /* CandyNewTableViewController.swift */,
 				44BF4E8E1D9800FC000B33D9 /* CandyViewController.swift */,
 				44BF4E8F1D9800FC000B33D9 /* CollectionViewCell.swift */,
-				4471472F1E7EC614005BDB4D /* SearchInPopover_iPad */,
 				44BF4E901D9800FC000B33D9 /* IntExtension.swift */,
 				44BF4E921D9800FC000B33D9 /* MultiSectionCollectionViewDataSource.swift */,
-				44BCAB701D954A8D0019B333 /* Main.storyboard */,
-				44BCAB731D954A8D0019B333 /* Assets.xcassets */,
-				44BCAB751D954A8D0019B333 /* LaunchScreen.storyboard */,
-				44BCAB781D954A8D0019B333 /* Info.plist */,
-				44DF2F331D9FE416001AFE2D /* flag */,
-				44DF2F311D9FE3D4001AFE2D /* states.txt */,
+				4424EDD41EE82C670093984B /* support files */,
+				4424EDD31EE82C560093984B /* resource */,
 				44BF4E911D9800FC000B33D9 /* SwiftyJSON.swift */,
 			);
 			path = UISearchBar;
@@ -422,13 +457,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4424EDD21EE81E9F0093984B /* WorkspaceGlobal.swift in Sources */,
 				44BF4EA81D9802E0000B33D9 /* GreetingDetailViewController.swift in Sources */,
 				44BF4E951D9800FC000B33D9 /* CandyViewController.swift in Sources */,
 				C299B7D61DC83C8D001E45A9 /* A_TableVC.swift in Sources */,
 				44BF4EA11D9802D0000B33D9 /* GreetingObjectHandler.swift in Sources */,
+				4424EDE91EE861330093984B /* UISearchControllerDelegateVC.swift in Sources */,
+				4424EDD81EE82F1E0093984B /* AppTableVC.swift in Sources */,
+				4424EDDA1EE838CE0093984B /* AppSearchController.swift in Sources */,
 				44ED802F1D9FB97200DC6182 /* Pop_SRC.swift in Sources */,
 				44BF4EA01D9802D0000B33D9 /* Candy.swift in Sources */,
 				44BF4EA21D9802D0000B33D9 /* ColorExtension.swift in Sources */,
+				4424EDEB1EE862D30093984B /* SearchResultsController_Take.swift in Sources */,
 				44BF4E941D9800FC000B33D9 /* CandyNewTableViewController.swift in Sources */,
 				44BF4E971D9800FC000B33D9 /* IntExtension.swift in Sources */,
 				44BF4EA31D9802D0000B33D9 /* MD.swift in Sources */,
@@ -439,8 +479,12 @@
 				44BF4E961D9800FC000B33D9 /* CollectionViewCell.swift in Sources */,
 				C299B7D81DC83D69001E45A9 /* A_SearchResultsC.swift in Sources */,
 				44BF4E931D9800FC000B33D9 /* GreetingNewViewController.swift in Sources */,
+				4424EDDE1EE83FFC0093984B /* SearchResultsControllerVC.swift in Sources */,
+				4424EDDC1EE83F890093984B /* Main_UISearchBar.swift in Sources */,
 				44BF4E991D9800FC000B33D9 /* MultiSectionCollectionViewDataSource.swift in Sources */,
 				44BCAB6F1D954A8D0019B333 /* UISearchBarVC.swift in Sources */,
+				4424EDE01EE8406A0093984B /* SearchResultsController.swift in Sources */,
+				4424EDD61EE82D710093984B /* AppNavigationVC.swift in Sources */,
 				44BCAB6D1D954A8D0019B333 /* AppDelegate.swift in Sources */,
 				44BF4EA91D9802E0000B33D9 /* CandyTableViewController.swift in Sources */,
 			);

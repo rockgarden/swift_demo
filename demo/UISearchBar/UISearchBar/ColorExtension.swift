@@ -81,6 +81,7 @@ extension Color {
 
     }
 }
+
 extension RGBA {
     var color: Color {
         return self > 0x00FFFFFF ? Color(rgba: self) : Color(rgb: self, alpha: 1)

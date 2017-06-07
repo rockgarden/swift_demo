@@ -13,7 +13,7 @@
         <scene sceneID="4ap-6S-HSS">
             <objects>
                 <collectionViewController storyboardIdentifier="HeaderDemoVC" id="qkR-td-wL1" userLabel="Header Demo" customClass="HeaderDemoVC" customModule="UICollectionView" customModuleProvider="target" sceneMemberID="viewController">
-                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" dataMode="prototypes" id="igO-Bk-GjW">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" bounces="NO" dataMode="prototypes" id="igO-Bk-GjW">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -108,7 +108,7 @@
         <scene sceneID="3vp-bq-aAZ">
             <objects>
                 <collectionViewController storyboardIdentifier="StickyHeaderDemoVC" id="Q74-gs-s2c" userLabel="Sticky Header Demo" customClass="StickyHeaderDemoVC" customModule="UICollectionView" customModuleProvider="target" sceneMemberID="viewController">
-                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="9ye-Lk-k8b">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" dataMode="prototypes" id="9ye-Lk-k8b">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -394,6 +394,26 @@
                                             </subviews>
                                         </tableViewCellContentView>
                                     </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" tag="13" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" textLabel="Yn7-hp-JOF" style="IBUITableViewCellStyleDefault" id="QVc-bP-Lre">
+                                        <rect key="frame" x="0.0" y="572" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="QVc-bP-Lre" id="exD-8M-qTN">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Recalculate sizeForItemAt demo" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Yn7-hp-JOF">
+                                                    <rect key="frame" x="15" y="0.0" width="345" height="43.5"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="V8c-4x-tG6" kind="show" id="3aB-0w-FW0"/>
+                                        </connections>
+                                    </tableViewCell>
                                 </cells>
                             </tableViewSection>
                         </sections>
@@ -412,7 +432,7 @@
         <scene sceneID="T7G-5X-CpQ">
             <objects>
                 <navigationController id="2us-iq-Dth" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Yh1-vS-u1G">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="Yh1-vS-u1G">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -428,7 +448,7 @@
         <scene sceneID="Agf-ZK-aN7">
             <objects>
                 <collectionViewController storyboardIdentifier="LayoutNormalVC" autoresizesArchivedViewToFullSize="NO" id="dDf-dQ-QLZ" customClass="LayoutNormalVC" customModule="UICollectionView" customModuleProvider="target" sceneMemberID="viewController">
-                    <collectionView key="view" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" minimumZoomScale="0.0" maximumZoomScale="0.0" dataMode="prototypes" id="e10-ii-Okd">
+                    <collectionView key="view" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" minimumZoomScale="0.0" maximumZoomScale="0.0" dataMode="prototypes" id="e10-ii-Okd">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -488,7 +508,7 @@
         <scene sceneID="gIf-jA-51g">
             <objects>
                 <collectionViewController id="ICX-KU-7Hr" customClass="LayoutFlushVC" customModule="UICollectionView" customModuleProvider="target" sceneMemberID="viewController">
-                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="Q69-ox-n6F">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" dataMode="prototypes" id="Q69-ox-n6F">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -514,7 +534,7 @@
         <scene sceneID="LCa-qP-uCg">
             <objects>
                 <collectionViewController storyboardIdentifier="CellBackgroundLayeringVC" autoresizesArchivedViewToFullSize="NO" id="Lwg-08-Dmq" customClass="CellBackgroundLayeringVC" customModule="UICollectionView" customModuleProvider="target" sceneMemberID="viewController">
-                    <collectionView key="view" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" minimumZoomScale="0.0" maximumZoomScale="0.0" dataMode="prototypes" id="YhY-Ih-sTn">
+                    <collectionView key="view" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" minimumZoomScale="0.0" maximumZoomScale="0.0" dataMode="prototypes" id="YhY-Ih-sTn">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="0.0" green="1" blue="0.1426398754" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -560,7 +580,7 @@
         <scene sceneID="FR6-lR-DcI">
             <objects>
                 <collectionViewController storyboardIdentifier="FlowLayoutVC" autoresizesArchivedViewToFullSize="NO" id="FOA-WU-gH6" customClass="FlowLayoutVC" customModule="UICollectionView" customModuleProvider="target" sceneMemberID="viewController">
-                    <collectionView key="view" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" minimumZoomScale="0.0" maximumZoomScale="0.0" dataMode="prototypes" id="nHT-ca-Rss">
+                    <collectionView key="view" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" minimumZoomScale="0.0" maximumZoomScale="0.0" dataMode="prototypes" id="nHT-ca-Rss">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -595,7 +615,7 @@
         <scene sceneID="YUy-GE-uHI">
             <objects>
                 <collectionViewController storyboardIdentifier="MyFlowLayoutVC" autoresizesArchivedViewToFullSize="NO" id="bam-Fm-hA0" customClass="MyFlowLayoutVC" customModule="UICollectionView" customModuleProvider="target" sceneMemberID="viewController">
-                    <collectionView key="view" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" minimumZoomScale="0.0" maximumZoomScale="0.0" dataMode="prototypes" id="6Q6-QA-Mc6">
+                    <collectionView key="view" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" minimumZoomScale="0.0" maximumZoomScale="0.0" dataMode="prototypes" id="6Q6-QA-Mc6">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -621,7 +641,7 @@
         <scene sceneID="HJA-sq-2Pu">
             <objects>
                 <collectionViewController storyboardIdentifier="DecorationViewVC" autoresizesArchivedViewToFullSize="NO" id="Tkf-er-6fa" customClass="DecorationViewVC" customModule="UICollectionView" customModuleProvider="target" sceneMemberID="viewController">
-                    <collectionView key="view" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" minimumZoomScale="0.0" maximumZoomScale="0.0" dataMode="prototypes" id="5xP-AG-EWp">
+                    <collectionView key="view" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" minimumZoomScale="0.0" maximumZoomScale="0.0" dataMode="prototypes" id="5xP-AG-EWp">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -680,7 +700,7 @@
         <scene sceneID="rgO-sV-aOQ">
             <objects>
                 <collectionViewController storyboardIdentifier="HorizontalFloatingHeaderVC" id="WgZ-Ml-kyT" customClass="HorizontalFloatingHeaderVC" customModule="UICollectionView" customModuleProvider="target" sceneMemberID="viewController">
-                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="w9q-Y2-sQn">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" dataMode="prototypes" id="w9q-Y2-sQn">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -717,7 +737,7 @@
         <scene sceneID="xIw-LC-rDr">
             <objects>
                 <collectionViewController storyboardIdentifier="MultiDirectionVC" automaticallyAdjustsScrollViewInsets="NO" id="uWA-FP-Z7G" customClass="MultiDirectionVC" customModule="UICollectionView" customModuleProvider="target" sceneMemberID="viewController">
-                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" directionalLockEnabled="YES" dataMode="prototypes" id="Xv5-yD-k3j">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" directionalLockEnabled="YES" dataMode="prototypes" id="Xv5-yD-k3j">
                         <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -746,6 +766,50 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ChH-sE-49B" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3364" y="693"/>
+        </scene>
+        <!--Calculate Cell Size-->
+        <scene sceneID="ZTi-RZ-H69">
+            <objects>
+                <viewController storyboardIdentifier="CalculateVC" title="Calculate Cell Size" automaticallyAdjustsScrollViewInsets="NO" id="V8c-4x-tG6" customClass="CalculateVC" customModule="UICollectionView" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="8ar-1s-AZo"/>
+                        <viewControllerLayoutGuide type="bottom" id="CIM-hz-jtM"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Cel-l0-4vH">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="aon-h3-ein">
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="DlI-ju-tr6">
+                                    <size key="itemSize" width="101" height="61"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells/>
+                                <connections>
+                                    <outlet property="dataSource" destination="V8c-4x-tG6" id="vy0-M6-GPu"/>
+                                    <outlet property="delegate" destination="V8c-4x-tG6" id="Gqo-KE-VYp"/>
+                                </connections>
+                            </collectionView>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="aon-h3-ein" firstAttribute="leading" secondItem="Cel-l0-4vH" secondAttribute="leading" id="G69-nV-C8W"/>
+                            <constraint firstItem="CIM-hz-jtM" firstAttribute="top" secondItem="aon-h3-ein" secondAttribute="bottom" id="GGo-8N-HgM"/>
+                            <constraint firstItem="aon-h3-ein" firstAttribute="trailing" secondItem="Cel-l0-4vH" secondAttribute="trailing" id="TdA-cq-XM1"/>
+                            <constraint firstItem="aon-h3-ein" firstAttribute="top" secondItem="8ar-1s-AZo" secondAttribute="bottom" id="Y5S-Sw-ysZ"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="collectionView" destination="aon-h3-ein" id="TWg-c8-1x9"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="UMJ-eh-G60" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1172" y="-1472"/>
         </scene>
     </scenes>
     <resources>

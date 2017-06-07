@@ -383,7 +383,7 @@ class PaperCell: UICollectionViewCell {
     fileprivate var paperImageView: UIImageView = {
         let v = UIImageView()
         /// 自适应图片宽高比例
-        v.contentMode = UIViewContentMode.scaleAspectFit
+        v.contentMode = .scaleAspectFit
         v.translatesAutoresizingMaskIntoConstraints = false
         return v
     }()
