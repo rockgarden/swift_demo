@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		440F8E8F1EE9485300AA8563 /* SameVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 440F8E8E1EE9485200AA8563 /* SameVC.swift */; };
+		440F8E911EE94F0A00AA8563 /* SearchBarInNavigationBarVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 440F8E901EE94F0A00AA8563 /* SearchBarInNavigationBarVC.swift */; };
+		440F8E931EE952CB00AA8563 /* ContainerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 440F8E921EE952CA00AA8563 /* ContainerVC.swift */; };
+		440F8E971EE9708900AA8563 /* PopoverVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 440F8E961EE9708900AA8563 /* PopoverVC.swift */; };
 		4424EDD21EE81E9F0093984B /* WorkspaceGlobal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4424EDD11EE81E9F0093984B /* WorkspaceGlobal.swift */; };
 		4424EDD61EE82D710093984B /* AppNavigationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4424EDD51EE82D710093984B /* AppNavigationVC.swift */; };
 		4424EDD81EE82F1E0093984B /* AppTableVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4424EDD71EE82F1E0093984B /* AppTableVC.swift */; };
@@ -96,6 +100,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		440F8E8E1EE9485200AA8563 /* SameVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SameVC.swift; sourceTree = "<group>"; };
+		440F8E901EE94F0A00AA8563 /* SearchBarInNavigationBarVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchBarInNavigationBarVC.swift; sourceTree = "<group>"; };
+		440F8E921EE952CA00AA8563 /* ContainerVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContainerVC.swift; sourceTree = "<group>"; };
+		440F8E961EE9708900AA8563 /* PopoverVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopoverVC.swift; sourceTree = "<group>"; };
 		4424EDD11EE81E9F0093984B /* WorkspaceGlobal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = WorkspaceGlobal.swift; path = ../WorkspaceGlobal.swift; sourceTree = "<group>"; };
 		4424EDD51EE82D710093984B /* AppNavigationVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppNavigationVC.swift; sourceTree = "<group>"; };
 		4424EDD71EE82F1E0093984B /* AppTableVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppTableVC.swift; sourceTree = "<group>"; };
@@ -248,6 +256,10 @@
 				4424EDDF1EE8406A0093984B /* SearchResultsController.swift */,
 				4424EDE81EE861330093984B /* UISearchControllerDelegateVC.swift */,
 				4424EDEA1EE862D30093984B /* SearchResultsController_Take.swift */,
+				440F8E8E1EE9485200AA8563 /* SameVC.swift */,
+				440F8E901EE94F0A00AA8563 /* SearchBarInNavigationBarVC.swift */,
+				440F8E921EE952CA00AA8563 /* ContainerVC.swift */,
+				440F8E961EE9708900AA8563 /* PopoverVC.swift */,
 				44BF4E9A1D9802D0000B33D9 /* Candy.swift */,
 				44BF4E9B1D9802D0000B33D9 /* GreetingObjectHandler.swift */,
 				44BF4E9C1D9802D0000B33D9 /* ColorExtension.swift */,
@@ -471,13 +483,17 @@
 				4424EDEB1EE862D30093984B /* SearchResultsController_Take.swift in Sources */,
 				44BF4E941D9800FC000B33D9 /* CandyNewTableViewController.swift in Sources */,
 				44BF4E971D9800FC000B33D9 /* IntExtension.swift in Sources */,
+				440F8E931EE952CB00AA8563 /* ContainerVC.swift in Sources */,
 				44BF4EA31D9802D0000B33D9 /* MD.swift in Sources */,
 				C299B7DC1DC8639E001E45A9 /* B_TableVC.swift in Sources */,
 				44DF2F301D9FE2F7001AFE2D /* StatesViewController.swift in Sources */,
+				440F8E971EE9708900AA8563 /* PopoverVC.swift in Sources */,
 				44BF4E981D9800FC000B33D9 /* SwiftyJSON.swift in Sources */,
 				44BF4EA41D9802D0000B33D9 /* Greeting.swift in Sources */,
 				44BF4E961D9800FC000B33D9 /* CollectionViewCell.swift in Sources */,
+				440F8E8F1EE9485300AA8563 /* SameVC.swift in Sources */,
 				C299B7D81DC83D69001E45A9 /* A_SearchResultsC.swift in Sources */,
+				440F8E911EE94F0A00AA8563 /* SearchBarInNavigationBarVC.swift in Sources */,
 				44BF4E931D9800FC000B33D9 /* GreetingNewViewController.swift in Sources */,
 				4424EDDE1EE83FFC0093984B /* SearchResultsControllerVC.swift in Sources */,
 				4424EDDC1EE83F890093984B /* Main_UISearchBar.swift in Sources */,

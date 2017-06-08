@@ -47,7 +47,7 @@ func delay(_ delay: Double, closure: @escaping ()->()) {
     DispatchQueue.main.asyncAfter(deadline: when, execute: closure)
 }
 
-func imageOfSize(_ size: CGSize, closure: @escaping (_ size: CGSize) -> () ) -> UIImage {
+func imageOfSizeClosure(_ size: CGSize, closure: @escaping (_ size: CGSize) -> () ) -> UIImage {
     if #available(iOS 10.0, *) {
         let r = UIGraphicsImageRenderer(size: size)
         return r.image { _ in closure(size) }

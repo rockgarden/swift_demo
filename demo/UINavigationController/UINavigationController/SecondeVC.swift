@@ -1,13 +1,13 @@
 
 import UIKit
 
-class View2Controller : UIViewController {
+class SecondeVC : UIViewController {
     
     override init(nibName nibNameOrNil: String!, bundle nibBundleOrNil: Bundle!) {
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
         self.title = "Second"
-        // whoa, check this out: the image comes right out of the asset catalog as a template image!
         let b = UIBarButtonItem(image: UIImage(named:"files.png"), style: .plain, target: nil, action: nil)
+
         // can have both left bar buttons and back bar button
         self.navigationItem.leftBarButtonItem = b
         self.navigationItem.leftItemsSupplementBackButton = true
@@ -19,7 +19,7 @@ class View2Controller : UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.view.backgroundColor = UIColor.red // just so we know we're here
+        self.view.backgroundColor = .red
     }
     
     // with a back button, we get "pop" for free, both by tapping the button...
@@ -39,7 +39,7 @@ class View2Controller : UIViewController {
 
 
 //FIXME: TFTransparentNavigationBarProtocol 实现异常
-extension View2Controller: TFTransparentNavigationBarProtocol {
+extension SecondeVC: TFTransparentNavigationBarProtocol {
    
     func navigationControllerBarPushStyle() -> TFNavigationBarStyle {
         return .transparent

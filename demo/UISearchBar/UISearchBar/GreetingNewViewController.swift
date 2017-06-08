@@ -92,6 +92,11 @@ class GreetingNewViewController: UIViewController, UISearchResultsUpdating, UISe
         searchBar.enablesReturnKeyAutomatically = false //设置ReturnKey是无text输入时也直接可用
     }
 
+    override func viewWillDisappear(_ animated: Bool) {
+        print("disappear")
+        resultSearchController.dismiss(animated: false, completion: nil)
+    }
+
 }
 
 struct Constant {

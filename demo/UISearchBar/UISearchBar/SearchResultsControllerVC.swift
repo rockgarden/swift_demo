@@ -16,9 +16,7 @@ class SearchResultsControllerVC : AppTableVC, UISearchBarDelegate {
 
         let b = searcher.searchBar
         addSearchBar(b)
-        // crucial, trust me on this one
-        // b.scopeButtonTitles = ["Hey", "Ho"] // shows during search only; uncomment to see
-        // (not used in this example; just showing the interface)
+
         // WARNING: do NOT call showsScopeBar! it messes things up!
         // (buttons will show during search if there are titles)
     }

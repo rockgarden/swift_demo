@@ -73,7 +73,7 @@
 		449BC2A31D6F427700B63FC4 /* states.txt in Resources */ = {isa = PBXBuildFile; fileRef = 449BC2A21D6F427700B63FC4 /* states.txt */; };
 		44AA37D01E1BED2C00B24A61 /* ActivityIndicatorCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44AA37CF1E1BED2C00B24A61 /* ActivityIndicatorCell.swift */; };
 		44ABF2881EDC7612004A353A /* IndividualCellsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44ABF2871EDC7612004A353A /* IndividualCellsVC.swift */; };
-		44ABF28B1EDD7225004A353A /* Main_UITableView'.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44ABF28A1EDD7225004A353A /* Main_UITableView'.swift */; };
+		44ABF28B1EDD7225004A353A /* Main_UITableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44ABF28A1EDD7225004A353A /* Main_UITableView.swift */; };
 		44ABF28E1EDD7304004A353A /* AddCellSubviewsbyXibVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 44ABF28C1EDD7304004A353A /* AddCellSubviewsbyXibVC.xib */; };
 		44ABF28F1EDD7304004A353A /* AddCellSubviewsbyXibVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44ABF28D1EDD7304004A353A /* AddCellSubviewsbyXibVC.swift */; };
 		44ABF2931EDD7B7C004A353A /* MyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44ABF2911EDD7B7C004A353A /* MyCell.swift */; };
@@ -163,7 +163,7 @@
 		449BC2A21D6F427700B63FC4 /* states.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = states.txt; sourceTree = "<group>"; };
 		44AA37CF1E1BED2C00B24A61 /* ActivityIndicatorCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ActivityIndicatorCell.swift; path = TableView/ActivityIndicatorCell.swift; sourceTree = "<group>"; };
 		44ABF2871EDC7612004A353A /* IndividualCellsVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IndividualCellsVC.swift; sourceTree = "<group>"; };
-		44ABF28A1EDD7225004A353A /* Main_UITableView'.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Main_UITableView'.swift"; sourceTree = "<group>"; };
+		44ABF28A1EDD7225004A353A /* Main_UITableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Main_UITableView.swift; sourceTree = "<group>"; };
 		44ABF28C1EDD7304004A353A /* AddCellSubviewsbyXibVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AddCellSubviewsbyXibVC.xib; sourceTree = "<group>"; };
 		44ABF28D1EDD7304004A353A /* AddCellSubviewsbyXibVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddCellSubviewsbyXibVC.swift; sourceTree = "<group>"; };
 		44ABF2911EDD7B7C004A353A /* MyCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyCell.swift; sourceTree = "<group>"; };
@@ -304,7 +304,7 @@
 			isa = PBXGroup;
 			children = (
 				C22758CF1D6C29C6008C1F18 /* AppDelegate.swift */,
-				44ABF28A1EDD7225004A353A /* Main_UITableView'.swift */,
+				44ABF28A1EDD7225004A353A /* Main_UITableView.swift */,
 				C22758D31D6C29C6008C1F18 /* Main.storyboard */,
 				C22758D11D6C29C6008C1F18 /* UISearchControllerVC.swift */,
 				44ABF2871EDC7612004A353A /* IndividualCellsVC.swift */,
@@ -479,7 +479,7 @@
 			files = (
 				442849991D8833660044DCF5 /* DetailViewController.swift in Sources */,
 				C2D7F1221DD05FEA00BABD77 /* VariableHeightsVC.swift in Sources */,
-				44ABF28B1EDD7225004A353A /* Main_UITableView'.swift in Sources */,
+				44ABF28B1EDD7225004A353A /* Main_UITableView.swift in Sources */,
 				44ABF2881EDC7612004A353A /* IndividualCellsVC.swift in Sources */,
 				442849281D86EB840044DCF5 /* DynamicTable.swift in Sources */,
 				44ABF2931EDD7B7C004A353A /* MyCell.swift in Sources */,

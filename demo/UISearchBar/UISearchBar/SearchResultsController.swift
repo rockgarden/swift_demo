@@ -9,7 +9,7 @@ class SearchResultsController : UITableViewController {
     var filteredData = [String]()
     
     init(data:[[String]]) {
-        // don't use sections, so flatten the data into a single array of strings
+        /// don't use sections, so flatten the data into a single array of strings
         self.originalData = data.flatMap{$0}
         super.init(nibName: nil, bundle: nil)
     }
@@ -43,7 +43,7 @@ class SearchResultsController : UITableViewController {
 /// 使用UISearchResultsUpdating协议根据用户在搜索栏中输入的信息来实时更新搜索结果。
 extension SearchResultsController : UISearchResultsUpdating {
     func updateSearchResults(for searchController: UISearchController) {
-        print("here")
+
         let sb = searchController.searchBar
         let target = sb.text!
         self.filteredData = self.originalData.filter {

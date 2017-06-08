@@ -7,11 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		440F8E991EE9882100AA8563 /* WorkspaceGlobal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 440F8E981EE9882100AA8563 /* WorkspaceGlobal.swift */; };
 		4472B4351D9975DB0087653C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4472B4341D9975DB0087653C /* AppDelegate.swift */; };
 		4472B4371D9975DB0087653C /* UINavigationDemo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4472B4361D9975DB0087653C /* UINavigationDemo.swift */; };
 		4472B43C1D9975DB0087653C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4472B43B1D9975DB0087653C /* Assets.xcassets */; };
 		4472B43F1D9975DB0087653C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4472B43D1D9975DB0087653C /* LaunchScreen.storyboard */; };
-		4472B4471D9976440087653C /* View2Controller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4472B4461D9976440087653C /* View2Controller.swift */; };
+		4472B4471D9976440087653C /* SecondeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4472B4461D9976440087653C /* SecondeVC.swift */; };
 		4472B4491D99764B0087653C /* MyNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4472B4481D99764B0087653C /* MyNavigationController.swift */; };
 		44B95E681E5B2E1600D66F39 /* CGRect+Tools.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44B95E631E5B2E1600D66F39 /* CGRect+Tools.swift */; };
 		44B95E691E5B2E1600D66F39 /* TFBackwardAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44B95E641E5B2E1600D66F39 /* TFBackwardAnimator.swift */; };
@@ -62,13 +63,14 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		440F8E981EE9882100AA8563 /* WorkspaceGlobal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = WorkspaceGlobal.swift; path = ../WorkspaceGlobal.swift; sourceTree = "<group>"; };
 		4472B4311D9975DB0087653C /* UINavigationController.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UINavigationController.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4472B4341D9975DB0087653C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4472B4361D9975DB0087653C /* UINavigationDemo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UINavigationDemo.swift; sourceTree = "<group>"; };
 		4472B43B1D9975DB0087653C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4472B43E1D9975DB0087653C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4472B4401D9975DB0087653C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		4472B4461D9976440087653C /* View2Controller.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = View2Controller.swift; sourceTree = "<group>"; };
+		4472B4461D9976440087653C /* SecondeVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SecondeVC.swift; sourceTree = "<group>"; };
 		4472B4481D99764B0087653C /* MyNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyNavigationController.swift; sourceTree = "<group>"; };
 		44B95E631E5B2E1600D66F39 /* CGRect+Tools.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CGRect+Tools.swift"; sourceTree = "<group>"; };
 		44B95E641E5B2E1600D66F39 /* TFBackwardAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TFBackwardAnimator.swift; sourceTree = "<group>"; };
@@ -136,6 +138,7 @@
 		4472B4281D9975DB0087653C = {
 			isa = PBXGroup;
 			children = (
+				440F8E981EE9882100AA8563 /* WorkspaceGlobal.swift */,
 				C28E874B1E5BECE300149654 /* readme.rtf */,
 				44F030F81E5C80920059B587 /* MMNavigationController.swift */,
 				44F030FA1E5C80A30059B587 /* Screen.swift */,
@@ -255,7 +258,7 @@
 			children = (
 				4472B4481D99764B0087653C /* MyNavigationController.swift */,
 				4472B4361D9975DB0087653C /* UINavigationDemo.swift */,
-				4472B4461D9976440087653C /* View2Controller.swift */,
+				4472B4461D9976440087653C /* SecondeVC.swift */,
 			);
 			name = Normal;
 			sourceTree = "<group>";
@@ -401,6 +404,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				440F8E991EE9882100AA8563 /* WorkspaceGlobal.swift in Sources */,
 				44F030FB1E5C80A30059B587 /* Screen.swift in Sources */,
 				4472B4371D9975DB0087653C /* UINavigationDemo.swift in Sources */,
 				C2D585091E728A460068DB52 /* HidingNavigationBarManager.swift in Sources */,
@@ -430,7 +434,7 @@
 				C28E87621E5C00B700149654 /* TransparentTableViewController.swift in Sources */,
 				C2D585101E728C6E0068DB52 /* MasterViewController.swift in Sources */,
 				C28E87791E5C0DE400149654 /* UIImage+Color.swift in Sources */,
-				4472B4471D9976440087653C /* View2Controller.swift in Sources */,
+				4472B4471D9976440087653C /* SecondeVC.swift in Sources */,
 				44B95E681E5B2E1600D66F39 /* CGRect+Tools.swift in Sources */,
 				4472B4351D9975DB0087653C /* AppDelegate.swift in Sources */,
 				44B95E6E1E5B2E5C00D66F39 /* TransparentBarDemo.swift in Sources */,

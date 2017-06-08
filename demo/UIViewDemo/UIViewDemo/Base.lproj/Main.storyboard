@@ -256,7 +256,7 @@
         <!--Main_UIImageView-->
         <scene sceneID="Cek-Jp-f5I">
             <objects>
-                <tableViewController storyboardIdentifier="Main_UIImageView" id="DUf-ne-qEE" userLabel="Main_UIImageView" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="Main_UIImageView" id="DUf-ne-qEE" userLabel="Main_UIImageView" customClass="Main_UIImageView" customModule="UIViewDemo" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="Na8-2Y-HuJ">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -329,6 +329,23 @@
                                                 <nil key="action"/>
                                             </segue>
                                         </connections>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" textLabel="Z36-bv-Ba1" style="IBUITableViewCellStyleDefault" id="d7C-9O-sPk">
+                                        <rect key="frame" x="0.0" y="132" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="d7C-9O-sPk" id="Xsp-US-Iho">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Image Animation" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Z36-bv-Ba1">
+                                                    <rect key="frame" x="15" y="0.0" width="345" height="43.5"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
@@ -552,7 +569,24 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CY8-d1-uvC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1574" y="2364"/>
+            <point key="canvasLocation" x="2257" y="1683"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="Hxg-TU-Rhz">
+            <objects>
+                <viewController id="vP0-j4-Tgp" customClass="ViewController" customModule="UIViewDemo" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="0xL-LG-pJD"/>
+                        <viewControllerLayoutGuide type="bottom" id="fH1-yK-wYC"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Ru7-Fm-q3h">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dJj-bq-hab" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
         </scene>
     </scenes>
     <resources>

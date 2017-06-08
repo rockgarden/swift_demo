@@ -13,7 +13,8 @@ class UISearchControllerDelegateVC : AppTableVC, UISearchBarDelegate {
         searcher.searchResultsUpdater = src
 
         let b = searcher.searchBar
-        b.scopeButtonTitles = ["Starts", "Contains"] // won't show in the table
+        /// won't show in the, shows during search only table
+        b.scopeButtonTitles = ["Starts", "Contains"]
         addSearchBar(b)
     }
 

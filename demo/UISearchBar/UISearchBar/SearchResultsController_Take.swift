@@ -43,6 +43,7 @@ class SearchResultsControllerTake : SearchResultsController {
     }
 }
 
+
 extension SearchResultsControllerTake : UISearchBarDelegate {
     func searchBar(_ searchBar: UISearchBar, selectedScopeButtonIndexDidChange selectedScope: Int) {
         print("button")

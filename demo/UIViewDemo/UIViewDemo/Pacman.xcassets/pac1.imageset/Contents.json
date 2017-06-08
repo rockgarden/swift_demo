@@ -1,11 +1,8 @@
 {
   "images" : [
     {
-      "idiom" : "universal"
-    },
-    {
       "idiom" : "universal",
-      "filename" : "files.png",
+      "filename" : "pac11.png",
       "scale" : "1x"
     },
     {

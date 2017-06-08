@@ -2,19 +2,27 @@
 import UIKit
 
 class UISearchBarVC: UIViewController {
-    
-    @IBOutlet var sb : UISearchBar!
+
+    lazy var sb: UISearchBar = {
+        let v = UISearchBar()
+        v.translatesAutoresizingMaskIntoConstraints = false
+        return v
+    }()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        view.backgroundColor = .white
+
+        view.addSubview(sb)
+        addConstraint()
+
         self.sb.enablesReturnKeyAutomatically = false // true by default, even though unchecked!
         self.sb.searchBarStyle = .default
         self.sb.barStyle = .default
         self.sb.isTranslucent = true
-        self.sb.barTintColor = UIColor.green // unseen in this example
-        // self.sb.backgroundColor = UIColor.redColor()
-        
+        self.sb.barTintColor = .green // unseen in this example
+        //self.sb.backgroundColor = .red
+
         let lin = UIImage(named: "linen")!
         let linim = lin.resizableImage(withCapInsets: UIEdgeInsetsMake(1,1,1,1), resizingMode:.stretch)
         self.sb.setBackgroundImage(linim, for:.any, barMetrics:.default)
@@ -83,8 +91,18 @@ class UISearchBarVC: UIViewController {
         ] as [String : Any]
         self.sb.setScopeBarButtonTitleTextAttributes(atts, for:UIControlState())
         self.sb.setScopeBarButtonTitleTextAttributes(atts, for:.selected)
-        
     }
+
+    fileprivate func addConstraint() {
+
+        let views = ["sb": sb]
+
+        NSLayoutConstraint.activate([
+            NSLayoutConstraint.constraints(withVisualFormat: "H:|-(0)-[sb]-(0)-|", options: [], metrics: nil, views: views),
+            NSLayoutConstraint.constraints(withVisualFormat: "V:|-(100)-[sb(120)]", options: [], metrics: nil, views: views),
+            ].joined().map{$0})
+    }
+
 }
 
 extension UISearchBarVC : UISearchBarDelegate {

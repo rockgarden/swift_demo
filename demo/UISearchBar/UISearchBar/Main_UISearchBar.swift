@@ -26,14 +26,27 @@ class Main_UISearchBar: UITableViewController {
 
     func initTableData() {
         let section1 = ["Base SearchResultsController",
-                        "UISearchControllerDelegate",
-        ]
+                        "实现 UISearchControllerDelegate",
+                        "使用相同的视图控制器显示可搜索的内容和搜索结果",
+                        "Put search bar into navigation bar",
+                        "Use SearchResultsController Container",
+                        "Popover SearchResultsController",
+                        ]
         let section1_class = [SearchResultsControllerVC.self,
                               UISearchControllerDelegateVC.self,
+                              SameVC.self,
+                              SearchBarInNavigationBarVC.self,
+                              ContainerVC.self,
+                              PopoverVC.self,
                               ]
 
-        sectionTitles = [section1]
-        sectionSampleClasses = [section1_class]
+        let section3 = ["UISearchBar symbols",
+                        ]
+        let section3_class = [UISearchBarVC.self,
+                              ]
+
+        sectionTitles = [section1,section1,section3]
+        sectionSampleClasses = [section1_class,section1_class,section3_class]
     }
 
     func setupTableView() {
@@ -44,8 +57,8 @@ class Main_UISearchBar: UITableViewController {
         //view.addSubview(tableView)
     }
 
-    //MARK:- TableViewDelegate
 
+    //MARK:- TableViewDelegate
     override func numberOfSections(in tableView: UITableView) -> Int {
         return self.sectionTitles.count
     }
@@ -90,7 +103,7 @@ class Main_UISearchBar: UITableViewController {
         let cellIdentifier = "demoCellIdentifier"
 
         var cell: UITableViewCell? = tableView.dequeueReusableCell(withIdentifier: cellIdentifier)
-        
+
         if cell == nil {
             cell = UITableViewCell(style: .subtitle, reuseIdentifier: cellIdentifier)
         }
@@ -103,9 +116,8 @@ class Main_UISearchBar: UITableViewController {
 
         cell!.textLabel?.text = rowTitle
         cell!.detailTextLabel?.text = String(describing: className)
-
+        
         return cell!
     }
-
-
+    
 }
