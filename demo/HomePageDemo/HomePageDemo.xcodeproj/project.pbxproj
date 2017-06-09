@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		442254B91E5DD57500A62376 /* HomeAdBarVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 442254B81E5DD57500A62376 /* HomeAdBarVC.swift */; };
+		4436C6EA1EEAFC0E008DAEB3 /* Temp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4436C6E91EEAFC0E008DAEB3 /* Temp.swift */; };
 		C23436B11E5D63EC00260F96 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C23436B01E5D63EC00260F96 /* AppDelegate.swift */; };
 		C23436B31E5D63EC00260F96 /* HomeToolBarVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C23436B21E5D63EC00260F96 /* HomeToolBarVC.swift */; };
 		C23436B81E5D63EC00260F96 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C23436B71E5D63EC00260F96 /* Assets.xcassets */; };
@@ -75,6 +76,7 @@
 
 /* Begin PBXFileReference section */
 		442254B81E5DD57500A62376 /* HomeAdBarVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeAdBarVC.swift; sourceTree = "<group>"; };
+		4436C6E91EEAFC0E008DAEB3 /* Temp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Temp.swift; sourceTree = "<group>"; };
 		C23436AD1E5D63EB00260F96 /* HomePageDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HomePageDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C23436B01E5D63EC00260F96 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C23436B21E5D63EC00260F96 /* HomeToolBarVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeToolBarVC.swift; sourceTree = "<group>"; };
@@ -196,6 +198,7 @@
 				C23436B71E5D63EC00260F96 /* Assets.xcassets */,
 				C23436B91E5D63EC00260F96 /* LaunchScreen.storyboard */,
 				C23436BC1E5D63EC00260F96 /* Info.plist */,
+				4436C6E91EEAFC0E008DAEB3 /* Temp.swift */,
 			);
 			path = HomePageDemo;
 			sourceTree = "<group>";
@@ -412,6 +415,7 @@
 				C243927E1E7BA83100E18920 /* ThreeViewController.m in Sources */,
 				C24392751E7BA83100E18920 /* MASViewConstraint.m in Sources */,
 				C24392721E7BA83100E18920 /* MASConstraintMaker.m in Sources */,
+				4436C6EA1EEAFC0E008DAEB3 /* Temp.swift in Sources */,
 				C23436C31E5D64A300260F96 /* TabBarVC.swift in Sources */,
 				C24392701E7BA83100E18920 /* MASCompositeConstraint.m in Sources */,
 				C23436B11E5D63EC00260F96 /* AppDelegate.swift in Sources */,

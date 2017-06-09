@@ -15,8 +15,8 @@ class CellBackgroundLayeringVC : UICollectionViewController {
 
         let v = UIView()
         v.backgroundColor = .yellow
-        // next line makes the whole background yellow, covering the background color
-        // self.collectionView.backgroundView = v
+        /// makes the whole background yellow, covering the background color
+        self.collectionView?.backgroundView = v
     }
 
     override var prefersStatusBarHidden : Bool {
@@ -37,23 +37,17 @@ class CellBackgroundLayeringVC : UICollectionViewController {
     /*
      the window background never appears
      the collection view background appears when you "bounce" the scroll beyond its limits
-     ...but is also visible behind all cells
-     (I have not found a way to make the two different)
-     the red cell background color is behind the cell
-     the linen cell background view is on top of that
-     the (translucent, here) selected background view is on top of that
-     the content view and its contents are on top of that
      */
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier:"Cell",
                                                       for: indexPath)
-        if cell.backgroundView == nil { // brand new cell
+        if cell.backgroundView == nil {
             cell.backgroundColor = .red
 
             let v = UIImageView(frame:cell.bounds)
             v.contentMode = .scaleToFill
-            v.image = UIImage(named:"linen.png")
+            v.image = UIImage(named:"linen")
             cell.backgroundView = v
 
             let v2 = UIView(frame:cell.bounds)
