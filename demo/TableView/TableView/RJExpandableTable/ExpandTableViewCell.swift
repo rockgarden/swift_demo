@@ -54,7 +54,7 @@ extension ExpandTableViewCell: RJExpandingTableViewCell {
         var angle: CGFloat = 0
         var duration: TimeInterval = 0
         if status == .expanded {
-            angle = CGFloat(M_PI)
+            angle = CGFloat(Double.pi)
         }
         if animated {
             duration = 0.3

@@ -289,7 +289,7 @@ extension UISearchControllerVC: UITableViewDataSource {
         
         cell.textLabel?.text = ((self.dataSource.object(at: indexPath.section) as! NSArray).object(at: indexPath.row) as AnyObject).name
         cell.detailTextLabel?.text = "Cell Subtitle"
-        cell.imageView!.image = UIImage(named: "image1.png")
+        cell.imageView!.image = UIImage(named: "apple")
     }
 
     // Foot Subtitle

@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		4421E9FE1E06922D0098968B /* Readme.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 4421E9FD1E06922D0098968B /* Readme.rtf */; };
-		442849281D86EB840044DCF5 /* DynamicTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 442849271D86EB840044DCF5 /* DynamicTable.swift */; };
+		442849281D86EB840044DCF5 /* DynamicTableVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 442849271D86EB840044DCF5 /* DynamicTableVC.swift */; };
 		4428495F1D86F5930044DCF5 /* flag_alabama.gif in Resources */ = {isa = PBXBuildFile; fileRef = 4428492C1D86F5930044DCF5 /* flag_alabama.gif */; };
 		442849601D86F5930044DCF5 /* flag_alaska.gif in Resources */ = {isa = PBXBuildFile; fileRef = 4428492D1D86F5930044DCF5 /* flag_alaska.gif */; };
 		442849611D86F5930044DCF5 /* flag_arizona.gif in Resources */ = {isa = PBXBuildFile; fileRef = 4428492E1D86F5930044DCF5 /* flag_arizona.gif */; };
@@ -63,6 +63,11 @@
 		442849931D86FF280044DCF5 /* ExpandTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 442849921D86FF280044DCF5 /* ExpandTable.swift */; };
 		442849981D8833660044DCF5 /* MasterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 442849961D8833650044DCF5 /* MasterViewController.swift */; };
 		442849991D8833660044DCF5 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 442849971D8833650044DCF5 /* DetailViewController.swift */; };
+		4436C6EC1EEB7D84008DAEB3 /* AppTableVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4436C6EB1EEB7D84008DAEB3 /* AppTableVC.swift */; };
+		4436C6EE1EEB83D1008DAEB3 /* RowActionsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4436C6ED1EEB83D1008DAEB3 /* RowActionsVC.swift */; };
+		4436C6F01EEB8A7C008DAEB3 /* CellMenusVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4436C6EF1EEB8A7C008DAEB3 /* CellMenusVC.swift */; };
+		4436C6F21EEB909E008DAEB3 /* CellBackgroundLayeringVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4436C6F11EEB909E008DAEB3 /* CellBackgroundLayeringVC.swift */; };
+		4436C6F41EEBA37D008DAEB3 /* SectionsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4436C6F31EEBA37D008DAEB3 /* SectionsVC.swift */; };
 		4483B2DB1D7FFF780077E75C /* RJExpandableTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4483B2DA1D7FFF780077E75C /* RJExpandableTableView.swift */; };
 		4483B2DD1D7FFF890077E75C /* RJExpandableTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4483B2DC1D7FFF890077E75C /* RJExpandableTableViewCell.swift */; };
 		4483B2DF1D7FFF9C0077E75C /* ExpandTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4483B2DE1D7FFF9C0077E75C /* ExpandTableViewCell.swift */; };
@@ -98,7 +103,7 @@
 
 /* Begin PBXFileReference section */
 		4421E9FD1E06922D0098968B /* Readme.rtf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.rtf; path = Readme.rtf; sourceTree = "<group>"; };
-		442849271D86EB840044DCF5 /* DynamicTable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DynamicTable.swift; sourceTree = "<group>"; };
+		442849271D86EB840044DCF5 /* DynamicTableVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DynamicTableVC.swift; sourceTree = "<group>"; };
 		4428492C1D86F5930044DCF5 /* flag_alabama.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = flag_alabama.gif; sourceTree = "<group>"; };
 		4428492D1D86F5930044DCF5 /* flag_alaska.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = flag_alaska.gif; sourceTree = "<group>"; };
 		4428492E1D86F5930044DCF5 /* flag_arizona.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = flag_arizona.gif; sourceTree = "<group>"; };
@@ -153,6 +158,11 @@
 		442849921D86FF280044DCF5 /* ExpandTable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExpandTable.swift; sourceTree = "<group>"; };
 		442849961D8833650044DCF5 /* MasterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MasterViewController.swift; sourceTree = "<group>"; };
 		442849971D8833650044DCF5 /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		4436C6EB1EEB7D84008DAEB3 /* AppTableVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppTableVC.swift; sourceTree = "<group>"; };
+		4436C6ED1EEB83D1008DAEB3 /* RowActionsVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RowActionsVC.swift; sourceTree = "<group>"; };
+		4436C6EF1EEB8A7C008DAEB3 /* CellMenusVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CellMenusVC.swift; sourceTree = "<group>"; };
+		4436C6F11EEB909E008DAEB3 /* CellBackgroundLayeringVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CellBackgroundLayeringVC.swift; sourceTree = "<group>"; };
+		4436C6F31EEBA37D008DAEB3 /* SectionsVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SectionsVC.swift; sourceTree = "<group>"; };
 		4483B2DA1D7FFF780077E75C /* RJExpandableTableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RJExpandableTableView.swift; sourceTree = "<group>"; };
 		4483B2DC1D7FFF890077E75C /* RJExpandableTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RJExpandableTableViewCell.swift; sourceTree = "<group>"; };
 		4483B2DE1D7FFF9C0077E75C /* ExpandTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExpandTableViewCell.swift; sourceTree = "<group>"; };
@@ -304,6 +314,7 @@
 			isa = PBXGroup;
 			children = (
 				C22758CF1D6C29C6008C1F18 /* AppDelegate.swift */,
+				4436C6EB1EEB7D84008DAEB3 /* AppTableVC.swift */,
 				44ABF28A1EDD7225004A353A /* Main_UITableView.swift */,
 				C22758D31D6C29C6008C1F18 /* Main.storyboard */,
 				C22758D11D6C29C6008C1F18 /* UISearchControllerVC.swift */,
@@ -314,13 +325,17 @@
 				4483B2E41D80165A0077E75C /* SubCell.swift */,
 				442849961D8833650044DCF5 /* MasterViewController.swift */,
 				442849971D8833650044DCF5 /* DetailViewController.swift */,
-				442849271D86EB840044DCF5 /* DynamicTable.swift */,
+				4436C6ED1EEB83D1008DAEB3 /* RowActionsVC.swift */,
+				4436C6EF1EEB8A7C008DAEB3 /* CellMenusVC.swift */,
+				4436C6F11EEB909E008DAEB3 /* CellBackgroundLayeringVC.swift */,
+				442849271D86EB840044DCF5 /* DynamicTableVC.swift */,
+				4436C6F31EEBA37D008DAEB3 /* SectionsVC.swift */,
 				442849921D86FF280044DCF5 /* ExpandTable.swift */,
 				C2D7F1211DD05FEA00BABD77 /* VariableHeightsVC.swift */,
 				C28AAB271DFE6399009DE34B /* SpreadRowTableVC.swift */,
 				C2D7F1231DD0618600BABD77 /* Cell.xib */,
-				44ABF28C1EDD7304004A353A /* AddCellSubviewsbyXibVC.xib */,
 				44ABF28D1EDD7304004A353A /* AddCellSubviewsbyXibVC.swift */,
+				44ABF28C1EDD7304004A353A /* AddCellSubviewsbyXibVC.xib */,
 				44ABF2911EDD7B7C004A353A /* MyCell.swift */,
 				44ABF2921EDD7B7C004A353A /* MyCell.xib */,
 				44ABF2951EDD8E2C004A353A /* AddCellSubviewsbyCodeVC.swift */,
@@ -481,11 +496,15 @@
 				C2D7F1221DD05FEA00BABD77 /* VariableHeightsVC.swift in Sources */,
 				44ABF28B1EDD7225004A353A /* Main_UITableView.swift in Sources */,
 				44ABF2881EDC7612004A353A /* IndividualCellsVC.swift in Sources */,
-				442849281D86EB840044DCF5 /* DynamicTable.swift in Sources */,
+				4436C6EE1EEB83D1008DAEB3 /* RowActionsVC.swift in Sources */,
+				4436C6F41EEBA37D008DAEB3 /* SectionsVC.swift in Sources */,
+				442849281D86EB840044DCF5 /* DynamicTableVC.swift in Sources */,
 				44ABF2931EDD7B7C004A353A /* MyCell.swift in Sources */,
 				449BC2A11D6F3F9200B63FC4 /* SearchResultsController.swift in Sources */,
 				44AA37D01E1BED2C00B24A61 /* ActivityIndicatorCell.swift in Sources */,
 				4483B2E51D80165A0077E75C /* SubCell.swift in Sources */,
+				4436C6F21EEB909E008DAEB3 /* CellBackgroundLayeringVC.swift in Sources */,
+				4436C6EC1EEB7D84008DAEB3 /* AppTableVC.swift in Sources */,
 				C2F3DE161D6EBF5500F0A9D5 /* Person.swift in Sources */,
 				C22758D21D6C29C6008C1F18 /* UISearchControllerVC.swift in Sources */,
 				4483B2DB1D7FFF780077E75C /* RJExpandableTableView.swift in Sources */,
@@ -495,6 +514,7 @@
 				4483B2E31D8000BB0077E75C /* RJExpandTable.swift in Sources */,
 				442849981D8833660044DCF5 /* MasterViewController.swift in Sources */,
 				4483B2DF1D7FFF9C0077E75C /* ExpandTableViewCell.swift in Sources */,
+				4436C6F01EEB8A7C008DAEB3 /* CellMenusVC.swift in Sources */,
 				44ABF28F1EDD7304004A353A /* AddCellSubviewsbyXibVC.swift in Sources */,
 				C22758D01D6C29C6008C1F18 /* AppDelegate.swift in Sources */,
 				44ABF2981EDD91A7004A353A /* InitCellbyCodeVC.swift in Sources */,

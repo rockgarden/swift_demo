@@ -49,7 +49,7 @@ class IndividualCellsVC: UITableViewController {
         let iv = cell.theImageView!
         
         // shrink apparent size of image
-        let im = UIImage(named:"image1")!
+        let im = UIImage(named:"apple")!
         let im2: UIImage!
         if #available(iOS 10.0, *) {
             let r = UIGraphicsImageRenderer(size: CGSize(36,36))
