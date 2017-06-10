@@ -17,7 +17,7 @@ class ActionRequestHandler: NSObject, NSExtensionRequestHandling {
     }()
 
     var extensionContext: NSExtensionContext?
-    // NSObject has no magically acquired extension context, we must keep a reference
+    /// NSObject没有魔法获取的扩展上下文 extension context, 我们必须保留引用 keep a reference
 
     let desiredType = kUTTypePlainText as String
 

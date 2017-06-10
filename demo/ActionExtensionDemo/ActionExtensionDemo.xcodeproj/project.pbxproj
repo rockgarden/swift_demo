@@ -13,7 +13,6 @@
 		44FCAAD91E0AB3AD00AACFC2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 44FCAAD81E0AB3AD00AACFC2 /* Assets.xcassets */; };
 		44FCAADC1E0AB3AD00AACFC2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 44FCAADA1E0AB3AD00AACFC2 /* LaunchScreen.storyboard */; };
 		44FCAAEA1E0AB52F00AACFC2 /* ActionRequestHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44FCAAE91E0AB52F00AACFC2 /* ActionRequestHandler.swift */; };
-		44FCAAED1E0AB52F00AACFC2 /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 44FCAAEB1E0AB52F00AACFC2 /* MainInterface.storyboard */; };
 		44FCAAF11E0AB52F00AACFC2 /* ActionRequestHandler.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 44FCAAE71E0AB52F00AACFC2 /* ActionRequestHandler.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		44FCAAF71E0AB57700AACFC2 /* Media.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 44FCAAF61E0AB57700AACFC2 /* Media.xcassets */; };
 		44FCAAF91E0AB58B00AACFC2 /* abbreviations.txt in Resources */ = {isa = PBXBuildFile; fileRef = 44FCAAF81E0AB58B00AACFC2 /* abbreviations.txt */; };
@@ -79,7 +78,6 @@
 		44FCAADD1E0AB3AD00AACFC2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		44FCAAE71E0AB52F00AACFC2 /* ActionRequestHandler.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = ActionRequestHandler.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		44FCAAE91E0AB52F00AACFC2 /* ActionRequestHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionRequestHandler.swift; sourceTree = "<group>"; };
-		44FCAAEC1E0AB52F00AACFC2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
 		44FCAAEE1E0AB52F00AACFC2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		44FCAAF61E0AB57700AACFC2 /* Media.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Media.xcassets; sourceTree = "<group>"; };
 		44FCAAF81E0AB58B00AACFC2 /* abbreviations.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = abbreviations.txt; sourceTree = "<group>"; };
@@ -155,8 +153,8 @@
 			isa = PBXGroup;
 			children = (
 				44FCAAD11E0AB3AD00AACFC2 /* AppDelegate.swift */,
-				44FCAAD31E0AB3AD00AACFC2 /* ViewController.swift */,
 				44FCAAD51E0AB3AD00AACFC2 /* Main.storyboard */,
+				44FCAAD31E0AB3AD00AACFC2 /* ViewController.swift */,
 				44FCAAD81E0AB3AD00AACFC2 /* Assets.xcassets */,
 				44FCAADA1E0AB3AD00AACFC2 /* LaunchScreen.storyboard */,
 				44FCAADD1E0AB3AD00AACFC2 /* Info.plist */,
@@ -168,7 +166,6 @@
 			isa = PBXGroup;
 			children = (
 				44FCAAE91E0AB52F00AACFC2 /* ActionRequestHandler.swift */,
-				44FCAAEB1E0AB52F00AACFC2 /* MainInterface.storyboard */,
 				44FCAAF81E0AB58B00AACFC2 /* abbreviations.txt */,
 				44FCAAEE1E0AB52F00AACFC2 /* Info.plist */,
 				44FCAAF61E0AB57700AACFC2 /* Media.xcassets */,
@@ -191,8 +188,8 @@
 		44FCAB171E0AB76200AACFC2 /* Shoebox */ = {
 			isa = PBXGroup;
 			children = (
-				44FCAB241E0AB77B00AACFC2 /* OtherViewController.swift */,
 				44FCAB251E0AB77B00AACFC2 /* ShareViewController.swift */,
+				44FCAB241E0AB77B00AACFC2 /* OtherViewController.swift */,
 				44FCAB261E0AB77B00AACFC2 /* TableViewController.swift */,
 				44FCAB1A1E0AB76300AACFC2 /* MainInterface.storyboard */,
 				44FCAB1D1E0AB76300AACFC2 /* Info.plist */,
@@ -344,7 +341,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				44FCAAF71E0AB57700AACFC2 /* Media.xcassets in Resources */,
-				44FCAAED1E0AB52F00AACFC2 /* MainInterface.storyboard in Resources */,
 				44FCAAF91E0AB58B00AACFC2 /* abbreviations.txt in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -440,14 +436,6 @@
 				44FCAADB1E0AB3AD00AACFC2 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
-		44FCAAEB1E0AB52F00AACFC2 /* MainInterface.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				44FCAAEC1E0AB52F00AACFC2 /* Base */,
-			);
-			name = MainInterface.storyboard;
 			sourceTree = "<group>";
 		};
 		44FCAB1A1E0AB76300AACFC2 /* MainInterface.storyboard */ = {
@@ -679,6 +667,7 @@
 				44FCAAE21E0AB3AD00AACFC2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		44FCAAF21E0AB52F00AACFC2 /* Build configuration list for PBXNativeTarget "ActionRequestHandler" */ = {
 			isa = XCConfigurationList;
@@ -687,6 +676,7 @@
 				44FCAAF41E0AB52F00AACFC2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		44FCAB091E0AB69A00AACFC2 /* Build configuration list for PBXNativeTarget "Expand" */ = {
 			isa = XCConfigurationList;
@@ -695,6 +685,7 @@
 				44FCAB0B1E0AB69A00AACFC2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		44FCAB211E0AB76300AACFC2 /* Build configuration list for PBXNativeTarget "Shoebox" */ = {
 			isa = XCConfigurationList;
@@ -703,6 +694,7 @@
 				44FCAB231E0AB76300AACFC2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

@@ -65,7 +65,6 @@ class Player : NSObject, AVAudioPlayerDelegate {
     }
 
     func playFile(atPath path: String) {
-        newPlayer(path)
 
         /// switch to playback category while playing, interrupt background audio
         try? AVAudioSession.sharedInstance().setCategory(AVAudioSessionCategoryPlayback)
@@ -76,6 +75,8 @@ class Player : NSObject, AVAudioPlayerDelegate {
 
         try? AVAudioSession.sharedInstance().setActive(true)
 
+        newPlayer(path)
+        /// 省略错误检查 error-checking omitted
         self.avPlayer.prepareToPlay()
         self.avPlayer.delegate = self
 
@@ -89,6 +90,12 @@ class Player : NSObject, AVAudioPlayerDelegate {
 
         let ok = avPlayer.play()
         print("interrupter trying to play \(path): \(ok)")
+
+        let mpic = MPNowPlayingInfoCenter.default()
+        mpic.nowPlayingInfo = [
+            MPMediaItemPropertyTitle:"This Is a Test",
+            MPMediaItemPropertyArtist:"Matt Neuburg"
+        ]
     }
 
 

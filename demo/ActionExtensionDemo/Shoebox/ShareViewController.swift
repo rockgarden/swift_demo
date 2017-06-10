@@ -13,8 +13,8 @@ class ShareViewController: SLComposeServiceViewController, SizeDelegate {
     }
 
 
+    /// 在此处验证contentText和/或NSExtensionContext附件
     override func isContentValid() -> Bool {
-        // Do validation of contentText and/or NSExtensionContext attachments here
         return true
     }
 
@@ -28,7 +28,7 @@ class ShareViewController: SLComposeServiceViewController, SizeDelegate {
     }
 
     override func configurationItems() -> [Any]! {
-        // To add configuration options via table cells at the bottom of the sheet, return an array of SLComposeSheetConfigurationItem here.
+        //  要通过表格底部的表格单元格添加配置选项，请在此处返回SLComposeSheetConfigurationItem数组。
         let c = SLComposeSheetConfigurationItem()!
         c.title = "Size"
         c.value = self.selectedText
@@ -41,6 +41,5 @@ class ShareViewController: SLComposeServiceViewController, SizeDelegate {
         self.config = c
         return [c]
     }
-    
 
 }

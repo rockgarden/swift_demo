@@ -28,7 +28,12 @@ class RemoteControlVC: UIViewController {
         UIApplication.shared.beginReceivingRemoteControlEvents()
     }
 
-    //FIXME: Ducking can't test
+    /// Ducking test instructions: 先在设备上运行 APP，后用 Music app 播放音乐，然后 点击 once 按钮来体验 ducking
+
+    /// 现在点击 forever 按钮; 我们永远循环 loop forever
+    /// 如果您在Info.plist中设置了音频背景模式，那么当APP在后台时，Forever仍播放。
+
+    // FIXME: Ducking can't test
     @IBAction func doButton (_ sender: Any!) {
         let path = Bundle.main.path(forResource:"test", ofType: "aif")!
         if (sender as! UIButton).currentTitle == "Forever" {
@@ -42,6 +47,7 @@ class RemoteControlVC: UIViewController {
             let oth = AVAudioSession.sharedInstance().isOtherAudioPlaying
             print("other audio playing: \(oth)")
             // new iOS 8 feature! finer grained than merely whether other audio is playing
+            // 一个布尔值，表示另一个应用程序是否播放音频。当具有不可混合音频会话的另一应用程序播放音频时，该值为真。应用程序应该使用此属性作为静音使应用程序功能继发的音频的提示。
             let hint = AVAudioSession.sharedInstance().secondaryAudioShouldBeSilencedHint
             print("secondary hint: \(hint)")
             if !oth {
@@ -71,7 +77,6 @@ class RemoteControlVC: UIViewController {
             scc.togglePlayPauseCommand.addTarget(self, action: #selector(doPlayPause))
             scc.playCommand.addTarget(self, action:#selector(doPlay))
             scc.pauseCommand.addTarget(self, action:#selector(doPause))
-            // fun fun fun
             scc.likeCommand.addTarget(self, action:#selector(doLike))
             scc.likeCommand.localizedTitle = "Fantastic"
         case 1:

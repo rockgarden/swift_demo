@@ -39,7 +39,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
          */
 
         avc.completionWithItemsHandler = { type, ok, items, err in
-            print("completed \(type) \(ok) \(items) \(err)")
+            print("completed \(String(describing: type)) \(ok) \(String(describing: items)) \(String(describing: err))")
             if ok {
                 guard let items = items, items.count > 0 else {
                     return
