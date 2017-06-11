@@ -65,9 +65,12 @@ class UIFontFamilyVC: UIViewController, UICollectionViewDataSource, UICollection
                 withVisualFormat: "V:|-(0)-[cv]-(0)-|", options: [], metrics: nil, views: views),
             ].joined().map { $0 })
         
-        collectionView.register(MyCollectionViewCell.self, forCellWithReuseIdentifier: kCellIdentifier)
+        collectionView.register(UIFontCell.self, forCellWithReuseIdentifier: kCellIdentifier)
+        for _ in titleData {
+            contentData.append(exampleContent)
+        }
     }
-    
+
     // MARK: - UICollectionViewDataSource
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         return 1
@@ -78,8 +81,7 @@ class UIFontFamilyVC: UIViewController, UICollectionViewDataSource, UICollection
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: kCellIdentifier, for: indexPath) as! MyCollectionViewCell
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: kCellIdentifier, for: indexPath) as! UIFontCell
         
         cell.configCell(titleData[indexPath.item] as String, content: contentData[indexPath.item] as String, titleFont: fontArray[indexPath.item] as String, contentFont: fontArray[indexPath.item] as String)
         
@@ -95,9 +97,9 @@ class UIFontFamilyVC: UIViewController, UICollectionViewDataSource, UICollection
         
         // Use fake cell to calculate height
         let reuseIdentifier = kCellIdentifier
-        var cell = offscreenCells[reuseIdentifier] as? MyCollectionViewCell
+        var cell = offscreenCells[reuseIdentifier] as? UIFontCell
         if cell == nil {
-            cell = Bundle.main.loadNibNamed("MyCollectionViewCell", owner: self, options: nil)?[0] as? MyCollectionViewCell
+            cell = UIFontCell()
             self.offscreenCells[reuseIdentifier] = cell
         }
         
@@ -152,14 +154,10 @@ class UIFontFamilyVC: UIViewController, UICollectionViewDataSource, UICollection
 }
 
 
-// Check System Version
-let isIOS7: Bool = !isIOS8
-let isIOS8: Bool = floor(NSFoundationVersionNumber) > NSFoundationVersionNumber_iOS_7_1
-
-class MyCollectionViewCell: UICollectionViewCell {
+class UIFontCell: UICollectionViewCell {
     
-    weak var titleLabel: UILabel!
-    weak var contentLabel: UILabel!
+    let titleLabel = UILabel()
+    let contentLabel = UILabel()
     
     let kLabelVerticalInsets: CGFloat = 8.0
     let kLabelHorizontalInsets: CGFloat = 8.0
@@ -167,8 +165,8 @@ class MyCollectionViewCell: UICollectionViewCell {
     override init(frame: CGRect) {
         super.init(frame: frame)
         // Initialization code
-        if isIOS7 {
-            // Need set autoresizingMask to let contentView always occupy this view's bounds, key for iOS7
+        if floor(NSFoundationVersionNumber) < NSFoundationVersionNumber_iOS_7_1 {
+            /// Need set autoresizingMask to let contentView always occupy this view's bounds, key for iOS7
             self.contentView.autoresizingMask = [.flexibleHeight, .flexibleWidth]
         }
 
@@ -205,7 +203,6 @@ class MyCollectionViewCell: UICollectionViewCell {
     // In layoutSubViews, need set preferredMaxLayoutWidth for multiple lines label
     override func layoutSubviews() {
         super.layoutSubviews()
-        // Set what preferredMaxLayoutWidth you want
         contentLabel.preferredMaxLayoutWidth = self.bounds.width - 2 * kLabelHorizontalInsets
     }
     

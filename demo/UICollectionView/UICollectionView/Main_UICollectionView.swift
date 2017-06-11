@@ -10,22 +10,29 @@ import UIKit
 
 class Main_UICollectionView: UITableViewController {
 
-    // MARK: - Navigation
-    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath){
-        let cell = tableView.cellForRow(at: indexPath)
-        if let id = cell?.tag {
-            switch id {
-            case 11 :
-                let pvc = RetractableFirstItemLayoutVC()
-                self.show(pvc, sender: nil)
-            case 12 :
-                let layout = UICollectionViewFlowLayout()
-                let pvc = FlowLayoutTestVC(collectionViewLayout: layout)
-                self.show(pvc, sender: nil)
-            default:
-                break
-            }
+
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        switch indexPath.row {
+        case 11 :
+            let vc = RetractableFirstItemLayoutVC()
+            self.show(vc, sender: nil)
+        case 12 :
+            let layout = UICollectionViewFlowLayout()
+            let vc = FlowLayoutTestVC(collectionViewLayout: layout)
+            self.show(vc, sender: nil)
+        case 13 :
+            let vc = CalculateVC()
+            self.show(vc, sender: nil)
+        case 14 :
+            let vc = UIFontFamilyVC()
+            self.show(vc, sender: nil)
+        case 15 :
+            let vc = DynamicCellVC()
+            self.show(vc, sender: nil)
+        default:
+            break
         }
+
     }
 
     override func viewDidLoad() {

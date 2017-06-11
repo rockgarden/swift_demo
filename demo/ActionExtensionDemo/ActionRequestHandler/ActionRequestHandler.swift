@@ -22,7 +22,7 @@ class ActionRequestHandler: NSObject, NSExtensionRequestHandling {
     let desiredType = kUTTypePlainText as String
 
     func beginRequest(with context: NSExtensionContext) {
-        // Do not call super in an Action extension with no user interface
+        /// 不要在没有用户界面的Action扩展中调用super。Do not call super in an Action extension with no user interface
         self.extensionContext = context
         let items = self.extensionContext!.inputItems
         // open the envelopes

@@ -1,5 +1,6 @@
 import UIKit
 
+// FIXME: [LayoutConstraints] Unable to simultaneously satisfy constraints.
 class LabelCell: UICollectionViewCell
 {
     @IBOutlet var label: UILabel!

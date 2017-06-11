@@ -5,6 +5,20 @@
       "scale" : "1x"
     },
     {
+      "resizing" : {
+        "mode" : "9-part",
+        "center" : {
+          "mode" : "stretch",
+          "width" : 11,
+          "height" : 6
+        },
+        "cap-insets" : {
+          "bottom" : 26,
+          "top" : 20,
+          "right" : 103,
+          "left" : 103
+        }
+      },
       "idiom" : "universal",
       "filename" : "MarsNew@2x.png",
       "scale" : "2x"

@@ -25,23 +25,24 @@ class ActionViewController: UIViewController {
         super.viewDidLoad()
         self.doneButton.isEnabled = false
         self.lab.text = "No expansion available."
+
+        /// UIViewController新增了一个扩展上下文属性extensionContext。来处理containing app与扩展之间的通信,返回视图控制器的扩展上下文，上下文的类型是NSExtensionContext。视图控制器可以检查此属性以查看它是否参与扩展请求。 如果没有为当前视图控制器设置扩展上下文，系统将向上移动视图控制器层次结构，以查找具有非零extensionContext值的父视图控制器。
         if self.extensionContext == nil {
             return
         }
         let items = self.extensionContext!.inputItems
-        // open the envelopes
+        /// 宿主APP调用时没传入 open the envelopes
         guard let extensionItem = items[0] as? NSExtensionItem,
             let provider = extensionItem.attachments?[0] as? NSItemProvider,
             provider.hasItemConformingToTypeIdentifier(self.desiredType)
-            else {
-                return
-        }
+            else { return }
         provider.loadItem(forTypeIdentifier: self.desiredType) {
             (item:NSSecureCoding?, err:Error!) -> () in
             DispatchQueue.main.async {
                 if let orig = item as? String {
                     self.orig = orig
                     if let exp = self.state(for:orig) {
+                        debugPrint(exp)
                         self.expansion = exp
                         self.lab.text = "Can expand to \(exp)."
                         self.doneButton.isEnabled = true

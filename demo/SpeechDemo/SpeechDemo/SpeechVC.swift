@@ -7,6 +7,7 @@ import UIKit
 import Speech
 import AVFoundation
 
+@available(iOS 10.0, *)
 func checkSpeechAuthorization(andThen f: (() -> ())?) {
     print("checking speech authorization")
     let status = SFSpeechRecognizer.authorizationStatus()
@@ -48,10 +49,13 @@ func checkMicAuthorization(andThen f: (() -> ())?) {
     }
 }
 
+@available(iOS 10.0, *)
 class SpeechVC: UIViewController {
 
+    var isInstallTap = false
+
     @IBAction func doFile(_ sender: Any) {
-        checkSpeechAuthorization(andThen:reallyDoFile)
+        checkSpeechAuthorization(andThen: reallyDoFile)
     }
 
     func reallyDoFile() {
@@ -90,31 +94,35 @@ class SpeechVC: UIViewController {
     let engine = AVAudioEngine()
     let req = SFSpeechAudioBufferRecognitionRequest()
 
+    // FIXME:
     @IBAction func doLive(_ sender: Any) {
-        checkSpeechAuthorization(andThen:alsoCheckMic)
+        checkSpeechAuthorization(andThen: alsoCheckMic)
     }
 
     func alsoCheckMic() {
-        checkMicAuthorization(andThen:reallyDoLive)
+        checkMicAuthorization(andThen: reallyDoLive)
     }
 
-    //FIXME: 'NSInternalInconsistencyException', reason: 'SFSpeechAudioBufferRecognitionRequest cannot be re-used'
-    //FIXME: [Utility] +[AFAggregator logDictationFailedWithError:] Error Domain=kAFAssistantErrorDomain Code=209 "(null)"
+    //  FIXME: 'NSInternalInconsistencyException', reason: 'SFSpeechAudioBufferRecognitionRequest cannot be re-used'
+    //  FIXME: [Utility] +[AFAggregator logDictationFailedWithError:] Error Domain=kAFAssistantErrorDomain Code=209 "(null)"
+
     func reallyDoLive() {
-        // same as before, basically
         let loc = Locale(identifier: "en-US")
         guard let rec = SFSpeechRecognizer(locale:loc)
             else {print("no recognizer"); return}
         print("rec isAvailable says: \(rec.isAvailable)")
-        // tap into microphone thru audio engine!
+
+        guard !isInstallTap else {return}
         let input = self.engine.inputNode!
         input.installTap(onBus: 0, bufferSize: 4096, format: input.outputFormat(forBus: 0)) {
             buffer, time in
             self.req.append(buffer)
         }
+        isInstallTap = !isInstallTap
+
         self.engine.prepare()
         try! self.engine.start()
-        // same as before
+        
         print("starting live recognition")
         rec.recognitionTask(with: self.req) { result, err in
             if let result = result {
@@ -130,11 +138,12 @@ class SpeechVC: UIViewController {
         }
     }
 
-    // this is why req is a property: we need a way to stop it
     @IBAction func endLive(_ sender: Any) {
         self.engine.stop()
-        self.engine.inputNode!.removeTap(onBus: 0) // otherwise cannot start again
+        // TODO: must removeTap 0 otherwise cannot start again
+        self.engine.inputNode!.removeTap(onBus: 0)
         self.req.endAudio()
+        isInstallTap = !isInstallTap
     }
 }
 

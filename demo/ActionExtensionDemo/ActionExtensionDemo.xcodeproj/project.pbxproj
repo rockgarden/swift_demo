@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		44AA4B3C1EED169F00F113C0 /* ActionExtension.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 44AA4B3B1EED169F00F113C0 /* ActionExtension.rtf */; };
 		44FCAAD21E0AB3AD00AACFC2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44FCAAD11E0AB3AD00AACFC2 /* AppDelegate.swift */; };
 		44FCAAD41E0AB3AD00AACFC2 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44FCAAD31E0AB3AD00AACFC2 /* ViewController.swift */; };
 		44FCAAD71E0AB3AD00AACFC2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 44FCAAD51E0AB3AD00AACFC2 /* Main.storyboard */; };
@@ -69,6 +70,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		44AA4B3B1EED169F00F113C0 /* ActionExtension.rtf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.rtf; path = ActionExtension.rtf; sourceTree = "<group>"; };
 		44FCAACE1E0AB3AD00AACFC2 /* ActionExtensionDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ActionExtensionDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		44FCAAD11E0AB3AD00AACFC2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		44FCAAD31E0AB3AD00AACFC2 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -130,6 +132,7 @@
 		44FCAAC51E0AB3AD00AACFC2 = {
 			isa = PBXGroup;
 			children = (
+				44AA4B3B1EED169F00F113C0 /* ActionExtension.rtf */,
 				44FCAAD01E0AB3AD00AACFC2 /* ActionExtensionDemo */,
 				44FCAAE81E0AB52F00AACFC2 /* ActionRequestHandler */,
 				44FCAAFF1E0AB69A00AACFC2 /* Expand */,
@@ -330,6 +333,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				44AA4B3C1EED169F00F113C0 /* ActionExtension.rtf in Resources */,
 				44FCAADC1E0AB3AD00AACFC2 /* LaunchScreen.storyboard in Resources */,
 				44FCAAD91E0AB3AD00AACFC2 /* Assets.xcassets in Resources */,
 				44FCAAD71E0AB3AD00AACFC2 /* Main.storyboard in Resources */,

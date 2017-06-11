@@ -410,9 +410,40 @@
                                                 </label>
                                             </subviews>
                                         </tableViewCellContentView>
-                                        <connections>
-                                            <segue destination="V8c-4x-tG6" kind="show" id="3aB-0w-FW0"/>
-                                        </connections>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" tag="13" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" textLabel="Kdt-kv-bQq" style="IBUITableViewCellStyleDefault" id="lwq-jP-Im1">
+                                        <rect key="frame" x="0.0" y="616" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="lwq-jP-Im1" id="2uX-cS-TvQ">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="UIFont family" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Kdt-kv-bQq" userLabel="UIFont family collection view">
+                                                    <rect key="frame" x="15" y="0.0" width="345" height="43.5"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" tag="13" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" textLabel="gja-Bk-C80" style="IBUITableViewCellStyleDefault" id="MW8-WC-DE9">
+                                        <rect key="frame" x="0.0" y="660" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="MW8-WC-DE9" id="cxn-zq-MZB">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Dynamic CollectionView" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="gja-Bk-C80" userLabel="UIFont family collection view">
+                                                    <rect key="frame" x="15" y="0.0" width="345" height="43.5"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
@@ -766,50 +797,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ChH-sE-49B" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3364" y="693"/>
-        </scene>
-        <!--Calculate Cell Size-->
-        <scene sceneID="ZTi-RZ-H69">
-            <objects>
-                <viewController storyboardIdentifier="CalculateVC" title="Calculate Cell Size" automaticallyAdjustsScrollViewInsets="NO" id="V8c-4x-tG6" customClass="CalculateVC" customModule="UICollectionView" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="8ar-1s-AZo"/>
-                        <viewControllerLayoutGuide type="bottom" id="CIM-hz-jtM"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="Cel-l0-4vH">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="aon-h3-ein">
-                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
-                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
-                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="DlI-ju-tr6">
-                                    <size key="itemSize" width="101" height="61"/>
-                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
-                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                </collectionViewFlowLayout>
-                                <cells/>
-                                <connections>
-                                    <outlet property="dataSource" destination="V8c-4x-tG6" id="vy0-M6-GPu"/>
-                                    <outlet property="delegate" destination="V8c-4x-tG6" id="Gqo-KE-VYp"/>
-                                </connections>
-                            </collectionView>
-                        </subviews>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <constraints>
-                            <constraint firstItem="aon-h3-ein" firstAttribute="leading" secondItem="Cel-l0-4vH" secondAttribute="leading" id="G69-nV-C8W"/>
-                            <constraint firstItem="CIM-hz-jtM" firstAttribute="top" secondItem="aon-h3-ein" secondAttribute="bottom" id="GGo-8N-HgM"/>
-                            <constraint firstItem="aon-h3-ein" firstAttribute="trailing" secondItem="Cel-l0-4vH" secondAttribute="trailing" id="TdA-cq-XM1"/>
-                            <constraint firstItem="aon-h3-ein" firstAttribute="top" secondItem="8ar-1s-AZo" secondAttribute="bottom" id="Y5S-Sw-ysZ"/>
-                        </constraints>
-                    </view>
-                    <connections>
-                        <outlet property="collectionView" destination="aon-h3-ein" id="TWg-c8-1x9"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="UMJ-eh-G60" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1172" y="-1472"/>
         </scene>
     </scenes>
     <resources>

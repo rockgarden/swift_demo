@@ -37,6 +37,9 @@
 		44966FF31E8AAF4000222F3E /* WCLWaterFallLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44966FF21E8AAF4000222F3E /* WCLWaterFallLayout.swift */; };
 		44966FF61E8AB41500222F3E /* SCCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44966FF51E8AB41500222F3E /* SCCollectionViewController.swift */; };
 		44966FF81E8AB42E00222F3E /* SubclassExampleController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44966FF71E8AB42E00222F3E /* SubclassExampleController.swift */; };
+		44AA4B411EED3B1200F113C0 /* MyCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44AA4B3F1EED3B1200F113C0 /* MyCollectionViewCell.swift */; };
+		44AA4B421EED3B1200F113C0 /* MyCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 44AA4B401EED3B1200F113C0 /* MyCollectionViewCell.xib */; };
+		44AA4B441EED3B7600F113C0 /* DynamicCellVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44AA4B431EED3B7600F113C0 /* DynamicCellVC.swift */; };
 		44B8084D1EE6E482004B7610 /* WorkspaceGlobal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44B8084C1EE6E482004B7610 /* WorkspaceGlobal.swift */; };
 		44B8084F1EE6F58D004B7610 /* MyFlowLayoutCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44B8084E1EE6F58D004B7610 /* MyFlowLayoutCell.swift */; };
 		44C3DEC21E128B3E00118938 /* CellBackgroundLayeringVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44C3DEC11E128B3E00118938 /* CellBackgroundLayeringVC.swift */; };
@@ -156,6 +159,9 @@
 		44966FF21E8AAF4000222F3E /* WCLWaterFallLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WCLWaterFallLayout.swift; sourceTree = "<group>"; };
 		44966FF51E8AB41500222F3E /* SCCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SCCollectionViewController.swift; sourceTree = "<group>"; };
 		44966FF71E8AB42E00222F3E /* SubclassExampleController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SubclassExampleController.swift; sourceTree = "<group>"; };
+		44AA4B3F1EED3B1200F113C0 /* MyCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyCollectionViewCell.swift; sourceTree = "<group>"; };
+		44AA4B401EED3B1200F113C0 /* MyCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MyCollectionViewCell.xib; sourceTree = "<group>"; };
+		44AA4B431EED3B7600F113C0 /* DynamicCellVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DynamicCellVC.swift; sourceTree = "<group>"; };
 		44B8084C1EE6E482004B7610 /* WorkspaceGlobal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = WorkspaceGlobal.swift; path = ../WorkspaceGlobal.swift; sourceTree = "<group>"; };
 		44B8084E1EE6F58D004B7610 /* MyFlowLayoutCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyFlowLayoutCell.swift; sourceTree = "<group>"; };
 		44C3DEC11E128B3E00118938 /* CellBackgroundLayeringVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CellBackgroundLayeringVC.swift; sourceTree = "<group>"; };
@@ -378,10 +384,13 @@
 				C27C6A391E654F700066B3C8 /* MyCell.swift */,
 				C27C6A381E654F700066B3C8 /* MyCell.xib */,
 				4462AEA01EA5F5F9006299C8 /* RetractableFirstItemLayoutVC.swift */,
-				C24AA8151EAF32CD00091AB2 /* UIFontFamilyVC.swift */,
 				4424EDCB1EE818AC0093984B /* CalculateVC.swift */,
 				4424EDCD1EE818D80093984B /* LabelCell.xib */,
 				4424EDCE1EE818D80093984B /* LabelCell.swift */,
+				C24AA8151EAF32CD00091AB2 /* UIFontFamilyVC.swift */,
+				44AA4B431EED3B7600F113C0 /* DynamicCellVC.swift */,
+				44AA4B3F1EED3B1200F113C0 /* MyCollectionViewCell.swift */,
+				44AA4B401EED3B1200F113C0 /* MyCollectionViewCell.xib */,
 				440E82F31EE5946300DF4718 /* resource */,
 				440E82F21EE5944000DF4718 /* support files */,
 			);
@@ -546,6 +555,7 @@
 				C2BC5B501DC6E7D1007F23F4 /* flag_arizona.gif in Resources */,
 				C2BC5B671DC6E7D1007F23F4 /* flag_montana.gif in Resources */,
 				C2BC5B131DC6E72B007F23F4 /* LaunchScreen.storyboard in Resources */,
+				44AA4B421EED3B1200F113C0 /* MyCollectionViewCell.xib in Resources */,
 				C2BC5B101DC6E72A007F23F4 /* Assets.xcassets in Resources */,
 				C2BC5B7C1DC6E7D1007F23F4 /* flag_washington.gif in Resources */,
 				C2BC5B0E1DC6E72A007F23F4 /* Main.storyboard in Resources */,
@@ -599,7 +609,9 @@
 			files = (
 				44B8084D1EE6E482004B7610 /* WorkspaceGlobal.swift in Sources */,
 				C27C6A3B1E654F700066B3C8 /* MyCell.swift in Sources */,
+				44AA4B411EED3B1200F113C0 /* MyCollectionViewCell.swift in Sources */,
 				44DCE4851E8936C3000597B0 /* WaterFallLayout.swift in Sources */,
+				44AA4B441EED3B7600F113C0 /* DynamicCellVC.swift in Sources */,
 				C2AA3B0F1E110ADE00C9E438 /* PhotoCell.swift in Sources */,
 				443F52AC1E8D45A500C8E029 /* ASCollectionViewParallaxCell.swift in Sources */,
 				44966FE71E8AA40000222F3E /* ELWaterFlowLayout.swift in Sources */,
