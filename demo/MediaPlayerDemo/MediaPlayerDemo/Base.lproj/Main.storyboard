@@ -245,7 +245,7 @@
                                         <rect key="frame" x="0.0" y="484" width="375" height="72"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="tsu-JW-cql" id="miE-oB-b6a">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="71.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="72"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="System sound" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pgN-Zq-gvG" userLabel="System Sound">
@@ -706,10 +706,10 @@
             </objects>
             <point key="canvasLocation" x="5342" y="824"/>
         </scene>
-        <!--TestVC-->
+        <!--MiDi play-->
         <scene sceneID="qRg-v5-yfe">
             <objects>
-                <viewController storyboardIdentifier="MIDITestVC" id="eRu-m9-YJ5" customClass="MIDITestVC" customModule="MediaPlayerDemo" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MIDITestVC" id="eRu-m9-YJ5" userLabel="MiDi play" customClass="MIDITestVC" customModule="MediaPlayerDemo" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="cqX-se-ADE"/>
                         <viewControllerLayoutGuide type="bottom" id="nrX-40-pjb"/>
@@ -725,12 +725,21 @@
                                     <action selector="doButton:" destination="eRu-m9-YJ5" eventType="touchUpInside" id="pwj-yB-Dvk"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0EH-7O-aBe">
+                                <rect key="frame" x="238" y="629" width="121" height="30"/>
+                                <state key="normal" title="use AVMIDIPlayer"/>
+                                <connections>
+                                    <action selector="doWhich:" destination="eRu-m9-YJ5" eventType="touchUpInside" id="niF-49-jbq"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="jRc-BD-OMj" firstAttribute="centerX" secondItem="ehg-7C-CdX" secondAttribute="centerX" id="ApX-7m-hQ1"/>
-                            <constraint firstItem="nrX-40-pjb" firstAttribute="top" secondItem="jRc-BD-OMj" secondAttribute="bottom" constant="8" symbolic="YES" id="U88-AB-LwI"/>
-                            <constraint firstItem="jRc-BD-OMj" firstAttribute="width" secondItem="ehg-7C-CdX" secondAttribute="width" id="rhP-nv-jiz"/>
+                            <constraint firstItem="jRc-BD-OMj" firstAttribute="baseline" secondItem="0EH-7O-aBe" secondAttribute="baseline" id="D8M-aR-ax4"/>
+                            <constraint firstItem="0EH-7O-aBe" firstAttribute="trailing" secondItem="ehg-7C-CdX" secondAttribute="trailingMargin" id="GpK-2R-Tti"/>
+                            <constraint firstAttribute="trailing" secondItem="jRc-BD-OMj" secondAttribute="trailing" id="Pcu-bc-Bco"/>
+                            <constraint firstItem="jRc-BD-OMj" firstAttribute="leading" secondItem="ehg-7C-CdX" secondAttribute="leading" id="SOd-MA-Wml"/>
+                            <constraint firstItem="nrX-40-pjb" firstAttribute="top" secondItem="jRc-BD-OMj" secondAttribute="bottom" constant="8" symbolic="YES" id="hGS-dF-Ori"/>
                         </constraints>
                     </view>
                 </viewController>

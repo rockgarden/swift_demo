@@ -14,26 +14,31 @@ class MIDITestVC: UIViewController {
     var engine = AVAudioEngine()
     var unit = AVAudioUnitSampler() ///不需要反复实例化
     var seq : AVAudioSequencer!
+    var which = 2 // 1 or 2
 
     override func viewDidDisappear(_ animated: Bool) {
         super.viewDidDisappear(animated)
         seq = nil
-        ///seq无法自动释放, 通过强制为空 可 FIX-Error: 'com.apple.coreaudio.avfaudio', reason: 'required condition is false: outputNode' 并确保播放结束. 
-        ///engine可自动释放
+        /// seq无法自动释放, 通过强制为空 可 FIX-Error: 'com.apple.coreaudio.avfaudio', reason: 'required condition is false: outputNode' 并确保播放结束.
+        /// engine可自动释放
+    }
+
+    @IBAction func doWhich(_ sender: Any) {
+        which = which == 2 ? 1 : 2
     }
     
     @IBAction func doButton(_ sender: Any) {
         
         let midurl = Bundle.main.url(forResource:"presto", withExtension: "mid")!
         let sndurl = Bundle.main.url(forResource:"PianoBell", withExtension: "sf2")!
-        var which : Int { return 2 } // 1 or 2
-        
+
         switch which {
         case 1:
             self.player = try! AVMIDIPlayer(contentsOf: midurl, soundBankURL: sndurl)
             self.player.prepareToPlay()
             self.player.play(nil)
-        case 2:
+
+        case 2: // FIXME: 多次播放 crash
             reset()
 
             //let unit = AVAudioUnitSampler() //不建议多次instance

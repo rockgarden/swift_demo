@@ -30,7 +30,8 @@ class MyKnob: UIControl {
     override func continueTracking(_ t: UITouch, with _: UIEvent?) -> Bool {
         let ang = pToA(t) - initialAngle
         let absoluteAngle = angle + ang
-        switch absoluteAngle { // how to do inequalities in a Swift switch statement
+        // 在switch中实现不平等
+        switch absoluteAngle {
         case -CGFloat.infinity...0:
             angle = 0
             sendActions(for: .valueChanged)
@@ -46,8 +47,8 @@ class MyKnob: UIControl {
             }
             return true
         }
-        // ignore, just checking syntax
-        // self.transform = self.transform.rotated(by: ang)
+
+        //self.transform = self.transform.rotated(by: ang)
     }
     
     override func endTracking(_: UITouch?, with _: UIEvent?) {

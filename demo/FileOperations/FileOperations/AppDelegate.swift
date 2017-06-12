@@ -18,7 +18,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         DispatchQueue.global(qos:.default).async {
             let fm = FileManager.default
             let ubiq = fm.url(forUbiquityContainerIdentifier: nil)
-            print("ubiq: \(ubiq)")
+            print("ubiq: \(String(describing: ubiq))")
             DispatchQueue.main.async {
                 self.ubiq = ubiq
             }

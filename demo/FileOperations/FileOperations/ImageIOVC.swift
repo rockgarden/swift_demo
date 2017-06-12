@@ -23,7 +23,7 @@ class ImageIOVC: UIViewController {
         let src = CGImageSourceCreateWithURL(url as CFURL, nil)!
         let result = CGImageSourceCopyPropertiesAtIndex(src, 0, nil)! as NSDictionary
         print(result)
-        // just proving it really is a dictionary
+        // result 是一个字典
         let width = result[kCGImagePropertyPixelWidth] as! CGFloat
         let height = result[kCGImagePropertyPixelHeight] as! CGFloat
         print("\(width) by \(height)")

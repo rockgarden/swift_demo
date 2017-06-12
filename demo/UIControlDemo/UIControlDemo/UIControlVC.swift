@@ -17,6 +17,7 @@ class UIControlVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupButton()
+        knob.isContinuous = true //?
     }
 
     func setupButton() {
