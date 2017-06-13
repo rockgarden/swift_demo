@@ -1,33 +1,11 @@
 
 import UIKit
 
-extension CGRect {
-    init(_ x:CGFloat, _ y:CGFloat, _ w:CGFloat, _ h:CGFloat) {
-        self.init(x:x, y:y, width:w, height:h)
-    }
-}
-extension CGSize {
-    init(_ width:CGFloat, _ height:CGFloat) {
-        self.init(width:width, height:height)
-    }
-}
-extension CGPoint {
-    init(_ x:CGFloat, _ y:CGFloat) {
-        self.init(x:x, y:y)
-    }
-}
-extension CGVector {
-    init (_ dx:CGFloat, _ dy:CGFloat) {
-        self.init(dx:dx, dy:dy)
-    }
-}
+class BaseActivity: UIActivity {
 
-
-
-class MyCoolActivity : UIActivity {
     var items : [Any]?
     var image : UIImage
-    
+
     override init() {
         let idiom = UIScreen.main.traitCollection.userInterfaceIdiom
         var scale : CGFloat = (idiom == .pad ? 76 : 60) - 10
@@ -41,23 +19,37 @@ class MyCoolActivity : UIActivity {
         }
         super.init()
     }
-    
+
     override class var activityCategory : UIActivityCategory {
-        return .action // the default
+        return .action //the default
     }
-    
-    override var activityType : UIActivityType { // *
-        return UIActivityType("com.neuburg.matt.coolActivity") // *
+
+    override var activityImage : UIImage? {
+        return self.image
+    }
+
+    override func prepare(withActivityItems activityItems: [Any]) {
+        print("prepare \(activityItems)")
+        self.items = activityItems
+    }
+
+    deinit {
+        print("activity dealloc")
+    }
+
+}
+
+
+class CoolActivity : BaseActivity {
+
+    override var activityType : UIActivityType {
+        return UIActivityType("com.neuburg.matt.coolActivity")
     }
     
     override var activityTitle : String? {
         return "Be Cool"
     }
-    
-    override var activityImage : UIImage? {
-        return self.image
-    }
-    
+
     override func canPerform(withActivityItems activityItems: [Any]) -> Bool {
         print("cool can perform \(activityItems)")
         for obj in activityItems {
@@ -69,19 +61,34 @@ class MyCoolActivity : UIActivity {
         print("returning false")
         return false
     }
-    
-    override func prepare(withActivityItems activityItems: [Any]) {
-        print("cool prepare \(activityItems)")
-        self.items = activityItems
-    }
-    
+
     override func perform() {
-        print("cool performing \(self.items)")
+        print("cool performing \(String(describing: self.items))")
         self.activityDidFinish(true)
-    }
-    
-    deinit {
-        print("cool activity dealloc")
     }
 
 }
+
+class ElaborateActivity : BaseActivity {
+
+    override var activityType : UIActivityType? {
+        return UIActivityType("com.neuburg.matt.elaborateActivity")
+    }
+
+    override var activityTitle : String? {
+        return "Elaborate"
+    }
+
+    override func canPerform(withActivityItems activityItems: [Any]) -> Bool {
+        print("elaborate can perform \(activityItems)")
+        print("returning true")
+        return true
+    }
+
+    override var activityViewController : UIViewController? {
+        let mvc = MustacheViewController(activity: self, items: self.items!)
+        return mvc
+    }
+
+}
+

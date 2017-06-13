@@ -30,7 +30,6 @@ class TextFieldSlidingVC: UIViewController {
             ])
 
         self.scrollView.keyboardDismissMode = .interactive
-
     }
 
     //    func textFieldDidBeginEditing(tf: UITextField) {

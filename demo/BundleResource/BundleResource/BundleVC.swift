@@ -20,6 +20,8 @@ class BundleVC: UIViewController {
         super.viewDidLoad()
         print(self.iv.image!.scale)
 
+        _ = #imageLiteral(resourceName: "one") // behind the scenes: #imageLiteral with resourceName: param
+
         self.iv3.image = UIImage(named:"one")
         self.iv4.image = UIImage(named:"uno")
 

@@ -384,6 +384,93 @@
             </objects>
             <point key="canvasLocation" x="-135" y="1294"/>
         </scene>
+        <!--View ReversalVC-->
+        <scene sceneID="yOr-3m-ULR">
+            <objects>
+                <viewController storyboardIdentifier="ViewReversalVC" id="26T-t5-khv" customClass="ViewReversalVC" customModule="UIViewDemo" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="0Tg-yk-IJP"/>
+                        <viewControllerLayoutGuide type="bottom" id="1pv-aa-YSV"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="lVN-Tp-IhI">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="finder" translatesAutoresizingMaskIntoConstraints="NO" id="0Nl-zi-t1U">
+                                <rect key="frame" x="35" y="39" width="273" height="116"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YT4-dH-Thd">
+                                <rect key="frame" x="35" y="180" width="126" height="60"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="78J-QD-E1x"/>
+                                    <constraint firstAttribute="width" constant="126" id="WgH-zd-dZM"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="30"/>
+                                <state key="normal" title="Close" backgroundImage="finder">
+                                    <color key="titleColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <segue destination="CvG-gH-cFX" kind="unwind" unwindAction="unwindToMainVC:" id="SAu-Jj-vzb"/>
+                                </connections>
+                            </button>
+                            <view tag="1" contentMode="scaleToFill" semanticContentAttribute="playback" translatesAutoresizingMaskIntoConstraints="NO" id="zdW-ex-kOD">
+                                <rect key="frame" x="35" y="259" width="184" height="112"/>
+                                <subviews>
+                                    <view tag="2" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="B4Q-P2-3Xe">
+                                        <rect key="frame" x="10" y="18" width="136" height="74"/>
+                                        <color key="backgroundColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" red="1" green="0.29666560990000002" blue="0.47017818140000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstItem="B4Q-P2-3Xe" firstAttribute="top" secondItem="zdW-ex-kOD" secondAttribute="top" constant="18" id="1wQ-me-WN1"/>
+                                    <constraint firstAttribute="trailing" secondItem="B4Q-P2-3Xe" secondAttribute="trailing" constant="38" id="4lL-Ac-RM9"/>
+                                    <constraint firstItem="B4Q-P2-3Xe" firstAttribute="leading" secondItem="zdW-ex-kOD" secondAttribute="leading" constant="10" id="IQX-lO-R5U"/>
+                                    <constraint firstAttribute="height" constant="112" id="QAT-TP-5Hu"/>
+                                    <constraint firstAttribute="bottom" secondItem="B4Q-P2-3Xe" secondAttribute="bottom" constant="20" id="cUY-4J-XUo"/>
+                                    <constraint firstAttribute="width" constant="184" id="tn1-Yo-Vwt"/>
+                                </constraints>
+                            </view>
+                            <view tag="3" contentMode="scaleToFill" semanticContentAttribute="forceRightToLeft" translatesAutoresizingMaskIntoConstraints="NO" id="rGO-rN-3Jn">
+                                <rect key="frame" x="35" y="379" width="184" height="112"/>
+                                <subviews>
+                                    <view tag="4" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UwL-CA-Q3q">
+                                        <rect key="frame" x="38" y="18" width="136" height="74"/>
+                                        <color key="backgroundColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" red="1" green="0.29666560990000002" blue="0.47017818140000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="112" id="EyW-NO-lSo"/>
+                                    <constraint firstAttribute="width" constant="184" id="bBL-wH-2OC"/>
+                                    <constraint firstAttribute="trailing" secondItem="UwL-CA-Q3q" secondAttribute="trailing" constant="38" id="bRD-1h-pJ0"/>
+                                    <constraint firstItem="UwL-CA-Q3q" firstAttribute="leading" secondItem="rGO-rN-3Jn" secondAttribute="leading" constant="10" id="g13-wS-Ft5"/>
+                                    <constraint firstItem="UwL-CA-Q3q" firstAttribute="top" secondItem="rGO-rN-3Jn" secondAttribute="top" constant="18" id="rD2-5B-dqX"/>
+                                    <constraint firstAttribute="bottom" secondItem="UwL-CA-Q3q" secondAttribute="bottom" constant="20" id="xj6-Ax-BM8"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="YT4-dH-Thd" firstAttribute="leading" secondItem="lVN-Tp-IhI" secondAttribute="leadingMargin" constant="19" id="31G-cm-xg8"/>
+                            <constraint firstItem="zdW-ex-kOD" firstAttribute="top" secondItem="0Tg-yk-IJP" secondAttribute="bottom" constant="239" id="Dkc-cN-eA1"/>
+                            <constraint firstItem="0Nl-zi-t1U" firstAttribute="leading" secondItem="lVN-Tp-IhI" secondAttribute="leadingMargin" constant="19" id="FvB-jb-Xam"/>
+                            <constraint firstItem="0Nl-zi-t1U" firstAttribute="top" secondItem="0Tg-yk-IJP" secondAttribute="bottom" constant="19" id="G3b-9U-QO7"/>
+                            <constraint firstItem="YT4-dH-Thd" firstAttribute="top" secondItem="0Nl-zi-t1U" secondAttribute="bottom" constant="25" id="Go4-9b-Jw6"/>
+                            <constraint firstItem="rGO-rN-3Jn" firstAttribute="top" secondItem="0Tg-yk-IJP" secondAttribute="bottom" constant="359" id="VTv-Uc-Hx4"/>
+                            <constraint firstItem="rGO-rN-3Jn" firstAttribute="leading" secondItem="lVN-Tp-IhI" secondAttribute="leadingMargin" constant="19" id="b6L-PP-RZk"/>
+                            <constraint firstItem="zdW-ex-kOD" firstAttribute="leading" secondItem="lVN-Tp-IhI" secondAttribute="leadingMargin" constant="19" id="deP-Jj-TP4"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="iv" destination="0Nl-zi-t1U" id="pV5-Ql-0Sd"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="tSF-vV-CbS" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="CvG-gH-cFX" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="-135" y="609"/>
+        </scene>
         <!--Position Resizable ImageVC-->
         <scene sceneID="Vqu-pe-4lH">
             <objects>
@@ -613,23 +700,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CY8-d1-uvC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2257" y="1683"/>
-        </scene>
-        <!--View Controller-->
-        <scene sceneID="Hxg-TU-Rhz">
-            <objects>
-                <viewController id="vP0-j4-Tgp" customClass="ViewController" customModule="UIViewDemo" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="0xL-LG-pJD"/>
-                        <viewControllerLayoutGuide type="bottom" id="fH1-yK-wYC"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="Ru7-Fm-q3h">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dJj-bq-hab" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
         </scene>
     </scenes>
     <resources>

@@ -26,6 +26,8 @@ class Main_UIView: UIViewController {
         let f = Bundle.main.path(forResource: "vcList", ofType: "txt")!
         let s = try! String(contentsOfFile: f)
         self.vcList = s.components(separatedBy:"\n")
+        if vcList.last == "" { vcList.removeLast()}
+        //vcList.filter {$0 == ""}
         picker.delegate = self
         picker.dataSource  = self
     }
@@ -36,19 +38,8 @@ class Main_UIView: UIViewController {
 
     @IBAction func jumpNext(_ sender: Any) {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        switch which {
-        case 0:
-            let vc = storyboard.instantiateViewController(withIdentifier: "ProgressVC")
-            present(vc, animated: true, completion: nil)
-        case 1:
-            let vc = storyboard.instantiateViewController(withIdentifier: "ActivityIndicatorVC")
-            present(vc, animated: true, completion: nil)
-        case 2:
-            let vc = storyboard.instantiateViewController(withIdentifier: "Root_UIImageView")
-            present(vc, animated: true, completion: nil)
-        default:
-            break
-        }
+        let vc = storyboard.instantiateViewController(withIdentifier: vcList[which])
+        present(vc, animated: true, completion: nil)
     }
 
     @IBAction func unwindToMainVC(_ segue: UIStoryboardSegue) {
@@ -65,21 +56,23 @@ extension Main_UIView: UIPickerViewDelegate, UIPickerViewDataSource {
 
     // returns the # of rows in each component..
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        print(vcList.count)
         return vcList.count
     }
 
     func pickerView(_ pickerView: UIPickerView, didSelectRow: Int, inComponent: Int) {
         which = didSelectRow
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let vc = storyboard.instantiateViewController(withIdentifier: vcList[which])
+        present(vc, animated: true, completion: nil)
     }
 
     // bug: no views are reused
     // the labels are not leaking (they are deallocated in good order)...
     // but they are not being reused either
 
-    func pickerView(_ pickerView: UIPickerView,
-                    viewForRow row: Int,
-                    forComponent component: Int,
-                    reusing view: UIView?) -> UIView {
+    func pickerView(_ pickerView: UIPickerView, viewForRow row: Int,
+                    forComponent component: Int, reusing view: UIView?) -> UIView {
         let lab : UILabel
         if let label = view as? UILabel {
             lab = label

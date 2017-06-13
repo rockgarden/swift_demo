@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		444C1B891EF0181D00696852 /* TextFieldSlidingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 444C1B881EF0181D00696852 /* TextFieldSlidingVC.swift */; };
 		449BD9581E192470003A0762 /* MyKnob.swift in Sources */ = {isa = PBXBuildFile; fileRef = 449BD9571E192470003A0762 /* MyKnob.swift */; };
 		449BD95A1E19280C003A0762 /* MyShrinkingButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 449BD9591E19280C003A0762 /* MyShrinkingButton.swift */; };
 		449BD95C1E192CE8003A0762 /* UISegmentedControlVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 449BD95B1E192CE8003A0762 /* UISegmentedControlVC.swift */; };
@@ -36,6 +37,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		444C1B881EF0181D00696852 /* TextFieldSlidingVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextFieldSlidingVC.swift; sourceTree = "<group>"; };
 		449BD9571E192470003A0762 /* MyKnob.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyKnob.swift; sourceTree = "<group>"; };
 		449BD9591E19280C003A0762 /* MyShrinkingButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyShrinkingButton.swift; sourceTree = "<group>"; };
 		449BD95B1E192CE8003A0762 /* UISegmentedControlVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UISegmentedControlVC.swift; sourceTree = "<group>"; };
@@ -117,6 +119,7 @@
 				C29089651EC01AB6001E02FB /* SqueezeButton.swift */,
 				C27AFC111EC58F910017A840 /* CircleRippleButton.swift */,
 				C2C04C201ECC182900F0A10B /* RefreshControlVC.swift */,
+				444C1B881EF0181D00696852 /* TextFieldSlidingVC.swift */,
 				449E5D941E13FC6B009F2915 /* Assets.xcassets */,
 				449E5D961E13FC6B009F2915 /* LaunchScreen.storyboard */,
 				449E5D991E13FC6B009F2915 /* Info.plist */,
@@ -214,6 +217,7 @@
 				C2C04C211ECC182900F0A10B /* RefreshControlVC.swift in Sources */,
 				C290896E1EC0393F001E02FB /* FadeTransition.swift in Sources */,
 				44D68A121E19FF8800AB4C19 /* UIStepperVC.swift in Sources */,
+				444C1B891EF0181D00696852 /* TextFieldSlidingVC.swift in Sources */,
 				44D68A0E1E19FB5B00AB4C19 /* CoinSlider.swift in Sources */,
 				C27AFC161EC594A00017A840 /* CAAnimation+Closure.swift in Sources */,
 				449BD95A1E19280C003A0762 /* MyShrinkingButton.swift in Sources */,

@@ -11,12 +11,10 @@
 		444459061E0BFDB9009C7A65 /* UIActivityVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 444459051E0BFDB9009C7A65 /* UIActivityVC.swift */; };
 		444459091E0BFDB9009C7A65 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 444459071E0BFDB9009C7A65 /* Main.storyboard */; };
 		4444590B1E0BFDB9009C7A65 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4444590A1E0BFDB9009C7A65 /* Assets.xcassets */; };
-		4444590E1E0BFDB9009C7A65 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4444590C1E0BFDB9009C7A65 /* LaunchScreen.storyboard */; };
-		444459161E0BFE68009C7A65 /* sunglasses.png in Resources */ = {isa = PBXBuildFile; fileRef = 444459151E0BFE68009C7A65 /* sunglasses.png */; };
 		4444591B1E0C00D5009C7A65 /* MustacheViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 444459171E0C00D5009C7A65 /* MustacheViewController.swift */; };
 		4444591C1E0C00D5009C7A65 /* MustacheViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 444459181E0C00D5009C7A65 /* MustacheViewController.xib */; };
-		4444591D1E0C00D5009C7A65 /* MyCoolActivity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 444459191E0C00D5009C7A65 /* MyCoolActivity.swift */; };
-		4444591E1E0C00D5009C7A65 /* MyElaborateActivity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4444591A1E0C00D5009C7A65 /* MyElaborateActivity.swift */; };
+		4444591D1E0C00D5009C7A65 /* MyActivitys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 444459191E0C00D5009C7A65 /* MyActivitys.swift */; };
+		444C1B871EF00E7C00696852 /* sunglasses.png in Resources */ = {isa = PBXBuildFile; fileRef = 444C1B861EF00E7C00696852 /* sunglasses.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,13 +23,11 @@
 		444459051E0BFDB9009C7A65 /* UIActivityVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIActivityVC.swift; sourceTree = "<group>"; };
 		444459081E0BFDB9009C7A65 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		4444590A1E0BFDB9009C7A65 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		4444590D1E0BFDB9009C7A65 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4444590F1E0BFDB9009C7A65 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		444459151E0BFE68009C7A65 /* sunglasses.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sunglasses.png; sourceTree = "<group>"; };
 		444459171E0C00D5009C7A65 /* MustacheViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MustacheViewController.swift; sourceTree = "<group>"; };
 		444459181E0C00D5009C7A65 /* MustacheViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MustacheViewController.xib; sourceTree = "<group>"; };
-		444459191E0C00D5009C7A65 /* MyCoolActivity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyCoolActivity.swift; sourceTree = "<group>"; };
-		4444591A1E0C00D5009C7A65 /* MyElaborateActivity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyElaborateActivity.swift; sourceTree = "<group>"; };
+		444459191E0C00D5009C7A65 /* MyActivitys.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyActivitys.swift; sourceTree = "<group>"; };
+		444C1B861EF00E7C00696852 /* sunglasses.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sunglasses.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,16 +61,14 @@
 			isa = PBXGroup;
 			children = (
 				444459031E0BFDB9009C7A65 /* AppDelegate.swift */,
+				444459071E0BFDB9009C7A65 /* Main.storyboard */,
 				444459051E0BFDB9009C7A65 /* UIActivityVC.swift */,
 				444459171E0C00D5009C7A65 /* MustacheViewController.swift */,
 				444459181E0C00D5009C7A65 /* MustacheViewController.xib */,
-				444459191E0C00D5009C7A65 /* MyCoolActivity.swift */,
-				4444591A1E0C00D5009C7A65 /* MyElaborateActivity.swift */,
-				444459071E0BFDB9009C7A65 /* Main.storyboard */,
+				444459191E0C00D5009C7A65 /* MyActivitys.swift */,
 				4444590A1E0BFDB9009C7A65 /* Assets.xcassets */,
-				4444590C1E0BFDB9009C7A65 /* LaunchScreen.storyboard */,
+				444C1B861EF00E7C00696852 /* sunglasses.png */,
 				4444590F1E0BFDB9009C7A65 /* Info.plist */,
-				444459151E0BFE68009C7A65 /* sunglasses.png */,
 			);
 			path = UIActivityViewControllerDemo;
 			sourceTree = "<group>";
@@ -139,10 +133,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4444590E1E0BFDB9009C7A65 /* LaunchScreen.storyboard in Resources */,
-				444459161E0BFE68009C7A65 /* sunglasses.png in Resources */,
 				4444591C1E0C00D5009C7A65 /* MustacheViewController.xib in Resources */,
 				4444590B1E0BFDB9009C7A65 /* Assets.xcassets in Resources */,
+				444C1B871EF00E7C00696852 /* sunglasses.png in Resources */,
 				444459091E0BFDB9009C7A65 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -154,11 +147,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4444591E1E0C00D5009C7A65 /* MyElaborateActivity.swift in Sources */,
 				4444591B1E0C00D5009C7A65 /* MustacheViewController.swift in Sources */,
 				444459061E0BFDB9009C7A65 /* UIActivityVC.swift in Sources */,
 				444459041E0BFDB9009C7A65 /* AppDelegate.swift in Sources */,
-				4444591D1E0C00D5009C7A65 /* MyCoolActivity.swift in Sources */,
+				4444591D1E0C00D5009C7A65 /* MyActivitys.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -171,14 +163,6 @@
 				444459081E0BFDB9009C7A65 /* Base */,
 			);
 			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		4444590C1E0BFDB9009C7A65 /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				4444590D1E0BFDB9009C7A65 /* Base */,
-			);
-			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -320,6 +304,7 @@
 				444459141E0BFDB9009C7A65 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

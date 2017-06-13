@@ -11,6 +11,7 @@ class PositionResizableImageVC: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         self.iv.image = self.iv.image?.imageFlippedForRightToLeftLayoutDirection()
 
         let mainview = self.view

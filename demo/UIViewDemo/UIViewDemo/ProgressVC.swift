@@ -28,7 +28,7 @@ class ProgressVC: UIViewController {
     @IBOutlet var prog1 : UIProgressView!
     @IBOutlet var prog2 : UIProgressView!
     @IBOutlet var prog3 : MyProgressView!
-    @IBOutlet var prog4: MyCircularProgressButton!
+    @IBOutlet var prog4 : MyCircularProgressButton!
     
     var op1 : ProgressingOperation?
     var op2 : ProgressingOperation?
