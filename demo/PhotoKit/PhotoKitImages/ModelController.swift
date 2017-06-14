@@ -23,7 +23,7 @@ class ModelController: NSObject {
         self.tryToGetStarted()
     }
 
-    func viewControllerAtIndex(_ index: Int, storyboard: UIStoryboard) -> DataViewController? {
+    func viewController(at index: Int, storyboard: UIStoryboard) -> DataViewController? {
         if self.photos == nil || self.photos.count == 0 || index >= self.photos.count {
             return nil
         }
@@ -50,7 +50,7 @@ extension ModelController : UIPageViewControllerDataSource {
         if ix == 0 {
             return nil
         }
-        return self.viewControllerAtIndex(ix-1, storyboard:viewController.storyboard!)
+        return self.viewController(at: ix-1, storyboard:viewController.storyboard!)
     }
 
     func pageViewController(_ pageViewController: UIPageViewController, viewControllerAfter viewController: UIViewController) -> UIViewController? {
@@ -58,7 +58,7 @@ extension ModelController : UIPageViewControllerDataSource {
         if ix + 1 >= self.photos.count {
             return nil
         }
-        return self.viewControllerAtIndex(ix+1, storyboard:viewController.storyboard!)
+        return self.viewController(at: ix+1, storyboard:viewController.storyboard!)
     }
 
 

@@ -8,10 +8,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--RootVC ScrollView-->
+        <!--ScrollView-->
         <scene sceneID="t1J-BX-uHN">
             <objects>
-                <tableViewController storyboardIdentifier="RootVC_ScrollView" id="39S-ii-5JB" userLabel="RootVC ScrollView" customClass="RootVC_ScrollView" customModule="UIScrollView" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="RootVC_ScrollView" id="39S-ii-5JB" userLabel="ScrollView" customClass="RootVC_ScrollView" customModule="UIScrollView" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="vNl-Ve-4S9">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -181,7 +181,7 @@
                             <outlet property="delegate" destination="39S-ii-5JB" id="QCi-wR-nsv"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Root View Controller" id="DM6-Xb-93t"/>
+                    <navigationItem key="navigationItem" title="Main" id="DM6-Xb-93t" userLabel="Main"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2jv-oB-bWa" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -774,6 +774,13 @@
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
+                    <navigationItem key="navigationItem" id="V6t-Jx-2Xv">
+                        <barButtonItem key="rightBarButtonItem" title="CenterView" id="pyx-ZN-r3V">
+                            <connections>
+                                <segue destination="ylL-N9-66K" kind="show" id="AcC-UF-MJ4"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="sv" destination="H6k-q6-YwK" id="iU4-gM-RjQ"/>
                         <outlet property="v" destination="zd2-XT-2Td" id="fRz-5y-XYq"/>
@@ -788,8 +795,68 @@
             </objects>
             <point key="canvasLocation" x="577" y="1474"/>
         </scene>
+        <!--Zoom CenteredVC center View-->
+        <scene sceneID="P5l-Js-SOz">
+            <objects>
+                <viewController storyboardIdentifier="ZoomCenteredVC_centerView" id="ylL-N9-66K" customClass="ZoomCenteredVC_centerView" customModule="UIScrollView" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="u2p-7D-WWY"/>
+                        <viewControllerLayoutGuide type="bottom" id="G8l-4T-YPX"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="T1k-SP-zXi">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" minimumZoomScale="0.5" maximumZoomScale="1.5" bouncesZoom="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PTR-Jp-X4R">
+                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <subviews>
+                                    <view tag="999" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="XUX-Dw-lnV" userLabel="ContentView" customClass="MyTappableView" customModule="UIScrollView" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="400" height="300"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <subviews>
+                                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" image="CuriousFrog_500_3_0.png" translatesAutoresizingMaskIntoConstraints="NO" id="Ms3-Lr-M9U">
+                                                <rect key="frame" x="0.0" y="124" width="400" height="300"/>
+                                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                <gestureRecognizers/>
+                                            </imageView>
+                                        </subviews>
+                                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <connections>
+                                    <outlet property="delegate" destination="ylL-N9-66K" id="Ydf-F4-8cH"/>
+                                </connections>
+                            </scrollView>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="wTj-4q-hGt">
+                        <barButtonItem key="rightBarButtonItem" id="kXo-5W-xqc">
+                            <connections>
+                                <action selector="change:" destination="ylL-N9-66K" id="95u-f2-CcZ"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="cB" destination="kXo-5W-xqc" id="RKs-oY-uDQ"/>
+                        <outlet property="iv" destination="Ms3-Lr-M9U" id="Dcr-lV-yS7"/>
+                        <outlet property="sv" destination="PTR-Jp-X4R" id="hiA-wu-eMg"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5ih-qd-Lcl" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="HSg-ga-iUY">
+                    <connections>
+                        <action selector="tapped:" destination="ylL-N9-66K" id="4GV-5q-Kwd"/>
+                    </connections>
+                </tapGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="1343" y="1474"/>
+        </scene>
     </scenes>
     <resources>
+        <image name="CuriousFrog_500_3_0.png" width="256" height="256"/>
         <image name="img1" width="240" height="128"/>
         <image name="img2" width="240" height="128"/>
         <image name="img3" width="240" height="128"/>

@@ -18,8 +18,10 @@ class ZoomCenteredVC: UIViewController, UIScrollViewDelegate {
     override func viewDidLayoutSubviews() {
         if !self.didSetup {
             self.didSetup = true
-            // turn off auto layout and assign content size manually
+            /// 关闭自动布局并手动分配内容大小 turn off auto layout and assign content size manually
             sv.contentSize = CGSize(208,238)
+
+            //setContentOffset(v, sv)
         }
     }
 
@@ -39,21 +41,27 @@ class ZoomCenteredVC: UIViewController, UIScrollViewDelegate {
         return scrollView.viewWithTag(999)
     }
 
-    // same annoying "jump" bug in iOS 8
-    // there is also a slight "jump" as we zoom
-
+    // FIXME: "jump" bug in iOS 8,there is also a slight "jump" as we zoom
     @IBAction func tapped(_ tap : UIGestureRecognizer) {
+        let anim = true
         let v = tap.view!
         let sv = v.superview as! UIScrollView
         if sv.zoomScale < 1 {
-            sv.setZoomScale(1, animated:true)
+            sv.setZoomScale(1, animated:anim)
+            //setContentOffset(v, sv)
         }
         else if sv.zoomScale < sv.maximumZoomScale {
-            sv.setZoomScale(sv.maximumZoomScale, animated:true)
+            sv.setZoomScale(sv.maximumZoomScale, animated:anim)
         }
         else {
-            sv.setZoomScale(sv.minimumZoomScale, animated:true)
+            sv.setZoomScale(sv.minimumZoomScale, animated:anim)
         }
+    }
+
+    // TODO: 调整ContentOffset让view居中
+    private func setContentOffset(_ v: UIView, _ sv: UIScrollView) {
+        let pt = CGPoint((v.bounds.width - sv.bounds.width)/2.0,0)
+        sv.setContentOffset(pt, animated:false)
     }
 }
 
@@ -83,7 +91,8 @@ class MyScrollView: UIScrollView {
                 }
                 v.frame = f
             }
-        default:break
+        default:
+            break
         }
     }
 }

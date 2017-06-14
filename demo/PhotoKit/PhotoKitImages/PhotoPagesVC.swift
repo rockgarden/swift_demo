@@ -17,17 +17,17 @@ func checkForPhotoLibraryAccess(andThen f:(()->())? = nil) {
             }
         }
     case .restricted:
-        // do nothing
         break
     case .denied:
-        // do nothing, or beg the user to authorize us in Settings
+        // beg the user to authorize us in Settings
         break
     }
 }
 
-class RootViewController: UIViewController {
+
+class PhotoPagesVC: UIViewController {
                             
-    var pageViewController: UIPageViewController?
+    var pvc: UIPageViewController?
     var modelController : ModelController!
     
     /*
@@ -71,7 +71,7 @@ class RootViewController: UIViewController {
 
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        self.determineStatus()
+        _ = self.determineStatus()
         NotificationCenter.default.addObserver(self, selector: #selector(determineStatus), name: NSNotification.Name.UIApplicationWillEnterForeground, object: nil)
     }
 
@@ -82,26 +82,26 @@ class RootViewController: UIViewController {
     
     func tryToAddInitialPage() {
         self.modelController = ModelController()
-        if let dvc = self.modelController.viewControllerAtIndex(0, storyboard: self.storyboard!) {
+        if let dvc = self.modelController.viewController(at: 0, storyboard: self.storyboard!) {
             let viewControllers = [dvc]
-            self.pageViewController!.setViewControllers(viewControllers, direction: .forward, animated: false, completion: nil)
-            self.pageViewController!.dataSource = self.modelController
+            self.pvc!.setViewControllers(viewControllers, direction: .forward, animated: false, completion: nil)
+            self.pvc!.dataSource = self.modelController
         }
     }
     
     func setUpInterface() {
-        self.pageViewController = UIPageViewController(transitionStyle: .scroll, navigationOrientation: .horizontal, options: nil)
-        self.pageViewController!.dataSource = nil
+        self.pvc = UIPageViewController(transitionStyle: .scroll, navigationOrientation: .horizontal, options: nil)
+        self.pvc!.dataSource = nil
         self.tryToAddInitialPage() // if succeeds, will set data source for real
         
-        self.addChildViewController(self.pageViewController!)
-        self.view.addSubview(self.pageViewController!.view)
-        self.pageViewController!.view.frame = self.view.bounds
-        self.pageViewController!.didMove(toParentViewController: self)
+        self.addChildViewController(self.pvc!)
+        self.view.addSubview(self.pvc!.view)
+        self.pvc!.view.frame = self.view.bounds
+        self.pvc!.didMove(toParentViewController: self)
     }
 }
 
-extension RootViewController : PHPhotoLibraryChangeObserver {
+extension PhotoPagesVC : PHPhotoLibraryChangeObserver {
     func photoLibraryDidChange(_ changeInfo: PHChange) {
         if let ci = changeInfo.changeDetails(for: self.modelController.recentAlbums as! PHFetchResult<PHObject>) {
             // if what just happened is: we went from nil to results (because user granted permission)...
@@ -119,14 +119,14 @@ extension RootViewController : PHPhotoLibraryChangeObserver {
     }
 }
 
-extension RootViewController {
+extension PhotoPagesVC {
     @IBAction func doVignetteButton(_ sender: AnyObject) {
         if !self.determineStatus() {
             print("not authorized")
             return
         }
 
-        if let dvc = self.pageViewController?.viewControllers?[0] as? DataViewController {
+        if let dvc = self.pvc?.viewControllers?[0] as? DataViewController {
             dvc.doVignette()
         }
     }

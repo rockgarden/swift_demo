@@ -28,14 +28,10 @@ class DataViewController: UIViewController, EditingViewControllerDelegate {
             return
         }
         self.dataLabel.text = asset.description
-        // okay, this is why we are here! fetch the image data!!!!!
-        // we have to say quite specifically what "view" of image we want
+        // define request then fetch the image data!!!!!
         PHImageManager.default().requestImage(for: asset, targetSize: CGSize(width: 300,height: 300), contentMode: .aspectFit, options: nil) {
             //(im:UIImage?, info:[AnyHashable: Any]?) in
             im, info in
-            // this block can be called multiple times
-            // and you can see why: initially we might get a degraded version of the image
-            // and in fact we do, as I show with logging
             if let im = im {
                 print("set up interface: \(im.size)")
                 self.iv.image = im
@@ -47,10 +43,9 @@ class DataViewController: UIViewController, EditingViewControllerDelegate {
     // everything depends upon PHContentEditingInput and PHContentEditingOutput classes
     
     func doVignette() {
-        // part one: standard dance to obtain PHContentEditingInput; hang on to it for later
+        /// part one: obtain PHContentEditingInput; hang on to it for later
         let options = PHContentEditingInputRequestOptions()
-        // note that if we reply true to canHandle..., then we will be handed the *original* photo + data
-        // thus we can continue our edit where we left off, or remove it (and I illustrate both here)
+        // Note: that if we reply true to canHandle..., then we will be handed the *original* photo + data
         options.canHandleAdjustmentData = {
             //(adjustmentData : PHAdjustmentData!) in
             adjustmentData in
@@ -70,8 +65,7 @@ class DataViewController: UIViewController, EditingViewControllerDelegate {
             }
             self.input = input
             
-            // now we give the user an editing interface...
-            // ...using the input's displaySizeImage and adjustmentData
+            /// now we give the user an editing interface, using the input's displaySizeImage and adjustmentData
             
             let im = input.displaySizeImage!
             let sz = CGSize(width: im.size.width/4.0, height: im.size.height/4.0)
@@ -84,7 +78,6 @@ class DataViewController: UIViewController, EditingViewControllerDelegate {
                 }
             } else {
                 im2 = imageOfSize(sz) {
-                    // perhaps no need for this, but the image they give us is much larger than we need
                     im.draw(in: CGRect(origin: CGPoint(), size: sz))
                 }
             }
@@ -183,7 +176,7 @@ class DataViewController: UIViewController, EditingViewControllerDelegate {
                 ci = vig.outputImage!
             }
             // new in iOS 10
-            // warning: this is time-consuming! (even more than how I was doing it before)
+            // warning: this is time-consuming!
             if #available(iOS 10.0, *) {
                 try! CIContext().writeJPEGRepresentation(of: ci, to: outurl, colorSpace: space)
             } else {
@@ -213,7 +206,8 @@ class DataViewController: UIViewController, EditingViewControllerDelegate {
             // now we must tell the photo library to pick up the edited image
             PHPhotoLibrary.shared().performChanges({
                 print("finishing")
-                let req = PHAssetChangeRequest(for: self.asset)
+                typealias Req = PHAssetChangeRequest
+                let req = Req(for: self.asset)
                 req.contentEditingOutput = output
             }) { ok, err in
                 DispatchQueue.main.async {
@@ -222,11 +216,10 @@ class DataViewController: UIViewController, EditingViewControllerDelegate {
                     // at the last minute, the user will get a special "modify?" dialog
                     // if the user refuses, we will receive "false"
                     if ok {
-                        // in our case, since are already displaying this photo...
-                        // ...we should now reload it
+                        // in our case, since are already displaying this photo... ...we should now reload it
                         self.setUpInterface()
                     } else {
-                        print("phasset change request error: \(err)")
+                        print("phasset change request error: \(String(describing: err))")
                     }
                 }
             }

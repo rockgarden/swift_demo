@@ -59,7 +59,7 @@ class PhotoKitVC: UIViewController {
             }
             for ix in 0 ..< result.count {
                 let album = result[ix]
-                print("\(album.localizedTitle): " +
+                print("\(String(describing: album.localizedTitle)): " +
                     "approximately \(album.estimatedAssetCount) photos")
             }
         }

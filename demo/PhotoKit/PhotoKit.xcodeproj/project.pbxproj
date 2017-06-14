@@ -19,7 +19,7 @@
 		4402374B1DDC9E100067C071 /* EditingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 440237411DDC9E100067C071 /* EditingViewController.xib */; };
 		4402374D1DDC9E100067C071 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 440237431DDC9E100067C071 /* LaunchScreen.storyboard */; };
 		4402374E1DDC9E100067C071 /* ModelController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 440237441DDC9E100067C071 /* ModelController.swift */; };
-		4402374F1DDC9E100067C071 /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 440237451DDC9E100067C071 /* RootViewController.swift */; };
+		4402374F1DDC9E100067C071 /* PhotoPagesVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 440237451DDC9E100067C071 /* PhotoPagesVC.swift */; };
 		440237651DDCA58E0067C071 /* VignetteFilter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 32C5A8861C5C0CE600064A33 /* VignetteFilter.framework */; };
 		440237661DDCA58E0067C071 /* VignetteFilter.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 32C5A8861C5C0CE600064A33 /* VignetteFilter.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		440237691DDCA8740067C071 /* VignetteFilter.h in Headers */ = {isa = PBXBuildFile; fileRef = 440237521DDC9E320067C071 /* VignetteFilter.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -97,7 +97,7 @@
 		440237421DDC9E100067C071 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		440237431DDC9E100067C071 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		440237441DDC9E100067C071 /* ModelController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModelController.swift; sourceTree = "<group>"; };
-		440237451DDC9E100067C071 /* RootViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
+		440237451DDC9E100067C071 /* PhotoPagesVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoPagesVC.swift; sourceTree = "<group>"; };
 		440237511DDC9E320067C071 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		440237521DDC9E320067C071 /* VignetteFilter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VignetteFilter.h; sourceTree = "<group>"; };
 		440237531DDC9E320067C071 /* VignetteFilter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VignetteFilter.swift; sourceTree = "<group>"; };
@@ -180,7 +180,7 @@
 				447166681DF82F9700C40FB5 /* PhotoKitImages.entitlements */,
 				4402373B1DDC9E100067C071 /* AppDelegate.swift */,
 				4402373D1DDC9E100067C071 /* Main.storyboard */,
-				440237451DDC9E100067C071 /* RootViewController.swift */,
+				440237451DDC9E100067C071 /* PhotoPagesVC.swift */,
 				4402373F1DDC9E100067C071 /* DataViewController.swift */,
 				440237441DDC9E100067C071 /* ModelController.swift */,
 				440237401DDC9E100067C071 /* EditingViewController.swift */,
@@ -396,7 +396,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4402374F1DDC9E100067C071 /* RootViewController.swift in Sources */,
+				4402374F1DDC9E100067C071 /* PhotoPagesVC.swift in Sources */,
 				440237491DDC9E100067C071 /* DataViewController.swift in Sources */,
 				4402374E1DDC9E100067C071 /* ModelController.swift in Sources */,
 				44CEA5DB1DF84D6A00CD023A /* MovieVC.swift in Sources */,
