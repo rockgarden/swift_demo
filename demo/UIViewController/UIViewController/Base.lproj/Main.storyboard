@@ -40,7 +40,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" text="First View" textAlignment="center" lineBreakMode="tailTruncation" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="cK4-WN-zUu">
-                                <rect key="frame" x="20" y="208" width="335" height="42"/>
+                                <rect key="frame" x="20" y="208.5" width="335" height="41.5"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="36"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -61,27 +61,33 @@
                                     <action selector="underlapButton:" destination="I53-QB-Jd6" eventType="touchUpInside" id="aVv-Lv-auO"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mRf-PE-YgD">
-                                <rect key="frame" x="102" y="580" width="171" height="30"/>
-                                <state key="normal" title="Popover On Phone demo"/>
-                                <connections>
-                                    <segue destination="fHI-Rt-Ppn" kind="presentation" id="orh-bj-a7Z"/>
-                                </connections>
-                            </button>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="RaR-Y2-voy">
+                                <rect key="frame" x="0.0" y="572" width="375" height="30"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="i34-qq-ti9">
+                                        <rect key="frame" x="80.5" y="0.0" width="214" height="30"/>
+                                        <state key="normal" title="UIPresentationController Demo"/>
+                                        <connections>
+                                            <segue destination="toZ-dq-91B" kind="modal" id="rSB-Vv-zhx"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <gestureRecognizers/>
                         <constraints>
                             <constraint firstItem="cK4-WN-zUu" firstAttribute="leading" secondItem="mbC-rp-qfh" secondAttribute="leading" constant="20" symbolic="YES" id="0jA-yC-u1L"/>
-                            <constraint firstItem="vNT-bn-8Pj" firstAttribute="top" secondItem="mRf-PE-YgD" secondAttribute="bottom" constant="8" symbolic="YES" id="28G-Uv-nVQ"/>
                             <constraint firstItem="5Br-vH-BJj" firstAttribute="leading" secondItem="mbC-rp-qfh" secondAttribute="leading" constant="20" symbolic="YES" id="5Y6-jc-ag7"/>
                             <constraint firstItem="5Br-vH-BJj" firstAttribute="top" secondItem="cK4-WN-zUu" secondAttribute="bottom" constant="40" id="6jk-uw-s5k"/>
                             <constraint firstAttribute="trailingMargin" secondItem="yCy-Ze-fs2" secondAttribute="trailing" constant="4" id="KqC-Ar-JRM"/>
                             <constraint firstAttribute="centerY" secondItem="5Br-vH-BJj" secondAttribute="centerY" id="O0Z-8d-eNj"/>
                             <constraint firstAttribute="trailing" secondItem="5Br-vH-BJj" secondAttribute="trailing" constant="20" symbolic="YES" id="YgN-Ob-UEN"/>
+                            <constraint firstItem="vNT-bn-8Pj" firstAttribute="top" secondItem="RaR-Y2-voy" secondAttribute="bottom" constant="16" id="ZZY-52-8Qk"/>
                             <constraint firstAttribute="trailing" secondItem="cK4-WN-zUu" secondAttribute="trailing" constant="20" symbolic="YES" id="g3t-f0-1oY"/>
+                            <constraint firstItem="RaR-Y2-voy" firstAttribute="centerX" secondItem="mbC-rp-qfh" secondAttribute="centerX" id="gUm-lM-0BG"/>
+                            <constraint firstItem="RaR-Y2-voy" firstAttribute="width" secondItem="mbC-rp-qfh" secondAttribute="width" id="jmb-ac-zEj"/>
                             <constraint firstItem="yCy-Ze-fs2" firstAttribute="top" secondItem="gln-uC-BuC" secondAttribute="bottom" constant="23" id="mUV-cV-Fdj"/>
-                            <constraint firstItem="mRf-PE-YgD" firstAttribute="centerX" secondItem="5Br-vH-BJj" secondAttribute="centerX" id="uwg-iT-9EB"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="First" image="first" id="BEj-4e-Vbp"/>
@@ -130,7 +136,79 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XmE-3d-Eti" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1998" y="519"/>
+            <point key="canvasLocation" x="2738" y="519"/>
+        </scene>
+        <!--AdaptivePresentation-->
+        <scene sceneID="1XR-8z-ZiH">
+            <objects>
+                <viewController storyboardIdentifier="AdaptivePresentationVC" id="toZ-dq-91B" userLabel="AdaptivePresentation" customClass="AdaptivePresentationVC" customModule="UIViewController" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="L1d-Ql-KNk"/>
+                        <viewControllerLayoutGuide type="bottom" id="a41-8R-hHu"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Ec1-Ms-Id2">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IEG-ZZ-ktQ">
+                                <rect key="frame" x="168" y="617" width="39" height="30"/>
+                                <state key="normal" title="Close"/>
+                                <connections>
+                                    <action selector="dismissHelp:" destination="fHI-Rt-Ppn" eventType="touchUpInside" id="TmE-WT-i9y"/>
+                                    <action selector="dismissHelp:" destination="toZ-dq-91B" eventType="touchUpInside" id="omZ-HV-nrs"/>
+                                </connections>
+                            </button>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="HfW-k0-IbR">
+                                <rect key="frame" x="0.0" y="273.5" width="375" height="120"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="52h-5P-oyG">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="30"/>
+                                        <state key="normal" title="Present">
+                                            <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="doPresent:" destination="toZ-dq-91B" eventType="touchUpInside" id="0oD-jH-kay"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cMp-Zp-ftn">
+                                        <rect key="frame" x="0.0" y="30" width="375" height="30"/>
+                                        <state key="normal" title="Advance"/>
+                                        <connections>
+                                            <action selector="doAdvance:" destination="toZ-dq-91B" eventType="touchUpInside" id="7i4-ZL-2z1"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FPI-bf-hZh">
+                                        <rect key="frame" x="0.0" y="60" width="375" height="30"/>
+                                        <state key="normal" title="Segue Demo"/>
+                                        <connections>
+                                            <segue destination="06k-0w-QnQ" kind="presentation" id="uYN-df-MFY"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pAb-RN-jOu">
+                                        <rect key="frame" x="0.0" y="90" width="375" height="30"/>
+                                        <state key="normal" title="Popover On Phone demo"/>
+                                        <connections>
+                                            <segue destination="fHI-Rt-Ppn" kind="presentation" id="KTD-XI-8mz"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="HfW-k0-IbR" firstAttribute="centerY" secondItem="Ec1-Ms-Id2" secondAttribute="centerY" id="CKd-Z0-Dla"/>
+                            <constraint firstItem="HfW-k0-IbR" firstAttribute="centerX" secondItem="Ec1-Ms-Id2" secondAttribute="centerX" id="DGp-3A-II9"/>
+                            <constraint firstItem="HfW-k0-IbR" firstAttribute="width" secondItem="Ec1-Ms-Id2" secondAttribute="width" id="Ipb-hq-hk2"/>
+                            <constraint firstAttribute="bottom" secondItem="IEG-ZZ-ktQ" secondAttribute="bottom" constant="20" symbolic="YES" id="mZ1-jK-TNG"/>
+                            <constraint firstItem="IEG-ZZ-ktQ" firstAttribute="centerX" secondItem="Ec1-Ms-Id2" secondAttribute="centerX" id="tJ1-hR-vK4"/>
+                        </constraints>
+                    </view>
+                    <extendedEdge key="edgesForExtendedLayout"/>
+                    <navigationItem key="navigationItem" id="Zgl-D4-aop"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="xdu-b6-BnS" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1943" y="519"/>
         </scene>
         <!--Second-->
         <scene sceneID="rjh-Z4-EyK">
@@ -666,9 +744,95 @@
             </objects>
             <point key="canvasLocation" x="3612" y="2597"/>
         </scene>
+        <!--Adaptive PresentationVC Segue-->
+        <scene sceneID="hbM-wX-Lgs">
+            <objects>
+                <viewController storyboardIdentifier="AdaptivePresentationVC_Segue" id="06k-0w-QnQ" customClass="AdaptivePresentationVC_Segue" customModule="UIViewController" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="XMK-Lo-Xg7"/>
+                        <viewControllerLayoutGuide type="bottom" id="uz4-9P-Xwn"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="NMn-k4-EPb">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="YvO-hi-IZg">
+                                <rect key="frame" x="0.0" y="46" width="375" height="62"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="r7U-kC-elu">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="30"/>
+                                        <state key="normal" title="Test1"/>
+                                        <connections>
+                                            <segue destination="dHb-D8-TDY" kind="presentation" identifier="test1" modalPresentationStyle="pageSheet" id="Xi3-5S-VoE"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Z3P-Te-OHz">
+                                        <rect key="frame" x="0.0" y="32" width="375" height="30"/>
+                                        <state key="normal" title="Test2"/>
+                                        <connections>
+                                            <segue destination="dHb-D8-TDY" kind="presentation" identifier="test2" modalPresentationStyle="pageSheet" id="UQ7-NH-UWP"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pwa-9F-Xul">
+                                <rect key="frame" x="168" y="617" width="39" height="30"/>
+                                <state key="normal" title="Close"/>
+                                <connections>
+                                    <action selector="dismissHelp:" destination="toZ-dq-91B" eventType="touchUpInside" id="Dmp-C4-epY"/>
+                                    <action selector="dismissHelp:" destination="fHI-Rt-Ppn" eventType="touchUpInside" id="WeD-3s-dz3"/>
+                                    <action selector="doDismiss:" destination="06k-0w-QnQ" eventType="touchUpInside" id="x8U-GS-Tu4"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="YvO-hi-IZg" firstAttribute="centerX" secondItem="NMn-k4-EPb" secondAttribute="centerX" id="8bo-FI-kL5"/>
+                            <constraint firstItem="Pwa-9F-Xul" firstAttribute="centerX" secondItem="YvO-hi-IZg" secondAttribute="centerX" id="8t1-pm-aGu"/>
+                            <constraint firstItem="YvO-hi-IZg" firstAttribute="width" secondItem="NMn-k4-EPb" secondAttribute="width" id="NdH-V9-27p"/>
+                            <constraint firstAttribute="bottom" secondItem="Pwa-9F-Xul" secondAttribute="bottom" constant="20" symbolic="YES" id="R6o-8x-iHQ"/>
+                            <constraint firstItem="YvO-hi-IZg" firstAttribute="top" secondItem="XMK-Lo-Xg7" secondAttribute="bottom" constant="26" id="oVf-r4-RB7"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3Bf-YT-rsV" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3537" y="519"/>
+        </scene>
+        <!--Adaptive PresentationVC Segue-->
+        <scene sceneID="QYQ-gS-rmJ">
+            <objects>
+                <viewController id="dHb-D8-TDY" customClass="AdaptivePresentationVC_Segue" customModule="UIViewController" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="IAM-5Y-9cI"/>
+                        <viewControllerLayoutGuide type="bottom" id="Btc-Uq-YmM"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Wlb-ED-10l">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3GE-Ic-jUN">
+                                <rect key="frame" x="49" y="44" width="54" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Dismiss"/>
+                                <connections>
+                                    <action selector="doDismiss:" destination="dHb-D8-TDY" eventType="touchUpInside" id="sJh-Br-DCh"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8jB-yZ-wgs" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4314" y="518"/>
+        </scene>
     </scenes>
     <resources>
         <image name="first" width="30" height="30"/>
         <image name="second" width="30" height="30"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="Xi3-5S-VoE"/>
+    </inferredMetricsTieBreakers>
 </document>
