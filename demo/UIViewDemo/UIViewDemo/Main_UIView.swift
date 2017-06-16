@@ -16,6 +16,7 @@ class MyPickerView : UIPickerView {
     }
 }
 
+
 class Main_UIView: UIViewController {
     @IBOutlet var picker: UIPickerView!
     var vcList: [String]!
@@ -63,8 +64,13 @@ extension Main_UIView: UIPickerViewDelegate, UIPickerViewDataSource {
     func pickerView(_ pickerView: UIPickerView, didSelectRow: Int, inComponent: Int) {
         which = didSelectRow
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        if vcList[which] == "UIImageView" {
+            let vc = storyboard.instantiateViewController(withIdentifier: "Root_UIImageView")
+            show(vc, sender: nil)
+            return
+        }
         let vc = storyboard.instantiateViewController(withIdentifier: vcList[which])
-        present(vc, animated: true, completion: nil)
+        show(vc, sender: nil)
     }
 
     // bug: no views are reused

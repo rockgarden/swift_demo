@@ -16,6 +16,7 @@
 		4459BC891EE057BB00717B8D /* CALayerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4459BC861EE057BB00717B8D /* CALayerVC.swift */; };
 		4459BC8A1EE057BB00717B8D /* ReplicatorLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4459BC871EE057BB00717B8D /* ReplicatorLayer.swift */; };
 		4459BC8C1EE057DB00717B8D /* readme.rtfd in Resources */ = {isa = PBXBuildFile; fileRef = 4459BC8B1EE057DB00717B8D /* readme.rtfd */; };
+		44B1E0151EF3F279005CF9C7 /* CAActionVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44B1E0141EF3F279005CF9C7 /* CAActionVC.swift */; };
 		44B39A4E1EED4A0E005BCB19 /* LayerTransitionVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44B39A4D1EED4A0E005BCB19 /* LayerTransitionVC.swift */; };
 /* End PBXBuildFile section */
 
@@ -31,6 +32,7 @@
 		4459BC861EE057BB00717B8D /* CALayerVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CALayerVC.swift; sourceTree = "<group>"; };
 		4459BC871EE057BB00717B8D /* ReplicatorLayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReplicatorLayer.swift; sourceTree = "<group>"; };
 		4459BC8B1EE057DB00717B8D /* readme.rtfd */ = {isa = PBXFileReference; lastKnownFileType = wrapper.rtfd; path = readme.rtfd; sourceTree = "<group>"; };
+		44B1E0141EF3F279005CF9C7 /* CAActionVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CAActionVC.swift; sourceTree = "<group>"; };
 		44B39A4D1EED4A0E005BCB19 /* LayerTransitionVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LayerTransitionVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -72,6 +74,7 @@
 				4459BC851EE057BB00717B8D /* CompassView.swift */,
 				4459BC871EE057BB00717B8D /* ReplicatorLayer.swift */,
 				44B39A4D1EED4A0E005BCB19 /* LayerTransitionVC.swift */,
+				44B1E0141EF3F279005CF9C7 /* CAActionVC.swift */,
 				4459BC791EE04E4200717B8D /* Assets.xcassets */,
 				4459BC7B1EE04E4200717B8D /* LaunchScreen.storyboard */,
 				4459BC7E1EE04E4200717B8D /* Info.plist */,
@@ -157,6 +160,7 @@
 				4459BC891EE057BB00717B8D /* CALayerVC.swift in Sources */,
 				4459BC8A1EE057BB00717B8D /* ReplicatorLayer.swift in Sources */,
 				4459BC881EE057BB00717B8D /* CompassView.swift in Sources */,
+				44B1E0151EF3F279005CF9C7 /* CAActionVC.swift in Sources */,
 				4459BC751EE04E4200717B8D /* MaskUtilityViewVC.swift in Sources */,
 				4459BC731EE04E4200717B8D /* AppDelegate.swift in Sources */,
 			);

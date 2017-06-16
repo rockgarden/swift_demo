@@ -97,12 +97,7 @@ class ZoomCenteredVC_centerView : UIViewController, UIScrollViewDelegate {
 }
 
 class MyTappableView : UIView {
-    /*
-     返回包含指定点的视图层次结构（包括自身）中的接收者的最远后代。
-     该方法遍历视图层次结构，调用每个子视图的point（inside :) with :)方法来确定哪个子视图应该接收触摸事件。如果point（with :)返回true，则子视图的层次结构也会相似地遍历，直到找到包含指定点的最前面的视图。如果视图不包含该点，则其视图层次结构的分支将被忽略。您很少需要自己调用此方法，但您可以覆盖它以从子视图中隐藏触摸事件。
-     此方法将忽略隐藏的视图对象，该对象已禁用用户交互，或者具有小于0.01的Alpha级别。当确定命中时，此方法不会考虑视图的内容。因此，即使指定的点在该视图的内容的透明部分中，仍然可以返回视图。
-     位于接收者边界之外的点不会被报告为命中，即使它们实际上位于接收者的子视图之一内。如果当前视图的clipToBounds属性设置为false并且受影响的子视图超出视图的边界，则可能会发生这种情况。
-     */
+    
     override func hitTest(_ point: CGPoint, with event: UIEvent!) -> UIView? {
         if let result = super.hitTest(point, with:event) {
             return result

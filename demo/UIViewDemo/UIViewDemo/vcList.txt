@@ -2,3 +2,5 @@ ProgressVC
 ActivityIndicatorVC
 UIImageView
 ViewReversalVC
+ViewTransitionVC
+HitTestVC

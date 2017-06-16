@@ -21,8 +21,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0Gt-wY-thB" customClass="MyPickerView" customModule="UIViewDemo" customModuleProvider="target">
-                                <rect key="frame" x="16" y="20" width="343" height="216"/>
+                            <pickerView contentMode="scaleToFill" verticalHuggingPriority="249" translatesAutoresizingMaskIntoConstraints="NO" id="0Gt-wY-thB" customClass="MyPickerView" customModule="UIViewDemo" customModuleProvider="target">
+                                <rect key="frame" x="16" y="20" width="343" height="594"/>
                             </pickerView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GE8-CU-Npe">
                                 <rect key="frame" x="143.5" y="614" width="89" height="33"/>
@@ -39,6 +39,7 @@
                             <constraint firstItem="0Gt-wY-thB" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="I1F-zy-K0c"/>
                             <constraint firstAttribute="trailingMargin" secondItem="0Gt-wY-thB" secondAttribute="trailing" id="JdB-xC-P5V"/>
                             <constraint firstItem="GE8-CU-Npe" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="MCq-my-hW1"/>
+                            <constraint firstItem="0Gt-wY-thB" firstAttribute="bottom" secondItem="GE8-CU-Npe" secondAttribute="top" id="fTj-XA-AcY"/>
                             <constraint firstItem="0Gt-wY-thB" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="hvG-h7-SOV"/>
                         </constraints>
                     </view>
@@ -252,6 +253,65 @@
                 <exit id="ctO-Gj-Kl3" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="1574" y="-79"/>
+        </scene>
+        <!--Hit TestVC-->
+        <scene sceneID="Lpi-wt-6h1">
+            <objects>
+                <viewController storyboardIdentifier="HitTestVC" id="ONu-ve-Ots" customClass="HitTestVC" customModule="UIViewDemo" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="33E-EC-1bB"/>
+                        <viewControllerLayoutGuide type="bottom" id="M9V-yB-xkK"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="05Q-CA-qtH">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" fixedFrame="YES" image="Mars" translatesAutoresizingMaskIntoConstraints="NO" id="APj-Pn-p9K">
+                                <rect key="frame" x="36" y="54" width="109" height="109"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" fixedFrame="YES" image="Smiley" translatesAutoresizingMaskIntoConstraints="NO" id="ltw-3a-hgW">
+                                <rect key="frame" x="175" y="49" width="120" height="120"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="85J-os-6Tc" customClass="MyView_hT" customModule="UIViewDemo" customModuleProvider="target">
+                                <rect key="frame" x="20" y="250" width="335" height="383"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tvz-Xe-Kev">
+                                        <rect key="frame" x="144.5" y="-30" width="46" height="30"/>
+                                        <state key="normal" title="Button">
+                                            <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="doButton:" destination="ONu-ve-Ots" eventType="touchUpInside" id="5Ag-YR-3DD"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" red="0.66666666669999997" green="0.66666666669999997" blue="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstItem="tvz-Xe-Kev" firstAttribute="top" secondItem="85J-os-6Tc" secondAttribute="top" constant="-30" id="1tu-m2-vnb"/>
+                                    <constraint firstAttribute="centerX" secondItem="tvz-Xe-Kev" secondAttribute="centerX" id="DWH-xf-dHB"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <gestureRecognizers/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="85J-os-6Tc" secondAttribute="trailing" constant="20" id="3TF-wV-wSu"/>
+                            <constraint firstItem="85J-os-6Tc" firstAttribute="leading" secondItem="05Q-CA-qtH" secondAttribute="leading" constant="20" id="8Ub-eU-q7O"/>
+                            <constraint firstItem="85J-os-6Tc" firstAttribute="top" secondItem="33E-EC-1bB" secondAttribute="bottom" constant="230" id="R0K-B6-RDs"/>
+                            <constraint firstItem="M9V-yB-xkK" firstAttribute="top" secondItem="85J-os-6Tc" secondAttribute="bottom" constant="34" id="lP7-4i-NkH"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="WxC-1E-llT" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="32B-sD-60Z">
+                    <connections>
+                        <action selector="tapped:" destination="ONu-ve-Ots" id="ePF-YJ-FUq"/>
+                    </connections>
+                </tapGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="-3117" y="-9237"/>
         </scene>
         <!--Main_UIImageView-->
         <scene sceneID="Cek-Jp-f5I">
@@ -470,6 +530,94 @@
                 <exit id="CvG-gH-cFX" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="-135" y="609"/>
+        </scene>
+        <!--View TransitionVC-->
+        <scene sceneID="orN-lO-8VY">
+            <objects>
+                <viewController storyboardIdentifier="ViewTransitionVC" id="LjW-Sj-1Gf" customClass="ViewTransitionVC" customModule="UIViewDemo" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="ZBF-Gn-3i0"/>
+                        <viewControllerLayoutGuide type="bottom" id="Amb-BH-eC6"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="UBz-oE-h8U">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Mars" translatesAutoresizingMaskIntoConstraints="NO" id="MEP-8I-MaG">
+                                <rect key="frame" x="20" y="20" width="140" height="140"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EIr-MC-UpJ">
+                                <rect key="frame" x="16" y="629" width="52" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="52" id="8sK-K2-r6y"/>
+                                </constraints>
+                                <state key="normal" title="Start">
+                                    <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="doButton:" destination="LjW-Sj-1Gf" eventType="touchUpInside" id="pv1-r3-tho"/>
+                                </connections>
+                            </button>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fpx-iP-2xZ" customClass="MyView_T" customModule="UIViewDemo" customModuleProvider="target">
+                                <rect key="frame" x="31" y="228" width="169" height="75"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </view>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ghS-Rz-tl0">
+                                <rect key="frame" x="44" y="379" width="200" height="100"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="JUG-c6-rMF">
+                                        <rect key="frame" x="0.0" y="8" width="49" height="84"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </view>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4c7-du-nej">
+                                <rect key="frame" x="107" y="520" width="160" height="73"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Hello" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MnU-5Y-QdR">
+                                        <rect key="frame" x="59" y="20" width="40" height="21"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" red="0.75" green="0.75" blue="0.75" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0qA-a2-eFp">
+                                <rect key="frame" x="320" y="629" width="39" height="30"/>
+                                <state key="normal" title="Close"/>
+                                <connections>
+                                    <segue destination="czK-f9-tpJ" kind="unwind" unwindAction="unwindToMainVC:" id="Ru3-xb-079"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="0qA-a2-eFp" secondAttribute="trailing" id="0QW-E1-n5f"/>
+                            <constraint firstAttribute="bottom" secondItem="0qA-a2-eFp" secondAttribute="bottom" constant="8" id="IVc-py-fw0"/>
+                            <constraint firstItem="EIr-MC-UpJ" firstAttribute="baseline" secondItem="0qA-a2-eFp" secondAttribute="baseline" id="eho-oa-mub"/>
+                            <constraint firstItem="EIr-MC-UpJ" firstAttribute="leading" secondItem="UBz-oE-h8U" secondAttribute="leadingMargin" id="fJ9-K0-zpo"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="inner" destination="JUG-c6-rMF" id="wIU-EV-5Zd"/>
+                        <outlet property="iv" destination="MEP-8I-MaG" id="sxg-b1-ewp"/>
+                        <outlet property="lab" destination="MnU-5Y-QdR" id="AYj-sg-Gb6"/>
+                        <outlet property="outer" destination="ghS-Rz-tl0" id="EJ3-wd-YCp"/>
+                        <outlet property="v" destination="fpx-iP-2xZ" id="eWE-c0-PGK"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="IGZ-A7-vRQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="czK-f9-tpJ" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="734" y="609"/>
         </scene>
         <!--Position Resizable ImageVC-->
         <scene sceneID="Vqu-pe-4lH">
@@ -703,6 +851,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="Mars" width="108" height="108"/>
         <image name="Mars_Slicing" width="108" height="26"/>
         <image name="Smiley" width="60" height="60"/>
         <image name="SmileyTemplate" width="60" height="60"/>

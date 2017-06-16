@@ -81,21 +81,7 @@ class ProgressVC: UIViewController {
         self.prog2.backgroundColor = .black
         self.prog2.trackTintColor = .black
         
-        let im: UIImage?
-        if #available(iOS 10.0, *) {
-            let r = UIGraphicsImageRenderer(size:CGSize(10,10))
-            im = r.image {
-                ctx in let con = ctx.cgContext
-                con.setFillColor(UIColor.yellow.cgColor)
-                con.fill(CGRect(0, 0, 10, 10))
-                let r = con.boundingBoxOfClipPath.insetBy(dx: 1,dy: 1)
-                con.setLineWidth(2)
-                con.setStrokeColor(UIColor.black.cgColor)
-                con.stroke(r)
-                con.strokeEllipse(in: r)
-                }.resizableImage(withCapInsets:UIEdgeInsetsMake(4, 4, 4, 4), resizingMode:.stretch)
-        } else {
-            UIGraphicsBeginImageContextWithOptions(CGSize(10,10), true, 0)
+        let im = imageOfSize(CGSize(10,10)) {
             let con = UIGraphicsGetCurrentContext()!
             con.setFillColor(UIColor.yellow.cgColor)
             con.fill(CGRect(0, 0, 10, 10))
@@ -104,10 +90,8 @@ class ProgressVC: UIViewController {
             con.setStrokeColor(UIColor.black.cgColor)
             con.stroke(r)
             con.strokeEllipse(in: r)
-            im =
-                UIGraphicsGetImageFromCurrentImageContext()!.resizableImage(withCapInsets:UIEdgeInsetsMake(4, 4, 4, 4), resizingMode:.stretch)
-            UIGraphicsEndImageContext()
-        }
+            }.resizableImage(withCapInsets:UIEdgeInsetsMake(4, 4, 4, 4), resizingMode:.stretch)
+        
         self.prog2.progressImage = im
     }
 

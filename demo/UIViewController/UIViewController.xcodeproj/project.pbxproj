@@ -38,6 +38,9 @@
 		449D1CBC1E992C57000C7446 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 449D1CBA1E992C57000C7446 /* Main.storyboard */; };
 		449D1CBE1E992C57000C7446 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 449D1CBD1E992C57000C7446 /* Assets.xcassets */; };
 		449D1CC11E992C57000C7446 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 449D1CBF1E992C57000C7446 /* LaunchScreen.storyboard */; };
+		44B1E0171EF413F8005CF9C7 /* ViewControllerPreviewingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44B1E0161EF413F7005CF9C7 /* ViewControllerPreviewingVC.swift */; };
+		44B1E01A1EF41459005CF9C7 /* Pep.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44B1E0181EF41459005CF9C7 /* Pep.swift */; };
+		44B1E01B1EF41459005CF9C7 /* Pep.xib in Resources */ = {isa = PBXBuildFile; fileRef = 44B1E0191EF41459005CF9C7 /* Pep.xib */; };
 		C29FFCC21ECACB340034587E /* TransitionImageCollectionVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C29FFCC11ECACB340034587E /* TransitionImageCollectionVC.swift */; };
 		C29FFCC41ECAD7640034587E /* EvernoteTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = C29FFCC31ECAD7640034587E /* EvernoteTransition.swift */; };
 		C29FFCC61ECAD7980034587E /* EvernoteCollectionVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C29FFCC51ECAD7980034587E /* EvernoteCollectionVC.swift */; };
@@ -106,6 +109,9 @@
 		449D1CBD1E992C57000C7446 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		449D1CC01E992C57000C7446 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		449D1CC21E992C57000C7446 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		44B1E0161EF413F7005CF9C7 /* ViewControllerPreviewingVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewControllerPreviewingVC.swift; sourceTree = "<group>"; };
+		44B1E0181EF41459005CF9C7 /* Pep.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Pep.swift; sourceTree = "<group>"; };
+		44B1E0191EF41459005CF9C7 /* Pep.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Pep.xib; sourceTree = "<group>"; };
 		C29FFCC11ECACB340034587E /* TransitionImageCollectionVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransitionImageCollectionVC.swift; sourceTree = "<group>"; };
 		C29FFCC31ECAD7640034587E /* EvernoteTransition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EvernoteTransition.swift; sourceTree = "<group>"; };
 		C29FFCC51ECAD7980034587E /* EvernoteCollectionVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EvernoteCollectionVC.swift; sourceTree = "<group>"; };
@@ -161,6 +167,9 @@
 				4417213D1EDB154800933908 /* ContainerVC_Size.swift */,
 				4417213F1EDB161E00933908 /* ContainerVC_Size_Child.swift */,
 				441721401EDB161E00933908 /* ContainerVC_Size_Child.xib */,
+				44B1E0161EF413F7005CF9C7 /* ViewControllerPreviewingVC.swift */,
+				44B1E0181EF41459005CF9C7 /* Pep.swift */,
+				44B1E0191EF41459005CF9C7 /* Pep.xib */,
 			);
 			name = ContainerView;
 			sourceTree = "<group>";
@@ -416,6 +425,7 @@
 				449D1CBE1E992C57000C7446 /* Assets.xcassets in Resources */,
 				C29FFCC81ECAD7DA0034587E /* evernote.storyboard in Resources */,
 				448AC2311EF2AC1F00013F08 /* PVCSecondVC.xib in Resources */,
+				44B1E01B1EF41459005CF9C7 /* Pep.xib in Resources */,
 				449D1CBC1E992C57000C7446 /* Main.storyboard in Resources */,
 				C29FFCCC1ECAD8340034587E /* EvernoteCell.xib in Resources */,
 				4459BCB11EE06EE600717B8D /* linkhelp.html in Resources */,
@@ -450,6 +460,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				44B1E0171EF413F8005CF9C7 /* ViewControllerPreviewingVC.swift in Sources */,
 				4459BCAF1EE06BE100717B8D /* PopoverOnPhoneVC.swift in Sources */,
 				C29FFCDE1ECAECA40034587E /* CHTCollectionViewWaterfallLayout.swift in Sources */,
 				C29FFCC41ECAD7640034587E /* EvernoteTransition.swift in Sources */,
@@ -474,6 +485,7 @@
 				C29FFCE11ECAECA40034587E /* NTHorizontalPageViewCell.swift in Sources */,
 				449D1CB71E992C57000C7446 /* AppDelegate.swift in Sources */,
 				448AC2331EF2ACA800013F08 /* PVCSecondVC.swift in Sources */,
+				44B1E01A1EF41459005CF9C7 /* Pep.swift in Sources */,
 				C29FFCE31ECAECA40034587E /* NTNavigationController.swift in Sources */,
 				C29FFCE71ECAECA40034587E /* WaterfallCollectionVC.swift in Sources */,
 				441721361EDAB82A00933908 /* ContainerVC.swift in Sources */,
@@ -625,7 +637,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -669,7 +681,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
