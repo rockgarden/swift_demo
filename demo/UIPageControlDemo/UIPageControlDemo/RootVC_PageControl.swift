@@ -20,6 +20,8 @@ class RootVC_PageControl: UITableViewController {
             case 1:
                 // make a page view controller - NB try both .pageCurl and .scroll
                 let pvc = UIPageViewController(transitionStyle: .scroll, navigationOrientation: .horizontal)
+                // crucial 关键代码
+                pvc.restorationIdentifier = "pvc"
                 // give it an initial page
                 let page = Person(pepBoy: pep[0])
                 pvc.setViewControllers([page], direction: .forward, animated: false)

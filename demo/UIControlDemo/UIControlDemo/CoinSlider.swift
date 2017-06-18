@@ -25,9 +25,9 @@ class CoinSlider: UISlider {
         // self.bounds.size.height += 30
     }
     
-    // supply sufficient height to make new thumb image touchable
-    // we are using autolayout so this works
-    // otherwise we'd use the bound, above
+    /// 提供足够的高度使新的拇指图像可触摸supply sufficient height to make new thumb image touchable
+    // we are using autolayout so this works otherwise we'd use the bound, above
+    // 否则我们会使用上面的界限 self.bounds.size.height += 30
     override var intrinsicContentSize : CGSize {
         var sz = super.intrinsicContentSize
         sz.height += 30

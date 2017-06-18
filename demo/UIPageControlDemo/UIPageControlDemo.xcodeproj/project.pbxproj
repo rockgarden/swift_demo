@@ -83,6 +83,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		44DB52DB1EF6AB2F00BAC098 /* PersonPage */ = {
+			isa = PBXGroup;
+			children = (
+				4494B6B11E604F5200ADE0BE /* PageControllerIsChildVC.swift */,
+				4494B6B31E60502200ADE0BE /* Person.swift */,
+				4494B6BC1E606A3E00ADE0BE /* Person.xib */,
+			);
+			name = PersonPage;
+			sourceTree = "<group>";
+		};
 		C2019BD91EA89CC1006C04FE /* TabPageViewController */ = {
 			isa = PBXGroup;
 			children = (
@@ -132,13 +142,11 @@
 				44B48DAB1EF6502500CBB7D3 /* AppUIPageVC.swift */,
 				C2FA16EC1E6013F3000366B3 /* Main.storyboard */,
 				4494B6B71E6050AA00ADE0BE /* RootVC_PageControl.swift */,
+				44DB52DB1EF6AB2F00BAC098 /* PersonPage */,
 				C2019BE71EA89D63006C04FE /* TabPageVC.swift */,
 				C2FA16EA1E6013F3000366B3 /* UIPageControlDemo.swift */,
-				4494B6B11E604F5200ADE0BE /* PageControllerIsChildVC.swift */,
 				442C40E01E6160FC009E6609 /* UIPageVCJumpDemo.swift */,
 				C29ED77E1EB091890010BACB /* SwipeVC.swift */,
-				4494B6B31E60502200ADE0BE /* Person.swift */,
-				4494B6BC1E606A3E00ADE0BE /* Person.xib */,
 				442C40DC1E615FBC009E6609 /* MyPage.swift */,
 				442C40DD1E615FBC009E6609 /* MyPage.xib */,
 				C2FA16EF1E6013F4000366B3 /* Assets.xcassets */,

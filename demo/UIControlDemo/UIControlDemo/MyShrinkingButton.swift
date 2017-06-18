@@ -1,12 +1,6 @@
 
 import UIKit
 
-extension CGSize {
-    func sizeByDelta(dw:CGFloat, dh:CGFloat) -> CGSize {
-        return CGSize(self.width + dw, self.height + dh)
-    }
-}
-
 class MyShrinkingButton: UIButton {
 
     override func backgroundRect(forBounds bounds: CGRect) -> CGRect {
