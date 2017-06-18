@@ -56,7 +56,7 @@ class DocumentLister: UITableViewController {
             _ in
             guard let name = av.textFields![0].text, !name.isEmpty else {return}
             let url = self.docsurl.appendingPathComponent((name as NSString).appendingPathExtension("pplgrp")!)
-            // really should check to see if file by this name exists
+            // 建议检查一下这个名字的文件是否存在
             let pl = PeopleLister(fileURL: url)
             self.navigationController!.pushViewController(pl, animated: true)
         })

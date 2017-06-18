@@ -8,9 +8,9 @@
 
 import UIKit
 
-class RootVC_PageControl: UITableViewController {
+let pep : [String] = ["Manny", "Moe", "Jack"]
 
-    let pep : [String] = ["Manny", "Moe", "Jack"]
+class RootVC_PageControl: UITableViewController {
 
     // MARK: - Navigation
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath){
@@ -53,31 +53,31 @@ extension RootVC_PageControl: UIPageViewControllerDataSource {
 
     func pageViewController(_ pvc: UIPageViewController, viewControllerAfter vc: UIViewController) -> UIViewController? {
         let boy = (vc as! Person).boy
-        let ix = self.pep.index(of:boy)! + 1
-        if ix >= self.pep.count {
+        let ix = pep.index(of:boy)! + 1
+        if ix >= pep.count {
             return nil
         }
-        return Person(pepBoy: self.pep[ix])
+        return Person(pepBoy: pep[ix])
     }
 
     func pageViewController(_ pvc: UIPageViewController, viewControllerBefore vc: UIViewController) -> UIViewController? {
         let boy = (vc as! Person).boy
-        let ix = self.pep.index(of:boy)! - 1
+        let ix = pep.index(of:boy)! - 1
         if ix < 0 {
             return nil
         }
-        return Person(pepBoy: self.pep[ix])
+        return Person(pepBoy: pep[ix])
     }
 
     // if these methods are implemented, page indicator appears
     func presentationCount(for pvc: UIPageViewController) -> Int {
-        return self.pep.count
+        return pep.count
     }
 
     func presentationIndex(for pvc: UIPageViewController) -> Int {
         let page = pvc.viewControllers![0] as! Person
         let boy = page.boy
-        return self.pep.index(of: boy)!
+        return pep.index(of: boy)!
     }
 
     // =======

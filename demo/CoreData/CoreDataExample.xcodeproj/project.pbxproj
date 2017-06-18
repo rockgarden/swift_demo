@@ -93,19 +93,27 @@
 			isa = PBXGroup;
 			children = (
 				440E06541DE5DE4400F175DB /* AppDelegate.swift */,
-				440E06711DE5E02B00F175DB /* MainVC.swift */,
-				440E06661DE5DF1200F175DB /* GroupLister.swift */,
-				440E06691DE5DF1200F175DB /* PeopleLister.swift */,
-				440E066A1DE5DF1200F175DB /* PeopleLister.xib */,
-				440E066B1DE5DF1200F175DB /* PersonCell.xib */,
-				C243E4841DE6CC08008C9D38 /* SearchGroupListerVC.swift */,
 				440E06581DE5DE4400F175DB /* Main.storyboard */,
-				C243E4821DE6B337008C9D38 /* CoreDataExample.xcdatamodel */,
+				440E06711DE5E02B00F175DB /* MainVC.swift */,
+				44B48DB11EF67B6B00CBB7D3 /* PeopleGroups */,
+				C243E4841DE6CC08008C9D38 /* SearchGroupListerVC.swift */,
 				440E065B1DE5DE4400F175DB /* Assets.xcassets */,
 				440E065D1DE5DE4400F175DB /* LaunchScreen.storyboard */,
 				440E06601DE5DE4400F175DB /* Info.plist */,
 			);
 			path = CoreData;
+			sourceTree = "<group>";
+		};
+		44B48DB11EF67B6B00CBB7D3 /* PeopleGroups */ = {
+			isa = PBXGroup;
+			children = (
+				440E06661DE5DF1200F175DB /* GroupLister.swift */,
+				440E06691DE5DF1200F175DB /* PeopleLister.swift */,
+				440E066A1DE5DF1200F175DB /* PeopleLister.xib */,
+				440E066B1DE5DF1200F175DB /* PersonCell.xib */,
+				C243E4821DE6B337008C9D38 /* CoreDataExample.xcdatamodel */,
+			);
+			name = PeopleGroups;
 			sourceTree = "<group>";
 		};
 		C2C04BED1ECC09DB00F0A10B /* Quake_macOS */ = {
@@ -168,7 +176,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0830;
-				LastUpgradeCheck = 0810;
+				LastUpgradeCheck = 0830;
 				ORGANIZATIONNAME = rockgarden;
 				TargetAttributes = {
 					440E06501DE5DE4400F175DB = {
@@ -300,6 +308,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -349,6 +358,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;

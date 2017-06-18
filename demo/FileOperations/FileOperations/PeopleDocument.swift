@@ -13,7 +13,7 @@ class PeopleDocument: UIDocument {
                 if let arr = NSKeyedUnarchiver.unarchiveObject(with: contents) as? [Person] {
                     self.people = arr
                     print("loaded \(self.people)")
-                    return // all's well that ends well
+                    return
                 }
             }
             throw NSError(domain: "NoDataDomain", code: -1, userInfo: nil)

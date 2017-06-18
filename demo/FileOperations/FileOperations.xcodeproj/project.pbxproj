@@ -51,6 +51,7 @@
 		449116F61DE49D0A00430E31 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		449116F71DE49D0A00430E31 /* IWFileManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IWFileManager.h; sourceTree = "<group>"; };
 		449116FB1DE49D1700430E31 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		44B48DAF1EF6741A00CBB7D3 /* FileOperations.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = FileOperations.entitlements; sourceTree = "<group>"; };
 		C29499B71DE564BE0035CD62 /* DocumentLister.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DocumentLister.swift; sourceTree = "<group>"; };
 		C29499B81DE564BE0035CD62 /* PeopleDocument.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PeopleDocument.swift; sourceTree = "<group>"; };
 		C29499B91DE564BE0035CD62 /* PeopleLister.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PeopleLister.swift; sourceTree = "<group>"; };
@@ -94,21 +95,17 @@
 		449116D81DE4753E00430E31 /* FileOperations */ = {
 			isa = PBXGroup;
 			children = (
+				44B48DAF1EF6741A00CBB7D3 /* FileOperations.entitlements */,
 				449116D91DE4753E00430E31 /* AppDelegate.swift */,
 				449116DD1DE4753E00430E31 /* Main.storyboard */,
 				449116DB1DE4753E00430E31 /* ViewController.swift */,
 				449116EB1DE4757400430E31 /* FileManagerVC.swift */,
 				449116F11DE490E000430E31 /* FileHandoffVC.swift */,
-				C29499B71DE564BE0035CD62 /* DocumentLister.swift */,
-				C29499B91DE564BE0035CD62 /* PeopleLister.swift */,
-				C29499BA1DE564BE0035CD62 /* PeopleLister.xib */,
-				C29499BB1DE564BE0035CD62 /* PersonCell.xib */,
-				C29499B81DE564BE0035CD62 /* PeopleDocument.swift */,
+				44B48DB01EF6786F00CBB7D3 /* PeopleGroups */,
 				C29499C11DE584140035CD62 /* ParseXmlVC.swift */,
 				C29499C41DE585470035CD62 /* MyPeopleParser.swift */,
 				C29499C61DE585470035CD62 /* MyXMLParserDelegate.swift */,
 				C29499C51DE585470035CD62 /* MyPersonParser.swift */,
-				449116ED1DE477FF00430E31 /* Person.swift */,
 				448F1A111DE71B020076F6F8 /* ImageIOVC.swift */,
 				449116E01DE4753E00430E31 /* Assets.xcassets */,
 				C29499C31DE585470035CD62 /* folks.xml */,
@@ -129,6 +126,19 @@
 				449116F71DE49D0A00430E31 /* IWFileManager.h */,
 			);
 			path = IWFileManager;
+			sourceTree = "<group>";
+		};
+		44B48DB01EF6786F00CBB7D3 /* PeopleGroups */ = {
+			isa = PBXGroup;
+			children = (
+				C29499B81DE564BE0035CD62 /* PeopleDocument.swift */,
+				C29499B71DE564BE0035CD62 /* DocumentLister.swift */,
+				C29499B91DE564BE0035CD62 /* PeopleLister.swift */,
+				C29499BA1DE564BE0035CD62 /* PeopleLister.xib */,
+				449116ED1DE477FF00430E31 /* Person.swift */,
+				C29499BB1DE564BE0035CD62 /* PersonCell.xib */,
+			);
+			name = PeopleGroups;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -165,6 +175,11 @@
 						CreatedOnToolsVersion = 8.1;
 						DevelopmentTeam = W3MH7MTTSB;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.iCloud = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -347,6 +362,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = FileOperations/FileOperations.entitlements;
 				DEVELOPMENT_TEAM = W3MH7MTTSB;
 				INFOPLIST_FILE = FileOperations/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
@@ -361,6 +377,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = FileOperations/FileOperations.entitlements;
 				DEVELOPMENT_TEAM = W3MH7MTTSB;
 				INFOPLIST_FILE = FileOperations/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;

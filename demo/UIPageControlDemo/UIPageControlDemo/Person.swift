@@ -38,5 +38,4 @@ class Person: UIViewController {
         NotificationCenter.default.post(name:.tap, object: sender)
     }
     
-    
 }
