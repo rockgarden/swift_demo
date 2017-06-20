@@ -3,6 +3,7 @@
 //  TableView
 //
 
+/// 使用示例:
 //override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
 //    delay (2) {
 //        let detail = ViewController()
@@ -11,8 +12,11 @@
 //    }
 //}
 
+
 import UIKit
 
+
+/// 具有进度提示 UITableViewCell，可用于跳转准备耗时大的过程 time Consuming Navigation
 class ActivityIndicatorCell: UITableViewCell {
 
     override func setSelected(_ selected: Bool, animated: Bool) {
@@ -26,7 +30,7 @@ class ActivityIndicatorCell: UITableViewCell {
             v.frame = v.frame.insetBy(dx: -10, dy: -10)
             let cf = self.contentView.convert(self.bounds, from:self)
             v.center = CGPoint(x:cf.midX, y:cf.midY);
-            v.frame = v.frame.integral // ?
+            v.frame = v.frame.integral
             v.tag = 1001
             self.contentView.addSubview(v)
             v.startAnimating()
@@ -37,6 +41,6 @@ class ActivityIndicatorCell: UITableViewCell {
         }
         super.setSelected(selected, animated: animated)
     }
-    
+
 }
 

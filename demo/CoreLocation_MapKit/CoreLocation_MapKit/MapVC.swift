@@ -3,12 +3,13 @@ import UIKit
 import MapKit
 
 class MapVC: UIViewController, MKMapViewDelegate {
-    
-    let which = 5 // 1...10
-    
+
+    var which = 1 // 1...10
+
     @IBOutlet var map: MKMapView!
+    @IBOutlet var buttonW: UIButton!
     var annloc: CLLocationCoordinate2D!
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         self.map.tintColor = .green
@@ -16,14 +17,17 @@ class MapVC: UIViewController, MKMapViewDelegate {
         let span = MKCoordinateSpanMake(0.015, 0.015)
         let reg = MKCoordinateRegionMake(loc, span)
         // or ...
-        // let reg = MKCoordinateRegionMakeWithDistance(loc, 1200, 1200)
+        //let reg = MKCoordinateRegionMakeWithDistance(loc, 1200, 1200)
         self.map.region = reg
         // or ...
-//        let pt = MKMapPointForCoordinate(loc)
-//        let w = MKMapPointsPerMeterAtLatitude(loc.latitude) * 1200
-//        self.map.visibleMapRect = MKMapRectMake(pt.x - w/2.0, pt.y - w/2.0, w, w)
+        //let pt = MKMapPointForCoordinate(loc)
+        //let w = MKMapPointsPerMeterAtLatitude(loc.latitude) * 1200
+        //self.map.visibleMapRect = MKMapRectMake(pt.x - w/2.0, pt.y - w/2.0, w, w)
         self.annloc = CLLocationCoordinate2DMake(34.923964, -120.219558)
-        
+        runWhich()
+    }
+
+    private func runWhich() {
         if which == 1 {
             return
         }
@@ -44,7 +48,7 @@ class MapVC: UIViewController, MKMapViewDelegate {
                     loc.latitude = loc.latitude + 0.0005
                     loc.longitude = loc.longitude + 0.001
                     ann.coordinate = loc
-                }) 
+                })
             }
         }
         if which == 8 {
@@ -89,7 +93,7 @@ class MapVC: UIViewController, MKMapViewDelegate {
             ]
             // rotate the arrow around its center
             let t1 = CGAffineTransform(translationX: unit * 2, y: unit * 2)
-            let t2 = t1.rotated(by: CGFloat(-M_PI) / 3.5)
+            let t2 = t1.rotated(by: CGFloat(-Double.pi) / 3.5)
             let t3 = t2.translatedBy(x: -unit * 2, y: -unit * 2)
             p.addLines(between: points, transform: t3)
             p.closeSubpath()
@@ -110,14 +114,14 @@ class MapVC: UIViewController, MKMapViewDelegate {
             let mr = MKMapRectMake(c.x + 2 * unit, c.y - 4.5 * unit, Double(sz.width), Double(sz.height))
             let over = MyOverlay(rect: mr)
             self.map.add(over, level: .aboveRoads)
-            
+
             let annot = MKPointAnnotation()
             annot.coordinate = over.coordinate
             annot.title = "This way!"
             self.map.addAnnotation(annot)
         }
     }
-    
+
     func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
         if which == 3 {
             var v: MKAnnotationView! = nil
@@ -129,7 +133,7 @@ class MapVC: UIViewController, MKMapViewDelegate {
                     (v as! MKPinAnnotationView).pinTintColor = MKPinAnnotationView.greenPinColor() // or any UIColor
                     v.canShowCallout = true
                     (v as! MKPinAnnotationView).animatesDrop = true
-                    
+
                 }
                 v.annotation = annotation
             }
@@ -191,14 +195,11 @@ class MapVC: UIViewController, MKMapViewDelegate {
         }
         return nil
     }
-    
-    // is this a bug? we get this message even if the user taps the whole callout,
-    // reporting that the button was tapped even though it wasn't
-    
+
     func mapView(_ mapView: MKMapView, annotationView view: MKAnnotationView, calloutAccessoryControlTapped control: UIControl) {
         print("tap \(control)")
     }
-    
+
     func mapView(_ mapView: MKMapView, didAdd views: [MKAnnotationView]) {
         if which >= 7 {
             for aView in views {
@@ -208,14 +209,12 @@ class MapVC: UIViewController, MKMapViewDelegate {
                     UIView.animate(withDuration: 0.8, animations: {
                         aView.alpha = 1
                         aView.transform = CGAffineTransform.identity
-                    }) 
+                    })
                 }
             }
         }
     }
-    
-    // hmm, now returns non-nil MKOverlayRenderer
-    // this changes the structure of my code
+
     func mapView(_ mapView: MKMapView, rendererFor overlay: MKOverlay) -> MKOverlayRenderer {
         if which == 8 {
             if let overlay = overlay as? MKPolygon {
@@ -238,13 +237,13 @@ class MapVC: UIViewController, MKMapViewDelegate {
         }
         if which == 10 {
             if overlay is MyOverlay {
-                let v = MyOverlayRenderer(overlay: overlay, angle: -CGFloat(M_PI) / 3.5)
+                let v = MyOverlayRenderer(overlay: overlay, angle: -CGFloat(Double.pi) / 3.5)
                 return v
             }
         }
         return MKOverlayRenderer() // ???? why did they make this non-nil?
     }
-    
+
     @IBAction func showPOIinMapsApp (_ sender: AnyObject) {
         let p = MKPlacemark(coordinate: self.annloc, addressDictionary: nil)
         let mi = MKMapItem(placemark: p)
@@ -255,9 +254,9 @@ class MapVC: UIViewController, MKMapViewDelegate {
             MKLaunchOptionsMapCenterKey: self.map.region.center,
             MKLaunchOptionsMapSpanKey: self.map.region.span
             ])
-        
+
     }
-    
+
     func mapView(_ mapView: MKMapView, annotationView view: MKAnnotationView, didChange newState: MKAnnotationViewDragState, fromOldState oldState: MKAnnotationViewDragState) {
         switch (newState) {
         case .starting:
@@ -267,9 +266,14 @@ class MapVC: UIViewController, MKMapViewDelegate {
         default: break
         }
     }
-    
+
     @IBAction func dismissVC() {
         self.dismiss(animated: true, completion: nil)
     }
-    
+
+    @IBAction func doWhich() {
+        which = which < 10 ? which + 1 : 1
+        buttonW.setTitle(String(which), for: .normal)
+        runWhich()
+    }
 }

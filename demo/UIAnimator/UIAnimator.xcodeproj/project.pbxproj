@@ -7,8 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4400ADA51EF80BBC005A7AA1 /* DropBounceAndRollBehavior.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4400ADA41EF80BBC005A7AA1 /* DropBounceAndRollBehavior.swift */; };
+		4400ADA71EF80F78005A7AA1 /* UIFieldBehaviorVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4400ADA61EF80F78005A7AA1 /* UIFieldBehaviorVC.swift */; };
+		4400ADA91EF81061005A7AA1 /* Main_UIAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4400ADA81EF81061005A7AA1 /* Main_UIAnimator.swift */; };
 		4479E02C1E6D90AE00A51660 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4479E02B1E6D90AE00A51660 /* AppDelegate.swift */; };
-		4479E02E1E6D90AE00A51660 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4479E02D1E6D90AE00A51660 /* ViewController.swift */; };
+		4479E02E1E6D90AE00A51660 /* UIDynamicBehaviorVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4479E02D1E6D90AE00A51660 /* UIDynamicBehaviorVC.swift */; };
 		4479E0311E6D90AE00A51660 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4479E02F1E6D90AE00A51660 /* Main.storyboard */; };
 		4479E0331E6D90AE00A51660 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4479E0321E6D90AE00A51660 /* Assets.xcassets */; };
 		4479E0361E6D90AE00A51660 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4479E0341E6D90AE00A51660 /* LaunchScreen.storyboard */; };
@@ -18,9 +21,12 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4400ADA41EF80BBC005A7AA1 /* DropBounceAndRollBehavior.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DropBounceAndRollBehavior.swift; sourceTree = "<group>"; };
+		4400ADA61EF80F78005A7AA1 /* UIFieldBehaviorVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIFieldBehaviorVC.swift; sourceTree = "<group>"; };
+		4400ADA81EF81061005A7AA1 /* Main_UIAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Main_UIAnimator.swift; sourceTree = "<group>"; };
 		4479E0281E6D90AE00A51660 /* UIAnimator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UIAnimator.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4479E02B1E6D90AE00A51660 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		4479E02D1E6D90AE00A51660 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		4479E02D1E6D90AE00A51660 /* UIDynamicBehaviorVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIDynamicBehaviorVC.swift; sourceTree = "<group>"; };
 		4479E0301E6D90AE00A51660 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		4479E0321E6D90AE00A51660 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4479E0351E6D90AE00A51660 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -61,7 +67,7 @@
 			isa = PBXGroup;
 			children = (
 				4479E02B1E6D90AE00A51660 /* AppDelegate.swift */,
-				4479E02D1E6D90AE00A51660 /* ViewController.swift */,
+				4400ADA81EF81061005A7AA1 /* Main_UIAnimator.swift */,
 				4479E02F1E6D90AE00A51660 /* Main.storyboard */,
 				4479E0321E6D90AE00A51660 /* Assets.xcassets */,
 				4479E0341E6D90AE00A51660 /* LaunchScreen.storyboard */,
@@ -69,6 +75,9 @@
 				4479E03D1E6D914A00A51660 /* UIViewPropertyAnimator_Fling.swift */,
 				4479E0411E6D92FC00A51660 /* UIDynamicAnimator_LiftDrop_Constraints.swift */,
 				4479E03F1E6D92C500A51660 /* UIDynamicAnimator_Drag.swift */,
+				4479E02D1E6D90AE00A51660 /* UIDynamicBehaviorVC.swift */,
+				4400ADA41EF80BBC005A7AA1 /* DropBounceAndRollBehavior.swift */,
+				4400ADA61EF80F78005A7AA1 /* UIFieldBehaviorVC.swift */,
 			);
 			path = UIAnimator;
 			sourceTree = "<group>";
@@ -147,10 +156,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				4479E0421E6D92FC00A51660 /* UIDynamicAnimator_LiftDrop_Constraints.swift in Sources */,
-				4479E02E1E6D90AE00A51660 /* ViewController.swift in Sources */,
+				4479E02E1E6D90AE00A51660 /* UIDynamicBehaviorVC.swift in Sources */,
 				4479E03E1E6D914A00A51660 /* UIViewPropertyAnimator_Fling.swift in Sources */,
 				4479E0401E6D92C500A51660 /* UIDynamicAnimator_Drag.swift in Sources */,
+				4400ADA71EF80F78005A7AA1 /* UIFieldBehaviorVC.swift in Sources */,
+				4400ADA91EF81061005A7AA1 /* Main_UIAnimator.swift in Sources */,
 				4479E02C1E6D90AE00A51660 /* AppDelegate.swift in Sources */,
+				4400ADA51EF80BBC005A7AA1 /* DropBounceAndRollBehavior.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -312,6 +324,7 @@
 				4479E03C1E6D90AE00A51660 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

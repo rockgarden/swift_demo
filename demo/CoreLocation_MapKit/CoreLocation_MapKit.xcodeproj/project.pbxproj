@@ -73,6 +73,7 @@
 			isa = PBXGroup;
 			children = (
 				C2F3A3B41D6436A600DA66CB /* AppDelegate.swift */,
+				C2F3A3B81D6436A600DA66CB /* Main.storyboard */,
 				C2F3A3B61D6436A600DA66CB /* ViewController.swift */,
 				C24F58CA1DEFC8F0009981C8 /* LocationManagerHolder.swift */,
 				4401EEF61DB5357C00C81CA5 /* LocationGeocodingVC.swift */,
@@ -81,7 +82,6 @@
 				C2C5E6611DB0B8A70098C2DA /* MyOverlay.swift */,
 				C2C5E6621DB0B8A70098C2DA /* MyOverlayRenderer.swift */,
 				C2F3A3CD1D644C4600DA66CB /* MyAnotation.swift */,
-				C2F3A3B81D6436A600DA66CB /* Main.storyboard */,
 				C2C5E6661DB0B8B70098C2DA /* clipartdirtbike.gif */,
 				C2C5E6681DB0B8C40098C2DA /* smileyWithTransparencyTiny.png */,
 				C2F3A3BB1D6436A600DA66CB /* Assets.xcassets */,

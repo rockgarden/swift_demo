@@ -27,63 +27,32 @@ class TestCustomNavBarVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.view.backgroundColor = .yellow // demonstrate translucency
+        self.view.backgroundColor = .yellow //证明navBar半透明度 demonstrate translucency
         
-        // new iOS 7 feature: replace the left-pointing chevron
-        // very simple example
-
+        /// 自定义 UINavigationBar 返回图标: new iOS 7 feature: replace the left-pointing chevron
         do {
             let sz = CGSize(10,20)
-            if #available(iOS 10.0, *) {
-                self.navbar.backIndicatorImage =
-                    UIGraphicsImageRenderer(size:sz).image { ctx in
-                        ctx.fill(CGRect(6,0,4,20))
-                }
-                self.navbar.backIndicatorTransitionMaskImage =
-                    UIGraphicsImageRenderer(size:sz).image {_ in}
-            } else {
-                self.navbar.backIndicatorImage =
-                    imageOfSize(CGSize(width: 10,height: 20)) {
-                        UIGraphicsGetCurrentContext()!.fill(CGRect(x: 6,y: 0,width: 4,height: 20))
-                }
-                self.navbar.backIndicatorTransitionMaskImage =
-                    imageOfSize(CGSize(width: 10,height: 20)) {}
+
+            self.navbar.backIndicatorImage = imageOfSize(sz) {
+                UIGraphicsGetCurrentContext()!.fill(CGRect(x: 6,y: 0,width: 4,height: 20))
             }
+            self.navbar.backIndicatorTransitionMaskImage = imageOfSize(sz)
         }
 
-        
         // shadow, as in previous example
-        
         let sz = CGSize(width: 20,height: 20)
-        if #available(iOS 10.0, *) {
-            self.navbar.setBackgroundImage(UIGraphicsImageRenderer(size:sz).image { ctx in
-                UIColor(white:0.95, alpha:0.85).setFill()
-                ctx.fill(CGRect(0,0,20,20))
-            }, for:.any, barMetrics: .default)
-        } else {
-            self.navbar.setBackgroundImage(imageOfSize(sz) {
-                UIColor(white:0.95, alpha:0.85).setFill()
-                UIGraphicsGetCurrentContext()!.fill(CGRect(x: 0,y: 0,width: 20,height: 20))
-            }, for:.any, barMetrics: .default)
-        }
+        self.navbar.setBackgroundImage(imageOfSize(sz) {            UIColor(white:0.95, alpha:0.85).setFill()
+            UIGraphicsGetCurrentContext()!.fill(CGRect(0,0,20,20))
+        }, for:.any, barMetrics: .default)
         
         do {
             let sz = CGSize(width: 4,height: 4)
-
-            if #available(iOS 10.0, *) {
-                self.navbar.shadowImage = UIGraphicsImageRenderer(size:sz).image { ctx in
-                    UIColor.gray.withAlphaComponent(0.3).setFill()
-                    ctx.fill(CGRect(0,0,4,2))
-                    UIColor.gray.withAlphaComponent(0.15).setFill()
-                    ctx.fill(CGRect(0,2,4,2))
-                }
-            } else {
-                self.navbar.shadowImage = imageOfSize(sz) {
-                    UIColor.gray.withAlphaComponent(0.3).setFill()
-                    UIGraphicsGetCurrentContext()!.fill(CGRect(x: 0,y: 0,width: 4,height: 2))
-                    UIColor.gray.withAlphaComponent(0.15).setFill()
-                    UIGraphicsGetCurrentContext()!.fill(CGRect(x: 0,y: 2,width: 4,height: 2))
-                }
+            self.navbar.shadowImage = imageOfSize(sz) {
+                let ctx = UIGraphicsGetCurrentContext()!
+                UIColor.gray.withAlphaComponent(0.3).setFill()
+                ctx.fill(CGRect(0,0,4,2))
+                UIColor.gray.withAlphaComponent(0.15).setFill()
+                ctx.fill(CGRect(0,2,4,2))
             }
         }
         
@@ -104,7 +73,7 @@ class TestCustomNavBarVC: UIViewController {
     func pushNext(_ sender: Any) {
         debugPrint(sender)
         let oldb = sender as! UIBarButtonItem
-        let s = oldb.title! // *
+        let s = oldb.title!
         let ni = UINavigationItem(title: s)
         if s == "Evers" {
             let b = UIBarButtonItem(

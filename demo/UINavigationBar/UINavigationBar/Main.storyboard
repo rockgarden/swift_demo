@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" colorMatched="YES" initialViewController="Ssr-hk-KKY">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" colorMatched="YES" initialViewController="Ssr-hk-KKY">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -228,7 +229,7 @@
                                             </subviews>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <segue destination="UGn-I3-gVz" kind="push" id="szG-yB-yxs"/>
+                                            <segue destination="UGn-I3-gVz" kind="modal" id="szG-yB-yxs"/>
                                         </connections>
                                     </tableViewCell>
                                 </cells>
@@ -677,9 +678,12 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="iHV-FB-b3R">
-                                <rect key="frame" x="0.0" y="64" width="375" height="44"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="q1L-eG-GCa">
+                                <rect key="frame" x="93" y="44" width="188" height="128"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </view>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iHV-FB-b3R">
+                                <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                                 <items>
                                     <navigationItem title="Title" id="7b3-xk-Ib8"/>
                                 </items>
@@ -687,20 +691,26 @@
                                     <outlet property="delegate" destination="UGn-I3-gVz" id="YOk-jB-yJV"/>
                                 </connections>
                             </navigationBar>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="q1L-eG-GCa">
-                                <rect key="frame" x="94" y="184" width="187.5" height="128"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                            </view>
-                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="n3J-2Y-uKt">
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="n3J-2Y-uKt">
                                 <rect key="frame" x="0.0" y="623" width="375" height="44"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <items>
                                     <navigationItem title="No image bar item" id="bfr-AL-RSu"/>
                                 </items>
                             </navigationBar>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="iHV-FB-b3R" firstAttribute="centerX" secondItem="Fmi-my-bfn" secondAttribute="centerX" id="Afz-hy-sYG"/>
+                            <constraint firstItem="iHV-FB-b3R" firstAttribute="top" secondItem="0Wf-Ze-ApL" secondAttribute="bottom" id="Buj-WK-K1k"/>
+                            <constraint firstItem="q1L-eG-GCa" firstAttribute="centerX" secondItem="iHV-FB-b3R" secondAttribute="centerX" id="Cg2-rr-Tc3"/>
+                            <constraint firstItem="iHV-FB-b3R" firstAttribute="width" secondItem="Fmi-my-bfn" secondAttribute="width" id="Eio-KM-Y17"/>
+                            <constraint firstItem="n3J-2Y-uKt" firstAttribute="width" secondItem="Fmi-my-bfn" secondAttribute="width" id="GnN-0D-rUg"/>
+                            <constraint firstItem="n3J-2Y-uKt" firstAttribute="centerX" secondItem="Fmi-my-bfn" secondAttribute="centerX" id="Oqv-9k-2Rk"/>
+                            <constraint firstItem="q1L-eG-GCa" firstAttribute="leading" secondItem="Fmi-my-bfn" secondAttribute="leadingMargin" constant="77" id="fiU-Oy-MkK"/>
+                            <constraint firstItem="n3J-2Y-uKt" firstAttribute="bottom" secondItem="pdE-zW-l2d" secondAttribute="top" id="s8p-yB-SRM"/>
+                            <constraint firstAttribute="bottom" secondItem="q1L-eG-GCa" secondAttribute="bottom" constant="495" id="wZa-QQ-615"/>
+                            <constraint firstItem="q1L-eG-GCa" firstAttribute="top" secondItem="0Wf-Ze-ApL" secondAttribute="bottom" constant="24" id="zfN-na-1rN"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="ooy-Zv-Lgq"/>
                     <connections>
