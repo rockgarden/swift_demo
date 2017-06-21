@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ExpandableByConstraint: UIViewController {
+class ExpandableByConstraintVC: UIViewController {
 
 	@IBOutlet var randomLabel: UILabel!
 	@IBOutlet var sectionHeightConstraint: NSLayoutConstraint!

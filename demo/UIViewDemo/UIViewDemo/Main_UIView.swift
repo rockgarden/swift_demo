@@ -5,7 +5,7 @@ class MyPickerView : UIPickerView {
     override var intrinsicContentSize : CGSize {
         return super.intrinsicContentSize
 
-        // no need for trickery or testing; in iOS 9 you can just set the height constraint
+        /// in iOS 9 you can just set the height constraint
         //        debugPrint("intrinsic")
         //        var sz = super.intrinsicContentSize
         //        let h : CGFloat = 140
