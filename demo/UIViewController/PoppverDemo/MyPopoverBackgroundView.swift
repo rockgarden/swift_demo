@@ -9,7 +9,6 @@ import UIKit
 class MyPopoverBackgroundView : UIPopoverBackgroundView {
     static let ARBASE : CGFloat = 20
     static let ARHEIGHT : CGFloat = 20
-
     
     var arrOff : CGFloat
     var arrDir : UIPopoverArrowDirection
@@ -34,10 +33,7 @@ class MyPopoverBackgroundView : UIPopoverBackgroundView {
         get { return self.arrOff }
         set { self.arrOff = newValue }
     }
-    
 
-    
-    
     override init(frame:CGRect) {
         self.arrOff = 0
         self.arrDir = .any
@@ -63,7 +59,6 @@ class MyPopoverBackgroundView : UIPopoverBackgroundView {
         let capw = linOrig.size.width / 2.0 - 1
         let caph = linOrig.size.height / 2.0 - 1
         let lin = linOrig.resizableImage(withCapInsets:UIEdgeInsetsMake(caph, capw, caph, capw),resizingMode:.tile)
-        
         
         // draw the arrow
         // I'm just going to make a triangle filled with our linen background...

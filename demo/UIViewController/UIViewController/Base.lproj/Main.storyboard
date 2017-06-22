@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="zgN-fu-qHb">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="zgN-fu-qHb">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Navigation items with more than one left or right bar item" minToolsVersion="7.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -138,6 +138,43 @@
             </objects>
             <point key="canvasLocation" x="2738" y="519"/>
         </scene>
+        <!--Inset SmallerVC-->
+        <scene sceneID="8ib-uz-3We">
+            <objects>
+                <viewController modalPresentationStyle="formSheet" id="aR3-bf-hOf" customClass="InsetSmallerVC" customModule="UIViewController" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Rga-KJ-Mex"/>
+                        <viewControllerLayoutGuide type="bottom" id="bfd-Qq-wBu"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="aLH-aV-a6X">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wxJ-wo-IXi">
+                                <rect key="frame" x="49" y="33" width="39" height="30"/>
+                                <state key="normal" title="Close">
+                                    <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="doButton:" destination="aR3-bf-hOf" eventType="touchUpInside" id="mlC-QR-WBq"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="0.50076308140000003" green="1" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="wxJ-wo-IXi" firstAttribute="leading" secondItem="aLH-aV-a6X" secondAttribute="leadingMargin" constant="33" id="Hh2-w4-ZBB"/>
+                            <constraint firstItem="wxJ-wo-IXi" firstAttribute="top" secondItem="Rga-KJ-Mex" secondAttribute="bottom" constant="13" id="QVS-mi-Gei"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="button" destination="wxJ-wo-IXi" id="lWs-mY-8Y8"/>
+                        <outlet property="buttonTopConstraint" destination="QVS-mi-Gei" id="l0y-cu-zJ2"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2ZV-Z4-mmm" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2737" y="1217"/>
+        </scene>
         <!--AdaptivePresentation-->
         <scene sceneID="1XR-8z-ZiH">
             <objects>
@@ -159,7 +196,7 @@
                                 </connections>
                             </button>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="HfW-k0-IbR">
-                                <rect key="frame" x="0.0" y="273.5" width="375" height="120"/>
+                                <rect key="frame" x="0.0" y="243.5" width="375" height="180"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="52h-5P-oyG">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="30"/>
@@ -189,6 +226,20 @@
                                         <state key="normal" title="Popover On Phone demo"/>
                                         <connections>
                                             <segue destination="fHI-Rt-Ppn" kind="presentation" id="KTD-XI-8mz"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="A6q-T9-LWn">
+                                        <rect key="frame" x="0.0" y="120" width="375" height="30"/>
+                                        <state key="normal" title="Custom Presented Animation custom alert"/>
+                                        <connections>
+                                            <action selector="doCustomAlert:" destination="toZ-dq-91B" eventType="touchUpInside" id="faB-H8-mNL"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pfk-NE-qJt">
+                                        <rect key="frame" x="0.0" y="150" width="375" height="30"/>
+                                        <state key="normal" title="Custom Presented Animation smaller"/>
+                                        <connections>
+                                            <segue destination="aR3-bf-hOf" kind="presentation" id="Oj2-bg-I7b"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -237,6 +288,13 @@
                                 <fontDescription key="fontDescription" type="system" size="system"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tT9-MT-QHR">
+                                <rect key="frame" x="168" y="28" width="191" height="30"/>
+                                <state key="normal" title="Modal Presentation Context"/>
+                                <connections>
+                                    <action selector="doPresent:" destination="xT8-XE-maG" eventType="touchUpInside" id="APo-h4-NyF"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -244,7 +302,9 @@
                             <constraint firstItem="mAV-Tj-pgW" firstAttribute="top" secondItem="IcZ-xp-K06" secondAttribute="bottom" constant="40" id="1lf-dR-zOG"/>
                             <constraint firstItem="IcZ-xp-K06" firstAttribute="leading" secondItem="uqJ-47-D1I" secondAttribute="leading" constant="20" symbolic="YES" id="H5J-R4-wXv"/>
                             <constraint firstAttribute="trailing" secondItem="IcZ-xp-K06" secondAttribute="trailing" constant="20" symbolic="YES" id="Kl7-RO-kH2"/>
+                            <constraint firstItem="tT9-MT-QHR" firstAttribute="top" secondItem="JzZ-07-vk5" secondAttribute="bottom" constant="8" id="VCu-VZ-uPv"/>
                             <constraint firstItem="mAV-Tj-pgW" firstAttribute="leading" secondItem="uqJ-47-D1I" secondAttribute="leading" constant="20" symbolic="YES" id="WCA-Ex-G2t"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="tT9-MT-QHR" secondAttribute="trailing" id="YQ2-pM-i9T"/>
                             <constraint firstAttribute="centerY" secondItem="mAV-Tj-pgW" secondAttribute="centerY" id="ulW-ut-fRB"/>
                         </constraints>
                     </view>

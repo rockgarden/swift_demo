@@ -14,11 +14,17 @@
 		4417213E1EDB154800933908 /* ContainerVC_Size.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4417213D1EDB154800933908 /* ContainerVC_Size.swift */; };
 		441721411EDB161E00933908 /* ContainerVC_Size_Child.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4417213F1EDB161E00933908 /* ContainerVC_Size_Child.swift */; };
 		441721421EDB161E00933908 /* ContainerVC_Size_Child.xib in Resources */ = {isa = PBXBuildFile; fileRef = 441721401EDB161E00933908 /* ContainerVC_Size_Child.xib */; };
+		44263B311EFBEA5A0045A717 /* WorkspaceGlobal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44263B301EFBEA5A0045A717 /* WorkspaceGlobal.swift */; };
+		44263B321EFBEAAE0045A717 /* WorkspaceGlobal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44263B301EFBEA5A0045A717 /* WorkspaceGlobal.swift */; };
+		44263B351EFBEE6F0045A717 /* ExtraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44263B331EFBEE6F0045A717 /* ExtraViewController.swift */; };
+		44263B361EFBEE6F0045A717 /* ExtraViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 44263B341EFBEE6F0045A717 /* ExtraViewController.xib */; };
+		44263B381EFBF58E0045A717 /* CustomAlertVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 44263B371EFBF58E0045A717 /* CustomAlertVC.xib */; };
+		44263B3A1EFBF5D20045A717 /* CustomAlertVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44263B391EFBF5D20045A717 /* CustomAlertVC.swift */; };
+		44263B3C1EFBFBFC0045A717 /* InsetSmallerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44263B3B1EFBFBFC0045A717 /* InsetSmallerVC.swift */; };
 		4459BC941EE0631700717B8D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4459BC931EE0631700717B8D /* AppDelegate.swift */; };
 		4459BC961EE0631700717B8D /* PopoverVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4459BC951EE0631700717B8D /* PopoverVC.swift */; };
 		4459BC991EE0631700717B8D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4459BC971EE0631700717B8D /* Main.storyboard */; };
 		4459BC9B1EE0631700717B8D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4459BC9A1EE0631700717B8D /* Assets.xcassets */; };
-		4459BC9E1EE0631700717B8D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4459BC9C1EE0631700717B8D /* LaunchScreen.storyboard */; };
 		4459BCA81EE0638F00717B8D /* PopoverViewControllers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4459BCA31EE0638F00717B8D /* PopoverViewControllers.swift */; };
 		4459BCA91EE0638F00717B8D /* Popover1View1.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4459BCA41EE0638F00717B8D /* Popover1View1.xib */; };
 		4459BCAA1EE0638F00717B8D /* MyPopoverBackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4459BCA51EE0638F00717B8D /* MyPopoverBackgroundView.swift */; };
@@ -37,7 +43,6 @@
 		449D1CB71E992C57000C7446 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 449D1CB61E992C57000C7446 /* AppDelegate.swift */; };
 		449D1CBC1E992C57000C7446 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 449D1CBA1E992C57000C7446 /* Main.storyboard */; };
 		449D1CBE1E992C57000C7446 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 449D1CBD1E992C57000C7446 /* Assets.xcassets */; };
-		449D1CC11E992C57000C7446 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 449D1CBF1E992C57000C7446 /* LaunchScreen.storyboard */; };
 		44B1E0171EF413F8005CF9C7 /* ViewControllerPreviewingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44B1E0161EF413F7005CF9C7 /* ViewControllerPreviewingVC.swift */; };
 		44B1E01A1EF41459005CF9C7 /* Pep.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44B1E0181EF41459005CF9C7 /* Pep.swift */; };
 		44B1E01B1EF41459005CF9C7 /* Pep.xib in Resources */ = {isa = PBXBuildFile; fileRef = 44B1E0191EF41459005CF9C7 /* Pep.xib */; };
@@ -79,12 +84,17 @@
 		4417213D1EDB154800933908 /* ContainerVC_Size.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContainerVC_Size.swift; sourceTree = "<group>"; };
 		4417213F1EDB161E00933908 /* ContainerVC_Size_Child.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContainerVC_Size_Child.swift; sourceTree = "<group>"; };
 		441721401EDB161E00933908 /* ContainerVC_Size_Child.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ContainerVC_Size_Child.xib; sourceTree = "<group>"; };
+		44263B301EFBEA5A0045A717 /* WorkspaceGlobal.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WorkspaceGlobal.swift; sourceTree = "<group>"; };
+		44263B331EFBEE6F0045A717 /* ExtraViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExtraViewController.swift; sourceTree = "<group>"; };
+		44263B341EFBEE6F0045A717 /* ExtraViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ExtraViewController.xib; sourceTree = "<group>"; };
+		44263B371EFBF58E0045A717 /* CustomAlertVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CustomAlertVC.xib; sourceTree = "<group>"; };
+		44263B391EFBF5D20045A717 /* CustomAlertVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomAlertVC.swift; sourceTree = "<group>"; };
+		44263B3B1EFBFBFC0045A717 /* InsetSmallerVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InsetSmallerVC.swift; sourceTree = "<group>"; };
 		4459BC911EE0631600717B8D /* PoppverDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PoppverDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4459BC931EE0631700717B8D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4459BC951EE0631700717B8D /* PopoverVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopoverVC.swift; sourceTree = "<group>"; };
 		4459BC981EE0631700717B8D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		4459BC9A1EE0631700717B8D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		4459BC9D1EE0631700717B8D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4459BC9F1EE0631700717B8D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4459BCA31EE0638F00717B8D /* PopoverViewControllers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopoverViewControllers.swift; sourceTree = "<group>"; };
 		4459BCA41EE0638F00717B8D /* Popover1View1.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Popover1View1.xib; sourceTree = "<group>"; };
@@ -107,7 +117,6 @@
 		449D1CB61E992C57000C7446 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		449D1CBB1E992C57000C7446 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		449D1CBD1E992C57000C7446 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		449D1CC01E992C57000C7446 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		449D1CC21E992C57000C7446 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		44B1E0161EF413F7005CF9C7 /* ViewControllerPreviewingVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewControllerPreviewingVC.swift; sourceTree = "<group>"; };
 		44B1E0181EF41459005CF9C7 /* Pep.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Pep.swift; sourceTree = "<group>"; };
@@ -197,24 +206,26 @@
 				4459BCA61EE0638F00717B8D /* ExtraViewController.swift */,
 				4459BCA71EE0638F00717B8D /* ExtraViewController.xib */,
 				4459BC9A1EE0631700717B8D /* Assets.xcassets */,
-				4459BC9C1EE0631700717B8D /* LaunchScreen.storyboard */,
 				4459BC9F1EE0631700717B8D /* Info.plist */,
 			);
 			path = PoppverDemo;
 			sourceTree = "<group>";
 		};
-		448AC2381EF2AD3800013F08 /* UIAdaptivePresentationControllerDelegate */ = {
+		448AC2381EF2AD3800013F08 /* PresentationController */ = {
 			isa = PBXGroup;
 			children = (
-				4459BCAE1EE06BE100717B8D /* PopoverOnPhoneVC.swift */,
 				448AC22E1EF2AAFA00013F08 /* AdaptivePresentationVC.swift */,
 				448AC2561EF2C7F500013F08 /* AdaptivePresentationVC_Segue.swift */,
+				44263B3B1EFBFBFC0045A717 /* InsetSmallerVC.swift */,
+				4459BCAE1EE06BE100717B8D /* PopoverOnPhoneVC.swift */,
 				448AC2321EF2ACA800013F08 /* PVCSecondVC.swift */,
 				448AC2301EF2AC1F00013F08 /* PVCSecondVC.xib */,
 				448AC2341EF2ACDA00013F08 /* PVCThirdVC.swift */,
 				448AC2351EF2ACDA00013F08 /* PVCThirdVC.xib */,
+				44263B391EFBF5D20045A717 /* CustomAlertVC.swift */,
+				44263B371EFBF58E0045A717 /* CustomAlertVC.xib */,
 			);
-			name = UIAdaptivePresentationControllerDelegate;
+			name = PresentationController;
 			sourceTree = "<group>";
 		};
 		448AC24D1EF2BF7200013F08 /* UIViewControllerUITests */ = {
@@ -229,6 +240,7 @@
 		449D1CAA1E992C57000C7446 = {
 			isa = PBXGroup;
 			children = (
+				44263B301EFBEA5A0045A717 /* WorkspaceGlobal.swift */,
 				C29FFCD31ECAECA40034587E /* PinterestSwift */,
 				449D1CB51E992C57000C7446 /* UIViewController */,
 				4459BC921EE0631700717B8D /* PoppverDemo */,
@@ -253,12 +265,13 @@
 				449D1CB61E992C57000C7446 /* AppDelegate.swift */,
 				449D1CBA1E992C57000C7446 /* Main.storyboard */,
 				446A268F1EC9C54C0024230D /* ViewControllers.swift */,
-				448AC2381EF2AD3800013F08 /* UIAdaptivePresentationControllerDelegate */,
+				44263B331EFBEE6F0045A717 /* ExtraViewController.swift */,
+				44263B341EFBEE6F0045A717 /* ExtraViewController.xib */,
+				448AC2381EF2AD3800013F08 /* PresentationController */,
 				441721371EDABAA600933908 /* Transition */,
 				441721341EDAB16500933908 /* ContainerView */,
 				449D1CBD1E992C57000C7446 /* Assets.xcassets */,
 				4459BCB01EE06EE600717B8D /* linkhelp.html */,
-				449D1CBF1E992C57000C7446 /* LaunchScreen.storyboard */,
 				449D1CC21E992C57000C7446 /* Info.plist */,
 			);
 			path = UIViewController;
@@ -401,7 +414,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4459BC9E1EE0631700717B8D /* LaunchScreen.storyboard in Resources */,
 				4459BCAC1EE0638F00717B8D /* ExtraViewController.xib in Resources */,
 				4459BC9B1EE0631700717B8D /* Assets.xcassets in Resources */,
 				4459BCA91EE0638F00717B8D /* Popover1View1.xib in Resources */,
@@ -420,12 +432,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				449D1CC11E992C57000C7446 /* LaunchScreen.storyboard in Resources */,
 				441721421EDB161E00933908 /* ContainerVC_Size_Child.xib in Resources */,
+				44263B361EFBEE6F0045A717 /* ExtraViewController.xib in Resources */,
 				449D1CBE1E992C57000C7446 /* Assets.xcassets in Resources */,
 				C29FFCC81ECAD7DA0034587E /* evernote.storyboard in Resources */,
 				448AC2311EF2AC1F00013F08 /* PVCSecondVC.xib in Resources */,
 				44B1E01B1EF41459005CF9C7 /* Pep.xib in Resources */,
+				44263B381EFBF58E0045A717 /* CustomAlertVC.xib in Resources */,
 				449D1CBC1E992C57000C7446 /* Main.storyboard in Resources */,
 				C29FFCCC1ECAD8340034587E /* EvernoteCell.xib in Resources */,
 				4459BCB11EE06EE600717B8D /* linkhelp.html in Resources */,
@@ -440,6 +453,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				44263B321EFBEAAE0045A717 /* WorkspaceGlobal.swift in Sources */,
 				4459BCAA1EE0638F00717B8D /* MyPopoverBackgroundView.swift in Sources */,
 				4459BC961EE0631700717B8D /* PopoverVC.swift in Sources */,
 				4459BCA81EE0638F00717B8D /* PopoverViewControllers.swift in Sources */,
@@ -469,6 +483,7 @@
 				441721391EDAC25600933908 /* ContainerVC_Constraints.swift in Sources */,
 				C29FFCCE1ECADAF40034587E /* Main_Transition.swift in Sources */,
 				441721331EDA729D00933908 /* CVCS_ChildVC.swift in Sources */,
+				44263B3C1EFBFBFC0045A717 /* InsetSmallerVC.swift in Sources */,
 				448AC22F1EF2AAFA00013F08 /* AdaptivePresentationVC.swift in Sources */,
 				4417213E1EDB154800933908 /* ContainerVC_Size.swift in Sources */,
 				448AC2361EF2ACDA00013F08 /* PVCThirdVC.swift in Sources */,
@@ -476,9 +491,12 @@
 				C29FFCCA1ECAD7E90034587E /* NoteViewController.swift in Sources */,
 				C29FFCC61ECAD7980034587E /* EvernoteCollectionVC.swift in Sources */,
 				C29FFCE51ECAECA40034587E /* NTTransitionProtocol.swift in Sources */,
+				44263B311EFBEA5A0045A717 /* WorkspaceGlobal.swift in Sources */,
 				C29FFCE01ECAECA40034587E /* Macro.swift in Sources */,
+				44263B3A1EFBF5D20045A717 /* CustomAlertVC.swift in Sources */,
 				C29FFCE61ECAECA40034587E /* NTWaterfallViewCell.swift in Sources */,
 				C29FFCD01ECADC8D0034587E /* TransitionImage.swift in Sources */,
+				44263B351EFBEE6F0045A717 /* ExtraViewController.swift in Sources */,
 				441721411EDB161E00933908 /* ContainerVC_Size_Child.swift in Sources */,
 				C29FFCC21ECACB340034587E /* TransitionImageCollectionVC.swift in Sources */,
 				448AC2571EF2C7F500013F08 /* AdaptivePresentationVC_Segue.swift in Sources */,
@@ -513,28 +531,12 @@
 			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
-		4459BC9C1EE0631700717B8D /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				4459BC9D1EE0631700717B8D /* Base */,
-			);
-			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
 		449D1CBA1E992C57000C7446 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				449D1CBB1E992C57000C7446 /* Base */,
 			);
 			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		449D1CBF1E992C57000C7446 /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				449D1CC01E992C57000C7446 /* Base */,
-			);
-			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */

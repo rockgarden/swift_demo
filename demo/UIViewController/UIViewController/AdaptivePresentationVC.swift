@@ -78,6 +78,10 @@ class AdaptivePresentationVC : UIViewController, PVCSecondVCDelegate {
         print(data)
     }
 
+    @IBAction func doCustomAlert(_ sender: Any?) {
+        self.present(CustomAlertVC(), animated:true)
+    }
+
     override func viewDidDisappear(_ animated: Bool) {
         super.viewDidDisappear(animated)
         print("vc did disappear")
