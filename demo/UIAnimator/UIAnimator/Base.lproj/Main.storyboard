@@ -158,6 +158,26 @@
                                             <segue destination="CAr-zX-Wcy" kind="show" id="VwN-TT-Eug"/>
                                         </connections>
                                     </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" textLabel="Uop-fl-zBY" style="IBUITableViewCellStyleDefault" id="xKx-5i-DEa">
+                                        <rect key="frame" x="0.0" y="308" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="xKx-5i-DEa" id="lS7-SV-SYf">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="view animation" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Uop-fl-zBY">
+                                                    <rect key="frame" x="15" y="0.0" width="345" height="43.5"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="0.0"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="Wsg-jQ-aOb" kind="show" id="9yY-vX-JF9"/>
+                                        </connections>
+                                    </tableViewCell>
                                 </cells>
                             </tableViewSection>
                         </sections>
@@ -176,7 +196,7 @@
         <scene sceneID="9WU-7p-KUP">
             <objects>
                 <navigationController id="acp-ys-Oc1" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="BCQ-Ar-3cW">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="BCQ-Ar-3cW">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -257,6 +277,45 @@
                 </panGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="-606" y="-6764"/>
+        </scene>
+        <!--View AnimationVC-->
+        <scene sceneID="Kkd-rW-26F">
+            <objects>
+                <viewController id="Wsg-jQ-aOb" customClass="ViewAnimationVC" customModule="UIAnimator" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="ZgX-in-xoE"/>
+                        <viewControllerLayoutGuide type="bottom" id="UPN-n0-Ld9"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="uTY-EA-b4Z">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="mJ2-oE-kuU">
+                                <rect key="frame" x="16" y="72" width="117" height="102"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.50076308140000003" green="1" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5IP-MC-k1j">
+                                <rect key="frame" x="9" y="617" width="48" height="30"/>
+                                <state key="normal" title="Case 0"/>
+                                <connections>
+                                    <action selector="doWhich:" destination="Wsg-jQ-aOb" eventType="touchUpInside" id="xdk-z8-2jx"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="UPN-n0-Ld9" firstAttribute="top" secondItem="5IP-MC-k1j" secondAttribute="bottom" constant="20" id="3eZ-ch-gBd"/>
+                            <constraint firstItem="5IP-MC-k1j" firstAttribute="leading" secondItem="uTY-EA-b4Z" secondAttribute="leadingMargin" constant="-7" id="Rb6-Md-EDh"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="v" destination="mJ2-oE-kuU" id="dHz-yw-qEe"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bMc-4b-VIM" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="106" y="-6431"/>
         </scene>
         <!--Animation And AutolayoutVC-->
         <scene sceneID="fNt-fK-0vf">
@@ -343,7 +402,7 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zjM-b8-fNS" userLabel="View - Content">
-                                <rect key="frame" x="0.0" y="20" width="375" height="293.5"/>
+                                <rect key="frame" x="0.0" y="64" width="375" height="293.5"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Header" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Y8E-sq-vqn" userLabel="Label - Header">
                                         <rect key="frame" x="16" y="16" width="343" height="76.5"/>
@@ -382,7 +441,7 @@
                                 </constraints>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="du0-dB-uz0">
-                                <rect key="frame" x="16" y="353.5" width="343" height="30"/>
+                                <rect key="frame" x="16" y="397.5" width="343" height="30"/>
                                 <state key="normal" title="Toggle Section">
                                     <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
@@ -391,7 +450,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eFH-4b-etw">
-                                <rect key="frame" x="16" y="407.5" width="343" height="30"/>
+                                <rect key="frame" x="16" y="451.5" width="343" height="30"/>
                                 <state key="normal" title="Toggle Contents">
                                     <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>

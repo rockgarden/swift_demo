@@ -46,3 +46,36 @@ func delay(_ delay:Double, closure:@escaping ()->()) {
 }
 
 
+extension UIView {
+    class func animate(times:Int,
+                       duration dur: TimeInterval,
+                       delay del: TimeInterval,
+                       options opts: UIViewAnimationOptions,
+                       animations anim: @escaping () -> Void,
+                       completion comp: ((Bool) -> Void)?) {
+        func helper(_ t:Int,
+                    _ dur: TimeInterval,
+                    _ del: TimeInterval,
+                    _ opt: UIViewAnimationOptions,
+                    _ anim: @escaping () -> Void,
+                    _ com: ((Bool) -> Void)?) {
+            UIView.animate(withDuration: dur,
+                           delay: del, options: opt,
+                           animations: anim, completion: {
+                            done in
+                            if com != nil {
+                                com!(done)
+                            }
+                            if t > 0 {
+                                delay(0) {
+                                    helper(t-1, dur, del, opt, anim, com)
+                                }
+                            }
+            })
+        }
+        helper(times-1, dur, del, opts, anim, comp)
+    }
+}
+
+
+
