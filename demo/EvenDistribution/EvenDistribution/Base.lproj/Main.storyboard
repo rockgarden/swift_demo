@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="dxT-Ju-RrV">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="dxT-Ju-RrV">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -27,10 +27,22 @@
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gWe-bJ-3TN">
                                         <rect key="frame" x="0.0" y="0.0" width="343" height="34"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tap here, show SetUILayoutGuide" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="X6T-Xg-04O">
+                                                <rect key="frame" x="0.0" y="0.5" width="343" height="34"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
                                         <color key="backgroundColor" red="0.50076308140000003" green="1" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <gestureRecognizers/>
                                         <constraints>
+                                            <constraint firstItem="X6T-Xg-04O" firstAttribute="width" secondItem="gWe-bJ-3TN" secondAttribute="width" id="OAf-bn-rNn"/>
                                             <constraint firstAttribute="height" constant="34" id="YdH-pb-CHw"/>
+                                            <constraint firstItem="X6T-Xg-04O" firstAttribute="centerY" secondItem="gWe-bJ-3TN" secondAttribute="centerY" id="lXN-aR-W88"/>
+                                            <constraint firstItem="X6T-Xg-04O" firstAttribute="height" secondItem="gWe-bJ-3TN" secondAttribute="height" id="nKO-cL-rou"/>
+                                            <constraint firstItem="X6T-Xg-04O" firstAttribute="centerX" secondItem="gWe-bJ-3TN" secondAttribute="centerX" id="nUQ-sc-qKh"/>
                                         </constraints>
                                         <connections>
                                             <outletCollection property="gestureRecognizers" destination="pdK-KI-YfV" appends="YES" id="1Gg-DX-0Gf"/>
@@ -38,10 +50,22 @@
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mmF-KZ-KLD">
                                         <rect key="frame" x="0.0" y="204.5" width="343" height="34"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tap here, show SetUIStackView" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2vy-qd-0NI">
+                                                <rect key="frame" x="-0.5" y="0.0" width="343" height="34"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
                                         <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <gestureRecognizers/>
                                         <constraints>
+                                            <constraint firstItem="2vy-qd-0NI" firstAttribute="width" secondItem="mmF-KZ-KLD" secondAttribute="width" id="1OV-tF-Erf"/>
+                                            <constraint firstItem="2vy-qd-0NI" firstAttribute="height" secondItem="mmF-KZ-KLD" secondAttribute="height" id="6rN-3a-iZX"/>
+                                            <constraint firstItem="2vy-qd-0NI" firstAttribute="centerX" secondItem="mmF-KZ-KLD" secondAttribute="centerX" id="Itk-M7-v5O"/>
                                             <constraint firstAttribute="height" constant="34" id="l43-jf-IO4"/>
+                                            <constraint firstItem="2vy-qd-0NI" firstAttribute="centerY" secondItem="mmF-KZ-KLD" secondAttribute="centerY" id="lfd-VT-2KT"/>
                                         </constraints>
                                         <connections>
                                             <outletCollection property="gestureRecognizers" destination="cDl-hg-W8W" appends="YES" id="7cf-At-U7g"/>
@@ -103,6 +127,16 @@
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="31p-Id-11U">
                                 <rect key="frame" x="16" y="20" width="343" height="34"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PZn-ea-cJg">
+                                        <rect key="frame" x="152" y="2" width="39" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" title="Close"/>
+                                        <connections>
+                                            <segue destination="xaD-Hq-AwQ" kind="unwind" unwindAction="unwindToED:" id="Zj2-SM-GT7"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
                                 <color key="backgroundColor" red="0.50076308140000003" green="1" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <gestureRecognizers/>
                                 <constraints>
@@ -159,13 +193,9 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8sr-lv-SOs" sceneMemberID="firstResponder"/>
                 <exit id="xaD-Hq-AwQ" userLabel="Exit" sceneMemberID="exit"/>
-                <tapGestureRecognizer id="P0y-Yn-9MH">
-                    <connections>
-                        <segue destination="xaD-Hq-AwQ" kind="unwind" unwindAction="unwindToMainViewController:" id="H7C-oR-u4D"/>
-                    </connections>
-                </tapGestureRecognizer>
+                <tapGestureRecognizer id="P0y-Yn-9MH"/>
             </objects>
-            <point key="canvasLocation" x="33" y="768"/>
+            <point key="canvasLocation" x="36" y="812"/>
         </scene>
         <!--SetUI Stack View-->
         <scene sceneID="OK3-Sh-JJl">
@@ -181,6 +211,16 @@
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BVI-6Y-2fT">
                                 <rect key="frame" x="16" y="20" width="343" height="34"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5Bb-5V-WR8">
+                                        <rect key="frame" x="152" y="2" width="39" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" title="Close"/>
+                                        <connections>
+                                            <segue destination="2fx-68-96c" kind="unwind" unwindAction="unwindToED:" id="4jy-c7-7E0"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
                                 <color key="backgroundColor" red="0.50076308140000003" green="1" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <gestureRecognizers/>
                                 <constraints>
@@ -237,13 +277,9 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6pR-IC-Fw2" sceneMemberID="firstResponder"/>
                 <exit id="2fx-68-96c" userLabel="Exit" sceneMemberID="exit"/>
-                <tapGestureRecognizer id="DOy-gV-ctv">
-                    <connections>
-                        <segue destination="2fx-68-96c" kind="unwind" unwindAction="unwindToMainViewController:" id="s7v-tc-92P"/>
-                    </connections>
-                </tapGestureRecognizer>
+                <tapGestureRecognizer id="DOy-gV-ctv"/>
             </objects>
-            <point key="canvasLocation" x="817" y="38"/>
+            <point key="canvasLocation" x="887" y="37"/>
         </scene>
     </scenes>
 </document>

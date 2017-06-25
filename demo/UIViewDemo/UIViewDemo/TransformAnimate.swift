@@ -14,7 +14,7 @@ import UIKit
  ...unless we also temporarily remove the second view's internal constraints.
  */
 
-class TransformAnimate: UIViewController {
+class TransformAnimateVC: UIViewController {
 
     @IBOutlet var v1 : UIView!
     @IBOutlet var v2 : UIView!

@@ -83,7 +83,7 @@ class ShapeView: UIView {
         let x:CGFloat = center.x
         let y:CGFloat = center.y
         let radius: CGFloat = 100.0
-        let endAngle = CGFloat(2 * M_PI)
+        let endAngle = CGFloat(2 * Double.pi)
 
         //6 With CGContextAddArc a circle is drawn swfit 2.3 is 
         /* CGContextAddArcToPoint

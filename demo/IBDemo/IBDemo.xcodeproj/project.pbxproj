@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		4406623D1E8BCC2D00FF8108 /* IBInspectable_Button.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4406623C1E8BCC2D00FF8108 /* IBInspectable_Button.swift */; };
 		4406623F1E8BCE9D00FF8108 /* IBDesignable_View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4406623E1E8BCE9D00FF8108 /* IBDesignable_View.swift */; };
+		446D65CB1EFFD4A600CA86F8 /* WorkspaceGlobal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 446D65CA1EFFD4A600CA86F8 /* WorkspaceGlobal.swift */; };
 		44868AE41E8BB63600F57A56 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44868AE31E8BB63600F57A56 /* AppDelegate.swift */; };
 		44868AE61E8BB63600F57A56 /* OutletCollectionAndActionVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44868AE51E8BB63600F57A56 /* OutletCollectionAndActionVC.swift */; };
 		44868AE91E8BB63600F57A56 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 44868AE71E8BB63600F57A56 /* Main.storyboard */; };
@@ -24,6 +25,7 @@
 /* Begin PBXFileReference section */
 		4406623C1E8BCC2D00FF8108 /* IBInspectable_Button.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IBInspectable_Button.swift; sourceTree = "<group>"; };
 		4406623E1E8BCE9D00FF8108 /* IBDesignable_View.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IBDesignable_View.swift; sourceTree = "<group>"; };
+		446D65CA1EFFD4A600CA86F8 /* WorkspaceGlobal.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WorkspaceGlobal.swift; sourceTree = "<group>"; };
 		44868AE01E8BB63600F57A56 /* IBDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = IBDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		44868AE31E8BB63600F57A56 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		44868AE51E8BB63600F57A56 /* OutletCollectionAndActionVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OutletCollectionAndActionVC.swift; sourceTree = "<group>"; };
@@ -52,6 +54,7 @@
 		44868AD71E8BB63600F57A56 = {
 			isa = PBXGroup;
 			children = (
+				446D65CA1EFFD4A600CA86F8 /* WorkspaceGlobal.swift */,
 				44868AE21E8BB63600F57A56 /* IBDemo */,
 				44868AE11E8BB63600F57A56 /* Products */,
 			);
@@ -162,6 +165,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				449D1CCB1E993078000C7446 /* JumpToSecondVC.swift in Sources */,
+				446D65CB1EFFD4A600CA86F8 /* WorkspaceGlobal.swift in Sources */,
 				44868AE61E8BB63600F57A56 /* OutletCollectionAndActionVC.swift in Sources */,
 				4406623D1E8BCC2D00FF8108 /* IBInspectable_Button.swift in Sources */,
 				4406623F1E8BCE9D00FF8108 /* IBDesignable_View.swift in Sources */,

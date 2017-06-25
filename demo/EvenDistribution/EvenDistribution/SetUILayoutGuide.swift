@@ -10,8 +10,7 @@ class SetUILayoutGuide: UIViewController {
         super.viewDidLoad()
         let mainview = self.view
 
-        // do manually what UIStackView does: make distributing UILayoutGuide objects
-
+        /// do manually what UIStackView does: make distributing UILayoutGuide objects
         let guides = [UILayoutGuide(), UILayoutGuide(), UILayoutGuide()]
         for guide in guides {
             mainview?.addLayoutGuide(guide)
@@ -37,7 +36,6 @@ class SetUILayoutGuide: UIViewController {
             guides[1].heightAnchor.constraint(equalTo: guides[0].heightAnchor),
             guides[2].heightAnchor.constraint(equalTo: guides[0].heightAnchor),
             ])
-
     }
     
 }

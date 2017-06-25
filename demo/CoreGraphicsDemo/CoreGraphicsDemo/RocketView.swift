@@ -14,8 +14,19 @@ class RocketView : UIView {
         }
     }()
 
+    init() {
+        super.init(frame:CGRect.zero)
+        self.isOpaque = false
+    }
+
     init(mothed: Int) {
         super.init(frame:CGRect.zero)
+        self.isOpaque = false
+        self.which = mothed
+    }
+
+    init(frame: CGRect, mothed: Int) {
+        super.init(frame:frame)
         self.isOpaque = false
         self.which = mothed
     }
@@ -23,12 +34,6 @@ class RocketView : UIView {
     required init?(coder: NSCoder) {
         super.init(coder: coder)
         self.isOpaque = false
-    }
-
-    init(frame: CGRect, mothed: Int) {
-        super.init(frame:frame)
-        self.isOpaque = false
-        self.which = mothed
     }
 
     func arrowImage () {
@@ -146,7 +151,6 @@ class RocketView : UIView {
             p.fill(with:.clear, alpha:1.0)
 
         case 3:
-
             // obtain the current graphics context
             let con = UIGraphicsGetCurrentContext()!
 
@@ -248,30 +252,13 @@ class RocketView : UIView {
             con.restoreGState() // done clipping
 
             // draw the red triangle, the point of the arrow
-            var stripes = UIImage()
-            if #available(iOS 10.0, *) {
-                let r = UIGraphicsImageRenderer(size:CGSize(4,4))
-                stripes = r.image {
-                    ctx in
-                    let imcon = ctx.cgContext
-                    imcon.setFillColor(UIColor.red.cgColor)
-                    imcon.fill(CGRect(0,0,4,4))
-                    imcon.setFillColor(UIColor.blue.cgColor)
-                    imcon.fill(CGRect(0,0,4,2))
-                }
-            } else {
-                UIGraphicsBeginImageContextWithOptions(CGSize(4,4), false, 0)
+            let stripes = imageOfSize(CGSize(4,4)) {
                 let imcon = UIGraphicsGetCurrentContext()!
                 imcon.setFillColor(UIColor.red.cgColor)
                 imcon.fill(CGRect(0,0,4,4))
                 imcon.setFillColor(UIColor.blue.cgColor)
                 imcon.fill(CGRect(0,0,4,2))
-                stripes = UIGraphicsGetImageFromCurrentImageContext()!
-                UIGraphicsEndImageContext()
             }
-
-
-
 
             let stripesPattern = UIColor(patternImage: stripes)
             stripesPattern.setFill()
@@ -282,7 +269,6 @@ class RocketView : UIView {
             p.fill()
 
         case 6:
-
             // obtain the current graphics context
             let con = UIGraphicsGetCurrentContext()!
             con.saveGState()
@@ -316,7 +302,6 @@ class RocketView : UIView {
 
             con.restoreGState() // done clipping
 
-
             // draw the red triangle, the point of the arrow
             let sp2 = CGColorSpace(patternBaseSpace:nil)!
             con.setFillColorSpace(sp2)
@@ -337,7 +322,6 @@ class RocketView : UIView {
                                  isColored: true, callbacks: &callbacks)!
             var alph : CGFloat = 1.0
             con.setFillPattern(patt, colorComponents: &alph)
-
 
             con.move(to:CGPoint(80, 25))
             con.addLine(to:CGPoint(100, 0))
@@ -403,7 +387,6 @@ class RocketView : UIView {
                 }
             }
             con.endTransparencyLayer()
-
 
         default: break
         }

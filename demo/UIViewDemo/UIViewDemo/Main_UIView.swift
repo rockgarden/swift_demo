@@ -48,6 +48,8 @@ class Main_UIView: UIViewController {
     }
 }
 
+
+
 extension Main_UIView: UIPickerViewDelegate, UIPickerViewDataSource {
 
     // returns the number of 'columns' to display.
@@ -61,16 +63,10 @@ extension Main_UIView: UIPickerViewDelegate, UIPickerViewDataSource {
         return vcList.count
     }
 
-    func pickerView(_ pickerView: UIPickerView, didSelectRow: Int, inComponent: Int) {
-        which = didSelectRow
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        if vcList[which] == "UIImageView" {
-            let vc = storyboard.instantiateViewController(withIdentifier: "Root_UIImageView")
-            show(vc, sender: nil)
-            return
-        }
-        let vc = storyboard.instantiateViewController(withIdentifier: vcList[which])
-        show(vc, sender: nil)
+    // TODO: run it!
+    func pickerView(_ pickerView: UIPickerView,
+                    titleForRow row: Int, forComponent component: Int) -> String? {
+        return "\(row+1) Stage" + ( row > 0 ? "s" : "")
     }
 
     // bug: no views are reused
@@ -92,6 +88,14 @@ extension Main_UIView: UIPickerViewDelegate, UIPickerViewDataSource {
         lab.sizeToFit()
         return lab
     }
+
+    func pickerView(_ pickerView: UIPickerView, didSelectRow: Int, inComponent: Int) {
+        which = didSelectRow
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let vc = storyboard.instantiateViewController(withIdentifier: vcList[which])
+        show(vc, sender: nil)
+    }
+
 }
 
 class MyLabel : UILabel {

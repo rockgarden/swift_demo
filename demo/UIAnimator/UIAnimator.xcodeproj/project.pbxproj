@@ -63,6 +63,18 @@
 			name = "support files";
 			sourceTree = "<group>";
 		};
+		4450CB3C1EFE924300624906 /* UIDynamicAnimator */ = {
+			isa = PBXGroup;
+			children = (
+				4479E0411E6D92FC00A51660 /* UIDynamicAnimator_LiftDrop_Constraints.swift */,
+				4479E03F1E6D92C500A51660 /* UIDynamicAnimator_Drag.swift */,
+				4479E02D1E6D90AE00A51660 /* UIDynamicBehaviorVC.swift */,
+				4400ADA61EF80F78005A7AA1 /* UIFieldBehaviorVC.swift */,
+				4400ADA41EF80BBC005A7AA1 /* DropBounceAndRollBehavior.swift */,
+			);
+			name = UIDynamicAnimator;
+			sourceTree = "<group>";
+		};
 		4479E01F1E6D90AE00A51660 = {
 			isa = PBXGroup;
 			children = (
@@ -86,11 +98,7 @@
 				4400ADA81EF81061005A7AA1 /* Main_UIAnimator.swift */,
 				4479E02F1E6D90AE00A51660 /* Main.storyboard */,
 				4479E03D1E6D914A00A51660 /* UIViewPropertyAnimator_Fling.swift */,
-				4479E0411E6D92FC00A51660 /* UIDynamicAnimator_LiftDrop_Constraints.swift */,
-				4479E03F1E6D92C500A51660 /* UIDynamicAnimator_Drag.swift */,
-				4479E02D1E6D90AE00A51660 /* UIDynamicBehaviorVC.swift */,
-				4400ADA41EF80BBC005A7AA1 /* DropBounceAndRollBehavior.swift */,
-				4400ADA61EF80F78005A7AA1 /* UIFieldBehaviorVC.swift */,
+				4450CB3C1EFE924300624906 /* UIDynamicAnimator */,
 				44258D681EFA8C0E003F3397 /* AnimationAndAutolayoutVC.swift */,
 				44258D6A1EFA9E5B003F3397 /* ExpandableByConstraintVC.swift */,
 				44DBED041EFD62E600B5CA23 /* ViewAnimationVC.swift */,

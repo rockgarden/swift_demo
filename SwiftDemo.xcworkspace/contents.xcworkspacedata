@@ -173,9 +173,6 @@
       location = "group:demo/TodayExtension/TodayExtension.xcodeproj">
    </FileRef>
    <FileRef
-      location = "group:demo/transform/transform.xcodeproj">
-   </FileRef>
-   <FileRef
       location = "group:demo/UINavigationController/UINavigationController.xcodeproj">
    </FileRef>
    <FileRef

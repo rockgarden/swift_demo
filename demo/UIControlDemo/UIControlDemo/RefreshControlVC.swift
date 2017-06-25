@@ -12,8 +12,8 @@ class RefreshControlVC: UIViewController, UITableViewDataSource, UITableViewDele
     
     let cellIdentifer = "NewCellIdentifier"
     
-    let favoriteEmoji = ["🤗🤗🤗🤗🤗", "😅😅😅😅😅", "😆😆😆😆😆","🏃🏃🏃🏃🏃", "💩💩💩💩💩", "👸👸👸👸👸", "🤗🤗🤗🤗🤗", "😅😅😅😅😅", "😆😆😆😆😆"]
-    let newFavoriteEmoji = ["🏃🏃🏃🏃🏃", "💩💩💩💩💩", "👸👸👸👸👸", "🤗🤗🤗🤗🤗", "😅😅😅😅😅", "😆😆😆😆😆"]
+    let favoriteEmoji = ["🤗🤗🤗🤗🤗", "😅😅😅😅😅", "😆😆😆😆😆", "👸👸👸👸👸", "🤗🤗🤗🤗🤗", "😅😅😅😅😅", "😆😆😆😆😆"]
+    let newFavoriteEmoji = ["🏃🏃🏃🏃🏃", "💩💩💩💩💩"]
     var emojiData = [String]()
     var emojiTableView: UITableView!
     var tableViewController = UITableViewController(style: .grouped)
@@ -26,25 +26,35 @@ class RefreshControlVC: UIViewController, UITableViewDataSource, UITableViewDele
         // self.navBar.barStyle = UIBarStyle.BlackTranslucent
         // self.view.addSubview(navBar)
         emojiTableView = tableViewController.tableView
-        emojiData = favoriteEmoji
-        
+
+        let v = UIView()
+        v.backgroundColor = .yellow
+        emojiTableView.backgroundView = v
         emojiTableView.backgroundColor = UIColor(red: 0.092, green: 0.096, blue: 0.116, alpha: 1)
         emojiTableView.dataSource = self
         emojiTableView.register(UITableViewCell.self, forCellReuseIdentifier: cellIdentifer)
         emojiTableView.rowHeight = UITableViewAutomaticDimension
         emojiTableView.estimatedRowHeight = 60.0
         emojiTableView.tableFooterView = UIView(frame: CGRect.zero)
-        emojiTableView.separatorStyle = UITableViewCellSeparatorStyle.none
+        emojiTableView.separatorStyle = .none
         emojiTableView.translatesAutoresizingMaskIntoConstraints = false
-        
+
+
+
+        if #available(iOS 10.0, *) {
+            emojiTableView.refreshControl?.backgroundColor = .green
+        } else {
+            // Fallback on earlier versions
+        }
+
         tableViewController.refreshControl = self.refreshControl
-        self.refreshControl.addTarget(self, action: #selector(didRoadEmoji), for: .valueChanged)
+        self.refreshControl.addTarget(self, action: #selector(didReloadEmoji), for: .valueChanged)
         self.refreshControl.backgroundColor = UIColor(red: 0.113, green: 0.113, blue: 0.145, alpha: 1)
         let attributes = [NSForegroundColorAttributeName: UIColor.white]
         self.refreshControl.attributedTitle = NSAttributedString(string: "Last updated on \(Date())", attributes: attributes)
         self.refreshControl.tintColor = UIColor.white
         
-        self.view.addSubview(emojiTableView)
+        view.addSubview(emojiTableView)
         
         NSLayoutConstraint.activate([
             emojiTableView.trailingAnchor.constraint(equalTo: self.view.trailingAnchor),
@@ -61,13 +71,14 @@ class RefreshControlVC: UIViewController, UITableViewDataSource, UITableViewDele
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
-        return 2
+        return 1
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifer)! as UITableViewCell
-        cell.textLabel!.text = self.emojiData[(indexPath as NSIndexPath).row]
-        cell.textLabel!.textAlignment = NSTextAlignment.center
+        debugPrint(emojiData)
+        cell.textLabel!.text = self.emojiData[indexPath.row]
+        cell.textLabel!.textAlignment = .center
         cell.textLabel!.font = UIFont.systemFont(ofSize: 50)
         cell.backgroundColor = UIColor.clear
         cell.selectionStyle = UITableViewCellSelectionStyle.none
@@ -77,14 +88,24 @@ class RefreshControlVC: UIViewController, UITableViewDataSource, UITableViewDele
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        refreshControl.beginRefreshing() // 无效无动画
+
+        emojiTableView.setContentOffset(
+            CGPoint(0, -self.refreshControl.bounds.height),
+            animated:true)
+        refreshControl.beginRefreshing()
+        didReloadEmoji(refreshControl)
     }
     
-    // RoadEmoji
-    func didRoadEmoji() {
-        emojiData = newFavoriteEmoji
-        animateTable(emojiTableView)
-        refreshControl.endRefreshing()
+    // reloadEmoji
+    @IBAction func didReloadEmoji(_ sender: Any) {
+        print("refreshing...")
+        /// FIXME: 下拉 UIRefreshControl 会引起 table reload 即时刷新. 若此时 DataSource 更新 就会引起 Index out of range.
+        delay(20) {
+            self.emojiData = self.emojiData == self.favoriteEmoji ? self.newFavoriteEmoji : self.favoriteEmoji
+            self.animateTable(self.emojiTableView)
+            (sender as? UIRefreshControl)?.endRefreshing()
+            print("done")
+        }
     }
     
     func animateTable(_ table: UITableView) {

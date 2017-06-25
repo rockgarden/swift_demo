@@ -18,7 +18,7 @@ class OutletCollectionAndActionVC: UIViewController {
             action: #selector(buttonPressed),
             for: .touchUpInside)
 
-        // third button is configured as nil-targeted in nib
+        /// third button is configured as nil-targeted in nib
 
         /// When enumerating a collection, the integer part of each pair is a counter for the enumeration, not necessarily the index of the paired value.
         for (ix,b) in (self.coolviews as! [UIButton]).enumerated() {
@@ -26,7 +26,7 @@ class OutletCollectionAndActionVC: UIViewController {
         }
     }
 
-    @IBAction func buttonPressed(_ sender:AnyObject) {
+    @IBAction func buttonPressed(_ sender: Any) {
         let alert = UIAlertController(
             title: "Howdy!", message: "You tapped me!", preferredStyle: .alert)
         alert.addAction(
@@ -43,5 +43,8 @@ class OutletCollectionAndActionVC: UIViewController {
         let vc = NibLoadingVC()
         show(vc, sender: nil)
     }
+
+    @IBAction func unwindOCAAVC(_ sender: UIStoryboardSegue) {}
+
 }
 

@@ -27,14 +27,14 @@ class TransformAndConstraintVC : UIViewController {
         let p = g.location(in: g.view)
         if let v = g.view!.hitTest(p, with: nil) {
             if v == g.view { return }
-            if v is MyView { return }
+            if v is TACView { return }
             DispatchQueue.main.async {
                 self.grow(v)
             }
         }
     }
 
-    func grow(_ v:UIView) {
+    func grow(_ v: UIView) {
         print("grow \(v)")
         v.transform = v.transform.scaledBy(x: 1.2, y: 1.2)
     }
@@ -46,3 +46,5 @@ class TransformAndConstraintVC : UIViewController {
     }
     
 }
+
+private class TACView: UIView { }
