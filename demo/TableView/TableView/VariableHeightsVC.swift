@@ -38,7 +38,10 @@ class VariableHeightsVC : UIViewController, UITableViewDelegate, UITableViewData
         self.tableView.register(UINib(nibName: "Cell", bundle: nil), forCellReuseIdentifier: "Cell")
         self.tableView.rowHeight = UITableViewAutomaticDimension // not actually necessary
         self.tableView.estimatedRowHeight = 40 // turn on automatic cell variable sizing!
-        self.view.addSubview(tableView)
+        view.addSubview(tableView)
+
+        tableView.dataSource = self
+        tableView.delegate = self
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -52,8 +55,8 @@ class VariableHeightsVC : UIViewController, UITableViewDelegate, UITableViewData
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! Cell
         cell.backgroundColor = UIColor.white
-        cell.lab.text = self.trivia[(indexPath as NSIndexPath).row]
-        cell.lab1.text = self.trivia[(indexPath as NSIndexPath).row]
+        cell.lab.text = self.trivia[indexPath.row]
+        cell.lab1.text = self.trivia[indexPath.row]
         return cell
     }
     

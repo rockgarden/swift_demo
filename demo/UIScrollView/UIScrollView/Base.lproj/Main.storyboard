@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="Rs6-YA-hIo">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="Rs6-YA-hIo">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -26,7 +26,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="ScrollView" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="PdI-sM-jK0">
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="ScrollView in code" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="PdI-sM-jK0">
                                                     <rect key="frame" x="15" y="0.0" width="345" height="43.5"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -123,7 +123,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Nib and ContentSize Demo" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="pxs-BG-5VD">
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="ScrollView in Nib and ContentSize Demo" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="pxs-BG-5VD">
                                                     <rect key="frame" x="15" y="0.0" width="345" height="43.5"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -605,6 +605,16 @@
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VC3-M3-CLC">
                                                 <rect key="frame" x="20" y="406" width="200" height="173"/>
+                                                <subviews>
+                                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lRD-wG-Cdk">
+                                                        <rect key="frame" x="11" y="71" width="179" height="30"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                        <state key="normal" title="scrollViewInNibAutolayout"/>
+                                                        <connections>
+                                                            <segue destination="SV2-SF-ACr" kind="show" id="NFt-E5-icq"/>
+                                                        </connections>
+                                                    </button>
+                                                </subviews>
                                                 <color key="backgroundColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TE3-Zb-X2W">
@@ -740,6 +750,92 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6vg-xB-w5w" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-592" y="-416.49175412293857"/>
+        </scene>
+        <!--ScrollViewInNibAutolayout-->
+        <scene sceneID="XDk-6Q-BNM">
+            <objects>
+                <viewController id="SV2-SF-ACr" userLabel="ScrollViewInNibAutolayout" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="1Jf-SN-BU4"/>
+                        <viewControllerLayoutGuide type="bottom" id="c5D-bL-NZg"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="xWU-XM-aB8">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="800"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Tkw-Bw-bzD">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="800"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jvP-uG-Ytk" userLabel="Content View">
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="800"/>
+                                        <subviews>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5aS-5A-spm">
+                                                <rect key="frame" x="20" y="20" width="200" height="173"/>
+                                                <color key="backgroundColor" red="1" green="0.21931261690000001" blue="0.45882864099999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="173" id="KS2-WJ-SNa"/>
+                                                    <constraint firstAttribute="width" constant="200" id="jMb-uX-7zI"/>
+                                                </constraints>
+                                            </view>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OSu-Ox-XNk">
+                                                <rect key="frame" x="20" y="213" width="200" height="173"/>
+                                                <color key="backgroundColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            </view>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Cbu-Mu-rPK">
+                                                <rect key="frame" x="20" y="406" width="200" height="173"/>
+                                                <color key="backgroundColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            </view>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rpG-uG-QFX">
+                                                <rect key="frame" x="20" y="599" width="200" height="173"/>
+                                                <color key="backgroundColor" red="1" green="0.21931261690000001" blue="0.45882864099999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            </view>
+                                        </subviews>
+                                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstItem="5aS-5A-spm" firstAttribute="height" secondItem="rpG-uG-QFX" secondAttribute="height" id="HCx-3b-OKU"/>
+                                            <constraint firstItem="OSu-Ox-XNk" firstAttribute="top" secondItem="5aS-5A-spm" secondAttribute="bottom" constant="20" id="KCF-rN-joR"/>
+                                            <constraint firstItem="5aS-5A-spm" firstAttribute="width" secondItem="Cbu-Mu-rPK" secondAttribute="width" id="KJ7-9D-4Bh"/>
+                                            <constraint firstItem="5aS-5A-spm" firstAttribute="leading" secondItem="rpG-uG-QFX" secondAttribute="leading" id="LtF-Lh-ep2"/>
+                                            <constraint firstItem="rpG-uG-QFX" firstAttribute="top" secondItem="Cbu-Mu-rPK" secondAttribute="bottom" constant="20" id="Lyw-tr-kJ0"/>
+                                            <constraint firstItem="5aS-5A-spm" firstAttribute="leading" secondItem="jvP-uG-Ytk" secondAttribute="leading" constant="20" id="Mkn-Pv-HkZ"/>
+                                            <constraint firstItem="Cbu-Mu-rPK" firstAttribute="top" secondItem="OSu-Ox-XNk" secondAttribute="bottom" constant="20" id="QYs-SD-Txa"/>
+                                            <constraint firstItem="5aS-5A-spm" firstAttribute="width" secondItem="rpG-uG-QFX" secondAttribute="width" id="TT4-u0-K3B"/>
+                                            <constraint firstAttribute="width" constant="320" id="Udv-OR-AWA"/>
+                                            <constraint firstItem="5aS-5A-spm" firstAttribute="leading" secondItem="Cbu-Mu-rPK" secondAttribute="leading" id="Upp-Lg-NO6"/>
+                                            <constraint firstItem="5aS-5A-spm" firstAttribute="height" secondItem="Cbu-Mu-rPK" secondAttribute="height" id="bSH-s4-Olv"/>
+                                            <constraint firstAttribute="height" constant="800" id="drW-gN-Goh"/>
+                                            <constraint firstItem="5aS-5A-spm" firstAttribute="top" secondItem="jvP-uG-Ytk" secondAttribute="top" constant="20" id="jVl-k2-Lta"/>
+                                            <constraint firstItem="5aS-5A-spm" firstAttribute="height" secondItem="OSu-Ox-XNk" secondAttribute="height" id="o5J-ej-Mg8"/>
+                                            <constraint firstItem="5aS-5A-spm" firstAttribute="leading" secondItem="OSu-Ox-XNk" secondAttribute="leading" id="p1v-XR-BEj"/>
+                                            <constraint firstItem="5aS-5A-spm" firstAttribute="width" secondItem="OSu-Ox-XNk" secondAttribute="width" id="wQU-6t-aXG"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="jvP-uG-Ytk" secondAttribute="bottom" id="2qM-uo-tYo"/>
+                                    <constraint firstItem="jvP-uG-Ytk" firstAttribute="top" secondItem="Tkw-Bw-bzD" secondAttribute="top" id="5R3-yE-h5U"/>
+                                    <constraint firstAttribute="trailing" secondItem="jvP-uG-Ytk" secondAttribute="trailing" id="XjF-Bn-Nae"/>
+                                    <constraint firstItem="jvP-uG-Ytk" firstAttribute="leading" secondItem="Tkw-Bw-bzD" secondAttribute="leading" id="kbf-p9-2Sk"/>
+                                </constraints>
+                            </scrollView>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="Tkw-Bw-bzD" secondAttribute="trailing" id="5Pa-ck-yKq"/>
+                            <constraint firstItem="Tkw-Bw-bzD" firstAttribute="leading" secondItem="xWU-XM-aB8" secondAttribute="leading" id="9iO-Ug-89N"/>
+                            <constraint firstItem="c5D-bL-NZg" firstAttribute="top" secondItem="Tkw-Bw-bzD" secondAttribute="bottom" id="Sjy-Ut-pCg"/>
+                            <constraint firstItem="Tkw-Bw-bzD" firstAttribute="top" secondItem="1Jf-SN-BU4" secondAttribute="bottom" constant="-20" id="jmg-ZJ-7Wc"/>
+                        </constraints>
+                    </view>
+                    <simulatedStatusBarMetrics key="simulatedStatusBarMetrics"/>
+                    <nil key="simulatedTopBarMetrics"/>
+                    <nil key="simulatedBottomBarMetrics"/>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="320" height="800"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="rIT-eb-yi1" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1955" y="-416"/>
         </scene>
         <!--Zoom CenteredVC-->
         <scene sceneID="TXk-fy-mPa">

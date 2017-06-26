@@ -85,6 +85,7 @@
 		44ABF2941EDD7B7C004A353A /* MyCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 44ABF2921EDD7B7C004A353A /* MyCell.xib */; };
 		44ABF2961EDD8E2C004A353A /* AddCellSubviewsbyCodeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44ABF2951EDD8E2C004A353A /* AddCellSubviewsbyCodeVC.swift */; };
 		44ABF2981EDD91A7004A353A /* InitCellbyCodeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44ABF2971EDD91A7004A353A /* InitCellbyCodeVC.swift */; };
+		44C858EB1F0146DA00837A89 /* VariableRowHeightsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44C858EA1F0146DA00837A89 /* VariableRowHeightsVC.swift */; };
 		C22758D01D6C29C6008C1F18 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C22758CF1D6C29C6008C1F18 /* AppDelegate.swift */; };
 		C22758D21D6C29C6008C1F18 /* UISearchControllerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C22758D11D6C29C6008C1F18 /* UISearchControllerVC.swift */; };
 		C22758D51D6C29C6008C1F18 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C22758D31D6C29C6008C1F18 /* Main.storyboard */; };
@@ -180,6 +181,7 @@
 		44ABF2921EDD7B7C004A353A /* MyCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MyCell.xib; sourceTree = "<group>"; };
 		44ABF2951EDD8E2C004A353A /* AddCellSubviewsbyCodeVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddCellSubviewsbyCodeVC.swift; sourceTree = "<group>"; };
 		44ABF2971EDD91A7004A353A /* InitCellbyCodeVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InitCellbyCodeVC.swift; sourceTree = "<group>"; };
+		44C858EA1F0146DA00837A89 /* VariableRowHeightsVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VariableRowHeightsVC.swift; sourceTree = "<group>"; };
 		C22758CC1D6C29C6008C1F18 /* TableView.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TableView.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C22758CF1D6C29C6008C1F18 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C22758D11D6C29C6008C1F18 /* UISearchControllerVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UISearchControllerVC.swift; sourceTree = "<group>"; };
@@ -290,6 +292,16 @@
 			name = resources;
 			sourceTree = "<group>";
 		};
+		44C858EC1F01481D00837A89 /* VariableRowHeights */ = {
+			isa = PBXGroup;
+			children = (
+				C2D7F1211DD05FEA00BABD77 /* VariableHeightsVC.swift */,
+				44C858EA1F0146DA00837A89 /* VariableRowHeightsVC.swift */,
+				C2D7F1231DD0618600BABD77 /* Cell.xib */,
+			);
+			name = VariableRowHeights;
+			sourceTree = "<group>";
+		};
 		C22758C31D6C29C6008C1F18 = {
 			isa = PBXGroup;
 			children = (
@@ -331,9 +343,8 @@
 				442849271D86EB840044DCF5 /* DynamicTableVC.swift */,
 				4436C6F31EEBA37D008DAEB3 /* SectionsVC.swift */,
 				442849921D86FF280044DCF5 /* ExpandTable.swift */,
-				C2D7F1211DD05FEA00BABD77 /* VariableHeightsVC.swift */,
+				44C858EC1F01481D00837A89 /* VariableRowHeights */,
 				C28AAB271DFE6399009DE34B /* SpreadRowTableVC.swift */,
-				C2D7F1231DD0618600BABD77 /* Cell.xib */,
 				44ABF28D1EDD7304004A353A /* AddCellSubviewsbyXibVC.swift */,
 				44ABF28C1EDD7304004A353A /* AddCellSubviewsbyXibVC.xib */,
 				44ABF2911EDD7B7C004A353A /* MyCell.swift */,
@@ -505,6 +516,7 @@
 				4483B2E51D80165A0077E75C /* SubCell.swift in Sources */,
 				4436C6F21EEB909E008DAEB3 /* CellBackgroundLayeringVC.swift in Sources */,
 				4436C6EC1EEB7D84008DAEB3 /* AppTableVC.swift in Sources */,
+				44C858EB1F0146DA00837A89 /* VariableRowHeightsVC.swift in Sources */,
 				C2F3DE161D6EBF5500F0A9D5 /* Person.swift in Sources */,
 				C22758D21D6C29C6008C1F18 /* UISearchControllerVC.swift in Sources */,
 				4483B2DB1D7FFF780077E75C /* RJExpandableTableView.swift in Sources */,

@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="FkD-jg-g9b">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="FkD-jg-g9b">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -95,6 +95,17 @@
                             <constraint firstItem="jST-d1-Pw7" firstAttribute="top" secondItem="Xua-2j-cQF" secondAttribute="bottom" id="xFn-dI-Qch"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="cnx-R7-c5R">
+                        <nil key="title"/>
+                        <button key="titleView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="Jlv-8q-3Ef">
+                            <rect key="frame" x="112.5" y="7" width="150" height="30"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <state key="normal" title="Next demo"/>
+                            <connections>
+                                <segue destination="Sif-Dl-yuC" kind="show" id="vne-Ky-UtE"/>
+                            </connections>
+                        </button>
+                    </navigationItem>
                     <connections>
                         <outlet property="tableView" destination="jST-d1-Pw7" id="Wil-bV-7wf"/>
                     </connections>
@@ -102,6 +113,35 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XvS-jh-gHs" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1697" y="372"/>
+        </scene>
+        <!--Variable Row HeightsVC-->
+        <scene sceneID="ZHs-xg-tow">
+            <objects>
+                <tableViewController id="Sif-Dl-yuC" customClass="VariableRowHeightsVC" customModule="TableView" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="73" sectionHeaderHeight="28" sectionFooterHeight="28" id="yiI-af-ebi">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="75" id="0w2-g7-lGX">
+                                <rect key="frame" x="0.0" y="28" width="375" height="75"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="0w2-g7-lGX" id="xCV-78-gCM">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="74.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="Sif-Dl-yuC" id="7nN-eD-QPk"/>
+                            <outlet property="delegate" destination="Sif-Dl-yuC" id="RWS-6m-T4U"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="Zay-NE-09P"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Wob-OT-2Kj" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2487" y="372"/>
         </scene>
         <!--Individual CellsVC-->
         <scene sceneID="VBd-db-i3N">

@@ -13,7 +13,6 @@ class ScrollViewVC : UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
         if which == 0 { svByFrame() }
         if which == 1 { svByConstraints() }
         if which == 2 { svByConstraintsSubView() }
@@ -35,11 +34,11 @@ class ScrollViewVC : UIViewController {
 
     fileprivate func svByConstraintsSubView() {
         let sv = UIScrollView()
-        sv.backgroundColor = .white
+        sv.backgroundColor = .gray
         sv.translatesAutoresizingMaskIntoConstraints = false
-        self.view.addSubview(sv)
-        var con = [NSLayoutConstraint]()
+        view.addSubview(sv)
 
+        var con = [NSLayoutConstraint]()
         con.append(contentsOf:
             NSLayoutConstraint.constraints(withVisualFormat:
                 "H:|[sv]|",
@@ -51,34 +50,36 @@ class ScrollViewVC : UIViewController {
                                            metrics:nil,
                                            views:["sv":sv]))
 
-        let v = UIView() // content view
+        let v = UIView() //content view
         sv.addSubview(v)
 
         switch subWhich {
         case 1:
-            // content view doesn't use explicit constraints
-            // subviews don't use explicit constraints either
+            /// 内容视图不使用显式约束 content view doesn't use explicit constraints
+            /// 子视图也不使用显式约束 subviews don't use explicit constraints either
             var y : CGFloat = 10
             for i in 0 ..< 30 {
                 let lab = UILabel()
+                lab.backgroundColor = .white
                 lab.text = "This is label \(i+1)"
                 lab.sizeToFit()
                 lab.frame.origin = CGPoint(10,y)
-                v.addSubview(lab) // *
+                v.addSubview(lab)
                 y += lab.bounds.size.height + 10
             }
 
-            // set content view frame and content size explicitly
+            /// 明确设置内容视图框架和内容大小 set content view frame and content size explicitly
             v.frame = CGRect(0,0,0,y)
             sv.contentSize = v.frame.size
             NSLayoutConstraint.activate(con)
 
         case 2:
-            // content view uses explicit constraints
+            // 内容视图使用显式约束 content view uses explicit constraints
             // subviews don't use explicit constraints
             var y : CGFloat = 10
             for i in 0 ..< 30 {
                 let lab = UILabel()
+                lab.backgroundColor = .green
                 lab.text = "This is label \(i+1)"
                 lab.sizeToFit()
                 lab.frame.origin = CGPoint(10,y)
@@ -86,8 +87,8 @@ class ScrollViewVC : UIViewController {
                 y += lab.bounds.size.height + 10
             }
 
-            // set content view width, height, and frame-to-superview constraints
-            // content size is calculated for us
+            // 设置内容视图宽度，高度和框架到超级视图约束 set content view width, height, and frame-to-superview constraints
+            // 我们计算内容大小
             v.translatesAutoresizingMaskIntoConstraints = false
             con.append(contentsOf:
                 NSLayoutConstraint.constraints(withVisualFormat:"V:|[v(y)]|",
@@ -128,20 +129,20 @@ class ScrollViewVC : UIViewController {
                 previousLab = lab
             }
 
-            // last one, pin to bottom, this dictates content size height!
-            con.append(contentsOf: // *
+            /// 最后一个，pin到底部，这表示内容大小高度 last one, pin to bottom, this dictates content size height!
+            con.append(contentsOf:
                 NSLayoutConstraint.constraints(withVisualFormat: "V:[lab]-(10)-|",
                                                metrics:nil, views:["lab":previousLab!]))
 
-            // pin content view to scroll view, sized by its subview constraints
-            // content size is calculated for us
+            /// pin内容视图滚动视图，大小由其子视图约束 pin content view to scroll view, sized by its subview constraints
+            /// Content size is calculated for us
             v.translatesAutoresizingMaskIntoConstraints = false
             con.append(contentsOf:
                 NSLayoutConstraint.constraints(withVisualFormat:"V:|[v]|",
-                                               metrics:nil, views:["v":v])) // *
+                                               metrics:nil, views:["v":v]))
             con.append(contentsOf:
                 NSLayoutConstraint.constraints(withVisualFormat:"H:|[v]|",
-                                               metrics:nil, views:["v":v])) // *
+                                               metrics:nil, views:["v":v]))
             NSLayoutConstraint.activate(con)
 
         case 4:
@@ -183,13 +184,12 @@ class ScrollViewVC : UIViewController {
             
             // autolayout helps us learn the consequences of those constraints
             let minsz = v.systemLayoutSizeFitting(UILayoutFittingCompressedSize)
-            // set content view frame and content size explicitly
+            // 明确设置内容视图框架和内容大小set content view frame and content size explicitly
             v.frame = CGRect(0,0,0,minsz.height)
             sv.contentSize = v.frame.size
-            
+
         default: break
         }
-        
         delay(2) {
             print(sv.contentSize)
         }
@@ -212,8 +212,8 @@ class ScrollViewVC : UIViewController {
 
         sv.backgroundColor = .white
         sv.translatesAutoresizingMaskIntoConstraints = false
+        view.addSubview(sv)
 
-        self.view.addSubview(sv)
         var con = [NSLayoutConstraint]()
         con.append(contentsOf:
             NSLayoutConstraint.constraints(withVisualFormat:
@@ -225,16 +225,17 @@ class ScrollViewVC : UIViewController {
                 "V:|[sv]|",
                                            metrics:nil,
                                            views:["sv":sv]))
+
         var previousLab : UILabel? = nil
         for i in 0 ..< 30 {
             let lab = UILabel()
-            // lab.backgroundColor = .red
+            lab.backgroundColor = .green
             lab.translatesAutoresizingMaskIntoConstraints = false
             lab.text = "This is label \(i+1)"
             sv.addSubview(lab)
 
             con.append(contentsOf:
-                NSLayoutConstraint.constraints(withVisualFormat:"H:|-(10)-[lab]",
+                NSLayoutConstraint.constraints(withVisualFormat:"H:|-(10)-[lab]-(10)-|",
                                                metrics:nil, views:["lab":lab]))
             if previousLab == nil { // first one, pin to top
                 con.append(contentsOf:
@@ -256,9 +257,9 @@ class ScrollViewVC : UIViewController {
     }
 
     fileprivate func svByFrame() {
-        let sv = UIScrollView(frame: self.view.bounds)
+        let sv = UIScrollView(frame: view.bounds)
         sv.autoresizingMask = [.flexibleWidth, .flexibleHeight]
-        self.view.addSubview(sv)
+        view.addSubview(sv)
         sv.backgroundColor = .white
         var y : CGFloat = 10
         for i in 0 ..< 30 {
@@ -269,15 +270,13 @@ class ScrollViewVC : UIViewController {
             sv.addSubview(lab)
             y += lab.bounds.size.height + 10
 
-            // uncomment
-            //            lab.frame.size.width = self.view.bounds.width - 20
-            //            lab.backgroundColor = .red // make label bounds visible
-            //            lab.autoresizingMask = .flexibleWidth
-
+            lab.frame.size.width = view.bounds.width - 20
+            lab.backgroundColor = .red
+            lab.autoresizingMask = .flexibleWidth
         }
         var sz = sv.bounds.size
         sz.height = y
-        sv.contentSize = sz // This is the crucial line
+        sv.contentSize = sz
 
         print(sv.contentSize)
 
