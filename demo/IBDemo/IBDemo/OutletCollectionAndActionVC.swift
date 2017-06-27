@@ -46,5 +46,17 @@ class OutletCollectionAndActionVC: UIViewController {
 
     @IBAction func unwindOCAAVC(_ sender: UIStoryboardSegue) {}
 
+    @IBAction func showNibVC(_ sender: Any) {
+        guard let b = sender as? UIButton else {return}
+        if b.tag == 101 {
+            let vc = RootViewController(nibName:"MyNib", bundle:nil)
+            show(vc, sender: nil)
+        } else {
+            /// 如果 RootViewController.xib 不存在则会找 File's Owner RootView.xib
+            let vc = RootViewController()
+            show(vc, sender: nil)
+        }
+    }
+
 }
 

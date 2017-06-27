@@ -38,9 +38,14 @@ class Main_UIView: UIViewController {
     }
 
     @IBAction func jumpNext(_ sender: Any) {
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let vc = storyboard.instantiateViewController(withIdentifier: vcList[which])
-        present(vc, animated: true, completion: nil)
+        if vcList[which] == "AutoresizingVC" {
+            show(AutoresizingVC(),sender: nil)
+        } else {
+            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+            let vc = storyboard.instantiateViewController(withIdentifier: vcList[which])
+            present(vc, animated: true, completion: nil)
+        }
+
     }
 
     @IBAction func unwindToMainVC(_ segue: UIStoryboardSegue) {
@@ -91,9 +96,7 @@ extension Main_UIView: UIPickerViewDelegate, UIPickerViewDataSource {
 
     func pickerView(_ pickerView: UIPickerView, didSelectRow: Int, inComponent: Int) {
         which = didSelectRow
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let vc = storyboard.instantiateViewController(withIdentifier: vcList[which])
-        show(vc, sender: nil)
+        jumpNext("")
     }
 
 }

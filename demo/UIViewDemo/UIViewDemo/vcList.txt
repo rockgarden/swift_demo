@@ -5,3 +5,4 @@ ViewReversalVC
 ViewTransitionVC
 HitTestVC
 Root_Transform
+AutoresizingVC

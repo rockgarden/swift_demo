@@ -33,18 +33,19 @@ class ContainerVC : UIViewController {
         let tovc = self.swappers[cur]
         tovc.view.frame = self.panel.bounds
         
-        // must have both as children before we can transition between them
-        self.addChildViewController(tovc) // "will" called for us
-        // when we call remove, we must call "will" (with nil) beforehand
+        /// must have both as children vc before we can transition between them
+        addChildViewController(tovc) // "will" called for us
+        /// when we call remove, we must call "will" (with nil) beforehand
         fromvc.willMove(toParentViewController: nil)
+
         // then perform the transition
-        self.transition(
+        transition(
             from:fromvc,
             to:tovc,
             duration:0.4,
             options:.transitionFlipFromLeft,
             animations:nil) { _ in
-                // when we call add, we must call "did" afterwards
+                /// 当我们调用add时，我们必须调用. “done”when we call add, we must call "did" afterwards
                 tovc.didMove(toParentViewController: self)
                 fromvc.removeFromParentViewController() // "did" called for us
                 /// Important: 恢复响应UI事件
@@ -53,3 +54,4 @@ class ContainerVC : UIViewController {
     }
 
 }
+

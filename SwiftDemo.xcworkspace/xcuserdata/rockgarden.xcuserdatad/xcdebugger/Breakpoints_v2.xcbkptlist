@@ -70,22 +70,6 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "demo/UIScrollView/UIScrollView/ZoomCenteredVC_centerView.swift"
-            timestampString = "519135099.239992"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "80"
-            endingLineNumber = "80"
-            landmarkName = "tapped(_:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
             filePath = "demo/QuartzCoreDemo/QuartzCoreDemo/CAActionVC.swift"
             timestampString = "519313311.357137"
             startingColumnNumber = "9223372036854775807"

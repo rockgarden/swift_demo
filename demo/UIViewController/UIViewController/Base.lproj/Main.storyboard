@@ -681,18 +681,32 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="xeZ-Jy-zJG">
-                                <rect key="frame" x="20" y="87" width="335" height="531"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xeZ-Jy-zJG">
+                                <rect key="frame" x="20" y="84" width="335" height="474"/>
                                 <color key="backgroundColor" red="0.59999999999999998" green="0.84705882349999995" blue="0.98823529409999999" alpha="1" colorSpace="calibratedRGB"/>
                             </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wEa-3K-vUI">
+                                <rect key="frame" x="16" y="566" width="30" height="30"/>
+                                <state key="normal" title="Flip"/>
+                                <connections>
+                                    <action selector="doFlip:" destination="XDM-CG-xhT" eventType="touchUpInside" id="M9K-hk-v9i"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="4Za-nC-9Cd" firstAttribute="top" secondItem="xeZ-Jy-zJG" secondAttribute="bottom" constant="60" id="MsM-a1-Ymb"/>
+                            <constraint firstItem="xeZ-Jy-zJG" firstAttribute="centerX" secondItem="yLW-uR-4yE" secondAttribute="centerX" id="Smd-wm-JLw"/>
+                            <constraint firstItem="wEa-3K-vUI" firstAttribute="top" secondItem="xeZ-Jy-zJG" secondAttribute="bottom" constant="8" symbolic="YES" id="Uq3-Ef-BaN"/>
+                            <constraint firstItem="xeZ-Jy-zJG" firstAttribute="top" secondItem="0BS-ao-ZeI" secondAttribute="bottom" constant="20" id="agE-Dn-zk1"/>
+                            <constraint firstItem="xeZ-Jy-zJG" firstAttribute="width" secondItem="yLW-uR-4yE" secondAttribute="width" constant="-40" id="bn2-aa-Wfd"/>
+                            <constraint firstItem="wEa-3K-vUI" firstAttribute="leading" secondItem="yLW-uR-4yE" secondAttribute="leadingMargin" id="gL9-0M-hLB"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="dnD-Ee-amp">
-                        <barButtonItem key="rightBarButtonItem" title="Flip" id="aRM-Tr-QkB">
+                        <barButtonItem key="rightBarButtonItem" title="Filp by event forwarding" id="aRM-Tr-QkB">
                             <connections>
-                                <action selector="doFlip:" destination="XDM-CG-xhT" id="h0w-iV-eEE"/>
+                                <segue destination="QqP-0S-0y2" kind="show" id="015-9T-1Fc"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -703,6 +717,66 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dh0-SG-PgZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2853.5999999999999" y="2596.5517241379312"/>
+        </scene>
+        <!--ContainerVC Event Forwarding-->
+        <scene sceneID="jf2-2M-UBp">
+            <objects>
+                <viewController hidesBottomBarWhenPushed="YES" id="QqP-0S-0y2" customClass="ContainerVC_EventForwarding" customModule="UIViewController" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="GSj-q4-2gb"/>
+                        <viewControllerLayoutGuide type="bottom" id="mkA-0r-7Ff"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="wPw-SE-DRB">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <containerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="61y-b6-kuW">
+                                <rect key="frame" x="76" y="104" width="223" height="298"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <connections>
+                                    <segue destination="wpp-BS-vfg" kind="embed" id="CPe-WV-wQL"/>
+                                </connections>
+                            </containerView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sJs-XY-qYF">
+                                <rect key="frame" x="172.5" y="588" width="30" height="30"/>
+                                <state key="normal" title="Flip">
+                                    <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="doFlip:" destination="QqP-0S-0y2" eventType="touchUpInside" id="lfu-EF-JYW"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="mkA-0r-7Ff" firstAttribute="top" secondItem="sJs-XY-qYF" secondAttribute="bottom" id="exh-HF-lUA"/>
+                            <constraint firstItem="sJs-XY-qYF" firstAttribute="centerX" secondItem="wPw-SE-DRB" secondAttribute="centerX" id="iWd-3m-u2H"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ET7-un-G1F" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2853.5999999999999" y="3348.5757121439283"/>
+        </scene>
+        <!--Child View Controller1-->
+        <scene sceneID="ayh-OH-E38">
+            <objects>
+                <viewController automaticallyAdjustsScrollViewInsets="NO" id="wpp-BS-vfg" customClass="ChildViewController1" customModule="ch19p647containerEventForwarding" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="hXC-9C-aIP"/>
+                        <viewControllerLayoutGuide type="bottom" id="uL3-Cy-h1k"/>
+                    </layoutGuides>
+                    <view key="view" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="clh-6r-sWC">
+                        <rect key="frame" x="0.0" y="0.0" width="223" height="298"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" red="1" green="0.21931261690000001" blue="0.45882864099999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </view>
+                    <toolbarItems/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Kuw-kE-FHI" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3611" y="3348"/>
         </scene>
         <!--EmbedVC-->
         <scene sceneID="6Fe-92-D8s">

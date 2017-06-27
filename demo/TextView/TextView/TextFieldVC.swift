@@ -62,6 +62,8 @@ extension TextFieldVC {
                 barButtonSystemItem: .camera, target: self, action: #selector(doCamera))
             let group = UIBarButtonItemGroup(
                 barButtonItems: [bbi], representativeItem: nil)
+            /// 配置键盘快捷键时使用的输入助手。
+            /// 在iPad上，键盘上方的快捷键栏包含用于管理文本的打字建议和其他控件，例如剪切，复制和粘贴命令。 此属性包含用于配置要包含在快捷方式栏中的自定义栏按钮项目的文本输入辅助项目。 iPhone或iPod Touch上的快捷键栏不可用。
             let shortcuts = tf.inputAssistantItem
             shortcuts.trailingBarButtonGroups.append(group)
 

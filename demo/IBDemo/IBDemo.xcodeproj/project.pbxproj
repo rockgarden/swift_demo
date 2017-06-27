@@ -9,6 +9,11 @@
 /* Begin PBXBuildFile section */
 		4406623D1E8BCC2D00FF8108 /* IBInspectable_Button.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4406623C1E8BCC2D00FF8108 /* IBInspectable_Button.swift */; };
 		4406623F1E8BCE9D00FF8108 /* IBDesignable_View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4406623E1E8BCE9D00FF8108 /* IBDesignable_View.swift */; };
+		44306D051F027AE90095D977 /* MyNib.xib in Resources */ = {isa = PBXBuildFile; fileRef = 44306D041F027AE90095D977 /* MyNib.xib */; };
+		44306D091F027BC80095D977 /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44306D061F027BC80095D977 /* RootViewController.swift */; };
+		44306D0A1F027BC80095D977 /* RootViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 44306D071F027BC80095D977 /* RootViewController.xib */; };
+		44306D0B1F027BC80095D977 /* RootView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 44306D081F027BC80095D977 /* RootView.xib */; };
+		44306D101F0281290095D977 /* RootView~ipad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 44306D0F1F0281290095D977 /* RootView~ipad.xib */; };
 		446D65CB1EFFD4A600CA86F8 /* WorkspaceGlobal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 446D65CA1EFFD4A600CA86F8 /* WorkspaceGlobal.swift */; };
 		44868AE41E8BB63600F57A56 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44868AE31E8BB63600F57A56 /* AppDelegate.swift */; };
 		44868AE61E8BB63600F57A56 /* OutletCollectionAndActionVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44868AE51E8BB63600F57A56 /* OutletCollectionAndActionVC.swift */; };
@@ -25,6 +30,11 @@
 /* Begin PBXFileReference section */
 		4406623C1E8BCC2D00FF8108 /* IBInspectable_Button.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IBInspectable_Button.swift; sourceTree = "<group>"; };
 		4406623E1E8BCE9D00FF8108 /* IBDesignable_View.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IBDesignable_View.swift; sourceTree = "<group>"; };
+		44306D041F027AE90095D977 /* MyNib.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MyNib.xib; sourceTree = "<group>"; };
+		44306D061F027BC80095D977 /* RootViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
+		44306D071F027BC80095D977 /* RootViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RootViewController.xib; sourceTree = "<group>"; };
+		44306D081F027BC80095D977 /* RootView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RootView.xib; sourceTree = "<group>"; };
+		44306D0F1F0281290095D977 /* RootView~ipad.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = "RootView~ipad.xib"; sourceTree = "<group>"; };
 		446D65CA1EFFD4A600CA86F8 /* WorkspaceGlobal.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WorkspaceGlobal.swift; sourceTree = "<group>"; };
 		44868AE01E8BB63600F57A56 /* IBDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = IBDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		44868AE31E8BB63600F57A56 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -51,6 +61,18 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		44306D0C1F027BF80095D977 /* Nib */ = {
+			isa = PBXGroup;
+			children = (
+				44306D041F027AE90095D977 /* MyNib.xib */,
+				44306D061F027BC80095D977 /* RootViewController.swift */,
+				44306D071F027BC80095D977 /* RootViewController.xib */,
+				44306D081F027BC80095D977 /* RootView.xib */,
+				44306D0F1F0281290095D977 /* RootView~ipad.xib */,
+			);
+			name = Nib;
+			sourceTree = "<group>";
+		};
 		44868AD71E8BB63600F57A56 = {
 			isa = PBXGroup;
 			children = (
@@ -73,14 +95,15 @@
 			children = (
 				44868AE31E8BB63600F57A56 /* AppDelegate.swift */,
 				44868AE71E8BB63600F57A56 /* Main.storyboard */,
+				44868AE51E8BB63600F57A56 /* OutletCollectionAndActionVC.swift */,
 				449D1CCA1E993078000C7446 /* JumpToSecondVC.swift */,
 				449D1CC81E992FD5000C7446 /* Second.storyboard */,
-				44868AE51E8BB63600F57A56 /* OutletCollectionAndActionVC.swift */,
 				44868AF51E8BB7B500F57A56 /* NibLoadingVC.swift */,
 				44868AF71E8BB86100F57A56 /* NibLoading_CoolView.xib */,
 				44868AF81E8BB86100F57A56 /* NibLoading_View.xib */,
 				4406623C1E8BCC2D00FF8108 /* IBInspectable_Button.swift */,
 				4406623E1E8BCE9D00FF8108 /* IBDesignable_View.swift */,
+				44306D0C1F027BF80095D977 /* Nib */,
 				44868AEA1E8BB63600F57A56 /* Assets.xcassets */,
 				44868AEC1E8BB63600F57A56 /* LaunchScreen.storyboard */,
 				44868AEF1E8BB63600F57A56 /* Info.plist */,
@@ -150,7 +173,11 @@
 			files = (
 				449D1CC91E992FD5000C7446 /* Second.storyboard in Resources */,
 				44868AEE1E8BB63600F57A56 /* LaunchScreen.storyboard in Resources */,
+				44306D0A1F027BC80095D977 /* RootViewController.xib in Resources */,
 				44868AFA1E8BB86100F57A56 /* NibLoading_View.xib in Resources */,
+				44306D051F027AE90095D977 /* MyNib.xib in Resources */,
+				44306D101F0281290095D977 /* RootView~ipad.xib in Resources */,
+				44306D0B1F027BC80095D977 /* RootView.xib in Resources */,
 				44868AF91E8BB86100F57A56 /* NibLoading_CoolView.xib in Resources */,
 				44868AEB1E8BB63600F57A56 /* Assets.xcassets in Resources */,
 				44868AE91E8BB63600F57A56 /* Main.storyboard in Resources */,
@@ -170,6 +197,7 @@
 				4406623D1E8BCC2D00FF8108 /* IBInspectable_Button.swift in Sources */,
 				4406623F1E8BCE9D00FF8108 /* IBDesignable_View.swift in Sources */,
 				44868AE41E8BB63600F57A56 /* AppDelegate.swift in Sources */,
+				44306D091F027BC80095D977 /* RootViewController.swift in Sources */,
 				44868AF61E8BB7B500F57A56 /* NibLoadingVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -14,6 +14,7 @@
 		441721271ED9BB9800933908 /* PositionResizableImageVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 441721241ED9BB9800933908 /* PositionResizableImageVC.swift */; };
 		441721281ED9BB9800933908 /* ImageRenderingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 441721251ED9BB9800933908 /* ImageRenderingVC.swift */; };
 		441721291ED9BB9800933908 /* ImageDrawingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 441721261ED9BB9800933908 /* ImageDrawingVC.swift */; };
+		44306D031F0271D10095D977 /* AutoresizingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44306D021F0271D10095D977 /* AutoresizingVC.swift */; };
 		444A63211ED711D200FD1751 /* MyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 444A63201ED711D200FD1751 /* MyView.swift */; };
 		444C1B8F1EF01D8D00696852 /* ViewReversalVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 444C1B8E1EF01D8D00696852 /* ViewReversalVC.swift */; };
 		446D65CD1EFFDCA800CA86F8 /* Main_Transform.swift in Sources */ = {isa = PBXBuildFile; fileRef = 446D65CC1EFFDCA800CA86F8 /* Main_Transform.swift */; };
@@ -44,6 +45,7 @@
 		441721241ED9BB9800933908 /* PositionResizableImageVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PositionResizableImageVC.swift; sourceTree = "<group>"; };
 		441721251ED9BB9800933908 /* ImageRenderingVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageRenderingVC.swift; sourceTree = "<group>"; };
 		441721261ED9BB9800933908 /* ImageDrawingVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageDrawingVC.swift; sourceTree = "<group>"; };
+		44306D021F0271D10095D977 /* AutoresizingVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AutoresizingVC.swift; sourceTree = "<group>"; };
 		444A63201ED711D200FD1751 /* MyView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyView.swift; sourceTree = "<group>"; };
 		444C1B8E1EF01D8D00696852 /* ViewReversalVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewReversalVC.swift; sourceTree = "<group>"; };
 		446D65CC1EFFDCA800CA86F8 /* Main_Transform.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Main_Transform.swift; sourceTree = "<group>"; };
@@ -137,6 +139,7 @@
 				44B1E01E1EF433DF005CF9C7 /* HitTestVC.swift */,
 				44B48DA71EF4F87800CBB7D3 /* HitTestDistortedLayerView.swift */,
 				44B48DA91EF4FD3E00CBB7D3 /* HitTestDuringAnimationVC.swift */,
+				44306D021F0271D10095D977 /* AutoresizingVC.swift */,
 				4417212E1ED9C31000933908 /* UIImageVIew */,
 				446D65D21EFFDF2600CA86F8 /* Transform */,
 				C2F842191E1B691F000F8DD3 /* Assets.xcassets */,
@@ -228,6 +231,7 @@
 				44B48DA81EF4F87800CBB7D3 /* HitTestDistortedLayerView.swift in Sources */,
 				440F8E9B1EE98F0700AA8563 /* ImageAnimationVC.swift in Sources */,
 				446D65D41EFFE1F000CA86F8 /* TransformAnimate.swift in Sources */,
+				44306D031F0271D10095D977 /* AutoresizingVC.swift in Sources */,
 				441721271ED9BB9800933908 /* PositionResizableImageVC.swift in Sources */,
 				444A63211ED711D200FD1751 /* MyView.swift in Sources */,
 				44B1E01D1EF4294E005CF9C7 /* ViewTransitionVC.swift in Sources */,
