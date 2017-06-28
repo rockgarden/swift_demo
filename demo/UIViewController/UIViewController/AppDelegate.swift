@@ -53,6 +53,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func doButton(_ sender: Any) {
         print("button tap!")
     }
+
+    func application(_ application: UIApplication, supportedInterfaceOrientationsFor window: UIWindow?) -> UIInterfaceOrientationMask {
+        return .all
+    }
 }
 
 

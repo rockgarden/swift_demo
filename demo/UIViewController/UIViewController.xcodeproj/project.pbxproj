@@ -48,6 +48,7 @@
 		44B1E0171EF413F8005CF9C7 /* ViewControllerPreviewingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44B1E0161EF413F7005CF9C7 /* ViewControllerPreviewingVC.swift */; };
 		44B1E01A1EF41459005CF9C7 /* Pep.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44B1E0181EF41459005CF9C7 /* Pep.swift */; };
 		44B1E01B1EF41459005CF9C7 /* Pep.xib in Resources */ = {isa = PBXBuildFile; fileRef = 44B1E0191EF41459005CF9C7 /* Pep.xib */; };
+		44CCE26B1F03EB5F009BB4C8 /* OrientationsPermittedVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44CCE26A1F03EB5F009BB4C8 /* OrientationsPermittedVC.swift */; };
 		C29FFCC21ECACB340034587E /* TransitionImageCollectionVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C29FFCC11ECACB340034587E /* TransitionImageCollectionVC.swift */; };
 		C29FFCC41ECAD7640034587E /* EvernoteTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = C29FFCC31ECAD7640034587E /* EvernoteTransition.swift */; };
 		C29FFCC61ECAD7980034587E /* EvernoteCollectionVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C29FFCC51ECAD7980034587E /* EvernoteCollectionVC.swift */; };
@@ -125,6 +126,7 @@
 		44B1E0161EF413F7005CF9C7 /* ViewControllerPreviewingVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewControllerPreviewingVC.swift; sourceTree = "<group>"; };
 		44B1E0181EF41459005CF9C7 /* Pep.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Pep.swift; sourceTree = "<group>"; };
 		44B1E0191EF41459005CF9C7 /* Pep.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Pep.xib; sourceTree = "<group>"; };
+		44CCE26A1F03EB5F009BB4C8 /* OrientationsPermittedVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrientationsPermittedVC.swift; sourceTree = "<group>"; };
 		C29FFCC11ECACB340034587E /* TransitionImageCollectionVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransitionImageCollectionVC.swift; sourceTree = "<group>"; };
 		C29FFCC31ECAD7640034587E /* EvernoteTransition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EvernoteTransition.swift; sourceTree = "<group>"; };
 		C29FFCC51ECAD7980034587E /* EvernoteCollectionVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EvernoteCollectionVC.swift; sourceTree = "<group>"; };
@@ -248,8 +250,8 @@
 			children = (
 				44263B301EFBEA5A0045A717 /* WorkspaceGlobal.swift */,
 				C29FFCD31ECAECA40034587E /* PinterestSwift */,
-				449D1CB51E992C57000C7446 /* UIViewController */,
 				4459BC921EE0631700717B8D /* PoppverDemo */,
+				449D1CB51E992C57000C7446 /* UIViewController */,
 				448AC24D1EF2BF7200013F08 /* UIViewControllerUITests */,
 				449D1CB41E992C57000C7446 /* Products */,
 			);
@@ -273,6 +275,7 @@
 				446A268F1EC9C54C0024230D /* ViewControllers.swift */,
 				44263B331EFBEE6F0045A717 /* ExtraViewController.swift */,
 				44263B341EFBEE6F0045A717 /* ExtraViewController.xib */,
+				44CCE26A1F03EB5F009BB4C8 /* OrientationsPermittedVC.swift */,
 				448AC2381EF2AD3800013F08 /* PresentationController */,
 				441721371EDABAA600933908 /* Transition */,
 				441721341EDAB16500933908 /* ContainerView */,
@@ -500,6 +503,7 @@
 				44263B311EFBEA5A0045A717 /* WorkspaceGlobal.swift in Sources */,
 				C29FFCE01ECAECA40034587E /* Macro.swift in Sources */,
 				44263B3A1EFBF5D20045A717 /* CustomAlertVC.swift in Sources */,
+				44CCE26B1F03EB5F009BB4C8 /* OrientationsPermittedVC.swift in Sources */,
 				C29FFCE61ECAECA40034587E /* NTWaterfallViewCell.swift in Sources */,
 				C29FFCD01ECADC8D0034587E /* TransitionImage.swift in Sources */,
 				44263B351EFBEE6F0045A717 /* ExtraViewController.swift in Sources */,

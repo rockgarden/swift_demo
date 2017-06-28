@@ -295,17 +295,32 @@
                                     <action selector="doPresent:" destination="xT8-XE-maG" eventType="touchUpInside" id="APo-h4-NyF"/>
                                 </connections>
                             </button>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="OZI-Ns-Mow">
+                                <rect key="frame" x="0.0" y="588" width="375" height="30"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MI8-ap-E0F">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="30"/>
+                                        <state key="normal" title="Orientations permitted"/>
+                                        <connections>
+                                            <action selector="showOrientations:" destination="xT8-XE-maG" eventType="touchUpInside" id="od4-Kw-eky"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="mAV-Tj-pgW" secondAttribute="trailing" constant="20" symbolic="YES" id="1VJ-so-rGX"/>
                             <constraint firstItem="mAV-Tj-pgW" firstAttribute="top" secondItem="IcZ-xp-K06" secondAttribute="bottom" constant="40" id="1lf-dR-zOG"/>
+                            <constraint firstItem="OZI-Ns-Mow" firstAttribute="width" secondItem="uqJ-47-D1I" secondAttribute="width" id="7a0-e6-9Rx"/>
                             <constraint firstItem="IcZ-xp-K06" firstAttribute="leading" secondItem="uqJ-47-D1I" secondAttribute="leading" constant="20" symbolic="YES" id="H5J-R4-wXv"/>
                             <constraint firstAttribute="trailing" secondItem="IcZ-xp-K06" secondAttribute="trailing" constant="20" symbolic="YES" id="Kl7-RO-kH2"/>
+                            <constraint firstItem="ghZ-JS-b6c" firstAttribute="top" secondItem="OZI-Ns-Mow" secondAttribute="bottom" id="Llj-Wa-tic"/>
                             <constraint firstItem="tT9-MT-QHR" firstAttribute="top" secondItem="JzZ-07-vk5" secondAttribute="bottom" constant="8" id="VCu-VZ-uPv"/>
                             <constraint firstItem="mAV-Tj-pgW" firstAttribute="leading" secondItem="uqJ-47-D1I" secondAttribute="leading" constant="20" symbolic="YES" id="WCA-Ex-G2t"/>
                             <constraint firstAttribute="trailingMargin" secondItem="tT9-MT-QHR" secondAttribute="trailing" id="YQ2-pM-i9T"/>
                             <constraint firstAttribute="centerY" secondItem="mAV-Tj-pgW" secondAttribute="centerY" id="ulW-ut-fRB"/>
+                            <constraint firstItem="OZI-Ns-Mow" firstAttribute="centerX" secondItem="uqJ-47-D1I" secondAttribute="centerX" id="vBN-Ht-ntN"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Second" image="second" id="iaY-TI-kyU"/>

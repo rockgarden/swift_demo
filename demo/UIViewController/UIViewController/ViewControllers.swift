@@ -114,6 +114,11 @@ class SecondViewController : UIViewController {
         self.tabBarController?.delegate = self
     }
 
+    @IBAction func showOrientations(_ sender: Any) {
+        let vc = OrientationsPermittedVC()
+        present(vc, animated: true)
+    }
+
 }
 
 
