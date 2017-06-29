@@ -1,9 +1,9 @@
 //
 //  AppDelegate.swift
-//  UICoordinateSpace
+//  UIScreenDemo
 //
-//  Created by wangkan on 2016/11/3.
-//  Copyright © 2016年 rockgarden. All rights reserved.
+//  Created by wangkan on 2017/6/29.
+//  Copyright © 2017年 rockgarden. All rights reserved.
 //
 
 import UIKit

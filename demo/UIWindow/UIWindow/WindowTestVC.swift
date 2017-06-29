@@ -40,16 +40,10 @@ class WindowTestVC: UIViewController {
     override func viewDidAppear(_ animated: Bool)  {
         super.viewDidAppear(animated)
         print(self.view.window!)
-        print(UIApplication.shared.delegate!.window!!) // kind of wacky, there, Swift
+        print(UIApplication.shared.delegate!.window!!)
         print((UIApplication.shared.delegate as! AppDelegate).window!)
         print(UIApplication.shared.keyWindow!)
-        print(UIApplication.shared.windows.count) // prove there's just the one, ours
-    }
-
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+        print(UIApplication.shared.windows.count)
     }
 
     @objc private func showBack() {

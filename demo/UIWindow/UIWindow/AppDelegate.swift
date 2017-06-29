@@ -12,12 +12,17 @@ import UIKit
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow? = {
-        return MyWindow(frame: UIScreen.main.bounds)
+        return MyWindow() //(frame: UIScreen.main.bounds)
     }()
 
     var backWindow: UIWindow?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+
+        print(self.window?.rootViewController as Any)
+        defer {
+            print("exit") // appears _before_ symbolic breakpoint on `makeKeyAndVisible`
+        }
 
         let _back = AppBackVC()
         backWindow = UIWindow(frame: UIScreen.main.bounds)
@@ -39,11 +44,11 @@ private class AppBackVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        view.backgroundColor = UIColor.white
+        view.backgroundColor = .white
 
         let label = UILabel(frame: view.frame)
         label.text = "APP BACK VIEW"
-        label.textColor = UIColor.red
+        label.textColor = .red
         label.font = UIFont.boldSystemFont(ofSize: 20)
         label.textAlignment = .center
 

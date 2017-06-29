@@ -23,23 +23,44 @@ class OrientationsPermittedVC : UIViewController {
         //return .portrait
     }
 
-    // we are called *every time* the device rotates (twice, it seems)
-
     override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
-        //print("transition to size", size)
         NSLog("transition to size %@", NSStringFromCGSize(size))
     }
 
     override func willTransition(to newCollection: UITraitCollection, with coordinator: UIViewControllerTransitionCoordinator) {
-        // print("transition to tc", newCollection)
         NSLog("transition to tc %@ from %@", newCollection, self.traitCollection)
     }
 
     override func viewDidLoad() {
-        let l = UILabel(frame: CGRect(60,60,100,20))
+        let l = UILabel(frame: CGRect(60,60,210,20))
         l.text = "Test orientation permitted"
         view.backgroundColor = .white
         view.addSubview(l)
+        l.autoresizingMask = .flexibleWidth
+        
+        let b = UIButton(type: .roundedRect)
+        b.frame = CGRect(60,160,210,20)
+        b.setTitle("View orientation permitted", for: .normal)
+        b.addTarget(nil, action: #selector(OrientationsPermittedVC.jumpNext), for: .touchUpInside)
+        view.addSubview(b)
+        b.autoresizingMask = [.flexibleTopMargin, .flexibleLeftMargin]
+
+        let cB = UIButton(type: .roundedRect)
+        cB.frame = CGRect(60,260,100,20)
+        cB.setTitle("Close", for: .normal)
+        cB.addTarget(nil, action: #selector(OrientationsPermittedVC.close), for: .touchUpInside)
+        view.addSubview(cB)
+        cB.autoresizingMask = [.flexibleTopMargin, .flexibleLeftMargin]
+    }
+
+    func jumpNext() {
+        let sb = UIStoryboard(name: "OrientationsPermitted", bundle: nil)
+        let vc = sb.instantiateViewController(withIdentifier: "AttemptRotationVC")
+        show(vc, sender: nil)
+    }
+
+    func close() {
+        dismiss(animated: true, completion: nil)
     }
 
 }

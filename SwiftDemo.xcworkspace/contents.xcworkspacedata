@@ -2,6 +2,9 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:demo/UIScreenDemo/UIScreenDemo.xcodeproj">
+   </FileRef>
+   <FileRef
       location = "group:demo/CoreImageDemo/CoreImageDemo.xcodeproj">
    </FileRef>
    <FileRef
@@ -132,9 +135,6 @@
    </FileRef>
    <FileRef
       location = "group:demo/EvenDistribution/EvenDistribution.xcodeproj">
-   </FileRef>
-   <FileRef
-      location = "group:demo/UICoordinateSpace/UICoordinateSpace.xcodeproj">
    </FileRef>
    <FileRef
       location = "group:demo/UIWindow/UIWindow.xcodeproj">

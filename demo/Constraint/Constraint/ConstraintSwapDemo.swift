@@ -63,16 +63,16 @@ class ConstraintSwapDemo: UIViewController {
 		self.v2 = v2
 		self.v3 = v3
 
-		var which0: Int { return 1 }
+        // MARK: 配置 V0
+		var which0: Int { return 3 }
 		switch which0 {
 		case 1:
-			// no longer need delayed performance here
 			NSLayoutConstraint.activate([
 				NSLayoutConstraint.constraints(withVisualFormat: "H:|-[v1]-|", options: [], metrics: nil, views: ["v1": v0]),
 				NSLayoutConstraint.constraints(withVisualFormat: "V:|-[v1]-|", options: [], metrics: nil, views: ["v1": v0])
 				].joined().map { $0 })
 		case 2:
-			// new notation treats margins as a pseudoview (UILayoutGuide)
+			/// new notation treats margins as a pseudoview伪视图 (UILayoutGuide)
 			NSLayoutConstraint.activate([
 				v0.topAnchor.constraint(equalTo: v.layoutMarginsGuide.topAnchor),
 				v0.bottomAnchor.constraint(equalTo: v.layoutMarginsGuide.bottomAnchor),
@@ -91,6 +91,7 @@ class ConstraintSwapDemo: UIViewController {
 			default: break
 		}
 
+        // MARK: SWAP
 		// construct constraints
 		let c1 = NSLayoutConstraint.constraints(withVisualFormat: "H:|-(20)-[v(100)]", options: [], metrics: nil, views: ["v": v1])
 		let c2 = NSLayoutConstraint.constraints(withVisualFormat: "H:|-(20)-[v(100)]", options: [], metrics: nil, views: ["v": v2])
@@ -114,6 +115,17 @@ class ConstraintSwapDemo: UIViewController {
 
 		// apply first set
 		NSLayoutConstraint.activate(self.constraintsWith)
+
+        // ignore, just testing new iOS 10 read-only properties
+        do {
+            let c = self.constraintsWith[0]
+            print(c.firstItem)
+            if #available(iOS 10.0, *) {
+                print(c.firstAnchor)
+            } else {
+                // Fallback on earlier versions
+            }
+        }
 
 		/*
 		 // just experimenting, pay no attention
@@ -141,6 +153,7 @@ class ConstraintSwapDemo: UIViewController {
          )
 		 */
 
+        // MARK: Normal
 		let v4 = UIView(frame: CGRect(x: 100, y: 250, width: 132, height: 194))
 		v4.backgroundColor = UIColor(red: 1, green: 0.4, blue: 1, alpha: 1)
 		let v5 = UIView()
@@ -159,7 +172,6 @@ class ConstraintSwapDemo: UIViewController {
 		var which: Int { return 3 }
 		switch which {
 		case 1:
-			// the old way, and this is the last time I'm going to show this
 			v4.addConstraint(
 				NSLayoutConstraint(item: v5,
 					attribute: .leading,
@@ -225,10 +237,8 @@ class ConstraintSwapDemo: UIViewController {
 					multiplier: 1, constant: 0)
 			)
 		case 2:
-			// new API in iOS 9 for making constraints individually
-			// and we should now be activating constraints, not adding them...
-			// to a specific view
-			// whereever possible, activate all the constraints at once
+			/// new API in iOS 9 for making constraints individually
+			/// whereever possible, activate all the constraints at once
 			NSLayoutConstraint.activate([
 				v5.leadingAnchor.constraint(equalTo: v4.leadingAnchor),
 				v5.trailingAnchor.constraint(equalTo: v4.trailingAnchor),
@@ -255,9 +265,6 @@ class ConstraintSwapDemo: UIViewController {
 					withVisualFormat: "H:[v3(20)]|", options: [], metrics: nil, views: d),
 				NSLayoutConstraint.constraints(
 					withVisualFormat: "V:[v3(20)]|", options: [], metrics: nil, views: d),
-				// uncomment me to form a conflict
-				// NSLayoutConstraint.constraintsWithVisualFormat(
-				// "V:[v3(10)]|", options: [], metrics: nil, views: d),
 				].joined().map { $0 })
 		default: break
 		}
@@ -282,7 +289,7 @@ class ConstraintSwapDemo: UIViewController {
 		}
 	}
 
-	@IBAction func doSwap(_ sender: AnyObject) {
+	@IBAction func doSwap(_ sender: Any) {
 		doSwap()
 	}
 

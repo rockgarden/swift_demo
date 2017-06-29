@@ -14,10 +14,10 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "44E7187D1DCB6F4B00F357BC"
-               BuildableName = "UICoordinateSpace.app"
-               BlueprintName = "UICoordinateSpace"
-               ReferencedContainer = "container:UICoordinateSpace.xcodeproj">
+               BlueprintIdentifier = "44CCE2791F053651009BB4C8"
+               BuildableName = "UIScreenDemo.app"
+               BlueprintName = "UIScreenDemo"
+               ReferencedContainer = "container:UIScreenDemo.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -32,10 +32,10 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "44E7187D1DCB6F4B00F357BC"
-            BuildableName = "UICoordinateSpace.app"
-            BlueprintName = "UICoordinateSpace"
-            ReferencedContainer = "container:UICoordinateSpace.xcodeproj">
+            BlueprintIdentifier = "44CCE2791F053651009BB4C8"
+            BuildableName = "UIScreenDemo.app"
+            BlueprintName = "UIScreenDemo"
+            ReferencedContainer = "container:UIScreenDemo.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <AdditionalOptions>
@@ -55,10 +55,10 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "44E7187D1DCB6F4B00F357BC"
-            BuildableName = "UICoordinateSpace.app"
-            BlueprintName = "UICoordinateSpace"
-            ReferencedContainer = "container:UICoordinateSpace.xcodeproj">
+            BlueprintIdentifier = "44CCE2791F053651009BB4C8"
+            BuildableName = "UIScreenDemo.app"
+            BlueprintName = "UIScreenDemo"
+            ReferencedContainer = "container:UIScreenDemo.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -74,10 +74,10 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "44E7187D1DCB6F4B00F357BC"
-            BuildableName = "UICoordinateSpace.app"
-            BlueprintName = "UICoordinateSpace"
-            ReferencedContainer = "container:UICoordinateSpace.xcodeproj">
+            BlueprintIdentifier = "44CCE2791F053651009BB4C8"
+            BuildableName = "UIScreenDemo.app"
+            BlueprintName = "UIScreenDemo"
+            ReferencedContainer = "container:UIScreenDemo.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

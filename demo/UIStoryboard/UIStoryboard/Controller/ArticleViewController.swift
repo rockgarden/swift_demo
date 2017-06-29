@@ -13,17 +13,12 @@ class ArticleViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-    }
     
     func printHeadline() {
         print("HEADLINE: Objective-C dies peacefully in sleep")
     }
     
     @IBAction func dismissMeButtonTapped(_ sender: AnyObject) {
-        
         dismiss(animated: true, completion: nil)
     }
 }
