@@ -7,7 +7,8 @@ class ConstraintsInequalitiesAndPriorities : UIViewController {
     @IBOutlet var lab2 : UILabel!
     @IBOutlet var label : UILabel!
     @IBOutlet var button : UIButton!
-    @IBAction func doWiden(_ sender:AnyObject?) {
+
+    @IBAction func doWiden(_ sender: Any?) {
         self.lab1.text = self.lab1.text! + "xxxxx"
         self.lab2.text = self.lab2.text! + "xxxxx"
         self.label.text = self.label.text! + "xxxxx"
@@ -30,16 +31,16 @@ class ConstraintsInequalitiesAndPriorities : UIViewController {
             NSLayoutConstraint.constraints(
                 withVisualFormat: "H:[v1(>=100)]-(>=20)-[v2(>=100)]", options: [], metrics: nil, views: d)
             ].joined().map{$0})
-        // added width shrinkage limit to both labels, so neither gets driven down to invisibility
-        // we will be ambiguous when the label texts grow
-        // one way to solve: different compression resistance priorities, like below
+        /// 增加了两个标签的宽度收缩限制 >=100，所以也不会被忽略到隐形.added width shrinkage limit to both labels, so neither gets driven down to invisibility
+        /// Will be ambiguous when the label texts grow
+        /// one way to solve: different compression resistance priorities 抗压缩优先级, like below
         let p = self.lab2.contentCompressionResistancePriority(for: .horizontal)
         self.lab1.setContentCompressionResistancePriority(p+1, for: .horizontal) //p越大优先级越高
         
-        // print(self.lab1.contentCompressionResistancePriorityForAxis(.Horizontal))
-        // print(self.lab2.contentCompressionResistancePriorityForAxis(.Horizontal))
-        // print(self.lab1.contentHuggingPriorityForAxis(.Horizontal))
-        // print(self.lab2.contentHuggingPriorityForAxis(.Horizontal))
+         print(self.lab1.contentCompressionResistancePriority(for: .horizontal))
+         print(self.lab2.contentCompressionResistancePriority(for: .horizontal))
+         print(self.lab1.contentCompressionResistancePriority(for: .horizontal))
+         print(self.lab2.contentCompressionResistancePriority(for: .horizontal))
 
         self.button.translatesAutoresizingMaskIntoConstraints = false
         self.label.translatesAutoresizingMaskIntoConstraints = false
@@ -56,7 +57,7 @@ class ConstraintsInequalitiesAndPriorities : UIViewController {
 
         let con = button.centerXAnchor.constraint(equalTo: self.view.centerXAnchor)
         // default priorities
-        con.priority = 700 //try commenting this out to see the difference in behavior
+        con.priority = 700 //button 优先级调低
         NSLayoutConstraint.activate([con])
     }
 
