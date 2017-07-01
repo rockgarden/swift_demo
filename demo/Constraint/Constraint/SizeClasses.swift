@@ -8,6 +8,8 @@
 
 import UIKit
 
+
+// TODO: 设置 SizeClasses in IB
 class SizeClasses: UIViewController {
 
     @IBOutlet var lab : UILabel!
@@ -18,7 +20,7 @@ class SizeClasses: UIViewController {
     /*
      约束定义了基于约束的布局系统必须满足的两个用户界面对象之间的关系。每个约束是具有以下格式的线性方程：
      
-     item1.attribute1 = multiplier×item2.attribute2 +常量
+     item1.attribute1 = multiplier×item2.attribute2 + 常量
      在这个方程中，attribute1和attribute2是自动布局在解决这些约束时可以调整的变量。创建约束时定义其他值。例如，如果要定义两个按钮的相对位置，则可以说“第一个按钮的后沿之后第二个按钮的前沿应该是8个点。”这个关系的线性方程如下所示：
 
      //正值从左到右的语言（如英语）向右移动。

@@ -6,3 +6,5 @@ ViewTransitionVC
 HitTestVC
 Root_Transform
 AutoresizingVC
+SixBlueCirclesVC
+DrawClearRectVC

@@ -38,19 +38,19 @@ class Main_UIView: UIViewController {
     }
 
     @IBAction func jumpNext(_ sender: Any) {
-        if vcList[which] == "AutoresizingVC" {
+        switch vcList[which] {
+        case "AutoresizingVC":
             show(AutoresizingVC(),sender: nil)
-        } else {
+        case "DrawClearRectVC":
+            show(DrawClearRectVC(),sender: nil)
+        default:
             let storyboard = UIStoryboard(name: "Main", bundle: nil)
             let vc = storyboard.instantiateViewController(withIdentifier: vcList[which])
             present(vc, animated: true, completion: nil)
         }
-
     }
 
-    @IBAction func unwindToMainVC(_ segue: UIStoryboardSegue) {
-
-    }
+    @IBAction func unwindToMainVC(_ segue: UIStoryboardSegue) {}
 }
 
 

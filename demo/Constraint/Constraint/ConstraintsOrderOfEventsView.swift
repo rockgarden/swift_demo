@@ -11,11 +11,8 @@ import UIKit
 class ConstraintsOrderOfEventsView: UIView {
 
     @IBInspectable var name : String?
-    // new Xcode 6 feature, edit properties in Attributes inspector instead of Runtime Attributes
-
-    // let's test
-    // Apple claims:
-    // Bool, number, String, CGRect, CGPoint, CGSize, UIColor, NSRange, or an Optional
+    // new Xcode 6 feature, edit properties in Attributes inspector instead of Runtime Attributes 在属性检查器中编辑属性，而不是运行时属性
+    // Apple claims: Bool, number, String, CGRect, CGPoint, CGSize, UIColor, NSRange, or an Optional
     @IBInspectable var myBool : Bool = false
     @IBInspectable var myString : String = "howdy"
     @IBInspectable var myInt : Int? = 1
@@ -25,8 +22,8 @@ class ConstraintsOrderOfEventsView: UIView {
     @IBInspectable var mySize : CGSize? = CGSize.zero
     @IBInspectable var myColor : UIColor? = UIColor.red
     @IBInspectable var myImage : UIImage?
-    //    @IBInspectable var myRange : Range<Int>? = 1...3 // nope
-    //    @IBInspectable var someView : UIView? // nope
+    //@IBInspectable var myRange : Range<Int>? = 1...3 // nope
+    //@IBInspectable var someView : UIView? // nope
 
     override var description : String {
         return super.description + "\n" + (self.name ?? "noname")
@@ -37,11 +34,11 @@ class ConstraintsOrderOfEventsView: UIView {
         print("\(self)\n\(#function)\n")
     }
 
-    // gets an extra cycle, I've no idea why
-//    override func layoutSublayersOfLayer(_ layer: CALayer) {
-//        super.layoutSublayersOfLayer(layer)
-//        print("\(self)\n\(#function)\n")
-//    }
+    // gets an extra cycle
+    override func layoutSublayers(of layer: CALayer) {
+        super.layoutSublayers(of:layer)
+        print("\(self)\n\(#function)\n")
+    }
 
     override func layoutSubviews() {
         super.layoutSubviews()
@@ -49,14 +46,13 @@ class ConstraintsOrderOfEventsView: UIView {
     }
 
     override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
-        // super.traitCollectionDidChange(previousTraitCollection)
+        super.traitCollectionDidChange(previousTraitCollection)
         print("\(self)\n\(#function)\n")
-        //        let prev : UITraitCollection? = previousTraitCollection
-        //        if prev == nil {
-        //            print("nil")
-        //        }
-        //        let none = "none"
-        //        print("old: \(previousTraitCollection ?? none)\n")
+        let prev : UITraitCollection? = previousTraitCollection
+        if prev == nil {
+            print("nil")
+        }
+        print("old: \(String(describing: prev) )\n")
     }
 
     override class var layerClass : AnyClass {
