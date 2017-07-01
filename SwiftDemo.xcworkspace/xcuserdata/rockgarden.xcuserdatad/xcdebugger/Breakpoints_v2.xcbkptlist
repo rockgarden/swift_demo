@@ -94,6 +94,38 @@
             endingLineNumber = "228"
             landmarkName = "animationDidStop(_:finished:)"
             landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "QuartzCoreDemo.CAActionVC.animationDidStop (__ObjC.CAAnimation, finished : Swift.Bool) -&gt; ()"
+                  moduleName = "QuartzCoreDemo"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/rockgarden/GitHub/swift_demo/demo/QuartzCoreDemo/QuartzCoreDemo/CAActionVC.swift"
+                  timestampString = "520611166.474045"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "228"
+                  endingLineNumber = "228"
+                  offsetFromSymbolStart = "27">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "QuartzCoreDemo.CAActionVC.animationDidStop (__ObjC.CAAnimation, finished : Swift.Bool) -&gt; ()"
+                  moduleName = "QuartzCoreDemo"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/rockgarden/GitHub/swift_demo/demo/QuartzCoreDemo/QuartzCoreDemo/CAActionVC.swift"
+                  timestampString = "520611166.479427"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "228"
+                  endingLineNumber = "228"
+                  offsetFromSymbolStart = "663">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy

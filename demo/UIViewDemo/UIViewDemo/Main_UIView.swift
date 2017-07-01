@@ -43,6 +43,8 @@ class Main_UIView: UIViewController {
             show(AutoresizingVC(),sender: nil)
         case "DrawClearRectVC":
             show(DrawClearRectVC(),sender: nil)
+        case "LayerHierarchyVC":
+            show(LayerHierarchyVC(),sender: nil)
         default:
             let storyboard = UIStoryboard(name: "Main", bundle: nil)
             let vc = storyboard.instantiateViewController(withIdentifier: vcList[which])

@@ -1,7 +1,7 @@
 
 import UIKit
 
-class DrawClearRectVC : UIViewController {
+class DrawClearRectVC : AppBaseVC {
     
     override func viewDidLoad() {
         super.viewDidLoad()

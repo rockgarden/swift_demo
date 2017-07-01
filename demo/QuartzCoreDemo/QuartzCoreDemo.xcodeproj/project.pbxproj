@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		44548CF81F07E362007DC239 /* DrawingIntoLayerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44548CF71F07E362007DC239 /* DrawingIntoLayerVC.swift */; };
 		4459BC731EE04E4200717B8D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4459BC721EE04E4200717B8D /* AppDelegate.swift */; };
 		4459BC751EE04E4200717B8D /* MaskUtilityViewVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4459BC741EE04E4200717B8D /* MaskUtilityViewVC.swift */; };
 		4459BC781EE04E4200717B8D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4459BC761EE04E4200717B8D /* Main.storyboard */; };
@@ -25,6 +26,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		44548CF71F07E362007DC239 /* DrawingIntoLayerVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DrawingIntoLayerVC.swift; sourceTree = "<group>"; };
 		4459BC6F1EE04E4200717B8D /* QuartzCoreDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = QuartzCoreDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4459BC721EE04E4200717B8D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4459BC741EE04E4200717B8D /* MaskUtilityViewVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MaskUtilityViewVC.swift; sourceTree = "<group>"; };
@@ -87,6 +89,7 @@
 				4459BC871EE057BB00717B8D /* ReplicatorLayer.swift */,
 				44B39A4D1EED4A0E005BCB19 /* LayerTransitionVC.swift */,
 				44B1E0141EF3F279005CF9C7 /* CAActionVC.swift */,
+				44548CF71F07E362007DC239 /* DrawingIntoLayerVC.swift */,
 				4459BC791EE04E4200717B8D /* Assets.xcassets */,
 				4459BC7B1EE04E4200717B8D /* LaunchScreen.storyboard */,
 				4459BC7E1EE04E4200717B8D /* Info.plist */,
@@ -174,6 +177,7 @@
 				4459BC891EE057BB00717B8D /* CALayerVC.swift in Sources */,
 				4459BC8A1EE057BB00717B8D /* ReplicatorLayer.swift in Sources */,
 				4459BC881EE057BB00717B8D /* CompassView.swift in Sources */,
+				44548CF81F07E362007DC239 /* DrawingIntoLayerVC.swift in Sources */,
 				44B1E0151EF3F279005CF9C7 /* CAActionVC.swift in Sources */,
 				44CCE2691F03DC21009BB4C8 /* CompassView_3D.swift in Sources */,
 				4459BC751EE04E4200717B8D /* MaskUtilityViewVC.swift in Sources */,

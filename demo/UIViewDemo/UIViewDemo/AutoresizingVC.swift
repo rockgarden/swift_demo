@@ -8,7 +8,7 @@
 
 import UIKit
 
-class AutoresizingVC: UIViewController {
+class AutoresizingVC: AppBaseVC {
 
     let which = 1
 
