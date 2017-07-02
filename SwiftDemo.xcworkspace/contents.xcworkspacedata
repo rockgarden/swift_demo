@@ -2,6 +2,9 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:demo/GCDConcurrencyThreadDemo/GCDConcurrencyThreadDemo.xcodeproj">
+   </FileRef>
+   <FileRef
       location = "group:demo/UIScreenDemo/UIScreenDemo.xcodeproj">
    </FileRef>
    <FileRef
@@ -93,9 +96,6 @@
    </FileRef>
    <FileRef
       location = "group:demo/UIResponder/UIResponder.xcodeproj">
-   </FileRef>
-   <FileRef
-      location = "group:demo/GCD/GCD.xcodeproj">
    </FileRef>
    <FileRef
       location = "group:demo/NetServiceBrowser/NetServiceBrowser.xcodeproj">

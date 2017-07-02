@@ -14,10 +14,10 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "44B671D11DEC75E600042AA3"
-               BuildableName = "GCD.app"
-               BlueprintName = "GCD"
-               ReferencedContainer = "container:GCD.xcodeproj">
+               BlueprintIdentifier = "44EBF7BE1F091C9500CFF751"
+               BuildableName = "GCDConcurrencyThreadDemo.app"
+               BlueprintName = "GCDConcurrencyThreadDemo"
+               ReferencedContainer = "container:GCDConcurrencyThreadDemo.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -32,10 +32,10 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "44B671D11DEC75E600042AA3"
-            BuildableName = "GCD.app"
-            BlueprintName = "GCD"
-            ReferencedContainer = "container:GCD.xcodeproj">
+            BlueprintIdentifier = "44EBF7BE1F091C9500CFF751"
+            BuildableName = "GCDConcurrencyThreadDemo.app"
+            BlueprintName = "GCDConcurrencyThreadDemo"
+            ReferencedContainer = "container:GCDConcurrencyThreadDemo.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <AdditionalOptions>
@@ -55,10 +55,10 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "44B671D11DEC75E600042AA3"
-            BuildableName = "GCD.app"
-            BlueprintName = "GCD"
-            ReferencedContainer = "container:GCD.xcodeproj">
+            BlueprintIdentifier = "44EBF7BE1F091C9500CFF751"
+            BuildableName = "GCDConcurrencyThreadDemo.app"
+            BlueprintName = "GCDConcurrencyThreadDemo"
+            ReferencedContainer = "container:GCDConcurrencyThreadDemo.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -74,10 +74,10 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "44B671D11DEC75E600042AA3"
-            BuildableName = "GCD.app"
-            BlueprintName = "GCD"
-            ReferencedContainer = "container:GCD.xcodeproj">
+            BlueprintIdentifier = "44EBF7BE1F091C9500CFF751"
+            BuildableName = "GCDConcurrencyThreadDemo.app"
+            BlueprintName = "GCDConcurrencyThreadDemo"
+            ReferencedContainer = "container:GCDConcurrencyThreadDemo.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="Jgo-kJ-O8q">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--MandelbrotVC-->
+        <scene sceneID="Vkn-rj-8SB">
+            <objects>
+                <viewController id="Jgo-kJ-O8q" customClass="MandelbrotVC" customModule="GCDConcurrencyThreadDemo" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="tJw-WZ-tnN"/>
+                        <viewControllerLayoutGuide type="bottom" id="Wzr-vP-5gh"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="ZnP-Eg-rfW">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="SXQ-MS-gHJ">
+                                <rect key="frame" x="0.0" y="20" width="375" height="667.5"/>
+                                <subviews>
+                                    <view alpha="0.59999999999999998" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DTV-bU-Ji9" customClass="MandelbrotView" customModule="GCDConcurrencyThreadDemo" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="222.5"/>
+                                        <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lw6-b5-GbI" customClass="MTMandelbrotView" customModule="GCDConcurrencyThreadDemo" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="222.5" width="375" height="222.5"/>
+                                        <color key="backgroundColor" red="0.59999999999999998" green="0.84705882349999995" blue="0.98823529409999999" alpha="1" colorSpace="calibratedRGB"/>
+                                    </view>
+                                    <view alpha="0.59999999999999998" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lvj-Yb-TS5" customClass="OPMandelbrotView" customModule="GCDConcurrencyThreadDemo" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="445" width="375" height="222.5"/>
+                                        <color key="backgroundColor" red="0.35367018880000001" green="0.36078431370000003" blue="0.71886241009999996" alpha="1" colorSpace="calibratedRGB"/>
+                                    </view>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="lvj-Yb-TS5" firstAttribute="height" secondItem="DTV-bU-Ji9" secondAttribute="height" id="BLm-xD-tZx"/>
+                                    <constraint firstItem="lw6-b5-GbI" firstAttribute="height" secondItem="DTV-bU-Ji9" secondAttribute="height" id="K4R-ES-kJp"/>
+                                    <constraint firstItem="lvj-Yb-TS5" firstAttribute="width" secondItem="DTV-bU-Ji9" secondAttribute="width" id="S7g-b4-kmU"/>
+                                    <constraint firstItem="lw6-b5-GbI" firstAttribute="width" secondItem="DTV-bU-Ji9" secondAttribute="width" id="aC8-dX-YCV"/>
+                                </constraints>
+                            </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uAR-bM-PKu">
+                                <rect key="frame" x="0.0" y="627" width="375" height="30"/>
+                                <subviews>
+                                    <button opaque="NO" tag="1001" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fJ2-4a-saC">
+                                        <rect key="frame" x="0.0" y="0.0" width="111.5" height="30"/>
+                                        <state key="normal" title="NoThread">
+                                            <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="doButton:" destination="Jgo-kJ-O8q" eventType="touchUpInside" id="aY8-Ea-FGL"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" tag="1002" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SJP-N2-vJe">
+                                        <rect key="frame" x="111.5" y="0.0" width="112" height="30"/>
+                                        <state key="normal" title="ManualThread">
+                                            <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="doButton:" destination="Jgo-kJ-O8q" eventType="touchUpInside" id="o5j-xr-qI5"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" tag="1003" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="z7o-gc-KLk">
+                                        <rect key="frame" x="223.5" y="0.0" width="111.5" height="30"/>
+                                        <state key="normal" title="Operation">
+                                            <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="doButton:" destination="Jgo-kJ-O8q" eventType="touchUpInside" id="ypC-e1-Ena"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="90z-Uw-h0U">
+                                        <rect key="frame" x="335" y="0.0" width="40" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="40" id="R3F-jw-HfK"/>
+                                        </constraints>
+                                        <state key="normal" title="GCD"/>
+                                        <connections>
+                                            <segue destination="dCa-il-kwL" kind="show" id="eic-4d-I1c"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="SJP-N2-vJe" firstAttribute="width" secondItem="fJ2-4a-saC" secondAttribute="width" id="0yi-WD-YRV"/>
+                                    <constraint firstItem="z7o-gc-KLk" firstAttribute="width" secondItem="SJP-N2-vJe" secondAttribute="width" id="dba-in-plJ"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="DTV-bU-Ji9" firstAttribute="width" secondItem="ZnP-Eg-rfW" secondAttribute="width" id="AAM-lW-jGA"/>
+                            <constraint firstItem="DTV-bU-Ji9" firstAttribute="height" secondItem="ZnP-Eg-rfW" secondAttribute="height" multiplier="1:3" id="IX6-Rh-uUO"/>
+                            <constraint firstItem="SXQ-MS-gHJ" firstAttribute="centerX" secondItem="ZnP-Eg-rfW" secondAttribute="centerX" id="J6I-J1-Xje"/>
+                            <constraint firstItem="SXQ-MS-gHJ" firstAttribute="top" secondItem="tJw-WZ-tnN" secondAttribute="bottom" id="O3a-TI-gHo"/>
+                            <constraint firstItem="Wzr-vP-5gh" firstAttribute="top" secondItem="uAR-bM-PKu" secondAttribute="bottom" constant="10" id="b78-ND-xYw"/>
+                            <constraint firstItem="uAR-bM-PKu" firstAttribute="centerX" secondItem="ZnP-Eg-rfW" secondAttribute="centerX" id="o79-fP-XDe"/>
+                            <constraint firstItem="SXQ-MS-gHJ" firstAttribute="width" secondItem="ZnP-Eg-rfW" secondAttribute="width" id="qI9-X2-bMV"/>
+                            <constraint firstItem="uAR-bM-PKu" firstAttribute="width" secondItem="ZnP-Eg-rfW" secondAttribute="width" id="yGg-aV-yCr"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="mtmv" destination="lw6-b5-GbI" id="FTl-1M-wkP"/>
+                        <outlet property="mv" destination="DTV-bU-Ji9" id="OKg-EV-ZOA"/>
+                        <outlet property="opmv" destination="lvj-Yb-TS5" id="aiy-u6-mSh"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="pl3-bC-anv" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="133.59999999999999" y="792.95352323838085"/>
+        </scene>
+        <!--MandelbrotVCGCD-->
+        <scene sceneID="TKM-me-K0L">
+            <objects>
+                <viewController id="dCa-il-kwL" customClass="MandelbrotVC_GCD" customModule="GCDConcurrencyThreadDemo" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="lW3-2O-iYu"/>
+                        <viewControllerLayoutGuide type="bottom" id="WBI-fM-Pzz"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Rps-yx-ElH">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="d7q-74-AQc" customClass="GCDMandelbrotView" customModule="GCDConcurrencyThreadDemo" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="20" width="375" height="375"/>
+                                <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="d7q-74-AQc" secondAttribute="height" id="n0v-zh-rni"/>
+                                </constraints>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3Fw-R5-WTT">
+                                <rect key="frame" x="128.5" y="617" width="118" height="30"/>
+                                <state key="normal" title="Draw That Puppy">
+                                    <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="doButton:" destination="dCa-il-kwL" eventType="touchUpInside" id="pyR-Yl-Jc7"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="3Fw-R5-WTT" firstAttribute="centerX" secondItem="Rps-yx-ElH" secondAttribute="centerX" id="MyD-9p-3MC"/>
+                            <constraint firstItem="d7q-74-AQc" firstAttribute="width" secondItem="Rps-yx-ElH" secondAttribute="width" id="V95-PK-Iyy"/>
+                            <constraint firstItem="WBI-fM-Pzz" firstAttribute="top" secondItem="3Fw-R5-WTT" secondAttribute="bottom" constant="20" id="WBK-I7-tBD"/>
+                            <constraint firstItem="d7q-74-AQc" firstAttribute="top" secondItem="lW3-2O-iYu" secondAttribute="bottom" id="ZzG-lM-yFE"/>
+                            <constraint firstItem="d7q-74-AQc" firstAttribute="centerX" secondItem="Rps-yx-ElH" secondAttribute="centerX" id="c7l-RS-lrg"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="mv" destination="d7q-74-AQc" id="INw-RO-obt"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="G1M-Yf-UdB" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="134" y="1480"/>
+        </scene>
+    </scenes>
+</document>
