@@ -32,11 +32,6 @@ class SecondViewController: UIViewController, myObjectDelegate {
         secondLabel.text = data as String
     }
     
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
     func delegateMethod() {
         print("Received message")
     }

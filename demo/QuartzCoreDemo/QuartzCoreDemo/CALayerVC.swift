@@ -5,6 +5,7 @@ class CALayerVC: UIViewController {
 
     @IBOutlet fileprivate var box: UIView!
     @IBOutlet fileprivate var replicator: UIView!
+    @IBOutlet fileprivate var cv: CompassView!
     
     override func viewDidLoad() {
         super.viewDidLoad()

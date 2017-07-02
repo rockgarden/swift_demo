@@ -16,9 +16,10 @@ class DrawingIntoLayerVC : UIViewController {
         lay.frame = v.layer.bounds
         v.layer.addSublayer(lay)
         lay.setNeedsDisplay()
-        
-        /// add another layer to say which view this is
-        let tlay = CATextLayer()
+
+        // add another layer to say which view this is
+        /// 一个提供简单文本布局和渲染纯文本或属性字符串的图层。第一行与层的顶部对齐。
+        let tlay = CATextLayer() //
         tlay.frame = lay.bounds
         lay.addSublayer(tlay)
         tlay.string = "\(ix)"
@@ -48,7 +49,7 @@ class DrawingIntoLayerVC : UIViewController {
 }
 
 /// App可以实现CALayerDelegate来响应层的相关事件。您可以实现此协议的方法来提供图层的内容，处理子图层的布局，并提供自定义的动画动作来执行。 实现此协议的对象必须分配给层对象的delegate属性。
-class Smiler:NSObject, CALayerDelegate {
+class Smiler: NSObject, CALayerDelegate {
     func draw(_ layer: CALayer, in ctx: CGContext) {
         UIGraphicsPushContext(ctx)
         //[[UIImage imageNamed: @"smiley"] drawInRect:CGContextGetClipBoundingBox(ctx)];
@@ -59,7 +60,7 @@ class Smiler:NSObject, CALayerDelegate {
     }
 }
 
-class Smiler2:NSObject, CALayerDelegate {
+class Smiler2: NSObject, CALayerDelegate {
     func display(_ layer: CALayer) {
         layer.contents = UIImage(named:"Swift")!.cgImage
         print("\(#function)")
@@ -78,7 +79,7 @@ class SmilerLayer: CALayer {
     }
 }
 
-class SmilerLayer2:CALayer {
+class SmilerLayer2: CALayer {
     override func display() {
         self.contents = UIImage(named:"Swift")!.cgImage
         print("\(#function)")

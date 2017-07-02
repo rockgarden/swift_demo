@@ -46,7 +46,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Cancel Animation" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Blm-ln-BHs">
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="CASpringAnimation" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Blm-ln-BHs">
                                                     <rect key="frame" x="15" y="0.0" width="345" height="43.5"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="0.0"/>
@@ -56,7 +56,7 @@
                                             </subviews>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <segue destination="eYh-ba-emL" kind="show" id="lqv-uC-INb"/>
+                                            <segue destination="oCk-ug-SiL" kind="show" id="fFm-Jk-6VT"/>
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" textLabel="DhZ-Qi-je2" style="IBUITableViewCellStyleDefault" id="QhY-P5-taU">
@@ -155,7 +155,7 @@
         <scene sceneID="xNh-ga-QlM">
             <objects>
                 <navigationController id="b1I-47-c23" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="3l9-gA-4WU">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="3l9-gA-4WU">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -264,50 +264,48 @@
         <!--Cancel Animation-->
         <scene sceneID="rGm-ue-r1p">
             <objects>
-                <viewController storyboardIdentifier="CancelAnimation" id="eYh-ba-emL" customClass="CancelAnimation" customModule="animate" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="CancelAnimation" id="eYh-ba-emL" customClass="CancelAnimation" customModule="animate" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="rMk-Mj-Ql6" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-714" y="-649"/>
+        </scene>
+        <!--Spring AnimationVC-->
+        <scene sceneID="4dh-aX-bnF">
+            <objects>
+                <viewController id="oCk-ug-SiL" customClass="CASpringAnimationVC" customModule="CAAnimation" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="Uvm-Jw-S7m"/>
-                        <viewControllerLayoutGuide type="bottom" id="zoY-CD-d2K"/>
+                        <viewControllerLayoutGuide type="top" id="Ot7-22-4bL"/>
+                        <viewControllerLayoutGuide type="bottom" id="wh4-Qf-Xgg"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="jMS-7v-MWq">
+                    <view key="view" contentMode="scaleToFill" id="f94-ap-awf">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pg6-Wg-WIY">
-                                <rect key="frame" x="16" y="72" width="34" height="30"/>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7it-IV-ETD">
+                                <rect key="frame" x="42" y="151" width="194" height="114"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QhA-EC-nUD">
+                                <rect key="frame" x="161" y="72" width="52" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Start">
                                     <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
-                                    <action selector="doStart:" destination="eYh-ba-emL" eventType="touchUpInside" id="nQe-Zw-bxw"/>
+                                    <action selector="doButton:" destination="oCk-ug-SiL" eventType="touchUpInside" id="IOo-sz-c3o"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ymO-aR-9MH">
-                                <rect key="frame" x="327" y="72" width="32" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Stop">
-                                    <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                </state>
-                                <connections>
-                                    <action selector="doStop:" destination="eYh-ba-emL" eventType="touchUpInside" id="50F-Z1-e5y"/>
-                                </connections>
-                            </button>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="muW-nm-Gnx">
-                                <rect key="frame" x="16" y="110" width="110" height="118"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                            </view>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
                     <connections>
-                        <outlet property="v" destination="muW-nm-Gnx" id="HvO-Qd-pFR"/>
+                        <outlet property="v" destination="7it-IV-ETD" id="1bf-xu-cWP"/>
                     </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="rMk-Mj-Ql6" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="L5A-Ho-oKe" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-714" y="-649"/>
+            <point key="canvasLocation" x="838" y="77"/>
         </scene>
         <!--RippleVC-->
         <scene sceneID="JcO-nb-Iem">

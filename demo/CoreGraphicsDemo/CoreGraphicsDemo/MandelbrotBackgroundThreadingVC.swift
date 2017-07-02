@@ -5,16 +5,17 @@
 
 import UIKit
 
-class MandelbrotNoThreadingVC: UIViewController {
+class MandelbrotBackgroundThreadingVC: UIViewController {
 
-    @IBOutlet private var mv : MyMandelbrotView!
+    @IBOutlet private var mv : MandelbrotViewBG!
     @IBAction func doButton (_ sender: Any!) {
         self.mv.drawThatPuppy()
     }
 
 }
 
-class MyMandelbrotView : UIView {
+
+class MandelbrotViewBG : UIView {
 
     let MANDELBROT_STEPS = 10000
 

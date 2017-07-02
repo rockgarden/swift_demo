@@ -11,6 +11,7 @@ import UIKit
 class AppBaseVC: UIViewController {
 
     override func viewDidLoad() {
+        view.backgroundColor = .white
         addCloseButton()
     }
 

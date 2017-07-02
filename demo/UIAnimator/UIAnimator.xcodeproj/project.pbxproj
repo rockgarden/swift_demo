@@ -21,6 +21,9 @@
 		4479E0401E6D92C500A51660 /* UIDynamicAnimator_Drag.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4479E03F1E6D92C500A51660 /* UIDynamicAnimator_Drag.swift */; };
 		4479E0421E6D92FC00A51660 /* UIDynamicAnimator_LiftDrop_Constraints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4479E0411E6D92FC00A51660 /* UIDynamicAnimator_LiftDrop_Constraints.swift */; };
 		44DBED051EFD62E600B5CA23 /* ViewAnimationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44DBED041EFD62E600B5CA23 /* ViewAnimationVC.swift */; };
+		44EBF7AE1F08D83D00CFF751 /* CancelAnimationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44EBF7AD1F08D83D00CFF751 /* CancelAnimationVC.swift */; };
+		44EBF7B01F08D86C00CFF751 /* WorkspaceGlobal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44EBF7AF1F08D86C00CFF751 /* WorkspaceGlobal.swift */; };
+		44EBF7B21F08DE4800CFF751 /* FrozenAnimationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44EBF7B11F08DE4800CFF751 /* FrozenAnimationVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +43,9 @@
 		4479E03F1E6D92C500A51660 /* UIDynamicAnimator_Drag.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIDynamicAnimator_Drag.swift; sourceTree = "<group>"; };
 		4479E0411E6D92FC00A51660 /* UIDynamicAnimator_LiftDrop_Constraints.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIDynamicAnimator_LiftDrop_Constraints.swift; sourceTree = "<group>"; };
 		44DBED041EFD62E600B5CA23 /* ViewAnimationVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewAnimationVC.swift; sourceTree = "<group>"; };
+		44EBF7AD1F08D83D00CFF751 /* CancelAnimationVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CancelAnimationVC.swift; sourceTree = "<group>"; };
+		44EBF7AF1F08D86C00CFF751 /* WorkspaceGlobal.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WorkspaceGlobal.swift; sourceTree = "<group>"; };
+		44EBF7B11F08DE4800CFF751 /* FrozenAnimationVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FrozenAnimationVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,6 +84,7 @@
 		4479E01F1E6D90AE00A51660 = {
 			isa = PBXGroup;
 			children = (
+				44EBF7AF1F08D86C00CFF751 /* WorkspaceGlobal.swift */,
 				4479E02A1E6D90AE00A51660 /* UIAnimator */,
 				4479E0291E6D90AE00A51660 /* Products */,
 			);
@@ -102,6 +109,8 @@
 				44258D681EFA8C0E003F3397 /* AnimationAndAutolayoutVC.swift */,
 				44258D6A1EFA9E5B003F3397 /* ExpandableByConstraintVC.swift */,
 				44DBED041EFD62E600B5CA23 /* ViewAnimationVC.swift */,
+				44EBF7AD1F08D83D00CFF751 /* CancelAnimationVC.swift */,
+				44EBF7B11F08DE4800CFF751 /* FrozenAnimationVC.swift */,
 				44258D671EFA8BB0003F3397 /* support files */,
 			);
 			path = UIAnimator;
@@ -184,9 +193,12 @@
 				4479E02E1E6D90AE00A51660 /* UIDynamicBehaviorVC.swift in Sources */,
 				4479E03E1E6D914A00A51660 /* UIViewPropertyAnimator_Fling.swift in Sources */,
 				44258D6B1EFA9E5B003F3397 /* ExpandableByConstraintVC.swift in Sources */,
+				44EBF7B21F08DE4800CFF751 /* FrozenAnimationVC.swift in Sources */,
 				44DBED051EFD62E600B5CA23 /* ViewAnimationVC.swift in Sources */,
 				44258D691EFA8C0E003F3397 /* AnimationAndAutolayoutVC.swift in Sources */,
+				44EBF7AE1F08D83D00CFF751 /* CancelAnimationVC.swift in Sources */,
 				4479E0401E6D92C500A51660 /* UIDynamicAnimator_Drag.swift in Sources */,
+				44EBF7B01F08D86C00CFF751 /* WorkspaceGlobal.swift in Sources */,
 				4400ADA71EF80F78005A7AA1 /* UIFieldBehaviorVC.swift in Sources */,
 				4400ADA91EF81061005A7AA1 /* Main_UIAnimator.swift in Sources */,
 				4479E02C1E6D90AE00A51660 /* AppDelegate.swift in Sources */,

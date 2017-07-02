@@ -36,10 +36,6 @@ class ViewController: UIViewController, myDelegate, UINavigationControllerDelega
         self.showColorPicker()
     }
     
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-    }
-    
     func writeDateInLabel(_ data: NSString) {
         self.principalLabel.text = data as String
     }

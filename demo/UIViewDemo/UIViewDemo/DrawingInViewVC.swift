@@ -5,7 +5,6 @@ class DrawClearRectVC : AppBaseVC {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .white
         
         let mv = ClearRectView(frame:CGRect.zero)
         self.view.addSubview(mv)
