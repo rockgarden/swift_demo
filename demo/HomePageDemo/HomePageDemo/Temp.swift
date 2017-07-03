@@ -25,8 +25,7 @@ fileprivate var homepagelists : [Function] = []
 fileprivate var alllists : [Function] = []
 
 
-
-class MainVC: BaseViewController {
+class MainVC: UIViewController {
 
     fileprivate var defaultAd = [CycleScrollItem("Ad_1"), CycleScrollItem("Ad_1")]
     fileprivate var newAd: [CycleScrollItem] = []
@@ -37,20 +36,20 @@ class MainVC: BaseViewController {
 
     lazy fileprivate var headerView: UIView = {
         let v = UIView()
-        v.backgroundColor = Color.lightBlue.base
+        v.backgroundColor = .blue
         v.translatesAutoresizingMaskIntoConstraints = false
         return v
     }()
 
-    lazy fileprivate var AdBar: CycleScrollView = {
-        let v = CycleScrollView(didSelectItemAtIndex: self.didAdSelectAtItem)
-        v.customPageControlStyle = .snake
+    lazy fileprivate var AdBar: UIView = {
+        let v = UIView()
+        v.backgroundColor = .red
         v.translatesAutoresizingMaskIntoConstraints = false
         return v
     }()
 
-    lazy fileprivate var functionBar: FunctionCollectionView = {
-        let v = FunctionCollectionView(didSelectItemAtIndex: self.didFunctionSelectAtItem,didSelectFooter:self.didSelectFooter)
+    lazy fileprivate var functionBar: UIView = {
+        let v = UIView()
         v.backgroundColor = .white
         v.translatesAutoresizingMaskIntoConstraints = false
         return v
@@ -127,75 +126,6 @@ class MainVC: BaseViewController {
             })
         }
     }
-
-    fileprivate func loadNetMoudleData(){
-        if UserDefault.instance.token() != nil {
-            var paramter =  [String:Any]()
-            let url: String = SERVICE_URL + "/get_all_Fuctions"
-            let token = UserDefault.instance.getData("token") as! String
-            let user_id = UserDefault.instance.getData("userId") as! String
-            paramter["v_token"] = token
-            paramter["v_user_name"] = user_id
-            Alamofire.request(url, method: .post, parameters: paramter).responseJSON{response in
-                debugPrint(response)
-                ResponseHandler.handlerWithNoResponse(response, parseJson: {result in
-                    self.setFuncsData(datas: result)
-                },handleFail:{
-                    self.handleFail()
-                })
-            }
-        }
-    }
-
-    fileprivate func handleFail(){
-        var array = Defaults.myModules()
-        var sections: [String] = [] //相当于category
-
-        if array == nil {
-            array = self.functionsFromPlist
-        }
-        homepagelists = array!
-        for f in array! {
-            let type = f.category
-            if !sections.contains(type) {
-                sections.append(type)
-            }
-        }
-        let datasource = FunctionDataSource(sections: sections, functions: array!)
-        self.functionBar.dataSource = datasource
-        self.functionBar.collectionView.reloadData()
-    }
-
-    //请求并处理获得
-    fileprivate func setFuncsData(datas : JSON){
-        var list = [Function]()
-        var sections: [String] = [] //相当于category
-        let data:[JSON] = datas["data"].arrayValue
-        for item in data{
-            let f = Function(data: item)
-            list.append(f)
-        }
-        alllists = Function.setImageForNet(net: list)
-        var array = Defaults.myModules()
-        if array == nil {
-            array = functionsFromPlist
-        }
-        if alllists.count != 0 {
-            array = Function.getFinalMoudles(local: array!, net: alllists)
-        }
-        homepagelists = array!
-        for f in array! {
-            let type = f.category
-            if !sections.contains(type) {
-                sections.append(type)
-            }
-        }
-        let datasource = FunctionDataSource(sections: sections, functions: array!)
-        self.functionBar.dataSource = datasource
-        self.functionBar.collectionView.reloadData()
-    }
-
-
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -303,6 +233,8 @@ extension MainVC: UIScrollViewDelegate {
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         let dY = scrollView.contentOffset.y + insetDistance
 
+        /// 调整frame 的性能高于 直接调整 constraints.constant.
+        // TODO: AutoLayout 如何局部更新?
         do {
             let originY = headerView.bounds.origin.y
             let originX = headerView.bounds.origin.x
@@ -336,59 +268,12 @@ extension MainVC: UIScrollViewDelegate {
     }
 
     func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
-        debugPrint("minYmaxY: \(headerView.frame.minY), \(headerView.frame.maxY)")
-
-        do {
-            let originY = headerView.bounds.origin.y
-            let originX = headerView.bounds.origin.x
-            let w = headerView.bounds.size.width
-            let h = headerView.bounds.size.height
-            let offset = scrollView.contentOffset.y
-
-
-            let foY = headerView.frame.origin.y
-
-            debugPrint(offset, headerView.frame.origin.y)
-            if foY < -(offsetY - 20) && foY > -offsetY {
-                UIView.animate(withDuration: 0.3, delay: 0.0, options: .curveLinear, animations: {
-                    [weak self] _ in
-                    self?.AdBar.alpha = minAlpha
-                    self?.headerView.frame = CGRect(x: originX, y: -offsetY, width: w, height: h)
-                    scrollView.contentOffset.y = offset + (foY + offsetY)
-                })
-            }
-
-            if foY < 0 && foY > -20 {
-                UIView.animate(withDuration: 0.3, delay: 0.0, options: .curveLinear, animations: {
-                    [weak self] _ in
-                    self?.AdBar.alpha = 1
-                    self?.headerView.frame = CGRect(x: originX, y: originY, width: w, height: h)
-                    scrollView.contentOffset.y = offset + foY
-                })
-            }
-        }
+        endScrollingAnimation(scrollView)
     }
 
     func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
         return
-        do {
-            let dMin = headerView.constraints[0].constant - minHeaderHeight
-            if dMin<10 && dMin>0 {
-                UIView.animate(withDuration: 0.3, delay: 0.0, options: .curveLinear, animations: { [weak self] _ in
-                    self?.AdBar.alpha = minAlpha
-                    self?.headerView.constraints[0].constant = minHeaderHeight
-                    self?.view.updateConstraints()
-                })
-            }
-            let dMax = headerHeight - headerView.constraints[0].constant
-            if dMax<10 && dMax>0 {
-                UIView.animate(withDuration: 0.3, delay: 0.0, options: .curveLinear, animations: { [weak self] _ in
-                    self?.AdBar.alpha = 1
-                    self?.headerView.constraints[0].constant = headerHeight
-                    self?.view.updateConstraints()
-                })
-            }
-        }
+        endScrollingAnimation(scrollView)
     }
 
     private func endScrollingAnimation(_ scrollView: UIScrollView) {
@@ -418,6 +303,8 @@ extension MainVC: UIScrollViewDelegate {
                 })
             }
         }
+        /// Debug: frame 变换不会引起 constant 变化, 这会导致 view 在重新 绘制时 frame 恢复初始值, 通过手动调整 constant 来打补丁.
+        view.constraints[2].constant = headerView.frame.origin.y
     }
     
 }

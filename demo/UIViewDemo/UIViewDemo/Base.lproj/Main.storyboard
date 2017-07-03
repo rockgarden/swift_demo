@@ -1295,6 +1295,26 @@
                                             <segue destination="M2F-pf-ahL" kind="show" id="UEo-9G-amh"/>
                                         </connections>
                                     </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" textLabel="gfM-BR-QMV" style="IBUITableViewCellStyleDefault" id="fbc-0d-nIJ">
+                                        <rect key="frame" x="0.0" y="132" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="fbc-0d-nIJ" id="vEl-AT-GvG">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="UIView.animateKeyframes" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="gfM-BR-QMV">
+                                                    <rect key="frame" x="15" y="0.0" width="345" height="43.5"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="eds-TF-A0Z" kind="show" id="86G-yR-iPi"/>
+                                        </connections>
+                                    </tableViewCell>
                                 </cells>
                             </tableViewSection>
                         </sections>
@@ -1315,6 +1335,47 @@
                 <exit id="vVp-wJ-wK2" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="758" y="4249"/>
+        </scene>
+        <!--Animate KeyframesVC-->
+        <scene sceneID="PfA-UX-bVG">
+            <objects>
+                <viewController id="eds-TF-A0Z" customClass="AnimateKeyframesVC" customModule="UIViewDemo" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="URO-wR-f9a"/>
+                        <viewControllerLayoutGuide type="bottom" id="JaD-4e-O2h"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="JGV-64-RaQ">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Def-D0-G5I">
+                                <rect key="frame" x="34" y="80" width="54" height="51"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1I8-FO-Gsz">
+                                <rect key="frame" x="170" y="617" width="34" height="30"/>
+                                <state key="normal" title="Start">
+                                    <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="doButton:" destination="eds-TF-A0Z" eventType="touchUpInside" id="PQT-MO-ZzX"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="1I8-FO-Gsz" firstAttribute="centerX" secondItem="JGV-64-RaQ" secondAttribute="centerX" id="Ma5-Pj-nsS"/>
+                            <constraint firstItem="JaD-4e-O2h" firstAttribute="top" secondItem="1I8-FO-Gsz" secondAttribute="bottom" constant="20" id="iTF-u2-uSj"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="v" destination="Def-D0-G5I" id="Me4-f0-2cj"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bwS-9y-x8C" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1574" y="4964"/>
         </scene>
         <!--View Animation1VC-->
         <scene sceneID="Ihi-ig-pXR">

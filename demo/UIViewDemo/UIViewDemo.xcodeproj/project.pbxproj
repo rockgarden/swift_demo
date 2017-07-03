@@ -30,6 +30,7 @@
 		44B1E01F1EF433DF005CF9C7 /* HitTestVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44B1E01E1EF433DF005CF9C7 /* HitTestVC.swift */; };
 		44B48DA81EF4F87800CBB7D3 /* HitTestDistortedLayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44B48DA71EF4F87800CBB7D3 /* HitTestDistortedLayerView.swift */; };
 		44B48DAA1EF4FD3E00CBB7D3 /* HitTestDuringAnimationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44B48DA91EF4FD3E00CBB7D3 /* HitTestDuringAnimationVC.swift */; };
+		44C758CD1F0A848F00D8EA4B /* AnimateKeyframesVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44C758CC1F0A848F00D8EA4B /* AnimateKeyframesVC.swift */; };
 		44EBF7A51F08C3F600CFF751 /* VisualEffectAnimationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44EBF7A41F08C3F600CFF751 /* VisualEffectAnimationVC.swift */; };
 		44EBF7A71F08C63C00CFF751 /* Main_animate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44EBF7A61F08C63C00CFF751 /* Main_animate.swift */; };
 		44EBF7AA1F08C8E200CFF751 /* ViewAnimation1VC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44EBF7A91F08C8E200CFF751 /* ViewAnimation1VC.swift */; };
@@ -69,6 +70,7 @@
 		44B1E01E1EF433DF005CF9C7 /* HitTestVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HitTestVC.swift; sourceTree = "<group>"; };
 		44B48DA71EF4F87800CBB7D3 /* HitTestDistortedLayerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HitTestDistortedLayerView.swift; sourceTree = "<group>"; };
 		44B48DA91EF4FD3E00CBB7D3 /* HitTestDuringAnimationVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HitTestDuringAnimationVC.swift; sourceTree = "<group>"; };
+		44C758CC1F0A848F00D8EA4B /* AnimateKeyframesVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnimateKeyframesVC.swift; sourceTree = "<group>"; };
 		44EBF7A41F08C3F600CFF751 /* VisualEffectAnimationVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VisualEffectAnimationVC.swift; sourceTree = "<group>"; };
 		44EBF7A61F08C63C00CFF751 /* Main_animate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Main_animate.swift; sourceTree = "<group>"; };
 		44EBF7A91F08C8E200CFF751 /* ViewAnimation1VC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewAnimation1VC.swift; sourceTree = "<group>"; };
@@ -129,6 +131,7 @@
 				44EBF7A61F08C63C00CFF751 /* Main_animate.swift */,
 				44EBF7A91F08C8E200CFF751 /* ViewAnimation1VC.swift */,
 				44EBF7AB1F08CD8400CFF751 /* CancelAnimationVC.swift */,
+				44C758CC1F0A848F00D8EA4B /* AnimateKeyframesVC.swift */,
 			);
 			name = UIView.animate;
 			sourceTree = "<group>";
@@ -270,6 +273,7 @@
 				44306D031F0271D10095D977 /* AutoresizingVC.swift in Sources */,
 				441721271ED9BB9800933908 /* PositionResizableImageVC.swift in Sources */,
 				444A63211ED711D200FD1751 /* MyView.swift in Sources */,
+				44C758CD1F0A848F00D8EA4B /* AnimateKeyframesVC.swift in Sources */,
 				44B1E01D1EF4294E005CF9C7 /* ViewTransitionVC.swift in Sources */,
 				441721291ED9BB9800933908 /* ImageDrawingVC.swift in Sources */,
 				446D65D61EFFE33900CA86F8 /* TransformVC.swift in Sources */,

@@ -63,15 +63,15 @@
 			isa = PBXGroup;
 			children = (
 				C22759091D6C2BF1008C1F18 /* AppDelegate.swift */,
+				C227590D1D6C2BF1008C1F18 /* Main.storyboard */,
 				C227590B1D6C2BF1008C1F18 /* ViewController.swift */,
+				446885CC1D941B2D004E76E7 /* ColorPickerController.swift */,
+				446885CE1D941B65004E76E7 /* ColorPicker.xib */,
 				C227591B1D6C2CAA008C1F18 /* SecondViewController.swift */,
 				C227591D1D6C2E36008C1F18 /* MyObject.swift */,
-				C227590D1D6C2BF1008C1F18 /* Main.storyboard */,
 				C22759101D6C2BF1008C1F18 /* Assets.xcassets */,
 				C22759121D6C2BF1008C1F18 /* LaunchScreen.storyboard */,
 				C22759151D6C2BF1008C1F18 /* Info.plist */,
-				446885CE1D941B65004E76E7 /* ColorPicker.xib */,
-				446885CC1D941B2D004E76E7 /* ColorPickerController.swift */,
 			);
 			path = Delegate_Protocol;
 			sourceTree = "<group>";

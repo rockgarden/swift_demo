@@ -49,7 +49,7 @@ extension ViewController: ColorPickerDelegate {
         let c = UIColor.blue
         let cpc = ColorPickerController(colorName: colorName, andColor: c)
         cpc.delegate = self
-        self.present(cpc, animated: true, completion: nil)
+        present(cpc, animated: true, completion: nil)
     }
     
     // delegate method
@@ -58,7 +58,7 @@ extension ViewController: ColorPickerDelegate {
                                        toColor theColor: UIColor?) {
         print("the delegate method was called")
         delay(0.1) {
-            self.view.backgroundColor = theColor
+            //view.backgroundColor = theColor
             picker.dismiss(animated: true, completion: nil)
         }
     }

@@ -8,12 +8,132 @@ class CompassView : UIView {
     }
 }
 
-class CompassLayer : CALayer, CALayerDelegate {
+class BaseCompassView : UIView {
+    override class var layerClass : AnyClass {
+        return BaseCompassLayer.self
+    }
+}
+
+
+class BaseCompassLayer : CALayer, CALayerDelegate {
     var arrow : CALayer?
+    var rotationLayer : CALayer!
+    var didSetup = false
+
+    override func layoutSublayers() {
+        if !self.didSetup {
+            self.didSetup = true
+            self.setup()
+        }
+    }
+
+    func setup () {
+        print("setup")
+
+        // the gradient
+        let g = CAGradientLayer()
+        g.contentsScale = UIScreen.main.scale
+        g.frame = self.bounds
+        g.colors = [
+            UIColor.black.cgColor,
+            UIColor.red.cgColor
+        ]
+        g.locations = [0.0,1.0]
+        self.addSublayer(g) //
+
+        // the circle
+        let circle = CAShapeLayer()
+        circle.contentsScale = UIScreen.main.scale
+        circle.lineWidth = 2.0
+        circle.fillColor = UIColor(red:0.9, green:0.95, blue:0.93, alpha:0.9).cgColor
+        circle.strokeColor = UIColor.gray.cgColor
+        let p = CGMutablePath()
+        p.addEllipse(in: self.bounds.insetBy(dx: 3, dy: 3))
+        circle.path = p
+        self.addSublayer(circle)
+        circle.bounds = self.bounds
+        circle.position = self.bounds.center
+
+        // the four cardinal points
+        let pts = "NESW"
+        for (ix,c) in pts.characters.enumerated() {
+            let t = CATextLayer()
+            t.contentsScale = UIScreen.main.scale
+            t.string = String(c)
+            t.bounds = CGRect(0,0,40,40)
+            t.position = circle.bounds.center
+            let vert = circle.bounds.midY / t.bounds.height
+            t.anchorPoint = CGPoint(0.5, vert)
+            //print(t.anchorPoint)
+            t.alignmentMode = kCAAlignmentCenter
+            t.foregroundColor = UIColor.black.cgColor
+            t.setAffineTransform(CGAffineTransform(rotationAngle:CGFloat(ix) * .pi/2.0))
+            circle.addSublayer(t)
+        }
+
+
+        // the arrow
+        let arrow = CALayer()
+        arrow.contentsScale = UIScreen.main.scale
+        arrow.bounds = CGRect(0, 0, 40, 100)
+        arrow.position = self.bounds.center
+        arrow.anchorPoint = CGPoint(0.5, 0.8)
+        arrow.delegate = self // we will draw the arrow in the delegate method
+        // in Swift, not a property:
+        arrow.setAffineTransform(CGAffineTransform(rotationAngle:.pi/5.0))
+        self.addSublayer(arrow)
+        arrow.setNeedsDisplay() // draw, please
+
+        self.arrow = arrow
+
+    }
+
+    func draw(_ layer: CALayer, in con: CGContext) {
+        print("drawLayer:inContext: for arrow")
+
+        // punch triangular hole in context clipping region
+        con.move(to: CGPoint(10,100))
+        con.addLine(to: CGPoint(20,90))
+        con.addLine(to: CGPoint(30,100))
+        con.closePath()
+        con.addRect(con.boundingBoxOfClipPath)
+        con.clip(using: .evenOdd)
+
+        // draw the vertical line, add its shape to the clipping region
+        con.move(to: CGPoint(20,100))
+        con.addLine(to: CGPoint(20,19))
+        con.setLineWidth(20)
+        con.strokePath()
+
+        // draw the triangle, the point of the arrow
+        let stripes = imageOfSize(CGSize(4,4)) {
+            ctx in
+            let imcon = UIGraphicsGetCurrentContext()!
+            imcon.setFillColor(UIColor.red.cgColor)
+            imcon.fill(CGRect(0,0,4,4))
+            imcon.setFillColor(UIColor.blue.cgColor)
+            imcon.fill(CGRect(0,0,4,2))
+        }
+
+        let stripesPattern = UIColor(patternImage:stripes)
+
+        UIGraphicsPushContext(con)
+        do {
+            stripesPattern.setFill()
+            let p = UIBezierPath()
+            p.move(to:CGPoint(0,25))
+            p.addLine(to:CGPoint(20,0))
+            p.addLine(to:CGPoint(40,25))
+            p.fill()
+        }
+        UIGraphicsPopContext()
+    }
+}
+
+
+class CompassLayer : BaseCompassLayer {
     var circle : CAShapeLayer?
     var gradientLayer: CAGradientLayer!
-    var didSetup = false
-    var rotationLayer : CALayer!
     var which = 1
 
     override func layoutSublayers() {
@@ -26,7 +146,7 @@ class CompassLayer : CALayer, CALayerDelegate {
         }
     }
 
-    func setup () {
+    override func setup () {
         print("setup")
 
         // the gradient
@@ -93,47 +213,6 @@ class CompassLayer : CALayer, CALayerDelegate {
         self.mask(arrow:arrow)
 
         self.arrow = arrow
-    }
-
-    func draw(_ layer: CALayer, in con: CGContext) {
-        print("drawLayer:inContext: for arrow")
-
-        // punch triangular hole in context clipping region
-        con.move(to: CGPoint(10, 100))
-        con.addLine(to: CGPoint(20, 90))
-        con.addLine(to: CGPoint(30, 100))
-        con.closePath()
-        con.addRect(con.boundingBoxOfClipPath)
-        con.clip(using: .evenOdd)
-
-        // draw the vertical line, add its shape to the clipping region
-        con.move(to: CGPoint(20, 100))
-        con.addLine(to: CGPoint(20, 19))
-        con.setLineWidth(20)
-        con.strokePath()
-
-        // draw the triangle, the point of the arrow
-        let stripes = imageOfSize(CGSize(4,4)) {
-            ctx in
-            let imcon = UIGraphicsGetCurrentContext()!
-            imcon.setFillColor(UIColor.red.cgColor)
-            imcon.fill(CGRect(0,0,4,4))
-            imcon.setFillColor(UIColor.blue.cgColor)
-            imcon.fill(CGRect(0,0,4,2))
-        }
-
-        let stripesPattern = UIColor(patternImage:stripes)
-
-        UIGraphicsPushContext(con)
-        do {
-            stripesPattern.setFill()
-            let p = UIBezierPath()
-            p.move(to:CGPoint(0,25))
-            p.addLine(to:CGPoint(20,0))
-            p.addLine(to:CGPoint(40,25))
-            p.fill()
-        }
-        UIGraphicsPopContext()
     }
 
     func resizeArrowLayer(_ arrow:CALayer) {

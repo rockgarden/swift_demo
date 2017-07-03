@@ -14,7 +14,7 @@ class Main_animate: UITableViewController {
         switch indexPath.row {
         case 0:
             let vc = VisualEffectAnimationVC()
-            self.show(vc,sender: nil)
+            show(vc,sender: nil)
         default:
             break
         }

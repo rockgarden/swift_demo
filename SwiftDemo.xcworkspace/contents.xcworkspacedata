@@ -2,6 +2,9 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:demo/UniversalDemo/UniversalDemo.xcodeproj">
+   </FileRef>
+   <FileRef
       location = "group:demo/GCDConcurrencyThreadDemo/GCDConcurrencyThreadDemo.xcodeproj">
    </FileRef>
    <FileRef

@@ -11,7 +11,4 @@ import UIKit
 // if you don't want, that you have to special-case that situation (horiz regular, vertical compact)
 // or wrap it in a container controller
 
-class ConditionalConstraints: UIViewController {
-
-    
-}
+class ConditionalConstraints: UIViewController { }

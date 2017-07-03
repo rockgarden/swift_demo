@@ -23,8 +23,8 @@ class ColorPickerController: UIViewController {
 	init(colorName: String, andColor: UIColor) {
         self.colorName = colorName //Must init before super.init
         super.init(nibName: "ColorPicker", bundle: nil)
-        self.color = andColor
-        self.view.backgroundColor = color
+        //self.color = andColor
+        //view.backgroundColor = color
 	}
 
 	required init(coder aDecoder: NSCoder) {
