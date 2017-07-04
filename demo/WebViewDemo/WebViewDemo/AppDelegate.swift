@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import WebKit
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -24,8 +25,24 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, shouldSaveApplicationState coder: NSCoder) -> Bool {
         return true
     }
+    
+    /// 清空缓存
+    private func ClearCache() {
+        let dateFrom = NSDate.init(timeIntervalSince1970: 0)
+        if #available(iOS 9.0, *) {
+            let websiteDataTypes = WKWebsiteDataStore.allWebsiteDataTypes()
+            WKWebsiteDataStore.default().removeData(ofTypes: websiteDataTypes , modifiedSince: dateFrom as Date) {
+                debugPrint("清空缓存完成")
+            }
+        } else {
+            let libraryPath = NSSearchPathForDirectoriesInDomains(.libraryDirectory, .userDomainMask, true)[0]
+            let cookiesFolderPath = libraryPath.appending("/Cookies")
+            try? FileManager.default.removeItem(atPath: cookiesFolderPath)
+        }
+    }
 
 }
+
 
 func delay(_ delay:Double, closure:@escaping ()->()) {
     let when = DispatchTime.now() + delay
