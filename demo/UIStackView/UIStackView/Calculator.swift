@@ -107,7 +107,9 @@ class Calculator: UIViewController {
 		let hostStackView = UIStackView(arrangedSubviews: [textHostView, buttonStackView])
 		hostStackView.frame = hostView.bounds
 		hostStackView.axis = .vertical
-		// hostStackView.distribution = .FillEqually
+        hostStackView.distribution = .fillEqually
+        /// fillProportionally 
+        /// 堆叠视图调整其排列视图大小的布局，以便它们沿堆叠视图的轴线填充可用空间。当排列的视图不适合堆叠视图时，它会根据其压缩阻力优先级缩小视图。如果排列的视图不填满堆叠视图，则会根据其拥挤优先级来扩展视图。如果存在任何歧义，堆叠视图将根据sortedSubviews数组中的索引来调整排列的视图的大小。会对 Subviews.widthAnchor 有要求。
 		hostStackView.spacing = 0.5
 
 		textHostView.heightAnchor.constraint(equalToConstant: 150).isActive = true
