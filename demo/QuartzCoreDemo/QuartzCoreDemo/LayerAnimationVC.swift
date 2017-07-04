@@ -3,10 +3,15 @@
 import UIKit
 
 
+/// CAKeyframeAnimation: Sprite and Swing
 class LayerAnimationVC : UIViewController {
+
     @IBOutlet var compassView : CompassView!
-    
     var which = 1
+
+    var sprite : CALayer!
+    lazy var images : [UIImage] = self.makeImages()
+    let Y = UIScreen.main.bounds.height-100
 
     @IBAction func doButton(_ sender: Any?) {
         let c = self.compassView.layer as! BaseCompassLayer
@@ -159,6 +164,52 @@ class LayerAnimationVC : UIViewController {
         default: break
         }
         which = which<10 ? which+1 : 1
+    }
+
+    func makeImages () -> [UIImage] {
+        var arr = [UIImage]()
+
+        for i in [0,1,2,1,0] {
+            arr += [imageOfSize(CGSize(24,24)) { _ in
+                UIImage(named: "sprites")!.draw(at:CGPoint(CGFloat(-(5+i)*24), -4*24))
+                }]
+        }
+        return arr
+    }
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+
+        self.sprite = CALayer()
+        self.sprite.frame = CGRect(30,Y,24,24)
+        /// contentsScale 施加到层的比例因子。
+        /// 该值定义了层的逻辑坐标空间（以点测量）与物理坐标空间（以像素为单位）之间的映射。 较高的比例因子表明，在渲染时，层中的每个点由多个像素表示。 例如，如果缩放因子为2.0，层的边界为50 x 50点，则用于呈现图层内容的位图的大小为100 x 100像素。
+        /// 此属性的默认值为1.0。 对于连接到视图的图层，视图会自动将缩放因子更改为适合当前屏幕的值。 对于您创建和管理自己的图层，您必须根据屏幕的分辨率和您提供的内容自己设置此属性的值。 核心动画使用您指定的值作为提示来确定如何呈现您的内容。
+        self.sprite.contentsScale = UIScreen.main.scale
+        self.view.layer.addSublayer(self.sprite)
+        self.sprite.contents = self.images[0].cgImage
+    }
+
+    @IBAction func doSprite(_ sender: Any?) {
+        /// CALayer.contents 提供图层内容的对象。动画。此属性的默认值为nil。
+        /// 如果使用图层显示静态图像，则可以将此属性设置为包含要显示的图像的CGImage。 （在macOS 10.6及更高版本中，您还可以将属性设置为NSImage对象。）为此属性分配一个值会导致图层使用图像而不是创建单独的后备存储。
+        /// 如果层对象绑定到视图对象，则应避免直接设置此属性的内容。 视图和图层之间的相互作用通常会导致视图在后续更新期间替换此属性的内容。
+        let anim = CAKeyframeAnimation(keyPath:#keyPath(CALayer.contents))
+        anim.values = self.images.map {$0.cgImage!}
+        anim.keyTimes = [0.0, 0.25, 0.5, 0.75, 1.0]
+        anim.calculationMode = kCAAnimationDiscrete
+        anim.duration = 1.5
+        anim.repeatCount = .infinity
+
+        let anim2 = CABasicAnimation(keyPath:#keyPath(CALayer.position))
+        anim2.duration = 10
+        anim2.toValue = CGPoint(350,Y)
+
+        let group = CAAnimationGroup()
+        group.animations = [anim, anim2]
+        group.duration = 10
+
+        self.sprite.add(group, forKey:nil)
     }
     
 }

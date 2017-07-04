@@ -10,7 +10,6 @@
 		44E6656B1E670CA300B6A02F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 44E6656A1E670CA300B6A02F /* Assets.xcassets */; };
 		44E6656E1E670CA300B6A02F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 44E6656C1E670CA300B6A02F /* LaunchScreen.storyboard */; };
 		44E665761E670CCB00B6A02F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 44E665751E670CCB00B6A02F /* Main.storyboard */; };
-		44E6657D1E670D1200B6A02F /* FrozenAnimationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44E665781E670D1200B6A02F /* FrozenAnimationVC.swift */; };
 		44E6657E1E670D1200B6A02F /* AnimateWithDurationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44E665791E670D1200B6A02F /* AnimateWithDurationVC.swift */; };
 		44E6657F1E670D1200B6A02F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44E6657A1E670D1200B6A02F /* AppDelegate.swift */; };
 		44E665861E670D2500B6A02F /* cell-image.png in Resources */ = {isa = PBXBuildFile; fileRef = 44E665831E670D2500B6A02F /* cell-image.png */; };
@@ -28,7 +27,6 @@
 		44E6656F1E670CA300B6A02F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		44E665751E670CCB00B6A02F /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		44E665771E670D1100B6A02F /* CAAnimation-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CAAnimation-Bridging-Header.h"; sourceTree = "<group>"; };
-		44E665781E670D1200B6A02F /* FrozenAnimationVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FrozenAnimationVC.swift; sourceTree = "<group>"; };
 		44E665791E670D1200B6A02F /* AnimateWithDurationVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnimateWithDurationVC.swift; sourceTree = "<group>"; };
 		44E6657A1E670D1200B6A02F /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		44E665831E670D2500B6A02F /* cell-image.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "cell-image.png"; sourceTree = "<group>"; };
@@ -74,7 +72,6 @@
 				C2FDFD151EA72F3D0063ABA8 /* Main_CAAnimation.swift */,
 				44E665751E670CCB00B6A02F /* Main.storyboard */,
 				44EBF7B31F08EE1300CFF751 /* CASpringAnimationVC.swift */,
-				44E665781E670D1200B6A02F /* FrozenAnimationVC.swift */,
 				44E665791E670D1200B6A02F /* AnimateWithDurationVC.swift */,
 				C2FDFD171EA730280063ABA8 /* CAEmitterLayerVC.swift */,
 				44E6656A1E670CA300B6A02F /* Assets.xcassets */,
@@ -175,7 +172,6 @@
 				44E6657F1E670D1200B6A02F /* AppDelegate.swift in Sources */,
 				C2FDFD181EA730280063ABA8 /* CAEmitterLayerVC.swift in Sources */,
 				44E6657E1E670D1200B6A02F /* AnimateWithDurationVC.swift in Sources */,
-				44E6657D1E670D1200B6A02F /* FrozenAnimationVC.swift in Sources */,
 				44EBF7B41F08EE1300CFF751 /* CASpringAnimationVC.swift in Sources */,
 				44E665871E670D2500B6A02F /* RippleEffectView.swift in Sources */,
 			);

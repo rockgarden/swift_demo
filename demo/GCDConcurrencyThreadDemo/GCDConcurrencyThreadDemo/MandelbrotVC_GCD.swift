@@ -50,14 +50,18 @@ class MandelbrotVC_GCD: UIViewController {
     }
     
     func testDispatchGroups() {
+        /// DispatchQueue管理工作项的执行。 提交到队列的每个工作项都由系统管理的线程池进行处理。
         DispatchQueue.global(qos: .background).async {
             let queue = DispatchQueue(label:"com.rockgarden.groupq", attributes:.concurrent)
+            /// DispatchGroup允许工作的聚合同步。 您可以使用它们提交多个不同的工作项，并跟踪它们何时完成，即使它们可能在不同的队列上运行。当所有指定的任务完成之前, progress can’t be made，此行为可能会有所帮助。
             let group = DispatchGroup()
-            
+
+            /// 明确地表示块已经进入组。
             group.enter()
             queue.async {
                 delay(Double(arc4random_uniform(10))) {
                     print("finished 1")
+                    /// 明确表示组中的块已经完成。调用此函数会减少组中未完成任务的当前计数。使用此函数（使用enter（））可以让应用程序通过除了使用dispatch_group_async（_：_：_ :)函数之外的方式显式添加和删除组中的任务，从而正确地管理任务引用计数。对此函数的调用必须和调用enter（）相当。调用它比enter（）更多次，这将导致计数为负。
                     group.leave()
                 }
             }
@@ -87,7 +91,7 @@ class MandelbrotVC_GCD: UIViewController {
 }
 
 
-// not used, just testing syntax
+/// just testing syntax
 class AssetTester : NSObject {
     let assetQueue = DispatchQueue(label: "testing.testing")
     func getAssetInternal() -> AVAsset {

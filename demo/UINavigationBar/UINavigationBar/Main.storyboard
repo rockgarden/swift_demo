@@ -398,7 +398,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vNa-Ua-eCF" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" id="Cdq-rT-6XK">
-                    <rect key="frame" x="0.0" y="-1" width="290" height="30"/>
+                    <rect key="frame" x="0.0" y="-2" width="290" height="30"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <segments>
                         <segment title="Image"/>
@@ -496,7 +496,7 @@
         <scene sceneID="vCG-Q7-GFf">
             <objects>
                 <navigationController definesPresentationContext="YES" id="xjW-Ii-a5Y" customClass="CustomBackButtonNavController" customModule="UINavigationBar" customModuleProvider="target" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="JE7-Q7-XJz">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="JE7-Q7-XJz">
                         <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -513,7 +513,7 @@
             <objects>
                 <navigationController definesPresentationContext="YES" toolbarHidden="NO" id="3cA-LZ-6R0" sceneMemberID="viewController">
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="qty-cB-ppd">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="qty-cB-ppd">
                         <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -533,7 +533,7 @@
         <scene sceneID="QLe-9Q-yDA">
             <objects>
                 <navigationController definesPresentationContext="YES" id="EO8-8C-sx2" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" translucent="NO" shadowImage="TransparentPixel" id="KYZ-Ar-kmC">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" shadowImage="TransparentPixel" id="KYZ-Ar-kmC">
                         <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -654,7 +654,7 @@
         <scene sceneID="DYN-EG-cUx">
             <objects>
                 <navigationController definesPresentationContext="YES" id="Ssr-hk-KKY" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="RLN-cv-I3G">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="RLN-cv-I3G">
                         <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -727,7 +727,7 @@
         <image name="CustomRightView" width="150" height="100"/>
         <image name="CustomTitleView" width="238" height="90"/>
         <image name="TransparentPixel" width="1" height="1"/>
-        <image name="manny" width="90" height="103"/>
+        <image name="manny" width="44" height="44"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>

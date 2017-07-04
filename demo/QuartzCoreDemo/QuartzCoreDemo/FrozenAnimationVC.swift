@@ -1,5 +1,4 @@
 
-
 import UIKit
 
 
@@ -17,10 +16,17 @@ class FrozenAnimationVC: UIViewController {
         
         shape.fillColor = UIColor.clear.cgColor
         shape.strokeColor = UIColor.red.cgColor
-        
+
+        /// 创建一个不可变的矩形路径。
+        /// 这是一个便利函数，它创建一个矩形的路径。 使用这种便利功能比创建可变路径并向其添加一个矩形更有效。
+        /// 调用此函数相当于使用minX和相关函数找到矩形的角，然后使用moveTo（_：x：y :)，addLineTo（_：x：y :)和closeSubpath（）函数绘制 长方形。
         let path = CGPath(rect:shape.bounds, transform:nil)
         shape.path = path
-        
+
+        /// ellipseIn 创建一个不可变的椭圆路径。
+        /// 这是一个创建椭圆路径的便利函数。使用这个便利功能比创建一个可变路径并向它添加一个椭圆更有效。
+        /// 椭圆是由一系列的Bézier曲线近似é。它的中心是由矩形参数定义的矩形的中点。如果矩形是正方形，则椭圆是圆形的，半径等于矩形的宽度（或高度）的一半。如果矩形参数指定的矩形，然后椭圆的长轴和短轴是由矩形的宽度和高度的确定。
+        /// 椭圆形成一个完整的路径，路径的椭圆的绘制从一个移动到手术结束关闭子路径的操作，用顺时针方向移动。如果你提供一个仿射变换，然后构建Bézier曲线定义椭圆转化之前将它们添加到路径。
         let path2 = CGPath(ellipseIn:shape.bounds, transform:nil)
         let ba = CABasicAnimation(keyPath:#keyPath(CAShapeLayer.path))
         ba.duration = 1
@@ -39,7 +45,6 @@ class FrozenAnimationVC: UIViewController {
         shape.add(ba, forKey:#keyPath(CAShapeLayer.path))
         
         self.shape = shape
-        
     }
     
     @IBAction func doSlider(_ slider: UISlider) {

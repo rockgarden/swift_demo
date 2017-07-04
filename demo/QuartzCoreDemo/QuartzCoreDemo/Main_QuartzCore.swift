@@ -15,6 +15,9 @@ class Main_QuartzCore: UITableViewController {
         case 4:
             let vcInstance = CATransformLayerVC()
             navigationController?.pushViewController(vcInstance, animated: true)
+        case 8:
+            let vc = CAAnimationGroupVC()
+            navigationController?.pushViewController(vc, animated: true)
         default:
             break
         }

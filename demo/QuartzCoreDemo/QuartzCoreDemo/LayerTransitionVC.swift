@@ -28,7 +28,6 @@ class LayerTransitionVC : UIViewController {
         CATransaction.setDisableActions(true)
         lay.contents = UIImage(named: "tree")!.cgImage
         lay.add(t, forKey: nil)
-
     }
     
 }

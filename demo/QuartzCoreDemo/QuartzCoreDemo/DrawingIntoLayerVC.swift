@@ -1,6 +1,7 @@
 import UIKit
 
 
+/// FIXME: Crash!
 class DrawingIntoLayerVC : UIViewController {
     @IBOutlet var views: NSArray?
     var smilers = [Smiler(), Smiler2()] // to serve as delegates
@@ -27,7 +28,7 @@ class DrawingIntoLayerVC : UIViewController {
         tlay.alignmentMode = kCAAlignmentCenter
         tlay.foregroundColor = UIColor.green.cgColor
         
-        return lay;
+        return lay
     }
     
     // Big change in iOS 10: CALayerDelegate is a real protocol!
