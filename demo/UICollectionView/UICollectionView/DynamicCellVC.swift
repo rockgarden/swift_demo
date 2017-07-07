@@ -89,7 +89,7 @@ class DynamicCellVC: UIViewController, UICollectionViewDataSource, UICollectionV
 
         // Use fake cell to calculate height
         let reuseIdentifier = kCellIdentifier
-        var cell: MyCollectionViewCell = self.collectionView.dequeueReusableOffScreenCellWithReuseIdentifier(reuseIdentifier) as! MyCollectionViewCell
+        let cell = self.collectionView.dequeueReusableOffScreenCellWithReuseIdentifier(reuseIdentifier) as! MyCollectionViewCell
 
         // Config cell and let system determine size
         cell.configCell(titleData[indexPath.item] as String, content: contentData[indexPath.item] as String, titleFont: fontArray[indexPath.item] as String, contentFont: fontArray[indexPath.item] as String)

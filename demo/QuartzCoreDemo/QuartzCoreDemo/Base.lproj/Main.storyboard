@@ -415,7 +415,7 @@
         <scene sceneID="Y9D-fV-BQb">
             <objects>
                 <navigationController id="CO2-uI-uFK" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="RgR-qk-bDl">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="RgR-qk-bDl">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>

@@ -98,10 +98,17 @@ class ButtonVC: UIViewController {
 extension ButtonVC: UIViewControllerTransitioningDelegate {
 
     func animationController(forPresented presented: UIViewController, presenting: UIViewController, source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
-        return FadeInAnimator(transitionDuration: 0.5, startingAlpha: 0.8)
+//        ta.originFrame = tsButton.convert(tsButton.frame, to: nil)
+//        ta.presenting = true
+//        tsButton.isHidden = true
+//        return nil
+        return FadeInAnimator(transitionDuration: 0.5, startingAlpha: 0.0)
     }
     
     func animationController(forDismissed dismissed: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+//        tsButton.isHidden = false
+//        ta.presenting = false
+//        return ta
         return nil
     }
 }

@@ -14,8 +14,6 @@
 		4417213E1EDB154800933908 /* ContainerVC_Size.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4417213D1EDB154800933908 /* ContainerVC_Size.swift */; };
 		441721411EDB161E00933908 /* ContainerVC_Size_Child.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4417213F1EDB161E00933908 /* ContainerVC_Size_Child.swift */; };
 		441721421EDB161E00933908 /* ContainerVC_Size_Child.xib in Resources */ = {isa = PBXBuildFile; fileRef = 441721401EDB161E00933908 /* ContainerVC_Size_Child.xib */; };
-		44263B311EFBEA5A0045A717 /* WorkspaceGlobal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44263B301EFBEA5A0045A717 /* WorkspaceGlobal.swift */; };
-		44263B321EFBEAAE0045A717 /* WorkspaceGlobal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44263B301EFBEA5A0045A717 /* WorkspaceGlobal.swift */; };
 		44263B351EFBEE6F0045A717 /* ExtraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44263B331EFBEE6F0045A717 /* ExtraViewController.swift */; };
 		44263B361EFBEE6F0045A717 /* ExtraViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 44263B341EFBEE6F0045A717 /* ExtraViewController.xib */; };
 		44263B381EFBF58E0045A717 /* CustomAlertVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 44263B371EFBF58E0045A717 /* CustomAlertVC.xib */; };
@@ -51,6 +49,9 @@
 		44CCE26B1F03EB5F009BB4C8 /* OrientationsPermittedVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44CCE26A1F03EB5F009BB4C8 /* OrientationsPermittedVC.swift */; };
 		44CCE26E1F0525BF009BB4C8 /* OrientationsPermitted.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 44CCE26D1F0525BF009BB4C8 /* OrientationsPermitted.storyboard */; };
 		44CCE2701F0525D8009BB4C8 /* AttemptRotationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44CCE26F1F0525D8009BB4C8 /* AttemptRotationVC.swift */; };
+		44D9346F1F0FF318005CC3F2 /* WorkspaceGlobal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44D9346E1F0FF318005CC3F2 /* WorkspaceGlobal.swift */; };
+		44EDE6FF1F0FF08B00E68655 /* ZoomOutTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44EDE6FE1F0FF08B00E68655 /* ZoomOutTransition.swift */; };
+		44EDE7011F0FF1A300E68655 /* ZoomOutVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44EDE7001F0FF1A300E68655 /* ZoomOutVC.swift */; };
 		C29FFCC21ECACB340034587E /* TransitionImageCollectionVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C29FFCC11ECACB340034587E /* TransitionImageCollectionVC.swift */; };
 		C29FFCC41ECAD7640034587E /* EvernoteTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = C29FFCC31ECAD7640034587E /* EvernoteTransition.swift */; };
 		C29FFCC61ECAD7980034587E /* EvernoteCollectionVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C29FFCC51ECAD7980034587E /* EvernoteCollectionVC.swift */; };
@@ -89,7 +90,6 @@
 		4417213D1EDB154800933908 /* ContainerVC_Size.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContainerVC_Size.swift; sourceTree = "<group>"; };
 		4417213F1EDB161E00933908 /* ContainerVC_Size_Child.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContainerVC_Size_Child.swift; sourceTree = "<group>"; };
 		441721401EDB161E00933908 /* ContainerVC_Size_Child.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ContainerVC_Size_Child.xib; sourceTree = "<group>"; };
-		44263B301EFBEA5A0045A717 /* WorkspaceGlobal.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WorkspaceGlobal.swift; sourceTree = "<group>"; };
 		44263B331EFBEE6F0045A717 /* ExtraViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExtraViewController.swift; sourceTree = "<group>"; };
 		44263B341EFBEE6F0045A717 /* ExtraViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ExtraViewController.xib; sourceTree = "<group>"; };
 		44263B371EFBF58E0045A717 /* CustomAlertVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CustomAlertVC.xib; sourceTree = "<group>"; };
@@ -131,6 +131,9 @@
 		44CCE26A1F03EB5F009BB4C8 /* OrientationsPermittedVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrientationsPermittedVC.swift; sourceTree = "<group>"; };
 		44CCE26D1F0525BF009BB4C8 /* OrientationsPermitted.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = OrientationsPermitted.storyboard; sourceTree = "<group>"; };
 		44CCE26F1F0525D8009BB4C8 /* AttemptRotationVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AttemptRotationVC.swift; sourceTree = "<group>"; };
+		44D9346E1F0FF318005CC3F2 /* WorkspaceGlobal.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WorkspaceGlobal.swift; path = ../WorkspaceGlobal.swift; sourceTree = "<group>"; };
+		44EDE6FE1F0FF08B00E68655 /* ZoomOutTransition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZoomOutTransition.swift; sourceTree = "<group>"; };
+		44EDE7001F0FF1A300E68655 /* ZoomOutVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZoomOutVC.swift; sourceTree = "<group>"; };
 		C29FFCC11ECACB340034587E /* TransitionImageCollectionVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransitionImageCollectionVC.swift; sourceTree = "<group>"; };
 		C29FFCC31ECAD7640034587E /* EvernoteTransition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EvernoteTransition.swift; sourceTree = "<group>"; };
 		C29FFCC51ECAD7980034587E /* EvernoteCollectionVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EvernoteCollectionVC.swift; sourceTree = "<group>"; };
@@ -202,6 +205,8 @@
 				C29FFCC11ECACB340034587E /* TransitionImageCollectionVC.swift */,
 				C29FFCCF1ECADC8D0034587E /* TransitionImage.swift */,
 				C29FFCD11ECADE2F0034587E /* EvernoteTransition */,
+				44EDE6FE1F0FF08B00E68655 /* ZoomOutTransition.swift */,
+				44EDE7001F0FF1A300E68655 /* ZoomOutVC.swift */,
 			);
 			name = Transition;
 			sourceTree = "<group>";
@@ -252,7 +257,7 @@
 		449D1CAA1E992C57000C7446 = {
 			isa = PBXGroup;
 			children = (
-				44263B301EFBEA5A0045A717 /* WorkspaceGlobal.swift */,
+				44D9346E1F0FF318005CC3F2 /* WorkspaceGlobal.swift */,
 				C29FFCD31ECAECA40034587E /* PinterestSwift */,
 				4459BC921EE0631700717B8D /* PoppverDemo */,
 				449D1CB51E992C57000C7446 /* UIViewController */,
@@ -469,7 +474,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				44263B321EFBEAAE0045A717 /* WorkspaceGlobal.swift in Sources */,
 				4459BCAA1EE0638F00717B8D /* MyPopoverBackgroundView.swift in Sources */,
 				4459BC961EE0631700717B8D /* PopoverVC.swift in Sources */,
 				4459BCA81EE0638F00717B8D /* PopoverViewControllers.swift in Sources */,
@@ -491,6 +495,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				44B1E0171EF413F8005CF9C7 /* ViewControllerPreviewingVC.swift in Sources */,
+				44EDE7011F0FF1A300E68655 /* ZoomOutVC.swift in Sources */,
 				4459BCAF1EE06BE100717B8D /* PopoverOnPhoneVC.swift in Sources */,
 				C29FFCDE1ECAECA40034587E /* CHTCollectionViewWaterfallLayout.swift in Sources */,
 				C29FFCC41ECAD7640034587E /* EvernoteTransition.swift in Sources */,
@@ -498,8 +503,10 @@
 				C29FFCDF1ECAECA40034587E /* Extension.swift in Sources */,
 				441721391EDAC25600933908 /* ContainerVC_Constraints.swift in Sources */,
 				C29FFCCE1ECADAF40034587E /* Main_Transition.swift in Sources */,
+				44D9346F1F0FF318005CC3F2 /* WorkspaceGlobal.swift in Sources */,
 				441721331EDA729D00933908 /* CVCS_ChildVC.swift in Sources */,
 				44263B3C1EFBFBFC0045A717 /* InsetSmallerVC.swift in Sources */,
+				44EDE6FF1F0FF08B00E68655 /* ZoomOutTransition.swift in Sources */,
 				448AC22F1EF2AAFA00013F08 /* AdaptivePresentationVC.swift in Sources */,
 				4417213E1EDB154800933908 /* ContainerVC_Size.swift in Sources */,
 				448AC2361EF2ACDA00013F08 /* PVCThirdVC.swift in Sources */,
@@ -507,7 +514,6 @@
 				C29FFCCA1ECAD7E90034587E /* NoteViewController.swift in Sources */,
 				C29FFCC61ECAD7980034587E /* EvernoteCollectionVC.swift in Sources */,
 				C29FFCE51ECAECA40034587E /* NTTransitionProtocol.swift in Sources */,
-				44263B311EFBEA5A0045A717 /* WorkspaceGlobal.swift in Sources */,
 				C29FFCE01ECAECA40034587E /* Macro.swift in Sources */,
 				44263B3A1EFBF5D20045A717 /* CustomAlertVC.swift in Sources */,
 				44CCE26B1F03EB5F009BB4C8 /* OrientationsPermittedVC.swift in Sources */,

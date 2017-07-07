@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		44137B281EF943370074D10B /* WorkspaceGlobal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44137B271EF943370074D10B /* WorkspaceGlobal.swift */; };
 		44A9C4211D96B72400F09E6A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44A9C4201D96B72400F09E6A /* AppDelegate.swift */; };
 		44A9C4231D96B72400F09E6A /* TestCustomNavBarVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44A9C4221D96B72400F09E6A /* TestCustomNavBarVC.swift */; };
 		44A9C4281D96B72400F09E6A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 44A9C4271D96B72400F09E6A /* Assets.xcassets */; };
@@ -26,11 +25,11 @@
 		44CEA5FF1DF994AD00CD023A /* ExtendedNavBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44CEA5F51DF994AC00CD023A /* ExtendedNavBarViewController.swift */; };
 		44CEA6001DF994AD00CD023A /* NavigationPromptViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44CEA5F71DF994AC00CD023A /* NavigationPromptViewController.swift */; };
 		44CEA6021DF994E300CD023A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 44CEA6011DF994E300CD023A /* Main.storyboard */; };
+		44D934751F0FF3E8005CC3F2 /* WorkspaceGlobal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44D934741F0FF3E8005CC3F2 /* WorkspaceGlobal.swift */; };
 		C21C2DD21DEE7A8B00706D84 /* readme.rtf in Resources */ = {isa = PBXBuildFile; fileRef = C21C2DD11DEE7A8B00706D84 /* readme.rtf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		44137B271EF943370074D10B /* WorkspaceGlobal.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WorkspaceGlobal.swift; sourceTree = "<group>"; };
 		44A9C41D1D96B72400F09E6A /* UINavigationBar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UINavigationBar.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		44A9C4201D96B72400F09E6A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		44A9C4221D96B72400F09E6A /* TestCustomNavBarVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestCustomNavBarVC.swift; sourceTree = "<group>"; };
@@ -52,6 +51,7 @@
 		44CEA5F51DF994AC00CD023A /* ExtendedNavBarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExtendedNavBarViewController.swift; sourceTree = "<group>"; };
 		44CEA5F71DF994AC00CD023A /* NavigationPromptViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigationPromptViewController.swift; sourceTree = "<group>"; };
 		44CEA6011DF994E300CD023A /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		44D934741F0FF3E8005CC3F2 /* WorkspaceGlobal.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WorkspaceGlobal.swift; path = ../WorkspaceGlobal.swift; sourceTree = "<group>"; };
 		C21C2DD11DEE7A8B00706D84 /* readme.rtf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.rtf; path = readme.rtf; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -69,7 +69,7 @@
 		44A9C4141D96B72400F09E6A = {
 			isa = PBXGroup;
 			children = (
-				44137B271EF943370074D10B /* WorkspaceGlobal.swift */,
+				44D934741F0FF3E8005CC3F2 /* WorkspaceGlobal.swift */,
 				44CEA5E41DF9945E00CD023A /* ReadMe.md */,
 				C21C2DD11DEE7A8B00706D84 /* readme.rtf */,
 				44A9C41F1D96B72400F09E6A /* UINavigationBar */,
@@ -235,7 +235,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				44CEA5FB1DF994AC00CD023A /* CustomBackButtonViewController.m in Sources */,
-				44137B281EF943370074D10B /* WorkspaceGlobal.swift in Sources */,
+				44D934751F0FF3E8005CC3F2 /* WorkspaceGlobal.swift in Sources */,
 				44CEA5FE1DF994AD00CD023A /* ExtendedNavBarView.swift in Sources */,
 				44CEA5F91DF994AC00CD023A /* CustomBackButtonDetailViewController.swift in Sources */,
 				44CEA5FC1DF994AD00CD023A /* CustomRightViewController.swift in Sources */,

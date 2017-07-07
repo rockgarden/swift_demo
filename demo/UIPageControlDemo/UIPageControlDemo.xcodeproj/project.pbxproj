@@ -15,7 +15,7 @@
 		4494B6B81E6050AA00ADE0BE /* RootVC_PageControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4494B6B71E6050AA00ADE0BE /* RootVC_PageControl.swift */; };
 		4494B6BD1E606A3E00ADE0BE /* Person.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4494B6BC1E606A3E00ADE0BE /* Person.xib */; };
 		44B48DAC1EF6502500CBB7D3 /* AppUIPageVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44B48DAB1EF6502500CBB7D3 /* AppUIPageVC.swift */; };
-		44B48DAE1EF653F500CBB7D3 /* WorkspaceGlobal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44B48DAD1EF653F500CBB7D3 /* WorkspaceGlobal.swift */; };
+		44D934791F0FF49F005CC3F2 /* WorkspaceGlobal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44D934781F0FF49F005CC3F2 /* WorkspaceGlobal.swift */; };
 		C2019BE11EA89CC1006C04FE /* TabCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2019BDA1EA89CC1006C04FE /* TabCollectionCell.swift */; };
 		C2019BE21EA89CC1006C04FE /* TabCollectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C2019BDB1EA89CC1006C04FE /* TabCollectionCell.xib */; };
 		C2019BE31EA89CC1006C04FE /* TabPageOption.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2019BDC1EA89CC1006C04FE /* TabPageOption.swift */; };
@@ -47,7 +47,7 @@
 		4494B6B71E6050AA00ADE0BE /* RootVC_PageControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootVC_PageControl.swift; sourceTree = "<group>"; };
 		4494B6BC1E606A3E00ADE0BE /* Person.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Person.xib; sourceTree = "<group>"; };
 		44B48DAB1EF6502500CBB7D3 /* AppUIPageVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppUIPageVC.swift; sourceTree = "<group>"; };
-		44B48DAD1EF653F500CBB7D3 /* WorkspaceGlobal.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WorkspaceGlobal.swift; sourceTree = "<group>"; };
+		44D934781F0FF49F005CC3F2 /* WorkspaceGlobal.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WorkspaceGlobal.swift; path = ../WorkspaceGlobal.swift; sourceTree = "<group>"; };
 		C2019BDA1EA89CC1006C04FE /* TabCollectionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabCollectionCell.swift; sourceTree = "<group>"; };
 		C2019BDB1EA89CC1006C04FE /* TabCollectionCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TabCollectionCell.xib; sourceTree = "<group>"; };
 		C2019BDC1EA89CC1006C04FE /* TabPageOption.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabPageOption.swift; sourceTree = "<group>"; };
@@ -118,7 +118,7 @@
 		C2FA16DC1E6013F2000366B3 = {
 			isa = PBXGroup;
 			children = (
-				44B48DAD1EF653F500CBB7D3 /* WorkspaceGlobal.swift */,
+				44D934781F0FF49F005CC3F2 /* WorkspaceGlobal.swift */,
 				C29ED7771EB0913F0010BACB /* SwipeViewController */,
 				C2019BD91EA89CC1006C04FE /* TabPageViewController */,
 				C2FA16FA1E602118000366B3 /* CycleScrollView */,
@@ -247,7 +247,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				442C40DE1E615FBC009E6609 /* MyPage.swift in Sources */,
-				44B48DAE1EF653F500CBB7D3 /* WorkspaceGlobal.swift in Sources */,
+				44D934791F0FF49F005CC3F2 /* WorkspaceGlobal.swift in Sources */,
 				C29ED77F1EB091890010BACB /* SwipeVC.swift in Sources */,
 				C2019BE11EA89CC1006C04FE /* TabCollectionCell.swift in Sources */,
 				C2FA17031E602118000366B3 /* MUSizeTool.swift in Sources */,

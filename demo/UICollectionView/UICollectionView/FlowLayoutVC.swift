@@ -64,7 +64,6 @@ class FlowLayoutVC : UICollectionViewController {
 }
 
 
-
 // MARK: -  UICollectionViewDelegateFlowLayout
 /// adjust the size of each cell
 extension FlowLayoutVC : UICollectionViewDelegateFlowLayout {
