@@ -13,9 +13,23 @@ class ButtonVC: UIViewController {
     @IBOutlet weak var tsButton: TransitionSubmitButton!
     @IBOutlet weak var activityButton: ActivityButton!
     @IBOutlet weak var cpButton: CircleRippleButton!
+    //@IBOutlet weak var submitB: SubmitButton!
+
+    @IBOutlet var actBtn1: ActivityUIButton!
+    @IBOutlet var actBtn2: ActivityUIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+
+        let submitB = SubmitButton(frame: CGRect(x: 80, y: 40, width: 160, height: 54))
+        submitB.addTarget(target: self, action: #selector(demoFunction))
+        submitB.submitImage = UIImage(named: "jack");
+        submitB.successImage = UIImage(named: "knob");
+        submitB.warningImage = UIImage(named: "manny")
+        delay(3.0) {
+            submitB.buttonState = .success
+        }
+        //view.addSubview(submitB)
         
         //tsButton = TransitionSubmitButton(frame: CGRect(x: 0, y: 0, width: self.view.frame.size.width - 64, height: 44))
         //tsButton.center = self.view.center
@@ -58,6 +72,35 @@ class ButtonVC: UIViewController {
 //        activityButton3.rotatorSpeed = 8.0
 //        activityButton3.rotatorPadding = -7.0
 //        view.addSubview(activityButton3)
+
+
+        //Mark: Buttons From Nib
+        // Configure State
+        let disabledColor = UIColor(white: 0.673, alpha: 1.0)
+
+        actBtn1.hideTextWhenLoading = false
+        actBtn1.isLoading = false
+        actBtn1.activityIndicatorAlignment = .right
+        actBtn1.activityIndicatorEdgeInsets = UIEdgeInsets(top: 0, left: 50, bottom: 0, right: 10)
+        actBtn1.setTitleColor(disabledColor, for: .disabled)
+
+        // create the attributed string
+        let attributedString = NSMutableAttributedString(
+            string: "connecting",
+            attributes: [
+                NSForegroundColorAttributeName : disabledColor,
+                ]
+        )
+        actBtn1.setAttributedTitle(attributedString, for: .disabled)
+        //        btn1.activityIndicatorColor = .blue
+
+
+        actBtn2.hideTextWhenLoading = false
+        actBtn2.isLoading = false
+        actBtn2.activityIndicatorAlignment = .left
+        actBtn2.activityIndicatorViewStyle = UIActivityIndicatorViewStyle.gray
+        actBtn2.activityIndicatorEdgeInsets = UIEdgeInsetsMake(0, 10, 0, 0)
+        actBtn2.setTitle("Loading", for: UIControlState.disabled)
     }
     
     @IBAction func buttonPressed(sender: AnyObject) {
@@ -84,13 +127,53 @@ class ButtonVC: UIViewController {
     
     @IBAction func runCircleRipple(_ sender: Any) {
         cpButton.startAction()
-        GCD.delay(3) { () -> () in
-            self.cpButton.stopAction(true)
+        let vc = UIStoryboard.init(name: "LoadingButton", bundle: nil).instantiateViewController(withIdentifier: "LoadingButtonVC") as? LoadingButtonVC
+        self.present(vc!, animated: true) {
+            GCD.delay(3) { () -> () in
+                self.cpButton.stopAction(true)
+            }
         }
+    }
+
+    func demoFunction() {
+        print("Demo");
     }
     
     override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
         activityButton.stopActivity()
+    }
+
+    func randomAttributes(button: ActivityUIButton) {
+        buttonTapAction(button)
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
+            // your function here
+            self.randomAttributes(button: button)
+        }
+    }
+
+    @IBAction func buttonTapAction(_ button:ActivityUIButton) {
+        button.isLoading = !button.isLoading
+        button.activityIndicatorAlignment = .center
+        button.hideImageWhenLoading = true
+    }
+
+    @IBAction func doTap(_ sender:ActivityUIButton) {
+        sender.isEnabled = false
+        sender.isLoading = true;
+
+        if sender.tag == 3 {
+            sender.hideImageWhenLoading = true
+        }
+
+        DispatchQueue.main.asyncAfter(deadline: .now() + 3.5) {
+            sender.isEnabled = true
+            sender.isLoading = false
+
+            if sender.tag == 3 {
+                sender.isSelected = !sender.isSelected
+            }
+        }
+
     }
     
 }

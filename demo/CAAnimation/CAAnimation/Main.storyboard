@@ -83,7 +83,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Frozen Animation" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="sdE-KS-RXp">
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="null" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="sdE-KS-RXp">
                                                     <rect key="frame" x="15" y="0.0" width="345" height="43.5"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="0.0"/>
@@ -92,9 +92,6 @@
                                                 </label>
                                             </subviews>
                                         </tableViewCellContentView>
-                                        <connections>
-                                            <segue destination="J4V-4w-tnp" kind="show" id="bLC-av-xnQ"/>
-                                        </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" tag="5" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" textLabel="SgR-3B-mux" style="IBUITableViewCellStyleDefault" id="iPZ-5S-bkW">
                                         <rect key="frame" x="0.0" y="204" width="375" height="44"/>
@@ -216,50 +213,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9xu-Cj-aAB" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="122" y="77"/>
-        </scene>
-        <!--Frozen AnimationVC-->
-        <scene sceneID="bkh-4u-qye">
-            <objects>
-                <viewController storyboardIdentifier="FrozenAnimationVC" id="J4V-4w-tnp" customClass="FrozenAnimationVC" customModule="CAAnimation" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="Yds-Jj-lgJ"/>
-                        <viewControllerLayoutGuide type="bottom" id="9h2-NR-i2p"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="hXD-SC-2ub">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <subviews>
-                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="1Ri-3T-9RZ">
-                                <rect key="frame" x="18" y="84" width="339" height="31"/>
-                                <connections>
-                                    <action selector="doSlider:" destination="J4V-4w-tnp" eventType="valueChanged" id="8KR-4i-TMh"/>
-                                </connections>
-                            </slider>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RCr-dw-upj">
-                                <rect key="frame" x="87.5" y="232.5" width="201" height="201"/>
-                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="201" id="9DR-hl-EYZ"/>
-                                    <constraint firstAttribute="height" constant="201" id="sIE-wd-teJ"/>
-                                </constraints>
-                            </view>
-                        </subviews>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <constraints>
-                            <constraint firstAttribute="centerY" secondItem="RCr-dw-upj" secondAttribute="centerY" constant="0.5" id="AcQ-Im-RqR"/>
-                            <constraint firstAttribute="centerX" secondItem="RCr-dw-upj" secondAttribute="centerX" constant="-0.5" id="Gdm-Vb-T3G"/>
-                            <constraint firstItem="1Ri-3T-9RZ" firstAttribute="top" secondItem="Yds-Jj-lgJ" secondAttribute="bottom" constant="20" id="ISh-ae-py6"/>
-                            <constraint firstAttribute="trailing" secondItem="1Ri-3T-9RZ" secondAttribute="trailing" constant="20" id="cwp-Vg-3ce"/>
-                            <constraint firstItem="1Ri-3T-9RZ" firstAttribute="leading" secondItem="hXD-SC-2ub" secondAttribute="leading" constant="20" id="mDE-ep-e41"/>
-                        </constraints>
-                    </view>
-                    <connections>
-                        <outlet property="v" destination="RCr-dw-upj" id="wBQ-bk-JcA"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dWL-Cf-wQQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="121" y="752"/>
         </scene>
         <!--Cancel Animation-->
         <scene sceneID="rGm-ue-r1p">

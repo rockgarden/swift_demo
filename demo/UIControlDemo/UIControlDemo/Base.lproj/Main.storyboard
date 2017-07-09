@@ -395,7 +395,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="ekp-aq-4kK">
-                                <rect key="frame" x="127" y="64" width="120" height="320"/>
+                                <rect key="frame" x="127" y="64" width="120" height="410"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HZW-68-Zha" customClass="RoundButton" customModule="UIControlDemo" customModuleProvider="target">
                                         <rect key="frame" x="30" y="0.0" width="60" height="30"/>
@@ -481,6 +481,25 @@
                                             <action selector="runCircleRipple:" destination="RSF-CP-Uhu" eventType="touchUpInside" id="VfX-EG-cy4"/>
                                         </connections>
                                     </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KqO-Kd-CIM" customClass="ActivityUIButton" customModule="UIControlDemo" customModuleProvider="target">
+                                        <rect key="frame" x="37" y="320" width="46" height="30"/>
+                                        <state key="normal" title="Button"/>
+                                        <connections>
+                                            <action selector="buttonTapAction:" destination="RSF-CP-Uhu" eventType="touchUpInside" id="Aii-jc-Zhc"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1NT-Ev-P0I" customClass="ActivityUIButton" customModule="UIControlDemo" customModuleProvider="target">
+                                        <rect key="frame" x="37" y="350" width="46" height="30"/>
+                                        <state key="normal" title="Button"/>
+                                        <connections>
+                                            <action selector="doTap:" destination="RSF-CP-Uhu" eventType="touchUpInside" id="lA4-1k-iSg"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pd0-bY-uSk" customClass="RotatingButton" customModule="UIControlDemo" customModuleProvider="target">
+                                        <rect key="frame" x="45" y="380" width="30" height="30"/>
+                                        <color key="tintColor" red="0.35367018880000001" green="0.36078431370000003" blue="0.71886241009999996" alpha="1" colorSpace="calibratedRGB"/>
+                                        <state key="normal" image="delete"/>
+                                    </button>
                                 </subviews>
                             </stackView>
                         </subviews>
@@ -491,6 +510,8 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="actBtn1" destination="KqO-Kd-CIM" id="unm-Pj-DCR"/>
+                        <outlet property="actBtn2" destination="1NT-Ev-P0I" id="XUT-4N-h2f"/>
                         <outlet property="activityButton" destination="Uux-BO-dVA" id="rlF-q2-Hkb"/>
                         <outlet property="cpButton" destination="z3G-U2-1LY" id="Kfu-Q3-QSp"/>
                         <outlet property="fpButton" destination="N3B-vK-S6A" id="gg2-tB-BlZ"/>
@@ -549,6 +570,7 @@
     </scenes>
     <resources>
         <image name="coin2.png" width="16" height="16"/>
+        <image name="delete" width="30" height="30"/>
         <image name="glypish-914-skull-and-crossbones" width="16" height="16"/>
         <image name="gold1b.png" width="16" height="16"/>
         <image name="gold2b.png" width="16" height="16"/>

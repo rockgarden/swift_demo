@@ -73,15 +73,15 @@ class FadeInAnimatorVC: UIViewController {
     }
 }
 
-extension FadeInAnimatorVC: UIViewControllerTransitioningDelegate {
 
+extension FadeInAnimatorVC: UIViewControllerTransitioningDelegate {
 
     func animationController(forPresented presented: UIViewController, presenting: UIViewController, source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
         return nil
     }
 
     func animationController(forDismissed dismissed: UIViewController) -> UIViewControllerAnimatedTransitioning? {
-        return ZoomOutAnimator(originFrame: tb.frame)
+        return FadeInAnimator()
     }
 }
 

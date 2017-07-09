@@ -227,7 +227,6 @@ extension Then where Self: Any {
         block(self)
     }
 }
-
 extension Then where Self: AnyObject {
 
     /// Makes it available to set properties with closures just after initializing.

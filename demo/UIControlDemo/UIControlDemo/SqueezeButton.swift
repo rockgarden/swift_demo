@@ -10,9 +10,9 @@ import UIKit
 
 
 class SqueezeButton: UIButton {
-    ///IMPORTANT: The button will still have all of the normal functionality like having a target and compatibility with storyboards. If you want to put a SqueezeButton in your storyboard, just drag a button onto the view and set its class to SqueezeButton. The corner radius of the button will be equal to the "standardCornerRadius" variable by default...
+    /// IMPORTANT: The button will still have all of the normal functionality like having a target and compatibility with storyboards. If you want to put a SqueezeButton in your storyboard, just drag a button onto the view and set its class to SqueezeButton. The corner radius of the button will be equal to the "standardCornerRadius" variable by default...
     
-    ///These 2 Bools are important for when the squeeze animation has not been completed but the user removes their finger. In that kind of scenario, we need to animate the button back to its normal shape in the completion handler of the shrinking animation...
+    /// These 2 Bools are important for when the squeeze animation has not been completed but the user removes their finger. In that kind of scenario, we need to animate the button back to its normal shape in the completion handler of the shrinking animation...
     var completedSqueeze = true
     var pendingOut = false
     
@@ -20,8 +20,7 @@ class SqueezeButton: UIButton {
     var expandTime = 0.2 ///animation time when expanding
     
     var standardCornerRadius: CGFloat = 10
-    
-    ///Looks best when corners are round
+
     init(frame: CGRect, cornerRadius: CGFloat) {
         super.init(frame: frame)
         layer.cornerRadius = cornerRadius
@@ -37,13 +36,13 @@ class SqueezeButton: UIButton {
         layer.cornerRadius = standardCornerRadius
     }
     
-    ///Animates in when touches begin
+    /// Animates in when touches begin
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         super.touchesBegan(touches, with: event)
         press()
     }
 
-    ///animates out when touch ends
+    /// animates out when touch ends
     override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
         super.touchesEnded(touches, with: event)
         rescaleButton()

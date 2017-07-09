@@ -11,7 +11,7 @@ import UIKit
 
 open class ZoomOutTransition: NSObject, UIViewControllerAnimatedTransitioning {
 
-    var transitionDuration: TimeInterval = 0.8
+    var duration: TimeInterval = 0.8
     var originFrame = CGRect.zero
 
     public convenience init(originFrame: CGRect) {
@@ -20,7 +20,7 @@ open class ZoomOutTransition: NSObject, UIViewControllerAnimatedTransitioning {
     }
 
     open func transitionDuration(using transitionContext: UIViewControllerContextTransitioning?) -> TimeInterval {
-        return transitionDuration
+        return duration
     }
 
     open func animateTransition(using transitionContext: UIViewControllerContextTransitioning) {
@@ -40,7 +40,7 @@ open class ZoomOutTransition: NSObject, UIViewControllerAnimatedTransitioning {
         containerView.addSubview(toView)
         containerView.addSubview(fromView)
 
-        UIView.animate(withDuration: transitionDuration,
+        UIView.animate(withDuration: duration,
                        animations: {
                         fromView.transform = scaleTransform
                         fromView.center = CGPoint(x: finalFrame.midX, y: finalFrame.midY)
