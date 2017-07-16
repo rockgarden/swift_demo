@@ -26,6 +26,8 @@
 		446D65D11EFFDEF800CA86F8 /* LoggingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 446D65D01EFFDEF800CA86F8 /* LoggingView.swift */; };
 		446D65D41EFFE1F000CA86F8 /* TransformAnimate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 446D65D31EFFE1F000CA86F8 /* TransformAnimate.swift */; };
 		446D65D61EFFE33900CA86F8 /* TransformVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 446D65D51EFFE33900CA86F8 /* TransformVC.swift */; };
+		44707C9C1F1BAD23007F0C08 /* TintColorVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44707C9B1F1BAD23007F0C08 /* TintColorVC.swift */; };
+		44707C9E1F1BADF8007F0C08 /* MySpecialButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44707C9D1F1BADF8007F0C08 /* MySpecialButton.swift */; };
 		44B1E01D1EF4294E005CF9C7 /* ViewTransitionVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44B1E01C1EF4294E005CF9C7 /* ViewTransitionVC.swift */; };
 		44B1E01F1EF433DF005CF9C7 /* HitTestVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44B1E01E1EF433DF005CF9C7 /* HitTestVC.swift */; };
 		44B48DA81EF4F87800CBB7D3 /* HitTestDistortedLayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44B48DA71EF4F87800CBB7D3 /* HitTestDistortedLayerView.swift */; };
@@ -66,6 +68,8 @@
 		446D65D01EFFDEF800CA86F8 /* LoggingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoggingView.swift; sourceTree = "<group>"; };
 		446D65D31EFFE1F000CA86F8 /* TransformAnimate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransformAnimate.swift; sourceTree = "<group>"; };
 		446D65D51EFFE33900CA86F8 /* TransformVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransformVC.swift; sourceTree = "<group>"; };
+		44707C9B1F1BAD23007F0C08 /* TintColorVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TintColorVC.swift; sourceTree = "<group>"; };
+		44707C9D1F1BADF8007F0C08 /* MySpecialButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MySpecialButton.swift; sourceTree = "<group>"; };
 		44B1E01C1EF4294E005CF9C7 /* ViewTransitionVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewTransitionVC.swift; sourceTree = "<group>"; };
 		44B1E01E1EF433DF005CF9C7 /* HitTestVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HitTestVC.swift; sourceTree = "<group>"; };
 		44B48DA71EF4F87800CBB7D3 /* HitTestDistortedLayerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HitTestDistortedLayerView.swift; sourceTree = "<group>"; };
@@ -174,6 +178,8 @@
 				44548CEE1F0792BB007DC239 /* SixBlueCirclesVC.swift */,
 				44548CF01F079A8A007DC239 /* DrawingInViewVC.swift */,
 				44548CF31F07D70B007DC239 /* LayerHierarchyVC.swift */,
+				44707C9B1F1BAD23007F0C08 /* TintColorVC.swift */,
+				44707C9D1F1BADF8007F0C08 /* MySpecialButton.swift */,
 				44EBF7A81F08C66400CFF751 /* UIView.animate */,
 				4417212E1ED9C31000933908 /* UIImageVIew */,
 				446D65D21EFFDF2600CA86F8 /* Transform */,
@@ -265,6 +271,7 @@
 				446D65CD1EFFDCA800CA86F8 /* Main_Transform.swift in Sources */,
 				446D65D11EFFDEF800CA86F8 /* LoggingView.swift in Sources */,
 				44548CF61F07E154007DC239 /* AppBaseVC.swift in Sources */,
+				44707C9C1F1BAD23007F0C08 /* TintColorVC.swift in Sources */,
 				440F8E9D1EE98F5800AA8563 /* WorkspaceGlobal.swift in Sources */,
 				44B48DA81EF4F87800CBB7D3 /* HitTestDistortedLayerView.swift in Sources */,
 				440F8E9B1EE98F0700AA8563 /* ImageAnimationVC.swift in Sources */,
@@ -279,6 +286,7 @@
 				446D65D61EFFE33900CA86F8 /* TransformVC.swift in Sources */,
 				C2A50CDC1EC19F9900ECB058 /* ActivityIndicator.swift in Sources */,
 				446D65CF1EFFDE5800CA86F8 /* TransformAndConstraintVC.swift in Sources */,
+				44707C9E1F1BADF8007F0C08 /* MySpecialButton.swift in Sources */,
 				44EBF7A51F08C3F600CFF751 /* VisualEffectAnimationVC.swift in Sources */,
 				44B48DAA1EF4FD3E00CBB7D3 /* HitTestDuringAnimationVC.swift in Sources */,
 				44EBF7AC1F08CD8400CFF751 /* CancelAnimationVC.swift in Sources */,

@@ -14,6 +14,12 @@ class UISegmentedControlVC: UIViewController {
         super.viewDidLoad()
         view.addSubview(seg)
 
+        delay(1) {
+            UIView.animate(withDuration:0.4) {
+                self.optSeg()
+            }
+        }
+
         /// 指定从父时间空间将时间映射到接收者的时间空间。如下如果速度为0.2，本地时间的进度是父时间的5分之一。
         self.seg.layer.speed = 0.2
         delay(1) {
@@ -71,9 +77,9 @@ class UISegmentedControlVC: UIViewController {
                 ctx.fill(CGRect(origin: .zero, size: sz2))
             }
         } else {
-            div = imageOfSize(sz) {
+            div = imageOfSize(sz2) {
                 UIColor.white.set()
-                UIGraphicsGetCurrentContext()!.fill(CGRect(origin: CGPoint(), size: sz))
+                UIGraphicsGetCurrentContext()!.fill(CGRect(origin: CGPoint(), size: sz2))
             }
         }
         self.seg.setDividerImage(div, forLeftSegmentState: .normal, rightSegmentState: .normal, barMetrics: .default)

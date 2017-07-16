@@ -166,13 +166,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "demo/UIControlDemo/UIControlDemo/ButtonVC.swift"
-            timestampString = "521218560.196106"
+            filePath = "demo/UIControlDemo/Classes/LoadingButtonVC.swift"
+            timestampString = "521385035.305603"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "193"
-            endingLineNumber = "193"
-            landmarkName = "animationController(forDismissed:)"
+            startingLineNumber = "125"
+            endingLineNumber = "125"
+            landmarkName = "dismissAction()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -182,29 +182,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "demo/UIControlDemo/UIControlDemo/MyShrinkingButton.swift"
-            timestampString = "521198256.35059"
+            filePath = "demo/UIControlDemo/Classes/LoadingButtonVC.swift"
+            timestampString = "521385083.098716"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "15"
-            endingLineNumber = "15"
-            landmarkName = "intrinsicContentSize"
-            landmarkType = "24">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "demo/UIControlDemo/UIControlDemo/MyShrinkingButton.swift"
-            timestampString = "521198264.406415"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "8"
-            endingLineNumber = "8"
-            landmarkName = "backgroundRect(forBounds:)"
+            startingLineNumber = "17"
+            endingLineNumber = "17"
+            landmarkName = "loadAction()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

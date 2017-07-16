@@ -65,6 +65,7 @@ open class ZoomTransition: NSObject,UIViewControllerAnimatedTransitioning {
                     toView!.alpha = 1
                     toView!.backgroundColor = originalColor
                     }, completion: { (_) in
+                        self.bubble.removeFromSuperview()
                         transitionContext.completeTransition(true)
                 })
             }) 

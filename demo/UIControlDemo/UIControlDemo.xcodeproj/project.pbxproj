@@ -18,6 +18,7 @@
 		44088DC21F112073004E8214 /* LoadingButtonVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44088DC11F112073004E8214 /* LoadingButtonVC.swift */; };
 		44088DC41F112163004E8214 /* LoadingButton.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 44088DC31F112163004E8214 /* LoadingButton.storyboard */; };
 		44088DC61F1126B9004E8214 /* ActivityUIButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44088DC51F1126B9004E8214 /* ActivityUIButton.swift */; };
+		443046CD1F13C3E4007DAB32 /* ShrinkLoadButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 443046CC1F13C3E4007DAB32 /* ShrinkLoadButton.swift */; };
 		444C1B891EF0181D00696852 /* TextFieldSlidingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 444C1B881EF0181D00696852 /* TextFieldSlidingVC.swift */; };
 		449BD9581E192470003A0762 /* MyKnob.swift in Sources */ = {isa = PBXBuildFile; fileRef = 449BD9571E192470003A0762 /* MyKnob.swift */; };
 		449BD95A1E19280C003A0762 /* MyShrinkingButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 449BD9591E19280C003A0762 /* MyShrinkingButton.swift */; };
@@ -60,6 +61,7 @@
 		44088DC11F112073004E8214 /* LoadingButtonVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadingButtonVC.swift; sourceTree = "<group>"; };
 		44088DC31F112163004E8214 /* LoadingButton.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LoadingButton.storyboard; sourceTree = "<group>"; };
 		44088DC51F1126B9004E8214 /* ActivityUIButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityUIButton.swift; sourceTree = "<group>"; };
+		443046CC1F13C3E4007DAB32 /* ShrinkLoadButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShrinkLoadButton.swift; sourceTree = "<group>"; };
 		444C1B881EF0181D00696852 /* TextFieldSlidingVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextFieldSlidingVC.swift; sourceTree = "<group>"; };
 		449BD9571E192470003A0762 /* MyKnob.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyKnob.swift; sourceTree = "<group>"; };
 		449BD9591E19280C003A0762 /* MyShrinkingButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyShrinkingButton.swift; sourceTree = "<group>"; };
@@ -122,6 +124,7 @@
 			children = (
 				C290895F1EC01A8A001E02FB /* ButtonVC.swift */,
 				44088DA71F10DA53004E8214 /* RotatingButton.swift */,
+				443046CC1F13C3E4007DAB32 /* ShrinkLoadButton.swift */,
 				44088DC51F1126B9004E8214 /* ActivityUIButton.swift */,
 				C27AFBE81EC454F00017A840 /* ActivityButton.swift */,
 				449BD9591E19280C003A0762 /* MyShrinkingButton.swift */,
@@ -265,6 +268,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				443046CD1F13C3E4007DAB32 /* ShrinkLoadButton.swift in Sources */,
 				C2C04C231ECC18C700F0A10B /* Main_UIControl.swift in Sources */,
 				44D934711F0FF36C005CC3F2 /* WorkspaceGlobal.swift in Sources */,
 				C27AFC121EC58F910017A840 /* CircleRippleButton.swift in Sources */,

@@ -29,7 +29,7 @@ class SectionDemoVC: UIViewController, UICollectionViewDelegate, UICollectionVie
         return fl
     }()
 
-    lazy var collectionView: UICollectionView = {
+    lazy var sectionCollectionView: UICollectionView = {
         let cv = UICollectionView(frame: .zero, collectionViewLayout: self.flowLayout!)
         cv.register(PaperCell.self, forCellWithReuseIdentifier: cellReuseIdentifier)
         cv.register(SectionHeaderView.self, forSupplementaryViewOfKind: UICollectionElementKindSectionHeader, withReuseIdentifier: headerReuseIdentifier)
@@ -49,8 +49,8 @@ class SectionDemoVC: UIViewController, UICollectionViewDelegate, UICollectionVie
         // 若不用 StoryBoard 中的 View 就不用关闭 automaticallyAdjust
         //automaticallyAdjustsScrollViewInsets = false
 
-        view.addSubview(collectionView)
-        let views = ["cv":collectionView] as [String : Any]
+        view.addSubview(sectionCollectionView)
+        let views = ["cv":sectionCollectionView] as [String : Any]
         NSLayoutConstraint.activate([
             NSLayoutConstraint.constraints(
                 withVisualFormat: "H:|-(0)-[cv]-(0)-|", options: [], metrics: nil, views: views),
@@ -79,7 +79,7 @@ class SectionDemoVC: UIViewController, UICollectionViewDelegate, UICollectionVie
     fileprivate var cellCanDel = false
     func rightBarBtnItemAction(sender: Any?){
         cellCanDel = !cellCanDel
-        for cell in collectionView.visibleCells{
+        for cell in sectionCollectionView.visibleCells{
             if cell is PaperCell{
                 (cell as! PaperCell).showDel(cellCanDel)
             }
@@ -179,10 +179,10 @@ class SectionDemoVC: UIViewController, UICollectionViewDelegate, UICollectionVie
 // MARK: Delete Item
 extension SectionDemoVC: PaperCellDelegate {
     func deleteActionByCell(cell: PaperCell) {
-        if let indexPath = collectionView.indexPath(for: cell){
-            collectionView.performBatchUpdates({ [weak self] in
+        if let indexPath = sectionCollectionView.indexPath(for: cell){
+            sectionCollectionView.performBatchUpdates({ [weak self] in
                 self?.papersDataSource.deleteItemsAtIndexPaths([indexPath])
-                self?.collectionView.deleteItems(at: [indexPath])
+                self?.sectionCollectionView.deleteItems(at: [indexPath])
                 }, completion: { (res: Bool) in
             })
         }

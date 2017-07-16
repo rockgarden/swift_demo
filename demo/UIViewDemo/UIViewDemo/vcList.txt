@@ -10,3 +10,4 @@ SixBlueCirclesVC
 DrawClearRectVC
 LayerHierarchyVC
 Root_UIView.animate
+TintColorVC

@@ -21,7 +21,6 @@ class UIControlVC: UIViewController {
     }
 
     func setupButton() {
-        super.viewDidLoad()
 
         let im = UIImage(named:"coin")!
         let sz = im.size

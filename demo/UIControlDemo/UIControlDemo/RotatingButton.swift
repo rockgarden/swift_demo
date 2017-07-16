@@ -115,7 +115,7 @@ class RotationLayer: CALayer {
     var hideInternal:TimeInterval = 0.3
     var cgImage: CGImage!
 
-    lazy var rotationAnimation:CABasicAnimation = {
+    lazy var rotationAnimation: CABasicAnimation = {
         let animation = CABasicAnimation(keyPath:"transform.rotation.z")
         animation.fromValue  = (0)
         animation.toValue    = (Float.pi * 2);

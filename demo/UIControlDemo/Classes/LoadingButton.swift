@@ -37,6 +37,7 @@ open class LoadingButton: UIButton {
     fileprivate var originalRadius:CGFloat = 0.0
     fileprivate var stateLayer:StateLayer!
     fileprivate var toVC:UIViewController!
+    fileprivate var fromVC:UIViewController!
     fileprivate var scuessTransition:ZoomTransition?
     fileprivate var scuessDismissTransition:ZoomTransition?
     
@@ -89,11 +90,12 @@ open class LoadingButton: UIButton {
         self.toVC = toVC
     }
     
-    open func addScuessWithDismissVC() {
+    open func addScuessWithDismissVC(_ fromVC:UIViewController) {
         if scuessTransition != nil {
             NSException(name:NSExceptionName(rawValue: "Transition Exist"), reason:"Can't add dissmiss transition because of scuessTransition Exist .", userInfo:nil).raise()
         }
         self.scuessDismissTransition = ZoomTransition(duration: 0.6, originFrame: frame)
+        self.fromVC = fromVC
     }
     
     open func startLoading() {
@@ -228,9 +230,9 @@ extension LoadingButton: StateLayerDelegate {
                 }
             }
         } else if let _ = self.scuessDismissTransition {
-            let current = UIViewController.currentViewController()
-            current.transitioningDelegate = self
-            current.dismiss(animated: true, completion: nil)
+            //let fromVC = UIViewController.currentViewController()
+            fromVC.transitioningDelegate = self
+            fromVC.dismiss(animated: true, completion: nil)
         } else {
             self.setShrink(false,shrinkKey:"ShrinkScuess")
         }

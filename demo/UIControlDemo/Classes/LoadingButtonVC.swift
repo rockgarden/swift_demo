@@ -24,7 +24,7 @@ class LoadingButtonVC: UIViewController{
     
     func fakeResult() {
         
-        let delayTime = DispatchTime.now() + .seconds(2)
+        let delayTime = DispatchTime.now() + .seconds(0)
         
         DispatchQueue.main.asyncAfter(deadline: delayTime) {
             if !self.txtAccount.text!.isEmpty && !self.txtPwd.text!.isEmpty {
@@ -40,9 +40,7 @@ class LoadingButtonVC: UIViewController{
                 self.loadingBtn.stopWithError("Password is Empty!!", hideInternal: 2, completed: {
                     print ("Fail Message Completed")
                 })
-                
             }
-
         }
     }
 }
@@ -116,11 +114,11 @@ class LoadingButtonVC2: UIViewController {
 
 class LoadingButtonVC3: UIViewController {
 
-    @IBOutlet weak var scuess:LoadingButton!
+    @IBOutlet weak var scuess: LoadingButton!
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        scuess.addScuessWithDismissVC()
+        scuess.addScuessWithDismissVC(self)
     }
 
     @IBAction func dismissAction () {
@@ -136,7 +134,6 @@ class LoadingButtonVC3: UIViewController {
 
     /*
      // MARK: - Navigation
-
      // In a storyboard-based application, you will often want to do a little preparation before navigation
      override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
      // Get the new view controller using segue.destinationViewController.
