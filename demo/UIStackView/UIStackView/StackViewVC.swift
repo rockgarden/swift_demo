@@ -39,6 +39,8 @@ class StackViewVC: UIViewController {
     /**
      removeFromSuperview call in the removeStar(_:) method is essential to remove the subview from the view hierarchy. Recall that removeArrangedSubview(_:) only tells the stack view that it no longer needs to manage the subview's constraints.
      
+     removeFromSuperview调用对从视图层次结构中删除子视图至关重要。removeArrangedSubview（_ :)只告诉堆栈视图，它不再需要管理子视图的约束。
+     
      - parameter sender: sender description
      */
     @IBAction func removeStar(_ sender: AnyObject) {

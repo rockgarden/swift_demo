@@ -18,7 +18,7 @@ class Calculator: UIViewController {
 		return view
 	}
 
-	convenience init(frame: CGRect) {
+    convenience init(frame: CGRect) {
 		self.init(nibName: nil, bundle: nil)
 		title = "Calculator"
 		setup()
@@ -26,7 +26,8 @@ class Calculator: UIViewController {
 
 	override func viewDidLoad() {
 		super.viewDidLoad()
-		self.view.addSubview(hostView)
+        setup()
+		view.addSubview(hostView)
 	}
 
 	func setup() {
