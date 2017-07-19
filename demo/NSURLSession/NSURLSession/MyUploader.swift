@@ -65,13 +65,14 @@ class MyUploader: NSObject {
     }
 }
 
+
 extension MyUploader: URLSessionDelegate, URLSessionTaskDelegate, URLSessionDataDelegate {
     
     func urlSession(_ session: URLSession, task: URLSessionTask, didCompleteWithError error: Error?) {
         if error != nil {
-            print("session \(session) occurred error \(error?.localizedDescription)")
+            print("session \(session) occurred error \(String(describing: error?.localizedDescription))")
         } else {
-            print("session \(session) upload completed, response: \(NSString(data: responseData as Data, encoding: String.Encoding.utf8.rawValue))")
+            print("session \(session) upload completed, response: \(String(describing: NSString(data: responseData as Data, encoding: String.Encoding.utf8.rawValue)))")
         }
     }
     

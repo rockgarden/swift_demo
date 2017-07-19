@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4479799A1F1F877900974064 /* Swift.png in Resources */ = {isa = PBXBuildFile; fileRef = 447979991F1F877900974064 /* Swift.png */; };
 		C2A1463D1DE5364200830347 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2A1463C1DE5364200830347 /* AppDelegate.swift */; };
 		C2A146441DE5364300830347 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C2A146431DE5364300830347 /* Assets.xcassets */; };
 		C2A146471DE5364300830347 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C2A146451DE5364300830347 /* LaunchScreen.storyboard */; };
@@ -22,6 +23,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		447979991F1F877900974064 /* Swift.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Swift.png; sourceTree = "<group>"; };
 		C2A146391DE5364200830347 /* NSURLSession.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NSURLSession.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C2A1463C1DE5364200830347 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C2A146431DE5364300830347 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -52,6 +54,7 @@
 		C2A146301DE5364200830347 = {
 			isa = PBXGroup;
 			children = (
+				447979991F1F877900974064 /* Swift.png */,
 				C2A1463B1DE5364200830347 /* NSURLSession */,
 				C2A1463A1DE5364200830347 /* Products */,
 			);
@@ -69,6 +72,7 @@
 			isa = PBXGroup;
 			children = (
 				C2A1463C1DE5364200830347 /* AppDelegate.swift */,
+				C2A146521DE536B200830347 /* Main.storyboard */,
 				C2A146541DE5375D00830347 /* MainVC.swift */,
 				C2A1464E1DE5365D00830347 /* MyUploader.swift */,
 				C2A1464F1DE5365D00830347 /* MyUploaderVC.swift */,
@@ -77,7 +81,6 @@
 				C2A146571DE5375D00830347 /* MyTableViewController.swift */,
 				C2A146581DE5375D00830347 /* URLSessionDataTaskVC.swift */,
 				C2A1465E1DE5384000830347 /* BackgroundDownloadVC.swift */,
-				C2A146521DE536B200830347 /* Main.storyboard */,
 				C2A146431DE5364300830347 /* Assets.xcassets */,
 				C2A146451DE5364300830347 /* LaunchScreen.storyboard */,
 				C2A146481DE5364300830347 /* Info.plist */,
@@ -146,6 +149,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C2A146471DE5364300830347 /* LaunchScreen.storyboard in Resources */,
+				4479799A1F1F877900974064 /* Swift.png in Resources */,
 				C2A146441DE5364300830347 /* Assets.xcassets in Resources */,
 				C2A146531DE536B200830347 /* Main.storyboard in Resources */,
 			);

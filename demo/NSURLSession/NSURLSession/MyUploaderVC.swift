@@ -26,9 +26,10 @@ class MyUploaderVC: UIViewController {
         let url = URL(string:s)!
         
         let bundle = Bundle.main
-        let path = bundle.path(forResource: "swift", ofType: "png")
-        let urlPath = URL(string: path!)
-        let data = try! Data(contentsOf: urlPath!)
+        let path = bundle.path(forResource: "Swift", ofType: "png")
+        //let urlPath = URL(string: path!)
+        let urlPath = URL(fileURLWithPath: path!)
+        let data = try! Data(contentsOf: urlPath)
         
         self.uploader.upload(url: url, data: data, completionHandler: {_ in })
         self.uploader.upload(url: url, data: data) { url in
