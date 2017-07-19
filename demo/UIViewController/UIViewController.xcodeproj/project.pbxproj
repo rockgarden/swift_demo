@@ -33,6 +33,11 @@
 		4459BCAF1EE06BE100717B8D /* PopoverOnPhoneVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4459BCAE1EE06BE100717B8D /* PopoverOnPhoneVC.swift */; };
 		4459BCB11EE06EE600717B8D /* linkhelp.html in Resources */ = {isa = PBXBuildFile; fileRef = 4459BCB01EE06EE600717B8D /* linkhelp.html */; };
 		446A26901EC9C54D0024230D /* ViewControllers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 446A268F1EC9C54C0024230D /* ViewControllers.swift */; };
+		447287C71F1EDFD20003B144 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 447287C41F1EDFD10003B144 /* Info.plist */; };
+		447287C81F1EDFD20003B144 /* SCLAlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 447287C51F1EDFD20003B144 /* SCLAlertView.swift */; };
+		447287C91F1EDFD20003B144 /* SCLExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 447287C61F1EDFD20003B144 /* SCLExtensions.swift */; };
+		447287CB1F1EE0210003B144 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 447287CA1F1EE0210003B144 /* Main.storyboard */; };
+		447287CD1F1EE02E0003B144 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 447287CC1F1EE02E0003B144 /* ViewController.swift */; };
 		448AC22F1EF2AAFA00013F08 /* AdaptivePresentationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 448AC22E1EF2AAFA00013F08 /* AdaptivePresentationVC.swift */; };
 		448AC2311EF2AC1F00013F08 /* PVCSecondVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 448AC2301EF2AC1F00013F08 /* PVCSecondVC.xib */; };
 		448AC2331EF2ACA800013F08 /* PVCSecondVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 448AC2321EF2ACA800013F08 /* PVCSecondVC.swift */; };
@@ -111,6 +116,11 @@
 		4459BCAE1EE06BE100717B8D /* PopoverOnPhoneVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopoverOnPhoneVC.swift; sourceTree = "<group>"; };
 		4459BCB01EE06EE600717B8D /* linkhelp.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = linkhelp.html; sourceTree = "<group>"; };
 		446A268F1EC9C54C0024230D /* ViewControllers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewControllers.swift; sourceTree = "<group>"; };
+		447287C41F1EDFD10003B144 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		447287C51F1EDFD20003B144 /* SCLAlertView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SCLAlertView.swift; sourceTree = "<group>"; };
+		447287C61F1EDFD20003B144 /* SCLExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SCLExtensions.swift; sourceTree = "<group>"; };
+		447287CA1F1EE0210003B144 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		447287CC1F1EE02E0003B144 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		448AC22E1EF2AAFA00013F08 /* AdaptivePresentationVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdaptivePresentationVC.swift; sourceTree = "<group>"; };
 		448AC2301EF2AC1F00013F08 /* PVCSecondVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PVCSecondVC.xib; sourceTree = "<group>"; };
 		448AC2321EF2ACA800013F08 /* PVCSecondVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PVCSecondVC.swift; sourceTree = "<group>"; };
@@ -228,6 +238,18 @@
 			path = PoppverDemo;
 			sourceTree = "<group>";
 		};
+		447287C31F1EDFD10003B144 /* SCLAlertView */ = {
+			isa = PBXGroup;
+			children = (
+				447287C41F1EDFD10003B144 /* Info.plist */,
+				447287C51F1EDFD20003B144 /* SCLAlertView.swift */,
+				447287C61F1EDFD20003B144 /* SCLExtensions.swift */,
+				447287CC1F1EE02E0003B144 /* ViewController.swift */,
+				447287CA1F1EE0210003B144 /* Main.storyboard */,
+			);
+			path = SCLAlertView;
+			sourceTree = "<group>";
+		};
 		448AC2381EF2AD3800013F08 /* PresentationController */ = {
 			isa = PBXGroup;
 			children = (
@@ -258,6 +280,7 @@
 			isa = PBXGroup;
 			children = (
 				44D9346E1F0FF318005CC3F2 /* WorkspaceGlobal.swift */,
+				447287C31F1EDFD10003B144 /* SCLAlertView */,
 				C29FFCD31ECAECA40034587E /* PinterestSwift */,
 				4459BC921EE0631700717B8D /* PoppverDemo */,
 				449D1CB51E992C57000C7446 /* UIViewController */,
@@ -459,11 +482,13 @@
 				448AC2311EF2AC1F00013F08 /* PVCSecondVC.xib in Resources */,
 				44B1E01B1EF41459005CF9C7 /* Pep.xib in Resources */,
 				44263B381EFBF58E0045A717 /* CustomAlertVC.xib in Resources */,
+				447287CB1F1EE0210003B144 /* Main.storyboard in Resources */,
 				449D1CBC1E992C57000C7446 /* Main.storyboard in Resources */,
 				44CCE26E1F0525BF009BB4C8 /* OrientationsPermitted.storyboard in Resources */,
 				C29FFCCC1ECAD8340034587E /* EvernoteCell.xib in Resources */,
 				4459BCB11EE06EE600717B8D /* linkhelp.html in Resources */,
 				448AC2371EF2ACDA00013F08 /* PVCThirdVC.xib in Resources */,
+				447287C71F1EDFD20003B144 /* Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -520,6 +545,7 @@
 				44CCE2701F0525D8009BB4C8 /* AttemptRotationVC.swift in Sources */,
 				C29FFCE61ECAECA40034587E /* NTWaterfallViewCell.swift in Sources */,
 				C29FFCD01ECADC8D0034587E /* TransitionImage.swift in Sources */,
+				447287CD1F1EE02E0003B144 /* ViewController.swift in Sources */,
 				44263B351EFBEE6F0045A717 /* ExtraViewController.swift in Sources */,
 				441721411EDB161E00933908 /* ContainerVC_Size_Child.swift in Sources */,
 				C29FFCC21ECACB340034587E /* TransitionImageCollectionVC.swift in Sources */,
@@ -534,7 +560,9 @@
 				C29FFCE71ECAECA40034587E /* WaterfallCollectionVC.swift in Sources */,
 				441721361EDAB82A00933908 /* ContainerVC.swift in Sources */,
 				C29FFCE21ECAECA40034587E /* NTHorizontalPageViewController.swift in Sources */,
+				447287C81F1EDFD20003B144 /* SCLAlertView.swift in Sources */,
 				446A26901EC9C54D0024230D /* ViewControllers.swift in Sources */,
+				447287C91F1EDFD20003B144 /* SCLExtensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
