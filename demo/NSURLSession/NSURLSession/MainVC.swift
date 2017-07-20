@@ -56,32 +56,77 @@ class MainVC: UIViewController, URLSessionDownloadDelegate {
     }
 
     // TODO: test URLSession URLRequest
-    func normalRequest() {
+    @IBAction func normalRequest(_ sender: Any) {
+        let urlString = "http://112.13.167.70:80/WebServices/Mobile.asmx/Login_New_V3?v_login_name=lixue&v_password=e2f2b3670cf60c4435b17f77853886f8&v_version=debug&v_device_type=2"
+        (sender as? UIButton)?.isEnabled = false
+        synchronousRequest(urlString, successHandler: {_ in
+            defer {
+                DispatchQueue.main.async {
+                    (sender as? UIButton)?.isEnabled = true
+                }
+            }
+        })
+    }
+
+    func synchronousRequest(_ urlString: String, timeout: Double = 10, successHandler: @escaping (_ result: [AnyHashable: Any]) -> Void, failureHandler: @escaping (String)->Void = {_ in}) {
+
+        var description: String!
+
         //创建URL对象
-        let urlString = "http://www.hangge.com"
-        let url = URL(string:urlString)
+        guard let url = URL(string: urlString) else {
+            description = NSLocalizedString("URL异常", comment: "Failed to init  URL")
+            return
+        }
+
         //创建请求对象
-        let request = URLRequest(url: url!)
+        let request = URLRequest(url: url)
         let session = URLSession.shared
-
         let semaphore = DispatchSemaphore(value: 0)
+        let dataTask = session.dataTask(with: request, completionHandler: {(data, response, error) -> Void in
 
-        let dataTask = session.dataTask(with: request,
-                                        completionHandler: {(data, response, error) -> Void in
-                                            if error != nil{
-                                                print(error!)
-                                            }else{
-                                                let str = String(data: data!, encoding: String.Encoding.utf8)
-                                                print(str!)
-                                            }
-                                            semaphore.signal()
+            guard (error != nil) else {
+                debugPrint(error!)
+                description = error?.localizedDescription
+                return
+            }
+
+            // If we don't get data back, alert the user.
+            //
+            guard let d = data else {
+                description = NSLocalizedString("Could not get data from the remote server", comment: "Failed to connect to server")
+                debugPrint(description)
+                return
+            }
+
+            // If we get data but can't unpack it as JSON, alert the user.
+            //
+            let jsonDictionary: [AnyHashable: Any]
+
+            do {
+                //let str = String(data: data!, encoding: String.Encoding.utf8)
+                //debugPrint(str!)
+                jsonDictionary = try JSONSerialization.jsonObject(with: d, options: []) as! [AnyHashable: Any]
+                successHandler(jsonDictionary)
+                debugPrint(jsonDictionary)
+            }
+            catch {
+                description = NSLocalizedString("Could not analyze data", comment: "Failed to unpack JSON")
+                debugPrint(description)
+                return
+            }
+            semaphore.signal()
         }) as URLSessionTask
 
-        //使用resume方法启动任务
+        if description != nil { failureHandler(description) }
+
+        /// 使用resume方法启动任务
         dataTask.resume()
-        
-        _ = semaphore.wait(timeout: DispatchTime.distantFuture)
-        print("数据加载完毕！")
+
+        let start = Date().timeIntervalSince1970
+        /// DispatchTime.distantFuture 在遥远的未来返回一个时间,您可以将此值传递给调度工作以使系统无限期地等待特定事件发生或满足条件的方法。
+        _ = semaphore.wait(timeout: DispatchTime.now()+timeout)
+        debugPrint("Timeline Request \(String(describing: url)): ",Date().timeIntervalSince1970 - start)
+        debugPrint("数据加载完毕！")
     }
 
 
