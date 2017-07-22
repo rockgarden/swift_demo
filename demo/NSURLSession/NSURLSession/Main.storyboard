@@ -290,10 +290,10 @@
             </objects>
             <point key="canvasLocation" x="662" y="878"/>
         </scene>
-        <!--My Table View Controller-->
+        <!--My Downloader TableVC-->
         <scene sceneID="0Ac-s9-taK">
             <objects>
-                <tableViewController storyboardIdentifier="MyTableViewController" id="bhc-77-PzJ" customClass="MyTableViewController" customModule="NSURLSession" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="MyDownloaderTableVC" id="bhc-77-PzJ" customClass="MyDownloaderTableVC" customModule="NSURLSession" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="zl5-IL-KFY">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

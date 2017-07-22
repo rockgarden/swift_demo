@@ -61,8 +61,7 @@ class BackgroundDownloadVC: UIViewController {
         NotificationCenter.default.removeObserver(self)
     }
     
-    @IBAction func crash (_ sender: Any?) { //AnyObject -> Any
-        //_ = sender as! String //Could not cast value of type 'UIButton' to 'NSString'.
+    @IBAction func crash (_ sender: Any?) {
         fatalError("kaboom")
     }
     

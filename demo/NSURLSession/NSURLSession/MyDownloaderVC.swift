@@ -13,6 +13,7 @@ class MyDownloaderVC: UIViewController {
 	@IBOutlet var iv: UIImageView!
 
 	lazy var configuration: URLSessionConfiguration = {
+        /// .ephemeral 返回对缓存，Cookie或凭据不使用持久存储的会话配置。短暂会话配置对象类似于默认会话配置对象，但相应的会话对象不将缓存，凭据存储或任何与会话相关的数据存储到磁盘。相反，会话相关数据存储在RAM中。短暂会话将数据写入磁盘的唯一时间是当您将URL写入文件的内容时。
 		let config = URLSessionConfiguration.ephemeral
 		config.allowsCellularAccess = false
 		config.urlCache = nil

@@ -2,7 +2,7 @@
 
 import UIKit
 
-class MyTableViewController: UITableViewController, UITableViewDataSourcePrefetching {
+class MyDownloaderTableVC: UITableViewController, UITableViewDataSourcePrefetching {
 
 	lazy var configuration: URLSessionConfiguration = {
 		let config = URLSessionConfiguration.ephemeral

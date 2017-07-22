@@ -6,12 +6,19 @@
 import UIKit
 
 class CAEmitterLayerVC: UIViewController {
-    
+
+    var b1: UIBarButtonItem!
+
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = UIColor.black
+        title = "CAEmitter"
+
+        b1 = UIBarButtonItem(title: "next", style: .plain, target: self, action: #selector(nextVC))
+        navigationItem.rightBarButtonItems = [b1]
+
         setUp()
-        //createYanhua()
+        createYanhua()
     }
     
     /// 烟火发射
@@ -119,8 +126,7 @@ class CAEmitterLayerVC: UIViewController {
         burst.emitterCells = [spark]
         
         //最后将发射器附加到主视图的layer上
-        self.view.layer.addSublayer(emitter)
-        
+        view.layer.addSublayer(emitter)
     }
     
     /// 粒子发射
@@ -190,6 +196,17 @@ class CAEmitterLayerVC: UIViewController {
         
         return image!
     }
-    
+
+    func nextVC(_ sender: Any) {
+        (sender as? UIBarButtonItem)?.isEnabled = false
+        let vc = CAEmitterLayerVC1()
+        self.show(vc, sender: nil)
+    }
+
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        b1.isEnabled = true
+    }
+
 }
 

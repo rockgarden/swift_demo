@@ -93,6 +93,7 @@ class MandelbrotVC_GCD: UIViewController {
 
 /// just testing syntax
 class AssetTester : NSObject {
+
     let assetQueue = DispatchQueue(label: "testing.testing")
     func getAssetInternal() -> AVAsset {
         return AVAsset()
@@ -103,5 +104,27 @@ class AssetTester : NSObject {
             theAsset = self.getAssetInternal().copy() as! AVAsset
         }
         return theAsset
+    }
+
+    //定义一个队列
+    let queue:DispatchQueue
+    //用于保持结果的变量
+    var result:String?
+
+    func getResult(block:@escaping (String)->Void) -> Void{
+        //挂起队列
+        queue.suspend()
+        //将回调处理加入队列
+        queue.async{
+            block(self.result!)
+        }
+    }
+
+    func locationManager() {
+        guard result != nil else {
+            result = "ok"
+            queue.resume()
+            return
+        }
     }
 }

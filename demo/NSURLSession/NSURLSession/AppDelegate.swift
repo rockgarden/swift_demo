@@ -58,12 +58,12 @@ extension AppDelegate: URLSessionDownloadDelegate {
     }
     
     func urlSession(_ session: URLSession, task: URLSessionTask, didCompleteWithError error: Error?) {
-        NSLog("%@", "completed; error: \(error)")
+        NSLog("%@", "completed; error: \(String(describing: error))")
     }
     
     // === this is the Really Interesting Part
     func application(_ application: UIApplication, handleEventsForBackgroundURLSession identifier: String, completionHandler: @escaping () -> Void) {
-        NSLog("%@", "hello hello, storing completion handler")
+        NSLog("%@", "hello, storing completion handler")
         self.ch = completionHandler
         let _ = self.session // make sure we have one
     }

@@ -152,7 +152,7 @@
         <scene sceneID="xNh-ga-QlM">
             <objects>
                 <navigationController id="b1I-47-c23" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="3l9-gA-4WU">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="3l9-gA-4WU">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -167,7 +167,7 @@
         <!--Animate With DurationVC-->
         <scene sceneID="Y99-yq-pkr">
             <objects>
-                <viewController storyboardIdentifier="AnimateWithDurationVC" id="RcP-8G-WzZ" customClass="AnimateWithDurationVC" customModule="animate" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="AnimateWithDurationVC" id="RcP-8G-WzZ" customClass="AnimateWithDurationVC" customModule="CAAnimation" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="aJs-6y-4nQ"/>
                         <viewControllerLayoutGuide type="bottom" id="38v-tU-dkJ"/>

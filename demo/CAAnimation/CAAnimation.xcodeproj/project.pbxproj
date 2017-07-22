@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4435D3531F2380800024CD74 /* CAEmitterLayerVC1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4435D3521F2380800024CD74 /* CAEmitterLayerVC1.swift */; };
 		44E6656B1E670CA300B6A02F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 44E6656A1E670CA300B6A02F /* Assets.xcassets */; };
 		44E6656E1E670CA300B6A02F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 44E6656C1E670CA300B6A02F /* LaunchScreen.storyboard */; };
 		44E665761E670CCB00B6A02F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 44E665751E670CCB00B6A02F /* Main.storyboard */; };
@@ -21,6 +22,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4435D3521F2380800024CD74 /* CAEmitterLayerVC1.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CAEmitterLayerVC1.swift; sourceTree = "<group>"; };
 		44E665601E670CA300B6A02F /* CAAnimation.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CAAnimation.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		44E6656A1E670CA300B6A02F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		44E6656D1E670CA300B6A02F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -74,6 +76,7 @@
 				44EBF7B31F08EE1300CFF751 /* CASpringAnimationVC.swift */,
 				44E665791E670D1200B6A02F /* AnimateWithDurationVC.swift */,
 				C2FDFD171EA730280063ABA8 /* CAEmitterLayerVC.swift */,
+				4435D3521F2380800024CD74 /* CAEmitterLayerVC1.swift */,
 				44E6656A1E670CA300B6A02F /* Assets.xcassets */,
 				44E6656C1E670CA300B6A02F /* LaunchScreen.storyboard */,
 				44E6656F1E670CA300B6A02F /* Info.plist */,
@@ -173,6 +176,7 @@
 				C2FDFD181EA730280063ABA8 /* CAEmitterLayerVC.swift in Sources */,
 				44E6657E1E670D1200B6A02F /* AnimateWithDurationVC.swift in Sources */,
 				44EBF7B41F08EE1300CFF751 /* CASpringAnimationVC.swift in Sources */,
+				4435D3531F2380800024CD74 /* CAEmitterLayerVC1.swift in Sources */,
 				44E665871E670D2500B6A02F /* RippleEffectView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

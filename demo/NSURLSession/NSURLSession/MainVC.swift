@@ -70,11 +70,12 @@ class MainVC: UIViewController, URLSessionDownloadDelegate {
 
     func synchronousRequest(_ urlString: String, timeout: Double = 10, successHandler: @escaping (_ result: [AnyHashable: Any]) -> Void, failureHandler: @escaping (String)->Void = {_ in}) {
 
-        var description: String!
+        var errorInfo: String!
 
         //创建URL对象
         guard let url = URL(string: urlString) else {
-            description = NSLocalizedString("URL异常", comment: "Failed to init  URL")
+            errorInfo = NSLocalizedString("URL异常", comment: "Failed to init  URL")
+            failureHandler(errorInfo)
             return
         }
 
@@ -86,15 +87,17 @@ class MainVC: UIViewController, URLSessionDownloadDelegate {
 
             guard (error != nil) else {
                 debugPrint(error!)
-                description = error?.localizedDescription
+                errorInfo = error?.localizedDescription
+                failureHandler(errorInfo)
                 return
             }
 
             // If we don't get data back, alert the user.
             //
             guard let d = data else {
-                description = NSLocalizedString("Could not get data from the remote server", comment: "Failed to connect to server")
-                debugPrint(description)
+                errorInfo = NSLocalizedString("Could not get data from the remote server", comment: "Failed to connect to server")
+                debugPrint(errorInfo)
+                failureHandler(errorInfo)
                 return
             }
 
@@ -105,19 +108,19 @@ class MainVC: UIViewController, URLSessionDownloadDelegate {
             do {
                 //let str = String(data: data!, encoding: String.Encoding.utf8)
                 //debugPrint(str!)
-                jsonDictionary = try JSONSerialization.jsonObject(with: d, options: []) as! [AnyHashable: Any]
+                /// .allowFragments: 指定解析器应该允许不是NSArray或NSDictionary的实例的顶级对象。
+                jsonDictionary = try JSONSerialization.jsonObject(with: d, options: [.allowFragments]) as! [AnyHashable: Any]
                 successHandler(jsonDictionary)
                 debugPrint(jsonDictionary)
             }
             catch {
-                description = NSLocalizedString("Could not analyze data", comment: "Failed to unpack JSON")
-                debugPrint(description)
+                errorInfo = NSLocalizedString("Could not analyze data", comment: "Failed to unpack JSON")
+                debugPrint(errorInfo)
+                failureHandler(errorInfo)
                 return
             }
             semaphore.signal()
         }) as URLSessionTask
-
-        if description != nil { failureHandler(description) }
 
         /// 使用resume方法启动任务
         dataTask.resume()

@@ -17,7 +17,7 @@
 		C2A146591DE5375D00830347 /* MainVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2A146541DE5375D00830347 /* MainVC.swift */; };
 		C2A1465A1DE5375D00830347 /* MyDownloader.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2A146551DE5375D00830347 /* MyDownloader.swift */; };
 		C2A1465B1DE5375D00830347 /* MyDownloaderVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2A146561DE5375D00830347 /* MyDownloaderVC.swift */; };
-		C2A1465C1DE5375D00830347 /* MyTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2A146571DE5375D00830347 /* MyTableViewController.swift */; };
+		C2A1465C1DE5375D00830347 /* MyDownloaderTableVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2A146571DE5375D00830347 /* MyDownloaderTableVC.swift */; };
 		C2A1465D1DE5375D00830347 /* URLSessionDataTaskVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2A146581DE5375D00830347 /* URLSessionDataTaskVC.swift */; };
 		C2A1465F1DE5384000830347 /* BackgroundDownloadVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2A1465E1DE5384000830347 /* BackgroundDownloadVC.swift */; };
 /* End PBXBuildFile section */
@@ -35,7 +35,7 @@
 		C2A146541DE5375D00830347 /* MainVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainVC.swift; sourceTree = "<group>"; };
 		C2A146551DE5375D00830347 /* MyDownloader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyDownloader.swift; sourceTree = "<group>"; };
 		C2A146561DE5375D00830347 /* MyDownloaderVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyDownloaderVC.swift; sourceTree = "<group>"; };
-		C2A146571DE5375D00830347 /* MyTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyTableViewController.swift; sourceTree = "<group>"; };
+		C2A146571DE5375D00830347 /* MyDownloaderTableVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyDownloaderTableVC.swift; sourceTree = "<group>"; };
 		C2A146581DE5375D00830347 /* URLSessionDataTaskVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = URLSessionDataTaskVC.swift; sourceTree = "<group>"; };
 		C2A1465E1DE5384000830347 /* BackgroundDownloadVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BackgroundDownloadVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -78,7 +78,7 @@
 				C2A1464F1DE5365D00830347 /* MyUploaderVC.swift */,
 				C2A146561DE5375D00830347 /* MyDownloaderVC.swift */,
 				C2A146551DE5375D00830347 /* MyDownloader.swift */,
-				C2A146571DE5375D00830347 /* MyTableViewController.swift */,
+				C2A146571DE5375D00830347 /* MyDownloaderTableVC.swift */,
 				C2A146581DE5375D00830347 /* URLSessionDataTaskVC.swift */,
 				C2A1465E1DE5384000830347 /* BackgroundDownloadVC.swift */,
 				C2A146431DE5364300830347 /* Assets.xcassets */,
@@ -115,7 +115,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0810;
-				LastUpgradeCheck = 0810;
+				LastUpgradeCheck = 0830;
 				ORGANIZATIONNAME = rockgarden;
 				TargetAttributes = {
 					C2A146381DE5364200830347 = {
@@ -167,7 +167,7 @@
 				C2A1465F1DE5384000830347 /* BackgroundDownloadVC.swift in Sources */,
 				C2A1465D1DE5375D00830347 /* URLSessionDataTaskVC.swift in Sources */,
 				C2A1465A1DE5375D00830347 /* MyDownloader.swift in Sources */,
-				C2A1465C1DE5375D00830347 /* MyTableViewController.swift in Sources */,
+				C2A1465C1DE5375D00830347 /* MyDownloaderTableVC.swift in Sources */,
 				C2A1463D1DE5364200830347 /* AppDelegate.swift in Sources */,
 				C2A146501DE5365D00830347 /* MyUploader.swift in Sources */,
 				C2A1465B1DE5375D00830347 /* MyDownloaderVC.swift in Sources */,
@@ -206,6 +206,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -256,6 +257,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
