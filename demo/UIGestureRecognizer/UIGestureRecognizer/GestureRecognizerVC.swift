@@ -13,7 +13,7 @@ class GestureRecognizerVC: UIViewController {
     
     var netRotation: CGFloat = 0
     var lastScaleFactor: CGFloat = 1
-    let which = 1
+    let which = 2
     
     @IBOutlet var longPresser: UILongPressGestureRecognizer!
     @IBOutlet weak var image: UIImageView!
@@ -22,7 +22,7 @@ class GestureRecognizerVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        image.image = UIImage(named: "image1.png")
+        image.image = UIImage(named: "image1")
         
         // ROTATION
         let rotateGesture = UIRotationGestureRecognizer(target: self, action: #selector(rotateGesture(_:)))
@@ -33,7 +33,7 @@ class GestureRecognizerVC: UIViewController {
         longPressGesture.minimumPressDuration = 2.0;
         image.addGestureRecognizer(longPressGesture)
         
-        // PINCH
+        /// PINCH: 寻找涉及两个触摸的捏合手势。当用户将两个手指朝向彼此移动时，传统意义是缩小;当用户将两个手指彼此远离时，常规的意义是放大。捏是一个持续的姿态。当两个触摸已经移动足够被认为是捏捏手势时，手势开始（开始）。当手指移动时（手指按住两个手指），手势会改变（改变）。手指从视图抬起时结束（结束）。
         let pinchGesture: UIPinchGestureRecognizer =
             UIPinchGestureRecognizer(target: self, action: #selector(pinchGesture(_:)))
         image.addGestureRecognizer(pinchGesture)
@@ -61,6 +61,7 @@ class GestureRecognizerVC: UIViewController {
         
         switch which {
         case 1:
+            /// Pan: 它寻找平移（拖动）手势。用户在平移时必须在视图上按一个或多个手指。实现此手势识别器的动作方法的客户端可以询问手势的当前翻译和速度。平移手势是连续的。当手指的最小数量（minimumNumberOfTouches）已经移动足够以被认为是平移时，它开始（开始）。当手指移动时，至少最小数量的手指被按下时，它会改变（改变）。当所有手指抬起时，它结束（结束）。该类的客户端可以在其操作方法中查询UIPanGestureRecognizer对象的当前手势翻译（翻译（in :)）和翻译速度（速度（in :)）。他们可以指定其坐标系应用于平移和速度值的视图。客户还可以将翻译重置为所需的值。
             pan = UIPanGestureRecognizer(target: self, action: #selector(dragging))
             image.addGestureRecognizer(pan)
         case 2:
@@ -88,10 +89,6 @@ class GestureRecognizerVC: UIViewController {
         let swipeGestureUp = UISwipeGestureRecognizer(target: self, action: #selector(respondToSwipeGesture(_:)))
         swipeGestureUp.direction = UISwipeGestureRecognizerDirection.up
         image.addGestureRecognizer(swipeGestureUp)
-    }
-    
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
     }
     
     // ROTATION
@@ -254,9 +251,9 @@ extension GestureRecognizerVC : UIGestureRecognizerDelegate {
      返回值为第一个手势能否阻止或被阻止第二个手势的触发
      
      - parameter gestureRecognizer:      gestureRecognizer description
-     - parameter otherGestureRecognizer: <#otherGestureRecognizer description#>
+     - parameter otherGestureRecognizer: otherGestureRecognizer description
      
-     - returns: <#return value description#>
+     - returns: return value description
      */
     func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldRequireFailureOf otherGestureRecognizer: UIGestureRecognizer) -> Bool {
         print("=== should\n\(gestureRecognizer)\n\(otherGestureRecognizer)")
@@ -272,7 +269,7 @@ extension GestureRecognizerVC : UIGestureRecognizerDelegate {
      - parameter gestureRecognizer:      第一个手势
      - parameter otherGestureRecognizer: 第二个手势
      
-     - returns: <#return value description#>
+     - returns: return value description
      */
     func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldBeRequiredToFailBy otherGestureRecognizer: UIGestureRecognizer) -> Bool {
         print("=== should be\n\(gestureRecognizer)\n\(otherGestureRecognizer)")

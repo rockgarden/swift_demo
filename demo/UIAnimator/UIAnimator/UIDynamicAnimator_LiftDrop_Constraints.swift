@@ -16,7 +16,8 @@ class UIDynamicAnimator_LiftDrop_Constraints: UIViewController, UIDynamicAnimato
         switch g.state {
         case .began:
             self.origCenter = self.redView.center
-            
+
+            /// IMPORT: 停用约束,启用frame
             NSLayoutConstraint.deactivate(self.constraints)
             self.redView.translatesAutoresizingMaskIntoConstraints = true
             
@@ -41,7 +42,7 @@ class UIDynamicAnimator_LiftDrop_Constraints: UIViewController, UIDynamicAnimato
         case .changed:
             let pt = g.location(ofTouch:0, in:self.view)
             // move anchor to follow touch
-            if pt.y > self.redView.bounds.height/2 { // impose arbitrary limit
+            if pt.y > self.redView.bounds.height/2 { // 施加任意限制 impose arbitrary limit
                 self.att.anchorPoint = pt
             }
             

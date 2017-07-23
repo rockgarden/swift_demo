@@ -278,7 +278,7 @@ extension PanGestureView : UIGestureRecognizerDelegate {
     }
     
     func elasticPoint(_ x: Float, li: Float, lf: Float) -> Float {
-        let π = Float(M_PI)
+        let π = Float(Float.pi)
 
         if (fabs(x) >= fabs(li)) {
             return atanf(tanf((π*li)/(2*lf))*(x/li))*(2*lf/π)

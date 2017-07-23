@@ -8,6 +8,7 @@
 
 import UIKit
 
+/// 扔动画
 class UIViewPropertyAnimator_Fling: UIViewController {
     @IBOutlet weak var v: UIView!
 
@@ -17,7 +18,7 @@ class UIViewPropertyAnimator_Fling: UIViewController {
         self.v.addGestureRecognizer(p)
     }
 
-    let which = 1
+    var which = 1
 
     func dragging(_ p : UIPanGestureRecognizer) {
         let v = p.view!
@@ -40,9 +41,7 @@ class UIViewPropertyAnimator_Fling: UIViewController {
             case 2:
                 let vel = p.velocity(in: v.superview!)
                 // vel is a CGPoint, not a CGVector
-                // moreover, it is measured in points per second
-                // but a spring initial velocity is a CGVector...
-                // and it is measured with respect to the animation distance
+                // 此外，它以秒为单位进行测量, 但spring的初始速度是一个CGVector, 并且相对于动画距离来测量
                 let c = v.center
                 let distx = abs(c.x - dest.x)
                 let disty = abs(c.y - dest.y)
@@ -55,6 +54,7 @@ class UIViewPropertyAnimator_Fling: UIViewController {
             }
         default: break
         }
+        which = which < 2 ? which+1 : 1
     }
     
 }
