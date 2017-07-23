@@ -18,8 +18,6 @@ class DependencyVC : UIViewController, UIGestureRecognizerDelegate {
         print("should \(String(describing: s1)) on \(s2) require failure of \(String(describing: s3)) on \(s4)")
         
         return false
-
-        
     }
     
     func gestureRecognizer(_ g: UIGestureRecognizer, shouldBeRequiredToFailBy og: UIGestureRecognizer) -> Bool {

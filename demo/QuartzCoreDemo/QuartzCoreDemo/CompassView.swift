@@ -9,8 +9,20 @@ class CompassView : UIView {
 }
 
 class BaseCompassView : UIView {
+    
     override class var layerClass : AnyClass {
         return BaseCompassLayer.self
+    }
+
+    // view makes layer tappable
+    @IBAction func tapped(_ t:UITapGestureRecognizer) {
+        let p = t.location(ofTouch:0, in: self.superview)
+        let hitLayer = layer.hitTest(p)
+        let arrow = (layer as! BaseCompassLayer).arrow!
+        if hitLayer == arrow { // respond to touch
+            arrow.transform = CATransform3DRotate(
+                arrow.transform, .pi/4.0, 0, 0, 1)
+        }
     }
 }
 
@@ -27,8 +39,29 @@ class BaseCompassLayer : CALayer, CALayerDelegate {
         }
     }
 
+    /// ??? do what?
+    override func hitTest(_ p: CGPoint) -> CALayer? {
+        var lay = super.hitTest(p)
+        if lay == self.arrow {
+            // 人为地将接触性限制在大致的轴/点区域, artificially restrict touchability to roughly the shaft/point area
+            let pt = self.arrow?.convert(p, from:superlayer)
+            let path = CGMutablePath()
+            path.addRect(CGRect(10,20,20,80))
+            path.move(to:CGPoint(0,25))
+            path.addLine(to:CGPoint(20,0))
+            path.addLine(to:CGPoint(40,25))
+            path.closeSubpath()
+            if !path.contains(pt!, using: .winding) {
+                lay = nil
+            }
+            let result = lay != nil ? "hit" : "missed"
+            debugPrint("\(result) arrow at \(String(describing: pt))")
+        }
+        return lay
+    }
+
     func setup () {
-        print("setup")
+        debugPrint("setup")
 
         // the gradient
         let g = CAGradientLayer()

@@ -17,34 +17,37 @@ class GestureRecognizerVC: UIViewController {
     
     @IBOutlet var longPresser: UILongPressGestureRecognizer!
     @IBOutlet weak var image: UIImageView!
-    
+
+    var longP: UILongPressGestureRecognizer!
     var pan: UIPanGestureRecognizer!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         image.image = UIImage(named: "image1")
         
-        // ROTATION
+        /// ROTATION
         let rotateGesture = UIRotationGestureRecognizer(target: self, action: #selector(rotateGesture(_:)))
         image.addGestureRecognizer(rotateGesture)
         
-        // LONG PRESS
-        let longPressGesture = UILongPressGestureRecognizer(target: self, action: #selector(action(_:)))
-        longPressGesture.minimumPressDuration = 2.0;
-        image.addGestureRecognizer(longPressGesture)
+        /// LONG PRESS
+        let lp = UILongPressGestureRecognizer(target: self, action: #selector(longPress(_:)))
+        lp.minimumPressDuration = 2.0
+        longP = lp
+        image.addGestureRecognizer(longP)
+        longP.delegate = self
         
         /// PINCH: 寻找涉及两个触摸的捏合手势。当用户将两个手指朝向彼此移动时，传统意义是缩小;当用户将两个手指彼此远离时，常规的意义是放大。捏是一个持续的姿态。当两个触摸已经移动足够被认为是捏捏手势时，手势开始（开始）。当手指移动时（手指按住两个手指），手势会改变（改变）。手指从视图抬起时结束（结束）。
         let pinchGesture: UIPinchGestureRecognizer =
             UIPinchGestureRecognizer(target: self, action: #selector(pinchGesture(_:)))
         image.addGestureRecognizer(pinchGesture)
         
-        // Double Tap
+        /// Double Tap
         let tapGesture = UITapGestureRecognizer(target: self, action:
             #selector(handleTap(_:))) // 本地方法不用指明所有者
         tapGesture.numberOfTapsRequired = 2;
         image.addGestureRecognizer(tapGesture)
         
-        //FIXME: Check mark 和 Tap 冲突
+        // FIXME: Check mark 和 Tap 冲突
         let checkGesture = CheckmarkGestureRecognizer(target: self, action:
             #selector(handleTap(_:)))
         view.addGestureRecognizer(checkGesture)
@@ -64,16 +67,18 @@ class GestureRecognizerVC: UIViewController {
             /// Pan: 它寻找平移（拖动）手势。用户在平移时必须在视图上按一个或多个手指。实现此手势识别器的动作方法的客户端可以询问手势的当前翻译和速度。平移手势是连续的。当手指的最小数量（minimumNumberOfTouches）已经移动足够以被认为是平移时，它开始（开始）。当手指移动时，至少最小数量的手指被按下时，它会改变（改变）。当所有手指抬起时，它结束（结束）。该类的客户端可以在其操作方法中查询UIPanGestureRecognizer对象的当前手势翻译（翻译（in :)）和翻译速度（速度（in :)）。他们可以指定其坐标系应用于平移和速度值的视图。客户还可以将翻译重置为所需的值。
             pan = UIPanGestureRecognizer(target: self, action: #selector(dragging))
             image.addGestureRecognizer(pan)
+            pan.delegate = self
         case 2:
             let p = HorizPanGestureRecognizer(target: self, action: #selector(dragging))
             image.addGestureRecognizer(p)
             let p2 = VertPanGestureRecognizer(target: self, action: #selector(dragging))
             image.addGestureRecognizer(p2)
-            
+
         default: break
         }
         
-        // SWIPE UIPanGestureRecognizer 优先级高于 UISwipeGestureRecognizer
+        /// SWIPE 
+        /// UIPanGestureRecognizer 优先级高于 UISwipeGestureRecognizer
         let swipeGestureRight = UISwipeGestureRecognizer(target: self, action: #selector(respondToSwipeGesture(_:)))
         swipeGestureRight.direction = UISwipeGestureRecognizerDirection.right
         image.addGestureRecognizer(swipeGestureRight)
@@ -124,14 +129,19 @@ class GestureRecognizerVC: UIViewController {
             }
         }
     }
-    
-    // LONG PRESS
+}
+
+
+// MARK: - Action
+extension GestureRecognizerVC {
+
+    // LONG PRESS by Nib
     @IBAction func action(_ gestureRecognizer: UIGestureRecognizer) {
         if (gestureRecognizer.state == UIGestureRecognizerState.began) {
             let alertController = UIAlertController(title: "Alert", message: "Long Press gesture", preferredStyle: .alert)
             let OKAction = UIAlertAction(title: "OK", style: .default) { (action) in }
             alertController.addAction(OKAction)
-            self.present(alertController, animated: true) { }
+            present(alertController, animated: true) { }
         }
     }
     
@@ -227,16 +237,21 @@ class GestureRecognizerVC: UIViewController {
     
 }
 
+
+// MARK: - UIGestureRecognizerDelegate
+/// 一个手势识别为代表，对uigesturerecognizer具体子类的一个实例采用uigesturerecognizerdelegate协议微调应用程序的手势识别的行为。代表们从一个手势识别器接收消息，以及他们对这些信息的反应使他们对手势识别的操作或指定另一个手势识别器之间的关系，如允许同时识别或建立一个动态破坏的要求。动态失效需求是有用的一个例子是在一个应用程序中，将一个屏幕边缘泛手势识别器附加到视图中。在这种情况下，你可能想要的所有其他相关的手势识别与视图的子树需要屏幕边缘手势识别失败，你可以防止任何图形故障可能发生在其他识别器的识别过程开始后取消。
 extension GestureRecognizerVC : UIGestureRecognizerDelegate {
-    func gestureRecognizerShouldBegin(_ gestureRecognizer: UIGestureRecognizer) -> Bool {
-        // g is the pan gesture recognizer
-        //		switch gestureRecognizer.state {
-        //		case .Possible, .Failed:
-        //			return false
-        //		default:
-        //			return true
-        //		}
-        return true
+    func gestureRecognizerShouldBegin(_ g: UIGestureRecognizer) -> Bool {
+
+        guard g is UILongPressGestureRecognizer else {return false}
+        switch g.state {
+        case .possible:
+            return true
+        case .failed:
+            return false
+        default:
+            return true
+        }
     }
     
     // 允许同时识别两个手势
@@ -257,6 +272,7 @@ extension GestureRecognizerVC : UIGestureRecognizerDelegate {
      */
     func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldRequireFailureOf otherGestureRecognizer: UIGestureRecognizer) -> Bool {
         print("=== should\n\(gestureRecognizer)\n\(otherGestureRecognizer)")
+        guard (pan != nil) else {return true}
         if (gestureRecognizer == pan) {
             return false
         }
@@ -273,6 +289,7 @@ extension GestureRecognizerVC : UIGestureRecognizerDelegate {
      */
     func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldBeRequiredToFailBy otherGestureRecognizer: UIGestureRecognizer) -> Bool {
         print("=== should be\n\(gestureRecognizer)\n\(otherGestureRecognizer)")
+        guard (pan != nil) else {return true}
         if (gestureRecognizer == pan) {
             return false //触发
         }

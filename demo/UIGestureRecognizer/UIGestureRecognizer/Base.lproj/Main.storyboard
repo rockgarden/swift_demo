@@ -29,7 +29,20 @@
                                     <constraint firstAttribute="width" constant="200" id="27d-xb-ueV"/>
                                     <constraint firstAttribute="height" constant="200" id="W9R-4g-Kf9"/>
                                 </constraints>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="PrA-ig-C9j" appends="YES" id="Iq4-G7-Cdr"/>
+                                </connections>
                             </imageView>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="epa-mZ-gX2">
+                                <rect key="frame" x="100" y="503" width="175" height="126"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="TLP-la-2Ie" appends="YES" id="jfF-Af-sO5"/>
+                                    <outletCollection property="gestureRecognizers" destination="C69-3P-euG" appends="YES" id="hS1-mj-qR3"/>
+                                </connections>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -39,11 +52,17 @@
                     </view>
                     <connections>
                         <outlet property="image" destination="HcF-z5-CPo" id="sSj-a8-KBg"/>
-                        <outlet property="longPresser" destination="PrA-ig-C9j" id="Suj-cy-fjp"/>
+                        <outlet property="longPresser" destination="PrA-ig-C9j" id="5c9-0Z-fmG"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NpO-Yo-Wzm" sceneMemberID="firstResponder"/>
-                <pongPressGestureRecognizer allowableMovement="10" minimumPressDuration="0.5" id="PrA-ig-C9j"/>
+                <pongPressGestureRecognizer allowableMovement="10" minimumPressDuration="0.5" id="PrA-ig-C9j">
+                    <connections>
+                        <action selector="action:" destination="zH4-KR-HTP" id="a0L-cB-Orw"/>
+                    </connections>
+                </pongPressGestureRecognizer>
+                <panGestureRecognizer minimumNumberOfTouches="1" id="TLP-la-2Ie"/>
+                <pongPressGestureRecognizer allowableMovement="10" minimumPressDuration="0.5" numberOfTapsRequired="1" id="C69-3P-euG"/>
             </objects>
             <point key="canvasLocation" x="1012" y="572"/>
         </scene>
