@@ -17,6 +17,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey : Any]?) -> Bool {
         (window!.rootViewController as! UINavigationController).delegate = self
+
+        UINavigationBar.appearance().titleTextAttributes = [
+            NSFontAttributeName : UIFont(name: "ChalkboardSE-Bold", size: 20)!,
+            NSForegroundColorAttributeName : UIColor.darkText,
+            NSShadowAttributeName : {
+                let shad = NSShadow()
+                shad.shadowOffset = CGSize(width:1.5,height:1.5)
+                return shad
+            }()
+        ]
+        
         return true
     }
 }

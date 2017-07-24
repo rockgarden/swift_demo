@@ -270,10 +270,22 @@ extension GestureRecognizerVC : UIGestureRecognizerDelegate {
      
      - returns: return value description
      */
-    func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldRequireFailureOf otherGestureRecognizer: UIGestureRecognizer) -> Bool {
-        print("=== should\n\(gestureRecognizer)\n\(otherGestureRecognizer)")
+    func gestureRecognizer(_ g: UIGestureRecognizer, shouldRequireFailureOf og: UIGestureRecognizer) -> Bool {
+        print("=== should\n\(g)\n\(og)")
+
+        let enc : String.Encoding = .utf8
+        let s1 = NSString(cString: object_getClassName(g), encoding: enc.rawValue)
+        let s2 = NSString(format:"%p", g.view!)
+        let s3 = NSString(cString: object_getClassName(og), encoding: enc.rawValue)
+        let s4 = NSString(format:"%p", og.view!)
+
+        if s1 == "_UISystemGestureGateGestureRecognizer" { return false }
+        if s3 == "_UISystemGestureGateGestureRecognizer" { return false }
+
+        print("should \(String(describing: s1)) on \(s2) require failure of \(String(describing: s3)) on \(s4)")
+
         guard (pan != nil) else {return true}
-        if (gestureRecognizer == pan) {
+        if (g == pan) {
             return false
         }
         return false
@@ -287,10 +299,21 @@ extension GestureRecognizerVC : UIGestureRecognizerDelegate {
      
      - returns: return value description
      */
-    func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldBeRequiredToFailBy otherGestureRecognizer: UIGestureRecognizer) -> Bool {
-        print("=== should be\n\(gestureRecognizer)\n\(otherGestureRecognizer)")
+    func gestureRecognizer(_ g: UIGestureRecognizer, shouldBeRequiredToFailBy og: UIGestureRecognizer) -> Bool {
+        print("=== should be\n\(g)\n\(og)")
+
+        let enc : String.Encoding = .utf8
+        let s1 = NSString(cString: object_getClassName(g), encoding: enc.rawValue)
+        let s2 = NSString(format:"%p", g.view!)
+        let s3 = NSString(cString: object_getClassName(og), encoding: enc.rawValue)
+        let s4 = NSString(format:"%p", og.view!)
+
+        if s1 == "_UISystemGestureGateGestureRecognizer" { return false }
+
+        print("should \(String(describing: s1)) on \(s2) be required to fail by \(String(describing: s3)) on \(s4)")
+
         guard (pan != nil) else {return true}
-        if (gestureRecognizer == pan) {
+        if (g == pan) {
             return false //触发
         }
         return false
