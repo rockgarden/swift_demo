@@ -86,7 +86,16 @@ class UINavigationDemo : UIViewController, UINavigationControllerDelegate {
     //    override func prefersStatusBarHidden() -> Bool {
     //        return true
     //    }
-    
+
+    @IBAction func doButton(_ sender: Any) {
+        print(self.view.bounds.size)
+        let nav = self.navigationController!
+        nav.isNavigationBarHidden = !nav.isNavigationBarHidden
+        delay(1) {
+            print("size did in fact change")
+            print(self.view.bounds.size)
+        }
+    }
 }
 
 

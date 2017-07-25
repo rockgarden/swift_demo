@@ -13,11 +13,6 @@ class MainViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "Storyboard"
-
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
     }
     
 
@@ -31,5 +26,9 @@ class MainViewController: UIViewController {
         viewController.printHeadline()
         
         present(viewController, animated: true, completion: nil)
+    }
+
+    @IBAction func unwindStoryboardMain (_ sender: UIStoryboardSegue) {
+        debugPrint(sender)
     }
 }
