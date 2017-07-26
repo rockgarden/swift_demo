@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController, UINavigationControllerDelegate {
+class UITraitCollectionVC: UIViewController, UINavigationControllerDelegate {
 
     override var supportedInterfaceOrientations : UIInterfaceOrientationMask {
         return super.supportedInterfaceOrientations
@@ -37,6 +37,27 @@ class ViewController: UIViewController, UINavigationControllerDelegate {
         vc.view.frame = CGRect(x: 100, y: 100, width: 200, height: 200)
         self.view.addSubview(vc.view)
         vc.didMove(toParentViewController: self)
+
+        switch which {
+        case 0:
+            let v = UIView()
+            v.translatesAutoresizingMaskIntoConstraints = false
+            v.backgroundColor = .black
+            view.addSubview(v)
+            self.blackSquare = v
+            NSLayoutConstraint.activate([
+                v.widthAnchor.constraint(equalToConstant: 10),
+                v.heightAnchor.constraint(equalToConstant: 10),
+                v.topAnchor.constraint(equalTo: view.topAnchor),
+                v.centerXAnchor.constraint(equalTo: view.centerXAnchor)
+                ])
+        default:break
+        }
+
+    }
+
+    override var prefersStatusBarHidden: Bool {
+        return true
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -44,8 +65,21 @@ class ViewController: UIViewController, UINavigationControllerDelegate {
         print("will appear \(self.view.bounds.size)")
     }
 
+    // MARK: Assistive Layout
+    /// a fresh look at the problem of helping with layout in code
+    /// first problem: we don't necessarily get "willTransition" messages on launch
+    /// so if there is a view that must be placed into the interface, that(willTransition) isn't where to do it
+    /// what we _know_ we'll get at launch is "transitionDidChange" and "viewWillLayout"
+    weak var blackSquare : UIView?
     override func viewWillLayoutSubviews() {
         print("willLayout  \(self.view.bounds.size)")
+        if self.blackSquare == nil { // both reference and flag
+            let v = UIView(frame:CGRect(0,0,10,10))
+            v.backgroundColor = .black
+            v.center = CGPoint(view.bounds.width/2,5)
+            view.addSubview(v)
+            self.blackSquare = v
+        }
     }
 
     override func viewDidLayoutSubviews() {
@@ -62,9 +96,26 @@ class ViewController: UIViewController, UINavigationControllerDelegate {
         super.willTransition(to: newCollection, with: coordinator)
     }
 
+    let which = 2
     override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
         print("willTransition size", size)
-        super.viewWillTransition(to: size, with: coordinator)
+        super.viewWillTransition(to:size, with:coordinator)
+        if size != self.view.bounds.size {
+            switch which {
+            case 1: // too early
+                self.blackSquare?.center = CGPoint(size.width/2,5)
+            case 2: // too late
+                coordinator.animate(alongsideTransition: nil) { _ in
+                    self.blackSquare?.center = CGPoint(size.width/2,5)
+                }
+            case 3: // just right
+                coordinator.animate(alongsideTransition:{ _ in
+                    self.blackSquare?.center = CGPoint(size.width/2,5)
+                })
+            default:break
+            }
+        }
+        else { print("nothing to do") }
     }
 
     override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
