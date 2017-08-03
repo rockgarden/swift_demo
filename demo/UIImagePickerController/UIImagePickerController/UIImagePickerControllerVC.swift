@@ -6,6 +6,7 @@ import MobileCoreServices
 import Photos
 import PhotosUI
 
+
 func checkForPhotoLibraryAccess(andThen f:(()->())? = nil) {
     let status = PHPhotoLibrary.authorizationStatus()
     switch status {
@@ -27,6 +28,46 @@ func checkForPhotoLibraryAccess(andThen f:(()->())? = nil) {
         break
     }
 }
+
+
+func checkForMicrophoneCaptureAccess(andThen f:(()->())? = nil) {
+    let status = AVCaptureDevice.authorizationStatus(forMediaType:AVMediaTypeAudio)
+    switch status {
+    case .authorized:
+        f?()
+    case .notDetermined:
+        AVCaptureDevice.requestAccess(forMediaType:AVMediaTypeAudio) { granted in
+            if granted {
+                DispatchQueue.main.async {
+                    f?()
+                }
+            }
+        }
+    case .restricted:
+        // do nothing
+        break
+    case .denied:
+        let alert = UIAlertController(
+            title: "Need Authorization",
+            message: "Wouldn't you like to authorize this app " +
+            "to use the microphone?",
+            preferredStyle: .alert)
+        alert.addAction(UIAlertAction(
+            title: "No", style: .cancel))
+        alert.addAction(UIAlertAction(
+        title: "OK", style: .default) {
+            _ in
+            let url = URL(string:UIApplicationOpenSettingsURLString)!
+            if #available(iOS 10.0, *) {
+                UIApplication.shared.open(url)
+            } else {
+                // Fallback on earlier versions
+            }
+        })
+        UIApplication.shared.delegate!.window!!.rootViewController!.present(alert, animated:true)
+    }
+}
+
 
 func checkForMovieCaptureAccess(andThen f:(()->())? = nil) {
     let status = AVCaptureDevice.authorizationStatus(forMediaType:AVMediaTypeVideo)
@@ -67,7 +108,7 @@ func checkForMovieCaptureAccess(andThen f:(()->())? = nil) {
 }
 
 
-class ViewController: UIViewController {
+class UIImagePickerControllerVC: UIViewController {
 
     @IBOutlet weak var redView: UIView!
     weak var picker : UIImagePickerController?
@@ -79,6 +120,11 @@ class ViewController: UIViewController {
             return .all
         }
         return .all
+    }
+
+    @IBAction func useMy(_ sender: UISwitch) {
+        pushMyPhotoView = sender.isOn
+        pushMyPickerController = sender.isOn
     }
 
     @discardableResult
@@ -168,7 +214,6 @@ class ViewController: UIViewController {
         checkForPhotoLibraryAccess {
             self.pickPhoto(sender)
         }
-
     }
 
     fileprivate func pickPhoto(_ sender: Any!) {
@@ -201,13 +246,17 @@ class ViewController: UIViewController {
     }
 
     @IBAction func doTake (_ sender: Any!) {
-        checkForMovieCaptureAccess(andThen: self.reallyTake)
+        checkForMovieCaptureAccess(andThen: self.micCheck)
+    }
+
+    func micCheck() {
+        checkForMicrophoneCaptureAccess(andThen:self.reallyTake)
     }
 
     func reallyTake() {
-        let cam = UIImagePickerControllerSourceType.camera
-        guard UIImagePickerController.isSourceTypeAvailable(cam) else {return}
-        guard let arr = UIImagePickerController.availableMediaTypes(for:cam) else {return}
+        let src = UIImagePickerControllerSourceType.camera
+        guard UIImagePickerController.isSourceTypeAvailable(src) else {return}
+        guard let arr = UIImagePickerController.availableMediaTypes(for:src) else {return}
 
         var which : Int {return 0} // 1, 2, 3, 4
         var desiredTypes : [String]!
@@ -217,8 +266,8 @@ class ViewController: UIViewController {
                 case 1: return [kUTTypeImage as String]
                 case 2: return [kUTTypeMovie as String]
                 case 3: return [kUTTypeImage as String, kUTTypeMovie as String]
-                case 4: return [kUTTypeImage as String, kUTTypeLivePhoto as String] // nope
-                default: return [kUTTypeImage as String, kUTTypeMovie as String, kUTTypeLivePhoto as String] // nope
+                case 4: return [kUTTypeImage as String, kUTTypeLivePhoto as String]
+                default: return [kUTTypeImage as String, kUTTypeMovie as String, kUTTypeLivePhoto as String]
                 }
             }()
         } else {
@@ -239,7 +288,7 @@ class ViewController: UIViewController {
         //if arr.index(of: desiredType) == nil {return}
 
         let picker = pushMyPickerController ? MyImagePickerController() : UIImagePickerController()
-        picker.sourceType = .camera
+        picker.sourceType = src //.camera
         picker.mediaTypes = desiredTypes
         /// Good: instead of desiredTypes; that was just for testing
         picker.mediaTypes = arr
@@ -250,6 +299,7 @@ class ViewController: UIViewController {
             picker.showsCameraControls = true
         } else {
             picker.showsCameraControls = false
+            picker.mediaTypes = [kUTTypeImage as String] //MyImagePickerController 只支持 photo
             let f = self.view.window!.bounds
             let v = UIView(frame:f)
             let t = UITapGestureRecognizer(target:self, action:#selector(tap))
@@ -283,13 +333,14 @@ class ViewController: UIViewController {
 
 }
 
+
 // if we do nothing about cancel, cancels automatically
 // if we do nothing about what was chosen, cancel automatically but of course now we have no access
 
 // interesting problem is that we have no control over permitted orientations of picker
 // seems like a bug; can work around this by subclassing
 
-extension ViewController : UIImagePickerControllerDelegate {
+extension UIImagePickerControllerVC : UIImagePickerControllerDelegate {
 
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
         self.dismiss(animated: true)
@@ -302,6 +353,13 @@ extension ViewController : UIImagePickerControllerDelegate {
         var im = info[UIImagePickerControllerOriginalImage] as? UIImage
         if let ed = info[UIImagePickerControllerEditedImage] as? UIImage {
             im = ed
+        }
+        if #available(iOS 9.1, *) {
+            if info[UIImagePickerControllerLivePhoto] != nil {
+                print("I got a live photo!")
+            }
+        } else {
+            // Fallback on earlier versions
         }
         if pushMyPhotoView {
             // push photo view
@@ -334,7 +392,7 @@ extension ViewController : UIImagePickerControllerDelegate {
                     }
                     if #available(iOS 9.1, *) {
                         let live = info[UIImagePickerControllerLivePhoto] as? PHLivePhoto
-                        if type == kUTTypeLivePhoto, live != nil { //,相当于&&?
+                        if type == kUTTypeLivePhoto, live != nil { //相当于&&?
                             self.showLivePhoto(live!)
                         }
                     }
@@ -386,7 +444,8 @@ extension ViewController : UIImagePickerControllerDelegate {
 
 }
 
-extension ViewController : UINavigationControllerDelegate {
+
+extension UIImagePickerControllerVC : UINavigationControllerDelegate {
 
     // this has no effect
     func navigationControllerSupportedInterfaceOrientations(_ navigationController: UINavigationController) -> UIInterfaceOrientationMask {
@@ -401,7 +460,7 @@ extension ViewController : UINavigationControllerDelegate {
             }
             nc.isToolbarHidden = false
 
-            let sz = CGSize(width: 10,height: 10)
+            let sz = CGSize(width: 10, height: 10)
             
             var im = UIImage()
             if #available(iOS 10.0, *) {

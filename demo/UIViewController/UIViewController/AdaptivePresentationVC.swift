@@ -44,6 +44,8 @@ class AdaptivePresentationVC : UIViewController, PVCSecondVCDelegate {
         ix += 1
     }
 
+    let which = 1
+    let which2 = 5
     @IBAction func doPresent(_ sender: Any?) {
         print(original.rawValue, terminator: "")
         print("\t", terminator: "")
@@ -54,7 +56,32 @@ class AdaptivePresentationVC : UIViewController, PVCSecondVCDelegate {
         svc.data = "This is very important data!"
         svc.delegate = self
 
-        svc.modalPresentationStyle = original
+        //svc.modalPresentationStyle = original
+
+        switch which {
+        case 1: break // showing that .CoverVertical is the default
+        case 2: svc.modalTransitionStyle = .coverVertical
+        case 3: svc.modalTransitionStyle = .crossDissolve
+        case 4: svc.modalTransitionStyle = .partialCurl // partial curl only use for fullscreen view controller
+        case 5:
+            svc.modalTransitionStyle = .flipHorizontal
+            self.view.window!.backgroundColor = UIColor.green // prove window shows thru
+        // no transition on present, only on dismiss; bug? - ok, fixed
+        default: break
+        }
+
+        print(self.traitCollection)
+
+        switch which2 {
+        case 1: break // showing that .FullScreen is the default
+        case 2: svc.modalPresentationStyle = .fullScreen
+        case 3: svc.modalPresentationStyle = .pageSheet
+        case 4: svc.modalPresentationStyle = .formSheet
+        case 5:
+            svc.modalPresentationStyle = .overFullScreen
+            svc.view.alpha = 0.5 // just to prove that it's working
+        default: break
+        }
 
         /*
          UIPresentationController对象提供了提供的视图控制器的高级视图和过渡管理。从视图控制器呈现到被忽略的时候，UIKit使用演示控制器来管理该视图控制器的演示过程的各个方面。演示控制器可以在动画对象提供的动画之上添加自己的动画，它可以响应大小变化，并且可以管理视图控制器在屏幕上呈现的其他方面。
@@ -62,7 +89,8 @@ class AdaptivePresentationVC : UIViewController, PVCSecondVCDelegate {
          您通过视图控制器的转换委托来销售您的自定义演示控制器对象。当显示的视图控制器在屏幕上时，UIKit会保留对您的演示控制器对象的引用。
          */
         svc.presentationController!.delegate = self
-        self.present(svc, animated:true)
+        present(svc, animated:true)
+        //show(svc, sender:self) // svc in a nav interface
 
         /// just for the one case 7/-1 we will get a real popover: we have rules about that sort of thing!
         if let pop = svc.popoverPresentationController {
@@ -70,12 +98,24 @@ class AdaptivePresentationVC : UIViewController, PVCSecondVCDelegate {
             pop.sourceView = v
             pop.sourceRect = v.bounds
         }
+    }
 
+    // the segue in the storyboard is drawn directly from the button...
+    // so PVCSecondVC will be instantiated for us...
+    // and "presentViewController" will be called for us
+    // thus we need another place to configure
+
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "present" { // it will be
+            let svc = segue.destination as! PVCSecondVC //PVCSecondVC must in Storyboard
+            svc.data = "This is very important data!"
+            svc.delegate = self
+        }
     }
 
     func accept(data:Any!) {
         // prove that you received data
-        print(data)
+        print("accept info: ",data)
     }
 
     @IBAction func doCustomAlert(_ sender: Any?) {

@@ -36,8 +36,8 @@
 		447287C71F1EDFD20003B144 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 447287C41F1EDFD10003B144 /* Info.plist */; };
 		447287C81F1EDFD20003B144 /* SCLAlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 447287C51F1EDFD20003B144 /* SCLAlertView.swift */; };
 		447287C91F1EDFD20003B144 /* SCLExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 447287C61F1EDFD20003B144 /* SCLExtensions.swift */; };
-		447287CB1F1EE0210003B144 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 447287CA1F1EE0210003B144 /* Main.storyboard */; };
-		447287CD1F1EE02E0003B144 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 447287CC1F1EE02E0003B144 /* ViewController.swift */; };
+		447287CB1F1EE0210003B144 /* SCLAlertView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 447287CA1F1EE0210003B144 /* SCLAlertView.storyboard */; };
+		447287CD1F1EE02E0003B144 /* SCLAlertViewDemo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 447287CC1F1EE02E0003B144 /* SCLAlertViewDemo.swift */; };
 		448AC22F1EF2AAFA00013F08 /* AdaptivePresentationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 448AC22E1EF2AAFA00013F08 /* AdaptivePresentationVC.swift */; };
 		448AC2311EF2AC1F00013F08 /* PVCSecondVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 448AC2301EF2AC1F00013F08 /* PVCSecondVC.xib */; };
 		448AC2331EF2ACA800013F08 /* PVCSecondVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 448AC2321EF2ACA800013F08 /* PVCSecondVC.swift */; };
@@ -119,8 +119,8 @@
 		447287C41F1EDFD10003B144 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		447287C51F1EDFD20003B144 /* SCLAlertView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SCLAlertView.swift; sourceTree = "<group>"; };
 		447287C61F1EDFD20003B144 /* SCLExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SCLExtensions.swift; sourceTree = "<group>"; };
-		447287CA1F1EE0210003B144 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
-		447287CC1F1EE02E0003B144 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		447287CA1F1EE0210003B144 /* SCLAlertView.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = SCLAlertView.storyboard; sourceTree = "<group>"; };
+		447287CC1F1EE02E0003B144 /* SCLAlertViewDemo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SCLAlertViewDemo.swift; sourceTree = "<group>"; };
 		448AC22E1EF2AAFA00013F08 /* AdaptivePresentationVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdaptivePresentationVC.swift; sourceTree = "<group>"; };
 		448AC2301EF2AC1F00013F08 /* PVCSecondVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PVCSecondVC.xib; sourceTree = "<group>"; };
 		448AC2321EF2ACA800013F08 /* PVCSecondVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PVCSecondVC.swift; sourceTree = "<group>"; };
@@ -244,8 +244,8 @@
 				447287C41F1EDFD10003B144 /* Info.plist */,
 				447287C51F1EDFD20003B144 /* SCLAlertView.swift */,
 				447287C61F1EDFD20003B144 /* SCLExtensions.swift */,
-				447287CC1F1EE02E0003B144 /* ViewController.swift */,
-				447287CA1F1EE0210003B144 /* Main.storyboard */,
+				447287CC1F1EE02E0003B144 /* SCLAlertViewDemo.swift */,
+				447287CA1F1EE0210003B144 /* SCLAlertView.storyboard */,
 			);
 			path = SCLAlertView;
 			sourceTree = "<group>";
@@ -482,7 +482,7 @@
 				448AC2311EF2AC1F00013F08 /* PVCSecondVC.xib in Resources */,
 				44B1E01B1EF41459005CF9C7 /* Pep.xib in Resources */,
 				44263B381EFBF58E0045A717 /* CustomAlertVC.xib in Resources */,
-				447287CB1F1EE0210003B144 /* Main.storyboard in Resources */,
+				447287CB1F1EE0210003B144 /* SCLAlertView.storyboard in Resources */,
 				449D1CBC1E992C57000C7446 /* Main.storyboard in Resources */,
 				44CCE26E1F0525BF009BB4C8 /* OrientationsPermitted.storyboard in Resources */,
 				C29FFCCC1ECAD8340034587E /* EvernoteCell.xib in Resources */,
@@ -545,7 +545,7 @@
 				44CCE2701F0525D8009BB4C8 /* AttemptRotationVC.swift in Sources */,
 				C29FFCE61ECAECA40034587E /* NTWaterfallViewCell.swift in Sources */,
 				C29FFCD01ECADC8D0034587E /* TransitionImage.swift in Sources */,
-				447287CD1F1EE02E0003B144 /* ViewController.swift in Sources */,
+				447287CD1F1EE02E0003B144 /* SCLAlertViewDemo.swift in Sources */,
 				44263B351EFBEE6F0045A717 /* ExtraViewController.swift in Sources */,
 				441721411EDB161E00933908 /* ContainerVC_Size_Child.swift in Sources */,
 				C29FFCC21ECACB340034587E /* TransitionImageCollectionVC.swift in Sources */,

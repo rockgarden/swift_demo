@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="GP5-Aa-PXb">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="GP5-Aa-PXb">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -25,10 +25,10 @@
             </objects>
             <point key="canvasLocation" x="-652" y="38"/>
         </scene>
-        <!--View Controller-->
+        <!--Image Picker ControllerVC-->
         <scene sceneID="tDB-xS-2gm">
             <objects>
-                <viewController id="zqM-v4-Map" customClass="ViewController" customModule="UIImagePickerController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="zqM-v4-Map" customClass="UIImagePickerControllerVC" customModule="UIImagePickerController" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="hRR-bN-ybY"/>
                         <viewControllerLayoutGuide type="bottom" id="nV8-U3-pkf"/>
@@ -72,6 +72,15 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="Yaa-LC-kNz">
+                        <barButtonItem key="leftBarButtonItem" style="plain" id="qxy-FJ-IXl">
+                            <switch key="customView" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" id="fcV-JO-2SI">
+                                <rect key="frame" x="16" y="6" width="51" height="31"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <action selector="useMy:" destination="zqM-v4-Map" eventType="valueChanged" id="shB-b5-RGq"/>
+                                </connections>
+                            </switch>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="ImagePIckerSheet" id="dbO-2a-olR">
                             <connections>
                                 <segue destination="BPT-sd-ehu" kind="show" id="1bh-mi-g7L"/>

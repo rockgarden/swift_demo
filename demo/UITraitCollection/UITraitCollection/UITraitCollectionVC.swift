@@ -53,7 +53,6 @@ class UITraitCollectionVC: UIViewController, UINavigationControllerDelegate {
                 ])
         default:break
         }
-
     }
 
     override var prefersStatusBarHidden: Bool {

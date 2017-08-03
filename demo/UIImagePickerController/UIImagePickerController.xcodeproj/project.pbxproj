@@ -11,7 +11,7 @@
 		445AA23A1DDB4CAD0035279D /* SecondViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 445AA2391DDB4CAD0035279D /* SecondViewController.xib */; };
 		445AA23C1DDB4CB50035279D /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 445AA23B1DDB4CB50035279D /* SecondViewController.swift */; };
 		446BD9011DDB42BA00086E9B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 446BD9001DDB42BA00086E9B /* AppDelegate.swift */; };
-		446BD9031DDB42BA00086E9B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 446BD9021DDB42BA00086E9B /* ViewController.swift */; };
+		446BD9031DDB42BA00086E9B /* UIImagePickerControllerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 446BD9021DDB42BA00086E9B /* UIImagePickerControllerVC.swift */; };
 		446BD9061DDB42BA00086E9B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 446BD9041DDB42BA00086E9B /* Main.storyboard */; };
 		446BD9081DDB42BA00086E9B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 446BD9071DDB42BA00086E9B /* Assets.xcassets */; };
 		446BD90B1DDB42BA00086E9B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 446BD9091DDB42BA00086E9B /* LaunchScreen.storyboard */; };
@@ -40,7 +40,7 @@
 		445AA23B1DDB4CB50035279D /* SecondViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
 		446BD8FD1DDB42BA00086E9B /* UIImagePickerController.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UIImagePickerController.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		446BD9001DDB42BA00086E9B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		446BD9021DDB42BA00086E9B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		446BD9021DDB42BA00086E9B /* UIImagePickerControllerVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImagePickerControllerVC.swift; sourceTree = "<group>"; };
 		446BD9051DDB42BA00086E9B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		446BD9071DDB42BA00086E9B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		446BD90A1DDB42BA00086E9B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -83,11 +83,11 @@
 			isa = PBXGroup;
 			children = (
 				446BD9001DDB42BA00086E9B /* AppDelegate.swift */,
-				446BD9021DDB42BA00086E9B /* ViewController.swift */,
+				446BD9021DDB42BA00086E9B /* UIImagePickerControllerVC.swift */,
+				446BD9041DDB42BA00086E9B /* Main.storyboard */,
 				445AA2371DDB4C920035279D /* MyImagePickerController.swift */,
 				445AA23B1DDB4CB50035279D /* SecondViewController.swift */,
 				445AA2391DDB4CAD0035279D /* SecondViewController.xib */,
-				446BD9041DDB42BA00086E9B /* Main.storyboard */,
 				446BD9071DDB42BA00086E9B /* Assets.xcassets */,
 				446BD9091DDB42BA00086E9B /* LaunchScreen.storyboard */,
 				446BD90C1DDB42BA00086E9B /* Info.plist */,
@@ -182,7 +182,7 @@
 			files = (
 				C2A146211DE2D01F00830347 /* ExampleImagePickerSheetVC.swift in Sources */,
 				445AA23C1DDB4CB50035279D /* SecondViewController.swift in Sources */,
-				446BD9031DDB42BA00086E9B /* ViewController.swift in Sources */,
+				446BD9031DDB42BA00086E9B /* UIImagePickerControllerVC.swift in Sources */,
 				446BD9011DDB42BA00086E9B /* AppDelegate.swift in Sources */,
 				445AA2381DDB4C920035279D /* MyImagePickerController.swift in Sources */,
 			);

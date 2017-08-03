@@ -27,13 +27,14 @@ class PVCSecondVC : UIViewController {
         // vc.dismiss(animated:true)
         // return;
 
-        self.presentingViewController?.dismiss(animated:true)
+        presentingViewController?.dismiss(animated:true)
     }
 
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         // prove you've got data
         print(self.data as Any)
+        print(self.traitCollection)
     }
 
     override func viewWillDisappear(_ animated: Bool) {
@@ -41,6 +42,11 @@ class PVCSecondVC : UIViewController {
         if self.isBeingDismissed {
             self.delegate?.accept(data:"Even more important data!")
         }
+    }
+
+    override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
+        super.viewWillTransition(to: size, with: coordinator)
+        print("new size coming: \(size)")
     }
 
 }

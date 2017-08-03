@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import SCLAlertView
 
 
 let kSuccessTitle = "Congratulations"
@@ -19,22 +18,11 @@ let kSubtitle = "You've just displayed this awesome Pop Up View"
 
 let kDefaultAnimationDuration = 2.0
 
-class ViewController: UIViewController {
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-        // Do any additional setup after loading the view, typically from a nib.
-    }
-    
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
+class SCLAlertViewDemo: UIViewController {
     
     @IBAction func showSuccess(_ sender: AnyObject) {
 		let alert = SCLAlertView()
-		_ = alert.addButton("First Button", target:self, selector:#selector(ViewController.firstButton))
+		_ = alert.addButton("First Button", target:self, selector:#selector(firstButton))
 		_ = alert.addButton("Second Button") {
 			print("Second button tapped")
 		}
@@ -122,7 +110,7 @@ class ViewController: UIViewController {
     @IBAction func showCustomAlert(_ sender: AnyObject) {
     
         let alert = SCLAlertView()
-        _ = alert.addButton("First Button", target:self, selector:#selector(ViewController.firstButton))
+        _ = alert.addButton("First Button", target:self, selector:#selector(firstButton))
         _ = alert.addButton("Second Button") {
             print("Second button tapped")
         }

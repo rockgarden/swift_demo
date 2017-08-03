@@ -29,7 +29,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var r2start = CGRect.zero
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-
+        
         let tbc = self.window!.rootViewController as! UITabBarController
         tbc.delegate = self
 
@@ -45,7 +45,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         tbc.view.addGestureRecognizer(sep2)
         sep2.delegate = self
         leftEdger = sep2
-        
+
         return true
     }
 

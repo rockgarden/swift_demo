@@ -14,5 +14,4 @@ class CompactHorizontalVC: UIViewController {
         self.dismiss(animated: true, completion: nil)
     }
     
-    
 }
