@@ -44,6 +44,24 @@ class PVCSecondVC : UIViewController {
         }
     }
 
+    /// Forced Rotation
+    override var shouldAutorotate : Bool {
+        return true
+    }
+
+    override var supportedInterfaceOrientations : UIInterfaceOrientationMask {
+        print("second supported")
+        return .landscape
+    }
+
+    override var preferredInterfaceOrientationForPresentation : UIInterfaceOrientation {
+        return .landscapeLeft
+    }
+
+    override func viewWillLayoutSubviews() {
+        print("presented will layout")
+    }
+
     override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
         super.viewWillTransition(to: size, with: coordinator)
         print("new size coming: \(size)")

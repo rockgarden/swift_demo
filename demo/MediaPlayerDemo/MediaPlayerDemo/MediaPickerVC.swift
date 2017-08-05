@@ -6,27 +6,6 @@
 import UIKit
 import MediaPlayer
 
-func checkForMusicLibraryAccess(andThen f:(()->())? = nil) {
-    let status = MPMediaLibrary.authorizationStatus()
-    switch status {
-    case .authorized:
-        f?()
-    case .notDetermined:
-        MPMediaLibrary.requestAuthorization() { status in
-            if status == .authorized {
-                DispatchQueue.main.async {
-                    f?()
-                }
-            }
-        }
-    case .restricted:
-        // do nothing
-        break
-    case .denied:
-        // do nothing, or beg the user to authorize us in Settings
-        break
-    }
-}
 
 class MediaPickerVC: UIViewController {
 
@@ -52,8 +31,8 @@ class MediaPickerVC: UIViewController {
     }
 }
 
+
 extension MediaPickerVC : MPMediaPickerControllerDelegate {
-    // must implement these, as there is no automatic dismissal
 
     func mediaPicker(_ mediaPicker: MPMediaPickerController, didPickMediaItems mediaItemCollection: MPMediaItemCollection) {
         print("did pick")

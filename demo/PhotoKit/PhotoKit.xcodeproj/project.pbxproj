@@ -180,7 +180,6 @@
 		4402373A1DDC9E100067C071 /* PhotoKitImages */ = {
 			isa = PBXGroup;
 			children = (
-				447166681DF82F9700C40FB5 /* PhotoKitImages.entitlements */,
 				4402373B1DDC9E100067C071 /* AppDelegate.swift */,
 				4402373D1DDC9E100067C071 /* Main.storyboard */,
 				440237451DDC9E100067C071 /* PhotoPagesVC.swift */,
@@ -194,6 +193,7 @@
 				440237421DDC9E100067C071 /* Info.plist */,
 				440237431DDC9E100067C071 /* LaunchScreen.storyboard */,
 				4402373C1DDC9E100067C071 /* Assets.xcassets */,
+				447166681DF82F9700C40FB5 /* PhotoKitImages.entitlements */,
 			);
 			path = PhotoKitImages;
 			sourceTree = "<group>";

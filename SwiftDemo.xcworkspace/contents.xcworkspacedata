@@ -2,6 +2,9 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:demo/AVFoundationDemo/AVFoundationDemo.xcodeproj">
+   </FileRef>
+   <FileRef
       location = "group:demo/UniversalDemo/UniversalDemo.xcodeproj">
    </FileRef>
    <FileRef
@@ -117,9 +120,6 @@
    </FileRef>
    <FileRef
       location = "group:demo/ImagePickerSheetController/ImagePickerSheetController.xcodeproj">
-   </FileRef>
-   <FileRef
-      location = "group:demo/AVCapture/AVCapture.xcodeproj">
    </FileRef>
    <FileRef
       location = "group:demo/UIImagePickerController/UIImagePickerController.xcodeproj">

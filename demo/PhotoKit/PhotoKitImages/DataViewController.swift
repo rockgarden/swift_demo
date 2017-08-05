@@ -69,17 +69,8 @@ class DataViewController: UIViewController, EditingViewControllerDelegate {
             
             let im = input.displaySizeImage!
             let sz = CGSize(width: im.size.width/4.0, height: im.size.height/4.0)
-            var im2 = UIImage()
-            if #available(iOS 10.0, *) {
-                let r = UIGraphicsImageRenderer(size:sz)
-                im2 = r.image { _ in
-                    // perhaps no need for this, but the image they give us is much larger than we need
-                    im.draw(in:CGRect(origin: .zero, size: sz))
-                }
-            } else {
-                im2 = imageOfSize(sz) {
-                    im.draw(in: CGRect(origin: CGPoint(), size: sz))
-                }
+            let im2 = imageOfSize(sz) {
+                im.draw(in: CGRect(origin: .zero, size: sz)) //CGPoint()
             }
             
             let evc = EditingViewController(displayImage:CIImage(image:im2)!)

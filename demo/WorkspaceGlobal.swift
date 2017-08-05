@@ -65,6 +65,137 @@ func imageFromContextOfSize(_ size: CGSize, closure: @escaping (_ size:CGSize) -
 }
 
 
+// MARK: - CheckAccess func for workspace
+import MediaPlayer
+import AVFoundation
+import Photos
+
+func checkForMusicLibraryAccess(andThen f:(()->())? = nil) {
+    if #available(iOS 9.3, *) {
+        let status = MPMediaLibrary.authorizationStatus()
+        switch status {
+        case .authorized:
+            f?()
+        case .notDetermined:
+            MPMediaLibrary.requestAuthorization() { status in
+                if status == .authorized {
+                    DispatchQueue.main.async {
+                        f?()
+                    }
+                }
+            }
+        case .restricted:
+            // do nothing
+            break
+        case .denied:
+            // do nothing, or beg the user to authorize us in Settings
+            break
+        }
+    } else {
+        // Fallback on earlier versions
+    }
+
+}
+
+func checkForPhotoLibraryAccess(andThen f:(()->())? = nil) {
+    let status = PHPhotoLibrary.authorizationStatus()
+    switch status {
+    case .authorized:
+        f?()
+    case .notDetermined:
+        PHPhotoLibrary.requestAuthorization() { status in
+            if status == .authorized {
+                DispatchQueue.main.async {
+                    f?()
+                }
+            }
+        }
+    case .restricted:
+        // do nothing
+        break
+    case .denied:
+        // do nothing, or beg the user to authorize us in Settings
+        break
+    }
+}
+
+func checkForMicrophoneCaptureAccess(andThen f:(()->())? = nil) {
+    let status = AVCaptureDevice.authorizationStatus(forMediaType:AVMediaTypeAudio)
+    switch status {
+    case .authorized:
+        f?()
+    case .notDetermined:
+        AVCaptureDevice.requestAccess(forMediaType:AVMediaTypeAudio) { granted in
+            if granted {
+                DispatchQueue.main.async {
+                    f?()
+                }
+            }
+        }
+    case .restricted:
+        // do nothing
+        break
+    case .denied:
+        let alert = UIAlertController(
+            title: "Need Authorization",
+            message: "Wouldn't you like to authorize this app " +
+            "to use the microphone?",
+            preferredStyle: .alert)
+        alert.addAction(UIAlertAction(
+            title: "No", style: .cancel))
+        alert.addAction(UIAlertAction(
+        title: "OK", style: .default) {
+            _ in
+            let url = URL(string:UIApplicationOpenSettingsURLString)!
+            if #available(iOS 10.0, *) {
+                UIApplication.shared.open(url)
+            } else {
+                // Fallback on earlier versions
+            }
+        })
+        UIApplication.shared.delegate!.window!!.rootViewController!.present(alert, animated:true)
+    }
+}
+
+func checkForMovieCaptureAccess(andThen f:(()->())? = nil) {
+    let status = AVCaptureDevice.authorizationStatus(forMediaType:AVMediaTypeVideo)
+    switch status {
+    case .authorized:
+        f?()
+    case .notDetermined:
+        AVCaptureDevice.requestAccess(forMediaType:AVMediaTypeVideo) { granted in
+            if granted {
+                DispatchQueue.main.async {
+                    f?()
+                }
+            }
+        }
+    case .restricted:
+        // do nothing
+        break
+    case .denied:
+        let alert = UIAlertController(
+            title: "Need Authorization",
+            message: "Wouldn't you like to authorize this app " +
+            "to use the camera?",
+            preferredStyle: .alert)
+        alert.addAction(UIAlertAction(
+            title: "No", style: .cancel))
+        alert.addAction(UIAlertAction(
+        title: "OK", style: .default) {
+            _ in
+            let url = URL(string:UIApplicationOpenSettingsURLString)!
+            if #available(iOS 10.0, *) {
+                UIApplication.shared.open(url)
+            } else {
+                // Fallback on earlier versions
+            }
+        })
+        UIApplication.shared.delegate!.window!!.rootViewController!.present(alert, animated:true)
+    }
+}
+
+
 // MARK: - Global class for workspace
 
 class Wrapper<T> {

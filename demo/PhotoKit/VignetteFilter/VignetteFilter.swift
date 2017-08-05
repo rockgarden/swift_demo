@@ -1,14 +1,6 @@
 import UIKit
 
 
-public func imageOfSize(_ size:CGSize, closure:() -> ()) -> UIImage {
-    UIGraphicsBeginImageContextWithOptions(size, false, 0)
-    closure()
-    let result = UIGraphicsGetImageFromCurrentImageContext()
-    UIGraphicsEndImageContext()
-    return result!
-}
-
 // NB this bug is fixed in iOS 9
 
 // work around odd behavior (bug?) where CIColor(color:UIColor.whiteColor()) gives transparent, not white

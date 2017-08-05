@@ -10,32 +10,6 @@ import UIKit
 import MediaPlayer
 import AVFoundation
 
-func delay(_ delay:Double, closure:@escaping ()->()) {
-    let when = DispatchTime.now() + delay
-    DispatchQueue.main.asyncAfter(deadline: when, execute: closure)
-}
-
-extension CGRect {
-    init(_ x:CGFloat, _ y:CGFloat, _ w:CGFloat, _ h:CGFloat) {
-        self.init(x:x, y:y, width:w, height:h)
-    }
-}
-extension CGSize {
-    init(_ width:CGFloat, _ height:CGFloat) {
-        self.init(width:width, height:height)
-    }
-}
-extension CGPoint {
-    init(_ x:CGFloat, _ y:CGFloat) {
-        self.init(x:x, y:y)
-    }
-}
-extension CGVector {
-    init (_ dx:CGFloat, _ dy:CGFloat) {
-        self.init(dx:dx, dy:dy)
-    }
-}
-
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
@@ -95,9 +69,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             print("library last modified \(MPMediaLibrary.default().lastModifiedDate)")
         }
 
-        // NB this will trigger the authorization dialog, so we may as well
-        // wrap it in a check
-
+        /// NB this will trigger the authorization dialog
         checkForMusicLibraryAccess {
             MPMediaLibrary.default().beginGeneratingLibraryChangeNotifications()
             print("library last modified \(MPMediaLibrary.default().lastModifiedDate)")
@@ -157,7 +129,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func applicationWillTerminate(_ application: UIApplication) {
         print("bp or interrupter in \(#function)") //trying killing app from app switcher while playing in background, we receive this!
     }
-
 
 }
 

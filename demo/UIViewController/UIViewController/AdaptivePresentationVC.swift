@@ -127,6 +127,20 @@ class AdaptivePresentationVC : UIViewController, PVCSecondVCDelegate {
         print("vc did disappear")
     }
 
+    override var supportedInterfaceOrientations : UIInterfaceOrientationMask  {
+        print("first supported")
+        return .portrait
+    }
+
+    override func viewWillLayoutSubviews() {
+        print("presenter will layout")
+    }
+
+    override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
+        print("presenter size")
+        super.viewWillTransition(to: size, with: coordinator)
+    }
+
     override func dismiss(animated: Bool, completion: (() -> Void)!) {
         print("here") // prove that this is called by clicking on curl
         super.dismiss(animated:animated, completion: completion)

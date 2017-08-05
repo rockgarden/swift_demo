@@ -46,7 +46,8 @@ class MediaQueryVC: UIViewController {
             im2.resizableImage(withCapInsets:UIEdgeInsetsMake(9,9,9,9),
                                resizingMode:.stretch),
             for:.normal)
-        // only for EU devices; to test, use the EU switch under Developer settings on device
+
+        /// 音量限制: only for EU devices; to test, use the EU Volume Limit switch under Developer settings on device
         self.vv.volumeWarningSliderImage =
             im3.resizableImage(withCapInsets:UIEdgeInsetsMake(9,9,9,9),
                                resizingMode:.stretch)
@@ -70,10 +71,10 @@ class MediaQueryVC: UIViewController {
     }
 
     func wirelessChanged(_ n:Notification) {
-        print("wireless change \(n.userInfo)")
+        print("wireless change \(String(describing: n.userInfo))")
     }
     func wirelessChanged2(_ n:Notification) {
-        print("wireless active change \(n.userInfo)")
+        print("wireless active change \(String(describing: n.userInfo))")
     }
 
     func dummy() {
@@ -81,17 +82,16 @@ class MediaQueryVC: UIViewController {
     }
 
     @IBAction func doAllAlbumTitles (_ sender: Any!) {
-        //        checkForMusicLibraryAccess()
-        //        checkForMusicLibraryAccess(andThen:self.dummy)
+        //checkForMusicLibraryAccess(andThen:self.dummy)
         checkForMusicLibraryAccess {
             do {
-                let query = MPMediaQuery() // just making sure this is legal
+                let query = MPMediaQuery()
                 let result = query.items
                 _ = result
             }
             let query = MPMediaQuery.albums()
             guard let result = query.collections else {return} //
-            // prove we've performed the query, by logging the album titles
+            /// prove we've performed the query, by logging the album titles
             for album in result {
                 print(album.representativeItem!.albumTitle!) //
             }
@@ -99,11 +99,10 @@ class MediaQueryVC: UIViewController {
             // cloud item values are 0 and 1, meaning false and true
             for album in result {
                 for song in album.items { //
-                    print("\(song.isCloudItem) \(song.assetURL) \(song.title)")
+                    print("\(song.isCloudItem) \(String(describing: song.assetURL)) \(String(describing: song.title))")
                 }
             }
-
-            return // testing
+            return
         }
     }
 
@@ -114,9 +113,9 @@ class MediaQueryVC: UIViewController {
                                                         forProperty:MPMediaItemPropertyAlbumTitle,
                                                         comparisonType:.contains)
             query.addFilterPredicate(hasBeethoven)
-            guard let result = query.collections else {return} //
+            guard let result = query.collections else {return}
             for album in result {
-                print(album.representativeItem!.albumTitle!) //
+                print(album.representativeItem!.albumTitle!)
             }
         }
     }
@@ -129,7 +128,7 @@ class MediaQueryVC: UIViewController {
                                                      comparisonType:.contains)
             query.addFilterPredicate(hasSonata)
             let isPresent = MPMediaPropertyPredicate(value:false,
-                                                     forProperty:MPMediaItemPropertyIsCloudItem, // string name of property incorrect in header
+                                                     forProperty:MPMediaItemPropertyIsCloudItem, //?string name of property incorrect in header
                 comparisonType:.equalTo)
             query.addFilterPredicate(isPresent)
 
@@ -154,9 +153,9 @@ class MediaQueryVC: UIViewController {
                                                      forProperty:MPMediaItemPropertyIsCloudItem,
                                                      comparisonType:.equalTo)
             query.addFilterPredicate(isPresent)
-            guard let items = query.items else {return} //
+            guard let items = query.items else {return}
 
-            let shorties = items.filter { //
+            let shorties = items.filter {
                 let dur = $0.playbackDuration
                 return dur < 3000
             }
@@ -173,7 +172,7 @@ class MediaQueryVC: UIViewController {
             player.shuffleMode = .songs
             player.beginGeneratingPlaybackNotifications()
             NotificationCenter.default.addObserver(self, selector: #selector(self.changed), name: .MPMusicPlayerControllerNowPlayingItemDidChange, object: player)
-            self.q = queue // retain a pointer to the queue
+            self.q = queue //retain a pointer to the queue
             player.play()
 
             self.timer = Timer.scheduledTimer(timeInterval:1, target: self, selector: #selector(self.timerFired), userInfo: nil, repeats: true)
@@ -183,11 +182,11 @@ class MediaQueryVC: UIViewController {
 
     func changed(_ n:Notification) {
         defer {
-            self.timer?.fire() // looks better if we fire timer now
+            self.timer?.fire()
         }
         self.label.text = ""
         let player = MPMusicPlayerController.applicationMusicPlayer()
-        guard let obj = n.object, obj as AnyObject === player else { return } // just playing safe
+        guard let obj = n.object, obj as AnyObject === player else { return }
         guard let title = player.nowPlayingItem?.title else {return}
         let ix = player.indexOfNowPlayingItem
         guard ix != NSNotFound else {return}
@@ -199,7 +198,7 @@ class MediaQueryVC: UIViewController {
         guard let item = player.nowPlayingItem, player.playbackState != .stopped else {
             self.prog.isHidden = true
             return
-        } //
+        }
         self.prog.isHidden = false
         let current = player.currentPlaybackTime
         let total = item.playbackDuration

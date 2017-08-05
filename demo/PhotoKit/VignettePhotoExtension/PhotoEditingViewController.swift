@@ -8,6 +8,23 @@ import MobileCoreServices
 import AVFoundation
 import VignetteFilter
 
+func imageOfSize(_ size:CGSize, opaque:Bool = false, closure:@escaping () -> () ) -> UIImage {
+    if #available(iOS 10.0, *) {
+        let f = UIGraphicsImageRendererFormat.default()
+        f.opaque = opaque
+        let r = UIGraphicsImageRenderer(size: size, format: f)
+        /// r.image 会传入 ctx = UIGraphicsImageRendererContext
+        // TODO: ctx in let con = ctx.cgContext 与 UIGraphicsGetCurrentContext() 的区别.
+        return r.image { _ in closure() }
+    } else {
+        UIGraphicsBeginImageContextWithOptions(size, opaque, 0)
+        closure()
+        let result = UIGraphicsGetImageFromCurrentImageContext()!
+        UIGraphicsEndImageContext()
+        return result
+    }
+}
+
 class PhotoEditingViewController: UIViewController, PHContentEditingController, GLKViewDelegate {
     
     @IBOutlet weak var glkview: GLKView!
@@ -84,18 +101,8 @@ class PhotoEditingViewController: UIViewController, PHContentEditingController, 
         if let im = self.input?.displaySizeImage {
             let scale = max(im.size.width/self.glkview.bounds.width, im.size.height/self.glkview.bounds.height)
             let sz = CGSize(width: im.size.width/scale, height: im.size.height/scale)
-            var im2 = UIImage()
-            if #available(iOSApplicationExtension 10.0, *) {
-                let r = UIGraphicsImageRenderer(size:sz)
-                im2 = r.image { _ in
-                    // perhaps no need for this, but the image they give us is much larger than we need
-                    im.draw(in:CGRect(origin: .zero, size: sz))
-                }
-            } else {
-                im2 = imageOfSize(sz) {
-                    // perhaps no need for this, but the image they give us is much larger than we need
-                    im.draw(in: CGRect(origin: CGPoint(), size: sz))
-                }
+            let im2 = imageOfSize(sz) {
+                im.draw(in: CGRect(origin: CGPoint(), size: sz))
             }
 
             self.displayImage = CIImage(image:im2)

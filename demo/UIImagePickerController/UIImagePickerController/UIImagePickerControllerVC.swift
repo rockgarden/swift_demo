@@ -334,12 +334,7 @@ class UIImagePickerControllerVC: UIViewController {
 }
 
 
-// if we do nothing about cancel, cancels automatically
-// if we do nothing about what was chosen, cancel automatically but of course now we have no access
-
-// interesting problem is that we have no control over permitted orientations of picker
-// seems like a bug; can work around this by subclassing
-
+/// interesting problem is that we have no control over permitted orientations of picker, seems like a bug; can work around this by subclassing
 extension UIImagePickerControllerVC : UIImagePickerControllerDelegate {
 
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
@@ -354,6 +349,7 @@ extension UIImagePickerControllerVC : UIImagePickerControllerDelegate {
         if let ed = info[UIImagePickerControllerEditedImage] as? UIImage {
             im = ed
         }
+
         if #available(iOS 9.1, *) {
             if info[UIImagePickerControllerLivePhoto] != nil {
                 print("I got a live photo!")
@@ -361,6 +357,7 @@ extension UIImagePickerControllerVC : UIImagePickerControllerDelegate {
         } else {
             // Fallback on earlier versions
         }
+        
         if pushMyPhotoView {
             // push photo view
             let svc = SecondViewController(image: im)

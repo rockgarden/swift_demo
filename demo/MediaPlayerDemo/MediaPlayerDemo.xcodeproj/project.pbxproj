@@ -11,6 +11,7 @@
 		4435E9D21DFEC8FF0003196A /* wilhelm.aiff in Resources */ = {isa = PBXBuildFile; fileRef = 4435E9D11DFEC8FF0003196A /* wilhelm.aiff */; };
 		4435E9D41DFECA9B0003196A /* EmbeddedAVKitVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4435E9D31DFECA9B0003196A /* EmbeddedAVKitVC.swift */; };
 		4435E9D61DFED0D30003196A /* EmbeddedAVKitVC_UIVideoEditor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4435E9D51DFED0D30003196A /* EmbeddedAVKitVC_UIVideoEditor.swift */; };
+		4435F8F21F35FA5100EF1C68 /* WorkspaceGlobal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4435F8F11F35FA5100EF1C68 /* WorkspaceGlobal.swift */; };
 		4453579C1DFAFF8300F996A2 /* AVKitVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4453579B1DFAFF8300F996A2 /* AVKitVC.swift */; };
 		4453579E1DFB000800F996A2 /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4453579D1DFB000800F996A2 /* Player.swift */; };
 		445357A01DFD332300F996A2 /* MediaQueryVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4453579F1DFD332300F996A2 /* MediaQueryVC.swift */; };
@@ -39,6 +40,7 @@
 		4435E9D11DFEC8FF0003196A /* wilhelm.aiff */ = {isa = PBXFileReference; lastKnownFileType = audio.aiff; path = wilhelm.aiff; sourceTree = "<group>"; };
 		4435E9D31DFECA9B0003196A /* EmbeddedAVKitVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmbeddedAVKitVC.swift; sourceTree = "<group>"; };
 		4435E9D51DFED0D30003196A /* EmbeddedAVKitVC_UIVideoEditor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmbeddedAVKitVC_UIVideoEditor.swift; sourceTree = "<group>"; };
+		4435F8F11F35FA5100EF1C68 /* WorkspaceGlobal.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WorkspaceGlobal.swift; path = ../WorkspaceGlobal.swift; sourceTree = "<group>"; };
 		4453579B1DFAFF8300F996A2 /* AVKitVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AVKitVC.swift; sourceTree = "<group>"; };
 		4453579D1DFB000800F996A2 /* Player.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
 		4453579F1DFD332300F996A2 /* MediaQueryVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MediaQueryVC.swift; sourceTree = "<group>"; };
@@ -92,6 +94,7 @@
 		44C070A91DFAFB4E0093BC1E = {
 			isa = PBXGroup;
 			children = (
+				4435F8F11F35FA5100EF1C68 /* WorkspaceGlobal.swift */,
 				44C070B41DFAFB4E0093BC1E /* MediaPlayerDemo */,
 				44C070B31DFAFB4E0093BC1E /* Products */,
 			);
@@ -219,6 +222,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4453579E1DFB000800F996A2 /* Player.swift in Sources */,
+				4435F8F21F35FA5100EF1C68 /* WorkspaceGlobal.swift in Sources */,
 				445357A21DFD487000F996A2 /* PlayerLayerVC.swift in Sources */,
 				4435E9D41DFECA9B0003196A /* EmbeddedAVKitVC.swift in Sources */,
 				44C070B81DFAFB4E0093BC1E /* MediaPickerVC.swift in Sources */,

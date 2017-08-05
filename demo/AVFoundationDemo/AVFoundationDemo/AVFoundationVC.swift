@@ -1,121 +1,17 @@
-
+//
+//  ViewController.swift
+//  AVFoundationDemo
+//
+//  Created by wangkan on 2017/8/5.
+//  Copyright © 2017年 rockgarden. All rights reserved.
+//
 
 import UIKit
 import AVFoundation
 import Photos
 
-func checkForPhotoLibraryAccess(andThen f:(()->())? = nil) {
-    let status = PHPhotoLibrary.authorizationStatus()
-    switch status {
-    case .authorized:
-        f?()
-    case .notDetermined:
-        PHPhotoLibrary.requestAuthorization() { status in
-            if status == .authorized {
-                DispatchQueue.main.async {
-                    f?()
-                }
-            }
-        }
-    case .restricted:
-        // do nothing
-        break
-    case .denied:
-        // do nothing, or beg the user to authorize us in Settings
-        break
-    }
-}
 
-func checkForMicrophoneCaptureAccess(andThen f:(()->())? = nil) {
-    let status = AVCaptureDevice.authorizationStatus(forMediaType:AVMediaTypeAudio)
-    switch status {
-    case .authorized:
-        f?()
-    case .notDetermined:
-        AVCaptureDevice.requestAccess(forMediaType:AVMediaTypeAudio) { granted in
-            if granted {
-                DispatchQueue.main.async {
-                    f?()
-                }
-            }
-        }
-    case .restricted:
-        // do nothing
-        break
-    case .denied:
-        let alert = UIAlertController(
-            title: "Need Authorization",
-            message: "Wouldn't you like to authorize this app " +
-            "to use the microphone?",
-            preferredStyle: .alert)
-        alert.addAction(UIAlertAction(
-            title: "No", style: .cancel))
-        alert.addAction(UIAlertAction(
-        title: "OK", style: .default) {
-            _ in
-            let url = URL(string:UIApplicationOpenSettingsURLString)!
-            if #available(iOS 10.0, *) {
-                UIApplication.shared.open(url)
-            } else {
-                // Fallback on earlier versions
-            }
-        })
-        UIApplication.shared.delegate!.window!!.rootViewController!.present(alert, animated:true)
-    }
-}
-
-func checkForMovieCaptureAccess(andThen f:(()->())? = nil) {
-    let status = AVCaptureDevice.authorizationStatus(forMediaType:AVMediaTypeVideo)
-    switch status {
-    case .authorized:
-        f?()
-    case .notDetermined:
-        AVCaptureDevice.requestAccess(forMediaType:AVMediaTypeVideo) { granted in
-            if granted {
-                DispatchQueue.main.async {
-                    f?()
-                }
-            }
-        }
-    case .restricted:
-        // do nothing
-        break
-    case .denied:
-        let alert = UIAlertController(
-            title: "Need Authorization",
-            message: "Wouldn't you like to authorize this app " +
-            "to use the camera?",
-            preferredStyle: .alert)
-        alert.addAction(UIAlertAction(
-            title: "No", style: .cancel))
-        alert.addAction(UIAlertAction(
-        title: "OK", style: .default) {
-            _ in
-            let url = URL(string:UIApplicationOpenSettingsURLString)!
-            if #available(iOS 10.0, *) {
-                UIApplication.shared.open(url)
-            } else {
-                // Fallback on earlier versions
-            }
-        })
-        UIApplication.shared.delegate!.window!!.rootViewController!.present(alert, animated:true)
-    }
-}
-
-extension UIDeviceOrientation {
-    var videoOrientation: AVCaptureVideoOrientation? {
-        switch self {
-        case .portrait: return .portrait
-        case .portraitUpsideDown: return .portraitUpsideDown
-        case .landscapeLeft: return .landscapeRight
-        case .landscapeRight: return .landscapeLeft
-        default: return nil
-        }
-    }
-}
-
-//MARK: - Main
-class ViewController: UIViewController {
+class AVFoundationVC: UIViewController {
 
     var sess : AVCaptureSession!
     var snapper : AVCaptureStillImageOutput!
@@ -173,7 +69,7 @@ class ViewController: UIViewController {
         let lay = AVCaptureVideoPreviewLayer(session:self.sess)
         lay?.frame = self.previewRect
         self.view.layer.addSublayer(lay!)
-        self.previewLayer = lay // keep a ref
+        self.previewLayer = lay // keep a ref so we can remove it later
 
         self.sess.startRunning()
     }
@@ -193,8 +89,9 @@ class ViewController: UIViewController {
                 kCVPixelBufferWidthKey as String : len,
                 kCVPixelBufferHeightKey as String : len
             ]
+
             guard let output = self.sess.outputs[0] as? AVCapturePhotoOutput else {return}
-            // how to deal with orientation; stolen from Apple's AVCam example!
+
             if let conn = output.connection(withMediaType: AVMediaTypeVideo) {
                 let orientation = UIDevice.current.orientation.videoOrientation!
                 conn.videoOrientation = orientation
@@ -225,7 +122,7 @@ class ViewController: UIViewController {
 }
 
 @available(iOS 10.0, *)
-extension ViewController : AVCapturePhotoCaptureDelegate {
+extension AVFoundationVC : AVCapturePhotoCaptureDelegate {
 
     func capture(_ output: AVCapturePhotoOutput, didFinishProcessingPhotoSampleBuffer sampleBuffer: CMSampleBuffer?, previewPhotoSampleBuffer: CMSampleBuffer?, resolvedSettings: AVCaptureResolvedPhotoSettings, bracketSettings: AVCaptureBracketedStillImageSettings?, error: Error?) {
         print("photo", resolvedSettings.photoDimensions)

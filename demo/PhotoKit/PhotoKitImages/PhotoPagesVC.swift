@@ -3,28 +3,6 @@ import UIKit
 import Photos
 import PhotosUI
 
-func checkForPhotoLibraryAccess(andThen f:(()->())? = nil) {
-    let status = PHPhotoLibrary.authorizationStatus()
-    switch status {
-    case .authorized:
-        f?()
-    case .notDetermined:
-        PHPhotoLibrary.requestAuthorization() { status in
-            if status == .authorized {
-                DispatchQueue.main.async {
-                    f?()
-                }
-            }
-        }
-    case .restricted:
-        break
-    case .denied:
-        // beg the user to authorize us in Settings
-        break
-    }
-}
-
-
 class PhotoPagesVC: UIViewController {
                             
     var pvc: UIPageViewController?
