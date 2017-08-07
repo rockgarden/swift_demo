@@ -28,7 +28,7 @@ class FirstViewController : UIViewController {
 
     override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
         print(self.view.bounds.size)
-        print(self.navigationController!.view.bounds.size)
+        print(self.navigationController?.view.bounds.size as Any)
     }
 
     private var hide = false

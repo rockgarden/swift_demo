@@ -18,7 +18,6 @@ class OrientationsPermittedVC : UIViewController {
          func application(_ application: UIApplication, supportedInterfaceOrientationsFor window: UIWindow?) -> UIInterfaceOrientationMask { return .landscape }
          */
         
-        // wait! now, .all means .all!
         return .all
         //return .portrait
     }

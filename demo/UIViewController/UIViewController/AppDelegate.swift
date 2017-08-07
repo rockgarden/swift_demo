@@ -196,15 +196,23 @@ extension AppDelegate : UIGestureRecognizerDelegate {
 
             if useContext {
                 /// this is the money shot! with a property animator, the whole notion of "hurry home" is easy - including "hurry back to start"
-
+                /// TODO: 如何配置 anim
                 if #available(iOS 10.0, *) {
-                    let anim = self.anim as! UIViewPropertyAnimator
-                    anim.pauseAnimation()
+                    let anim: UIViewImplicitlyAnimating!
+                    if self.anim != nil {
+                        anim = self.anim as! UIViewPropertyAnimator
+                        anim.pauseAnimation()
+                    } else {
+                        anim = UIViewPropertyAnimator(duration: 0.4, curve: .linear) {
+                            v1.frame = self.r1end
+                            v2.frame = r2end
+                        }
+                    }
 
                     if anim.fractionComplete < 0.5 {
                         anim.isReversed = true
                     }
-                    anim.continueAnimation(
+                    anim.continueAnimation!(
                         withTimingParameters:
                         UICubicTimingParameters(animationCurve:.linear),
                         durationFactor: 0.2)

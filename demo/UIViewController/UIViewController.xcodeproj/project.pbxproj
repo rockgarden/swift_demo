@@ -48,6 +48,9 @@
 		449D1CB71E992C57000C7446 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 449D1CB61E992C57000C7446 /* AppDelegate.swift */; };
 		449D1CBC1E992C57000C7446 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 449D1CBA1E992C57000C7446 /* Main.storyboard */; };
 		449D1CBE1E992C57000C7446 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 449D1CBD1E992C57000C7446 /* Assets.xcassets */; };
+		44AB50A11F38AADA00261057 /* RotationCausesPresentationVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 44AB509D1F38AADA00261057 /* RotationCausesPresentationVC.m */; };
+		44AB50A21F38AADA00261057 /* SecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 44AB509F1F38AADA00261057 /* SecondViewController.m */; };
+		44AB50A31F38AADA00261057 /* SecondViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 44AB50A01F38AADA00261057 /* SecondViewController.xib */; };
 		44B1E0171EF413F8005CF9C7 /* ViewControllerPreviewingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44B1E0161EF413F7005CF9C7 /* ViewControllerPreviewingVC.swift */; };
 		44B1E01A1EF41459005CF9C7 /* Pep.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44B1E0181EF41459005CF9C7 /* Pep.swift */; };
 		44B1E01B1EF41459005CF9C7 /* Pep.xib in Resources */ = {isa = PBXBuildFile; fileRef = 44B1E0191EF41459005CF9C7 /* Pep.xib */; };
@@ -135,6 +138,12 @@
 		449D1CBB1E992C57000C7446 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		449D1CBD1E992C57000C7446 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		449D1CC21E992C57000C7446 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		44AB509B1F38AAD900261057 /* UIViewController-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIViewController-Bridging-Header.h"; sourceTree = "<group>"; };
+		44AB509C1F38AADA00261057 /* RotationCausesPresentationVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RotationCausesPresentationVC.h; sourceTree = "<group>"; };
+		44AB509D1F38AADA00261057 /* RotationCausesPresentationVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RotationCausesPresentationVC.m; sourceTree = "<group>"; };
+		44AB509E1F38AADA00261057 /* SecondViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SecondViewController.h; sourceTree = "<group>"; };
+		44AB509F1F38AADA00261057 /* SecondViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SecondViewController.m; sourceTree = "<group>"; };
+		44AB50A01F38AADA00261057 /* SecondViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SecondViewController.xib; sourceTree = "<group>"; };
 		44B1E0161EF413F7005CF9C7 /* ViewControllerPreviewingVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewControllerPreviewingVC.swift; sourceTree = "<group>"; };
 		44B1E0181EF41459005CF9C7 /* Pep.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Pep.swift; sourceTree = "<group>"; };
 		44B1E0191EF41459005CF9C7 /* Pep.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Pep.xib; sourceTree = "<group>"; };
@@ -310,14 +319,28 @@
 				44CCE26A1F03EB5F009BB4C8 /* OrientationsPermittedVC.swift */,
 				44CCE26D1F0525BF009BB4C8 /* OrientationsPermitted.storyboard */,
 				44CCE26F1F0525D8009BB4C8 /* AttemptRotationVC.swift */,
+				44AB50A41F38AAE500261057 /* RotationCausesPresentation */,
 				448AC2381EF2AD3800013F08 /* PresentationController */,
 				441721371EDABAA600933908 /* Transition */,
 				441721341EDAB16500933908 /* ContainerView */,
 				449D1CBD1E992C57000C7446 /* Assets.xcassets */,
 				4459BCB01EE06EE600717B8D /* linkhelp.html */,
 				449D1CC21E992C57000C7446 /* Info.plist */,
+				44AB509B1F38AAD900261057 /* UIViewController-Bridging-Header.h */,
 			);
 			path = UIViewController;
+			sourceTree = "<group>";
+		};
+		44AB50A41F38AAE500261057 /* RotationCausesPresentation */ = {
+			isa = PBXGroup;
+			children = (
+				44AB509C1F38AADA00261057 /* RotationCausesPresentationVC.h */,
+				44AB509D1F38AADA00261057 /* RotationCausesPresentationVC.m */,
+				44AB509E1F38AADA00261057 /* SecondViewController.h */,
+				44AB509F1F38AADA00261057 /* SecondViewController.m */,
+				44AB50A01F38AADA00261057 /* SecondViewController.xib */,
+			);
+			name = RotationCausesPresentation;
 			sourceTree = "<group>";
 		};
 		C29FFCD11ECADE2F0034587E /* EvernoteTransition */ = {
@@ -428,6 +451,7 @@
 					449D1CB21E992C57000C7446 = {
 						CreatedOnToolsVersion = 8.3;
 						DevelopmentTeam = W3MH7MTTSB;
+						LastSwiftMigration = 0830;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -489,6 +513,7 @@
 				4459BCB11EE06EE600717B8D /* linkhelp.html in Resources */,
 				448AC2371EF2ACDA00013F08 /* PVCThirdVC.xib in Resources */,
 				447287C71F1EDFD20003B144 /* Info.plist in Resources */,
+				44AB50A31F38AADA00261057 /* SecondViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -549,9 +574,11 @@
 				44263B351EFBEE6F0045A717 /* ExtraViewController.swift in Sources */,
 				441721411EDB161E00933908 /* ContainerVC_Size_Child.swift in Sources */,
 				C29FFCC21ECACB340034587E /* TransitionImageCollectionVC.swift in Sources */,
+				44AB50A11F38AADA00261057 /* RotationCausesPresentationVC.m in Sources */,
 				448AC2571EF2C7F500013F08 /* AdaptivePresentationVC_Segue.swift in Sources */,
 				C29FFCE11ECAECA40034587E /* NTHorizontalPageViewCell.swift in Sources */,
 				449D1CB71E992C57000C7446 /* AppDelegate.swift in Sources */,
+				44AB50A21F38AADA00261057 /* SecondViewController.m in Sources */,
 				448AC2331EF2ACA800013F08 /* PVCSecondVC.swift in Sources */,
 				44B1E01A1EF41459005CF9C7 /* Pep.swift in Sources */,
 				44306D141F029FB70095D977 /* BaseForEventVC.swift in Sources */,
@@ -749,12 +776,15 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				DEVELOPMENT_TEAM = W3MH7MTTSB;
 				INFOPLIST_FILE = UIViewController/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.-rockgarden.UIViewController";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "UIViewController/UIViewController-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -764,12 +794,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				DEVELOPMENT_TEAM = W3MH7MTTSB;
 				INFOPLIST_FILE = UIViewController/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.-rockgarden.UIViewController";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "UIViewController/UIViewController-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
