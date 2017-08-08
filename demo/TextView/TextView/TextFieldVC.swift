@@ -9,7 +9,8 @@ class TextFieldVC: UIViewController {
 
     @IBOutlet var tf : UITextField!
     @IBOutlet var tfDelegate : UITextField!
-
+    var heightConstraint: NSLayoutConstraint?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 

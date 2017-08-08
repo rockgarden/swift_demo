@@ -7,9 +7,12 @@ import UIKit
 
 class SelfSizing_KeyboardVC: UIViewController, UITextViewDelegate {
 
-    @IBOutlet var tv: UITextView!
+    @IBOutlet var tvSelfSize: UITextView!
     @IBOutlet var heightConstraint: NSLayoutConstraint! //FIXME: 最在高度有限制,自动适配keyboard
     @IBOutlet var tv1: UITextView! //FIXME: AdjustsScrollViewInsets 没起作用
+
+    @IBOutlet weak var tvAutoHeight: TextViewAutoHeight!
+    
     var keyboardShowing = false
 
     override func viewDidLoad() {
@@ -17,7 +20,9 @@ class SelfSizing_KeyboardVC: UIViewController, UITextViewDelegate {
         /// 若是navBar由rootVC带入时就不会AdjustsScrollViewInsets
         automaticallyAdjustsScrollViewInsets = false
 
-        self.tv.isScrollEnabled = false // *
+        tvAutoHeight.maxHeight = 128
+
+        self.tvSelfSize.isScrollEnabled = false // *
         self.heightConstraint.isActive = false // *
 
         let s = "Twas brillig, and the slithy toves did gyre and gimble in the wabe; " +
@@ -34,20 +39,20 @@ class SelfSizing_KeyboardVC: UIViewController, UITextViewDelegate {
                             para.lineBreakMode = .byWordWrapping
         }, range:NSMakeRange(0,1))
 
-        self.tv.attributedText = mas
+        self.tvSelfSize.attributedText = mas
 
         setTV1()
     }
 
     override func viewDidLayoutSubviews() {
-        let h = self.tv.contentSize.height
+        let h = self.tvSelfSize.contentSize.height
         let limit : CGFloat = 200 // or whatever
-        if h > limit && !self.tv.isScrollEnabled {
-            self.tv.isScrollEnabled = true
+        if h > limit && !self.tvSelfSize.isScrollEnabled {
+            self.tvSelfSize.isScrollEnabled = true
             self.heightConstraint.constant = limit
             self.heightConstraint.isActive = true
-        } else if h < limit && self.tv.isScrollEnabled {
-            self.tv.isScrollEnabled = false
+        } else if h < limit && self.tvSelfSize.isScrollEnabled {
+            self.tvSelfSize.isScrollEnabled = false
             self.heightConstraint.isActive = false
         }
     }

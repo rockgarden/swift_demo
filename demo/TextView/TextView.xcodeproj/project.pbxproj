@@ -25,6 +25,18 @@
 		4474E0631E2262640013290C /* ExclusionPathVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4474E0621E2262640013290C /* ExclusionPathVC.swift */; };
 		4474E0651E2272060013290C /* MyTextContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4474E0641E2272060013290C /* MyTextContainer.swift */; };
 		4474E0691E23B73C0013290C /* SelfSizingTextViewVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4474E0681E23B73C0013290C /* SelfSizingTextViewVC.swift */; };
+		44AB50A71F39EA1800261057 /* GrowingTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44AB50A61F39EA1800261057 /* GrowingTextView.swift */; };
+		44AB50A91F39EA8700261057 /* PlaceholderTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44AB50A81F39EA8700261057 /* PlaceholderTextView.swift */; };
+		44AB50AB1F39EB6500261057 /* TextViewAutoHeight.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44AB50AA1F39EB6500261057 /* TextViewAutoHeight.swift */; };
+		44AB50AD1F3A01F700261057 /* TextViewHeightCalculatorVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44AB50AC1F3A01F700261057 /* TextViewHeightCalculatorVC.swift */; };
+		44AB50B31F3A045B00261057 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 44AB50AF1F3A045B00261057 /* Info.plist */; };
+		44AB50B41F3A045B00261057 /* NextGrowingInternalTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44AB50B01F3A045B00261057 /* NextGrowingInternalTextView.swift */; };
+		44AB50B51F3A045B00261057 /* NextGrowingTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44AB50B21F3A045B00261057 /* NextGrowingTextView.swift */; };
+		44AB50B71F3A046C00261057 /* NextGrowingTextViewVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44AB50B61F3A046C00261057 /* NextGrowingTextViewVC.swift */; };
+		44AB50B91F3A047C00261057 /* NextGrowingTextView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 44AB50B81F3A047C00261057 /* NextGrowingTextView.storyboard */; };
+		44AB50C41F3A08A200261057 /* UIViewController+RSKKeyboardAnimationObserver.m in Sources */ = {isa = PBXBuildFile; fileRef = 44AB50C11F3A08A200261057 /* UIViewController+RSKKeyboardAnimationObserver.m */; };
+		44AB50CB1F3A093300261057 /* GrowingTextViewVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44AB50C91F3A093300261057 /* GrowingTextViewVC.swift */; };
+		44AB50CC1F3A093300261057 /* GrowingTextView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 44AB50CA1F3A093300261057 /* GrowingTextView.storyboard */; };
 		44D348961E24643000F953D7 /* MyTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44D348951E24643000F953D7 /* MyTextField.swift */; };
 		44D348981E24643B00F953D7 /* abbreviations.txt in Resources */ = {isa = PBXBuildFile; fileRef = 44D348971E24643B00F953D7 /* abbreviations.txt */; };
 		44D3489A1E24649000F953D7 /* TextFieldVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44D348991E24649000F953D7 /* TextFieldVC.swift */; };
@@ -56,6 +68,22 @@
 		4474E0621E2262640013290C /* ExclusionPathVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExclusionPathVC.swift; sourceTree = "<group>"; };
 		4474E0641E2272060013290C /* MyTextContainer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyTextContainer.swift; sourceTree = "<group>"; };
 		4474E0681E23B73C0013290C /* SelfSizingTextViewVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelfSizingTextViewVC.swift; sourceTree = "<group>"; };
+		44AB50A61F39EA1800261057 /* GrowingTextView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GrowingTextView.swift; sourceTree = "<group>"; };
+		44AB50A81F39EA8700261057 /* PlaceholderTextView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlaceholderTextView.swift; sourceTree = "<group>"; };
+		44AB50AA1F39EB6500261057 /* TextViewAutoHeight.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextViewAutoHeight.swift; sourceTree = "<group>"; };
+		44AB50AC1F3A01F700261057 /* TextViewHeightCalculatorVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextViewHeightCalculatorVC.swift; sourceTree = "<group>"; };
+		44AB50AF1F3A045B00261057 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		44AB50B01F3A045B00261057 /* NextGrowingInternalTextView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NextGrowingInternalTextView.swift; sourceTree = "<group>"; };
+		44AB50B11F3A045B00261057 /* NextGrowingTextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NextGrowingTextView.h; sourceTree = "<group>"; };
+		44AB50B21F3A045B00261057 /* NextGrowingTextView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NextGrowingTextView.swift; sourceTree = "<group>"; };
+		44AB50B61F3A046C00261057 /* NextGrowingTextViewVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NextGrowingTextViewVC.swift; sourceTree = "<group>"; };
+		44AB50B81F3A047C00261057 /* NextGrowingTextView.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = NextGrowingTextView.storyboard; sourceTree = "<group>"; };
+		44AB50BF1F3A08A200261057 /* RSKKeyboardAnimationObserver.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RSKKeyboardAnimationObserver.h; sourceTree = "<group>"; };
+		44AB50C01F3A08A200261057 /* UIViewController+RSKKeyboardAnimationObserver.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+RSKKeyboardAnimationObserver.h"; sourceTree = "<group>"; };
+		44AB50C11F3A08A200261057 /* UIViewController+RSKKeyboardAnimationObserver.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+RSKKeyboardAnimationObserver.m"; sourceTree = "<group>"; };
+		44AB50C91F3A093300261057 /* GrowingTextViewVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GrowingTextViewVC.swift; sourceTree = "<group>"; };
+		44AB50CA1F3A093300261057 /* GrowingTextView.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = GrowingTextView.storyboard; sourceTree = "<group>"; };
+		44AB50CD1F3A0A5300261057 /* TextView-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "TextView-Bridging-Header.h"; sourceTree = "<group>"; };
 		44D348951E24643000F953D7 /* MyTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyTextField.swift; sourceTree = "<group>"; };
 		44D348971E24643B00F953D7 /* abbreviations.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = abbreviations.txt; sourceTree = "<group>"; };
 		44D348991E24649000F953D7 /* TextFieldVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextFieldVC.swift; sourceTree = "<group>"; };
@@ -80,6 +108,13 @@
 		4428499A1D8837D50044DCF5 = {
 			isa = PBXGroup;
 			children = (
+				44AB50CD1F3A0A5300261057 /* TextView-Bridging-Header.h */,
+				44AB50A61F39EA1800261057 /* GrowingTextView.swift */,
+				44AB50A81F39EA8700261057 /* PlaceholderTextView.swift */,
+				44AB50C91F3A093300261057 /* GrowingTextViewVC.swift */,
+				44AB50CA1F3A093300261057 /* GrowingTextView.storyboard */,
+				44AB50BE1F3A08A200261057 /* RSKKeyboardAnimationObserver */,
+				44AB50AE1F3A045B00261057 /* NextGrowingTextView */,
 				C2D2E6D21EB320AC00200CEB /* KeyboardAvoiding */,
 				442849A51D8837D50044DCF5 /* TextView */,
 				442849A41D8837D50044DCF5 /* Products */,
@@ -106,18 +141,44 @@
 				446B0D731E20DC8D0012140C /* MyLayoutManager.swift */,
 				4474E0641E2272060013290C /* MyTextContainer.swift */,
 				4474E0681E23B73C0013290C /* SelfSizingTextViewVC.swift */,
+				44AB50AA1F39EB6500261057 /* TextViewAutoHeight.swift */,
 				44D348991E24649000F953D7 /* TextFieldVC.swift */,
 				44D348951E24643000F953D7 /* MyTextField.swift */,
 				444150081E2909D000760959 /* KeyboardAccessoryVC.swift */,
 				4441500C1E2910AA00760959 /* TextFieldSlidingVC.swift */,
+				44AB50AC1F3A01F700261057 /* TextViewHeightCalculatorVC.swift */,
 				4441500A1E290E1600760959 /* AccessoryView.xib */,
+				C2D2E6D71EB3218300200CEB /* KeyboardAvoidingVC.swift */,
+				C2D2E6DB1EB3282600200CEB /* MessageVC.swift */,
 				44F7B4391ED481290028D0DF /* resources */,
 				442849AF1D8837D50044DCF5 /* LaunchScreen.storyboard */,
 				442849B21D8837D50044DCF5 /* Info.plist */,
-				C2D2E6D71EB3218300200CEB /* KeyboardAvoidingVC.swift */,
-				C2D2E6DB1EB3282600200CEB /* MessageVC.swift */,
 			);
 			path = TextView;
+			sourceTree = "<group>";
+		};
+		44AB50AE1F3A045B00261057 /* NextGrowingTextView */ = {
+			isa = PBXGroup;
+			children = (
+				44AB50AF1F3A045B00261057 /* Info.plist */,
+				44AB50B01F3A045B00261057 /* NextGrowingInternalTextView.swift */,
+				44AB50B11F3A045B00261057 /* NextGrowingTextView.h */,
+				44AB50B21F3A045B00261057 /* NextGrowingTextView.swift */,
+				44AB50B61F3A046C00261057 /* NextGrowingTextViewVC.swift */,
+				44AB50B81F3A047C00261057 /* NextGrowingTextView.storyboard */,
+			);
+			path = NextGrowingTextView;
+			sourceTree = "<group>";
+		};
+		44AB50BE1F3A08A200261057 /* RSKKeyboardAnimationObserver */ = {
+			isa = PBXGroup;
+			children = (
+				44AB50BF1F3A08A200261057 /* RSKKeyboardAnimationObserver.h */,
+				44AB50C01F3A08A200261057 /* UIViewController+RSKKeyboardAnimationObserver.h */,
+				44AB50C11F3A08A200261057 /* UIViewController+RSKKeyboardAnimationObserver.m */,
+			);
+			name = RSKKeyboardAnimationObserver;
+			path = RSKKeyboardAnimationObserver/RSKKeyboardAnimationObserver;
 			sourceTree = "<group>";
 		};
 		44F7B4391ED481290028D0DF /* resources */ = {
@@ -206,11 +267,14 @@
 				44D348981E24643B00F953D7 /* abbreviations.txt in Resources */,
 				446B0D721E20D0EA0012140C /* states.txt in Resources */,
 				442849B11D8837D50044DCF5 /* LaunchScreen.storyboard in Resources */,
+				44AB50CC1F3A093300261057 /* GrowingTextView.storyboard in Resources */,
 				442849BA1D8839A60044DCF5 /* peppers.jpg in Resources */,
 				442849BB1D8839A60044DCF5 /* onion.jpg in Resources */,
+				44AB50B91F3A047C00261057 /* NextGrowingTextView.storyboard in Resources */,
 				446B0D761E210FB60012140C /* brillig.txt in Resources */,
 				4441500B1E290E1600760959 /* AccessoryView.xib in Resources */,
 				442849AE1D8837D50044DCF5 /* Assets.xcassets in Resources */,
+				44AB50B31F3A045B00261057 /* Info.plist in Resources */,
 				442849AC1D8837D50044DCF5 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -224,21 +288,30 @@
 			files = (
 				C2D2E6D81EB3218300200CEB /* KeyboardAvoidingVC.swift in Sources */,
 				446B0D701E20CB280012140C /* StyledTextVC.swift in Sources */,
+				44AB50A91F39EA8700261057 /* PlaceholderTextView.swift in Sources */,
 				4474E0651E2272060013290C /* MyTextContainer.swift in Sources */,
 				44D3489A1E24649000F953D7 /* TextFieldVC.swift in Sources */,
 				442849A91D8837D50044DCF5 /* TextViewVC.swift in Sources */,
+				44AB50B71F3A046C00261057 /* NextGrowingTextViewVC.swift in Sources */,
 				44D348961E24643000F953D7 /* MyTextField.swift in Sources */,
+				44AB50CB1F3A093300261057 /* GrowingTextViewVC.swift in Sources */,
 				444150091E2909D000760959 /* KeyboardAccessoryVC.swift in Sources */,
 				C2D2E6D51EB320AC00200CEB /* KeyboardAvoiding.swift in Sources */,
 				C2D2E6D61EB320AC00200CEB /* KeyboardDismissingView.swift in Sources */,
 				C2D2E6DC1EB3282600200CEB /* MessageVC.swift in Sources */,
 				C2D2E6DA1EB327EC00200CEB /* KeyboardMan.swift in Sources */,
 				4474E0631E2262640013290C /* ExclusionPathVC.swift in Sources */,
+				44AB50B51F3A045B00261057 /* NextGrowingTextView.swift in Sources */,
+				44AB50AB1F39EB6500261057 /* TextViewAutoHeight.swift in Sources */,
 				4441500D1E2910AA00760959 /* TextFieldSlidingVC.swift in Sources */,
 				4474E0691E23B73C0013290C /* SelfSizingTextViewVC.swift in Sources */,
 				446B0D781E2111BE0012140C /* TextKitStacksVC.swift in Sources */,
+				44AB50A71F39EA1800261057 /* GrowingTextView.swift in Sources */,
+				44AB50AD1F3A01F700261057 /* TextViewHeightCalculatorVC.swift in Sources */,
 				442849A71D8837D50044DCF5 /* AppDelegate.swift in Sources */,
+				44AB50C41F3A08A200261057 /* UIViewController+RSKKeyboardAnimationObserver.m in Sources */,
 				446B0D741E20DC8D0012140C /* MyLayoutManager.swift in Sources */,
+				44AB50B41F3A045B00261057 /* NextGrowingInternalTextView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -307,6 +380,7 @@
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
+				SWIFT_OBJC_BRIDGING_HEADER = "TextView-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
@@ -347,6 +421,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
+				SWIFT_OBJC_BRIDGING_HEADER = "TextView-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				VALIDATE_PRODUCT = YES;
 			};
