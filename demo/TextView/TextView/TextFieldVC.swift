@@ -9,13 +9,31 @@ class TextFieldVC: UIViewController {
 
     @IBOutlet var tf : UITextField!
     @IBOutlet var tfDelegate : UITextField!
-    var heightConstraint: NSLayoutConstraint?
+    @IBOutlet var heightConstraint: NSLayoutConstraint!
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        heightConstraint?.isActive = false
+
         tf.allowsEditingTextAttributes = true
         setupInputAssistantItem(which: 2)
+
+        let s = "Twas brillig, and the slithy toves did gyre and gimble in the wabe; " +
+        "all mimsy were the borogoves, and the mome raths outgrabe."
+
+        let mas = NSMutableAttributedString(string:s, attributes:[
+            NSFontAttributeName: UIFont(name:"GillSans", size:20)!
+            ])
+
+        mas.addAttribute(NSParagraphStyleAttributeName,
+                         value:lend(){
+                            (para:NSMutableParagraphStyle) in
+                            para.alignment = .left
+                            para.lineBreakMode = .byWordWrapping
+        }, range:NSMakeRange(0,1))
+
+        tf.attributedText = mas
 
         let mi = UIMenuItem(title:"Expand", action:#selector(MyTextField.expand))
         let mc = UIMenuController.shared

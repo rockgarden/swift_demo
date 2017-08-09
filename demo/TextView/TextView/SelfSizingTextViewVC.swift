@@ -12,6 +12,9 @@ class SelfSizing_KeyboardVC: UIViewController, UITextViewDelegate {
     @IBOutlet var tv1: UITextView! //FIXME: AdjustsScrollViewInsets 没起作用
 
     @IBOutlet weak var tvAutoHeight: TextViewAutoHeight!
+
+    @IBOutlet weak var tvNormal: UITextView!
+    @IBOutlet var heightConstraintNormal: NSLayoutConstraint!
     
     var keyboardShowing = false
 
@@ -24,6 +27,9 @@ class SelfSizing_KeyboardVC: UIViewController, UITextViewDelegate {
 
         self.tvSelfSize.isScrollEnabled = false // *
         self.heightConstraint.isActive = false // *
+
+        tvNormal.isScrollEnabled = false // *
+        heightConstraintNormal.isActive = false // *
 
         let s = "Twas brillig, and the slithy toves did gyre and gimble in the wabe; " +
         "all mimsy were the borogoves, and the mome raths outgrabe."
@@ -39,7 +45,8 @@ class SelfSizing_KeyboardVC: UIViewController, UITextViewDelegate {
                             para.lineBreakMode = .byWordWrapping
         }, range:NSMakeRange(0,1))
 
-        self.tvSelfSize.attributedText = mas
+        tvSelfSize.attributedText = mas
+        tvAutoHeight.attributedText = mas
 
         setTV1()
     }

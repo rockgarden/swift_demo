@@ -12,8 +12,8 @@ class TextViewAutoHeight: UITextView {
     
     //MARK: attributes
 
-    var  maxHeight: CGFloat?
-    var  heightConstraint: NSLayoutConstraint?
+    var maxHeight: CGFloat?
+    var heightConstraint: NSLayoutConstraint?
    
     //MARK: initialize
 
@@ -34,7 +34,21 @@ class TextViewAutoHeight: UITextView {
     
     override func layoutSubviews() {
         super.layoutSubviews()
-        setUpConstraint()
+        heightConstraint?.isActive = false
+        isScrollEnabled = false
+        //setUpConstraint()
+//        isScrollEnabled = false
+//        let h = contentSize.height
+//        if let maxHeight = self.maxHeight {
+//            if h > maxHeight && !isScrollEnabled {
+//                isScrollEnabled = true
+//                heightConstraint?.constant = maxHeight
+//                heightConstraint?.isActive = true
+//            } else if h < maxHeight && isScrollEnabled {
+//                isScrollEnabled = false
+//                heightConstraint?.isActive = false
+//            }
+//        }
     }
     
     //MARK: private
