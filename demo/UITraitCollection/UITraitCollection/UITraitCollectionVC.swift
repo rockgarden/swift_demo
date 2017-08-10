@@ -31,7 +31,9 @@ class UITraitCollectionVC: UIViewController, UINavigationControllerDelegate {
         print("viewDidLoad reports \(self.traitCollection)")
         let vc = self.storyboard!.instantiateViewController(withIdentifier: "CompactHorizontalVC")
         self.addChildViewController(vc) // "will" called for us
-        //let tc = UITraitCollection(horizontalSizeClass: .Compact)
+
+        //let vc = UITraitCollection(horizontalSizeClass: .Compact)
+        
         let tc = UITraitCollection(displayScale: 0.4)
         self.setOverrideTraitCollection(tc, forChildViewController: vc)
         vc.view.frame = CGRect(x: 100, y: 100, width: 200, height: 200)

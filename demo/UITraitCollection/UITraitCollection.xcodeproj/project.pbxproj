@@ -59,13 +59,13 @@
 			isa = PBXGroup;
 			children = (
 				446900441D81ADDB001FC00E /* AppDelegate.swift */,
-				446900461D81ADDB001FC00E /* UITraitCollectionVC.swift */,
 				446900481D81ADDB001FC00E /* Main.storyboard */,
+				446900461D81ADDB001FC00E /* UITraitCollectionVC.swift */,
+				446900561D81AEA6001FC00E /* CompactHorizontalVC.swift */,
+				443D1CB81F28D2D5001983F4 /* AssistiveLayoutVC.swift */,
 				4469004B1D81ADDB001FC00E /* Assets.xcassets */,
 				4469004D1D81ADDB001FC00E /* LaunchScreen.storyboard */,
 				446900501D81ADDB001FC00E /* Info.plist */,
-				443D1CB81F28D2D5001983F4 /* AssistiveLayoutVC.swift */,
-				446900561D81AEA6001FC00E /* CompactHorizontalVC.swift */,
 			);
 			path = UITraitCollection;
 			sourceTree = "<group>";

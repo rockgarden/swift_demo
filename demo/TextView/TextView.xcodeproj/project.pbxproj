@@ -8,8 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		440865951F3B4B6B00C46F75 /* SelfSizeTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 440865941F3B4B6B00C46F75 /* SelfSizeTextField.swift */; };
-		4408659A1F3B5D4900C46F75 /* LFTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 440865981F3B5D4900C46F75 /* LFTextField.m */; };
-		4408659B1F3B5D4900C46F75 /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = 440865991F3B5D4900C46F75 /* README.md */; };
 		442849A71D8837D50044DCF5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 442849A61D8837D50044DCF5 /* AppDelegate.swift */; };
 		442849A91D8837D50044DCF5 /* TextViewVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 442849A81D8837D50044DCF5 /* TextViewVC.swift */; };
 		442849AC1D8837D50044DCF5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 442849AA1D8837D50044DCF5 /* Main.storyboard */; };
@@ -52,9 +50,6 @@
 
 /* Begin PBXFileReference section */
 		440865941F3B4B6B00C46F75 /* SelfSizeTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelfSizeTextField.swift; sourceTree = "<group>"; };
-		440865971F3B5D4900C46F75 /* LFTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LFTextField.h; sourceTree = "<group>"; };
-		440865981F3B5D4900C46F75 /* LFTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LFTextField.m; sourceTree = "<group>"; };
-		440865991F3B5D4900C46F75 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		442849A31D8837D50044DCF5 /* TextView.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TextView.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		442849A61D8837D50044DCF5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		442849A81D8837D50044DCF5 /* TextViewVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextViewVC.swift; sourceTree = "<group>"; };
@@ -112,20 +107,9 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		440865961F3B5D4900C46F75 /* LFTextField */ = {
-			isa = PBXGroup;
-			children = (
-				440865971F3B5D4900C46F75 /* LFTextField.h */,
-				440865981F3B5D4900C46F75 /* LFTextField.m */,
-				440865991F3B5D4900C46F75 /* README.md */,
-			);
-			path = LFTextField;
-			sourceTree = "<group>";
-		};
 		4428499A1D8837D50044DCF5 = {
 			isa = PBXGroup;
 			children = (
-				440865961F3B5D4900C46F75 /* LFTextField */,
 				44AB50CD1F3A0A5300261057 /* TextView-Bridging-Header.h */,
 				44AB50A61F39EA1800261057 /* GrowingTextView.swift */,
 				44AB50A81F39EA8700261057 /* PlaceholderTextView.swift */,
@@ -318,7 +302,6 @@
 				C2D2E6D51EB320AC00200CEB /* KeyboardAvoiding.swift in Sources */,
 				C2D2E6D61EB320AC00200CEB /* KeyboardDismissingView.swift in Sources */,
 				C2D2E6DC1EB3282600200CEB /* MessageVC.swift in Sources */,
-				4408659B1F3B5D4900C46F75 /* README.md in Sources */,
 				C2D2E6DA1EB327EC00200CEB /* KeyboardMan.swift in Sources */,
 				4474E0631E2262640013290C /* ExclusionPathVC.swift in Sources */,
 				44AB50B51F3A045B00261057 /* NextGrowingTextView.swift in Sources */,
@@ -329,7 +312,6 @@
 				446B0D781E2111BE0012140C /* TextKitStacksVC.swift in Sources */,
 				44AB50A71F39EA1800261057 /* GrowingTextView.swift in Sources */,
 				44AB50AD1F3A01F700261057 /* TextViewHeightCalculatorVC.swift in Sources */,
-				4408659A1F3B5D4900C46F75 /* LFTextField.m in Sources */,
 				442849A71D8837D50044DCF5 /* AppDelegate.swift in Sources */,
 				44AB50C41F3A08A200261057 /* UIViewController+RSKKeyboardAnimationObserver.m in Sources */,
 				446B0D741E20DC8D0012140C /* MyLayoutManager.swift in Sources */,

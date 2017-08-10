@@ -74,15 +74,15 @@ class TabBarVC: UITabBarController {
     
 }
 
-internal extension CGSize {
-    init(_ width:CGFloat, _ height:CGFloat) {
-        self.init(width:width, height:height)
-    }
-}
-
-internal extension CGRect {
-    init(_ x:CGFloat, _ y:CGFloat, _ w:CGFloat, _ h:CGFloat) {
-            self.init(x:x, y:y, width:w, height:h)
-    }
-}
+//internal extension CGSize {
+//    init(_ width:CGFloat, _ height:CGFloat) {
+//        self.init(width:width, height:height)
+//    }
+//}
+//
+//internal extension CGRect {
+//    init(_ x:CGFloat, _ y:CGFloat, _ w:CGFloat, _ h:CGFloat) {
+//            self.init(x:x, y:y, width:w, height:h)
+//    }
+//}
 

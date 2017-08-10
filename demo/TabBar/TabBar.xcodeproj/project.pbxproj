@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		442476B41F3C84EE00A176FA /* WorkspaceGlobal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 442476B31F3C84EE00A176FA /* WorkspaceGlobal.swift */; };
 		449718181DBB608A009C1868 /* FirstVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 449718171DBB608A009C1868 /* FirstVC.swift */; };
 		4497181A1DBB60DB009C1868 /* SecondVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 449718191DBB60DB009C1868 /* SecondVC.swift */; };
 		4497181C1DBB9F40009C1868 /* TabbedUnwind.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4497181B1DBB9F40009C1868 /* TabbedUnwind.storyboard */; };
@@ -27,6 +28,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		442476B31F3C84EE00A176FA /* WorkspaceGlobal.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WorkspaceGlobal.swift; path = ../WorkspaceGlobal.swift; sourceTree = "<group>"; };
 		449718171DBB608A009C1868 /* FirstVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirstVC.swift; sourceTree = "<group>"; };
 		449718191DBB60DB009C1868 /* SecondVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SecondVC.swift; sourceTree = "<group>"; };
 		4497181B1DBB9F40009C1868 /* TabbedUnwind.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = TabbedUnwind.storyboard; sourceTree = "<group>"; };
@@ -90,6 +92,7 @@
 		449789B81D6DD33200A607A9 = {
 			isa = PBXGroup;
 			children = (
+				442476B31F3C84EE00A176FA /* WorkspaceGlobal.swift */,
 				44C5B9DF1EAF7D3C000F3B1E /* TTTabBar */,
 				449789C31D6DD33200A607A9 /* TabBar */,
 				449789C21D6DD33200A607A9 /* Products */,
@@ -223,6 +226,7 @@
 				449789C71D6DD33200A607A9 /* SubVC.swift in Sources */,
 				449789D71D6DD38B00A607A9 /* MyDataSource.swift in Sources */,
 				4497181E1DBB9F63009C1868 /* TabbedUnwindFirstVC.swift in Sources */,
+				442476B41F3C84EE00A176FA /* WorkspaceGlobal.swift in Sources */,
 				449718181DBB608A009C1868 /* FirstVC.swift in Sources */,
 				44C5B9E21EAF7D3C000F3B1E /* TTTabBar.swift in Sources */,
 				4497181A1DBB60DB009C1868 /* SecondVC.swift in Sources */,

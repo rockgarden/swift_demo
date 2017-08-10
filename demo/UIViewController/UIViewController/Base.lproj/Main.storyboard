@@ -15,7 +15,7 @@
             <objects>
                 <navigationController storyboardIdentifier="NavTransition" id="oyg-Qt-4LQ" customClass="NavTransition" customModule="UIViewController" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Transition" id="san-12-019"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="Y6X-eZ-sM8">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Y6X-eZ-sM8">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -175,6 +175,46 @@
             </objects>
             <point key="canvasLocation" x="2737" y="1217"/>
         </scene>
+        <!--Testing MultitaskingVC-->
+        <scene sceneID="eBp-gm-n0e">
+            <objects>
+                <viewController storyboardIdentifier="TestingMultitaskingVC" id="RZU-np-IQm" customClass="TestingMultitaskingVC" customModule="UIViewController" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="jAs-N4-pMb"/>
+                        <viewControllerLayoutGuide type="bottom" id="71E-CZ-jlv"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="QLj-0B-b0W">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ddw-t1-qzQ">
+                                <rect key="frame" x="35" y="43" width="54" height="30"/>
+                                <state key="normal" title="Dismiss"/>
+                                <connections>
+                                    <action selector="doButton:" destination="RZU-np-IQm" eventType="touchUpInside" id="ONh-Iw-Lhw"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NtZ-tb-olj">
+                                <rect key="frame" x="32" y="104" width="53" height="30"/>
+                                <state key="normal" title="Present"/>
+                                <connections>
+                                    <action selector="doButton2:" destination="RZU-np-IQm" eventType="touchUpInside" id="dqL-33-oQr"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="ddw-t1-qzQ" firstAttribute="leading" secondItem="QLj-0B-b0W" secondAttribute="leadingMargin" constant="19" id="Bwx-nj-VUu"/>
+                            <constraint firstItem="NtZ-tb-olj" firstAttribute="top" secondItem="jAs-N4-pMb" secondAttribute="bottom" constant="84" id="c0e-3S-zvd"/>
+                            <constraint firstItem="NtZ-tb-olj" firstAttribute="leading" secondItem="QLj-0B-b0W" secondAttribute="leadingMargin" constant="16" id="kPk-15-2Oq"/>
+                            <constraint firstItem="ddw-t1-qzQ" firstAttribute="top" secondItem="jAs-N4-pMb" secondAttribute="bottom" constant="23" id="uAK-mh-l5N"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="p5Z-me-Noz" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3537" y="1217"/>
+        </scene>
         <!--AdaptivePresentation-->
         <scene sceneID="1XR-8z-ZiH">
             <objects>
@@ -196,7 +236,7 @@
                                 </connections>
                             </button>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="HfW-k0-IbR">
-                                <rect key="frame" x="0.0" y="243.5" width="375" height="180"/>
+                                <rect key="frame" x="0.0" y="228.5" width="375" height="210"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="52h-5P-oyG">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="30"/>
@@ -240,6 +280,13 @@
                                         <state key="normal" title="Custom Presented Animation smaller"/>
                                         <connections>
                                             <segue destination="aR3-bf-hOf" kind="presentation" id="Oj2-bg-I7b"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dBu-wZ-08i">
+                                        <rect key="frame" x="0.0" y="180" width="375" height="30"/>
+                                        <state key="normal" title="TestingMultitasking?"/>
+                                        <connections>
+                                            <segue destination="RZU-np-IQm" kind="show" id="Xah-oH-qbk"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -459,7 +506,7 @@
             <objects>
                 <navigationController id="NxO-mC-qJ3" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="ContainerView" id="HJ9-ot-kfS"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="js6-QE-PDG">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="js6-QE-PDG">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -575,7 +622,7 @@
         <scene sceneID="eVy-f3-Idz">
             <objects>
                 <collectionViewController storyboardIdentifier="TransitionImageCollectionVC" hidesBottomBarWhenPushed="YES" id="5FK-pj-qoy" customClass="TransitionImageCollectionVC" customModule="UIViewController" customModuleProvider="target" sceneMemberID="viewController">
-                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" dataMode="prototypes" id="deN-vF-ini">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="deN-vF-ini">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Lwh-Ib-EiE">

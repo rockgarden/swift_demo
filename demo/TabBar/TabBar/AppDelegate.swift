@@ -1,7 +1,7 @@
 
 import UIKit
 
-fileprivate let arr = ["First", "Second", "Third", "Fourth", "Fifth", "Sixth", "Seventh", "Eighth", "Ninth", "Tenth"]
+let arr = ["First", "Second", "Third", "Fourth", "Fifth", "Sixth", "Seventh", "Eighth", "Ninth", "Tenth"]
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -14,7 +14,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         //exampleTabUnwind()
         //exampleNoController()
         exampleCodeInit()
-        //setTabBar()
+        setTabBar()
         /// no func run Main.storyboard
 		return true
 	}
@@ -77,22 +77,32 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     // 配置 appearance
     func setTabBar() {
+        if #available(iOS 10.0, *) {
+            UITabBar.appearance().unselectedItemTintColor = .blue
+            // new in iOS 10,interesting: this seems to override my title text attributes for .normal
+        }
+
         UITabBarItem.appearance().setTitleTextAttributes([
-            NSFontAttributeName:UIFont(name:"Avenir-Heavy", size:14)!
-            ],for: UIControlState())
+            NSFontAttributeName:UIFont(name:"Avenir-Heavy", size:14)!,
+            NSForegroundColorAttributeName:UIColor.green
+            ],for: .normal) //for all use: UIControlState()
+        UITabBarItem.appearance().setTitleTextAttributes([
+            NSFontAttributeName:UIFont(name:"Avenir-Heavy", size:14)!,
+            NSForegroundColorAttributeName:UIColor.yellow
+            ], for:.selected)
         // UIFont.familyNames().map{UIFont.fontNamesForFamilyName($0 as String)}.map(println)
-        let ding = UIFont(name:"ZapfDingbatsITC", size: 16)!
-        UIGraphicsBeginImageContextWithOptions(CGSize(width: 60,height: 40), false, 0)
-        let s = "\u{2713}"
-        let p = NSMutableParagraphStyle()
-        p.alignment = .right
-        s.draw(in: CGRect(x: 0, y: 0,width: 60, height: 40),
-               withAttributes:[
-                NSFontAttributeName:ding,
-                NSParagraphStyleAttributeName:p,
-                NSForegroundColorAttributeName:UIColor.red])
-        let im = UIGraphicsGetImageFromCurrentImageContext()
-        UIGraphicsEndImageContext()
+
+        let im = imageOfSize(CGSize(60,40)) {
+            let s = "\u{2713}"
+            let p = NSMutableParagraphStyle()
+            p.alignment = .right
+            s.draw(in:CGRect(0,0,60,40),
+                   withAttributes:[
+                    NSFontAttributeName:UIFont(name:"ZapfDingbatsITC", size: 16)!,
+                    NSParagraphStyleAttributeName:p,
+                    NSForegroundColorAttributeName:UIColor.red])
+        }
+
         UITabBar.appearance().selectionIndicatorImage = im
     }
 }
@@ -175,10 +185,3 @@ class MyNavController: UINavigationController {
     
 }
 
-func imageOfSize(_ size:CGSize, closure:() -> ()) -> UIImage {
-    UIGraphicsBeginImageContextWithOptions(size, false, 0)
-    closure()
-    let result = UIGraphicsGetImageFromCurrentImageContext()
-    UIGraphicsEndImageContext()
-    return result!
-}

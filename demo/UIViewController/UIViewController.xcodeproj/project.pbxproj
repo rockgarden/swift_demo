@@ -14,6 +14,7 @@
 		4417213E1EDB154800933908 /* ContainerVC_Size.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4417213D1EDB154800933908 /* ContainerVC_Size.swift */; };
 		441721411EDB161E00933908 /* ContainerVC_Size_Child.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4417213F1EDB161E00933908 /* ContainerVC_Size_Child.swift */; };
 		441721421EDB161E00933908 /* ContainerVC_Size_Child.xib in Resources */ = {isa = PBXBuildFile; fileRef = 441721401EDB161E00933908 /* ContainerVC_Size_Child.xib */; };
+		442476B81F3C94EC00A176FA /* TestingMultitaskingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 442476B71F3C94EC00A176FA /* TestingMultitaskingVC.swift */; };
 		44263B351EFBEE6F0045A717 /* ExtraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44263B331EFBEE6F0045A717 /* ExtraViewController.swift */; };
 		44263B361EFBEE6F0045A717 /* ExtraViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 44263B341EFBEE6F0045A717 /* ExtraViewController.xib */; };
 		44263B381EFBF58E0045A717 /* CustomAlertVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 44263B371EFBF58E0045A717 /* CustomAlertVC.xib */; };
@@ -98,6 +99,7 @@
 		4417213D1EDB154800933908 /* ContainerVC_Size.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContainerVC_Size.swift; sourceTree = "<group>"; };
 		4417213F1EDB161E00933908 /* ContainerVC_Size_Child.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContainerVC_Size_Child.swift; sourceTree = "<group>"; };
 		441721401EDB161E00933908 /* ContainerVC_Size_Child.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ContainerVC_Size_Child.xib; sourceTree = "<group>"; };
+		442476B71F3C94EC00A176FA /* TestingMultitaskingVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestingMultitaskingVC.swift; sourceTree = "<group>"; };
 		44263B331EFBEE6F0045A717 /* ExtraViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExtraViewController.swift; sourceTree = "<group>"; };
 		44263B341EFBEE6F0045A717 /* ExtraViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ExtraViewController.xib; sourceTree = "<group>"; };
 		44263B371EFBF58E0045A717 /* CustomAlertVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CustomAlertVC.xib; sourceTree = "<group>"; };
@@ -272,6 +274,7 @@
 				448AC2351EF2ACDA00013F08 /* PVCThirdVC.xib */,
 				44263B391EFBF5D20045A717 /* CustomAlertVC.swift */,
 				44263B371EFBF58E0045A717 /* CustomAlertVC.xib */,
+				442476B71F3C94EC00A176FA /* TestingMultitaskingVC.swift */,
 			);
 			name = PresentationController;
 			sourceTree = "<group>";
@@ -575,6 +578,7 @@
 				441721411EDB161E00933908 /* ContainerVC_Size_Child.swift in Sources */,
 				C29FFCC21ECACB340034587E /* TransitionImageCollectionVC.swift in Sources */,
 				44AB50A11F38AADA00261057 /* RotationCausesPresentationVC.m in Sources */,
+				442476B81F3C94EC00A176FA /* TestingMultitaskingVC.swift in Sources */,
 				448AC2571EF2C7F500013F08 /* AdaptivePresentationVC_Segue.swift in Sources */,
 				C29FFCE11ECAECA40034587E /* NTHorizontalPageViewCell.swift in Sources */,
 				449D1CB71E992C57000C7446 /* AppDelegate.swift in Sources */,
