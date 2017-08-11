@@ -11,20 +11,20 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 	var myDataSource: MyDataSource!
 
 	func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        //exampleTabUnwind()
+        exampleTabUnwind()
         //exampleNoController()
-        exampleCodeInit()
-        setTabBar()
-        /// no func run Main.storyboard
+        //exampleCodeInit()
+        //setTabBar()
+
+        /// if no func run then start from Main.storyboard
 		return true
 	}
 
     // 示例 Unwind UIViewController
     func exampleTabUnwind() {
         self.window = UIWindow()
-        let sBoard = UIStoryboard(name: "TabbedUnwind", bundle: nil)
-        let vController = sBoard.instantiateViewController(withIdentifier: "MyTabBarController")
-        self.window!.rootViewController = vController //UINavigationController()会导致第二层的UINavigationController的Back Button 消失 
+        let vc = UIStoryboard(name: "TabbedUnwind", bundle: nil).instantiateViewController(withIdentifier: "MyTabBarController")
+        self.window!.rootViewController = vc //UINavigationController()会导致第二层的UINavigationController的Back Button 消失 
         self.window!.backgroundColor = .white
         self.window!.makeKeyAndVisible()
     }
@@ -141,6 +141,16 @@ class MyTabBarController: UITabBarController {
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         print("\(type(of: self)) \(#function)")
+    }
+
+    override var selectedViewController: UIViewController? {
+        get {
+            return super.selectedViewController
+        }
+        set {
+            print("\(type(of:self)) set \(#function)")
+            super.selectedViewController = newValue
+        }
     }
 }
 

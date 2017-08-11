@@ -286,25 +286,46 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="MIW-va-Geu">
-                                <rect key="frame" x="0.0" y="108" width="375" height="216"/>
-                                <date key="date" timeIntervalSinceReferenceDate="450983804.334001">
-                                    <!--2015-04-17 17:16:44 +0000-->
-                                </date>
-                                <connections>
-                                    <action selector="dateChanged:" destination="SJz-bH-aYo" eventType="valueChanged" id="Oc9-7T-JYp"/>
-                                </connections>
-                            </datePicker>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="c7O-Fi-4YR">
+                                <rect key="frame" x="0.0" y="64" width="375" height="360"/>
+                                <subviews>
+                                    <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="MIW-va-Geu">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="180"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="180" id="4WO-nr-HDR"/>
+                                        </constraints>
+                                        <date key="date" timeIntervalSinceReferenceDate="450983804.334001">
+                                            <!--2015-04-17 17:16:44 +0000-->
+                                        </date>
+                                        <connections>
+                                            <action selector="dateChanged:" destination="SJz-bH-aYo" eventType="valueChanged" id="Oc9-7T-JYp"/>
+                                        </connections>
+                                    </datePicker>
+                                    <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="K2s-Dw-eLO">
+                                        <rect key="frame" x="0.0" y="180" width="375" height="180"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="180" id="XXA-eE-bnr"/>
+                                        </constraints>
+                                        <date key="date" timeIntervalSinceReferenceDate="524150406.47552699">
+                                            <!--2017-08-11 13:20:06 +0000-->
+                                        </date>
+                                        <connections>
+                                            <action selector="dateChanged:" destination="SJz-bH-aYo" eventType="valueChanged" id="Ths-FC-KQp"/>
+                                        </connections>
+                                    </datePicker>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstAttribute="trailing" secondItem="MIW-va-Geu" secondAttribute="trailing" id="Ff1-vw-yqo"/>
-                            <constraint firstItem="MIW-va-Geu" firstAttribute="leading" secondItem="5kD-cU-euE" secondAttribute="leading" id="XnO-U3-ul8"/>
-                            <constraint firstItem="MIW-va-Geu" firstAttribute="top" secondItem="1Ty-CG-2Fg" secondAttribute="bottom" constant="44" id="r36-u3-C3O"/>
+                            <constraint firstItem="c7O-Fi-4YR" firstAttribute="width" secondItem="5kD-cU-euE" secondAttribute="width" id="OXn-xn-e4O"/>
+                            <constraint firstItem="c7O-Fi-4YR" firstAttribute="centerX" secondItem="5kD-cU-euE" secondAttribute="centerX" id="VUP-Me-mSD"/>
+                            <constraint firstItem="c7O-Fi-4YR" firstAttribute="top" secondItem="1Ty-CG-2Fg" secondAttribute="bottom" id="gfq-Nx-PBa"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="dp" destination="MIW-va-Geu" id="PlP-xn-g29"/>
+                        <outlet property="dpCDT" destination="K2s-Dw-eLO" id="nBB-Tg-O00"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fFW-kG-Kls" sceneMemberID="firstResponder"/>

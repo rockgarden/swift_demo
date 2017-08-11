@@ -3,28 +3,24 @@ import UIKit
 
 class DataPickerVC: UIViewController {
     @IBOutlet weak var dp: UIDatePicker!
-
+    @IBOutlet weak var dpCDT: UIDatePicker!
     let which = 1
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        //dp.datePickerMode = .date
+        dp.datePickerMode = .dateAndTime
+        var dc = DateComponents(year:1900, month:1, day:1, hour:1, minute:1)
+        let c = Calendar(identifier:.chinese)
+        let d1 = c.date(from: dc)!
+        dp.minimumDate = d1
+        dp.date = d1
+        dc.year = 1949
+        let d2 = c.date(from: dc)!
+        dp.maximumDate = d2
 
-        switch which {
-        case 1:
-            dp.datePickerMode = .date
-            // dp.datePickerMode = .dateAndTime
-            var dc = DateComponents(year:1900, month:1, day:1)
-            let c = Calendar(identifier:.gregorian)
-            let d1 = c.date(from: dc)!
-            dp.minimumDate = d1
-            dp.date = d1
-            dc.year = 1955
-            let d2 = c.date(from: dc)!
-            dp.maximumDate = d2
-        case 2:
-            dp.datePickerMode = .countDownTimer
-        default: break
-        }
+        dpCDT.datePickerMode = .countDownTimer
+
     }
 
     @IBAction func dateChanged(_ sender: Any) {
@@ -46,7 +42,7 @@ class DataPickerVC: UIViewController {
             }
         }
     }
-    
+
 }
 
 

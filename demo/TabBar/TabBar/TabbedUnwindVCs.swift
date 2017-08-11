@@ -13,7 +13,7 @@ import UIKit
  // prelude: source gets a chance to veto the whole thing
  ExtraViewController shouldPerformSegueWithIdentifier(_:sender:) true
 
- // === first we establish the path from the source to the destination
+ // === 首先我们建立从源到目标的路径 first we establish the path from the source to the destination
  // === we also establish _who_ is the destination; note that we only ask "can perform" if you have no eligible children
  // (makes perfect sense: having eligible children already means "it's not me")
 
@@ -53,14 +53,33 @@ import UIKit
 
  */
 
-class TabbedUnwindFirstVC: UIViewController {
+class TabbedUnwindFirstVC: TabbedUnwindVC {
 
-    /// Step: 8 
-    // @IBAction(_ sender: UIStoryboardSegue!), 是UnwindSegue的入口
-    // 若只有一个unwind处理函数, 在生成UnwindSegue就不需要选择了对应的@IBAction,所以不弹出菜单
+    /// Step: 8
+    /// @IBAction(_ sender: UIStoryboardSegue!), 是UnwindSegue的入口
+    /// 若只有一个unwind处理函数, 在生成UnwindSegue就不需要选择了对应的@IBAction,所以不弹出菜单
     @IBAction func iAmFirst (_ sender: UIStoryboardSegue!) {
         print("\(type(of: self)) \(#function)")
     }
+
+}
+
+
+class TabbedUnwindSecondVC: TabbedUnwindVC {
+
+    @IBOutlet weak var resultLabel: UILabel!
+
+    @IBAction func iAmSecond (_ sender: UIStoryboardSegue!) {
+        print("\(type(of: self)) \(#function)")
+        if sender.identifier == ExtraViewController2.UnwindSegue {
+            resultLabel.text = (sender.source as! ExtraViewController2).parameter
+        }
+    }
+    
+}
+
+
+class TabbedUnwindVC: UIViewController {
 
     // Step 5
     override func allowedChildViewControllersForUnwinding(from source: UIStoryboardUnwindSegueSource) -> [UIViewController] {
@@ -88,17 +107,13 @@ class TabbedUnwindFirstVC: UIViewController {
 
     override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
         let result = super.shouldPerformSegue(withIdentifier: identifier, sender: sender)
-        if identifier == "UnwindFirst" {
-            print("\(type(of: self)) \(#function) \(result)")
-        }
+        if identifier == "UnwindFirst" {}
+        print(identifier, ":", "\(type(of: self)) \(#function) \(result)")
         return result
     }
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "unwind" {
-            print("\(type(of: self)) \(#function)")
-        }
+        if segue.identifier == "UnwindFirst" {}
+        print(segue.identifier as Any, ":", "\(type(of: self)) \(#function)")
     }
-    
 }
-

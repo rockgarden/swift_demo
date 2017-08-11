@@ -18,6 +18,7 @@
 		44307AA91DC8E58900F13C66 /* FooViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44307AA11DC8E58900F13C66 /* FooViewController.swift */; };
 		44307AAA1DC8E58900F13C66 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44307AA21DC8E58900F13C66 /* MainViewController.swift */; };
 		44307AAF1DC8E5E700F13C66 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 44307AAE1DC8E5E700F13C66 /* Main.storyboard */; };
+		448221EA1F3DECB400F425EF /* ViewControllers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 448221E91F3DECB400F425EF /* ViewControllers.swift */; };
 		C24825421DC9CD38004247F0 /* UIStoryboard+Storyboards.swift in Sources */ = {isa = PBXBuildFile; fileRef = C24825411DC9CD38004247F0 /* UIStoryboard+Storyboards.swift */; };
 /* End PBXBuildFile section */
 
@@ -35,6 +36,7 @@
 		44307AA11DC8E58900F13C66 /* FooViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FooViewController.swift; sourceTree = "<group>"; };
 		44307AA21DC8E58900F13C66 /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		44307AAE1DC8E5E700F13C66 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		448221E91F3DECB400F425EF /* ViewControllers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewControllers.swift; sourceTree = "<group>"; };
 		C24825411DC9CD38004247F0 /* UIStoryboard+Storyboards.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIStoryboard+Storyboards.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -73,6 +75,7 @@
 				44307AA51DC8E58900F13C66 /* Extension */,
 				44307A9A1DC8E57000F13C66 /* Storyboard */,
 				44307A861DC8E52300F13C66 /* AppDelegate.swift */,
+				448221E91F3DECB400F425EF /* ViewControllers.swift */,
 				44307A8D1DC8E52300F13C66 /* Assets.xcassets */,
 				44307A8F1DC8E52300F13C66 /* LaunchScreen.storyboard */,
 				44307A921DC8E52300F13C66 /* Info.plist */,
@@ -190,6 +193,7 @@
 				44307AA91DC8E58900F13C66 /* FooViewController.swift in Sources */,
 				44307AAA1DC8E58900F13C66 /* MainViewController.swift in Sources */,
 				442476BA1F3CB21E00A176FA /* MyCoolSegue.swift in Sources */,
+				448221EA1F3DECB400F425EF /* ViewControllers.swift in Sources */,
 				44307A871DC8E52300F13C66 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
