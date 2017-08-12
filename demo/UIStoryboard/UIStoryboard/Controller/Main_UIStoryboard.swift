@@ -8,13 +8,12 @@
 
 import UIKit
 
-class MainViewController: UIViewController {
+class Main_UIStoryboard: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "Storyboard"
     }
-    
 
     @IBAction func pressMeForMagicButtonTapped(_ sender: AnyObject) {
         
