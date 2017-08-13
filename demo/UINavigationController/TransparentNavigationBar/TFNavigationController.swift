@@ -44,6 +44,7 @@ open class TFNavigationController: UINavigationController, UIViewControllerTrans
         if gesture.state == .began {
             interactionController = UIPercentDrivenInteractiveTransition()
             if viewControllers.count > 1 {
+                /// UINavigationController: 从导航堆栈弹出顶视图控制器并更新显示。此方法将顶视图控制器从堆栈中移除，并使堆栈的新顶部成为主动视图控制器。 如果堆叠顶部的视图控制器是根视图控制器，则此方法不执行任何操作。 换句话说，您无法弹出堆栈上的最后一个项目。除了显示与堆叠顶部的新视图控制器相关联的视图之外，该方法还会相应地更新导航栏和工具栏。 有关导航栏如何更新的信息，请参阅更新导航栏。
                 popViewController(animated: true)
             } else {
                 dismiss(animated: true, completion: nil)

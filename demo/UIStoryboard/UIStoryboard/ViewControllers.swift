@@ -58,7 +58,21 @@ class ViewController1: BaseVC {
 }
 
 
+// TODO: 多个Scenc共用
 class ViewController2: BaseVC {
+
+    @IBOutlet var lab : UILabel! //不能继承
+
+    override var description : String {
+        get {
+            if self.lab != nil {
+                return "View Controller - \(self.lab.text!)"
+            }
+            else {
+                return super.description
+            }
+        }
+    }
 
     @IBAction func unwind2(_ segue:UIStoryboardSegue!) {
         print("vc 2 unwind")
@@ -66,7 +80,8 @@ class ViewController2: BaseVC {
 }
 
 
-class ViewController3: BaseVC {
+class ViewController3: ViewController2 {
+
     @IBAction func unwind3(_ seg:UIStoryboardSegue!) {
         fatalError("view controller 3 unwind should never be called")
     }
@@ -102,15 +117,13 @@ class UIStoryboardTabBarController: UITabBarController {
 
     override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
         let result = super.shouldPerformSegue(withIdentifier: identifier, sender: sender)
-        if identifier == "unwind" {
-            print("\(type(of:self)) \(#function) \(result)")
-        }
+        print("\(identifier) \(type(of:self)) \(#function) \(result)")
         return result
     }
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "unwind" {
-            print("\(type(of:self)) \(#function)")
+        if segue.identifier != nil {
+            print("\(segue.identifier!) \(type(of:self)) \(#function)")
         }
     }
 
@@ -165,7 +178,6 @@ class BaseVC: UIViewController {
             print("\(type(of:self)) \(#function)")
         }
     }
-
 }
 
 

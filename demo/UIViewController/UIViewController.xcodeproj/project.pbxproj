@@ -22,6 +22,9 @@
 		44263B3C1EFBFBFC0045A717 /* InsetSmallerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44263B3B1EFBFBFC0045A717 /* InsetSmallerVC.swift */; };
 		44306D121F029F8A0095D977 /* ContainerVC_EventForwarding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44306D111F029F8A0095D977 /* ContainerVC_EventForwarding.swift */; };
 		44306D141F029FB70095D977 /* BaseForEventVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44306D131F029FB70095D977 /* BaseForEventVC.swift */; };
+		44327D621F4043FB00CC255E /* LayoutEventTest.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 44327D611F4043FB00CC255E /* LayoutEventTest.storyboard */; };
+		44327D641F40449A00CC255E /* LayoutEvnetTestVCs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44327D631F40449A00CC255E /* LayoutEvnetTestVCs.swift */; };
+		44327D661F404E4B00CC255E /* MemoryWarningVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44327D651F404E4B00CC255E /* MemoryWarningVC.swift */; };
 		4459BC941EE0631700717B8D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4459BC931EE0631700717B8D /* AppDelegate.swift */; };
 		4459BC961EE0631700717B8D /* PopoverVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4459BC951EE0631700717B8D /* PopoverVC.swift */; };
 		4459BC991EE0631700717B8D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4459BC971EE0631700717B8D /* Main.storyboard */; };
@@ -107,6 +110,9 @@
 		44263B3B1EFBFBFC0045A717 /* InsetSmallerVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InsetSmallerVC.swift; sourceTree = "<group>"; };
 		44306D111F029F8A0095D977 /* ContainerVC_EventForwarding.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContainerVC_EventForwarding.swift; sourceTree = "<group>"; };
 		44306D131F029FB70095D977 /* BaseForEventVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseForEventVC.swift; sourceTree = "<group>"; };
+		44327D611F4043FB00CC255E /* LayoutEventTest.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LayoutEventTest.storyboard; sourceTree = "<group>"; };
+		44327D631F40449A00CC255E /* LayoutEvnetTestVCs.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LayoutEvnetTestVCs.swift; sourceTree = "<group>"; };
+		44327D651F404E4B00CC255E /* MemoryWarningVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MemoryWarningVC.swift; sourceTree = "<group>"; };
 		4459BC911EE0631600717B8D /* PoppverDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PoppverDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4459BC931EE0631700717B8D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4459BC951EE0631700717B8D /* PopoverVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopoverVC.swift; sourceTree = "<group>"; };
@@ -321,7 +327,10 @@
 				44263B341EFBEE6F0045A717 /* ExtraViewController.xib */,
 				44CCE26A1F03EB5F009BB4C8 /* OrientationsPermittedVC.swift */,
 				44CCE26D1F0525BF009BB4C8 /* OrientationsPermitted.storyboard */,
+				44327D631F40449A00CC255E /* LayoutEvnetTestVCs.swift */,
+				44327D611F4043FB00CC255E /* LayoutEventTest.storyboard */,
 				44CCE26F1F0525D8009BB4C8 /* AttemptRotationVC.swift */,
+				44327D651F404E4B00CC255E /* MemoryWarningVC.swift */,
 				44AB50A41F38AAE500261057 /* RotationCausesPresentation */,
 				448AC2381EF2AD3800013F08 /* PresentationController */,
 				441721371EDABAA600933908 /* Transition */,
@@ -513,6 +522,7 @@
 				449D1CBC1E992C57000C7446 /* Main.storyboard in Resources */,
 				44CCE26E1F0525BF009BB4C8 /* OrientationsPermitted.storyboard in Resources */,
 				C29FFCCC1ECAD8340034587E /* EvernoteCell.xib in Resources */,
+				44327D621F4043FB00CC255E /* LayoutEventTest.storyboard in Resources */,
 				4459BCB11EE06EE600717B8D /* linkhelp.html in Resources */,
 				448AC2371EF2ACDA00013F08 /* PVCThirdVC.xib in Resources */,
 				447287C71F1EDFD20003B144 /* Info.plist in Resources */,
@@ -551,6 +561,7 @@
 				44EDE7011F0FF1A300E68655 /* ZoomOutVC.swift in Sources */,
 				4459BCAF1EE06BE100717B8D /* PopoverOnPhoneVC.swift in Sources */,
 				C29FFCDE1ECAECA40034587E /* CHTCollectionViewWaterfallLayout.swift in Sources */,
+				44327D661F404E4B00CC255E /* MemoryWarningVC.swift in Sources */,
 				C29FFCC41ECAD7640034587E /* EvernoteTransition.swift in Sources */,
 				441721311EDA71B200933908 /* ContainerVC_Storyboard.swift in Sources */,
 				C29FFCDF1ECAECA40034587E /* Extension.swift in Sources */,
@@ -562,6 +573,7 @@
 				44EDE6FF1F0FF08B00E68655 /* ZoomOutTransition.swift in Sources */,
 				448AC22F1EF2AAFA00013F08 /* AdaptivePresentationVC.swift in Sources */,
 				4417213E1EDB154800933908 /* ContainerVC_Size.swift in Sources */,
+				44327D641F40449A00CC255E /* LayoutEvnetTestVCs.swift in Sources */,
 				448AC2361EF2ACDA00013F08 /* PVCThirdVC.swift in Sources */,
 				C29FFCE41ECAECA40034587E /* NTTransition.swift in Sources */,
 				C29FFCCA1ECAD7E90034587E /* NoteViewController.swift in Sources */,

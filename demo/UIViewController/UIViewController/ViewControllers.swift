@@ -1,7 +1,13 @@
 
 import UIKit
 
-class FirstViewController : UIViewController {
+class RootUIViewController: UITabBarController {
+    @IBAction func unwindRootUIViewController (_ sender:UIStoryboardSegue) {
+        print("\(type(of:self)) \(#function)")
+    }
+}
+
+class FirstUIViewController : UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -45,10 +51,10 @@ class FirstViewController : UIViewController {
             self.view.layoutIfNeeded()
         }
     }
-    
 }
 
-class SecondViewController : UIViewController {
+
+class SecondUIViewController : UIViewController {
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -120,14 +126,19 @@ class SecondViewController : UIViewController {
     }
 
     @IBAction func showOrientations(_ sender: Any) {
-        let vc = OrientationsPermittedVC()
-        present(vc, animated: true)
+        guard let b = sender as? UIButton else {return}
+        if b.tag == 0 {
+            let vc = OrientationsPermittedVC()
+            present(vc, animated: true)
+        } else {
+            let vc = UIStoryboard(name: "LayoutEventTest", bundle: nil).instantiateViewController(withIdentifier: "LETNav")
+            show(vc, sender: nil)
+        }
     }
-
 }
 
 
-extension SecondViewController : UITabBarControllerDelegate {
+extension SecondUIViewController : UITabBarControllerDelegate {
     func tabBarController(_ tabBarController: UITabBarController, shouldSelect viewController: UIViewController) -> Bool {
         return self.presentedViewController == nil
         //return true
