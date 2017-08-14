@@ -6,7 +6,7 @@ class RootVC_ScrollView: UITableViewController {
     var w = -1
     var sw = 0
 
-    let classes: Array<UIViewController.Type> = [ScrollViewVC.self, ScrollWithTilingVC.self]
+    let classes: Array<UIViewController.Type> = [ScrollViewVC.self, ScrollWithTilingVC.self, ZoomVC.self]
 
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: false)
@@ -27,6 +27,11 @@ class RootVC_ScrollView: UITableViewController {
             case 6:
                 let vcClass = classes[1]
                 let vcInstance = vcClass.init() as! ScrollWithTilingVC
+                vcInstance.title = vcInstance.description
+                navigationController?.pushViewController(vcInstance, animated: true)
+            case 8:
+                let vcClass = classes[2]
+                let vcInstance = vcClass.init() as! ZoomVC
                 vcInstance.title = vcInstance.description
                 navigationController?.pushViewController(vcInstance, animated: true)
             default:

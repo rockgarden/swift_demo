@@ -24,8 +24,10 @@ class InitCellbyCodeVC : UITableViewController {
             cell.textLabel!.font = UIFont(name:"Helvetica-Bold", size:16)
             cell.textLabel!.lineBreakMode = .byWordWrapping
             cell.textLabel!.numberOfLines = 2
-            // next line fails, I regard this as a bug
-            // cell.separatorInset = UIEdgeInsetsMake(0,0,0,0)
+
+            /// how to get separator to run from edge to edge, 如何设置Separator Inset.
+            debugPrint(cell.separatorInset)
+            cell.separatorInset = .zero //UIEdgeInsetsMake(8,0,0,8)
         }
 
         cell.textLabel!.text = "Init cell by code."

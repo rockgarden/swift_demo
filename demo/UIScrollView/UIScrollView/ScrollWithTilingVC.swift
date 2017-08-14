@@ -41,7 +41,7 @@ class TiledView : UIView {
     }
     
     override func draw(_ r: CGRect) {
-        // sync: 提交块对象以便在调度队列上执行，并等待该块完成。将一个块提交到调度队列以进行同步执行。与dispatch_async（_：_ :)不同，该函数在块完成之前不会返回。调用此功能并定位当前队列会导致死锁。与dispatch_async（_：_ :)不同，在目标队列上不执行保留。 因为这个函数的调用是同步的，所以它“借用”了调用者的引用。此外，在块上不执行Block_copy。作为优化，此函数可能会调用当前线程上的块。
+        /// sync: 提交块对象以便在调度队列上执行，并等待该块完成。将一个块提交到调度队列以进行同步执行。与dispatch_async（_：_ :)不同，该函数在块完成之前不会返回。调用此功能并定位当前队列会导致死锁。与dispatch_async（_：_ :)不同，在目标队列上不执行保留。 因为这个函数的调用是同步的，所以它“借用”了调用者的引用。此外，在块上不执行Block_copy。作为优化，此函数可能会调用当前线程上的块。
         drawQueue.sync {
             /// 在两个不同的后台线程上"同时"(实际上不是并发)调用两次, called twice simultaneously on two different background threads! See logging "%@",
             NSLog("threads %@", "starting drawRect: \(r)")

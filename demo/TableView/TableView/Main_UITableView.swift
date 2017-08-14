@@ -36,6 +36,12 @@ class Main_UITabView: UITableViewController {
         case 12:
             let vc = CellBackgroundLayeringVC()
             self.show(vc,sender: nil)
+        case 14:
+            let vc = UIStoryboard(name: "PickACell", bundle: nil).instantiateViewController(withIdentifier: "PickACellVC")
+            show(vc,sender: nil)
+        case 15:
+            let vc = EditInsertAndRearrangeRowsVC()
+            show(vc,sender: nil)
         default:
             break
         }

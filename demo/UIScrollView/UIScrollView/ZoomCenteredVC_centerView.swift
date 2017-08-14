@@ -96,6 +96,7 @@ class ZoomCenteredVC_centerView : UIViewController, UIScrollViewDelegate {
 
 }
 
+
 class MyTappableView : UIView {
     
     override func hitTest(_ point: CGPoint, with event: UIEvent!) -> UIView? {

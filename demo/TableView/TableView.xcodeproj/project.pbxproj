@@ -85,6 +85,11 @@
 		44ABF2941EDD7B7C004A353A /* MyCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 44ABF2921EDD7B7C004A353A /* MyCell.xib */; };
 		44ABF2961EDD8E2C004A353A /* AddCellSubviewsbyCodeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44ABF2951EDD8E2C004A353A /* AddCellSubviewsbyCodeVC.swift */; };
 		44ABF2981EDD91A7004A353A /* InitCellbyCodeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44ABF2971EDD91A7004A353A /* InitCellbyCodeVC.swift */; };
+		44C2FEEF1F41DA8900419198 /* PickACell.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 44C2FEEE1F41DA8900419198 /* PickACell.storyboard */; };
+		44C2FEF11F41DACA00419198 /* PickACellVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44C2FEF01F41DACA00419198 /* PickACellVC.swift */; };
+		44C2FEF31F41DCDA00419198 /* EditInsertAndRearrangeRowsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44C2FEF21F41DCDA00419198 /* EditInsertAndRearrangeRowsVC.swift */; };
+		44C2FEF61F41DD5F00419198 /* EIRRCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44C2FEF41F41DD5F00419198 /* EIRRCell.swift */; };
+		44C2FEF71F41DD5F00419198 /* EIRRCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 44C2FEF51F41DD5F00419198 /* EIRRCell.xib */; };
 		44C858EB1F0146DA00837A89 /* VariableRowHeightsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44C858EA1F0146DA00837A89 /* VariableRowHeightsVC.swift */; };
 		C22758D01D6C29C6008C1F18 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C22758CF1D6C29C6008C1F18 /* AppDelegate.swift */; };
 		C22758D21D6C29C6008C1F18 /* UISearchControllerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C22758D11D6C29C6008C1F18 /* UISearchControllerVC.swift */; };
@@ -181,6 +186,11 @@
 		44ABF2921EDD7B7C004A353A /* MyCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MyCell.xib; sourceTree = "<group>"; };
 		44ABF2951EDD8E2C004A353A /* AddCellSubviewsbyCodeVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddCellSubviewsbyCodeVC.swift; sourceTree = "<group>"; };
 		44ABF2971EDD91A7004A353A /* InitCellbyCodeVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InitCellbyCodeVC.swift; sourceTree = "<group>"; };
+		44C2FEEE1F41DA8900419198 /* PickACell.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = PickACell.storyboard; sourceTree = "<group>"; };
+		44C2FEF01F41DACA00419198 /* PickACellVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PickACellVC.swift; sourceTree = "<group>"; };
+		44C2FEF21F41DCDA00419198 /* EditInsertAndRearrangeRowsVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditInsertAndRearrangeRowsVC.swift; sourceTree = "<group>"; };
+		44C2FEF41F41DD5F00419198 /* EIRRCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EIRRCell.swift; sourceTree = "<group>"; };
+		44C2FEF51F41DD5F00419198 /* EIRRCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EIRRCell.xib; sourceTree = "<group>"; };
 		44C858EA1F0146DA00837A89 /* VariableRowHeightsVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VariableRowHeightsVC.swift; sourceTree = "<group>"; };
 		C22758CC1D6C29C6008C1F18 /* TableView.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TableView.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C22758CF1D6C29C6008C1F18 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -351,6 +361,11 @@
 				44ABF2921EDD7B7C004A353A /* MyCell.xib */,
 				44ABF2951EDD8E2C004A353A /* AddCellSubviewsbyCodeVC.swift */,
 				44ABF2971EDD91A7004A353A /* InitCellbyCodeVC.swift */,
+				44C2FEF01F41DACA00419198 /* PickACellVC.swift */,
+				44C2FEEE1F41DA8900419198 /* PickACell.storyboard */,
+				44C2FEF21F41DCDA00419198 /* EditInsertAndRearrangeRowsVC.swift */,
+				44C2FEF41F41DD5F00419198 /* EIRRCell.swift */,
+				44C2FEF51F41DD5F00419198 /* EIRRCell.xib */,
 				C22758D61D6C29C6008C1F18 /* Assets.xcassets */,
 				44ABF2901EDD7338004A353A /* resources */,
 				C22758DB1D6C29C6008C1F18 /* Info.plist */,
@@ -449,6 +464,7 @@
 				442849611D86F5930044DCF5 /* flag_arizona.gif in Resources */,
 				442849641D86F5930044DCF5 /* flag_colorado.gif in Resources */,
 				442849831D86F5930044DCF5 /* flag_oregon.gif in Resources */,
+				44C2FEEF1F41DA8900419198 /* PickACell.storyboard in Resources */,
 				C22758D51D6C29C6008C1F18 /* Main.storyboard in Resources */,
 				4428498F1D86F5930044DCF5 /* flag_wisconsin.gif in Resources */,
 				4428497E1D86F5930044DCF5 /* flag_newyork.gif in Resources */,
@@ -476,6 +492,7 @@
 				4428496A1D86F5930044DCF5 /* flag_idaho.gif in Resources */,
 				442849841D86F5930044DCF5 /* flag_pennsylvania.gif in Resources */,
 				442849681D86F5930044DCF5 /* flag_georgia.gif in Resources */,
+				44C2FEF71F41DD5F00419198 /* EIRRCell.xib in Resources */,
 				449BC2A31D6F427700B63FC4 /* states.txt in Resources */,
 				4428497D1D86F5930044DCF5 /* flag_newmexico.gif in Resources */,
 				4428497C1D86F5930044DCF5 /* flag_newjersey.gif in Resources */,
@@ -516,6 +533,7 @@
 				4483B2E51D80165A0077E75C /* SubCell.swift in Sources */,
 				4436C6F21EEB909E008DAEB3 /* CellBackgroundLayeringVC.swift in Sources */,
 				4436C6EC1EEB7D84008DAEB3 /* AppTableVC.swift in Sources */,
+				44C2FEF11F41DACA00419198 /* PickACellVC.swift in Sources */,
 				44C858EB1F0146DA00837A89 /* VariableRowHeightsVC.swift in Sources */,
 				C2F3DE161D6EBF5500F0A9D5 /* Person.swift in Sources */,
 				C22758D21D6C29C6008C1F18 /* UISearchControllerVC.swift in Sources */,
@@ -524,6 +542,7 @@
 				442849931D86FF280044DCF5 /* ExpandTable.swift in Sources */,
 				C28AAB281DFE6399009DE34B /* SpreadRowTableVC.swift in Sources */,
 				4483B2E31D8000BB0077E75C /* RJExpandTable.swift in Sources */,
+				44C2FEF31F41DCDA00419198 /* EditInsertAndRearrangeRowsVC.swift in Sources */,
 				442849981D8833660044DCF5 /* MasterViewController.swift in Sources */,
 				4483B2DF1D7FFF9C0077E75C /* ExpandTableViewCell.swift in Sources */,
 				4436C6F01EEB8A7C008DAEB3 /* CellMenusVC.swift in Sources */,
@@ -532,6 +551,7 @@
 				44ABF2981EDD91A7004A353A /* InitCellbyCodeVC.swift in Sources */,
 				4483B2DD1D7FFF890077E75C /* RJExpandableTableViewCell.swift in Sources */,
 				C28AAB251DFE6344009DE34B /* SubTableCell.swift in Sources */,
+				44C2FEF61F41DD5F00419198 /* EIRRCell.swift in Sources */,
 				44ABF2961EDD8E2C004A353A /* AddCellSubviewsbyCodeVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
