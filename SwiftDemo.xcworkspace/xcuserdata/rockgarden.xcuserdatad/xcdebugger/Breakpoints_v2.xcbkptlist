@@ -86,22 +86,6 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "demo/UIViewController/PoppverDemo/PopoverViewControllers.swift"
-            timestampString = "519826424.72739"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "6"
-            endingLineNumber = "6"
-            landmarkName = "viewDidLoad()"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
             filePath = "demo/UIScrollView/UIScrollView/ScrollViewVC.swift"
             timestampString = "520176485.438758"
             startingColumnNumber = "9223372036854775807"
@@ -391,11 +375,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "demo/UIViewController/UIViewController/AppDelegate.swift"
-            timestampString = "523805115.00902"
+            timestampString = "524493130.274416"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "186"
-            endingLineNumber = "186"
+            startingLineNumber = "191"
+            endingLineNumber = "191"
             landmarkName = "pan(_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -407,11 +391,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "demo/UIViewController/UIViewController/AppDelegate.swift"
-            timestampString = "523805412.448541"
+            timestampString = "524493130.274416"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "168"
-            endingLineNumber = "168"
+            startingLineNumber = "173"
+            endingLineNumber = "173"
             landmarkName = "pan(_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -423,11 +407,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "demo/UIViewController/UIViewController/AppDelegate.swift"
-            timestampString = "523805417.430059"
+            timestampString = "524493130.274416"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "170"
-            endingLineNumber = "170"
+            startingLineNumber = "175"
+            endingLineNumber = "175"
             landmarkName = "pan(_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -439,11 +423,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "demo/UIViewController/UIViewController/AppDelegate.swift"
-            timestampString = "523806440.856585"
+            timestampString = "524493130.274416"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "289"
-            endingLineNumber = "289"
+            startingLineNumber = "294"
+            endingLineNumber = "294"
             landmarkName = "interruptibleAnimator(using:)"
             landmarkType = "7">
          </BreakpointContent>

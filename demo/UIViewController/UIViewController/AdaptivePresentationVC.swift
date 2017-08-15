@@ -119,7 +119,12 @@ class AdaptivePresentationVC : UIViewController, PVCSecondVCDelegate {
     }
 
     @IBAction func doCustomAlert(_ sender: Any?) {
-        self.present(CustomAlertVC(), animated:true)
+        present(CustomAlertVC(), animated:true)
+    }
+
+    @IBAction func doPopoverToolbar(_ sender: Any?) {
+        let vc = UIStoryboard(name: "Popovers", bundle: nil).instantiateViewController(withIdentifier: "PopoversVC")
+        present(vc, animated:true)
     }
 
     override func viewDidDisappear(_ animated: Bool) {

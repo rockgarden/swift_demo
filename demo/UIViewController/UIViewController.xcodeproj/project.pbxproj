@@ -58,6 +58,12 @@
 		44B1E0171EF413F8005CF9C7 /* ViewControllerPreviewingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44B1E0161EF413F7005CF9C7 /* ViewControllerPreviewingVC.swift */; };
 		44B1E01A1EF41459005CF9C7 /* Pep.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44B1E0181EF41459005CF9C7 /* Pep.swift */; };
 		44B1E01B1EF41459005CF9C7 /* Pep.xib in Resources */ = {isa = PBXBuildFile; fileRef = 44B1E0191EF41459005CF9C7 /* Pep.xib */; };
+		44B9B2171F431F1C00CDADE2 /* Popovers.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 44B9B2161F431F1C00CDADE2 /* Popovers.storyboard */; };
+		44B9B2191F431F3A00CDADE2 /* PopoversVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44B9B2181F431F3A00CDADE2 /* PopoversVC.swift */; };
+		44B9B21B1F431F9500CDADE2 /* Popover1VC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44B9B21A1F431F9500CDADE2 /* Popover1VC.swift */; };
+		44B9B21D1F43221600CDADE2 /* PopoverSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44B9B21C1F43221600CDADE2 /* PopoverSegue.swift */; };
+		44B9B2201F432B6600CDADE2 /* PopoverPresentingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44B9B21F1F432B6600CDADE2 /* PopoverPresentingVC.swift */; };
+		44B9B2211F432C8900CDADE2 /* WorkspaceGlobal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44D9346E1F0FF318005CC3F2 /* WorkspaceGlobal.swift */; };
 		44CCE26B1F03EB5F009BB4C8 /* OrientationsPermittedVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44CCE26A1F03EB5F009BB4C8 /* OrientationsPermittedVC.swift */; };
 		44CCE26E1F0525BF009BB4C8 /* OrientationsPermitted.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 44CCE26D1F0525BF009BB4C8 /* OrientationsPermitted.storyboard */; };
 		44CCE2701F0525D8009BB4C8 /* AttemptRotationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44CCE26F1F0525D8009BB4C8 /* AttemptRotationVC.swift */; };
@@ -155,6 +161,11 @@
 		44B1E0161EF413F7005CF9C7 /* ViewControllerPreviewingVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewControllerPreviewingVC.swift; sourceTree = "<group>"; };
 		44B1E0181EF41459005CF9C7 /* Pep.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Pep.swift; sourceTree = "<group>"; };
 		44B1E0191EF41459005CF9C7 /* Pep.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Pep.xib; sourceTree = "<group>"; };
+		44B9B2161F431F1C00CDADE2 /* Popovers.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Popovers.storyboard; sourceTree = "<group>"; };
+		44B9B2181F431F3A00CDADE2 /* PopoversVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopoversVC.swift; sourceTree = "<group>"; };
+		44B9B21A1F431F9500CDADE2 /* Popover1VC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Popover1VC.swift; sourceTree = "<group>"; };
+		44B9B21C1F43221600CDADE2 /* PopoverSegue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopoverSegue.swift; sourceTree = "<group>"; };
+		44B9B21F1F432B6600CDADE2 /* PopoverPresentingVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopoverPresentingVC.swift; sourceTree = "<group>"; };
 		44CCE26A1F03EB5F009BB4C8 /* OrientationsPermittedVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrientationsPermittedVC.swift; sourceTree = "<group>"; };
 		44CCE26D1F0525BF009BB4C8 /* OrientationsPermitted.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = OrientationsPermitted.storyboard; sourceTree = "<group>"; };
 		44CCE26F1F0525D8009BB4C8 /* AttemptRotationVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AttemptRotationVC.swift; sourceTree = "<group>"; };
@@ -251,6 +262,7 @@
 				4459BCA71EE0638F00717B8D /* ExtraViewController.xib */,
 				4459BC9A1EE0631700717B8D /* Assets.xcassets */,
 				4459BC9F1EE0631700717B8D /* Info.plist */,
+				44B9B21F1F432B6600CDADE2 /* PopoverPresentingVC.swift */,
 			);
 			path = PoppverDemo;
 			sourceTree = "<group>";
@@ -281,6 +293,7 @@
 				44263B391EFBF5D20045A717 /* CustomAlertVC.swift */,
 				44263B371EFBF58E0045A717 /* CustomAlertVC.xib */,
 				442476B71F3C94EC00A176FA /* TestingMultitaskingVC.swift */,
+				44B9B21E1F43227C00CDADE2 /* Popovers */,
 			);
 			name = PresentationController;
 			sourceTree = "<group>";
@@ -353,6 +366,17 @@
 				44AB50A01F38AADA00261057 /* SecondViewController.xib */,
 			);
 			name = RotationCausesPresentation;
+			sourceTree = "<group>";
+		};
+		44B9B21E1F43227C00CDADE2 /* Popovers */ = {
+			isa = PBXGroup;
+			children = (
+				44B9B2181F431F3A00CDADE2 /* PopoversVC.swift */,
+				44B9B21A1F431F9500CDADE2 /* Popover1VC.swift */,
+				44B9B21C1F43221600CDADE2 /* PopoverSegue.swift */,
+				44B9B2161F431F1C00CDADE2 /* Popovers.storyboard */,
+			);
+			name = Popovers;
 			sourceTree = "<group>";
 		};
 		C29FFCD11ECADE2F0034587E /* EvernoteTransition */ = {
@@ -523,6 +547,7 @@
 				44CCE26E1F0525BF009BB4C8 /* OrientationsPermitted.storyboard in Resources */,
 				C29FFCCC1ECAD8340034587E /* EvernoteCell.xib in Resources */,
 				44327D621F4043FB00CC255E /* LayoutEventTest.storyboard in Resources */,
+				44B9B2171F431F1C00CDADE2 /* Popovers.storyboard in Resources */,
 				4459BCB11EE06EE600717B8D /* linkhelp.html in Resources */,
 				448AC2371EF2ACDA00013F08 /* PVCThirdVC.xib in Resources */,
 				447287C71F1EDFD20003B144 /* Info.plist in Resources */,
@@ -537,7 +562,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				44B9B2211F432C8900CDADE2 /* WorkspaceGlobal.swift in Sources */,
 				4459BCAA1EE0638F00717B8D /* MyPopoverBackgroundView.swift in Sources */,
+				44B9B2201F432B6600CDADE2 /* PopoverPresentingVC.swift in Sources */,
 				4459BC961EE0631700717B8D /* PopoverVC.swift in Sources */,
 				4459BCA81EE0638F00717B8D /* PopoverViewControllers.swift in Sources */,
 				4459BCAB1EE0638F00717B8D /* ExtraViewController.swift in Sources */,
@@ -557,6 +584,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				44B9B2191F431F3A00CDADE2 /* PopoversVC.swift in Sources */,
 				44B1E0171EF413F8005CF9C7 /* ViewControllerPreviewingVC.swift in Sources */,
 				44EDE7011F0FF1A300E68655 /* ZoomOutVC.swift in Sources */,
 				4459BCAF1EE06BE100717B8D /* PopoverOnPhoneVC.swift in Sources */,
@@ -591,6 +619,7 @@
 				C29FFCC21ECACB340034587E /* TransitionImageCollectionVC.swift in Sources */,
 				44AB50A11F38AADA00261057 /* RotationCausesPresentationVC.m in Sources */,
 				442476B81F3C94EC00A176FA /* TestingMultitaskingVC.swift in Sources */,
+				44B9B21B1F431F9500CDADE2 /* Popover1VC.swift in Sources */,
 				448AC2571EF2C7F500013F08 /* AdaptivePresentationVC_Segue.swift in Sources */,
 				C29FFCE11ECAECA40034587E /* NTHorizontalPageViewCell.swift in Sources */,
 				449D1CB71E992C57000C7446 /* AppDelegate.swift in Sources */,
@@ -600,6 +629,7 @@
 				44306D141F029FB70095D977 /* BaseForEventVC.swift in Sources */,
 				44306D121F029F8A0095D977 /* ContainerVC_EventForwarding.swift in Sources */,
 				C29FFCE31ECAECA40034587E /* NTNavigationController.swift in Sources */,
+				44B9B21D1F43221600CDADE2 /* PopoverSegue.swift in Sources */,
 				C29FFCE71ECAECA40034587E /* WaterfallCollectionVC.swift in Sources */,
 				441721361EDAB82A00933908 /* ContainerVC.swift in Sources */,
 				C29FFCE21ECAECA40034587E /* NTHorizontalPageViewController.swift in Sources */,

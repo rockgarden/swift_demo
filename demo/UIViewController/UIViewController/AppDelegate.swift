@@ -46,6 +46,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         sep2.delegate = self
         leftEdger = sep2
 
+        /** 
+         用于保存 popovers  
+         */
+        UserDefaults.standard.register(defaults: ["choice": 0])
+
         return true
     }
 
