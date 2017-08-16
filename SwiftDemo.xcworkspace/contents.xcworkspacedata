@@ -50,9 +50,6 @@
       location = "group:demo/UIEffect/UIEffect.xcodeproj">
    </FileRef>
    <FileRef
-      location = "group:demo/CAAnimation/CAAnimation.xcodeproj">
-   </FileRef>
-   <FileRef
       location = "group:demo/UIPageControlDemo/UIPageControlDemo.xcodeproj">
    </FileRef>
    <FileRef

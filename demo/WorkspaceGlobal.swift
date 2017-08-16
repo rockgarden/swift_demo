@@ -94,7 +94,7 @@ func checkForMusicLibraryAccess(andThen f:(()->())? = nil) {
     } else {
         // Fallback on earlier versions
     }
-
+    
 }
 
 func checkForPhotoLibraryAccess(andThen f:(()->())? = nil) {
@@ -210,7 +210,7 @@ extension CGRect {
     init(_ x:CGFloat, _ y:CGFloat, _ w:CGFloat, _ h:CGFloat) {
         self.init(x:x, y:y, width:w, height:h)
     }
-
+    
     var center : CGPoint {
         return CGPoint(self.midX, self.midY)
     }
@@ -220,7 +220,7 @@ extension CGSize {
     init(_ width:CGFloat, _ height:CGFloat) {
         self.init(width:width, height:height)
     }
-
+    
     func sizeByDelta(dw:CGFloat, dh:CGFloat) -> CGSize {
         return CGSize(self.width + dw, self.height + dh)
     }
@@ -268,13 +268,13 @@ extension NSLayoutConstraint {
 }
 
 extension UIView {
-    class func animate(times:Int,
-                       duration dur: TimeInterval,
-                       delay del: TimeInterval,
-                       options opts: UIViewAnimationOptions,
-                       animations anim: @escaping () -> Void,
-                       completion comp: ((Bool) -> Void)?) {
-        func helper(_ t:Int,
+    class func animateWithTimes(_ times: Int,
+                                duration dur: TimeInterval,
+                                delay del: TimeInterval,
+                                options opts: UIViewAnimationOptions,
+                                animations anim: @escaping () -> Void,
+                                completion comp: ((Bool) -> Void)?) {
+        func helper(_ t: Int,
                     _ dur: TimeInterval,
                     _ del: TimeInterval,
                     _ opt: UIViewAnimationOptions,
@@ -289,13 +289,42 @@ extension UIView {
                             }
                             if t > 0 {
                                 delay(0) {
-                                    helper(t-1, dur, del, opt, anim, com)
+                                    helper(t - 1, dur, del, opt, anim, com)
                                 }
                             }
             })
         }
-        helper(times-1, dur, del, opts, anim, comp)
+        helper(times - 1, dur, del, opts, anim, comp)
     }
+    
+//    class func animate(times:Int,
+//                       duration dur: TimeInterval,
+//                       delay del: TimeInterval,
+//                       options opts: UIViewAnimationOptions,
+//                       animations anim: @escaping () -> Void,
+//                       completion comp: ((Bool) -> Void)?) {
+//        func helper(_ t:Int,
+//                    _ dur: TimeInterval,
+//                    _ del: TimeInterval,
+//                    _ opt: UIViewAnimationOptions,
+//                    _ anim: @escaping () -> Void,
+//                    _ com: ((Bool) -> Void)?) {
+//            UIView.animate(withDuration: dur,
+//                           delay: del, options: opt,
+//                           animations: anim, completion: {
+//                            done in
+//                            if com != nil {
+//                                com!(done)
+//                            }
+//                            if t > 0 {
+//                                delay(0) {
+//                                    helper(t-1, dur, del, opt, anim, com)
+//                                }
+//                            }
+//            })
+//        }
+//        helper(times-1, dur, del, opts, anim, comp)
+//    }
 }
 
 
@@ -319,7 +348,7 @@ extension UIImage {
         self.init(cgImage: (image?.cgImage)!)
         //self(cgImage: (image?.cgImage!)!)
     }
-
+    
     convenience init(color: UIColor, rect: CGRect) {
         UIGraphicsBeginImageContextWithOptions(rect.size, false, 0)
         color.setFill()
@@ -334,7 +363,7 @@ extension UIImage {
 /// https://github.com/devxoul/Then
 public protocol Then {}
 extension Then where Self: Any {
-
+    
     /// Makes it available to set properties with closures just after initializing and copying the value types.
     ///
     ///     let frame = CGRect().with {
@@ -346,7 +375,7 @@ extension Then where Self: Any {
         block(&copy)
         return copy
     }
-
+    
     /// Makes it available to execute something with closures.
     ///
     ///     UserDefaults.standard.do {
@@ -359,7 +388,7 @@ extension Then where Self: Any {
     }
 }
 extension Then where Self: AnyObject {
-
+    
     /// Makes it available to set properties with closures just after initializing.
     ///
     ///     let label = UILabel().then {
@@ -371,7 +400,7 @@ extension Then where Self: AnyObject {
         block(self)
         return self
     }
-
+    
 }
 
 extension NSObject: Then {}

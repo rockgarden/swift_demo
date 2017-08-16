@@ -21,7 +21,6 @@
 		44B39A4E1EED4A0E005BCB19 /* LayerTransitionVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44B39A4D1EED4A0E005BCB19 /* LayerTransitionVC.swift */; };
 		44C758CF1F0A8ED500D8EA4B /* LayerAnimationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44C758CE1F0A8ED500D8EA4B /* LayerAnimationVC.swift */; };
 		44C758D21F0BCCA600D8EA4B /* CustomAnimatablePropertyVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44C758D11F0BCCA600D8EA4B /* CustomAnimatablePropertyVC.swift */; };
-		44C758D41F0BD09E00D8EA4B /* CAAnimationGroupVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44C758D31F0BD09E00D8EA4B /* CAAnimationGroupVC.swift */; };
 		44C758D81F0BD1D900D8EA4B /* boat.gif in Resources */ = {isa = PBXBuildFile; fileRef = 44C758D71F0BD1D900D8EA4B /* boat.gif */; };
 		44C758DA1F0BD90E00D8EA4B /* FrozenAnimationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44C758D91F0BD90E00D8EA4B /* FrozenAnimationVC.swift */; };
 		44C758DE1F0BE96600D8EA4B /* CustomAnimatablePropertyVC_Triangle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44C758DD1F0BE96600D8EA4B /* CustomAnimatablePropertyVC_Triangle.swift */; };
@@ -29,6 +28,16 @@
 		44CCE2671F03D755009BB4C8 /* Main_QuartzCore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44CCE2661F03D755009BB4C8 /* Main_QuartzCore.swift */; };
 		44CCE2691F03DC21009BB4C8 /* CompassView_3D.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44CCE2681F03DC21009BB4C8 /* CompassView_3D.swift */; };
 		44D934771F0FF418005CC3F2 /* WorkspaceGlobal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44D934761F0FF418005CC3F2 /* WorkspaceGlobal.swift */; };
+		C20F0E661F43E9B100852271 /* AnimateWithDurationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C20F0E5F1F43E9B100852271 /* AnimateWithDurationVC.swift */; };
+		C20F0E671F43E9B100852271 /* CAEmitterLayerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C20F0E611F43E9B100852271 /* CAEmitterLayerVC.swift */; };
+		C20F0E681F43E9B100852271 /* CAEmitterLayerVC1.swift in Sources */ = {isa = PBXBuildFile; fileRef = C20F0E621F43E9B100852271 /* CAEmitterLayerVC1.swift */; };
+		C20F0E691F43E9B100852271 /* CASpringAnimationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C20F0E631F43E9B100852271 /* CASpringAnimationVC.swift */; };
+		C20F0E6A1F43E9B100852271 /* Main_CAAnimation.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C20F0E641F43E9B100852271 /* Main_CAAnimation.storyboard */; };
+		C20F0E6B1F43E9B100852271 /* Main_CAAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = C20F0E651F43E9B100852271 /* Main_CAAnimation.swift */; };
+		C20F0E701F43E9F900852271 /* cell-image.png in Resources */ = {isa = PBXBuildFile; fileRef = C20F0E6D1F43E9F900852271 /* cell-image.png */; };
+		C20F0E711F43E9F900852271 /* RippleEffectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C20F0E6E1F43E9F900852271 /* RippleEffectView.swift */; };
+		C20F0E721F43E9F900852271 /* RippleVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C20F0E6F1F43E9F900852271 /* RippleVC.swift */; };
+		C20F0E741F43EB4F00852271 /* CAAnimationGroupVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C20F0E731F43EB4F00852271 /* CAAnimationGroupVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -48,7 +57,6 @@
 		44B39A4D1EED4A0E005BCB19 /* LayerTransitionVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LayerTransitionVC.swift; sourceTree = "<group>"; };
 		44C758CE1F0A8ED500D8EA4B /* LayerAnimationVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LayerAnimationVC.swift; sourceTree = "<group>"; };
 		44C758D11F0BCCA600D8EA4B /* CustomAnimatablePropertyVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomAnimatablePropertyVC.swift; sourceTree = "<group>"; };
-		44C758D31F0BD09E00D8EA4B /* CAAnimationGroupVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CAAnimationGroupVC.swift; sourceTree = "<group>"; };
 		44C758D71F0BD1D900D8EA4B /* boat.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = boat.gif; sourceTree = "<group>"; };
 		44C758D91F0BD90E00D8EA4B /* FrozenAnimationVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FrozenAnimationVC.swift; sourceTree = "<group>"; };
 		44C758DD1F0BE96600D8EA4B /* CustomAnimatablePropertyVC_Triangle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomAnimatablePropertyVC_Triangle.swift; sourceTree = "<group>"; };
@@ -56,6 +64,16 @@
 		44CCE2661F03D755009BB4C8 /* Main_QuartzCore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Main_QuartzCore.swift; sourceTree = "<group>"; };
 		44CCE2681F03DC21009BB4C8 /* CompassView_3D.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CompassView_3D.swift; sourceTree = "<group>"; };
 		44D934761F0FF418005CC3F2 /* WorkspaceGlobal.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WorkspaceGlobal.swift; path = ../WorkspaceGlobal.swift; sourceTree = "<group>"; };
+		C20F0E5F1F43E9B100852271 /* AnimateWithDurationVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnimateWithDurationVC.swift; sourceTree = "<group>"; };
+		C20F0E611F43E9B100852271 /* CAEmitterLayerVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CAEmitterLayerVC.swift; sourceTree = "<group>"; };
+		C20F0E621F43E9B100852271 /* CAEmitterLayerVC1.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CAEmitterLayerVC1.swift; sourceTree = "<group>"; };
+		C20F0E631F43E9B100852271 /* CASpringAnimationVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CASpringAnimationVC.swift; sourceTree = "<group>"; };
+		C20F0E641F43E9B100852271 /* Main_CAAnimation.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main_CAAnimation.storyboard; sourceTree = "<group>"; };
+		C20F0E651F43E9B100852271 /* Main_CAAnimation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Main_CAAnimation.swift; sourceTree = "<group>"; };
+		C20F0E6D1F43E9F900852271 /* cell-image.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "cell-image.png"; sourceTree = "<group>"; };
+		C20F0E6E1F43E9F900852271 /* RippleEffectView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RippleEffectView.swift; sourceTree = "<group>"; };
+		C20F0E6F1F43E9F900852271 /* RippleVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RippleVC.swift; sourceTree = "<group>"; };
+		C20F0E731F43EB4F00852271 /* CAAnimationGroupVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CAAnimationGroupVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,6 +108,7 @@
 		4459BC711EE04E4200717B8D /* QuartzCoreDemo */ = {
 			isa = PBXGroup;
 			children = (
+				C20F0E5E1F43E9B100852271 /* CAAnimation */,
 				4459BC721EE04E4200717B8D /* AppDelegate.swift */,
 				4459BC761EE04E4200717B8D /* Main.storyboard */,
 				44CCE2661F03D755009BB4C8 /* Main_QuartzCore.swift */,
@@ -105,7 +124,6 @@
 				44548CF71F07E362007DC239 /* DrawingIntoLayerVC.swift */,
 				44C758D11F0BCCA600D8EA4B /* CustomAnimatablePropertyVC.swift */,
 				44C758DD1F0BE96600D8EA4B /* CustomAnimatablePropertyVC_Triangle.swift */,
-				44C758D31F0BD09E00D8EA4B /* CAAnimationGroupVC.swift */,
 				44C758D91F0BD90E00D8EA4B /* FrozenAnimationVC.swift */,
 				4459BC791EE04E4200717B8D /* Assets.xcassets */,
 				44C758D71F0BD1D900D8EA4B /* boat.gif */,
@@ -114,6 +132,33 @@
 			);
 			path = QuartzCoreDemo;
 			sourceTree = "<group>";
+		};
+		C20F0E5E1F43E9B100852271 /* CAAnimation */ = {
+			isa = PBXGroup;
+			children = (
+				C20F0E641F43E9B100852271 /* Main_CAAnimation.storyboard */,
+				C20F0E651F43E9B100852271 /* Main_CAAnimation.swift */,
+				C20F0E731F43EB4F00852271 /* CAAnimationGroupVC.swift */,
+				C20F0E5F1F43E9B100852271 /* AnimateWithDurationVC.swift */,
+				C20F0E611F43E9B100852271 /* CAEmitterLayerVC.swift */,
+				C20F0E621F43E9B100852271 /* CAEmitterLayerVC1.swift */,
+				C20F0E631F43E9B100852271 /* CASpringAnimationVC.swift */,
+				C20F0E6C1F43E9F900852271 /* RippleEffect */,
+			);
+			name = CAAnimation;
+			path = CAAnimation/CAAnimation;
+			sourceTree = "<group>";
+		};
+		C20F0E6C1F43E9F900852271 /* RippleEffect */ = {
+			isa = PBXGroup;
+			children = (
+				C20F0E6D1F43E9F900852271 /* cell-image.png */,
+				C20F0E6E1F43E9F900852271 /* RippleEffectView.swift */,
+				C20F0E6F1F43E9F900852271 /* RippleVC.swift */,
+			);
+			name = RippleEffect;
+			path = QuartzCoreDemo/CAAnimation/RippleEffect;
+			sourceTree = SOURCE_ROOT;
 		};
 /* End PBXGroup section */
 
@@ -178,7 +223,9 @@
 				4459BC7D1EE04E4200717B8D /* LaunchScreen.storyboard in Resources */,
 				4459BC7A1EE04E4200717B8D /* Assets.xcassets in Resources */,
 				44C758D81F0BD1D900D8EA4B /* boat.gif in Resources */,
+				C20F0E701F43E9F900852271 /* cell-image.png in Resources */,
 				4459BC781EE04E4200717B8D /* Main.storyboard in Resources */,
+				C20F0E6A1F43E9B100852271 /* Main_CAAnimation.storyboard in Resources */,
 				4459BC8C1EE057DB00717B8D /* readme.rtfd in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -190,18 +237,25 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				44C758D41F0BD09E00D8EA4B /* CAAnimationGroupVC.swift in Sources */,
+				C20F0E6B1F43E9B100852271 /* Main_CAAnimation.swift in Sources */,
 				44B39A4E1EED4A0E005BCB19 /* LayerTransitionVC.swift in Sources */,
 				44CCE2671F03D755009BB4C8 /* Main_QuartzCore.swift in Sources */,
 				4459BC891EE057BB00717B8D /* CALayerVC.swift in Sources */,
 				44C758D21F0BCCA600D8EA4B /* CustomAnimatablePropertyVC.swift in Sources */,
+				C20F0E721F43E9F900852271 /* RippleVC.swift in Sources */,
 				4459BC8A1EE057BB00717B8D /* ReplicatorLayer.swift in Sources */,
+				C20F0E691F43E9B100852271 /* CASpringAnimationVC.swift in Sources */,
 				4459BC881EE057BB00717B8D /* CompassView.swift in Sources */,
+				C20F0E681F43E9B100852271 /* CAEmitterLayerVC1.swift in Sources */,
+				C20F0E711F43E9F900852271 /* RippleEffectView.swift in Sources */,
 				44548CF81F07E362007DC239 /* DrawingIntoLayerVC.swift in Sources */,
 				44C758DE1F0BE96600D8EA4B /* CustomAnimatablePropertyVC_Triangle.swift in Sources */,
 				44B1E0151EF3F279005CF9C7 /* CAActionVC.swift in Sources */,
 				44C758CF1F0A8ED500D8EA4B /* LayerAnimationVC.swift in Sources */,
 				44CCE2691F03DC21009BB4C8 /* CompassView_3D.swift in Sources */,
+				C20F0E741F43EB4F00852271 /* CAAnimationGroupVC.swift in Sources */,
+				C20F0E661F43E9B100852271 /* AnimateWithDurationVC.swift in Sources */,
+				C20F0E671F43E9B100852271 /* CAEmitterLayerVC.swift in Sources */,
 				44D934771F0FF418005CC3F2 /* WorkspaceGlobal.swift in Sources */,
 				4459BC751EE04E4200717B8D /* MaskUtilityViewVC.swift in Sources */,
 				44CCE2631F03D673009BB4C8 /* CATransformLayerVC.swift in Sources */,
