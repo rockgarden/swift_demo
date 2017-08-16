@@ -14,9 +14,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "4459BC901EE0631600717B8D"
-               BuildableName = "UIPopoverDemo.app"
-               BlueprintName = "UIPopoverDemo"
+               BlueprintIdentifier = "44DDF6E51F446D0C008CFF2E"
+               BuildableName = "UISplitViewControllerDemo.app"
+               BlueprintName = "UISplitViewControllerDemo"
                ReferencedContainer = "container:UIViewController.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -32,9 +32,9 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "4459BC901EE0631600717B8D"
-            BuildableName = "UIPopoverDemo.app"
-            BlueprintName = "UIPopoverDemo"
+            BlueprintIdentifier = "44DDF6E51F446D0C008CFF2E"
+            BuildableName = "UISplitViewControllerDemo.app"
+            BlueprintName = "UISplitViewControllerDemo"
             ReferencedContainer = "container:UIViewController.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
@@ -55,9 +55,9 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "4459BC901EE0631600717B8D"
-            BuildableName = "UIPopoverDemo.app"
-            BlueprintName = "UIPopoverDemo"
+            BlueprintIdentifier = "44DDF6E51F446D0C008CFF2E"
+            BuildableName = "UISplitViewControllerDemo.app"
+            BlueprintName = "UISplitViewControllerDemo"
             ReferencedContainer = "container:UIViewController.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
@@ -74,9 +74,9 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "4459BC901EE0631600717B8D"
-            BuildableName = "UIPopoverDemo.app"
-            BlueprintName = "UIPopoverDemo"
+            BlueprintIdentifier = "44DDF6E51F446D0C008CFF2E"
+            BuildableName = "UISplitViewControllerDemo.app"
+            BlueprintName = "UISplitViewControllerDemo"
             ReferencedContainer = "container:UIViewController.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>

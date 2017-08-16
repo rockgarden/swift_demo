@@ -7,12 +7,22 @@
 		<key>Restoration.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>87</integer>
+			<integer>85</integer>
 		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
 		<key>448864A91F408C4B00127FEE</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>44DDF6CD1F446CDA008CFF2E</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>44DDF6FE1F4475DA008CFF2E</key>
 		<dict>
 			<key>primary</key>
 			<true/>

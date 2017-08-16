@@ -7,19 +7,7 @@
 		<key>GCDConcurrencyThreadDemo.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
-<<<<<<< Updated upstream
-			<integer>84</integer>
-=======
-<<<<<<< Updated upstream
-			<integer>85</integer>
-=======
-<<<<<<< Updated upstream:demo/GCDConcurrencyThreadDemo/GCDConcurrencyThreadDemo.xcodeproj/xcuserdata/rockgarden.xcuserdatad/xcschemes/xcschememanagement.plist
 			<integer>86</integer>
-=======
-			<integer>47</integer>
->>>>>>> Stashed changes:demo/Autoresizing/Autoresizing.xcodeproj/xcuserdata/wangkan.xcuserdatad/xcschemes/xcschememanagement.plist
->>>>>>> Stashed changes
->>>>>>> Stashed changes
 		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>

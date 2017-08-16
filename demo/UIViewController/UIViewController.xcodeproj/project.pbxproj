@@ -68,6 +68,16 @@
 		44CCE26E1F0525BF009BB4C8 /* OrientationsPermitted.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 44CCE26D1F0525BF009BB4C8 /* OrientationsPermitted.storyboard */; };
 		44CCE2701F0525D8009BB4C8 /* AttemptRotationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44CCE26F1F0525D8009BB4C8 /* AttemptRotationVC.swift */; };
 		44D9346F1F0FF318005CC3F2 /* WorkspaceGlobal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44D9346E1F0FF318005CC3F2 /* WorkspaceGlobal.swift */; };
+		44DDF6E91F446D0C008CFF2E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44DDF6E81F446D0C008CFF2E /* AppDelegate.swift */; };
+		44DDF6EB1F446D0D008CFF2E /* MasterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44DDF6EA1F446D0C008CFF2E /* MasterViewController.swift */; };
+		44DDF6ED1F446D0D008CFF2E /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44DDF6EC1F446D0D008CFF2E /* DetailViewController.swift */; };
+		44DDF6F21F446D0D008CFF2E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 44DDF6F11F446D0D008CFF2E /* Assets.xcassets */; };
+		44DDF6F51F446D0D008CFF2E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 44DDF6F31F446D0D008CFF2E /* LaunchScreen.storyboard */; };
+		44DDF6FA1F447103008CFF2E /* WorkspaceGlobal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44D9346E1F0FF318005CC3F2 /* WorkspaceGlobal.swift */; };
+		44DDF73B1F447DD6008CFF2E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 44DDF7321F447DD6008CFF2E /* Main.storyboard */; };
+		44DDF73E1F447DD6008CFF2E /* PrimaryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44DDF7361F447DD6008CFF2E /* PrimaryViewController.swift */; };
+		44DDF73F1F447DD6008CFF2E /* SecondaryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44DDF7371F447DD6008CFF2E /* SecondaryViewController.swift */; };
+		44DDF7401F447DD6008CFF2E /* SplitViewControllerManual.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44DDF7381F447DD6008CFF2E /* SplitViewControllerManual.swift */; };
 		44EDE6FF1F0FF08B00E68655 /* ZoomOutTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44EDE6FE1F0FF08B00E68655 /* ZoomOutTransition.swift */; };
 		44EDE7011F0FF1A300E68655 /* ZoomOutVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44EDE7001F0FF1A300E68655 /* ZoomOutVC.swift */; };
 		C29FFCC21ECACB340034587E /* TransitionImageCollectionVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C29FFCC11ECACB340034587E /* TransitionImageCollectionVC.swift */; };
@@ -119,7 +129,7 @@
 		44327D611F4043FB00CC255E /* LayoutEventTest.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LayoutEventTest.storyboard; sourceTree = "<group>"; };
 		44327D631F40449A00CC255E /* LayoutEvnetTestVCs.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LayoutEvnetTestVCs.swift; sourceTree = "<group>"; };
 		44327D651F404E4B00CC255E /* MemoryWarningVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MemoryWarningVC.swift; sourceTree = "<group>"; };
-		4459BC911EE0631600717B8D /* PoppverDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PoppverDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		4459BC911EE0631600717B8D /* UIPopoverDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UIPopoverDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4459BC931EE0631700717B8D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4459BC951EE0631700717B8D /* PopoverVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopoverVC.swift; sourceTree = "<group>"; };
 		4459BC981EE0631700717B8D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -170,6 +180,17 @@
 		44CCE26D1F0525BF009BB4C8 /* OrientationsPermitted.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = OrientationsPermitted.storyboard; sourceTree = "<group>"; };
 		44CCE26F1F0525D8009BB4C8 /* AttemptRotationVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AttemptRotationVC.swift; sourceTree = "<group>"; };
 		44D9346E1F0FF318005CC3F2 /* WorkspaceGlobal.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WorkspaceGlobal.swift; path = ../WorkspaceGlobal.swift; sourceTree = "<group>"; };
+		44DDF6E61F446D0C008CFF2E /* UISplitViewControllerDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UISplitViewControllerDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		44DDF6E81F446D0C008CFF2E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		44DDF6EA1F446D0C008CFF2E /* MasterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MasterViewController.swift; sourceTree = "<group>"; };
+		44DDF6EC1F446D0D008CFF2E /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		44DDF6F11F446D0D008CFF2E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		44DDF6F41F446D0D008CFF2E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		44DDF6F61F446D0D008CFF2E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		44DDF7331F447DD6008CFF2E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		44DDF7361F447DD6008CFF2E /* PrimaryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PrimaryViewController.swift; sourceTree = "<group>"; };
+		44DDF7371F447DD6008CFF2E /* SecondaryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SecondaryViewController.swift; sourceTree = "<group>"; };
+		44DDF7381F447DD6008CFF2E /* SplitViewControllerManual.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SplitViewControllerManual.swift; sourceTree = "<group>"; };
 		44EDE6FE1F0FF08B00E68655 /* ZoomOutTransition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZoomOutTransition.swift; sourceTree = "<group>"; };
 		44EDE7001F0FF1A300E68655 /* ZoomOutVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZoomOutVC.swift; sourceTree = "<group>"; };
 		C29FFCC11ECACB340034587E /* TransitionImageCollectionVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransitionImageCollectionVC.swift; sourceTree = "<group>"; };
@@ -208,6 +229,13 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		449D1CB01E992C57000C7446 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		44DDF6E31F446D0C008CFF2E /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -316,6 +344,7 @@
 				4459BC921EE0631700717B8D /* PoppverDemo */,
 				449D1CB51E992C57000C7446 /* UIViewController */,
 				448AC24D1EF2BF7200013F08 /* UIViewControllerUITests */,
+				44DDF6E71F446D0C008CFF2E /* UISplitViewControllerDemo */,
 				449D1CB41E992C57000C7446 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -324,8 +353,9 @@
 			isa = PBXGroup;
 			children = (
 				449D1CB31E992C57000C7446 /* UIViewController.app */,
-				4459BC911EE0631600717B8D /* PoppverDemo.app */,
+				4459BC911EE0631600717B8D /* UIPopoverDemo.app */,
 				448AC24C1EF2BF7200013F08 /* UIViewControllerUITests.xctest */,
+				44DDF6E61F446D0C008CFF2E /* UISplitViewControllerDemo.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -379,6 +409,31 @@
 			name = Popovers;
 			sourceTree = "<group>";
 		};
+		44DDF6E71F446D0C008CFF2E /* UISplitViewControllerDemo */ = {
+			isa = PBXGroup;
+			children = (
+				44DDF6E81F446D0C008CFF2E /* AppDelegate.swift */,
+				44DDF6EA1F446D0C008CFF2E /* MasterViewController.swift */,
+				44DDF6EC1F446D0D008CFF2E /* DetailViewController.swift */,
+				44DDF6F11F446D0D008CFF2E /* Assets.xcassets */,
+				44DDF6F31F446D0D008CFF2E /* LaunchScreen.storyboard */,
+				44DDF6F61F446D0D008CFF2E /* Info.plist */,
+				44DDF72F1F447DD5008CFF2E /* SplitViewControllerManual */,
+			);
+			path = UISplitViewControllerDemo;
+			sourceTree = "<group>";
+		};
+		44DDF72F1F447DD5008CFF2E /* SplitViewControllerManual */ = {
+			isa = PBXGroup;
+			children = (
+				44DDF7321F447DD6008CFF2E /* Main.storyboard */,
+				44DDF7361F447DD6008CFF2E /* PrimaryViewController.swift */,
+				44DDF7371F447DD6008CFF2E /* SecondaryViewController.swift */,
+				44DDF7381F447DD6008CFF2E /* SplitViewControllerManual.swift */,
+			);
+			path = SplitViewControllerManual;
+			sourceTree = "<group>";
+		};
 		C29FFCD11ECADE2F0034587E /* EvernoteTransition */ = {
 			isa = PBXGroup;
 			children = (
@@ -411,9 +466,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		4459BC901EE0631600717B8D /* PoppverDemo */ = {
+		4459BC901EE0631600717B8D /* UIPopoverDemo */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 4459BCA21EE0631700717B8D /* Build configuration list for PBXNativeTarget "PoppverDemo" */;
+			buildConfigurationList = 4459BCA21EE0631700717B8D /* Build configuration list for PBXNativeTarget "UIPopoverDemo" */;
 			buildPhases = (
 				4459BC8D1EE0631600717B8D /* Sources */,
 				4459BC8E1EE0631600717B8D /* Frameworks */,
@@ -423,9 +478,9 @@
 			);
 			dependencies = (
 			);
-			name = PoppverDemo;
+			name = UIPopoverDemo;
 			productName = PoppverDemo;
-			productReference = 4459BC911EE0631600717B8D /* PoppverDemo.app */;
+			productReference = 4459BC911EE0631600717B8D /* UIPopoverDemo.app */;
 			productType = "com.apple.product-type.application";
 		};
 		448AC24B1EF2BF7200013F08 /* UIViewControllerUITests */ = {
@@ -463,6 +518,23 @@
 			productReference = 449D1CB31E992C57000C7446 /* UIViewController.app */;
 			productType = "com.apple.product-type.application";
 		};
+		44DDF6E51F446D0C008CFF2E /* UISplitViewControllerDemo */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 44DDF6F71F446D0D008CFF2E /* Build configuration list for PBXNativeTarget "UISplitViewControllerDemo" */;
+			buildPhases = (
+				44DDF6E21F446D0C008CFF2E /* Sources */,
+				44DDF6E31F446D0C008CFF2E /* Frameworks */,
+				44DDF6E41F446D0C008CFF2E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = UISplitViewControllerDemo;
+			productName = UISplitViewControllerDemo;
+			productReference = 44DDF6E61F446D0C008CFF2E /* UISplitViewControllerDemo.app */;
+			productType = "com.apple.product-type.application";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -490,6 +562,11 @@
 						LastSwiftMigration = 0830;
 						ProvisioningStyle = Automatic;
 					};
+					44DDF6E51F446D0C008CFF2E = {
+						CreatedOnToolsVersion = 8.3.3;
+						DevelopmentTeam = W3MH7MTTSB;
+						ProvisioningStyle = Automatic;
+					};
 				};
 			};
 			buildConfigurationList = 449D1CAE1E992C57000C7446 /* Build configuration list for PBXProject "UIViewController" */;
@@ -506,8 +583,9 @@
 			projectRoot = "";
 			targets = (
 				449D1CB21E992C57000C7446 /* UIViewController */,
-				4459BC901EE0631600717B8D /* PoppverDemo */,
 				448AC24B1EF2BF7200013F08 /* UIViewControllerUITests */,
+				4459BC901EE0631600717B8D /* UIPopoverDemo */,
+				44DDF6E51F446D0C008CFF2E /* UISplitViewControllerDemo */,
 			);
 		};
 /* End PBXProject section */
@@ -552,6 +630,16 @@
 				448AC2371EF2ACDA00013F08 /* PVCThirdVC.xib in Resources */,
 				447287C71F1EDFD20003B144 /* Info.plist in Resources */,
 				44AB50A31F38AADA00261057 /* SecondViewController.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		44DDF6E41F446D0C008CFF2E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				44DDF6F51F446D0D008CFF2E /* LaunchScreen.storyboard in Resources */,
+				44DDF6F21F446D0D008CFF2E /* Assets.xcassets in Resources */,
+				44DDF73B1F447DD6008CFF2E /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -639,6 +727,20 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		44DDF6E21F446D0C008CFF2E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				44DDF6FA1F447103008CFF2E /* WorkspaceGlobal.swift in Sources */,
+				44DDF73E1F447DD6008CFF2E /* PrimaryViewController.swift in Sources */,
+				44DDF6ED1F446D0D008CFF2E /* DetailViewController.swift in Sources */,
+				44DDF6EB1F446D0D008CFF2E /* MasterViewController.swift in Sources */,
+				44DDF73F1F447DD6008CFF2E /* SecondaryViewController.swift in Sources */,
+				44DDF7401F447DD6008CFF2E /* SplitViewControllerManual.swift in Sources */,
+				44DDF6E91F446D0C008CFF2E /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -662,6 +764,22 @@
 			isa = PBXVariantGroup;
 			children = (
 				449D1CBB1E992C57000C7446 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		44DDF6F31F446D0D008CFF2E /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				44DDF6F41F446D0D008CFF2E /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		44DDF7321F447DD6008CFF2E /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				44DDF7331F447DD6008CFF2E /* Base */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -853,10 +971,40 @@
 			};
 			name = Release;
 		};
+		44DDF6F81F446D0D008CFF2E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = W3MH7MTTSB;
+				INFOPLIST_FILE = UISplitViewControllerDemo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.rockgarden.UISplitViewControllerDemo;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		44DDF6F91F446D0D008CFF2E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = W3MH7MTTSB;
+				INFOPLIST_FILE = UISplitViewControllerDemo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.rockgarden.UISplitViewControllerDemo;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		4459BCA21EE0631700717B8D /* Build configuration list for PBXNativeTarget "PoppverDemo" */ = {
+		4459BCA21EE0631700717B8D /* Build configuration list for PBXNativeTarget "UIPopoverDemo" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				4459BCA01EE0631700717B8D /* Debug */,
@@ -891,6 +1039,14 @@
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
+		};
+		44DDF6F71F446D0D008CFF2E /* Build configuration list for PBXNativeTarget "UISplitViewControllerDemo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				44DDF6F81F446D0D008CFF2E /* Debug */,
+				44DDF6F91F446D0D008CFF2E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
 		};
 /* End XCConfigurationList section */
 	};

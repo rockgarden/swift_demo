@@ -9,6 +9,11 @@
 			<key>orderHint</key>
 			<integer>73</integer>
 		</dict>
+		<key>UISplitViewControllerDemo.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>87</integer>
+		</dict>
 		<key>UIViewController.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
@@ -33,6 +38,16 @@
 			<true/>
 		</dict>
 		<key>449D1CB21E992C57000C7446</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>44DDF6B51F446C7F008CFF2E</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>44DDF6E51F446D0C008CFF2E</key>
 		<dict>
 			<key>primary</key>
 			<true/>
