@@ -312,6 +312,15 @@
 			name = VariableRowHeights;
 			sourceTree = "<group>";
 		};
+		44FEB4561F45C7880054F183 /* TableWithDynamicType */ = {
+			isa = PBXGroup;
+			children = (
+				442849961D8833650044DCF5 /* MasterViewController.swift */,
+				442849971D8833650044DCF5 /* DetailViewController.swift */,
+			);
+			name = TableWithDynamicType;
+			sourceTree = "<group>";
+		};
 		C22758C31D6C29C6008C1F18 = {
 			isa = PBXGroup;
 			children = (
@@ -345,8 +354,7 @@
 				C2F3DE151D6EBF5500F0A9D5 /* Person.swift */,
 				4483B2E21D8000BB0077E75C /* RJExpandTable.swift */,
 				4483B2E41D80165A0077E75C /* SubCell.swift */,
-				442849961D8833650044DCF5 /* MasterViewController.swift */,
-				442849971D8833650044DCF5 /* DetailViewController.swift */,
+				44FEB4561F45C7880054F183 /* TableWithDynamicType */,
 				4436C6ED1EEB83D1008DAEB3 /* RowActionsVC.swift */,
 				4436C6EF1EEB8A7C008DAEB3 /* CellMenusVC.swift */,
 				4436C6F11EEB909E008DAEB3 /* CellBackgroundLayeringVC.swift */,

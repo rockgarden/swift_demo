@@ -556,6 +556,9 @@
                                     </subviews>
                                 </tableViewCellContentView>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <connections>
+                                    <segue destination="E25-3o-ZJ1" kind="showDetail" identifier="showDetail" action="showViewController:sender:" id="Dh2-Mu-emF"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <sections/>
@@ -565,13 +568,10 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Master" id="IYb-Hu-g03"/>
-                    <connections>
-                        <segue destination="E25-3o-ZJ1" kind="showDetail" identifier="showDetail" id="YTF-jL-52z"/>
-                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kvK-Hh-wTj" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="916" y="-340"/>
+            <point key="canvasLocation" x="916" y="-339"/>
         </scene>
         <!--Detail-->
         <scene sceneID="bUg-BA-JFd">

@@ -4,7 +4,7 @@ import UIKit
 
 class MasterViewController: UITableViewController {
     
-    var objects = NSMutableArray()
+    var objects = [Date]()
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -13,21 +13,28 @@ class MasterViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         let addButton = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(insertNewObject))
-        self.navigationItem.rightBarButtonItems = [addButton,editButtonItem]
+        navigationItem.rightBarButtonItems = [addButton,editButtonItem]
+
+        // TODO: show what ??
+        NotificationCenter.default.addObserver(forName: .UIApplicationDidBecomeActive, object: nil, queue: nil) { _ in
+            print(UIFont.preferredFont(forTextStyle: .headline))
+            print(UIFont.buttonFontSize)
+            print(UIFont.labelFontSize)
+        }
     }
     
     func insertNewObject(_ sender: AnyObject) {
         objects.insert(Date(), at: 0)
         let indexPath = IndexPath(row: 0, section: 0)
-        self.tableView.insertRows(at: [indexPath], with: .automatic)
+        tableView.insertRows(at: [indexPath], with: .automatic)
     }
     
     // MARK: - Segues
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "showDetail" {
-            let indexPath = self.tableView.indexPathForSelectedRow!
-            let object = objects[indexPath.row] as! Date
-            (segue.destination as! DetailViewController).detailItem = object as AnyObject?
+            let indexPath = tableView.indexPathForSelectedRow!
+            let object = objects[indexPath.row] 
+            (segue.destination as! DetailViewController).detailItem = object as AnyObject
         }
     }
     
@@ -39,8 +46,9 @@ class MasterViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return objects.count
     }
-    
-    /*
+
+    // TODO: 测试效果
+    /**
      Put a symbolic breakpoint on -[UILabel setFont:]
      You will see that when dynamic type is triggered,
      the table view's layoutSubviews is called;
@@ -51,8 +59,13 @@ class MasterViewController: UITableViewController {
      */
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
-        let object = objects[indexPath.row] as! Date
+        let object = objects[indexPath.row]
         cell.textLabel!.text = object.description
+        if #available(iOS 10.0, *) {
+            cell.textLabel!.adjustsFontForContentSizeCategory = true
+        } else {
+            // Fallback on earlier versions
+        }
         return cell
     }
     // good code
@@ -89,7 +102,7 @@ class MasterViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
-            objects.removeObject(at: indexPath.row)
+            objects.remove(at: indexPath.row)
             tableView.deleteRows(at: [indexPath], with: .fade)
         }
     }

@@ -56,6 +56,15 @@ class UIFontFamilyVC: UIViewController, UICollectionViewDataSource, UICollection
     override func viewDidLoad() {
         super.viewDidLoad()
         view.addSubview(collectionView)
+
+        fontArray.forEach {
+            UIFont.fontNames(forFamilyName:$0).forEach {print($0)}}
+
+        fontArray.forEach { name in
+            print(name, UIFont.fontNames(forFamilyName:name))
+        }
+
+        /// 有一些FontFamily 是空的, 这是由于他们只是aliases, 如 family“Heiti TC”实际上是“PingFangTC-Light”的另一个名字
         
         let views = ["cv":collectionView] as [String:Any]
         NSLayoutConstraint.activate([

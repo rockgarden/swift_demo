@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="HOa-Ao-odu">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Mutable Attributed StringVC-->
+        <scene sceneID="3td-xJ-Gvn">
+            <objects>
+                <viewController id="HOa-Ao-odu" customClass="NSMutableAttributedStringVC" customModule="FoundationDemo" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="5cT-w7-bo2"/>
+                        <viewControllerLayoutGuide type="bottom" id="Aos-e8-2D3"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="R0L-B5-cJU">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="tgT-BY-ZqZ">
+                                <rect key="frame" x="47.5" y="22" width="280" height="520.5"/>
+                                <subviews>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="280" translatesAutoresizingMaskIntoConstraints="NO" id="gTb-57-bph">
+                                        <rect key="frame" x="0.0" y="0.0" width="280" height="250"/>
+                                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="280" id="P44-1i-i3Q"/>
+                                            <constraint firstAttribute="height" constant="250" id="S8q-bn-vnz"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dXH-s5-uCM">
+                                        <rect key="frame" x="0.0" y="250" width="280" height="250"/>
+                                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="250" id="fJ4-bf-hcZ"/>
+                                        </constraints>
+                                        <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                    </textView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xiH-9I-ept">
+                                        <rect key="frame" x="0.0" y="500" width="280" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="dXH-s5-uCM" firstAttribute="width" secondItem="gTb-57-bph" secondAttribute="width" id="Dmv-6M-Fhk"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.66666666669999997" green="0.66666666669999997" blue="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="tgT-BY-ZqZ" firstAttribute="top" secondItem="5cT-w7-bo2" secondAttribute="bottom" constant="2" id="DzG-QN-Cfk"/>
+                            <constraint firstItem="tgT-BY-ZqZ" firstAttribute="centerX" secondItem="R0L-B5-cJU" secondAttribute="centerX" id="Ke2-ge-KT5"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="UnderliningLab" destination="xiH-9I-ept" id="nHw-TB-qNO"/>
+                        <outlet property="lab" destination="gTb-57-bph" id="0Ux-5W-U0h"/>
+                        <outlet property="tv" destination="dXH-s5-uCM" id="6h4-3A-ekf"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="XIQ-mi-zru" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="36" y="37.331334332833585"/>
+        </scene>
+        <!--ImportUI Text ViewVC-->
+        <scene sceneID="lWz-bf-Haz">
+            <objects>
+                <viewController id="0kW-jN-dZp" customClass="RTFImportUITextViewVC" customModule="FoundationDemo" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="FWa-ig-zhu"/>
+                        <viewControllerLayoutGuide type="bottom" id="PRF-AP-KOG"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="atJ-vq-qfJ">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ehr-D0-J2I">
+                                <rect key="frame" x="49" y="36" width="278" height="478"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="PRF-AP-KOG" firstAttribute="top" secondItem="ehr-D0-J2I" secondAttribute="bottom" constant="153" id="7AE-xx-mxM"/>
+                            <constraint firstItem="ehr-D0-J2I" firstAttribute="leading" secondItem="atJ-vq-qfJ" secondAttribute="leadingMargin" constant="33" id="FI4-yw-dc5"/>
+                            <constraint firstItem="ehr-D0-J2I" firstAttribute="top" secondItem="FWa-ig-zhu" secondAttribute="bottom" constant="16" id="emX-Nl-jkb"/>
+                            <constraint firstAttribute="centerX" secondItem="ehr-D0-J2I" secondAttribute="centerX" constant="-0.5" id="thB-um-OKD"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="tv" destination="ehr-D0-J2I" id="0a0-uc-tpF"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="x3K-ak-m7b" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="36" y="727"/>
+        </scene>
+    </scenes>
+</document>
