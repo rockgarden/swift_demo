@@ -70,6 +70,20 @@ import MediaPlayer
 import AVFoundation
 import Photos
 
+
+/// 打印DEBUG日志
+///
+/// - Parameters:
+///   - message: T
+///   - file: 类名
+///   - method: 方法名
+///   - line: 行号
+func debugLog<T>(message: T, file: String = #file, method: String = #function, line: Int = #line) {
+    #if DEBUG
+        print("<\((file as NSString).lastPathComponent) : \(line)>, \(method)  \(message)")
+    #endif
+}
+
 func checkForMusicLibraryAccess(andThen f:(()->())? = nil) {
     if #available(iOS 9.3, *) {
         let status = MPMediaLibrary.authorizationStatus()

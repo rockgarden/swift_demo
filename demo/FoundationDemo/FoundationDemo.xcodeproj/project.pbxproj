@@ -14,6 +14,7 @@
 		44FEB48C1F45CCC50054F183 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 44FEB48A1F45CCC50054F183 /* LaunchScreen.storyboard */; };
 		44FEB4941F45CF0D0054F183 /* RTFImportUITextViewVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44FEB4931F45CF0D0054F183 /* RTFImportUITextViewVC.swift */; };
 		44FEB4961F45CFAF0054F183 /* test.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 44FEB4951F45CFAF0054F183 /* test.rtf */; };
+		C20F0E781F46C0A800852271 /* JSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = C20F0E771F46C0A800852271 /* JSON.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		44FEB48D1F45CCC50054F183 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		44FEB4931F45CF0D0054F183 /* RTFImportUITextViewVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RTFImportUITextViewVC.swift; sourceTree = "<group>"; };
 		44FEB4951F45CFAF0054F183 /* test.rtf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.rtf; path = test.rtf; sourceTree = "<group>"; };
+		C20F0E771F46C0A800852271 /* JSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSON.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,6 +68,7 @@
 				44FEB4881F45CCC50054F183 /* Assets.xcassets */,
 				44FEB48A1F45CCC50054F183 /* LaunchScreen.storyboard */,
 				44FEB48D1F45CCC50054F183 /* Info.plist */,
+				C20F0E771F46C0A800852271 /* JSON.swift */,
 			);
 			path = FoundationDemo;
 			sourceTree = "<group>";
@@ -147,6 +150,7 @@
 				44FEB4941F45CF0D0054F183 /* RTFImportUITextViewVC.swift in Sources */,
 				44FEB4841F45CCC50054F183 /* NSMutableAttributedStringVC.swift in Sources */,
 				44FEB4821F45CCC50054F183 /* AppDelegate.swift in Sources */,
+				C20F0E781F46C0A800852271 /* JSON.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -312,6 +316,7 @@
 				44FEB4921F45CCC50054F183 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
