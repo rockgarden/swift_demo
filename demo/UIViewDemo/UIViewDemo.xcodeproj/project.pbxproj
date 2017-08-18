@@ -21,6 +21,20 @@
 		44548CF11F079A8A007DC239 /* DrawingInViewVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44548CF01F079A8A007DC239 /* DrawingInViewVC.swift */; };
 		44548CF41F07D70B007DC239 /* LayerHierarchyVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44548CF31F07D70B007DC239 /* LayerHierarchyVC.swift */; };
 		44548CF61F07E154007DC239 /* AppBaseVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44548CF51F07E154007DC239 /* AppBaseVC.swift */; };
+		445B2A531F472AE600364376 /* AttributedStringDrawingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 445B2A521F472AE600364376 /* AttributedStringDrawingVC.swift */; };
+		445B2A601F4734DE00364376 /* BoundedLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 445B2A551F4734DE00364376 /* BoundedLabel.swift */; };
+		445B2A611F4734DE00364376 /* ExpandableLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 445B2A561F4734DE00364376 /* ExpandableLabel.swift */; };
+		445B2A621F4734DE00364376 /* ExpandableLabelVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 445B2A571F4734DE00364376 /* ExpandableLabelVC.swift */; };
+		445B2A631F4734DE00364376 /* ExpandCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 445B2A581F4734DE00364376 /* ExpandCell.swift */; };
+		445B2A641F4734DE00364376 /* ExpandCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 445B2A591F4734DE00364376 /* ExpandCell.xib */; };
+		445B2A651F4734DE00364376 /* FuncLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 445B2A5A1F4734DE00364376 /* FuncLabel.swift */; };
+		445B2A661F4734DE00364376 /* LabelTableVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 445B2A5B1F4734DE00364376 /* LabelTableVC.swift */; };
+		445B2A671F4734DE00364376 /* MyLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 445B2A5C1F4734DE00364376 /* MyLabel.swift */; };
+		445B2A681F4734DE00364376 /* UILabelVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 445B2A5D1F4734DE00364376 /* UILabelVC.swift */; };
+		445B2A691F4734DE00364376 /* View_KV.swift in Sources */ = {isa = PBXBuildFile; fileRef = 445B2A5E1F4734DE00364376 /* View_KV.swift */; };
+		445B2A6A1F4734DE00364376 /* View_KV.xib in Resources */ = {isa = PBXBuildFile; fileRef = 445B2A5F1F4734DE00364376 /* View_KV.xib */; };
+		445B2A6C1F4735FD00364376 /* UILabel.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 445B2A6B1F4735FD00364376 /* UILabel.storyboard */; };
+		445B2A6E1F47372300364376 /* Main_UILabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 445B2A6D1F47372300364376 /* Main_UILabel.swift */; };
 		446D65CD1EFFDCA800CA86F8 /* Main_Transform.swift in Sources */ = {isa = PBXBuildFile; fileRef = 446D65CC1EFFDCA800CA86F8 /* Main_Transform.swift */; };
 		446D65CF1EFFDE5800CA86F8 /* TransformAndConstraintVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 446D65CE1EFFDE5800CA86F8 /* TransformAndConstraintVC.swift */; };
 		446D65D11EFFDEF800CA86F8 /* LoggingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 446D65D01EFFDEF800CA86F8 /* LoggingView.swift */; };
@@ -63,6 +77,20 @@
 		44548CF01F079A8A007DC239 /* DrawingInViewVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DrawingInViewVC.swift; sourceTree = "<group>"; };
 		44548CF31F07D70B007DC239 /* LayerHierarchyVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LayerHierarchyVC.swift; sourceTree = "<group>"; };
 		44548CF51F07E154007DC239 /* AppBaseVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppBaseVC.swift; sourceTree = "<group>"; };
+		445B2A521F472AE600364376 /* AttributedStringDrawingVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AttributedStringDrawingVC.swift; sourceTree = "<group>"; };
+		445B2A551F4734DE00364376 /* BoundedLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BoundedLabel.swift; sourceTree = "<group>"; };
+		445B2A561F4734DE00364376 /* ExpandableLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExpandableLabel.swift; sourceTree = "<group>"; };
+		445B2A571F4734DE00364376 /* ExpandableLabelVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExpandableLabelVC.swift; sourceTree = "<group>"; };
+		445B2A581F4734DE00364376 /* ExpandCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExpandCell.swift; sourceTree = "<group>"; };
+		445B2A591F4734DE00364376 /* ExpandCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ExpandCell.xib; sourceTree = "<group>"; };
+		445B2A5A1F4734DE00364376 /* FuncLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FuncLabel.swift; sourceTree = "<group>"; };
+		445B2A5B1F4734DE00364376 /* LabelTableVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LabelTableVC.swift; sourceTree = "<group>"; };
+		445B2A5C1F4734DE00364376 /* MyLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyLabel.swift; sourceTree = "<group>"; };
+		445B2A5D1F4734DE00364376 /* UILabelVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UILabelVC.swift; sourceTree = "<group>"; };
+		445B2A5E1F4734DE00364376 /* View_KV.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = View_KV.swift; sourceTree = "<group>"; };
+		445B2A5F1F4734DE00364376 /* View_KV.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = View_KV.xib; sourceTree = "<group>"; };
+		445B2A6B1F4735FD00364376 /* UILabel.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = UILabel.storyboard; sourceTree = "<group>"; };
+		445B2A6D1F47372300364376 /* Main_UILabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Main_UILabel.swift; sourceTree = "<group>"; };
 		446D65CC1EFFDCA800CA86F8 /* Main_Transform.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Main_Transform.swift; sourceTree = "<group>"; };
 		446D65CE1EFFDE5800CA86F8 /* TransformAndConstraintVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransformAndConstraintVC.swift; sourceTree = "<group>"; };
 		446D65D01EFFDEF800CA86F8 /* LoggingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoggingView.swift; sourceTree = "<group>"; };
@@ -114,6 +142,26 @@
 				440F8EA11EE9977B00AA8563 /* Pacman.xcassets */,
 			);
 			name = UIImageVIew;
+			sourceTree = "<group>";
+		};
+		445B2A541F4734DE00364376 /* UILabel */ = {
+			isa = PBXGroup;
+			children = (
+				445B2A6B1F4735FD00364376 /* UILabel.storyboard */,
+				445B2A6D1F47372300364376 /* Main_UILabel.swift */,
+				445B2A5B1F4734DE00364376 /* LabelTableVC.swift */,
+				445B2A551F4734DE00364376 /* BoundedLabel.swift */,
+				445B2A561F4734DE00364376 /* ExpandableLabel.swift */,
+				445B2A571F4734DE00364376 /* ExpandableLabelVC.swift */,
+				445B2A581F4734DE00364376 /* ExpandCell.swift */,
+				445B2A591F4734DE00364376 /* ExpandCell.xib */,
+				445B2A5A1F4734DE00364376 /* FuncLabel.swift */,
+				445B2A5C1F4734DE00364376 /* MyLabel.swift */,
+				445B2A5D1F4734DE00364376 /* UILabelVC.swift */,
+				445B2A5E1F4734DE00364376 /* View_KV.swift */,
+				445B2A5F1F4734DE00364376 /* View_KV.xib */,
+			);
+			path = UILabel;
 			sourceTree = "<group>";
 		};
 		446D65D21EFFDF2600CA86F8 /* Transform */ = {
@@ -180,9 +228,11 @@
 				44548CF31F07D70B007DC239 /* LayerHierarchyVC.swift */,
 				44707C9B1F1BAD23007F0C08 /* TintColorVC.swift */,
 				44707C9D1F1BADF8007F0C08 /* MySpecialButton.swift */,
+				445B2A521F472AE600364376 /* AttributedStringDrawingVC.swift */,
 				44EBF7A81F08C66400CFF751 /* UIView.animate */,
 				4417212E1ED9C31000933908 /* UIImageVIew */,
 				446D65D21EFFDF2600CA86F8 /* Transform */,
+				445B2A541F4734DE00364376 /* UILabel */,
 				C2F842191E1B691F000F8DD3 /* Assets.xcassets */,
 				C2F8421B1E1B691F000F8DD3 /* LaunchScreen.storyboard */,
 				C2F8421E1E1B691F000F8DD3 /* Info.plist */,
@@ -250,11 +300,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				445B2A6A1F4734DE00364376 /* View_KV.xib in Resources */,
 				C2E0A7511E1B6BF1004E78B4 /* vcList.txt in Resources */,
 				C2F8421D1E1B691F000F8DD3 /* LaunchScreen.storyboard in Resources */,
 				440F8EA21EE9977B00AA8563 /* Pacman.xcassets in Resources */,
+				445B2A641F4734DE00364376 /* ExpandCell.xib in Resources */,
 				C2F8421A1E1B691F000F8DD3 /* Assets.xcassets in Resources */,
 				C2F842181E1B691F000F8DD3 /* Main.storyboard in Resources */,
+				445B2A6C1F4735FD00364376 /* UILabel.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -268,17 +321,23 @@
 				44EBF7AA1F08C8E200CFF751 /* ViewAnimation1VC.swift in Sources */,
 				44548CF11F079A8A007DC239 /* DrawingInViewVC.swift in Sources */,
 				44B1E01F1EF433DF005CF9C7 /* HitTestVC.swift in Sources */,
+				445B2A611F4734DE00364376 /* ExpandableLabel.swift in Sources */,
 				446D65CD1EFFDCA800CA86F8 /* Main_Transform.swift in Sources */,
 				446D65D11EFFDEF800CA86F8 /* LoggingView.swift in Sources */,
 				44548CF61F07E154007DC239 /* AppBaseVC.swift in Sources */,
+				445B2A691F4734DE00364376 /* View_KV.swift in Sources */,
+				445B2A681F4734DE00364376 /* UILabelVC.swift in Sources */,
 				44707C9C1F1BAD23007F0C08 /* TintColorVC.swift in Sources */,
 				440F8E9D1EE98F5800AA8563 /* WorkspaceGlobal.swift in Sources */,
+				445B2A661F4734DE00364376 /* LabelTableVC.swift in Sources */,
 				44B48DA81EF4F87800CBB7D3 /* HitTestDistortedLayerView.swift in Sources */,
 				440F8E9B1EE98F0700AA8563 /* ImageAnimationVC.swift in Sources */,
 				446D65D41EFFE1F000CA86F8 /* TransformAnimate.swift in Sources */,
 				44548CF41F07D70B007DC239 /* LayerHierarchyVC.swift in Sources */,
 				44306D031F0271D10095D977 /* AutoresizingVC.swift in Sources */,
+				445B2A651F4734DE00364376 /* FuncLabel.swift in Sources */,
 				441721271ED9BB9800933908 /* PositionResizableImageVC.swift in Sources */,
+				445B2A621F4734DE00364376 /* ExpandableLabelVC.swift in Sources */,
 				444A63211ED711D200FD1751 /* MyView.swift in Sources */,
 				44C758CD1F0A848F00D8EA4B /* AnimateKeyframesVC.swift in Sources */,
 				44B1E01D1EF4294E005CF9C7 /* ViewTransitionVC.swift in Sources */,
@@ -293,12 +352,17 @@
 				441721281ED9BB9800933908 /* ImageRenderingVC.swift in Sources */,
 				C2A50CDE1EC1A03500ECB058 /* ActivityIndicatorVC.swift in Sources */,
 				444C1B8F1EF01D8D00696852 /* ViewReversalVC.swift in Sources */,
+				445B2A6E1F47372300364376 /* Main_UILabel.swift in Sources */,
+				445B2A671F4734DE00364376 /* MyLabel.swift in Sources */,
+				445B2A531F472AE600364376 /* AttributedStringDrawingVC.swift in Sources */,
 				C2E0A7501E1B6BE6004E78B4 /* Main_UIView.swift in Sources */,
 				44548CEF1F0792BB007DC239 /* SixBlueCirclesVC.swift in Sources */,
 				440F8EA01EE995A800AA8563 /* Main_UIImageView.swift in Sources */,
 				C2E0A7531E1B6D7B004E78B4 /* ProgressVC.swift in Sources */,
 				44EBF7A71F08C63C00CFF751 /* Main_animate.swift in Sources */,
+				445B2A601F4734DE00364376 /* BoundedLabel.swift in Sources */,
 				C2F842131E1B691E000F8DD3 /* AppDelegate.swift in Sources */,
+				445B2A631F4734DE00364376 /* ExpandCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

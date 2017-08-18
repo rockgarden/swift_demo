@@ -1761,6 +1761,52 @@
             </objects>
             <point key="canvasLocation" x="734" y="-1499"/>
         </scene>
+        <!--Attributed String DrawingVC-->
+        <scene sceneID="SKB-ca-TWv">
+            <objects>
+                <viewController storyboardIdentifier="AttributedStringDrawingVC" id="yzv-ZL-5xS" customClass="AttributedStringDrawingVC" customModule="UIViewDemo" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Zrc-SN-gCC"/>
+                        <viewControllerLayoutGuide type="bottom" id="c4A-cR-8uH"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="9Xx-pY-80N">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="UQv-xM-iN7">
+                                <rect key="frame" x="48" y="38" width="280" height="250"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="250" id="gcL-Ci-orR"/>
+                                    <constraint firstAttribute="width" constant="280" id="iFb-X5-ghf"/>
+                                </constraints>
+                            </imageView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cAU-FW-nR2" customClass="AttributedStringDrawer" customModule="UIViewDemo" customModuleProvider="target">
+                                <rect key="frame" x="48" y="314" width="280" height="166"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="166" id="8os-Es-0vV"/>
+                                    <constraint firstAttribute="width" constant="280" id="Efe-Fz-1ei"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" red="0.66666666669999997" green="0.66666666669999997" blue="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="centerX" secondItem="UQv-xM-iN7" secondAttribute="centerX" id="4hu-W1-Eog"/>
+                            <constraint firstItem="UQv-xM-iN7" firstAttribute="top" secondItem="Zrc-SN-gCC" secondAttribute="bottom" constant="18" id="6Oa-FK-Bbb"/>
+                            <constraint firstItem="cAU-FW-nR2" firstAttribute="top" secondItem="UQv-xM-iN7" secondAttribute="bottom" constant="26" id="7Kx-fr-Laf"/>
+                            <constraint firstAttribute="centerX" secondItem="cAU-FW-nR2" secondAttribute="centerX" id="Zqq-OQ-6Oj"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="FGE-Zg-rIi"/>
+                    <connections>
+                        <outlet property="drawer" destination="cAU-FW-nR2" id="PAM-39-g4L"/>
+                        <outlet property="iv" destination="UQv-xM-iN7" id="ywV-xF-2FH"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="F8Z-UG-Tqy" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1574" y="-1499"/>
+        </scene>
     </scenes>
     <resources>
         <image name="Mars" width="54" height="54"/>

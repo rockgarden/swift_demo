@@ -122,7 +122,10 @@ class NSMutableAttributedStringVC : UIViewController {
         default:break
         }
         
+        doUnderlining()
+    }
 
+    func doUnderlining() {
         //        let mas = NSMutableAttributedString(string: "Buy beer", attributes: [
         //            NSUnderlineStyleAttributeName: NSUnderlineStyle.StyleNone.rawValue
         //            ])
@@ -139,8 +142,29 @@ class NSMutableAttributedStringVC : UIViewController {
         mas.addAttributes([
             NSUnderlineStyleAttributeName: under
             ], range: NSMakeRange(4, mas.length-4))
-        
-        
+
         UnderliningLab.attributedText = mas
+    }
+
+    @IBOutlet var secretLab : UILabel!
+    /// AttributedText As Secret Marking
+    ///
+    /// - Parameter sender: UIButton
+    @IBAction func doUpdateSecretLabel(_ sender: Any?) {
+        let mas = self.secretLab.attributedText!.mutableCopy() as! NSMutableAttributedString
+        let r = (mas.string as NSString).range(of:"^0")
+        if r.length > 0 {
+            mas.addAttribute("HERE", value: 1, range: r)
+            mas.replaceCharacters(in:r, with: Date().description)
+        } else {
+            mas.enumerateAttribute("HERE", in: NSMakeRange(0, mas.length)) {
+                value, r, stop in
+                if let value = value as? Int, value == 1 {
+                    mas.replaceCharacters(in:r, with: Date().description)
+                    stop.pointee = true
+                }
+            }
+        }
+        self.secretLab.attributedText = mas
     }
 }

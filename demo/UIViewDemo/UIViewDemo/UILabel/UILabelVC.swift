@@ -8,13 +8,6 @@
 
 import UIKit
 
-func imageOfSize(_ size: CGSize, closure: () -> ()) -> UIImage {
-    UIGraphicsBeginImageContextWithOptions(size, false, 0)
-    closure()
-    let result = UIGraphicsGetImageFromCurrentImageContext()
-    UIGraphicsEndImageContext()
-    return result!
-}
 
 class UILabelVC: UIViewController {
     

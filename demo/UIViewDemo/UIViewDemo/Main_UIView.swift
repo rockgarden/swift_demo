@@ -45,14 +45,18 @@ class Main_UIView: UIViewController {
             show(DrawClearRectVC(),sender: nil)
         case "LayerHierarchyVC":
             show(LayerHierarchyVC(),sender: nil)
+        case "Root_UILabel":
+            let sb = UIStoryboard(name: "UILabel", bundle: nil)
+            let vc = sb.instantiateViewController(withIdentifier: vcList[which])
+            show(vc, sender: nil)
         default:
-            let storyboard = UIStoryboard(name: "Main", bundle: nil)
-            let vc = storyboard.instantiateViewController(withIdentifier: vcList[which])
+            let sb = UIStoryboard(name: "Main", bundle: nil)
+            let vc = sb.instantiateViewController(withIdentifier: vcList[which])
             present(vc, animated: true, completion: nil)
         }
     }
 
-    @IBAction func unwindToMainVC(_ segue: UIStoryboardSegue) {}
+    @IBAction func unwindToMainViewVC(_ segue: UIStoryboardSegue) {}
 }
 
 
@@ -103,8 +107,3 @@ extension Main_UIView: UIPickerViewDelegate, UIPickerViewDataSource {
 
 }
 
-class MyLabel : UILabel {
-    deinit {
-        print("farewell")
-    }
-}

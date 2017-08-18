@@ -185,9 +185,6 @@
       location = "group:demo/UINavigationBar/UINavigationBar.xcodeproj">
    </FileRef>
    <FileRef
-      location = "group:demo/UILabel/UILabel.xcodeproj">
-   </FileRef>
-   <FileRef
       location = "group:demo/UISearchBar/UISearchBar.xcodeproj">
    </FileRef>
    <FileRef

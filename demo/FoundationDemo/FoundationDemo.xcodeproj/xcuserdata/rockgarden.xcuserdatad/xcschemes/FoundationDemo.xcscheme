@@ -14,10 +14,10 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "44A9C3FE1D96AD1E00F09E6A"
-               BuildableName = "UILabel.app"
-               BlueprintName = "UILabel"
-               ReferencedContainer = "container:UILabel.xcodeproj">
+               BlueprintIdentifier = "44FEB47D1F45CCC50054F183"
+               BuildableName = "FoundationDemo.app"
+               BlueprintName = "FoundationDemo"
+               ReferencedContainer = "container:FoundationDemo.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -32,10 +32,10 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "44A9C3FE1D96AD1E00F09E6A"
-            BuildableName = "UILabel.app"
-            BlueprintName = "UILabel"
-            ReferencedContainer = "container:UILabel.xcodeproj">
+            BlueprintIdentifier = "44FEB47D1F45CCC50054F183"
+            BuildableName = "FoundationDemo.app"
+            BlueprintName = "FoundationDemo"
+            ReferencedContainer = "container:FoundationDemo.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <AdditionalOptions>
@@ -55,10 +55,10 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "44A9C3FE1D96AD1E00F09E6A"
-            BuildableName = "UILabel.app"
-            BlueprintName = "UILabel"
-            ReferencedContainer = "container:UILabel.xcodeproj">
+            BlueprintIdentifier = "44FEB47D1F45CCC50054F183"
+            BuildableName = "FoundationDemo.app"
+            BlueprintName = "FoundationDemo"
+            ReferencedContainer = "container:FoundationDemo.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -74,10 +74,10 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "44A9C3FE1D96AD1E00F09E6A"
-            BuildableName = "UILabel.app"
-            BlueprintName = "UILabel"
-            ReferencedContainer = "container:UILabel.xcodeproj">
+            BlueprintIdentifier = "44FEB47D1F45CCC50054F183"
+            BuildableName = "FoundationDemo.app"
+            BlueprintName = "FoundationDemo"
+            ReferencedContainer = "container:FoundationDemo.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

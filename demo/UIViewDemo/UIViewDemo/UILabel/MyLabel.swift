@@ -17,5 +17,8 @@ class MyLabel : UILabel {
 
     }
 
+    deinit {
+        print("farewell")
+    }
     
 }

@@ -11,3 +11,5 @@ DrawClearRectVC
 LayerHierarchyVC
 Root_UIView.animate
 TintColorVC
+AttributedStringDrawingVC
+Root_UILabel
