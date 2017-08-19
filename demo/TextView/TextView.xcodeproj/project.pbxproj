@@ -16,7 +16,7 @@
 		442849BA1D8839A60044DCF5 /* peppers.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 442849B81D8839A60044DCF5 /* peppers.jpg */; };
 		442849BB1D8839A60044DCF5 /* onion.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 442849B91D8839A60044DCF5 /* onion.jpg */; };
 		444150091E2909D000760959 /* KeyboardAccessoryVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 444150081E2909D000760959 /* KeyboardAccessoryVC.swift */; };
-		4441500B1E290E1600760959 /* AccessoryView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4441500A1E290E1600760959 /* AccessoryView.xib */; };
+		4441500B1E290E1600760959 /* KeyboardAccessoryView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4441500A1E290E1600760959 /* KeyboardAccessoryView.xib */; };
 		4441500D1E2910AA00760959 /* TextFieldSlidingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4441500C1E2910AA00760959 /* TextFieldSlidingVC.swift */; };
 		446B0D701E20CB280012140C /* StyledTextVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 446B0D6F1E20CB280012140C /* StyledTextVC.swift */; };
 		446B0D721E20D0EA0012140C /* states.txt in Resources */ = {isa = PBXBuildFile; fileRef = 446B0D711E20D0EA0012140C /* states.txt */; };
@@ -25,10 +25,9 @@
 		446B0D781E2111BE0012140C /* TextKitStacksVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 446B0D771E2111BE0012140C /* TextKitStacksVC.swift */; };
 		4474E0631E2262640013290C /* ExclusionPathVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4474E0621E2262640013290C /* ExclusionPathVC.swift */; };
 		4474E0651E2272060013290C /* MyTextContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4474E0641E2272060013290C /* MyTextContainer.swift */; };
-		4474E0691E23B73C0013290C /* SelfSizingTextViewVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4474E0681E23B73C0013290C /* SelfSizingTextViewVC.swift */; };
+		4474E0691E23B73C0013290C /* SelfSizing_KeyboardVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4474E0681E23B73C0013290C /* SelfSizing_KeyboardVC.swift */; };
 		44AB50A71F39EA1800261057 /* GrowingTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44AB50A61F39EA1800261057 /* GrowingTextView.swift */; };
 		44AB50A91F39EA8700261057 /* PlaceholderTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44AB50A81F39EA8700261057 /* PlaceholderTextView.swift */; };
-		44AB50AB1F39EB6500261057 /* TextViewAutoHeight.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44AB50AA1F39EB6500261057 /* TextViewAutoHeight.swift */; };
 		44AB50AD1F3A01F700261057 /* TextViewHeightCalculatorVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44AB50AC1F3A01F700261057 /* TextViewHeightCalculatorVC.swift */; };
 		44AB50B31F3A045B00261057 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 44AB50AF1F3A045B00261057 /* Info.plist */; };
 		44AB50B41F3A045B00261057 /* NextGrowingInternalTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44AB50B01F3A045B00261057 /* NextGrowingInternalTextView.swift */; };
@@ -60,7 +59,7 @@
 		442849B81D8839A60044DCF5 /* peppers.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = peppers.jpg; sourceTree = "<group>"; };
 		442849B91D8839A60044DCF5 /* onion.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = onion.jpg; sourceTree = "<group>"; };
 		444150081E2909D000760959 /* KeyboardAccessoryVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyboardAccessoryVC.swift; sourceTree = "<group>"; };
-		4441500A1E290E1600760959 /* AccessoryView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AccessoryView.xib; sourceTree = "<group>"; };
+		4441500A1E290E1600760959 /* KeyboardAccessoryView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = KeyboardAccessoryView.xib; sourceTree = "<group>"; };
 		4441500C1E2910AA00760959 /* TextFieldSlidingVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextFieldSlidingVC.swift; sourceTree = "<group>"; };
 		446B0D6F1E20CB280012140C /* StyledTextVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StyledTextVC.swift; sourceTree = "<group>"; };
 		446B0D711E20D0EA0012140C /* states.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = states.txt; sourceTree = "<group>"; };
@@ -69,10 +68,9 @@
 		446B0D771E2111BE0012140C /* TextKitStacksVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextKitStacksVC.swift; sourceTree = "<group>"; };
 		4474E0621E2262640013290C /* ExclusionPathVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExclusionPathVC.swift; sourceTree = "<group>"; };
 		4474E0641E2272060013290C /* MyTextContainer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyTextContainer.swift; sourceTree = "<group>"; };
-		4474E0681E23B73C0013290C /* SelfSizingTextViewVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelfSizingTextViewVC.swift; sourceTree = "<group>"; };
+		4474E0681E23B73C0013290C /* SelfSizing_KeyboardVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelfSizing_KeyboardVC.swift; sourceTree = "<group>"; };
 		44AB50A61F39EA1800261057 /* GrowingTextView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GrowingTextView.swift; sourceTree = "<group>"; };
 		44AB50A81F39EA8700261057 /* PlaceholderTextView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlaceholderTextView.swift; sourceTree = "<group>"; };
-		44AB50AA1F39EB6500261057 /* TextViewAutoHeight.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextViewAutoHeight.swift; sourceTree = "<group>"; };
 		44AB50AC1F3A01F700261057 /* TextViewHeightCalculatorVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextViewHeightCalculatorVC.swift; sourceTree = "<group>"; };
 		44AB50AF1F3A045B00261057 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		44AB50B01F3A045B00261057 /* NextGrowingInternalTextView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NextGrowingInternalTextView.swift; sourceTree = "<group>"; };
@@ -142,15 +140,14 @@
 				446B0D6F1E20CB280012140C /* StyledTextVC.swift */,
 				446B0D731E20DC8D0012140C /* MyLayoutManager.swift */,
 				4474E0641E2272060013290C /* MyTextContainer.swift */,
-				4474E0681E23B73C0013290C /* SelfSizingTextViewVC.swift */,
-				44AB50AA1F39EB6500261057 /* TextViewAutoHeight.swift */,
+				4474E0681E23B73C0013290C /* SelfSizing_KeyboardVC.swift */,
 				44D348991E24649000F953D7 /* TextFieldVC.swift */,
 				44D348951E24643000F953D7 /* MyTextField.swift */,
 				440865941F3B4B6B00C46F75 /* SelfSizeTextField.swift */,
 				444150081E2909D000760959 /* KeyboardAccessoryVC.swift */,
+				4441500A1E290E1600760959 /* KeyboardAccessoryView.xib */,
 				4441500C1E2910AA00760959 /* TextFieldSlidingVC.swift */,
 				44AB50AC1F3A01F700261057 /* TextViewHeightCalculatorVC.swift */,
-				4441500A1E290E1600760959 /* AccessoryView.xib */,
 				C2D2E6D71EB3218300200CEB /* KeyboardAvoidingVC.swift */,
 				C2D2E6DB1EB3282600200CEB /* MessageVC.swift */,
 				44F7B4391ED481290028D0DF /* resources */,
@@ -275,7 +272,7 @@
 				442849BB1D8839A60044DCF5 /* onion.jpg in Resources */,
 				44AB50B91F3A047C00261057 /* NextGrowingTextView.storyboard in Resources */,
 				446B0D761E210FB60012140C /* brillig.txt in Resources */,
-				4441500B1E290E1600760959 /* AccessoryView.xib in Resources */,
+				4441500B1E290E1600760959 /* KeyboardAccessoryView.xib in Resources */,
 				442849AE1D8837D50044DCF5 /* Assets.xcassets in Resources */,
 				44AB50B31F3A045B00261057 /* Info.plist in Resources */,
 				442849AC1D8837D50044DCF5 /* Main.storyboard in Resources */,
@@ -305,10 +302,9 @@
 				C2D2E6DA1EB327EC00200CEB /* KeyboardMan.swift in Sources */,
 				4474E0631E2262640013290C /* ExclusionPathVC.swift in Sources */,
 				44AB50B51F3A045B00261057 /* NextGrowingTextView.swift in Sources */,
-				44AB50AB1F39EB6500261057 /* TextViewAutoHeight.swift in Sources */,
 				440865951F3B4B6B00C46F75 /* SelfSizeTextField.swift in Sources */,
 				4441500D1E2910AA00760959 /* TextFieldSlidingVC.swift in Sources */,
-				4474E0691E23B73C0013290C /* SelfSizingTextViewVC.swift in Sources */,
+				4474E0691E23B73C0013290C /* SelfSizing_KeyboardVC.swift in Sources */,
 				446B0D781E2111BE0012140C /* TextKitStacksVC.swift in Sources */,
 				44AB50A71F39EA1800261057 /* GrowingTextView.swift in Sources */,
 				44AB50AD1F3A01F700261057 /* TextViewHeightCalculatorVC.swift in Sources */,

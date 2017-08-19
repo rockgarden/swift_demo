@@ -11,7 +11,7 @@ class SelfSizing_KeyboardVC: UIViewController, UITextViewDelegate {
     @IBOutlet var heightConstraint: NSLayoutConstraint! //FIXME: 最在高度有限制,自动适配keyboard
     @IBOutlet var tv1: UITextView! //FIXME: AdjustsScrollViewInsets 没起作用
 
-    @IBOutlet weak var tvAutoHeight: TextViewAutoHeight!
+    @IBOutlet weak var tvAutoHeight: UITextView!
 
     @IBOutlet weak var tvNormal: UITextView!
     @IBOutlet var heightConstraintNormal: NSLayoutConstraint!
@@ -22,8 +22,6 @@ class SelfSizing_KeyboardVC: UIViewController, UITextViewDelegate {
         super.viewDidLoad()
         /// 若是navBar由rootVC带入时就不会AdjustsScrollViewInsets
         automaticallyAdjustsScrollViewInsets = false
-
-        tvAutoHeight.maxHeight = 128
 
         self.tvSelfSize.isScrollEnabled = false // *
         self.heightConstraint.isActive = false // *
@@ -53,7 +51,7 @@ class SelfSizing_KeyboardVC: UIViewController, UITextViewDelegate {
 
     override func viewDidLayoutSubviews() {
         let h = self.tvSelfSize.contentSize.height
-        let limit : CGFloat = 200 // or whatever
+        let limit : CGFloat = 200
         if h > limit && !self.tvSelfSize.isScrollEnabled {
             self.tvSelfSize.isScrollEnabled = true
             self.heightConstraint.constant = limit
@@ -87,9 +85,7 @@ class SelfSizing_KeyboardVC: UIViewController, UITextViewDelegate {
         return !keyboardShowing
     }
 
-    // as long as you play your part (adjust content offset),
-    // iOS 8 will play its part (scroll cursor to visible)
-    // and we don't have to animate
+    /// 基于用户在TextView输入位置调整内容偏移量, >iOS 8 将显示滚动光标
     func keyboardShow(_ n:Notification) {
         if keyboardShowing {
             return
@@ -117,10 +113,8 @@ class SelfSizing_KeyboardVC: UIViewController, UITextViewDelegate {
         tv1.scrollIndicatorInsets = .zero
     }
 
-    //TODO: This action "doDone:" is not difined on 'ViewController' 可以不用IBAction直接引入Storyboard
+    // TODO: This action "doDone:" is not difined on 'ViewController' 可以不用IBAction直接引入Storyboard
     @IBAction func doDone(_ sender: Any) {
         self.view.endEditing(false)
     }
-    
-
 }

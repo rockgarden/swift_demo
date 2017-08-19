@@ -60,12 +60,15 @@ class TextFieldSlidingVC: UIViewController {
         self.oldOffset = self.scrollView.contentOffset
 
         let d = n.userInfo!
+
         /// 包含CGRect的NSValue对象的键，用于在屏幕坐标中标识键盘的结束帧。 这些坐标不考虑由于界面定向改变而应用于窗口内容的任何旋转因子。 因此，在使用它之前，您可能需要将矩形转换为窗口坐标（使用convert（_：from :)方法）或查看坐标（使用convert（_：from :)方法）。
         var r = d[UIKeyboardFrameEndUserInfoKey] as! CGRect
         let margin: CGFloat = 10
+
+        /// 将矩形从另一个视图的坐标系转换为接收器scrollView?的坐标系
         r = self.scrollView.convert(r, from:nil)
-        // no need to scroll, as the scroll view will do it for us
-        // so all we have to do is adjust the inset
+        
+        /// no need to scroll, as the scroll view will do it for us, so all we have to do is adjust the inset
         self.scrollView.contentInset.bottom = r.size.height + margin
         self.scrollView.scrollIndicatorInsets.bottom = r.size.height + margin
     }

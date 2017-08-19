@@ -456,28 +456,15 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SpY-uF-RdJ">
-                                <rect key="frame" x="16" y="64" width="343" height="64"/>
-                                <color key="backgroundColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="64" id="y9Z-eb-3tL"/>
-                                </constraints>
-                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocorrectionType="no"/>
-                                <connections>
-                                    <outlet property="delegate" destination="xSZ-Iw-mT2" id="Q5m-MG-f2i"/>
-                                </connections>
-                            </textView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="Mp5-HS-f6e">
-                                <rect key="frame" x="0.0" y="128" width="375" height="192"/>
+                                <rect key="frame" x="0.0" y="64" width="375" height="192"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="X6o-XE-7oc">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="64"/>
                                         <subviews>
                                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Cn4-H7-v8O">
                                                 <rect key="frame" x="0.0" y="0.0" width="375" height="64"/>
-                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <color key="backgroundColor" red="0.59999999999999998" green="0.84705882349999995" blue="0.98823529409999999" alpha="1" colorSpace="calibratedRGB"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="64" id="N17-kZ-LNP"/>
                                                 </constraints>
@@ -507,7 +494,7 @@
                                             <outlet property="delegate" destination="xSZ-Iw-mT2" id="wqk-Yh-XS4"/>
                                         </connections>
                                     </textView>
-                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="6Ya-b7-iMy" customClass="TextViewAutoHeight" customModule="TextView" customModuleProvider="target">
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="6Ya-b7-iMy">
                                         <rect key="frame" x="0.0" y="128" width="375" height="64"/>
                                         <color key="backgroundColor" red="0.59999999999999998" green="0.84705882349999995" blue="0.98823529409999999" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
@@ -519,14 +506,25 @@
                                     </textView>
                                 </subviews>
                             </stackView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SpY-uF-RdJ">
+                                <rect key="frame" x="16" y="256" width="343" height="411"/>
+                                <color key="backgroundColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no"/>
+                                <connections>
+                                    <outlet property="delegate" destination="xSZ-Iw-mT2" id="Q5m-MG-f2i"/>
+                                </connections>
+                            </textView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="Mp5-HS-f6e" firstAttribute="top" secondItem="SpY-uF-RdJ" secondAttribute="bottom" id="3nx-Mn-4NT"/>
+                            <constraint firstItem="Mp5-HS-f6e" firstAttribute="top" secondItem="IxE-Lb-IvM" secondAttribute="bottom" id="4Si-YN-9PA"/>
                             <constraint firstItem="Mp5-HS-f6e" firstAttribute="centerX" secondItem="hYa-Mf-AKR" secondAttribute="centerX" id="4bU-Mi-HZA"/>
+                            <constraint firstItem="OQY-Ew-yIb" firstAttribute="top" secondItem="SpY-uF-RdJ" secondAttribute="bottom" id="C0I-Qg-Gjk"/>
                             <constraint firstItem="Mp5-HS-f6e" firstAttribute="width" secondItem="hYa-Mf-AKR" secondAttribute="width" id="EeS-tM-0IX"/>
                             <constraint firstItem="SpY-uF-RdJ" firstAttribute="leading" secondItem="hYa-Mf-AKR" secondAttribute="leadingMargin" id="SkG-xH-TYO"/>
-                            <constraint firstItem="SpY-uF-RdJ" firstAttribute="top" secondItem="IxE-Lb-IvM" secondAttribute="bottom" id="nF0-l1-wfc"/>
+                            <constraint firstItem="SpY-uF-RdJ" firstAttribute="top" secondItem="Mp5-HS-f6e" secondAttribute="bottom" id="dED-ol-FAf"/>
                             <constraint firstAttribute="trailingMargin" secondItem="SpY-uF-RdJ" secondAttribute="trailing" id="vdh-3N-IL1"/>
                         </constraints>
                     </view>

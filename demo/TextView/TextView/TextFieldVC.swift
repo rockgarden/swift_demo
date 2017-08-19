@@ -9,71 +9,25 @@ class TextFieldVC: UIViewController {
 
     @IBOutlet var tf : UITextField!
     @IBOutlet var tfDelegate : UITextField!
-    @IBOutlet var heightConstraint: NSLayoutConstraint!
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        heightConstraint?.isActive = false
-
         tf.allowsEditingTextAttributes = true
         setupInputAssistantItem(which: 2)
 
-        let s = "Twas brillig, and the slithy toves did gyre and gimble in the wabe; " +
-        "all mimsy were the borogoves, and the mome raths outgrabe."
-
-        let mas = NSMutableAttributedString(string:s, attributes:[
-            NSFontAttributeName: UIFont(name:"GillSans", size:20)!
-            ])
-
-        mas.addAttribute(NSParagraphStyleAttributeName,
-                         value:lend(){
-                            (para:NSMutableParagraphStyle) in
-                            para.alignment = .left
-                            para.lineBreakMode = .byWordWrapping
-        }, range:NSMakeRange(0,1))
-
-        tf.attributedText = mas
-
+        // FIXME: UIMenuItem Expand 不显示
         let mi = UIMenuItem(title:"Expand", action:#selector(MyTextField.expand))
         let mc = UIMenuController.shared
         mc.menuItems = [mi]
     }
-
-    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
-        print("here '\(string)'")
-
-        if string == "\n" {
-            return true // otherwise, our automatic keyboard dismissal trick won't work
-        }
-
-        // force user to type in red, underlined, lowercase only
-
-        let lc = string.lowercased()
-        textField.text = (textField.text! as NSString)
-            .replacingCharacters(in:range, with:lc)
-
-        // not very satisfactory but it does show the result
-
-        let md = (textField.typingAttributes! as NSDictionary).mutableCopy() as! NSMutableDictionary
-        let d : [String:Any] = [
-            NSForegroundColorAttributeName:
-                UIColor.red,
-            NSUnderlineStyleAttributeName:
-                NSUnderlineStyle.styleSingle.rawValue
-        ]
-        md.addEntries(from:d)
-        textField.typingAttributes = md.copy() as? [String:Any]
-
-        return false
-    }
-
 }
 
 
 //MARK: inputAssistantItem just for ipad
 extension TextFieldVC {
 
+    /// 只对iPad有效
     func setupInputAssistantItem(which: Int) {
         switch which {
         case 1:
@@ -104,7 +58,6 @@ extension TextFieldVC {
     func doCamera(_ sender: Any) {
         print("do camera")
     }
-
 }
 
 
@@ -141,6 +94,33 @@ extension TextFieldVC: UITextFieldDelegate {
     func doDone() {
         self.tf.resignFirstResponder()
     }
+
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        print("here '\(string)'")
+
+        /// "return key" -> automatic keyboard dismissal trick
+        if string == "\n" {
+            return true
+        }
+
+        /// force user to type in red, underlined, lowercase only
+
+        let lc = string.lowercased()
+        textField.text = (textField.text! as NSString)
+            .replacingCharacters(in:range, with:lc)
+
+        let md = (textField.typingAttributes! as NSDictionary).mutableCopy() as! NSMutableDictionary
+        let d : [String:Any] = [
+            NSForegroundColorAttributeName:
+                UIColor.red,
+            NSUnderlineStyleAttributeName:
+                NSUnderlineStyle.styleSingle.rawValue
+        ]
+        md.addEntries(from:d)
+        textField.typingAttributes = md.copy() as? [String:Any]
+        
+        return false
+    }
 }
 
 
@@ -158,6 +138,5 @@ extension TextFieldVC : UIPickerViewDelegate, UIPickerViewDataSource {
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         tfDelegate.text = self.pep[row]
     }
-    
 }
 

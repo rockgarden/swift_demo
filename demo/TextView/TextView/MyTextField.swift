@@ -8,14 +8,14 @@ import UIKit
 
 
 class MyTextField: UITextField {
-    
-    // make self-dismissing; can do this without code, but just testing
+
+    // make self-dismissing; can do this without code.
     required init?(coder aDecoder: NSCoder) {
         super.init(coder:aDecoder)
         self.addTarget(
             nil, action:#selector(Dummy.dummy), for:.editingDidEndOnExit)
     }
-    
+
     let list : [String:String] = {
         let path = Bundle.main.url(forResource:"abbreviations", withExtension:"txt")!
         let s = try! String(contentsOf:path)
@@ -26,7 +26,7 @@ class MyTextField: UITextField {
         }
         return result
     }()
-    
+
     func state(for abbrev:String) -> String? {
         return self.list[abbrev.uppercased()]
     }
@@ -39,14 +39,14 @@ class MyTextField: UITextField {
         }
         return super.canPerformAction(action, withSender:sender)
     }
-    
+
     func expand(_ sender: Any?) {
         if let r = self.selectedTextRange, let s = self.text(in:r),
             let ss = self.state(for:s) {
             self.replace(r, withText:ss)
         }
     }
-    
+
     override func copy(_ sender:Any?) {
         super.copy(sender)
         let pb = UIPasteboard.general
@@ -58,26 +58,27 @@ class MyTextField: UITextField {
     }
 }
 
-extension UITextField { // is this legal? sure makes life better...
+
+extension UITextField {
     var selectedRange : NSRange {
-    get {
-        if let r = self.selectedTextRange {
-            let loc = self.offset(from:self.beginningOfDocument,
-                                  to:r.start)
-            let len = self.offset(from:r.start,
-                                  to:r.end)
-            return NSMakeRange(loc,len)
-        } else {
-            return NSMakeRange(0,0)
+        get {
+            if let r = self.selectedTextRange {
+                let loc = self.offset(from:self.beginningOfDocument,
+                                      to:r.start)
+                let len = self.offset(from:r.start,
+                                      to:r.end)
+                return NSMakeRange(loc,len)
+            } else {
+                return NSMakeRange(0,0)
+            }
         }
-    }
-    set (r) {
-        let st = self.position(from:self.beginningOfDocument,
-            offset:r.location)!
-        let en = self.position(from:self.beginningOfDocument,
-            offset:r.location + r.length)!
-        self.selectedTextRange = self.textRange(from:st, to:en)
-    }
+        set (r) {
+            let st = self.position(from:self.beginningOfDocument,
+                                   offset:r.location)!
+            let en = self.position(from:self.beginningOfDocument,
+                                   offset:r.location + r.length)!
+            self.selectedTextRange = self.textRange(from:st, to:en)
+        }
     }
 }
 

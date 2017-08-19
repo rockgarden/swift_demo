@@ -15,12 +15,11 @@ class KeyboardAccessoryVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // configure accessory view
-        let arr = UINib(nibName:"AccessoryView", bundle:nil).instantiate(withOwner:nil)
+        let arr = UINib(nibName:"KeyboardAccessoryView", bundle:nil).instantiate(withOwner:nil)
         self.accessoryView = arr[0] as! UIView
         let b = self.accessoryView.subviews[0] as! UIButton
         b.addTarget(self, action:#selector(doNextButton), for:.touchUpInside)
-        // new iOS 10 feature, just testing
-        // didn't behave well, not documenting
+
         for tf in self.textFields {
             if #available(iOS 10.0, *) {
                 tf.textContentType = .emailAddress
@@ -31,7 +30,7 @@ class KeyboardAccessoryVC: UIViewController {
     }
 
     func textFieldDidBeginEditing(_ tf: UITextField) {
-        self.fr = tf // keep track of first responder
+        self.fr = tf //keep track of first responder
         tf.inputAccessoryView = self.accessoryView
         tf.keyboardAppearance = .dark
     }
