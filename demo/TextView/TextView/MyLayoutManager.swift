@@ -15,7 +15,11 @@ class MyLayoutManager : NSLayoutManager {
         if self.wordRange.length == 0 {
             return
         }
+
+        /// 如果charRange的长度为0，则所得到的字形范围是与前一个字符对应的字形之后的零长度范围，actualCharRange也将为零长度。 如果charRange扩展到文本长度之外，则该方法将结果截断为文本中的字形数。
+        /// 如果未启用非连续布局，则此方法强制生成直到并包括指定范围结尾的所有字符的字形。
         var range = self.glyphRange(forCharacterRange:self.wordRange, actualCharacterRange:nil)
+
         range = NSIntersectionRange(glyphsToShow, range)
         if range.length == 0 {
             return

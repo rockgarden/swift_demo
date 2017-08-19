@@ -122,7 +122,7 @@ class TextViewVC: UIViewController {
         print("weixin")
     }
 
-    //TODO: public func classNamed(className: String) -> AnyClass?
+    // TODO: public func classNamed(className: String) -> AnyClass?
 
     func thumbnailOfImageWithName(_ name: String, withExtension ext: String) -> UIImage {
         let url = Bundle.main.url(forResource: name,
@@ -141,7 +141,6 @@ class TextViewVC: UIViewController {
         let im = UIImage(cgImage: imref, scale: scale, orientation: .up)
         return im
     }
-
 }
 
 
@@ -169,12 +168,12 @@ extension TextViewVC: UITextViewDelegate {
         print(interaction.rawValue)
         return true
     }
-
 }
 
 
 extension TextViewVC {
 
+    /// 通过NSLayoutManager在文本中加入几何形状
     func textLayoutGeometry() {
         let mas = NSMutableAttributedString(string:sBrillig + " " + sBrillig, attributes:[
             NSFontAttributeName: UIFont(name:"GillSans", size:20)!
@@ -227,8 +226,7 @@ extension TextViewVC {
         var tctopleft = CGPoint(0, off.y - top)
         // so what's the character index for that?
         // this doesn't give quite the right answer
-        let ixx = self.tv1.layoutManager.characterIndex(for:tctopleft, in:self.tv1.textContainer, fractionOfDistanceBetweenInsertionPoints:nil)
-        _ = ixx
+        _ = self.tv1.layoutManager.characterIndex(for:tctopleft, in:self.tv1.textContainer, fractionOfDistanceBetweenInsertionPoints:nil)
         // this is better
         var ix = self.tv1.layoutManager.glyphIndex(for:tctopleft, in:self.tv1.textContainer, fractionOfDistanceThroughGlyph:nil)
         let frag = self.tv1.layoutManager.lineFragmentRect(forGlyphAt:ix, effectiveRange:nil)
@@ -252,7 +250,6 @@ extension TextViewVC {
         let lm = self.tv1.layoutManager as! MyLayoutManager
         lm.wordRange = r
         lm.invalidateDisplay(forCharacterRange:r)
-        
     }
     
 }

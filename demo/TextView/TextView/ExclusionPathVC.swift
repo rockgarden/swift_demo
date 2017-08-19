@@ -8,12 +8,13 @@ import UIKit
 class ExclusionPathVC: UIViewController {
 
     @IBOutlet var tv: UITextView!
+    @IBOutlet var heightConstraintTv: NSLayoutConstraint!
     @IBOutlet var tv1: UITextView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
         automaticallyAdjustsScrollViewInsets = false
-        
+
         let mas = NSMutableAttributedString(string:sBrillig, attributes:[
             NSFontAttributeName: UIFont(name:"GillSans", size:14)!
             ])
@@ -60,11 +61,11 @@ class ExclusionPathVC: UIViewController {
             tv1.isScrollEnabled = false
             tv1.backgroundColor = .yellow
         }
-
     }
 
     override func viewDidLayoutSubviews() {
         let sz = tv.textContainer.size
+
         let p = UIBezierPath()
         p.move(to: CGPoint(sz.width/4.0,0))
         p.addLine(to: CGPoint(sz.width,0))
@@ -72,9 +73,9 @@ class ExclusionPathVC: UIViewController {
         p.addLine(to: CGPoint(sz.width/4.0,sz.height))
         p.addLine(to: CGPoint(sz.width,sz.height/2.0))
         p.close()
+
         tv.textContainer.exclusionPaths = [p]
         debugPrint(tv.textContainer)
     }
-
 }
 

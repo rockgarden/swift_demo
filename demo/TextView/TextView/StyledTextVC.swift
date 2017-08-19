@@ -36,12 +36,16 @@ class StyledText: UIScrollView {
 
         let d = [NSFontAttributeName:f]
         let mas = NSMutableAttributedString(string: s, attributes: d)
-        /// 替代lend()
-        var para = NSMutableParagraphStyle() {
-            didSet{
-                para.alignment = .center
+
+        /// 替代lend()写法
+        do {
+            var para = NSMutableParagraphStyle() {
+                didSet{
+                    para.alignment = .center
+                }
             }
         }
+
         mas.addAttribute(NSParagraphStyleAttributeName,
                          value: lend(closure: {(para:NSMutableParagraphStyle) in
                             para.alignment = .center}),
@@ -52,7 +56,7 @@ class StyledText: UIScrollView {
         self.addGestureRecognizer(tap)
     }
 
-    //FIXME: navBar引起高度错位
+    // FIXME: navBar引起高度错位
     override func layoutSubviews() {
         super.layoutSubviews()
         var r1 = self.bounds
@@ -73,7 +77,11 @@ class StyledText: UIScrollView {
     }
 
     override func draw(_ rect: CGRect) {
+        /// 返回给定文本容器中布局的字形的范围。
+        /// 这是一个比类似的文本容器（forGlyphAt：effectiveRange :)更有效的方法。
+        /// 如果需要，执行字形生成和布局。
         let range1 = self.lm.glyphRange(for:self.tc)
+
         self.lm.drawBackground(forGlyphRange:range1, at: self.r1.origin)
         self.lm.drawGlyphs(forGlyphRange:range1, at: self.r1.origin)
         let range2 = self.lm.glyphRange(for:self.tc2)
@@ -93,16 +101,13 @@ class StyledText: UIScrollView {
         let ix = self.lm.glyphIndex(for:p, in:tc, fractionOfDistanceThroughGlyph:&f)
         var glyphRange : NSRange = NSMakeRange(0,0)
         self.lm.lineFragmentRect(forGlyphAt:ix, effectiveRange:&glyphRange)
-        // if ix is the first glyph of the line and f is 0...
-        // or ix is the last glyph of the line and f is 1...
-        // you missed the word entirely
         if ix == glyphRange.location && f == 0.0 {
             return
         }
         if ix == glyphRange.location + glyphRange.length - 1 && f == 1.0 {
             return
         }
-        // eliminate control character glyphs at end
+        // 结束时消除控制字符字形 eliminate control character glyphs at end
         func lastCharIsControl () -> Bool {
             let lastCharRange = glyphRange.location + glyphRange.length - 1
             let property = self.lm.propertyForGlyph(at:lastCharRange)
@@ -114,9 +119,9 @@ class StyledText: UIScrollView {
         while lastCharIsControl() {
             glyphRange.length -= 1
         }
-        // okay, we've got the range!
+        // got the range!
         let characterRange = self.lm.characterRange(forGlyphRange:glyphRange, actualGlyphRange:nil)
-        let s = (self.text.string as NSString).substring(with:characterRange) // state name
+        let s = (self.text.string as NSString).substring(with:characterRange)
         print("you tapped \(s)")
         let lm = self.lm as! MyLayoutManager
         lm.wordRange = characterRange

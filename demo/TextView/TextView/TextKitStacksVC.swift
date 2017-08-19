@@ -14,6 +14,7 @@ class TextKitStacksVC: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        automaticallyAdjustsScrollViewInsets = false
 
         let mas = NSMutableAttributedString(string:sBrillig, attributes:[
             NSFontAttributeName: UIFont(name:"GillSans", size:14)!
@@ -28,13 +29,14 @@ class TextKitStacksVC: UIViewController {
             },
                          range:NSMakeRange(0,1))
 
-        //FIXME: frame error
-        var which : Int { return 2 }
+        // FIXME: frame error in AutoLayout
         let r = self.tv.frame
         let r2 = self.tv2.frame
         let ts1 = NSTextStorage(attributedString:mas)
         let lm1 = NSLayoutManager()
         ts1.addLayoutManager(lm1)
+
+        var which : Int { return 1 }
         switch which {
         case 1:
             let tc1 = NSTextContainer(size:r.size)
