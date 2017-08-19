@@ -78,7 +78,7 @@ import Photos
 ///   - file: 类名
 ///   - method: 方法名
 ///   - line: 行号
-func debugLog<T>(message: T, file: String = #file, method: String = #function, line: Int = #line) {
+func debugLog<T>(_ message: T, file: String = #file, method: String = #function, line: Int = #line) {
     #if DEBUG
         print("<\((file as NSString).lastPathComponent) : \(line)>, \(method)  \(message)")
     #endif

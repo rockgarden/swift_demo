@@ -20,25 +20,27 @@ class UILabelVC: UIViewController {
         "upon this continent a new nation, conceived in liberty and dedicated " +
     "to the proposition that all men are created equal."
     @IBOutlet var theLabel : UILabel!
+    @IBOutlet var stackView : UIStackView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         labelFontShrinkTest()
         lineBreakTest()
         selfSizingLabel()
-        moreStringDrawingTest()
+        labelFontSizeScaling()
+        showSelfSizingLabelBug()
+        makeSubscriptSuperscript()
     }
 
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         delay(5) {
-            self.doYourThing()
+            self.showSelfSizeingLabel()
         }
     }
 
+    /// you can see how both string-based and attributed-string-based label behaves also now added drawing attributed string in image to show wrapping differences
     func labelFontShrinkTest() {
-        // idea is to provide a test bed for playing with these parameters
-        // you can see how both string-based and attributed-string-based label behaves also now added drawing attributed string in image to show wrapping differences
 
         let f = UIFont(name: "GillSans", size: 20)!
 
@@ -101,8 +103,9 @@ class UILabelVC: UIViewController {
     }
 
 
-    func showBug() {
-        let showTheBug = true // set to true and run on iPhone 5s to see the bug
+    /// selfSizingLabel by sizeToFit
+    func showSelfSizingLabelBug() {
+        let showTheBug = true //set to true and run on iPhone 5s to see the bug?
         switch showTheBug {
         case true:
             let att = self.theLabel.attributedText!.mutableCopy() as! NSMutableAttributedString
@@ -115,51 +118,43 @@ class UILabelVC: UIViewController {
                 } ,
                              range:NSMakeRange(0,1))
             self.theLabel.attributedText = att
-
         default:break
         }
-        
         self.theLabel.sizeToFit()
     }
 
-    func doYourThing() {
-        let content2 = NSMutableAttributedString(string:s2, attributes: [
-            NSFontAttributeName: UIFont(name:"HoeflerText-Black", size:16)!
-            ])
-        content2.addAttributes([
-            NSFontAttributeName: UIFont(name:"HoeflerText-Black", size:24)!,
-            NSExpansionAttributeName: 0.3,
-            NSKernAttributeName: -4 // negative kerning bug fixed in iOS 8, broken again in iOS 8.3
-            ], range:NSMakeRange(0,1))
+    /// selfSizingLabel 在 numberOfLines 且不限制高度时才起作用（前提使用AutoLayout）
+    /// 正常 normal: width constrained absolutely 宽度限制绝对, height adjusts automatically 高度自动调整.
+    func showSelfSizeingLabel() {
+        /// numberOfLines 为0才可selfSizingLabel
+        lab1.numberOfLines = 0
+        lab2.numberOfLines = 0
 
-        content2.addAttribute(NSParagraphStyleAttributeName,
-                              value: lend {
-                                (para : NSMutableParagraphStyle) in
-                                para.headIndent = 10
-                                para.firstLineHeadIndent = 10
-                                para.tailIndent = -10
-                                para.lineBreakMode = .byWordWrapping
-                                para.alignment = .justified
-                                para.lineHeightMultiple = 1.2
-                                para.hyphenationFactor = 1.0
-            },
-                              range:NSMakeRange(0,1))
-        self.lab1.attributedText = content2
-        self.lab2.attributedText = content2
+        let s = makeAttributedText()
+        lab1.attributedText = s
+        lab2.attributedText = s
     }
 
-    //TODO: 加入有效的constraints
     func selfSizingLabel() {
-        let content2 = NSMutableAttributedString(string: s2, attributes: [
+        let lab = UILabel() // preferredMaxLayoutWidth is 0
+        debugLog(lab.preferredMaxLayoutWidth)
+        lab.numberOfLines = 0
+        lab.backgroundColor = UIColor.yellow
+        lab.translatesAutoresizingMaskIntoConstraints = false
+        stackView.addArrangedSubview(lab)
+        lab.attributedText = makeAttributedText()
+    }
+
+    private func makeAttributedText() -> NSAttributedString {
+        let s = NSMutableAttributedString(string: s2, attributes: [
             NSFontAttributeName: UIFont(name: "HoeflerText-Black", size: 16)!
             ])
-        content2.addAttributes([
+        s.addAttributes([
             NSFontAttributeName: UIFont(name: "HoeflerText-Black", size: 24)!,
             NSExpansionAttributeName: 0.3,
-            NSKernAttributeName: -4 // negative kerning bug fixed in iOS 8, broken again in iOS 8.3
+            NSKernAttributeName: -4
             ], range: NSMakeRange(0, 1))
-        
-        content2.addAttribute(NSParagraphStyleAttributeName,
+        s.addAttribute(NSParagraphStyleAttributeName,
                               value: lend {
                                 (para: NSMutableParagraphStyle) in
                                 para.headIndent = 10
@@ -171,22 +166,7 @@ class UILabelVC: UIViewController {
                                 para.hyphenationFactor = 1.0
             },
                               range: NSMakeRange(0, 1))
-        
-        let lab = UILabel() // preferredMaxLayoutWidth is 0
-        print(lab.preferredMaxLayoutWidth)
-        lab.numberOfLines = 0
-        lab.backgroundColor = UIColor.yellow
-        lab.translatesAutoresizingMaskIntoConstraints = false
-        self.view.addSubview(lab)
-        NSLayoutConstraint.activate([
-            NSLayoutConstraint.constraints(
-                withVisualFormat: "H:|-(30)-[v]-(30)-|",
-                options: [], metrics: nil, views: ["v": lab]),
-            NSLayoutConstraint.constraints(
-                withVisualFormat: "V:|-(260)-[v]",
-                options: [], metrics: nil, views: ["v": lab])
-            ].joined().map { $0 })
-        lab.attributedText = content2
+        return s
     }
 
     func makeSubscriptSuperscript() {
@@ -200,136 +180,25 @@ class UILabelVC: UIViewController {
         labelVarName.attributedText = attString
     }
 
-    //TODO: 加入有效的constraints
     func labelFontSizeScaling() {
-        let content2 = NSMutableAttributedString(string:s2, attributes: [
+        let s = NSMutableAttributedString(string:s2, attributes: [
             NSFontAttributeName: UIFont(name:"HoeflerText-Black", size:16)!
             ])
-        content2.addAttributes([
+        s.addAttributes([
             NSFontAttributeName: UIFont(name:"HoeflerText-Black", size:24)!,
             NSKernAttributeName: -4
             ], range:NSMakeRange(0,1))
 
-        let lab = UILabel() // preferredMaxLayoutWidth is 0
-        print(lab.preferredMaxLayoutWidth)
+        let lab = UILabel()
+        debugLog(lab.preferredMaxLayoutWidth)
         lab.numberOfLines = 0
         lab.backgroundColor = UIColor.yellow
         lab.translatesAutoresizingMaskIntoConstraints = false
-        self.view.addSubview(lab)
-        NSLayoutConstraint.activate([
-            NSLayoutConstraint.constraints(
-                withVisualFormat: "H:|-(30)-[v]-(30)-|",
-                options: [], metrics: nil, views: ["v": lab]),
-            NSLayoutConstraint.constraints(
-                withVisualFormat: "V:|-(260)-[v]",
-                options: [], metrics: nil, views: ["v": lab])
-            ].joined().map { $0 })
+        stackView.addArrangedSubview(lab)
+
         lab.adjustsFontSizeToFitWidth = true
         lab.minimumScaleFactor = 0.7
-        lab.attributedText = content2
-    }
-
-    func moreStringDrawingTest() {
-        let con = NSStringDrawingContext()
-
-        // testing string measurement
-
-        let s = self.makeAttributedString()
-        let r = s.boundingRect(with:CGSize(400,10000), options: .usesLineFragmentOrigin, context: con)
-        print("boundingRect:", r, "==", con.totalBounds) // about 150 tall, sounds right to me :)
-
-        // testing minimumScaleFactor; we never get an actual scale factor other than 1
-
-        do {
-            for w in [240,230,220] {
-                let s2 = NSMutableAttributedString(string:"Little poltergeists make up the principle form")
-                let p = lend {
-                    (p:NSMutableParagraphStyle) in
-                    p.allowsDefaultTighteningForTruncation = false
-                    p.lineBreakMode = .byTruncatingTail
-                }
-                s2.addAttribute(NSParagraphStyleAttributeName, value: p, range: NSMakeRange(0,1))
-                con.minimumScaleFactor = 0.5
-                s2.boundingRect(with:CGSize(CGFloat(w),10000), options: [.usesLineFragmentOrigin], context: con)
-                print(w, con.totalBounds, con.actualScaleFactor)
-            }
-        }
-
-        do {
-            for w in [240,230,220] {
-                let s2 = NSMutableAttributedString(string:"Little poltergeists make up the principle form")
-                let p = lend {
-                    (p:NSMutableParagraphStyle) in
-                    // this new feature does make a difference, but not in the scale factor
-                    p.allowsDefaultTighteningForTruncation = true
-                    p.lineBreakMode = .byTruncatingTail
-                }
-                s2.addAttribute(NSParagraphStyleAttributeName, value: p, range: NSMakeRange(0,1))
-                con.minimumScaleFactor = 0.5
-                s2.boundingRect(with:CGSize(CGFloat(w),10000), options: [.usesLineFragmentOrigin, .truncatesLastVisibleLine], context: con)
-                print(w, con.totalBounds, con.actualScaleFactor)
-            }
-        }
-    }
-
-    fileprivate func makeAttributedString() -> NSAttributedString {
-        var content : NSMutableAttributedString!
-        var content2 : NSMutableAttributedString!
-
-        let s1 = "The Gettysburg Address, as delivered on a certain occasion " +
-        "(namely Thursday, November 19, 1863) by A. Lincoln"
-        content = NSMutableAttributedString(string:s1, attributes:[
-            NSFontAttributeName: UIFont(name:"Arial-BoldMT", size:15)!,
-            NSForegroundColorAttributeName: UIColor(red:0.251, green:0.000, blue:0.502, alpha:1)]
-        )
-        let r = (s1 as NSString).range(of:"Gettysburg Address")
-        let atts : [String:Any] = [
-            NSStrokeColorAttributeName: UIColor.red,
-            NSStrokeWidthAttributeName: -2.0
-        ]
-        content.addAttributes(atts, range: r)
-
-        content.addAttribute(NSParagraphStyleAttributeName,
-                             value:lend() {
-                                (para : NSMutableParagraphStyle) in
-                                para.headIndent = 10
-                                para.firstLineHeadIndent = 10
-                                para.tailIndent = -10
-                                para.lineBreakMode = .byWordWrapping
-                                para.alignment = .center
-                                para.paragraphSpacing = 15
-        }, range:NSMakeRange(0,1))
-
-        var s2 = "Fourscore and seven years ago, our fathers brought forth " +
-        "upon this continent a new nation, conceived in liberty and dedicated "
-        s2 = s2 + "to the proposition that all men are created equal."
-        content2 = NSMutableAttributedString(string:s2, attributes: [
-            NSFontAttributeName: UIFont(name:"HoeflerText-Black", size:16)!
-            ])
-        content2.addAttributes([
-            NSFontAttributeName: UIFont(name:"HoeflerText-Black", size:24)!,
-            NSExpansionAttributeName: 0.3,
-            NSKernAttributeName: -4 // negative kerning bug fixed in iOS 8
-            ], range:NSMakeRange(0,1))
-
-        content2.addAttribute(NSParagraphStyleAttributeName,
-                              value:lend() {
-                                (para2 : NSMutableParagraphStyle) in
-                                para2.headIndent = 10
-                                para2.firstLineHeadIndent = 10
-                                para2.tailIndent = -10
-                                para2.lineBreakMode = .byWordWrapping
-                                para2.alignment = .justified
-                                para2.lineHeightMultiple = 1.2
-                                para2.hyphenationFactor = 1.0
-        }, range:NSMakeRange(0,1))
-        
-        let end = content.length
-        content.replaceCharacters(in:NSMakeRange(end, 0), with:"\n")
-        content.append(content2)
-        
-        return content
-        
+        lab.attributedText = s
     }
 
     override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
@@ -338,8 +207,6 @@ class UILabelVC: UIViewController {
             print(self.lab1.preferredMaxLayoutWidth)
             print(self.lab2.preferredMaxLayoutWidth)
         }
-
     }
-    
 }
 
