@@ -2,9 +2,6 @@
 //  TabViewController.swift
 //  TabBar
 //
-//  Created by wangkan on 16/8/24.
-//  Copyright © 2016年 rockgarden. All rights reserved.
-//
 //  Example: use UITabBar and UITabBarDelegate no subClass
 
 import UIKit
@@ -19,7 +16,7 @@ class TabViewController: UIViewController {
 		}
 	}()
 
-    //TODO: 如何通过UITabBarItem显示VC
+    // TODO: 如何通过UITabBarItem显示VC
 	fileprivate var _vcs: [UIViewController] = []
 	var vcs: [UIViewController] {
 		get {

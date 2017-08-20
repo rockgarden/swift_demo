@@ -11,6 +11,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 	var myDataSource: MyDataSource!
 
 	func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+        self.window = self.window ?? UIWindow()
+
         exampleTabUnwind()
         //exampleNoController()
         //exampleCodeInit()
@@ -22,7 +24,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     // 示例 Unwind UIViewController
     func exampleTabUnwind() {
-        self.window = UIWindow()
         let vc = UIStoryboard(name: "TabbedUnwind", bundle: nil).instantiateViewController(withIdentifier: "MyTabBarController")
         self.window!.rootViewController = vc //UINavigationController()会导致第二层的UINavigationController的Back Button 消失 
         self.window!.backgroundColor = .white
@@ -31,7 +32,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     /// 示例 subClass UIViewController
     func exampleNoController() {
-        self.window = UIWindow()
         let sBoard = UIStoryboard(name: "TabViewController", bundle: nil)
         let vController = sBoard.instantiateViewController(withIdentifier: "TabViewController")
         self.window!.rootViewController = vController
@@ -41,7 +41,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     /// 示例 init UITabBarController by code
     func exampleCodeInit() {
-        self.window = self.window ?? UIWindow()
         var vcs = [UIViewController]()
         for t in arr {
             let vc = SubVC()
@@ -53,7 +52,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let ok = true
         var customize: Bool { return ok }
 
-        ///FIXME:这是什么鬼?
+        // TODO:这是什么鬼?
         doneCustomizing:
         if customize {
             let more = self.tabBarController.moreNavigationController

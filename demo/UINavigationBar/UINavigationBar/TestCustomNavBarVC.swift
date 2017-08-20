@@ -11,6 +11,9 @@ import UIKit
 class TestCustomNavBarVC: UIViewController {
     @IBOutlet var navbar : UINavigationBar!
     @IBOutlet var navbarA : UINavigationBar!
+
+    @IBOutlet var toolbar : UIToolbar!
+
     var queryButton: UIButton {
         let button = UIButton(type: .custom)
         button.translatesAutoresizingMaskIntoConstraints = false
@@ -23,12 +26,12 @@ class TestCustomNavBarVC: UIViewController {
         button.addGestureRecognizer(gr)
         return button
     }
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        self.view.backgroundColor = .yellow //证明navBar半透明度 demonstrate translucency
-        
+
+        view.backgroundColor = .yellow //证明navBar半透明度 demonstrate translucency
+
         /// 自定义 UINavigationBar 返回图标: new iOS 7 feature: replace the left-pointing chevron
         do {
             let sz = CGSize(10,20)
@@ -36,15 +39,22 @@ class TestCustomNavBarVC: UIViewController {
             self.navbar.backIndicatorImage = imageOfSize(sz) {
                 UIGraphicsGetCurrentContext()!.fill(CGRect(x: 6,y: 0,width: 4,height: 20))
             }
-            self.navbar.backIndicatorTransitionMaskImage = imageOfSize(sz)
+            self.navbar.backIndicatorTransitionMaskImage = imageOfSize(sz) {}
         }
 
         // shadow, as in previous example
-        let sz = CGSize(width: 20,height: 20)
-        self.navbar.setBackgroundImage(imageOfSize(sz) {            UIColor(white:0.95, alpha:0.85).setFill()
-            UIGraphicsGetCurrentContext()!.fill(CGRect(0,0,20,20))
-        }, for:.any, barMetrics: .default)
-        
+        do {
+            let sz = CGSize(width: 20,height: 20)
+            self.navbar.setBackgroundImage(imageOfSize(sz) {
+                UIColor(white:0.95, alpha:0.85).setFill()
+                UIGraphicsGetCurrentContext()!.fill(CGRect(0,0,20,20))
+            }, for:.any, barMetrics: .default)
+            self.toolbar.setBackgroundImage(imageOfSize(sz) {
+                UIColor(white:0.95, alpha:0.85).setFill()
+                UIGraphicsGetCurrentContext()!.fill(CGRect(0,0,20,20))
+            }, forToolbarPosition:.any, barMetrics: .default)
+        }
+
         do {
             let sz = CGSize(width: 4,height: 4)
             self.navbar.shadowImage = imageOfSize(sz) {
@@ -54,10 +64,18 @@ class TestCustomNavBarVC: UIViewController {
                 UIColor.gray.withAlphaComponent(0.15).setFill()
                 ctx.fill(CGRect(0,2,4,2))
             }
+            self.toolbar.setShadowImage( imageOfSize(sz) {
+                UIColor.gray.withAlphaComponent(0.3).setFill()
+                let ctx = UIGraphicsGetCurrentContext()!
+                ctx.fill(CGRect(0,2,4,2))
+                UIColor.gray.withAlphaComponent(0.15).setFill()
+                ctx.fill(CGRect(0,0,4,2))
+            }, forToolbarPosition:.any )
         }
-        
+
         self.navbar.isTranslucent = true
-        
+        self.toolbar.isTranslucent = true
+
         // set up initial state of nav item
         let item = UIBarButtonItem(customView: queryButton)
         let niA = UINavigationItem(title: "")
@@ -69,7 +87,7 @@ class TestCustomNavBarVC: UIViewController {
         ni.rightBarButtonItem = b
         self.navbar.items = [ni]
     }
-    
+
     func pushNext(_ sender: Any) {
         debugPrint(sender)
         let oldb = sender as! UIBarButtonItem
@@ -113,6 +131,10 @@ class TestCustomNavBarVC: UIViewController {
 
 extension TestCustomNavBarVC : UIBarPositioningDelegate {
     func position(for bar: UIBarPositioning) -> UIBarPosition {
-        return .topAttached
+        switch true {
+        case bar === self.navbar: return .topAttached
+        case bar === self.navbarA: return .bottom
+        default: return .any
+        }
     }
 }

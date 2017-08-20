@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" colorMatched="YES" initialViewController="Ssr-hk-KKY">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" colorMatched="YES" initialViewController="Ssr-hk-KKY">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -398,7 +398,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vNa-Ua-eCF" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" id="Cdq-rT-6XK">
-                    <rect key="frame" x="0.0" y="-2" width="290" height="30"/>
+                    <rect key="frame" x="0.0" y="-1" width="290" height="30"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <segments>
                         <segment title="Image"/>
@@ -496,7 +496,7 @@
         <scene sceneID="vCG-Q7-GFf">
             <objects>
                 <navigationController definesPresentationContext="YES" id="xjW-Ii-a5Y" customClass="CustomBackButtonNavController" customModule="UINavigationBar" customModuleProvider="target" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="JE7-Q7-XJz">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="JE7-Q7-XJz">
                         <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -513,7 +513,7 @@
             <objects>
                 <navigationController definesPresentationContext="YES" toolbarHidden="NO" id="3cA-LZ-6R0" sceneMemberID="viewController">
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="qty-cB-ppd">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="qty-cB-ppd">
                         <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -533,7 +533,7 @@
         <scene sceneID="QLe-9Q-yDA">
             <objects>
                 <navigationController definesPresentationContext="YES" id="EO8-8C-sx2" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" shadowImage="TransparentPixel" id="KYZ-Ar-kmC">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" translucent="NO" shadowImage="TransparentPixel" id="KYZ-Ar-kmC">
                         <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -654,7 +654,7 @@
         <scene sceneID="DYN-EG-cUx">
             <objects>
                 <navigationController definesPresentationContext="YES" id="Ssr-hk-KKY" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="RLN-cv-I3G">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="RLN-cv-I3G">
                         <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -697,15 +697,24 @@
                                     <navigationItem title="No image bar item" id="bfr-AL-RSu"/>
                                 </items>
                             </navigationBar>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hxb-jI-9nY">
+                                <rect key="frame" x="16" y="579" width="343" height="44"/>
+                                <items>
+                                    <barButtonItem title="Item" id="POE-wo-FZv"/>
+                                </items>
+                            </toolbar>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="hxb-jI-9nY" firstAttribute="leading" secondItem="Fmi-my-bfn" secondAttribute="leadingMargin" id="2h3-zn-BoD"/>
                             <constraint firstItem="iHV-FB-b3R" firstAttribute="centerX" secondItem="Fmi-my-bfn" secondAttribute="centerX" id="Afz-hy-sYG"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="hxb-jI-9nY" secondAttribute="trailing" id="BHo-H1-AMY"/>
                             <constraint firstItem="iHV-FB-b3R" firstAttribute="top" secondItem="0Wf-Ze-ApL" secondAttribute="bottom" id="Buj-WK-K1k"/>
                             <constraint firstItem="q1L-eG-GCa" firstAttribute="centerX" secondItem="iHV-FB-b3R" secondAttribute="centerX" id="Cg2-rr-Tc3"/>
                             <constraint firstItem="iHV-FB-b3R" firstAttribute="width" secondItem="Fmi-my-bfn" secondAttribute="width" id="Eio-KM-Y17"/>
                             <constraint firstItem="n3J-2Y-uKt" firstAttribute="width" secondItem="Fmi-my-bfn" secondAttribute="width" id="GnN-0D-rUg"/>
                             <constraint firstItem="n3J-2Y-uKt" firstAttribute="centerX" secondItem="Fmi-my-bfn" secondAttribute="centerX" id="Oqv-9k-2Rk"/>
+                            <constraint firstItem="hxb-jI-9nY" firstAttribute="bottom" secondItem="n3J-2Y-uKt" secondAttribute="top" id="TDy-qa-WGO"/>
                             <constraint firstItem="q1L-eG-GCa" firstAttribute="leading" secondItem="Fmi-my-bfn" secondAttribute="leadingMargin" constant="77" id="fiU-Oy-MkK"/>
                             <constraint firstItem="n3J-2Y-uKt" firstAttribute="bottom" secondItem="pdE-zW-l2d" secondAttribute="top" id="s8p-yB-SRM"/>
                             <constraint firstAttribute="bottom" secondItem="q1L-eG-GCa" secondAttribute="bottom" constant="495" id="wZa-QQ-615"/>
@@ -716,6 +725,7 @@
                     <connections>
                         <outlet property="navbar" destination="iHV-FB-b3R" id="yTO-m7-SBT"/>
                         <outlet property="navbarA" destination="n3J-2Y-uKt" id="kMW-uC-zFl"/>
+                        <outlet property="toolbar" destination="hxb-jI-9nY" id="qpP-kS-xL7"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Q0D-53-lZ9" sceneMemberID="firstResponder"/>

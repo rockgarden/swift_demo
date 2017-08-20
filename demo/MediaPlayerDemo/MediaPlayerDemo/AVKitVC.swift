@@ -50,7 +50,7 @@ class AVKitVC: UIViewController {
 
     func oneSong () -> URL? {
         let query = MPMediaQuery.songs()
-        // always need to filter out songs that aren't present
+        // 总是需要滤除不存在的歌曲 always need to filter out songs that aren't present
         let isPresent = MPMediaPropertyPredicate(value:false,
                                                  forProperty:MPMediaItemPropertyIsCloudItem,
                                                  comparisonType:.equalTo)
@@ -139,7 +139,6 @@ class AVKitVC: UIViewController {
 
     func reallyPlayShortSongs() {
         let query = MPMediaQuery.songs()
-        // always need to filter out songs that aren't present
         let isPresent = MPMediaPropertyPredicate(value:false,
                                                  forProperty:MPMediaItemPropertyIsCloudItem,
                                                  comparisonType:.equalTo)
@@ -161,7 +160,7 @@ class AVKitVC: UIViewController {
             let asset = AVAsset(url:url)
             return AVPlayerItem(
                 asset: asset, automaticallyLoadedAssetKeys: [#keyPath(AVAsset.duration)])
-            // duration needed later; this way, queue player will load it for us up front
+            //  duration needed later; this way, queue player will load it for us up front
         }
 
         self.curnum = 0
@@ -201,12 +200,10 @@ class AVKitVC: UIViewController {
         let met = arr[0]
         let value = #keyPath(AVMetadataItem.value)
         met.loadValuesAsynchronously(forKeys:[value]) {
-            // should always check for successful load of value
+            /// 应该始终检查成功的负荷值should always check for successful load of value
             if met.statusOfValue(forKey:value, error: nil) == .loaded {
-                // can't be sure what thread we're on ...
-                // ...or whether we'll be called back synchronously or asynchronously
-                // so I like to step out to the main thread just in case
                 guard let title = met.value as? String else {return}
+                // TODO: 确定在什么线程执行?
                 DispatchQueue.main.async {
                     self.label.text = "\(self.curnum) of \(self.total): \(title)"
                     MPNowPlayingInfoCenter.default().nowPlayingInfo = [
@@ -217,7 +214,7 @@ class AVKitVC: UIViewController {
         }
         guard self.items.count > 0 else {return}
         let newItem = self.items.removeFirst()
-        self.qp.insert(newItem, after:nil) // means "at end"
+        self.qp.insert(newItem, after:nil) //means "at end"
     }
 
     func timerFired(time:CMTime) {
@@ -230,8 +227,6 @@ class AVKitVC: UIViewController {
                 self.prog.isHidden = false
             }
         } else {
-            // none of this is executed; I need a way of learning when we are completely done
-            // or else I can just forget this feature
             self.label.text = ""
             self.prog.isHidden = true
             self.qp.removeTimeObserver(self.ob)

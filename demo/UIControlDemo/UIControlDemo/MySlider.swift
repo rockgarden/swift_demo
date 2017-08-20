@@ -9,6 +9,8 @@ import UIKit
 class MySlider: UISlider {
     var bubbleView : UIView!
     weak var label : UILabel?
+
+    /// NSNumberFormatter的实例格式化包含NSNumber对象的单元格的文本表示，并将数值的文本表示转换为NSNumber对象。 该表示包括整数，浮点和双精度; 浮点数和双精度可以格式化为指定的小数位。 NSNumberFormatter对象还可以对单元格可以接受的数值施加范围。
     let formatter : NumberFormatter = {
         let n = NumberFormatter()
         n.maximumFractionDigits = 1
@@ -20,21 +22,7 @@ class MySlider: UISlider {
         let h = bubbleView.frame.height
         let w = bubbleView.frame.width
 
-        let im: UIImage
-        if #available(iOS 10.0, *) {
-            let r = UIGraphicsImageRenderer(size:CGSize(w,h))
-            im = r.image {
-                ctx in let con = ctx.cgContext
-                let p = UIBezierPath(roundedRect: CGRect(0,0,w,h-15), cornerRadius: 10)
-                p.move(to: CGPoint(w/2-4,h-15))
-                p.addLine(to: CGPoint(w/2,h))
-                p.addLine(to: CGPoint(w/2+4,h-15))
-                con.addPath(p.cgPath)
-                UIColor.blue.setFill()
-                con.fillPath()
-            }
-        } else {
-            UIGraphicsBeginImageContextWithOptions(CGSize(100,90), false, 0)
+        let im = imageOfSize(CGSize(w,h)) {
             let con = UIGraphicsGetCurrentContext()!
             let p = UIBezierPath(roundedRect: CGRect(0,0,100,80), cornerRadius: 10)
             p.move(to: CGPoint(45,80))
@@ -43,8 +31,6 @@ class MySlider: UISlider {
             con.addPath(p.cgPath)
             UIColor.blue.setFill()
             con.fillPath()
-            im = UIGraphicsGetImageFromCurrentImageContext()!
-            UIGraphicsEndImageContext()
         }
 
         let iv = UIImageView(image: im)
@@ -57,7 +43,6 @@ class MySlider: UISlider {
         lab.textColor = .white
         self.bubbleView.addSubview(lab)
         self.label = lab
-        
     }
     
     override func thumbRect(forBounds bounds: CGRect, trackRect rect: CGRect, value: Float) -> CGRect {
@@ -95,6 +80,4 @@ class MySlider: UISlider {
         self.bubbleView?.removeFromSuperview()
         super.cancelTracking(with:event)
     }
-    
-
 }

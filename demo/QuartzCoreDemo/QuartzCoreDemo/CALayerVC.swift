@@ -12,7 +12,7 @@ class CALayerVC: UIViewController {
         setupBox()
     }
     
-    func setupBox() {
+    private func setupBox() {
         // Creating rounder corners
         box.layer.cornerRadius = 10
         
@@ -34,6 +34,10 @@ class CALayerVC: UIViewController {
 
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
+        makeReplicator()
+    }
+
+    private func makeReplicator() {
         let lay = ReplicatorLayer()
         replicator.layer.addSublayer(lay)
         lay.position = CGPoint(replicator.layer.bounds.midX, replicator.layer.bounds.midY)

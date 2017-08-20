@@ -6,6 +6,7 @@
 import UIKit
 import AVFoundation
 
+/// Text To Speech
 class AVSpeechVC: UIViewController, AVSpeechSynthesizerDelegate {
 
     var talker = AVSpeechSynthesizer()
@@ -15,10 +16,11 @@ class AVSpeechVC: UIViewController, AVSpeechSynthesizerDelegate {
         // print(AVSpeechSynthesisVoice.speechVoices())
         let v = AVSpeechSynthesisVoice(language: "en-US")
         utter.voice = v
-        // var rate = AVSpeechUtteranceMaximumSpeechRate - AVSpeechUtteranceMinimumSpeechRate
-        // rate = rate * 0.15 + AVSpeechUtteranceMinimumSpeechRate
-        // utter.rate = rate
-        // self.talker = AVSpeechSynthesizer()
+
+        //var rate = AVSpeechUtteranceMaximumSpeechRate - AVSpeechUtteranceMinimumSpeechRate
+        //rate = rate * 0.15 + AVSpeechUtteranceMinimumSpeechRate
+        //utter.rate = rate
+
         self.talker.delegate = self
         self.talker.speak(utter)
 
