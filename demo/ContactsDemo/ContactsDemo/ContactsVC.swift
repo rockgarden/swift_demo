@@ -32,7 +32,7 @@ func checkForContactsAccess(andThen f:(()->())? = nil) {
     }
 }
 
-class ViewController : UIViewController, CNContactPickerDelegate, CNContactViewControllerDelegate {
+class ContactsVC : UIViewController, CNContactPickerDelegate, CNContactViewControllerDelegate {
 
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
@@ -45,8 +45,6 @@ class ViewController : UIViewController, CNContactPickerDelegate, CNContactViewC
         NotificationCenter.default.removeObserver(self)
     }
 
-    //
-
     @IBAction func doFindMoi (_ sender: Any!) {
         checkForContactsAccess {
             DispatchQueue.global(qos: .userInitiated).async {
@@ -55,6 +53,15 @@ class ViewController : UIViewController, CNContactPickerDelegate, CNContactViewC
                     var premoi : CNContact!
                     switch which {
                     case 1:
+                        /**
+                         CNContactStore类是一个线程安全的类，可以获取和保存联系人，组和容器。
+                         CNContactStore类提供了执行抓取和保存请求的方法。 您可以通过几种推荐方法在应用中实施这些请求来加载联系人：
+                         仅获取将要使用的联系人属性。
+                         获取所有联系人并缓存结果时，请先获取所有联系人标识符，然后根据需要通过标识符获取批量的详细联系人。
+                         要聚合几个联系人提取，首先从提取中收集一组唯一标识符。 然后通过这些唯一标识符获取批量的详细联系人。
+                         如果缓存获取的联系人，组或容器，则在发布CNContactStoreDidChangeNotification时需要重新读取这些对象（并释放旧的缓存对象）。
+                         因为CNContactStore提取方法执行I / O，建议您避免使用主线程执行提取。
+                         */
                         let pred = CNContact.predicateForContacts(matchingName:"Matt")
                         var matts = try CNContactStore().unifiedContacts(matching:pred, keysToFetch: [
                             CNContactFamilyNameKey as CNKeyDescriptor, CNContactGivenNameKey as CNKeyDescriptor
@@ -66,6 +73,10 @@ class ViewController : UIViewController, CNContactPickerDelegate, CNContactViewC
                         }
                         premoi = moi
                     case 2:
+                        /**
+                         定义提取选项以在获取联系人时使用的对象。
+                         您需要至少一个联系人属性键来获取联系人的属性。 使用这个类与enumerateContacts（with：usingBlock :)方法来执行联系提取请求。
+                         */
                         let pred = CNContact.predicateForContacts(matchingName:"k")
                         let req = CNContactFetchRequest(keysToFetch: [
                             CNContactFamilyNameKey as CNKeyDescriptor, CNContactGivenNameKey as CNKeyDescriptor
@@ -134,39 +145,29 @@ class ViewController : UIViewController, CNContactPickerDelegate, CNContactViewC
     }
 
     @IBAction func doPeoplePicker (_ sender: Any!) {
-        // checkForContactsAccess {
-
-        let picker = CNContactPickerViewController()
-        picker.delegate = self
-        do {
-            picker.displayedPropertyKeys = [CNContactEmailAddressesKey]
-            //            picker.predicateForSelectionOfProperty = NSPredicate(format: "key == 'emailAddresses'")
-            picker.predicateForEnablingContact = NSPredicate(format: "emailAddresses.@count > 0")
-            //            picker.predicateForSelectionOfContact = NSPredicate(format: "emailAddresses.@count > 0")
+        checkForContactsAccess {
+            let picker = CNContactPickerViewController()
+            picker.delegate = self
+            do {
+                picker.displayedPropertyKeys = [CNContactEmailAddressesKey]
+                picker.predicateForSelectionOfProperty = NSPredicate(format: "key == 'emailAddresses'")
+                picker.predicateForEnablingContact = NSPredicate(format: "emailAddresses.@count > 0")
+                picker.predicateForSelectionOfContact = NSPredicate(format: "emailAddresses.@count > 0")
+            }
+            self.present(picker, animated:true)
         }
-        self.present(picker, animated:true)
-
-        //}
     }
-
-    //    func contactPicker(_ picker: CNContactPickerViewController, didSelect con: CNContact) {
-    //        print("con")
-    //        print(con)
-    //    }
 
     func contactPicker(_ picker: CNContactPickerViewController, didSelect prop: CNContactProperty) {
         print("prop")
         print(prop)
     }
 
-
     @IBAction func doViewPerson (_ sender: Any!) {
-        // let's do an experiment:
-        // if we have authorization, get the contact from the database
-        // if we don't, get it from user defaults
-        // in this way, we discover whether the view controller can be used without authorization
-        // hint: yes it can
-
+        //  if we have authorization, get the contact from the database
+        //  if we don't, get it from user defaults
+        //  in this way, we discover whether the view controller can be used without authorization
+        //  hint: yes it can
         DispatchQueue.global(qos: .userInitiated).async {
             var snide : CNContact!
             let status = CNContactStore.authorizationStatus(for:.contacts)
@@ -202,19 +203,17 @@ class ViewController : UIViewController, CNContactPickerDelegate, CNContactViewC
             vc.delegate = self
             vc.message = "Nyah ah ahhh"
             vc.allowsActions = false
-            //vc.highlightProperty(withKey: CNContactEmailAddressesKey, identifier: CNLabelHome)
-            vc.contactStore = nil // no effect, can't prevent saving
+            vc.highlightProperty(withKey: CNContactEmailAddressesKey, identifier: CNLabelHome)
+            vc.contactStore = nil // TODO: no effect, can't prevent saving?
             DispatchQueue.main.async {
                 self.navigationController?.pushViewController(vc, animated: true)
             }
-
         }
-
     }
 
     func contactViewController(_ vc: CNContactViewController, didCompleteWith con: CNContact?) {
         print(con as Any)
-        self.dismiss(animated: true) // needed for `forNewContact`, does no harm in the others
+        dismiss(animated: true) // TODO: needed for `forNewContact`, does no harm in the others?
     }
 
     func contactViewController(_ vc: CNContactViewController, shouldPerformDefaultActionFor prop: CNContactProperty) -> Bool {
@@ -228,7 +227,7 @@ class ViewController : UIViewController, CNContactPickerDelegate, CNContactViewC
         con.familyName = "Doright"
         let npvc = CNContactViewController(forNewContact: con)
         npvc.delegate = self
-        self.present(UINavigationController(rootViewController: npvc), animated:true)
+        present(UINavigationController(rootViewController: npvc), animated:true)
     }
 
     @IBAction func doUnknownPerson (_ sender: Any!) {
@@ -241,10 +240,8 @@ class ViewController : UIViewController, CNContactPickerDelegate, CNContactViewC
         unkvc.contactStore = CNContactStore()
         unkvc.delegate = self
         unkvc.allowsActions = true
-        // unkvc.displayedPropertyKeys = []
-        self.navigationController?.pushViewController(unkvc, animated: true)
+        //unkvc.displayedPropertyKeys = []
+        navigationController?.pushViewController(unkvc, animated: true)
     }
-    
-    
 }
 

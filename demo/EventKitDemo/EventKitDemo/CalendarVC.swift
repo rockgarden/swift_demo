@@ -20,7 +20,7 @@ class CalendarVC: UIViewController, EKEventViewDelegate, EKEventEditViewDelegate
 
     @IBAction func createCalendar (_ sender: Any!) {
         checkForEventAccess(.event) {
-            guard (self.calendar(name: "CoolCal") != nil) else {return}
+            guard (self.calendar(name: "CoolCal") == nil) else {return}
             do {
                 /// obtain local source 是错误的方法, 因为如果用户启用 icloud 日历功能 EKEventStore 返回的默认类型是 EKSourceType.calDAV, 反之才会返回 local. 所以正确获得sources 的方法是 defaultCalendarForNewEvents.source, 相当于反射.
                 //let locals = self.database.sources.filter {$0.sourceType == .local}
@@ -40,18 +40,16 @@ class CalendarVC: UIViewController, EKEventViewDelegate, EKEventEditViewDelegate
         }
     }
 
-    /**
-     this method is used to fetch the calendar
-     - parameter name: any string which is exist on calendar
-     - returns: calendar object
-     */
+    /// this method is used to fetch the calendar
+    ///
+    /// - Parameter name: any string which is exist on calendar
+    /// - Returns: calendar object
     func calendar(name:String) -> EKCalendar? {
         let cals = self.database.calendars(for:.event)
         return cals.filter {$0.title == name}.first
     }
 
     @IBAction func createSimpleEvent (_ sender: Any!) {
-
         checkForEventAccess(.event) {
             do {
                 debugPrint(self.calendar)
@@ -80,27 +78,20 @@ class CalendarVC: UIViewController, EKEventViewDelegate, EKEventEditViewDelegate
                 // save it
                 try self.database.save(ev, span:.thisEvent, commit:true)
                 print("no errors")
-
             } catch {
                 print("save simple event \(error)")
                 return
             }
-
-
         }
     }
 
     @IBAction func createRecurringEvent (_ sender: Any!) {
-
         checkForEventAccess(.event) {
-
             do {
-
                 guard let cal = self.calendar(name:"CoolCal") else {
                     print("failed to find calendar")
                     return
                 }
-
                 let everySunday = EKRecurrenceDayOfWeek(.sunday)
                 let january = 1 as NSNumber
                 let recur = EKRecurrenceRule(
@@ -129,21 +120,15 @@ class CalendarVC: UIViewController, EKEventViewDelegate, EKEventEditViewDelegate
 
                 try self.database.save(ev, span:.futureEvents, commit:true)
                 print("no errors")
-
             } catch {
                 print("save recurring event \(error)")
                 return
             }
-
-
         }
-
     }
 
     @IBAction func searchByRange (_ sender: Any!) {
-
         checkForEventAccess(.event) {
-
             guard let cal = self.calendar(name:"CoolCal") else {
                 print("failed to find calendar")
                 return
@@ -159,6 +144,8 @@ class CalendarVC: UIViewController, EKEventViewDelegate, EKEventEditViewDelegate
                 var events = [EKEvent]()
                 self.database.enumerateEvents(matching:pred) { ev, stop in
                     events += [ev]
+                    debugPrint(ev.title)
+                    // TODO: 并没有生成 nap events??
                     if ev.title.range(of:"nap") != nil {
                         self.napid = ev.calendarItemIdentifier
                         print("found the nap")
@@ -169,10 +156,7 @@ class CalendarVC: UIViewController, EKEventViewDelegate, EKEventEditViewDelegate
 
                 print(events)
                 print(events.map {$0.calendarItemIdentifier})
-
-
             }
-
         }
     }
 
@@ -204,7 +188,6 @@ class CalendarVC: UIViewController, EKEventViewDelegate, EKEventEditViewDelegate
             //                pop.sourceRect = v.bounds
             //            }
             //        }
-
         }
     }
 
@@ -233,13 +216,12 @@ class CalendarVC: UIViewController, EKEventViewDelegate, EKEventEditViewDelegate
                     pop.sourceRect = v.bounds
                 }
             }
-
         }
     }
 
     func eventEditViewController(_ controller: EKEventEditViewController,
                                  didCompleteWith action: EKEventEditViewAction) {
-        print("did complete: \(action.rawValue), \(controller.event)")
+        print("did complete: \(action.rawValue), \(String(describing: controller.event))")
         self.dismiss(animated:true)
     }
 
@@ -270,7 +252,6 @@ class CalendarVC: UIViewController, EKEventViewDelegate, EKEventEditViewDelegate
                     pop.sourceRect = v.bounds
                 }
             }
-
         }
     }
 
