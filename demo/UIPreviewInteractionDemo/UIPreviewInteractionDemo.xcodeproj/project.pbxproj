@@ -12,6 +12,8 @@
 		446A26A51EC9DED20024230D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 446A26A31EC9DED20024230D /* Main.storyboard */; };
 		446A26A71EC9DED20024230D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 446A26A61EC9DED20024230D /* Assets.xcassets */; };
 		446A26AA1EC9DED20024230D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 446A26A81EC9DED20024230D /* LaunchScreen.storyboard */; };
+		44B5E4EE1F4C6705007742F3 /* WorkspaceGlobal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44B5E4ED1F4C6705007742F3 /* WorkspaceGlobal.swift */; };
+		44B5E4F01F4C6772007742F3 /* ForceTouchGestureVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44B5E4EF1F4C6772007742F3 /* ForceTouchGestureVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +24,8 @@
 		446A26A61EC9DED20024230D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		446A26A91EC9DED20024230D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		446A26AB1EC9DED20024230D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		44B5E4ED1F4C6705007742F3 /* WorkspaceGlobal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = WorkspaceGlobal.swift; path = ../WorkspaceGlobal.swift; sourceTree = "<group>"; };
+		44B5E4EF1F4C6772007742F3 /* ForceTouchGestureVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ForceTouchGestureVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -38,6 +42,7 @@
 		446A26931EC9DED20024230D = {
 			isa = PBXGroup;
 			children = (
+				44B5E4ED1F4C6705007742F3 /* WorkspaceGlobal.swift */,
 				446A269E1EC9DED20024230D /* UIPreviewInteractionDemo */,
 				446A269D1EC9DED20024230D /* Products */,
 			);
@@ -55,8 +60,9 @@
 			isa = PBXGroup;
 			children = (
 				446A269F1EC9DED20024230D /* AppDelegate.swift */,
-				446A26A11EC9DED20024230D /* ViewControllers_UIPD.swift */,
 				446A26A31EC9DED20024230D /* Main.storyboard */,
+				446A26A11EC9DED20024230D /* ViewControllers_UIPD.swift */,
+				44B5E4EF1F4C6772007742F3 /* ForceTouchGestureVC.swift */,
 				446A26A61EC9DED20024230D /* Assets.xcassets */,
 				446A26A81EC9DED20024230D /* LaunchScreen.storyboard */,
 				446A26AB1EC9DED20024230D /* Info.plist */,
@@ -137,7 +143,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				44B5E4EE1F4C6705007742F3 /* WorkspaceGlobal.swift in Sources */,
 				446A26A21EC9DED20024230D /* ViewControllers_UIPD.swift in Sources */,
+				44B5E4F01F4C6772007742F3 /* ForceTouchGestureVC.swift in Sources */,
 				446A26A01EC9DED20024230D /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -302,6 +310,7 @@
 				446A26B01EC9DED20024230D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

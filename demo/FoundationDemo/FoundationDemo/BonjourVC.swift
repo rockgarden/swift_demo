@@ -5,9 +5,10 @@
 
 import UIKit
 
-// tap button, watch console when you turn on Sharing in iTunes
 
+/// NetServiceBrowser: watch console when you turn on Sharing in iTunes
 class BonjourVC: UIViewController, NetServiceBrowserDelegate, NetServiceDelegate {
+
     var nsb : NetServiceBrowser!
     var services = [NetService]()
 
@@ -28,7 +29,7 @@ class BonjourVC: UIViewController, NetServiceBrowserDelegate, NetServiceDelegate
                 service.resolve(withTimeout:10)
             } else {
                 print("service \(service.name) of type \(service.type)," +
-                    "port \(service.port), addresses \(service.addresses)")
+                    "port \(service.port), addresses \(String(describing: service.addresses))")
             }
         }
     }

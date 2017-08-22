@@ -96,9 +96,9 @@ class FileHandoffVC: UIViewController, UIDocumentInteractionControllerDelegate, 
     @IBAction func doPreviewMultipleUsingQuickLook (_ sender: AnyObject!) {
         self.docs = [URL]()
         do {
-            let fm = FileManager()
+            let fm = FileManager.default
             let docsurl = try fm.url(for: .documentDirectory, in: .userDomainMask, appropriateFor: nil, create: false)
-            let dir = fm.enumerator(at: docsurl, includingPropertiesForKeys: nil, options: [], errorHandler: nil)!
+            let dir = fm.enumerator(at: docsurl, includingPropertiesForKeys: nil)!
             for case let f as URL in dir {
                 if self.exts.contains(f.pathExtension) {
                     if QLPreviewController.canPreview(f as QLPreviewItem) {
@@ -128,6 +128,5 @@ class FileHandoffVC: UIViewController, UIDocumentInteractionControllerDelegate, 
     func previewController(_ controller: QLPreviewController, previewItemAt index: Int) -> QLPreviewItem {
         return self.docs[index] as QLPreviewItem
     }
-    
 }
 

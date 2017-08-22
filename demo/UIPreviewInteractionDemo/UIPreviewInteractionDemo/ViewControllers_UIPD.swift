@@ -57,10 +57,12 @@ class FirstViewController : UIViewController {
                 print("we got cancelled")
             }
         }
-
     }
 
-
+    @IBAction func showForceTouchGesture(_ sender: Any) {
+        let vc = ForceTouchGestureVC()
+        present(vc, animated: true, completion: nil)
+    }
 }
 
 class SecondViewController : UIViewController {

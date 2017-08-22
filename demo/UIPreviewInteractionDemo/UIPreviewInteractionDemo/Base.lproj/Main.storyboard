@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="Aqq-bW-hDH">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="Aqq-bW-hDH">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--First-->
         <scene sceneID="SRA-Rt-UBD">
             <objects>
-                <viewController title="First" id="K6X-EK-p6d" customClass="FirstViewController" customModule="ch19p620customAnimation3" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="First" id="K6X-EK-p6d" customClass="FirstViewController" customModule="UIPreviewInteractionDemo" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="rv8-q9-VYG"/>
                         <viewControllerLayoutGuide type="bottom" id="HOC-H9-0Ac"/>
@@ -36,16 +36,25 @@
                                 <fontDescription key="fontDescription" type="system" size="system"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TrX-0t-4AB">
+                                <rect key="frame" x="110" y="580" width="154" height="30"/>
+                                <state key="normal" title="ForceTouchGestureVC"/>
+                                <connections>
+                                    <action selector="showForceTouchGesture:" destination="K6X-EK-p6d" eventType="touchUpInside" id="ZZe-x9-cuf"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <gestureRecognizers/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="4VW-De-27W" secondAttribute="trailing" constant="20" symbolic="YES" id="34X-C3-iz1"/>
                             <constraint firstItem="4VW-De-27W" firstAttribute="leading" secondItem="0cl-WK-CxN" secondAttribute="leading" constant="20" symbolic="YES" id="3Kt-aW-qxR"/>
+                            <constraint firstItem="TrX-0t-4AB" firstAttribute="centerX" secondItem="0cl-WK-CxN" secondAttribute="centerX" id="9V3-wd-D5p"/>
                             <constraint firstItem="bow-gE-8lJ" firstAttribute="leading" secondItem="0cl-WK-CxN" secondAttribute="leading" constant="20" symbolic="YES" id="CNW-3h-nUW"/>
                             <constraint firstAttribute="centerY" secondItem="bow-gE-8lJ" secondAttribute="centerY" id="LjS-ff-inF"/>
                             <constraint firstAttribute="trailing" secondItem="bow-gE-8lJ" secondAttribute="trailing" constant="20" symbolic="YES" id="UxK-kx-Ufa"/>
                             <constraint firstItem="bow-gE-8lJ" firstAttribute="top" secondItem="4VW-De-27W" secondAttribute="bottom" constant="40" id="Wkz-Eg-eLw"/>
+                            <constraint firstItem="HOC-H9-0Ac" firstAttribute="top" secondItem="TrX-0t-4AB" secondAttribute="bottom" constant="8" id="cd9-Jk-sou"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="First" image="first" id="X9y-cO-XN5"/>
@@ -57,7 +66,7 @@
         <!--Second-->
         <scene sceneID="A3o-XY-iO5">
             <objects>
-                <viewController title="Second" id="jyk-os-jkp" customClass="SecondViewController" customModule="ch19p620customAnimation3" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Second" id="jyk-os-jkp" customClass="SecondViewController" customModule="UIPreviewInteractionDemo" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Pjw-jH-sru"/>
                         <viewControllerLayoutGuide type="bottom" id="I9I-rs-Fxj"/>

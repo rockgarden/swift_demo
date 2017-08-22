@@ -110,9 +110,6 @@
       location = "group:demo/UIResponder/UIResponder.xcodeproj">
    </FileRef>
    <FileRef
-      location = "group:demo/NetServiceBrowser/NetServiceBrowser.xcodeproj">
-   </FileRef>
-   <FileRef
       location = "group:demo/CoreData/CoreDataExample.xcodeproj">
    </FileRef>
    <FileRef

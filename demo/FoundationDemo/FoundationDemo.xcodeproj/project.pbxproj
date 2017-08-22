@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		44B5E4EC1F4C655F007742F3 /* BonjourVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44B5E4EB1F4C655F007742F3 /* BonjourVC.swift */; };
 		44FEB4821F45CCC50054F183 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44FEB4811F45CCC50054F183 /* AppDelegate.swift */; };
 		44FEB4841F45CCC50054F183 /* NSMutableAttributedStringVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44FEB4831F45CCC50054F183 /* NSMutableAttributedStringVC.swift */; };
 		44FEB4871F45CCC50054F183 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 44FEB4851F45CCC50054F183 /* Main.storyboard */; };
@@ -18,6 +19,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		44B5E4EB1F4C655F007742F3 /* BonjourVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BonjourVC.swift; sourceTree = "<group>"; };
 		44FEB47E1F45CCC50054F183 /* FoundationDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FoundationDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		44FEB4811F45CCC50054F183 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		44FEB4831F45CCC50054F183 /* NSMutableAttributedStringVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSMutableAttributedStringVC.swift; sourceTree = "<group>"; };
@@ -64,6 +66,7 @@
 				44FEB4851F45CCC50054F183 /* Main.storyboard */,
 				44FEB4831F45CCC50054F183 /* NSMutableAttributedStringVC.swift */,
 				44FEB4931F45CF0D0054F183 /* RTFImportUITextViewVC.swift */,
+				44B5E4EB1F4C655F007742F3 /* BonjourVC.swift */,
 				44FEB4951F45CFAF0054F183 /* test.rtf */,
 				44FEB4881F45CCC50054F183 /* Assets.xcassets */,
 				44FEB48A1F45CCC50054F183 /* LaunchScreen.storyboard */,
@@ -151,6 +154,7 @@
 				44FEB4841F45CCC50054F183 /* NSMutableAttributedStringVC.swift in Sources */,
 				44FEB4821F45CCC50054F183 /* AppDelegate.swift in Sources */,
 				C20F0E781F46C0A800852271 /* JSON.swift in Sources */,
+				44B5E4EC1F4C655F007742F3 /* BonjourVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
