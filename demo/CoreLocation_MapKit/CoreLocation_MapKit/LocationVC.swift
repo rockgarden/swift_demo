@@ -2,15 +2,14 @@
 //  ViewController.swift
 //  CoreLocation_MapKit
 //
-//  Created by wangkan on 16/8/17.
-//  Copyright © 2016年 rockgarden. All rights reserved.
-//
+
 
 import UIKit
 import MapKit
 import CoreLocation
 
-class ViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDelegate {
+/// my location
+class LocationVC: UIViewController {
     /// 是否延时获取位置信息: 1 = true use startUpdatingLocation() or 2 = false use requestLocation()
     let which = 1
     
@@ -32,11 +31,16 @@ class ViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDele
 	var finalLongitude: CLLocationDegrees!
 	var distance: CLLocationDistance!
     var updating = false
+
     var startTime : Date!
     var trying = false
+
     let deferInterval : TimeInterval = 5 //15*60
+
     var s = ""
+
     fileprivate var set = NSMutableArray()
+
     let REQ_ACC : CLLocationAccuracy = 10
     let REQ_TIME : TimeInterval = 10
 
@@ -50,7 +54,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDele
         
         LocationMe(nil)
 
-		let tap = UITapGestureRecognizer(target: self, action: #selector(ViewController.action(_:)))
+		let tap = UITapGestureRecognizer(target: self, action: #selector(LocationVC.action(_:)))
         self.myMap.delegate = self
 		myMap.addGestureRecognizer(tap)
 	}
@@ -74,7 +78,98 @@ class ViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDele
             }
         }
     }
+
+    func action(_ gestureRecognizer: UIGestureRecognizer) {
+        let touchPoint = gestureRecognizer.location(in: self.myMap)
+        let newCoord: CLLocationCoordinate2D = myMap.convert(touchPoint, toCoordinateFrom: self.myMap)
+        let getLat: CLLocationDegrees = newCoord.latitude
+        let getLon: CLLocationDegrees = newCoord.longitude
+
+        // Convert to points to CLLocation. In this way we can measure distanceFromLocation
+        let newCoord2 = CLLocation(latitude: getLat, longitude: getLon)
+        let newCoord3 = CLLocation(latitude: myLatitude, longitude: myLongitude)
+
+        finalLatitude = newCoord2.coordinate.latitude
+        finalLongitude = newCoord2.coordinate.longitude
+        debugPrint("Original Latitude: \(myLatitude)")
+        debugPrint("Original Longitude: \(myLongitude)")
+        debugPrint("Final Latitude: \(finalLatitude)")
+        debugPrint("Final Longitude: \(finalLongitude)")
+
+        // distance between our position and the new point created
+        let distance = newCoord2.distance(from: newCoord3)
+        debugPrint("Distance between two points: \(distance)")
+
+        let newAnnotation = MKPointAnnotation()
+        newAnnotation.coordinate = newCoord
+        newAnnotation.title = "My target"
+        newAnnotation.subtitle = ""
+        myMap.addAnnotation(newAnnotation)
+    }
+
+    func displayLocationInfo(_ placemark: CLPlacemark?) {
+        if let containsPlacemark = placemark {
+            // stop updating location to save battery life
+            //locationManager.stopUpdatingLocation()
+
+            // get data from placemark
+            let locality = (containsPlacemark.locality != nil) ? containsPlacemark.locality : ""
+            let postalCode = (containsPlacemark.postalCode != nil) ? containsPlacemark.postalCode : ""
+            let administrativeArea = (containsPlacemark.administrativeArea != nil) ? containsPlacemark.administrativeArea : ""
+            let country = (containsPlacemark.country != nil) ? containsPlacemark.country : ""
+            myLongitude = (containsPlacemark.location!.coordinate.longitude)
+            myLatitude = (containsPlacemark.location!.coordinate.latitude)
+
+            // testing show data
+            debugPrint("Locality: \(String(describing: locality))")
+            debugPrint("PostalCode: \(String(describing: postalCode))")
+            debugPrint("Area: \(String(describing: administrativeArea))")
+            debugPrint("Country: \(String(describing: country))")
+            debugPrint(myLatitude)
+            debugPrint(myLongitude)
+
+            // update map with my location
+            let theSpan: MKCoordinateSpan = MKCoordinateSpanMake(0.1, 0.1)
+            let location: CLLocationCoordinate2D = CLLocationCoordinate2D(latitude: myLatitude, longitude: myLongitude)
+            let theRegion: MKCoordinateRegion = MKCoordinateRegionMake(location, theSpan)
+
+            myMap.setRegion(theRegion, animated: true)
+        }
+    }
+
+    // distance between two points
+    func degreesToRadians(_ degrees: Double) -> Double { return degrees * Double.pi / 180.0 }
+
+    func radiansToDegrees(_ radians: Double) -> Double { return radians * 180.0 / Double.pi }
+
+    func getBearingBetweenTwoPoints1(_ point1: CLLocation, point2: CLLocation) -> Double {
+        let lat1 = degreesToRadians(point1.coordinate.latitude)
+        let lon1 = degreesToRadians(point1.coordinate.longitude)
+        let lat2 = degreesToRadians(point2.coordinate.latitude);
+        let lon2 = degreesToRadians(point2.coordinate.longitude);
+
+        debugPrint("Start latitude: \(point1.coordinate.latitude)")
+        debugPrint("Start longitude: \(point1.coordinate.longitude)")
+        debugPrint("Final latitude: \(point2.coordinate.latitude)")
+        debugPrint("Final longitude: \(point2.coordinate.longitude)")
+        
+        let dLon = lon2 - lon1;
+        let y = sin(dLon) * cos(lat2);
+        let x = cos(lat1) * sin(lat2) - sin(lat1) * cos(lat2) * cos(dLon);
+        let radiansBearing = atan2(y, x);
+        
+        return radiansToDegrees(radiansBearing)
+    }
     
+    fileprivate func showInfo(_ s: Any) {
+        self.s = self.s + "\n" + String(describing:s)
+    }
+}
+
+
+// MARK: - CLLocationManagerDelegate, MKMapViewDelegate
+extension LocationVC: CLLocationManagerDelegate, MKMapViewDelegate {
+
     func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
         debugPrint("did change auth: \(status.rawValue)")
         switch status {
@@ -86,7 +181,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDele
     }
     
     func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
-        debugPrint("Error while updating location " + error.localizedDescription)
+        showInfo("Error while updating location " + error.localizedDescription)
         self.doStop(nil)
         self.stopTrying()
     }
@@ -107,7 +202,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDele
     }
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        debugPrint("did update location ")
+        showInfo("did update location ")
         CLGeocoder().reverseGeocodeLocation(manager.location!, completionHandler: { (placemarks, error) -> Void in
             if (error != nil) {
                 self.showInfo("Reverse geocoder failed with error" + error!.localizedDescription)
@@ -139,7 +234,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDele
                 self.startTime = Date()
                 break // ignore first attempt
             }
-            print(acc)
+            showInfo(acc)
             let elapsed = time.timeIntervalSince(self.startTime)
             if elapsed > REQ_TIME {
                 print("This is taking too long")
@@ -151,7 +246,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDele
             }
             latitude.text = String(coord.latitude)
             longitude.text = String(coord.longitude)
-            print("You are at \(coord.latitude) \(coord.longitude)")
+            showInfo("You are at \(coord.latitude) \(coord.longitude)")
             self.stopTrying()
         case 2:
             latitude.text = String(coord.latitude)
@@ -160,101 +255,38 @@ class ViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDele
         // bug: can be called twice in quick succession
         default: break
         }
-        
     }
 
-	func action(_ gestureRecognizer: UIGestureRecognizer) {
-		let touchPoint = gestureRecognizer.location(in: self.myMap)
-		let newCoord: CLLocationCoordinate2D = myMap.convert(touchPoint, toCoordinateFrom: self.myMap)
-		let getLat: CLLocationDegrees = newCoord.latitude
-		let getLon: CLLocationDegrees = newCoord.longitude
-
-		// Convert to points to CLLocation. In this way we can measure distanceFromLocation
-		let newCoord2 = CLLocation(latitude: getLat, longitude: getLon)
-		let newCoord3 = CLLocation(latitude: myLatitude, longitude: myLongitude)
-
-		finalLatitude = newCoord2.coordinate.latitude
-		finalLongitude = newCoord2.coordinate.longitude
-		debugPrint("Original Latitude: \(myLatitude)")
-		debugPrint("Original Longitude: \(myLongitude)")
-		debugPrint("Final Latitude: \(finalLatitude)")
-		debugPrint("Final Longitude: \(finalLongitude)")
-
-		// distance between our position and the new point created
-		let distance = newCoord2.distance(from: newCoord3)
-		debugPrint("Distance between two points: \(distance)")
-
-		let newAnnotation = MKPointAnnotation()
-		newAnnotation.coordinate = newCoord
-		newAnnotation.title = "My target"
-		newAnnotation.subtitle = ""
-		myMap.addAnnotation(newAnnotation)
-	}
-
-	func displayLocationInfo(_ placemark: CLPlacemark?) {
-		if let containsPlacemark = placemark {
-			// stop updating location to save battery life
-			//locationManager.stopUpdatingLocation()
-
-			// get data from placemark
-			let locality = (containsPlacemark.locality != nil) ? containsPlacemark.locality : ""
-			let postalCode = (containsPlacemark.postalCode != nil) ? containsPlacemark.postalCode : ""
-			let administrativeArea = (containsPlacemark.administrativeArea != nil) ? containsPlacemark.administrativeArea : ""
-			let country = (containsPlacemark.country != nil) ? containsPlacemark.country : ""
-			myLongitude = (containsPlacemark.location!.coordinate.longitude)
-			myLatitude = (containsPlacemark.location!.coordinate.latitude)
-
-			// testing show data
-			debugPrint("Locality: \(locality)")
-			debugPrint("PostalCode: \(postalCode)")
-			debugPrint("Area: \(administrativeArea)")
-			debugPrint("Country: \(country)")
-			debugPrint(myLatitude)
-			debugPrint(myLongitude)
-
-			// update map with my location
-			let theSpan: MKCoordinateSpan = MKCoordinateSpanMake(0.1, 0.1)
-			let location: CLLocationCoordinate2D = CLLocationCoordinate2D(latitude: myLatitude, longitude: myLongitude)
-			let theRegion: MKCoordinateRegion = MKCoordinateRegionMake(location, theSpan)
-
-			myMap.setRegion(theRegion, animated: true)
-		}
-	}
-
-	// distance between two points
-	func degreesToRadians(_ degrees: Double) -> Double { return degrees * M_PI / 180.0 }
-    
-	func radiansToDegrees(_ radians: Double) -> Double { return radians * 180.0 / M_PI }
-
-	func getBearingBetweenTwoPoints1(_ point1: CLLocation, point2: CLLocation) -> Double {
-		let lat1 = degreesToRadians(point1.coordinate.latitude)
-		let lon1 = degreesToRadians(point1.coordinate.longitude)
-		let lat2 = degreesToRadians(point2.coordinate.latitude);
-		let lon2 = degreesToRadians(point2.coordinate.longitude);
-
-		debugPrint("Start latitude: \(point1.coordinate.latitude)")
-		debugPrint("Start longitude: \(point1.coordinate.longitude)")
-		debugPrint("Final latitude: \(point2.coordinate.latitude)")
-		debugPrint("Final longitude: \(point2.coordinate.longitude)")
-
-		let dLon = lon2 - lon1;
-		let y = sin(dLon) * cos(lat2);
-		let x = cos(lat1) * sin(lat2) - sin(lat1) * cos(lat2) * cos(dLon);
-		let radiansBearing = atan2(y, x);
-
-		return radiansToDegrees(radiansBearing)
-	}
-    
-    fileprivate func showInfo(_ s: Any) {
-        self.s = self.s + "\n" + String(describing:s)
+    func locationManager(_ manager: CLLocationManager, didUpdateHeading newHeading: CLHeading) {
+        var h = newHeading.magneticHeading
+        let h2 = newHeading.trueHeading // -1 if no location info
+        showInfo("\(h) \(h2) ")
+        if h2 >= 0 {
+            h = h2
+        }
+        let cards = ["N", "NE", "E", "SE", "S", "SW", "W", "NW"]
+        var dir = "N"
+        for (ix, card) in cards.enumerated() {
+            if h < 45.0/2.0 + 45.0*Double(ix) {
+                dir = card
+                break
+            }
+        }
+        if self.headingLab.text != dir {
+            self.headingLab.text = dir
+        }
+        showInfo(dir)
     }
-    
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
+
+    func locationManagerShouldDisplayHeadingCalibration(_ manager: CLLocationManager) -> Bool {
+        showInfo("he asked me, he asked me")
+        //使用校准对话框: if you want the calibration dialog to be able to appear
+        return true
     }
 }
 
-extension ViewController {
+
+extension LocationVC {
     
     @IBAction func createAnotation(_ sender: AnyObject) {
         let a = MyAnotation(c: myMap.centerCoordinate, t: "Center", st: "The map center")
@@ -286,8 +318,9 @@ extension ViewController {
 
 }
 
+
 //MARK: - Heading
-extension ViewController {
+extension LocationVC {
 
     @IBAction func doStart (_ sender: Any!) {
         guard CLLocationManager.headingAvailable() else {return} // no hardware
@@ -298,10 +331,9 @@ extension ViewController {
         self.locationManager.headingFilter = 5
         self.locationManager.headingOrientation = .portrait
         self.updating = true
-        // NO AUTH NEEDED!
-        // the heading part works just fine even if Location Services is turned off
-        // and if it is turned on, we will get true-north
-        // seems like a major bug to me
+        //  NO AUTH NEEDED!
+        //  the heading part works just fine even if Location Services is turned off
+        //  and if it is turned on, we will get true-north 否则 是 fake-north?
         self.locationManager.startUpdatingHeading()
     }
 
@@ -311,35 +343,9 @@ extension ViewController {
         self.updating = false
     }
 
-    func locationManager(_ manager: CLLocationManager, didUpdateHeading newHeading: CLHeading) {
-        var h = newHeading.magneticHeading
-        let h2 = newHeading.trueHeading // -1 if no location info
-        debugPrint("\(h) \(h2) ")
-        if h2 >= 0 {
-            h = h2
-        }
-        let cards = ["N", "NE", "E", "SE", "S", "SW", "W", "NW"]
-        var dir = "N"
-        for (ix, card) in cards.enumerated() {
-            if h < 45.0/2.0 + 45.0*Double(ix) {
-                dir = card
-                break
-            }
-        }
-        if self.headingLab.text != dir {
-            self.headingLab.text = dir
-        }
-        debugPrint(dir)
-    }
-
-    func locationManagerShouldDisplayHeadingCalibration(_ manager: CLLocationManager) -> Bool {
-        debugPrint("he asked me, he asked me")
-        return true // if you want the calibration dialog to be able to appear
-    }
-
 }
 
-//MARK: - Findme
+
 /*
  只有在init时才有输出
  allowDeferredLocationUpdatesUntilTraveled 延迟位置更新
@@ -349,7 +355,8 @@ extension ViewController {
  只在APP运行在后台时生效 前台运行时是不会进行延迟处理的
  只有系统在低功耗(Low Power State)的时候才有可能生效
  */
-extension ViewController {
+// MARK: - location Deferred
+extension LocationVC {
     
     @IBAction func doFindMe (_ sender: Any!) {
         self.managerHolder.checkForLocationAccess {
@@ -366,7 +373,9 @@ extension ViewController {
             self.s = ""
             self.meTv.text = ""
             var ob : Any = ""
-            ob = NotificationCenter.default.addObserver(forName: .UIApplicationDidEnterBackground, object: nil, queue: OperationQueue.main) {
+            ob = NotificationCenter.default.addObserver(forName: .UIApplicationDidEnterBackground,
+                                                        object: nil,
+                                                        queue: OperationQueue.main) {
                 _ in
                 NotificationCenter.default.removeObserver(ob)
                 if CLLocationManager.deferredLocationUpdatesAvailable() {

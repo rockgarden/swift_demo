@@ -68,13 +68,18 @@ class CMMotionManagerVC: UIViewController {
         CATransaction.setAnimationDuration(1.0/10.0)
         lay.transform = t
     }
+}
+
+
+// MARK: - Gyro 陀螺仪
+extension CMMotionManagerVC {
 
     @IBAction func doGyro (_ sender: Any!) {
         guard self.motman.isDeviceMotionAvailable else {
             print("Oh, well")
             return
         }
-        // idiot Swift numeric foo (different in iOS 8.3 but still idiotic)
+        
         let ref = CMAttitudeReferenceFrame.xMagneticNorthZVertical
         let avail = CMMotionManager.availableAttitudeReferenceFrames()
         guard avail.contains(ref) else {
@@ -107,6 +112,8 @@ class CMMotionManagerVC: UIViewController {
     }
 }
 
+
+// MARK: - smack me
 extension CMMotionManagerVC {
 
     enum Slap {
@@ -165,6 +172,8 @@ extension CMMotionManagerVC {
     }
 }
 
+
+// MARK: - lying down
 extension CMMotionManagerVC {
 
     enum State {

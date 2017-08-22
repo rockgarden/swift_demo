@@ -49,5 +49,4 @@ class LocationManagerHolder {
             break
         }
     }
-    
 }

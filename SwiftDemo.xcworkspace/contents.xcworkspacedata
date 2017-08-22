@@ -2,6 +2,9 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:demo/SocialDemo/SocialDemo.xcodeproj">
+   </FileRef>
+   <FileRef
       location = "group:demo/StickerPackDemo/StickerPackDemo.xcodeproj">
    </FileRef>
    <FileRef
@@ -93,9 +96,6 @@
    </FileRef>
    <FileRef
       location = "group:demo/MediaPlayerDemo/MediaPlayerDemo.xcodeproj">
-   </FileRef>
-   <FileRef
-      location = "group:demo/Social/SocialDemo.xcodeproj">
    </FileRef>
    <FileRef
       location = "group:demo/ContactsDemo/ContactsDemo.xcodeproj">

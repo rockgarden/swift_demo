@@ -10,6 +10,7 @@ import UIKit
 import CoreMotion
 import simd
 
+
 class GyroscopeViewController: UIViewController, MotionGraphContainer {
     // MARK: Properties
     
@@ -22,7 +23,7 @@ class GyroscopeViewController: UIViewController, MotionGraphContainer {
     @IBOutlet weak var updateIntervalLabel: UILabel!
     
     @IBOutlet weak var updateIntervalSlider: UISlider!
-    
+
     let updateIntervalFormatter = MeasurementFormatter()
     
     @IBOutlet var valueLabels: [UILabel]!

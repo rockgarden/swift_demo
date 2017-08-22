@@ -15,8 +15,8 @@ class CMMotionActivityVC: UITableViewController {
         super.viewDidLoad()
         
         let b = UIBarButtonItem(title: "Start", style: .plain, target: self, action: #selector(doStart))
-        self.navigationItem.rightBarButtonItem = b
-
+        navigationItem.rightBarButtonItem = b
+        
         let ok2 = CMPedometer.isStepCountingAvailable()
         print("pedometer: \(ok2)")
         let ok3 = CMPedometer.isDistanceAvailable()
@@ -33,10 +33,10 @@ class CMMotionActivityVC: UITableViewController {
             print("darn")
             return
         }
-        // there is also CMPedometer and various is...Available in iOS 8 on a subset of devices
-        // there is no direct authorization check
-        // instead, we attempt to "tickle" the activity manager and see if we get an error
-        // this will cause the system authorization dialog to be presented if necessary
+        //  there is also CMPedometer and various is...Available in iOS 8 on a subset of devices
+        /// 没有直接的授权检查? there is no direct authorization check
+        //  instead, we attempt to "tickle" the activity manager and see if we get an error
+        //  this will cause the system authorization dialog to be presented if necessary
         let now = Date()
         self.actman.queryActivityStarting(from: now, to:now, to:.main) { arr, err in
             // such Swift numeric barf you could plotz
@@ -56,13 +56,14 @@ class CMMotionActivityVC: UITableViewController {
             self.checkAuthorization()
             return
         }
-        // there are two approaches: live and historical
-        // collect historical data
+
+        /// there are two approaches: live and historical
+        /// collect historical data
         let now = Date()
         let yester = now - (60*60*24) // !
         self.actman.queryActivityStarting(from: yester, to: now, to: self.queue) { arr, err in
             guard var acts = arr else {return}
-            // crude filter: eliminate empties, low-confidence, and successive duplicates
+            /// crude filter: 粗过滤器：消除空白，低信度和连续重复 eliminate empties, low-confidence, and successive duplicates
             let blank = "f f f f f f"
             acts = acts.filter {act in act.overallAct() != blank}
             acts = acts.filter {act in act.confidence == .high}
@@ -122,17 +123,17 @@ class CMMotionActivityVC: UITableViewController {
         if act.walking || act.running {
             cell.backgroundColor = .green
         }
-
         return cell
     }
-
 }
 
 
 fileprivate extension CMMotionActivity {
+
     private func tf(_ b:Bool) -> String {
         return b ? "t" : "f"
     }
+
     func overallAct() -> String {
         let s = tf(self.stationary)
         let w = tf(self.walking)
@@ -142,5 +143,4 @@ fileprivate extension CMMotionActivity {
         let u = tf(self.unknown)
         return "\(s) \(w) \(r) \(a) \(c) \(u)"
     }
-    
 }

@@ -18,6 +18,7 @@ protocol MotionGraphContainer {
     
     var updateIntervalSlider: UISlider! { get }
     
+    @available(iOS 10.0, *)
     var updateIntervalFormatter: MeasurementFormatter { get }
     
     var valueLabels: [UILabel]! { get }

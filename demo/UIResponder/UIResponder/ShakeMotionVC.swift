@@ -7,7 +7,7 @@ import UIKit
 
 class ShakeMotionVC: UIViewController {
     // shake device (or simulator), watch console for response
-    // note that this does not disable Undo by shaking in text field
+    /// note: 不会在文本字段中通过摇动来禁用撤消  that this does not disable Undo by shaking in text field?
 
     override var canBecomeFirstResponder : Bool {
         return true

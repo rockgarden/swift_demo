@@ -1,9 +1,9 @@
 
 import UIKit
 import MapKit
-import AddressBookUI
-import Contacts
 
+
+/// show userLocation and geocoding
 class LocationGeocodingVC: UIViewController, MKMapViewDelegate, UISearchBarDelegate {
     @IBOutlet var map : MKMapView!
     @IBOutlet weak var toolBar: UIToolbar!
@@ -19,11 +19,14 @@ class LocationGeocodingVC: UIViewController, MKMapViewDelegate, UISearchBarDeleg
         
         let bbi = MKUserTrackingBarButtonItem(mapView:self.map)
         
-        let searchBar = UISearchBar(frame: CGRect(x: 0, y: 0, width: 200, height: 40))
-        searchBar.searchBarStyle = .minimal
-        searchBar.delegate = self
-        let myView = UIView(frame: searchBar.frame)
-        myView.addSubview(searchBar)
+        let sb = UISearchBar(frame: CGRect(x: 0, y: 0, width: 200, height: 40))
+        sb.searchBarStyle = .minimal
+        sb.delegate = self
+
+        //navigationItem.titleView = sb
+
+        let myView = UIView(frame: sb.frame)
+        myView.addSubview(sb)
         let sbButtonItem = UIBarButtonItem(customView: myView)
         
         //toolBar.setItems([bbi,barButtonItem], animated: false)
@@ -41,10 +44,10 @@ class LocationGeocodingVC: UIViewController, MKMapViewDelegate, UISearchBarDeleg
     @IBAction func doButton (sender:AnyObject!) {
         let mi = MKMapItem.forCurrentLocation()
         // setting the span doesn't seem to work
-        // let span = MKCoordinateSpanMake(0.0005, 0.0005)
+        //let span = MKCoordinateSpanMake(0.0005, 0.0005)
         mi.openInMaps(launchOptions: [
             MKLaunchOptionsMapTypeKey: MKMapType.standard.rawValue,
-            // MKLaunchOptionsMapSpanKey: NSValue(MKCoordinateSpan:span)
+            //MKLaunchOptionsMapSpanKey: NSValue(MKCoordinateSpan:span)
             ])
     }
 
@@ -78,10 +81,10 @@ class LocationGeocodingVC: UIViewController, MKMapViewDelegate, UISearchBarDeleg
 
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         searchBar.resignFirstResponder()
-        let s = searchBar.text
-        if s == nil || s!.characters.count < 3 { return }
+        guard let s = searchBar.text else { return }
+        guard s.characters.count > 5 else { return }
         let geo = CLGeocoder()
-        geo.geocodeAddressString(s!) {
+        geo.geocodeAddressString(s) {
             placemarks,error in
             guard let placemarks = placemarks else {
                 print(error?.localizedDescription as Any)
