@@ -97,6 +97,9 @@ class AppendixVC: UIViewController {
                 self.v.center.x = xorig
             })
 
+            var arr = [1,2,3,4]
+            arr.remove(at:[0,2])
+
             do { // without lend
                 let content = NSMutableAttributedString(string:"Ho de ho")
                 let para = NSMutableParagraphStyle()

@@ -71,9 +71,6 @@
       location = "group:demo/FXFormsSwiftDemo/FXFormsSwiftDemo.xcodeproj">
    </FileRef>
    <FileRef
-      location = "group:demo/UndoManagerDemo/UndoManagerDemo.xcodeproj">
-   </FileRef>
-   <FileRef
       location = "group:demo/WebViewDemo/WebViewDemo.xcodeproj">
    </FileRef>
    <FileRef

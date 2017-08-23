@@ -26,26 +26,68 @@ class UndoDragView : UIView {
     }
 
     /// Main func
-    func setCenterUndoably(_ newCenter: CGPoint) {
-        let oldCenter = self.center
-        /// 1️⃣ undo.registerUndo
-        //self.undoer.registerUndo(withTarget: self, selector: #selector(setCenterUndoably), object: oldCenter)
 
-        /// 2️⃣ undo.prepare invocation variant 调用变体的方法
-        //(self.undoer.prepare(withInvocationTarget:self) as AnyObject).setCenterUndoably(oldCenter)
-
-        /// 3️⃣ handler variant in iOS 9
-        //self.undoer.registerUndo(withTarget: self) { myself in myself.setCenterUndoably(oldCenter) }
-        
-        self.undoer.registerUndo(withTarget: self) { myself in UIView.animate(withDuration:0.4, delay: 0.1, animations: { myself.center = oldCenter}); myself.setCenterUndoably(oldCenter) }
-
+    /// 1️⃣ undo.registerUndo
+    func setCenterUndoSelector(_ newCenter: Any) {
+        self.undoer.registerUndo(withTarget: self,
+                                 selector: #selector(setCenterUndoSelector),
+                                 object: self.center)
         self.undoer.setActionName("Move")
         if self.undoer.isUndoing || self.undoer.isRedoing {
             UIView.animate(withDuration:0.4, delay: 0.1, animations: {
+                self.center = newCenter as! CGPoint
+            })
+        } else {
+            self.center = newCenter as! CGPoint
+        }
+    }
+
+    /// 2️⃣ undo.prepare invocation variant 调用变体的方法
+    func setCenterUndoVariant(_ newCenter: CGPoint) { // *
+        (self.undoer.prepare(withInvocationTarget:self) as AnyObject).setCenterUndoVariant(self.center)
+        self.undoer.setActionName("Move")
+        if self.undoer.isUndoing || self.undoer.isRedoing {
+            print("undoing or redoing")
+            UIView.animate(withDuration:0.4, delay: 0.1, animations: {
                 self.center = newCenter
             })
-        } else { // just do it
-            self.center = newCenter
+        } else {
+            // just do it
+            print("just do it")
+            self.center = newCenter // *
+        }
+    }
+
+    /// 3️⃣ handler variant in iOS 9
+    func setCenterUndoably(_ newCenter: CGPoint, which: Int = 2) {
+        let oldCenter = self.center
+        switch which {
+        case 1:
+            self.undoer.registerUndo(withTarget: self) { myself in
+                UIView.animate(withDuration:0.4, delay: 0.1, animations: { myself.center = oldCenter}
+                )
+                myself.setCenterUndoably(oldCenter)
+            }
+            self.undoer.setActionName("Move")
+            if self.undoer.isUndoing || self.undoer.isRedoing {
+                UIView.animate(withDuration:0.4, delay: 0.1, animations: {
+                    self.center = newCenter
+                })
+            } else {
+                self.center = newCenter
+            }
+        case 2:
+            self.undoer.registerUndo(withTarget: self) { myself in
+                UIView.animate(withDuration:0.4, delay: 0.1, animations: {
+                    myself.center = oldCenter
+                })
+                myself.setCenterUndoably(oldCenter)
+            }
+            self.undoer.setActionName("Move")
+            if !(self.undoer.isUndoing || self.undoer.isRedoing) { // just do it
+                self.center = newCenter
+            }
+        default: break
         }
     }
 
@@ -73,7 +115,10 @@ class UndoDragView : UIView {
             registerForUndo()
             self.center = c
 
-            //self.setCenterUndoably(c) // for 1️⃣2️⃣3️⃣
+            //self.setCenterUndoSelector(c) //for 1️⃣
+            //self.setCenterUndoVariant(c) //for 2️⃣
+            //self.setCenterUndoably(c) //for 3️⃣
+
             p.setTranslation(.zero, in: self.superview!)
         case .ended, .cancelled:
             self.undoer.endUndoGrouping()
