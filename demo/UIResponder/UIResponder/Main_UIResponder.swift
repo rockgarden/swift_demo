@@ -13,7 +13,7 @@ class Main_UIResponder: UITableViewController {
         }
         
         let mc2 = MyClass2()
-        debugPrint(mc2.responds(to: #selector(Dummy.woohoo)))
+        debugPrint("#selector:", #selector(Dummy.woohoo), mc2.responds(to: #selector(Dummy.woohoo)))
         if mc2.responds(to: #selector(Dummy.woohoo)) {
             print("here2")
             (mc2 as AnyObject).woohoo()
