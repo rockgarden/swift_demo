@@ -4,20 +4,15 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
-		<key>BTScanner.xcscheme</key>
+		<key>SocialDemo.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>72</integer>
+			<integer>81</integer>
 		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>C2A13ACD1ECBF265000ABB71</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>C2C04BD81ECC091A00F0A10B</key>
+		<key>44892B1D1F4BDD0A00737466</key>
 		<dict>
 			<key>primary</key>
 			<true/>

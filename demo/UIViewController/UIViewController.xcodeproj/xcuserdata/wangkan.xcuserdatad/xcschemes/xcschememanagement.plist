@@ -9,15 +9,20 @@
 			<key>orderHint</key>
 			<integer>80</integer>
 		</dict>
+		<key>UIPopoverDemo.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>87</integer>
+		</dict>
 		<key>UISplitViewControllerDemo.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>80</integer>
+			<integer>76</integer>
 		</dict>
 		<key>UIViewController.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>8</integer>
+			<integer>7</integer>
 		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
