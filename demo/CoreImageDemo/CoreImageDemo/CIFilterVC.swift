@@ -32,6 +32,11 @@ class CIFilterVC : UIViewController {
             ])
         let outim = vf.outputImage!
 
+        //        let outim = image.applyingFilter(
+        //            "CIBlendWithMask", withInputParameters: [
+        //                "inputMaskImage":outim
+        //            ])
+
         switch which {
         case 1:
             let im = self.context.createCGImage(outim, from: outim.extent)!

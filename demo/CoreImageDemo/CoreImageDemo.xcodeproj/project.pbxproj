@@ -13,6 +13,7 @@
 		4459BCC71EE43C4B00717B8D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4459BCC61EE43C4B00717B8D /* Assets.xcassets */; };
 		4459BCCA1EE43C4B00717B8D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4459BCC81EE43C4B00717B8D /* LaunchScreen.storyboard */; };
 		4459BCD21EE4413500717B8D /* VignetteCIFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4459BCD11EE4413500717B8D /* VignetteCIFilter.swift */; };
+		447BB7131F5EF81B0076B3FB /* WorkspaceGlobal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 447BB7121F5EF81B0076B3FB /* WorkspaceGlobal.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		4459BCC91EE43C4B00717B8D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4459BCCB1EE43C4B00717B8D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4459BCD11EE4413500717B8D /* VignetteCIFilter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VignetteCIFilter.swift; sourceTree = "<group>"; };
+		447BB7121F5EF81B0076B3FB /* WorkspaceGlobal.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WorkspaceGlobal.swift; path = ../WorkspaceGlobal.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -40,6 +42,7 @@
 		4459BCB31EE43C4B00717B8D = {
 			isa = PBXGroup;
 			children = (
+				447BB7121F5EF81B0076B3FB /* WorkspaceGlobal.swift */,
 				4459BCBE1EE43C4B00717B8D /* CoreImageDemo */,
 				4459BCBD1EE43C4B00717B8D /* Products */,
 			);
@@ -140,6 +143,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				447BB7131F5EF81B0076B3FB /* WorkspaceGlobal.swift in Sources */,
 				4459BCC21EE43C4B00717B8D /* CIFilterVC.swift in Sources */,
 				4459BCC01EE43C4B00717B8D /* AppDelegate.swift in Sources */,
 				4459BCD21EE4413500717B8D /* VignetteCIFilter.swift in Sources */,
@@ -312,6 +316,7 @@
 				4459BCD01EE43C4B00717B8D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
