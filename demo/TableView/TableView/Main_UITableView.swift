@@ -48,3 +48,8 @@ class Main_UITabView: UITableViewController {
     }
     
 }
+
+
+/**
+ IMPORT: cellForRowAt 是异步的
+ */

@@ -26,7 +26,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
     func cardTapped(_ n:Notification) {
-        print("card tapped: \(n.object)")
+        print("card tapped: \(String(describing: n.object))")
     }
 
 

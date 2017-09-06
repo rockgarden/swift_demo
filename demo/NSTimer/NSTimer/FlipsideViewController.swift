@@ -22,7 +22,6 @@ class FlipsideViewController: UIViewController {
                 _ in print("fired")
             }
         } else {
-            // Fallback on earlier versions
             self.timer = Timer.scheduledTimerWithTimeInterval(1, closure: {print("fired")}, repeats: true)
         }
 

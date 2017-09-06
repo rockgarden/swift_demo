@@ -30,10 +30,13 @@ class RootTableViewController: UITableViewController {
         objectA = ObjectToObserve()
         objectB = Observer()
         let opts: NSKeyValueObservingOptions = [.new, .old]
+
         objectA.addObserver(objectB, forKeyPath: "value", options: opts, context: &con)
         (objectA as! ObjectToObserve).value = true
         // must removeObserver otherwise comment out next line if you wish to crash
-        objectA.removeObserver(objectB, forKeyPath: "value")
+        objectA.removeObserver(objectB, forKeyPath: #keyPath(ObjectToObserve.value))
+        /// #keyPath(ObjectToObserve.value) == "value"
+        
         objectA = nil
 
         objectC = ObjectToObserve1()

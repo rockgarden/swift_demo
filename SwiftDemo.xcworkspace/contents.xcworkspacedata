@@ -143,13 +143,7 @@
       location = "group:demo/UIWindow/UIWindow.xcodeproj">
    </FileRef>
    <FileRef
-      location = "group:demo/DanglingPointer/DanglingPointer.xcodeproj">
-   </FileRef>
-   <FileRef
       location = "group:demo/UIStoryboard/UIStoryboard.xcodeproj">
-   </FileRef>
-   <FileRef
-      location = "group:demo/autoreleasepool/autoreleasepool.xcodeproj">
    </FileRef>
    <FileRef
       location = "group:demo/DataSource/DataSource.xcodeproj">
