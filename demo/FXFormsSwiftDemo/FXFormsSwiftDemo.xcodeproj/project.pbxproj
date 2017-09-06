@@ -12,11 +12,11 @@
 		44C5B3011E573C8500E166D2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 44C5B3001E573C8500E166D2 /* Assets.xcassets */; };
 		44C5B3041E573C8500E166D2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 44C5B3021E573C8500E166D2 /* LaunchScreen.storyboard */; };
 		44C5B30D1E573CF300E166D2 /* FXForms.m in Sources */ = {isa = PBXBuildFile; fileRef = 44C5B30C1E573CF300E166D2 /* FXForms.m */; };
-		44C5B3121E573DD600E166D2 /* SubmitButtonCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 44C5B30F1E573DD600E166D2 /* SubmitButtonCell.xib */; };
-		44C5B3131E573DD600E166D2 /* SubmitButtonCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44C5B3101E573DD600E166D2 /* SubmitButtonCell.swift */; };
-		44C5B3161E573DED00E166D2 /* ISO3166CountryValueTransformer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44C5B3141E573DED00E166D2 /* ISO3166CountryValueTransformer.swift */; };
 		44C5B3181E573E3C00E166D2 /* RegistrationForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44C5B3171E573E3C00E166D2 /* RegistrationForm.swift */; };
 		44C5B31B1E573E6E00E166D2 /* RegistrationFormViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44C5B31A1E573E6E00E166D2 /* RegistrationFormViewController.swift */; };
+		44E4ADFD1F603126006518F3 /* ISO3166CountryValueTransformer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44E4ADFC1F603126006518F3 /* ISO3166CountryValueTransformer.swift */; };
+		44E4AE001F603134006518F3 /* SubmitButtonCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44E4ADFE1F603134006518F3 /* SubmitButtonCell.swift */; };
+		44E4AE011F603134006518F3 /* SubmitButtonCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 44E4ADFF1F603134006518F3 /* SubmitButtonCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,11 +29,11 @@
 		44C5B30B1E573CF300E166D2 /* FXFormsSwiftDemo-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "FXFormsSwiftDemo-Bridging-Header.h"; sourceTree = "<group>"; };
 		44C5B30C1E573CF300E166D2 /* FXForms.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FXForms.m; sourceTree = "<group>"; };
 		44C5B30E1E573D0F00E166D2 /* FXForms.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FXForms.h; sourceTree = "<group>"; };
-		44C5B30F1E573DD600E166D2 /* SubmitButtonCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SubmitButtonCell.xib; sourceTree = "<group>"; };
-		44C5B3101E573DD600E166D2 /* SubmitButtonCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SubmitButtonCell.swift; sourceTree = "<group>"; };
-		44C5B3141E573DED00E166D2 /* ISO3166CountryValueTransformer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ISO3166CountryValueTransformer.swift; sourceTree = "<group>"; };
 		44C5B3171E573E3C00E166D2 /* RegistrationForm.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegistrationForm.swift; sourceTree = "<group>"; };
 		44C5B31A1E573E6E00E166D2 /* RegistrationFormViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegistrationFormViewController.swift; sourceTree = "<group>"; };
+		44E4ADFC1F603126006518F3 /* ISO3166CountryValueTransformer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ISO3166CountryValueTransformer.swift; path = FXFormsSwiftDemo/ISO3166CountryValueTransformer.swift; sourceTree = SOURCE_ROOT; };
+		44E4ADFE1F603134006518F3 /* SubmitButtonCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SubmitButtonCell.swift; path = FXFormsSwiftDemo/SubmitButtonCell.swift; sourceTree = SOURCE_ROOT; };
+		44E4ADFF1F603134006518F3 /* SubmitButtonCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = SubmitButtonCell.xib; path = FXFormsSwiftDemo/SubmitButtonCell.xib; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,8 +85,8 @@
 		44C5B3111E573DD600E166D2 /* Cells */ = {
 			isa = PBXGroup;
 			children = (
-				44C5B30F1E573DD600E166D2 /* SubmitButtonCell.xib */,
-				44C5B3101E573DD600E166D2 /* SubmitButtonCell.swift */,
+				44E4ADFE1F603134006518F3 /* SubmitButtonCell.swift */,
+				44E4ADFF1F603134006518F3 /* SubmitButtonCell.xib */,
 			);
 			name = Cells;
 			path = ../../../../../Desktop/SwiftExample/SwiftExample;
@@ -95,7 +95,7 @@
 		44C5B3151E573DED00E166D2 /* Transformers */ = {
 			isa = PBXGroup;
 			children = (
-				44C5B3141E573DED00E166D2 /* ISO3166CountryValueTransformer.swift */,
+				44E4ADFC1F603126006518F3 /* ISO3166CountryValueTransformer.swift */,
 			);
 			name = Transformers;
 			path = ../../../../../Desktop/SwiftExample/SwiftExample;
@@ -171,7 +171,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				44C5B3041E573C8500E166D2 /* LaunchScreen.storyboard in Resources */,
-				44C5B3121E573DD600E166D2 /* SubmitButtonCell.xib in Resources */,
+				44E4AE011F603134006518F3 /* SubmitButtonCell.xib in Resources */,
 				44C5B3011E573C8500E166D2 /* Assets.xcassets in Resources */,
 				44C5B2FF1E573C8500E166D2 /* Main.storyboard in Resources */,
 			);
@@ -184,10 +184,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				44C5B3161E573DED00E166D2 /* ISO3166CountryValueTransformer.swift in Sources */,
 				44C5B3181E573E3C00E166D2 /* RegistrationForm.swift in Sources */,
-				44C5B3131E573DD600E166D2 /* SubmitButtonCell.swift in Sources */,
+				44E4ADFD1F603126006518F3 /* ISO3166CountryValueTransformer.swift in Sources */,
 				44C5B30D1E573CF300E166D2 /* FXForms.m in Sources */,
+				44E4AE001F603134006518F3 /* SubmitButtonCell.swift in Sources */,
 				44C5B2FA1E573C8500E166D2 /* AppDelegate.swift in Sources */,
 				44C5B31B1E573E6E00E166D2 /* RegistrationFormViewController.swift in Sources */,
 			);
@@ -356,6 +356,7 @@
 				44C5B30A1E573C8500E166D2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
