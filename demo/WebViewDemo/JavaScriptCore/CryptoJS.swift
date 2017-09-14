@@ -10,56 +10,8 @@ import JavaScriptCore
 
 private var cryptoJScontext = JSContext()
 
+/// 使用JS加密数据
 open class CryptoJS {
-    
-    open class AES: CryptoJS{
-        
-        fileprivate var encryptFunction: JSValue!
-        fileprivate var decryptFunction: JSValue!
-        
-        override init(){
-            super.init()
-            
-            // Retrieve the content of aes.js
-            let cryptoJSpath = Bundle.main.path(forResource: "aes", ofType: "js")
-            
-            if(( cryptoJSpath ) != nil){
-                do {
-                    let cryptoJS = try String(contentsOfFile: cryptoJSpath!, encoding: String.Encoding.utf8)
-                    print("Loaded aes.js")
-                    
-                    // Evaluate aes.js
-                    _ = cryptoJScontext?.evaluateScript(cryptoJS)
-                    
-                    // Reference functions
-                    encryptFunction = cryptoJScontext?.objectForKeyedSubscript("encrypt")
-                    decryptFunction = cryptoJScontext?.objectForKeyedSubscript("decrypt")
-                }
-                catch {
-                    print("Unable to load aes.js")
-                }
-            }else{
-                print("Unable to find aes.js")
-            }
-            
-        }
-        
-        open func encrypt(_ message: String, password: String,options: Any?=nil)->String {
-            if let unwrappedOptions: Any = options {
-                return "\(encryptFunction.call(withArguments: [message, password, unwrappedOptions])!)"
-            }else{
-                return "\(encryptFunction.call(withArguments: [message, password])!)"
-            }
-        }
-        open func decrypt(_ message: String, password: String,options: Any?=nil)->String {
-            if let unwrappedOptions: Any = options {
-                return "\(decryptFunction.call(withArguments: [message, password, unwrappedOptions])!)"
-            }else{
-                return "\(decryptFunction.call(withArguments: [message, password])!)"
-            }
-        }
-        
-    }
     
     open class RSA: CryptoJS{
         
@@ -75,7 +27,47 @@ open class CryptoJS {
             let cryptoJSpath3 = Bundle.main.path(forResource: "Barrett", ofType: "js")
             let cryptoJSpath4 = Bundle.main.path(forResource: "RSAKey", ofType: "js")
             
-            let cryptoJSpath = cryptoJSpath1+cryptoJSpath2+cryptoJSpath3+cryptoJSpath4
+            if cryptoJSpath1 != nil,cryptoJSpath2 != nil,cryptoJSpath3 != nil,cryptoJSpath4 != nil {
+                do {
+                    let cryptoJS1 = try String(contentsOfFile: cryptoJSpath1!, encoding: String.Encoding.utf8)
+                    let cryptoJS2 = try String(contentsOfFile: cryptoJSpath2!, encoding: String.Encoding.utf8)
+                    let cryptoJS3 = try String(contentsOfFile: cryptoJSpath3!, encoding: String.Encoding.utf8)
+                    let cryptoJS4 = try String(contentsOfFile: cryptoJSpath4!, encoding: String.Encoding.utf8)
+                    print("Loaded RSA.js")
+                    
+                    let cryptoJS = cryptoJS1 + cryptoJS2 + cryptoJS3 + cryptoJS4
+                    
+                    
+                    // Evaluate RSA.js
+                    _ = cryptoJScontext?.evaluateScript(cryptoJS)
+                    
+                    // Reference functions
+                    encryptFunction = cryptoJScontext?.objectForKeyedSubscript("getEncryptedString")
+                }
+                catch {
+                    print("Unable to load RSA.js")
+                }
+            }else{
+                print("Unable to find RSA.js")
+            }
+            
+        }
+        
+        open func encrypt(_ message: String)->String {
+            return "\(encryptFunction.call(withArguments: [message])!)"
+        }
+    }
+    
+    open class AES: CryptoJS{
+        
+        fileprivate var encryptFunction: JSValue!
+        fileprivate var decryptFunction: JSValue!
+        
+        override init(){
+            super.init()
+            
+            // Retrieve the content of aes.js
+            let cryptoJSpath = Bundle.main.path(forResource: "aes", ofType: "js")
             
             if(( cryptoJSpath ) != nil){
                 do {
@@ -710,5 +702,4 @@ open class CryptoJS {
             }
         }
     }
-    
 }

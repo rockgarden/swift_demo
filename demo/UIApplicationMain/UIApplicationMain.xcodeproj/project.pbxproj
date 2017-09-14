@@ -17,6 +17,9 @@
 		C20C02181DBEF6F100729F87 /* MyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C20C02161DBEF6F100729F87 /* MyViewController.swift */; };
 		C20C02191DBEF6F100729F87 /* MyViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C20C02171DBEF6F100729F87 /* MyViewController.xib */; };
 		C20C021B1DBEF71A00729F87 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = C20C021A1DBEF71A00729F87 /* main.swift */; };
+		C2D419E31F6A73B5002842F8 /* ChangeAppIconVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2D419E21F6A73B5002842F8 /* ChangeAppIconVC.swift */; };
+		C2D419E71F6A742D002842F8 /* blackBgColor@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C2D419E51F6A742D002842F8 /* blackBgColor@2x.png */; };
+		C2D419E81F6A742D002842F8 /* blackBgColor@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = C2D419E61F6A742D002842F8 /* blackBgColor@3x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,6 +59,9 @@
 		C20C02161DBEF6F100729F87 /* MyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyViewController.swift; sourceTree = "<group>"; };
 		C20C02171DBEF6F100729F87 /* MyViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MyViewController.xib; sourceTree = "<group>"; };
 		C20C021A1DBEF71A00729F87 /* main.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
+		C2D419E21F6A73B5002842F8 /* ChangeAppIconVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChangeAppIconVC.swift; sourceTree = "<group>"; };
+		C2D419E51F6A742D002842F8 /* blackBgColor@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "blackBgColor@2x.png"; sourceTree = "<group>"; };
+		C2D419E61F6A742D002842F8 /* blackBgColor@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "blackBgColor@3x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,11 +106,13 @@
 			children = (
 				C20C021A1DBEF71A00729F87 /* main.swift */,
 				C20C01EC1DBEF60500729F87 /* AppDelegate.swift */,
+				C2D419E21F6A73B5002842F8 /* ChangeAppIconVC.swift */,
 				C20C02161DBEF6F100729F87 /* MyViewController.swift */,
 				C20C02171DBEF6F100729F87 /* MyViewController.xib */,
 				C20C01F31DBEF60500729F87 /* Assets.xcassets */,
 				C20C01F51DBEF60500729F87 /* LaunchScreen.storyboard */,
 				C20C01F81DBEF60500729F87 /* Info.plist */,
+				C2D419E41F6A742D002842F8 /* res */,
 			);
 			path = UIApplicationMain;
 			sourceTree = "<group>";
@@ -117,6 +125,15 @@
 				C20C020C1DBEF68100729F87 /* Info.plist */,
 			);
 			path = Coolness;
+			sourceTree = "<group>";
+		};
+		C2D419E41F6A742D002842F8 /* res */ = {
+			isa = PBXGroup;
+			children = (
+				C2D419E51F6A742D002842F8 /* blackBgColor@2x.png */,
+				C2D419E61F6A742D002842F8 /* blackBgColor@3x.png */,
+			);
+			path = res;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -215,7 +232,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C2D419E81F6A742D002842F8 /* blackBgColor@3x.png in Resources */,
 				C20C01F71DBEF60500729F87 /* LaunchScreen.storyboard in Resources */,
+				C2D419E71F6A742D002842F8 /* blackBgColor@2x.png in Resources */,
 				C20C01F41DBEF60500729F87 /* Assets.xcassets in Resources */,
 				C20C02191DBEF6F100729F87 /* MyViewController.xib in Resources */,
 			);
@@ -235,6 +254,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C2D419E31F6A73B5002842F8 /* ChangeAppIconVC.swift in Sources */,
 				C20C01ED1DBEF60500729F87 /* AppDelegate.swift in Sources */,
 				C20C02181DBEF6F100729F87 /* MyViewController.swift in Sources */,
 				C20C021B1DBEF71A00729F87 /* main.swift in Sources */,

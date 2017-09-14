@@ -107,14 +107,7 @@ class OldLocalHTML: UIViewController, UIViewControllerRestoration, WKScriptMessa
         } catch let error1 as NSError {
             error = error1
         }
-        
         webView = nil
-        
-    }
-    
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
     // WKNavigationDelegate
@@ -126,7 +119,6 @@ class OldLocalHTML: UIViewController, UIViewControllerRestoration, WKScriptMessa
         print("%s. With Error %@", #function,error)
         showAlertWithMessage("Failed to load file with error \(error.localizedDescription)!")
     }
-    
     
     // File Loading
     func loadHtml() {
@@ -162,8 +154,7 @@ class OldLocalHTML: UIViewController, UIViewControllerRestoration, WKScriptMessa
         if let filePath = Bundle(for: OldLocalHTML.self).path(forResource: "ClickMeEventRegister", ofType:"js") {
             script = try? String (contentsOfFile: filePath, encoding: .utf8)
         }
-        return script!;
-        
+        return script!
     }
     
     // WKScriptMessageHandler Delegate
@@ -173,7 +164,6 @@ class OldLocalHTML: UIViewController, UIViewControllerRestoration, WKScriptMessa
             updateColorOfButtonWithId(idOfTappedButton)
         }
     }
-    
     
     // Update color of Button with specified Id
     func updateColorOfButtonWithId(_ buttonId: String) {
@@ -196,7 +186,7 @@ class OldLocalHTML: UIViewController, UIViewControllerRestoration, WKScriptMessa
             })
         }
         
-        let alertView:UIAlertController = UIAlertController(title: nil, message: message, preferredStyle: UIAlertControllerStyle.alert)
+        let alertView = UIAlertController(title: nil, message: message, preferredStyle: UIAlertControllerStyle.alert)
         alertView.addAction(alertAction)
         
         self.present(alertView, animated: true, completion: { () -> Void in

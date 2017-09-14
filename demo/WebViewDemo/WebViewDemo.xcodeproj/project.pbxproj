@@ -95,6 +95,10 @@
 		C2D419CF1F690C80002842F8 /* RSA.js in Resources */ = {isa = PBXBuildFile; fileRef = C2D419CB1F690C80002842F8 /* RSA.js */; };
 		C2D419D01F690C80002842F8 /* Barrett.js in Resources */ = {isa = PBXBuildFile; fileRef = C2D419CC1F690C80002842F8 /* Barrett.js */; };
 		C2D419D11F690C80002842F8 /* RSAKey.js in Resources */ = {isa = PBXBuildFile; fileRef = C2D419CD1F690C80002842F8 /* RSAKey.js */; };
+		C2D419DB1F6A1E46002842F8 /* TestCryptoJS.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2D419DA1F6A1E46002842F8 /* TestCryptoJS.swift */; };
+		C2D419DD1F6A20C4002842F8 /* WebCrypto.js in Resources */ = {isa = PBXBuildFile; fileRef = C2D419DC1F6A20C4002842F8 /* WebCrypto.js */; };
+		C2D419DF1F6A20D2002842F8 /* WebCrypto.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2D419DE1F6A20D2002842F8 /* WebCrypto.swift */; };
+		C2D419E11F6A2119002842F8 /* source.js in Resources */ = {isa = PBXBuildFile; fileRef = C2D419E01F6A2119002842F8 /* source.js */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -191,6 +195,10 @@
 		C2D419CB1F690C80002842F8 /* RSA.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = RSA.js; sourceTree = "<group>"; };
 		C2D419CC1F690C80002842F8 /* Barrett.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = Barrett.js; sourceTree = "<group>"; };
 		C2D419CD1F690C80002842F8 /* RSAKey.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = RSAKey.js; sourceTree = "<group>"; };
+		C2D419DA1F6A1E46002842F8 /* TestCryptoJS.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestCryptoJS.swift; sourceTree = "<group>"; };
+		C2D419DC1F6A20C4002842F8 /* WebCrypto.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = WebCrypto.js; sourceTree = "<group>"; };
+		C2D419DE1F6A20D2002842F8 /* WebCrypto.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebCrypto.swift; sourceTree = "<group>"; };
+		C2D419E01F6A2119002842F8 /* source.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = source.js; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -338,6 +346,8 @@
 		C2D4199F1F68FBCA002842F8 /* JavaScriptCore */ = {
 			isa = PBXGroup;
 			children = (
+				C2D419DA1F6A1E46002842F8 /* TestCryptoJS.swift */,
+				C2D419DE1F6A20D2002842F8 /* WebCrypto.swift */,
 				C2D419A01F68FBCA002842F8 /* CryptoJS.swift */,
 				C2D419A11F68FBCA002842F8 /* JS */,
 			);
@@ -355,6 +365,8 @@
 		C2D419A21F68FBCA002842F8 /* components */ = {
 			isa = PBXGroup;
 			children = (
+				C2D419E01F6A2119002842F8 /* source.js */,
+				C2D419DC1F6A20C4002842F8 /* WebCrypto.js */,
 				C2D419A31F68FBCA002842F8 /* aes.js */,
 				C2D419A41F68FBCA002842F8 /* md5.js */,
 				C2D419A51F68FBCA002842F8 /* mode-cfb.js */,
@@ -444,6 +456,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C2D419BE1F68FBCA002842F8 /* pad-iso10126.js in Resources */,
+				C2D419E11F6A2119002842F8 /* source.js in Resources */,
 				C2B3AC701E4996D80016E9FE /* TestFile.html in Resources */,
 				441D44E21E1E8EBF00857C4F /* listen.png in Resources */,
 				C2D419BB1F68FBCA002842F8 /* mode-ecb.js in Resources */,
@@ -451,6 +464,7 @@
 				C2D419B91F68FBCA002842F8 /* mode-cfb.js in Resources */,
 				441D44E81E1E8EBF00857C4F /* test.pages.zip in Resources */,
 				44FB21F11E324AE000F191D3 /* readme.rtf in Resources */,
+				C2D419DD1F6A20C4002842F8 /* WebCrypto.js in Resources */,
 				C2B3AC761E49B39E0016E9FE /* backItemImage@2x.png in Resources */,
 				4414810C1E509F1300461CCE /* html_template.html in Resources */,
 				C2D419BC1F68FBCA002842F8 /* mode-ofb.js in Resources */,
@@ -520,6 +534,8 @@
 				C2B3AC721E499DDD0016E9FE /* OldLocalHTML.swift in Sources */,
 				441D44C21E1E8DF000857C4F /* Main_WebView.swift in Sources */,
 				C21B7E831E52A8710097E3C4 /* ZenWebViewController.swift in Sources */,
+				C2D419DF1F6A20D2002842F8 /* WebCrypto.swift in Sources */,
+				C2D419DB1F6A1E46002842F8 /* TestCryptoJS.swift in Sources */,
 				C21A0C0C1EC058C300EE2C26 /* Hokusai.swift in Sources */,
 				C21A0BED1EC0581300EE2C26 /* SaveWebImageVC.swift in Sources */,
 				441D44D21E1E8E6000857C4F /* UIWebViewVC.swift in Sources */,

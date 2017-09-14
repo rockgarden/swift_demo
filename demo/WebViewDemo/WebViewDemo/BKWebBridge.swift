@@ -96,7 +96,7 @@ class BKWebBridge: NSObject {
         let dict                    = data?.json["params"]
         if dict != nil {
             if let data = try? JSONSerialization.data(withJSONObject: (dict)!, options: []),
-                let string = NSString(data: data, encoding: String.Encoding.utf8.rawValue) as? String {
+                let string = NSString(data: data, encoding: String.Encoding.utf8.rawValue) as String? {
                 javaScript = String(format: "%@(%@);", msg,string)
             }
         } else if data?.string != nil {
@@ -104,11 +104,9 @@ class BKWebBridge: NSObject {
         }
         print(javaScript)
         self.webView?.evaluateJavaScript(javaScript, completionHandler: { (result, error) in
-            completionHandler?(BKWebViewBridgeResult(result ,error: error as? NSError))
+            completionHandler?(BKWebViewBridgeResult(result ,error: error as NSError?))
         })
-
     }
-
 }
 
 
@@ -120,7 +118,5 @@ extension BKWebBridge : WKScriptMessageHandler {
         if handle != nil {
             handle!(message.body)
         }
-
     }
-
 }

@@ -164,7 +164,7 @@ final public class HOKMenuView: UIView {
             displayLink!.add(to: RunLoop.main, forMode: RunLoopMode.defaultRunLoopMode)
         }
         
-        let newPosition   = layer.frame.origin
+        let newPosition = layer.frame.origin
         shapeLayer.bounds = CGRect(origin: CGPoint.zero, size: self.bounds.size)
     }
     

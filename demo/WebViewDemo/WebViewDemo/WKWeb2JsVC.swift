@@ -151,17 +151,17 @@ class WKWeb2JsVC: UIViewController, UIViewControllerRestoration {
         /// We can easily access any values we’ve created in our context using subscript notation on both JSContext and JSValue instances. JSContext requires a string subscript, while JSValue allows either string or integer subscripts for delving down into objects and arrays:
         let names = context.objectForKeyedSubscript("names")
         let initialName = names?.objectAtIndexedSubscript(0)
-        print("The first name: \(initialName?.toString())")
+        print("The first name: \(String(describing: initialName?.toString()))")
         
         /// Calling Functions
         let tripleFunction = context.objectForKeyedSubscript("triple")
         let result = tripleFunction?.call(withArguments: [5])
-        print("Five tripled: \(result?.toInt32())")
+        print("Five tripled: \(String(describing: result?.toInt32()))")
         
         /// Exception Handling
         /// JSContext has another useful trick up its sleeve: by setting the context’s exceptionHandler property, you can observe and log syntax, type, and runtime errors as they happen. exceptionHandler is a callback handler that receives a reference to the JSContext and the exception itself:
         context.exceptionHandler = { context, exception in
-            print("JS Error: \(exception)")
+            print("JS Error: \(String(describing: exception))")
         }
         
         context.evaluateScript("function multiply(value1, value2) { return value1 * value2 ")

@@ -105,7 +105,7 @@ import JavaScriptCore
         let handleFunc = jsContext?.objectForKeyedSubscript("\(handleFuncName)")
         let dict = ["name":"seen","age":18] as [String : Any]
         let handle = handleFunc?.call(withArguments: [dict])
-        print("\(handle)-------test")
+        print("\(String(describing: handle))-------test")
     }
 
 }
