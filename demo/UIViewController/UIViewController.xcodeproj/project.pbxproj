@@ -98,6 +98,9 @@
 		C29FFCE51ECAECA40034587E /* NTTransitionProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = C29FFCDB1ECAECA40034587E /* NTTransitionProtocol.swift */; };
 		C29FFCE61ECAECA40034587E /* NTWaterfallViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C29FFCDC1ECAECA40034587E /* NTWaterfallViewCell.swift */; };
 		C29FFCE71ECAECA40034587E /* WaterfallCollectionVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C29FFCDD1ECAECA40034587E /* WaterfallCollectionVC.swift */; };
+		C2D3B8561F9066E700BA9C21 /* UIViewController_Swizzle.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2D3B8551F9066E700BA9C21 /* UIViewController_Swizzle.swift */; };
+		C2D3B8571F907CB500BA9C21 /* UIViewController_Swizzle.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2D3B8551F9066E700BA9C21 /* UIViewController_Swizzle.swift */; };
+		C2D3B8581F907CB500BA9C21 /* UIViewController_Swizzle.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2D3B8551F9066E700BA9C21 /* UIViewController_Swizzle.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -211,6 +214,7 @@
 		C29FFCDB1ECAECA40034587E /* NTTransitionProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NTTransitionProtocol.swift; sourceTree = "<group>"; };
 		C29FFCDC1ECAECA40034587E /* NTWaterfallViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NTWaterfallViewCell.swift; sourceTree = "<group>"; };
 		C29FFCDD1ECAECA40034587E /* WaterfallCollectionVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WaterfallCollectionVC.swift; sourceTree = "<group>"; };
+		C2D3B8551F9066E700BA9C21 /* UIViewController_Swizzle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewController_Swizzle.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -339,6 +343,7 @@
 			isa = PBXGroup;
 			children = (
 				44D9346E1F0FF318005CC3F2 /* WorkspaceGlobal.swift */,
+				C2D3B8551F9066E700BA9C21 /* UIViewController_Swizzle.swift */,
 				447287C31F1EDFD10003B144 /* SCLAlertView */,
 				C29FFCD31ECAECA40034587E /* PinterestSwift */,
 				4459BC921EE0631700717B8D /* PoppverDemo */,
@@ -655,6 +660,7 @@
 				44B9B2201F432B6600CDADE2 /* PopoverPresentingVC.swift in Sources */,
 				4459BC961EE0631700717B8D /* PopoverVC.swift in Sources */,
 				4459BCA81EE0638F00717B8D /* PopoverViewControllers.swift in Sources */,
+				C2D3B8581F907CB500BA9C21 /* UIViewController_Swizzle.swift in Sources */,
 				4459BCAB1EE0638F00717B8D /* ExtraViewController.swift in Sources */,
 				4459BC941EE0631700717B8D /* AppDelegate.swift in Sources */,
 			);
@@ -677,6 +683,7 @@
 				44EDE7011F0FF1A300E68655 /* ZoomOutVC.swift in Sources */,
 				4459BCAF1EE06BE100717B8D /* PopoverOnPhoneVC.swift in Sources */,
 				C29FFCDE1ECAECA40034587E /* CHTCollectionViewWaterfallLayout.swift in Sources */,
+				C2D3B8561F9066E700BA9C21 /* UIViewController_Swizzle.swift in Sources */,
 				44327D661F404E4B00CC255E /* MemoryWarningVC.swift in Sources */,
 				C29FFCC41ECAD7640034587E /* EvernoteTransition.swift in Sources */,
 				441721311EDA71B200933908 /* ContainerVC_Storyboard.swift in Sources */,
@@ -736,6 +743,7 @@
 				44DDF6ED1F446D0D008CFF2E /* DetailViewController.swift in Sources */,
 				44DDF6EB1F446D0D008CFF2E /* MasterViewController.swift in Sources */,
 				44DDF73F1F447DD6008CFF2E /* SecondaryViewController.swift in Sources */,
+				C2D3B8571F907CB500BA9C21 /* UIViewController_Swizzle.swift in Sources */,
 				44DDF7401F447DD6008CFF2E /* SplitViewControllerManual.swift in Sources */,
 				44DDF6E91F446D0C008CFF2E /* AppDelegate.swift in Sources */,
 			);
@@ -1047,6 +1055,7 @@
 				44DDF6F91F446D0D008CFF2E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
