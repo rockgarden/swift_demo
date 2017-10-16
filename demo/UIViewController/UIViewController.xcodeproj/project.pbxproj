@@ -80,6 +80,9 @@
 		44DDF7401F447DD6008CFF2E /* SplitViewControllerManual.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44DDF7381F447DD6008CFF2E /* SplitViewControllerManual.swift */; };
 		44EDE6FF1F0FF08B00E68655 /* ZoomOutTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44EDE6FE1F0FF08B00E68655 /* ZoomOutTransition.swift */; };
 		44EDE7011F0FF1A300E68655 /* ZoomOutVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44EDE7001F0FF1A300E68655 /* ZoomOutVC.swift */; };
+		C264F0751F9481A500A8FE7A /* UIViewController+runtime.m in Sources */ = {isa = PBXBuildFile; fileRef = C264F0731F9481A400A8FE7A /* UIViewController+runtime.m */; };
+		C264F0761F9481A500A8FE7A /* UIViewController+runtime.m in Sources */ = {isa = PBXBuildFile; fileRef = C264F0731F9481A400A8FE7A /* UIViewController+runtime.m */; };
+		C264F0771F9481A500A8FE7A /* UIViewController+runtime.m in Sources */ = {isa = PBXBuildFile; fileRef = C264F0731F9481A400A8FE7A /* UIViewController+runtime.m */; };
 		C29FFCC21ECACB340034587E /* TransitionImageCollectionVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C29FFCC11ECACB340034587E /* TransitionImageCollectionVC.swift */; };
 		C29FFCC41ECAD7640034587E /* EvernoteTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = C29FFCC31ECAD7640034587E /* EvernoteTransition.swift */; };
 		C29FFCC61ECAD7980034587E /* EvernoteCollectionVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C29FFCC51ECAD7980034587E /* EvernoteCollectionVC.swift */; };
@@ -196,6 +199,14 @@
 		44DDF7381F447DD6008CFF2E /* SplitViewControllerManual.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SplitViewControllerManual.swift; sourceTree = "<group>"; };
 		44EDE6FE1F0FF08B00E68655 /* ZoomOutTransition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZoomOutTransition.swift; sourceTree = "<group>"; };
 		44EDE7001F0FF1A300E68655 /* ZoomOutVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZoomOutVC.swift; sourceTree = "<group>"; };
+		C264F0731F9481A400A8FE7A /* UIViewController+runtime.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+runtime.m"; sourceTree = "<group>"; };
+		C264F0741F9481A400A8FE7A /* UIViewController+runtime.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIViewController+runtime.h"; sourceTree = "<group>"; };
+		C264F0791F948EFC00A8FE7A /* DotIndicatorView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DotIndicatorView.h; sourceTree = "<group>"; };
+		C264F07A1F948EFC00A8FE7A /* DotIndicatorView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DotIndicatorView.m; sourceTree = "<group>"; };
+		C264F07B1F948EFC00A8FE7A /* LoadingNavigationTitleView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LoadingNavigationTitleView.h; sourceTree = "<group>"; };
+		C264F07C1F948EFC00A8FE7A /* LoadingNavigationTitleView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LoadingNavigationTitleView.m; sourceTree = "<group>"; };
+		C264F07D1F948EFC00A8FE7A /* UIViewController+LoadingNavigationTitle.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIViewController+LoadingNavigationTitle.h"; sourceTree = "<group>"; };
+		C264F07E1F948EFC00A8FE7A /* UIViewController+LoadingNavigationTitle.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+LoadingNavigationTitle.m"; sourceTree = "<group>"; };
 		C29FFCC11ECACB340034587E /* TransitionImageCollectionVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransitionImageCollectionVC.swift; sourceTree = "<group>"; };
 		C29FFCC31ECAD7640034587E /* EvernoteTransition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EvernoteTransition.swift; sourceTree = "<group>"; };
 		C29FFCC51ECAD7980034587E /* EvernoteCollectionVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EvernoteCollectionVC.swift; sourceTree = "<group>"; };
@@ -344,6 +355,9 @@
 			children = (
 				44D9346E1F0FF318005CC3F2 /* WorkspaceGlobal.swift */,
 				C2D3B8551F9066E700BA9C21 /* UIViewController_Swizzle.swift */,
+				C264F0741F9481A400A8FE7A /* UIViewController+runtime.h */,
+				C264F0731F9481A400A8FE7A /* UIViewController+runtime.m */,
+				C264F0781F948EFC00A8FE7A /* NavigationTitleLoadingView */,
 				447287C31F1EDFD10003B144 /* SCLAlertView */,
 				C29FFCD31ECAECA40034587E /* PinterestSwift */,
 				4459BC921EE0631700717B8D /* PoppverDemo */,
@@ -437,6 +451,19 @@
 				44DDF7381F447DD6008CFF2E /* SplitViewControllerManual.swift */,
 			);
 			path = SplitViewControllerManual;
+			sourceTree = "<group>";
+		};
+		C264F0781F948EFC00A8FE7A /* NavigationTitleLoadingView */ = {
+			isa = PBXGroup;
+			children = (
+				C264F0791F948EFC00A8FE7A /* DotIndicatorView.h */,
+				C264F07A1F948EFC00A8FE7A /* DotIndicatorView.m */,
+				C264F07B1F948EFC00A8FE7A /* LoadingNavigationTitleView.h */,
+				C264F07C1F948EFC00A8FE7A /* LoadingNavigationTitleView.m */,
+				C264F07D1F948EFC00A8FE7A /* UIViewController+LoadingNavigationTitle.h */,
+				C264F07E1F948EFC00A8FE7A /* UIViewController+LoadingNavigationTitle.m */,
+			);
+			path = NavigationTitleLoadingView;
 			sourceTree = "<group>";
 		};
 		C29FFCD11ECADE2F0034587E /* EvernoteTransition */ = {
@@ -662,6 +689,7 @@
 				4459BCA81EE0638F00717B8D /* PopoverViewControllers.swift in Sources */,
 				C2D3B8581F907CB500BA9C21 /* UIViewController_Swizzle.swift in Sources */,
 				4459BCAB1EE0638F00717B8D /* ExtraViewController.swift in Sources */,
+				C264F0751F9481A500A8FE7A /* UIViewController+runtime.m in Sources */,
 				4459BC941EE0631700717B8D /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -721,6 +749,7 @@
 				44AB50A21F38AADA00261057 /* SecondViewController.m in Sources */,
 				448AC2331EF2ACA800013F08 /* PVCSecondVC.swift in Sources */,
 				44B1E01A1EF41459005CF9C7 /* Pep.swift in Sources */,
+				C264F0761F9481A500A8FE7A /* UIViewController+runtime.m in Sources */,
 				44306D141F029FB70095D977 /* BaseForEventVC.swift in Sources */,
 				44306D121F029F8A0095D977 /* ContainerVC_EventForwarding.swift in Sources */,
 				C29FFCE31ECAECA40034587E /* NTNavigationController.swift in Sources */,
@@ -745,6 +774,7 @@
 				44DDF73F1F447DD6008CFF2E /* SecondaryViewController.swift in Sources */,
 				C2D3B8571F907CB500BA9C21 /* UIViewController_Swizzle.swift in Sources */,
 				44DDF7401F447DD6008CFF2E /* SplitViewControllerManual.swift in Sources */,
+				C264F0771F9481A500A8FE7A /* UIViewController+runtime.m in Sources */,
 				44DDF6E91F446D0C008CFF2E /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
