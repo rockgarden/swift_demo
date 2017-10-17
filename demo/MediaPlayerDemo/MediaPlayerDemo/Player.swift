@@ -25,6 +25,7 @@ class Player : NSObject, AVAudioPlayerDelegate {
             [weak self] n in
             let why = n.userInfo![AVAudioSessionInterruptionTypeKey] as! UInt
             let type = AVAudioSessionInterruptionType(rawValue: why)!
+            /// can use switch type {}
             if type == .began {
                 print("interruption began:\n\(n.userInfo!)")
             } else {

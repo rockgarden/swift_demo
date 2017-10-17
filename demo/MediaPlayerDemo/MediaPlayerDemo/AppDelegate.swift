@@ -34,6 +34,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         .AVAudioSessionInterruption, object: nil, queue: nil) { n in
             let why = n.userInfo![AVAudioSessionInterruptionTypeKey] as! UInt
             let type = AVAudioSessionInterruptionType(rawValue: why)!
+            //            switch type {
+            //            case .began:
+            //                print("interruption began:\n\(n.userInfo!)")
+            //            case .ended:
+            //                print("interruption ended:\n\(n.userInfo!)")
+            //                try? AVAudioSession.sharedInstance().setActive(true)
+            //                guard (n.userInfo![AVAudioSessionInterruptionOptionKey] as? UInt) != nil else {return}
+            //            }
             if type == .began {
                 print("interruption began:\n\(n.userInfo!)")
             }
@@ -129,6 +137,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func applicationWillTerminate(_ application: UIApplication) {
         print("bp or interrupter in \(#function)") //trying killing app from app switcher while playing in background, we receive this!
     }
-
+    
 }
 
