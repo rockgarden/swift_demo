@@ -70,10 +70,10 @@ class MediaQueryVC: UIViewController {
 
     }
 
-    func wirelessChanged(_ n:Notification) {
+    @objc func wirelessChanged(_ n:Notification) {
         print("wireless change \(String(describing: n.userInfo))")
     }
-    func wirelessChanged2(_ n:Notification) {
+    @objc func wirelessChanged2(_ n:Notification) {
         print("wireless active change \(String(describing: n.userInfo))")
     }
 
@@ -166,7 +166,7 @@ class MediaQueryVC: UIViewController {
             }
             print("got \(shorties.count) short songs")
             let queue = MPMediaItemCollection(items:shorties)
-            let player = MPMusicPlayerController.applicationMusicPlayer()
+            let player = MPMusicPlayerController.applicationMusicPlayer
             player.stop()
             player.setQueue(with:queue)
             player.shuffleMode = .songs
@@ -180,12 +180,12 @@ class MediaQueryVC: UIViewController {
         }
     }
 
-    func changed(_ n:Notification) {
+    @objc func changed(_ n:Notification) {
         defer {
             self.timer?.fire()
         }
         self.label.text = ""
-        let player = MPMusicPlayerController.applicationMusicPlayer()
+        let player = MPMusicPlayerController.applicationMusicPlayer
         guard let obj = n.object, obj as AnyObject === player else { return }
         guard let title = player.nowPlayingItem?.title else {return}
         let ix = player.indexOfNowPlayingItem
@@ -193,8 +193,8 @@ class MediaQueryVC: UIViewController {
         self.label.text = "\(ix+1) of \(self.q.count): \(title)"
     }
 
-    func timerFired(_: Any) {
-        let player = MPMusicPlayerController.applicationMusicPlayer()
+    @objc func timerFired(_: Any) {
+        let player = MPMusicPlayerController.applicationMusicPlayer
         guard let item = player.nowPlayingItem, player.playbackState != .stopped else {
             self.prog.isHidden = true
             return

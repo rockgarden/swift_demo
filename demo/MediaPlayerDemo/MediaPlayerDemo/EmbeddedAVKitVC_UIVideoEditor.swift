@@ -70,7 +70,7 @@ class EmbeddedAVKitVC_UIVideoEditor: UIViewController {
         let av = AVPlayerViewController()
 
         av.player = player
-        av.view.frame = CGRect(10, 74, 300, 200)
+        av.view.frame = CGRect(10, 84, 300, 200)
         av.view.isHidden = true
         addChildViewController(av)
         view.addSubview(av.view)

@@ -47,12 +47,12 @@ class AVAudioEngineTestVC: UIViewController {
         /// simplest possible "play a buffer" scenario
         let f = try! AVAudioFile(forReading: mp3Url)
         let buffer = AVAudioPCMBuffer(pcmFormat: f.processingFormat, frameCapacity: UInt32(f.length /* /3 */)) // only need 1/3 of the original recording
-        try! f.read(into:buffer)
+        try! f.read(into:buffer!)
 
         let mixer = self.engine.mainMixerNode
         self.engine.connect(player, to: mixer, format: f.processingFormat)
 
-        player.scheduleBuffer(buffer)
+        player.scheduleBuffer(buffer!)
         self.engine.prepare()
         try! self.engine.start()
         player.play()
@@ -78,11 +78,11 @@ class AVAudioEngineTestVC: UIViewController {
 
         let f2 = try! AVAudioFile(forReading: mp3Url)
         let buffer = AVAudioPCMBuffer(pcmFormat: f2.processingFormat, frameCapacity: UInt32(f2.length/3))
-        try! f2.read(into:buffer)
+        try! f2.read(into:buffer!)
         let player2 = AVAudioPlayerNode()
         self.engine.attach(player2)
         self.engine.connect(player2, to: mixer, format: f2.processingFormat)
-        player2.scheduleBuffer(buffer, at: nil, options: .loops)
+        player2.scheduleBuffer(buffer!, at: nil, options: .loops)
 
         // mix down a little
         player2.volume = 0.3
@@ -122,11 +122,11 @@ class AVAudioEngineTestVC: UIViewController {
         // second sound; loop it this time
         let f2 = try! AVAudioFile(forReading: mp3Url)
         let buffer = AVAudioPCMBuffer(pcmFormat: f2.processingFormat, frameCapacity: UInt32(f2.length /* /3 */))
-        try! f2.read(into:buffer)
+        try! f2.read(into:buffer!)
         let player2 = AVAudioPlayerNode()
         self.engine.attach(player2)
         self.engine.connect(player2, to: mixer, format: f2.processingFormat)
-        player2.scheduleBuffer(buffer, at: nil, options: .loops)
+        player2.scheduleBuffer(buffer!, at: nil, options: .loops)
 
         // mix down a little, start playing second sound
         player.pan = -0.5
@@ -191,7 +191,7 @@ class AVAudioEngineTestVC: UIViewController {
         // also, it's a little disappointing to find that you must _play_ the sound...
         let f = try! AVAudioFile(forReading: mp3Url)
         let buffer = AVAudioPCMBuffer(pcmFormat: f.processingFormat, frameCapacity: UInt32(f.length /* /3 */)) // only need 1/3 of the original recording
-        try! f.read(into:buffer)
+        try! f.read(into:buffer!)
 
         let player2 = AVAudioPlayerNode()
         self.engine.attach(player2)
@@ -242,7 +242,7 @@ class AVAudioEngineTestVC: UIViewController {
             }
         }
 
-        player2.scheduleBuffer(buffer) {
+        player2.scheduleBuffer(buffer!) {
             done = true
         }
 

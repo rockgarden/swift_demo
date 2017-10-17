@@ -195,8 +195,8 @@ class AVKitVC: UIViewController {
         self.curnum += 1
         var arr = item.asset.commonMetadata
         arr = AVMetadataItem.metadataItems(from:arr,
-                                           withKey:AVMetadataCommonKeyTitle,
-                                           keySpace:AVMetadataKeySpaceCommon)
+                                           withKey:AVMetadataKey.commonKeyTitle,
+                                           keySpace:AVMetadataKeySpace.common)
         let met = arr[0]
         let value = #keyPath(AVMetadataItem.value)
         met.loadValuesAsynchronously(forKeys:[value]) {
@@ -245,7 +245,7 @@ class AVKitVC: UIViewController {
         super.viewDidLoad()
     }
 
-    func doPlayPause(_ event:MPRemoteCommandEvent) -> MPRemoteCommandHandlerStatus {
+    @objc func doPlayPause(_ event:MPRemoteCommandEvent) -> MPRemoteCommandHandlerStatus {
         print("playpause")
         if let p = self.curplayer {
             if p.isPlaying { p.pause() } else { p.doPlay() }
@@ -253,7 +253,7 @@ class AVKitVC: UIViewController {
         }
         return .noSuchContent
     }
-    func doPlay(_ event:MPRemoteCommandEvent) -> MPRemoteCommandHandlerStatus {
+    @objc func doPlay(_ event:MPRemoteCommandEvent) -> MPRemoteCommandHandlerStatus {
         print("play")
         if let p = self.curplayer {
             p.doPlay()
@@ -261,7 +261,7 @@ class AVKitVC: UIViewController {
         }
         return .noSuchContent
     }
-    func doPause(_ event:MPRemoteCommandEvent) -> MPRemoteCommandHandlerStatus {
+    @objc func doPause(_ event:MPRemoteCommandEvent) -> MPRemoteCommandHandlerStatus {
         print("pause")
         if let p = self.curplayer {
             p.pause()
@@ -269,7 +269,7 @@ class AVKitVC: UIViewController {
         }
         return .noSuchContent
     }
-    func doNextTrack(_ event:MPRemoteCommandEvent) -> MPRemoteCommandHandlerStatus {
+    @objc func doNextTrack(_ event:MPRemoteCommandEvent) -> MPRemoteCommandHandlerStatus {
         print("next")
         if let p = self.curplayer as? AVQueuePlayer {
             p.advanceToNextItem()

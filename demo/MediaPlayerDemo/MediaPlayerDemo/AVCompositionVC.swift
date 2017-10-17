@@ -86,7 +86,7 @@ class AVCompositionVC: UIViewController {
 
         let asset1 = p.currentItem!.asset
 
-        let type = AVMediaTypeVideo
+        let type = AVMediaType.video
         let arr = asset1.tracks(withMediaType: type)
         let track = arr.last!
 
@@ -96,25 +96,25 @@ class AVCompositionVC: UIViewController {
         
         let comptrack = comp.addMutableTrack(withMediaType: type,
                                              preferredTrackID: Int32(kCMPersistentTrackID_Invalid))
-        try! comptrack.insertTimeRange(CMTimeRange(start: CMTime(seconds:0, preferredTimescale:600), duration: CMTime(seconds:5, preferredTimescale:600)), of:track, at:CMTime(seconds:0, preferredTimescale:600))
-        try! comptrack.insertTimeRange(CMTimeRange(start: CMTimeSubtract(duration, CMTime(seconds:5, preferredTimescale:600)), duration: CMTime(seconds:5, preferredTimescale:600)), of:track, at:CMTime(seconds:5, preferredTimescale:600))
+        try! comptrack?.insertTimeRange(CMTimeRange(start: CMTime(seconds:0, preferredTimescale:600), duration: CMTime(seconds:5, preferredTimescale:600)), of:track, at:CMTime(seconds:0, preferredTimescale:600))
+        try! comptrack?.insertTimeRange(CMTimeRange(start: CMTimeSubtract(duration, CMTime(seconds:5, preferredTimescale:600)), duration: CMTime(seconds:5, preferredTimescale:600)), of:track, at:CMTime(seconds:5, preferredTimescale:600))
 
-        let type2 = AVMediaTypeAudio
+        let type2 = AVMediaType.audio
         let arr2 = asset1.tracks(withMediaType: type2)
         let track2 = arr2.last!
 
         let comptrack2 = comp.addMutableTrack(withMediaType: type2, preferredTrackID:Int32(kCMPersistentTrackID_Invalid))
-        try! comptrack2.insertTimeRange(CMTimeRange(start: CMTime(seconds:0, preferredTimescale:600), duration: CMTime(seconds:5, preferredTimescale:600)), of:track2, at:CMTime(seconds:0, preferredTimescale:600))
-        try! comptrack2.insertTimeRange(CMTimeRange(start: CMTimeSubtract(duration, CMTime(seconds:5, preferredTimescale:600)), duration: CMTime(seconds:5, preferredTimescale:600)), of:track2, at:CMTime(seconds:5, preferredTimescale:600))
+        try! comptrack2?.insertTimeRange(CMTimeRange(start: CMTime(seconds:0, preferredTimescale:600), duration: CMTime(seconds:5, preferredTimescale:600)), of:track2, at:CMTime(seconds:0, preferredTimescale:600))
+        try! comptrack2?.insertTimeRange(CMTimeRange(start: CMTimeSubtract(duration, CMTime(seconds:5, preferredTimescale:600)), duration: CMTime(seconds:5, preferredTimescale:600)), of:track2, at:CMTime(seconds:5, preferredTimescale:600))
 
-        let type3 = AVMediaTypeAudio
+        let type3 = AVMediaType.audio
         let s = Bundle.main.url(forResource:"aboutTiagol", withExtension:"m4a")!
         let asset2 = AVURLAsset(url:s)
         let arr3 = asset2.tracks(withMediaType: type3)
         let track3 = arr3.last!
 
         let comptrack3 = comp.addMutableTrack(withMediaType: type3, preferredTrackID:Int32(kCMPersistentTrackID_Invalid))
-        try! comptrack3.insertTimeRange(CMTimeRange(start: CMTime(seconds:0, preferredTimescale:600), duration: CMTime(seconds:10, preferredTimescale:600)), of:track3, at:CMTime(seconds:0, preferredTimescale:600))
+        try! comptrack3?.insertTimeRange(CMTimeRange(start: CMTime(seconds:0, preferredTimescale:600), duration: CMTime(seconds:10, preferredTimescale:600)), of:track3, at:CMTime(seconds:0, preferredTimescale:600))
 
         let params = AVMutableAudioMixInputParameters(track:comptrack3)
         params.setVolume(1, at:CMTime(seconds:0, preferredTimescale:600))

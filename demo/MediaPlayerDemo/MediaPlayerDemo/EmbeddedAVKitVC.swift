@@ -58,7 +58,7 @@ class EmbeddedAVKitVC: UIViewController {
 
     private func getVideoTrack(_ asset:AVAsset) {
         // we have tracks or we wouldn't be here
-        let visual = AVMediaCharacteristicVisual
+        let visual = AVMediaCharacteristic.visual
         let vtrack = asset.tracks(withMediaCharacteristic: visual)[0]
         let size = #keyPath(AVAssetTrack.naturalSize)
         vtrack.loadValuesAsynchronously(forKeys: [size]) {

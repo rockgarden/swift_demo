@@ -118,25 +118,25 @@ class RemoteControlVC: UIViewController {
 
     // these are used only in case 0
 
-    func doPlayPause(_ event:MPRemoteCommandEvent) {
+    @objc func doPlayPause(_ event:MPRemoteCommandEvent) {
         print("playpause")
         let p = self.player.avPlayer!
         if p.isPlaying { p.pause() } else { p.play() }
     }
 
-    func doPlay(_ event:MPRemoteCommandEvent) {
+    @objc func doPlay(_ event:MPRemoteCommandEvent) {
         print("play")
         let p = self.player.avPlayer!
         p.play()
     }
 
-    func doPause(_ event:MPRemoteCommandEvent) {
+    @objc func doPause(_ event:MPRemoteCommandEvent) {
         print("pause")
         let p = self.player.avPlayer!
         p.pause()
     }
     
-    func doLike(_ event:MPRemoteCommandEvent) {
+    @objc func doLike(_ event:MPRemoteCommandEvent) {
         print("like")
     }
 

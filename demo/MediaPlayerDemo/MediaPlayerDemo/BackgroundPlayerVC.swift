@@ -25,13 +25,13 @@ class BackgroundPlayerVC: UIViewController {
         scc.changePlaybackPositionCommand.isEnabled = false
     }
 
-    func doPlayPause(_ event:MPRemoteCommandEvent) {
+    @objc func doPlayPause(_ event:MPRemoteCommandEvent) {
         print("playpause")
         let p = self.player.avPlayer!
         if p.isPlaying { self.doPause(event) } else { self.doPlay(event) }
     }
 
-    func doPlay(_ event:MPRemoteCommandEvent) {
+    @objc func doPlay(_ event:MPRemoteCommandEvent) {
         print("play")
         let p = self.player.avPlayer!
         p.play()
@@ -42,7 +42,7 @@ class BackgroundPlayerVC: UIViewController {
         }
     }
 
-    func doPause(_ event:MPRemoteCommandEvent) {
+    @objc func doPause(_ event:MPRemoteCommandEvent) {
         print("pause")
         let p = self.player.avPlayer!
         p.pause()

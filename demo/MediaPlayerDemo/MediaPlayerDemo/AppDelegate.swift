@@ -94,7 +94,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     // timer fires while we are in background, provided
     // (1) we scheduled it before going into the background
     // (2) we are running in the background (i.e. playing)
-    func fired(_ timer:Timer) {
+    @objc func fired(_ timer:Timer) {
         print("bp timer fired")
         self.timer?.invalidate()
     }

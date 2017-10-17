@@ -134,12 +134,12 @@ func checkForPhotoLibraryAccess(andThen f:(()->())? = nil) {
 }
 
 func checkForMicrophoneCaptureAccess(andThen f:(()->())? = nil) {
-    let status = AVCaptureDevice.authorizationStatus(forMediaType:AVMediaTypeAudio)
+    let status = AVCaptureDevice.authorizationStatus(for:AVMediaType.audio)
     switch status {
     case .authorized:
         f?()
     case .notDetermined:
-        AVCaptureDevice.requestAccess(forMediaType:AVMediaTypeAudio) { granted in
+        AVCaptureDevice.requestAccess(for:AVMediaType.audio) { granted in
             if granted {
                 DispatchQueue.main.async {
                     f?()
@@ -172,12 +172,12 @@ func checkForMicrophoneCaptureAccess(andThen f:(()->())? = nil) {
 }
 
 func checkForMovieCaptureAccess(andThen f:(()->())? = nil) {
-    let status = AVCaptureDevice.authorizationStatus(forMediaType:AVMediaTypeVideo)
+    let status = AVCaptureDevice.authorizationStatus(for:AVMediaType.video)
     switch status {
     case .authorized:
         f?()
     case .notDetermined:
-        AVCaptureDevice.requestAccess(forMediaType:AVMediaTypeVideo) { granted in
+        AVCaptureDevice.requestAccess(for:AVMediaType.video) { granted in
             if granted {
                 DispatchQueue.main.async {
                     f?()

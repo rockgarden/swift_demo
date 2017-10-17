@@ -36,7 +36,7 @@ extension MediaPickerVC : MPMediaPickerControllerDelegate {
 
     func mediaPicker(_ mediaPicker: MPMediaPickerController, didPickMediaItems mediaItemCollection: MPMediaItemCollection) {
         print("did pick")
-        let player = MPMusicPlayerController.applicationMusicPlayer()
+        let player = MPMusicPlayerController.applicationMusicPlayer
         player.setQueue(with:mediaItemCollection)
         player.play()
         self.dismiss(animated:true)
