@@ -30,7 +30,7 @@ class FontDescriptorVC : UIViewController {
 
         let ff = UIFont(name: "GillSans-BoldItalic", size: 20)!
         let dd = ff.fontDescriptor
-        let vis = dd.object(forKey:UIFontDescriptorVisibleNameAttribute)!
+        let vis = dd.object(forKey:UIFontDescriptor.AttributeName.visibleName)!
         print(vis)
         let traits = dd.symbolicTraits
         let isItalic = traits.contains(.traitItalic)
@@ -44,11 +44,11 @@ class FontDescriptorVC : UIViewController {
             let desc = UIFontDescriptor(name:"Didot", size:18)
             // print(desc.fontAttributes())
             let d = [
-                UIFontFeatureTypeIdentifierKey:kLetterCaseType,
-                UIFontFeatureSelectorIdentifierKey:kSmallCapsSelector
+                UIFontDescriptor.FeatureKey.featureIdentifier:kLetterCaseType,
+                UIFontDescriptor.FeatureKey.typeIdentifier:kSmallCapsSelector
             ]
             let desc2 = desc.addingAttributes(
-                [UIFontDescriptorFeatureSettingsAttribute:[d]]
+                [UIFontDescriptor.AttributeName.featureSettings:[d]]
             )
             let f = UIFont(descriptor: desc2, size: 0)
             self.lab.font = f
@@ -56,11 +56,11 @@ class FontDescriptorVC : UIViewController {
             let desc = UIFontDescriptor.preferredFontDescriptor(withTextStyle: .headline)
             // print(desc.fontAttributes())
             let d = [
-                UIFontFeatureTypeIdentifierKey:kLowerCaseType,
-                UIFontFeatureSelectorIdentifierKey:kLowerCaseSmallCapsSelector
+                UIFontDescriptor.FeatureKey.featureIdentifier:kLowerCaseType,
+                UIFontDescriptor.FeatureKey.typeIdentifier:kLowerCaseSmallCapsSelector
             ]
             let desc2 = desc.addingAttributes(
-                [UIFontDescriptorFeatureSettingsAttribute:[d]]
+                [UIFontDescriptor.AttributeName.featureSettings:[d]]
             )
             let f = UIFont(descriptor: desc2, size: 0)
             self.lab.font = f
@@ -77,11 +77,11 @@ class FontDescriptorVC : UIViewController {
 
                 let desc = f.fontDescriptor
                 let d = [
-                    UIFontFeatureTypeIdentifierKey:kStylisticAlternativesType,
-                    UIFontFeatureSelectorIdentifierKey:kStylisticAltOneOnSelector
+                    UIFontDescriptor.FeatureKey.featureIdentifier:kStylisticAlternativesType,
+                    UIFontDescriptor.FeatureKey.typeIdentifier:kStylisticAltOneOnSelector
                 ]
                 let desc2 = desc.addingAttributes(
-                    [UIFontDescriptorFeatureSettingsAttribute:[d]]
+                    [UIFontDescriptor.AttributeName.featureSettings:[d]]
                 )
                 f = UIFont(descriptor: desc2, size: 0)
 
@@ -93,11 +93,11 @@ class FontDescriptorVC : UIViewController {
 
                 let desc = f.fontDescriptor
                 let d = [
-                    UIFontFeatureTypeIdentifierKey:kStylisticAlternativesType,
-                    UIFontFeatureSelectorIdentifierKey:kStylisticAltSixOnSelector
+                    UIFontDescriptor.FeatureKey.featureIdentifier:kStylisticAlternativesType,
+                    UIFontDescriptor.FeatureKey.typeIdentifier:kStylisticAltSixOnSelector
                 ]
                 let desc2 = desc.addingAttributes(
-                    [UIFontDescriptorFeatureSettingsAttribute:[d]]
+                    [UIFontDescriptor.AttributeName.featureSettings:[d]]
                 )
                 f = UIFont(descriptor: desc2, size: 0)
 
@@ -155,8 +155,8 @@ class FontDescriptorVC : UIViewController {
         print(fbody)
 
         let s = self.lab.text!
-        let mas = NSMutableAttributedString(string: s, attributes: [NSFontAttributeName:fbody])
-        mas.addAttribute(NSFontAttributeName, value: femphasis, range: (s as NSString).range(of:"wild"))
+        let mas = NSMutableAttributedString(string: s, attributes: [NSAttributedStringKey.font:fbody])
+        mas.addAttribute(NSAttributedStringKey.font, value: femphasis, range: (s as NSString).range(of:"wild"))
         self.lab.attributedText = mas
     }
     

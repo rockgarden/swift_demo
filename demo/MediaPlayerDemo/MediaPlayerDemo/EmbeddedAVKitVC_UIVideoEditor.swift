@@ -25,7 +25,7 @@ class EmbeddedAVKitVC_UIVideoEditor: UIViewController {
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        // AVAudioSession: 音频会话用于与系统通信，如何打算在您的应用程序中使用音频。音频会话充当您的应用程序和操作系统之间的中介，反过来又是底层的音频硬件。您可以使用它与操作系统沟通应用程序音频的性质，而无需详细说明具体行为或与音频硬件的所需交互。将这些细节的管理委托给音频会话，确保操作系统能够最好地管理用户的音频体验。
+        /// AVAudioSession: 音频会话用于与系统通信，如何打算在您的应用程序中使用音频。音频会话充当您的应用程序和操作系统之间的中介，反过来又是底层的音频硬件。您可以使用它与操作系统沟通应用程序音频的性质，而无需详细说明具体行为或与音频硬件的所需交互。将这些细节的管理委托给音频会话，确保操作系统能够最好地管理用户的音频体验。
         try? AVAudioSession.sharedInstance().setCategory(AVAudioSessionCategoryPlayback)
         try? AVAudioSession.sharedInstance().setActive(true)
 
@@ -76,14 +76,6 @@ class EmbeddedAVKitVC_UIVideoEditor: UIViewController {
         view.addSubview(av.view)
         av.didMove(toParentViewController:self)
 
-        // TODO: 测试禁用 UIPinch
-        let grs = (av.view.subviews[0] as UIView).gestureRecognizers!
-        for gr in grs {
-            if gr is UIPinchGestureRecognizer {
-                gr.isEnabled = false
-            }
-        }
-
         av.addObserver(self, forKeyPath: readyForDisplay, options: .new, context:nil)
 
         /// 切换播放源 just proving you can swap out the player
@@ -91,6 +83,17 @@ class EmbeddedAVKitVC_UIVideoEditor: UIViewController {
             let url = Bundle.main.url(forResource:"wilhelm", withExtension:"aiff")!
             let player = AVPlayer(url:url)
             av.player = player
+        }
+
+        // TODO: 测试禁用 UIPinch
+        // FIXME: av.view 没有加载 subviews 为空.
+        if av.view.subviews.count > 0 {
+            let grs = (av.view.subviews[0] as UIView).gestureRecognizers!
+            for gr in grs {
+                if gr is UIPinchGestureRecognizer {
+                    gr.isEnabled = false
+                }
+            }
         }
 
         return

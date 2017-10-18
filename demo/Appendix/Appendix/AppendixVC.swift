@@ -1,5 +1,7 @@
 
 import UIKit
+import WebKit
+import AudioToolbox
 
 @objc enum Star : Int {
     case blue
@@ -62,7 +64,7 @@ class AppendixVC: UIViewController {
 
     func testVisibility1(what:Int) {}
     func testVisibility2(what:MyClass) {}
-    func say(string s:String) {}
+    @objc func say(string s:String) {}
 
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
@@ -92,7 +94,7 @@ class AppendixVC: UIViewController {
             let csArray = "hello".utf8CString
             if let cs2 = "hello".cString(using: .utf8) { // [CChar]
                 let ss = String(validatingUTF8: cs2)
-                print(ss)
+                print(ss!)
             }
 
             "hello".withCString {
@@ -133,7 +135,8 @@ class AppendixVC: UIViewController {
 
             let opts = UIViewAnimationOptions.autoreverse
             let xorig = self.v.center.x
-            UIView.animate(times:3, duration:1, delay:0, options:opts, animations:{
+            
+            UIView.animateWithTimes(3, duration:1, delay:0, options:opts, animations:{
                 self.v.center.x += 100
             }, completion:{ _ in
                 self.v.center.x = xorig
@@ -152,12 +155,12 @@ class AppendixVC: UIViewController {
                 para.alignment = .center
                 para.paragraphSpacing = 15
                 content.addAttribute(
-                    NSParagraphStyleAttributeName,
+                    NSAttributedStringKey.paragraphStyle,
                     value:para, range:NSMakeRange(0,1))
             }
 
             let content = NSMutableAttributedString(string:"Ho de ho")
-            content.addAttribute(NSParagraphStyleAttributeName,
+            content.addAttribute(NSAttributedStringKey.paragraphStyle,
                                  value:lend {
                                     (para:NSMutableParagraphStyle) in
                                     para.headIndent = 10
@@ -265,7 +268,7 @@ class AppendixVC: UIViewController {
             let arr = [c]
             let arr2 = arr as NSArray
             let name = (arr2[0] as? MyClass2)?.name
-            print(name)
+            print(name!)
         }
 
         do {
@@ -277,7 +280,7 @@ class AppendixVC: UIViewController {
             c.name = "cool"
             lay.setValue(c, forKey: "c")
             let name = (lay.value(forKey: "c") as? MyClass2)?.name
-            print(name)
+            print(name as Any)
         }
 
         do {
@@ -355,7 +358,7 @@ class AppendixVC: UIViewController {
         do {
             let mas = NSMutableAttributedString()
             let r = NSMakeRange(0,0) // not really, just making sure we compile
-            mas.enumerateAttribute("HERE", in: r, options: []) {
+            mas.enumerateAttribute(NSAttributedStringKey(rawValue: "HERE"), in: r, options: []) {
                 value, r, stop in
                 if let value = value as? Int, value == 1  {
                     // ...
@@ -366,11 +369,6 @@ class AppendixVC: UIViewController {
         }
 
         self.reportSelectors()
-
-        do {
-            let t = Thing2<NSString>()
-            t.giveMeAThing("howdy")
-        }
         
     }
 
@@ -382,11 +380,11 @@ class AppendixVC: UIViewController {
 
     }
 
-    func makeHash(ingredients stuff:[String]) {
+    @objc func makeHash(ingredients stuff:[String]) {
 
     }
 
-    func makeHash(of stuff:[Int]) {
+    @objc func makeHash(of stuff:[Int]) {
 
     }
 
@@ -400,25 +398,24 @@ class AppendixVC: UIViewController {
         }
         return true
     }
+
+    @objc func undo() {}
     
     var myclass = MyClass()
     func testTimer() {
         self.myclass.startTimer()
     }
     
-    func sayHello() -> String // "sayHello"
+    @objc func sayHello() -> String // "sayHello"
     { return "ha"}
 
-    func say(_ s:String) // "say:"
+    @objc func say(_ s:String) // "say:"
     {}
 
-    func say(string s:String) // "sayWithString:"
+    @objc func say(_ s:String, times n:Int) // "say:times:"
     {}
 
-    func say(_ s:String, times n:Int) // "say:times:"
-    {}
-
-    func say(of s:String, loudly:Bool)
+    @objc func say(of s:String, loudly:Bool)
     {}
 
     func reportSelectors() {

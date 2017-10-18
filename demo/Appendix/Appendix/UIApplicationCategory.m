@@ -5,7 +5,7 @@
 @implementation UIApplication (MyCategory)
 
 + (BOOL) safeToUseSettingsString {
-    return &UIApplicationOpenSettingsURLString != nil;
+    return true; // &UIApplicationOpenSettingsURLString always true
 }
 
 @end
