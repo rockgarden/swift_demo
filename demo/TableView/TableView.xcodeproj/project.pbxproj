@@ -91,6 +91,8 @@
 		44C2FEF61F41DD5F00419198 /* EIRRCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44C2FEF41F41DD5F00419198 /* EIRRCell.swift */; };
 		44C2FEF71F41DD5F00419198 /* EIRRCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 44C2FEF51F41DD5F00419198 /* EIRRCell.xib */; };
 		44C858EB1F0146DA00837A89 /* VariableRowHeightsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44C858EA1F0146DA00837A89 /* VariableRowHeightsVC.swift */; };
+		44FFE58E1F98FE1D005BB158 /* TableViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44FFE58D1F98FE1C005BB158 /* TableViewDataSource.swift */; };
+		44FFE5901F98FE8A005BB158 /* MultiSectionTableViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44FFE58F1F98FE8A005BB158 /* MultiSectionTableViewDataSource.swift */; };
 		C22758D01D6C29C6008C1F18 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C22758CF1D6C29C6008C1F18 /* AppDelegate.swift */; };
 		C22758D21D6C29C6008C1F18 /* UISearchControllerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C22758D11D6C29C6008C1F18 /* UISearchControllerVC.swift */; };
 		C22758D51D6C29C6008C1F18 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C22758D31D6C29C6008C1F18 /* Main.storyboard */; };
@@ -192,6 +194,8 @@
 		44C2FEF41F41DD5F00419198 /* EIRRCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EIRRCell.swift; sourceTree = "<group>"; };
 		44C2FEF51F41DD5F00419198 /* EIRRCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EIRRCell.xib; sourceTree = "<group>"; };
 		44C858EA1F0146DA00837A89 /* VariableRowHeightsVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VariableRowHeightsVC.swift; sourceTree = "<group>"; };
+		44FFE58D1F98FE1C005BB158 /* TableViewDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewDataSource.swift; sourceTree = "<group>"; };
+		44FFE58F1F98FE8A005BB158 /* MultiSectionTableViewDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MultiSectionTableViewDataSource.swift; sourceTree = "<group>"; };
 		C22758CC1D6C29C6008C1F18 /* TableView.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TableView.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C22758CF1D6C29C6008C1F18 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C22758D11D6C29C6008C1F18 /* UISearchControllerVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UISearchControllerVC.swift; sourceTree = "<group>"; };
@@ -374,6 +378,8 @@
 				44C2FEF21F41DCDA00419198 /* EditInsertAndRearrangeRowsVC.swift */,
 				44C2FEF41F41DD5F00419198 /* EIRRCell.swift */,
 				44C2FEF51F41DD5F00419198 /* EIRRCell.xib */,
+				44FFE58D1F98FE1C005BB158 /* TableViewDataSource.swift */,
+				44FFE58F1F98FE8A005BB158 /* MultiSectionTableViewDataSource.swift */,
 				C22758D61D6C29C6008C1F18 /* Assets.xcassets */,
 				44ABF2901EDD7338004A353A /* resources */,
 				C22758DB1D6C29C6008C1F18 /* Info.plist */,
@@ -530,6 +536,7 @@
 			files = (
 				442849991D8833660044DCF5 /* DetailViewController.swift in Sources */,
 				C2D7F1221DD05FEA00BABD77 /* VariableHeightsVC.swift in Sources */,
+				44FFE58E1F98FE1D005BB158 /* TableViewDataSource.swift in Sources */,
 				44ABF28B1EDD7225004A353A /* Main_UITableView.swift in Sources */,
 				44ABF2881EDC7612004A353A /* IndividualCellsVC.swift in Sources */,
 				4436C6EE1EEB83D1008DAEB3 /* RowActionsVC.swift in Sources */,
@@ -542,6 +549,7 @@
 				4436C6F21EEB909E008DAEB3 /* CellBackgroundLayeringVC.swift in Sources */,
 				4436C6EC1EEB7D84008DAEB3 /* AppTableVC.swift in Sources */,
 				44C2FEF11F41DACA00419198 /* PickACellVC.swift in Sources */,
+				44FFE5901F98FE8A005BB158 /* MultiSectionTableViewDataSource.swift in Sources */,
 				44C858EB1F0146DA00837A89 /* VariableRowHeightsVC.swift in Sources */,
 				C2F3DE161D6EBF5500F0A9D5 /* Person.swift in Sources */,
 				C22758D21D6C29C6008C1F18 /* UISearchControllerVC.swift in Sources */,
