@@ -33,6 +33,7 @@
 		44D68A101E19FD8000AB4C19 /* DataPickerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44D68A0F1E19FD8000AB4C19 /* DataPickerVC.swift */; };
 		44D68A121E19FF8800AB4C19 /* UIStepperVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44D68A111E19FF8800AB4C19 /* UIStepperVC.swift */; };
 		44D934711F0FF36C005CC3F2 /* WorkspaceGlobal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44D934701F0FF36C005CC3F2 /* WorkspaceGlobal.swift */; };
+		44ED7EB01F9E2C0600A4AD3C /* FlatSwitch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44ED7EAF1F9E2C0600A4AD3C /* FlatSwitch.swift */; };
 		C27AFBE91EC454F00017A840 /* ActivityButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = C27AFBE81EC454F00017A840 /* ActivityButton.swift */; };
 		C27AFC121EC58F910017A840 /* CircleRippleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = C27AFC111EC58F910017A840 /* CircleRippleButton.swift */; };
 		C27AFC141EC592A10017A840 /* GCD.swift in Sources */ = {isa = PBXBuildFile; fileRef = C27AFC131EC592A10017A840 /* GCD.swift */; };
@@ -78,6 +79,7 @@
 		44D68A0F1E19FD8000AB4C19 /* DataPickerVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataPickerVC.swift; sourceTree = "<group>"; };
 		44D68A111E19FF8800AB4C19 /* UIStepperVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIStepperVC.swift; sourceTree = "<group>"; };
 		44D934701F0FF36C005CC3F2 /* WorkspaceGlobal.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WorkspaceGlobal.swift; path = ../WorkspaceGlobal.swift; sourceTree = "<group>"; };
+		44ED7EAF1F9E2C0600A4AD3C /* FlatSwitch.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlatSwitch.swift; sourceTree = "<group>"; };
 		C27AFBE81EC454F00017A840 /* ActivityButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityButton.swift; sourceTree = "<group>"; };
 		C27AFC111EC58F910017A840 /* CircleRippleButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircleRippleButton.swift; sourceTree = "<group>"; };
 		C27AFC131EC592A10017A840 /* GCD.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GCD.swift; sourceTree = "<group>"; };
@@ -135,6 +137,7 @@
 				44088DAD1F10F1D1004E8214 /* SubmitButton.swift */,
 				44088DB21F111C3C004E8214 /* SimpleLoadingButton.swift */,
 				44088DB41F111C48004E8214 /* SimpleLoadingView.swift */,
+				44ED7EAF1F9E2C0600A4AD3C /* FlatSwitch.swift */,
 			);
 			name = Button;
 			sourceTree = "<group>";
@@ -227,6 +230,7 @@
 					449E5D891E13FC6B009F2915 = {
 						CreatedOnToolsVersion = 8.2.1;
 						DevelopmentTeam = W3MH7MTTSB;
+						LastSwiftMigration = 0900;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -290,6 +294,7 @@
 				44088DBF1F111DDA004E8214 /* ZoomTransition.swift in Sources */,
 				44088DAE1F10F1D1004E8214 /* SubmitButton.swift in Sources */,
 				44088DC01F111DDA004E8214 /* UIViewControllerExtension.swift in Sources */,
+				44ED7EB01F9E2C0600A4AD3C /* FlatSwitch.swift in Sources */,
 				C27AFC141EC592A10017A840 /* GCD.swift in Sources */,
 				44088DB51F111C48004E8214 /* SimpleLoadingView.swift in Sources */,
 				C29089661EC01AB6001E02FB /* SqueezeButton.swift in Sources */,
@@ -442,7 +447,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.rockgarden.UIControlDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
+				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
+				SWIFT_VERSION = 4.0;
 			};
 			name = Debug;
 		};
@@ -456,7 +462,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.rockgarden.UIControlDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
+				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
+				SWIFT_VERSION = 4.0;
 			};
 			name = Release;
 		};

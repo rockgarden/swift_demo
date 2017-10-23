@@ -68,7 +68,7 @@ class FadeInAnimatorVC: UIViewController {
         view.addGestureRecognizer(tapRecognizer)
     }
     
-    func onTapScreen() {
+    @objc func onTapScreen() {
         dismiss(animated: true, completion: nil)
     }
 }

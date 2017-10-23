@@ -19,7 +19,6 @@ public enum ActivityIndicatorAlignment: Int {
 }
 
 
-@IBDesignable
 open class ActivityUIButton: UIButton {
 
     // Loading state
@@ -52,7 +51,7 @@ open class ActivityUIButton: UIButton {
     open var activityIndicatorEdgeInsets: UIEdgeInsets = UIEdgeInsets.zero
 
     /// Activity Indicator Alingment. Default is '.center'
-    @IBInspectable open var activityIndicatorAlignment = ActivityIndicatorAlignment.center {
+    open var activityIndicatorAlignment = ActivityIndicatorAlignment.center {
         didSet {
             self.setNeedsLayout()
         }

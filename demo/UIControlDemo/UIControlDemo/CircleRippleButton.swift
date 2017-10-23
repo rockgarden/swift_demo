@@ -8,7 +8,7 @@
 
 import UIKit
 
-@IBDesignable
+
 open class CircleRippleButton: UIButton {
     
     // MARK: inspectable
@@ -186,7 +186,7 @@ open class CircleRippleButton: UIButton {
         addTarget(self, action: #selector(onClicked), for: .touchUpInside)
     }
     
-    func onClicked() {
+    @objc func onClicked() {
         self.transform = CGAffineTransform(scaleX: 1.2, y: 1.2)
         
         UIView.animate(withDuration: 0.4,

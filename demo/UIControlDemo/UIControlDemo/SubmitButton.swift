@@ -203,7 +203,7 @@ public class SubmitButton: UIView, CAAnimationDelegate {
     
     // MARK: - Event
     
-    func handleSelfOnTapped(_ gestureRecognizer: UITapGestureRecognizer) {
+    @objc func handleSelfOnTapped(_ gestureRecognizer: UITapGestureRecognizer) {
         if self.buttonState == .normal {
             self.buttonState = .loading;
             self.performTapAnimation(gestureRecognizer.location(in: self));

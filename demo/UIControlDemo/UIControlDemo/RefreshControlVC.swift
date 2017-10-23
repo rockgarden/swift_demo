@@ -50,7 +50,7 @@ class RefreshControlVC: UIViewController, UITableViewDataSource, UITableViewDele
         tableViewController.refreshControl = self.refreshControl
         self.refreshControl.addTarget(self, action: #selector(didReloadEmoji), for: .valueChanged)
         self.refreshControl.backgroundColor = UIColor(red: 0.113, green: 0.113, blue: 0.145, alpha: 1)
-        let attributes = [NSForegroundColorAttributeName: UIColor.white]
+        let attributes = [NSAttributedStringKey.foregroundColor: UIColor.white]
         self.refreshControl.attributedTitle = NSAttributedString(string: "Last updated on \(Date())", attributes: attributes)
         self.refreshControl.tintColor = UIColor.white
         

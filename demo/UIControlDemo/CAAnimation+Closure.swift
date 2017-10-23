@@ -63,7 +63,7 @@ class ZHCAAnimationDelegate: NSObject, CAAnimationDelegate {
     
     :param: timer timer
     */
-    func animationIsAnimating(_ timer: Timer) {
+    @objc func animationIsAnimating(_ timer: Timer) {
         let progress: CGFloat = CGFloat(Date().timeIntervalSince(startTime) / animationDuration)
         if progress < 1.0 {
             animating?(progress)

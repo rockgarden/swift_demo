@@ -34,7 +34,7 @@ class CoinSlider: UISlider {
         return sz
     }
     
-    func tapped(_ g:UIGestureRecognizer) {
+    @objc func tapped(_ g:UIGestureRecognizer) {
         let s = g.view as! UISlider
         if s.isHighlighted {
             return // tap on thumb, let slider deal with it

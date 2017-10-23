@@ -60,7 +60,7 @@ class TextFieldSlidingVC: UIViewController, UITextFieldDelegate {
         return self.fr == nil
     }
 
-    func keyboardShow(_ n:Notification) {
+    @objc func keyboardShow(_ n:Notification) {
         print("show!")
         let d = n.userInfo!
         if let local = d[UIKeyboardIsLocalUserInfoKey] {
@@ -79,7 +79,7 @@ class TextFieldSlidingVC: UIViewController, UITextFieldDelegate {
         }
     }
 
-    func keyboardHide(_ n:Notification) {
+    @objc func keyboardHide(_ n:Notification) {
         print("hide!")
         let d = n.userInfo!
         if let local = d[UIKeyboardIsLocalUserInfoKey] {

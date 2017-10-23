@@ -43,9 +43,9 @@ class UIStepperVC: UIViewController {
 
         let imleft = imageOfSize(CGSize(45,29)) {
             NSAttributedString(string:"\u{21DA}", attributes:[
-                NSFontAttributeName: UIFont(name:"GillSans-Bold", size:30)!,
-                NSForegroundColorAttributeName: UIColor.white,
-                NSParagraphStyleAttributeName: lend {
+                NSAttributedStringKey.font: UIFont(name:"GillSans-Bold", size:30)!,
+                NSAttributedStringKey.foregroundColor: UIColor.white,
+                NSAttributedStringKey.paragraphStyle: lend {
                     (para : NSMutableParagraphStyle) in
                     para.alignment = .center
                 }
@@ -55,9 +55,9 @@ class UIStepperVC: UIViewController {
 
         let imleftblack = imageOfSize(CGSize(45,29)) {
             NSAttributedString(string:"\u{21DA}", attributes:[
-                NSFontAttributeName: UIFont(name:"GillSans-Bold", size:30)!,
-                NSForegroundColorAttributeName: UIColor.black,
-                NSParagraphStyleAttributeName: lend {
+                NSAttributedStringKey.font: UIFont(name:"GillSans-Bold", size:30)!,
+                NSAttributedStringKey.foregroundColor: UIColor.black,
+                NSAttributedStringKey.paragraphStyle: lend {
                     (para : NSMutableParagraphStyle) in
                     para.alignment = .center
                 }
@@ -67,9 +67,9 @@ class UIStepperVC: UIViewController {
 
         let imlefttint = imageOfSize(CGSize(45,29)) {
             NSAttributedString(string:"\u{21DA}", attributes:[
-                NSFontAttributeName: UIFont(name:"GillSans-Bold", size:30)!,
-                NSForegroundColorAttributeName: self.stepper.tintColor,
-                NSParagraphStyleAttributeName: lend {
+                NSAttributedStringKey.font: UIFont(name:"GillSans-Bold", size:30)!,
+                NSAttributedStringKey.foregroundColor: self.stepper.tintColor,
+                NSAttributedStringKey.paragraphStyle: lend {
                     (para : NSMutableParagraphStyle) in
                     para.alignment = .center
                 }
@@ -79,9 +79,9 @@ class UIStepperVC: UIViewController {
 
         let imright = imageOfSize(CGSize(45,29)) {
             NSAttributedString(string:"\u{21DB}", attributes:[
-                NSFontAttributeName: UIFont(name:"GillSans-Bold", size:30)!,
-                NSForegroundColorAttributeName: UIColor.white,
-                NSParagraphStyleAttributeName: lend {
+                NSAttributedStringKey.font: UIFont(name:"GillSans-Bold", size:30)!,
+                NSAttributedStringKey.foregroundColor: UIColor.white,
+                NSAttributedStringKey.paragraphStyle: lend {
                     (para : NSMutableParagraphStyle) in
                     para.alignment = .center
                 }
@@ -91,9 +91,9 @@ class UIStepperVC: UIViewController {
 
         let imrightblack = imageOfSize(CGSize(45,29)) {
             NSAttributedString(string:"\u{21DB}", attributes:[
-                NSFontAttributeName: UIFont(name:"GillSans-Bold", size:30)!,
-                NSForegroundColorAttributeName: UIColor.black,
-                NSParagraphStyleAttributeName: lend {
+                NSAttributedStringKey.font: UIFont(name:"GillSans-Bold", size:30)!,
+                NSAttributedStringKey.foregroundColor: UIColor.black,
+                NSAttributedStringKey.paragraphStyle: lend {
                     (para : NSMutableParagraphStyle) in
                     para.alignment = .center
                 }
@@ -103,9 +103,9 @@ class UIStepperVC: UIViewController {
 
         let imrighttint = imageOfSize(CGSize(45,29)) {
             NSAttributedString(string:"\u{21DB}", attributes:[
-                NSFontAttributeName: UIFont(name:"GillSans-Bold", size:30)!,
-                NSForegroundColorAttributeName: self.stepper.tintColor,
-                NSParagraphStyleAttributeName: lend {
+                NSAttributedStringKey.font: UIFont(name:"GillSans-Bold", size:30)!,
+                NSAttributedStringKey.foregroundColor: self.stepper.tintColor,
+                NSAttributedStringKey.paragraphStyle: lend {
                     (para : NSMutableParagraphStyle) in
                     para.alignment = .center
                 }

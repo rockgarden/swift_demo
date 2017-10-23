@@ -40,9 +40,9 @@ class ButtonVC: UIViewController {
         tsButton.titleLabel?.font = UIFont(name: "HelveticaNeue-Light", size: 14)
         tsButton.addTarget(self, action: #selector(onTapActivityButton), for: .touchUpInside)
         
-        let middleMain: CGFloat = self.view.bounds.size.width / 2
-        var middleButton: CGFloat = 100.0 / 2
-        
+//        let middleMain: CGFloat = self.view.bounds.size.width / 2
+//        var middleButton: CGFloat = 100.0 / 2
+
         //activityButton = ActivityButton(frame: CGRect(x: middleMain - middleButton, y: 60, width: 100, height: 100))
         activityButton.backgroundColor = UIColor.blue
         activityButton.titleLabel.text = "Process"
@@ -88,7 +88,7 @@ class ButtonVC: UIViewController {
         let attributedString = NSMutableAttributedString(
             string: "connecting",
             attributes: [
-                NSForegroundColorAttributeName : disabledColor,
+                NSAttributedStringKey.foregroundColor : disabledColor,
                 ]
         )
         actBtn1.setAttributedTitle(attributedString, for: .disabled)
@@ -117,7 +117,7 @@ class ButtonVC: UIViewController {
         fpButton.isSelected = !fpButton.isSelected
     }
     
-    func onTapActivityButton(_ button: TransitionSubmitButton) {
+    @objc func onTapActivityButton(_ button: TransitionSubmitButton) {
         button.animate(1, completion: { () -> () in
             let vc = FadeInAnimatorVC()
             vc.transitioningDelegate = self
@@ -135,7 +135,7 @@ class ButtonVC: UIViewController {
         }
     }
 
-    func demoFunction() {
+    @objc func demoFunction() {
         print("Demo");
     }
     
@@ -295,7 +295,7 @@ public class FPButton: UIButton {
     }
     
     // MARK: Actions
-    func buttonClicked() {
+    @objc func buttonClicked() {
         UIView.animate(withDuration: 0.2, delay: 0, usingSpringWithDamping: 0.2, initialSpringVelocity: 0, options: .curveEaseIn, animations: { () in
             self.transform = CGAffineTransform(scaleX: 1.03, y: 1.03)
         }, completion: { (_) in

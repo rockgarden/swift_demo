@@ -2,16 +2,13 @@
 //  GCD.swift
 //  CircleRipple
 //
-//  Created by Zhou Hao on 15/08/15.
-//  Copyright © 2015年 Zeus. All rights reserved.
-//
 
 import Foundation
 
 class GCD {
     
     class func async(_ block: @escaping ()->()) {
-        DispatchQueue.global(priority: DispatchQueue.GlobalQueuePriority.default).async(execute: block)
+        DispatchQueue.global(qos: .default).async(execute: block)
     }
     
     class func main(_ block: @escaping ()->()) {
