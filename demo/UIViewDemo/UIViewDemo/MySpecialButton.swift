@@ -11,7 +11,7 @@ class MySpecialButton : UIButton {
         super.awakeFromNib()
         self.orig = self.attributedTitle(for:.normal)!
         let t = NSMutableAttributedString(attributedString: self.attributedTitle(for:.normal)!).then({ n in
-            n.addAttribute(NSForegroundColorAttributeName, value: UIColor.gray, range: NSMakeRange(0,n.length))
+            n.addAttribute(NSAttributedStringKey.foregroundColor, value: UIColor.gray, range: NSMakeRange(0,n.length))
         })
 
         self.dim = t

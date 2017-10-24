@@ -15,17 +15,17 @@ func makeAttributedString() -> NSAttributedString {
     let s1 = "The Gettysburg Address, as delivered on a certain occasion " +
     "(namely Thursday, November 19, 1863) by A. Lincoln"
     content = NSMutableAttributedString(string:s1, attributes:[
-        NSFontAttributeName: UIFont(name:"Arial-BoldMT", size:15)!,
-        NSForegroundColorAttributeName: UIColor(red:0.251, green:0.000, blue:0.502, alpha:1)]
+        NSAttributedStringKey.font: UIFont(name:"Arial-BoldMT", size:15)!,
+        NSAttributedStringKey.foregroundColor: UIColor(red:0.251, green:0.000, blue:0.502, alpha:1)]
     )
     let r = (s1 as NSString).range(of:"Gettysburg Address")
-    let atts : [String:Any] = [
-        NSStrokeColorAttributeName: UIColor.red,
-        NSStrokeWidthAttributeName: -2.0
+    let atts : [NSAttributedStringKey:Any] = [
+        NSAttributedStringKey(rawValue: NSAttributedStringKey.strokeColor.rawValue): UIColor.red,
+        NSAttributedStringKey(rawValue: NSAttributedStringKey.strokeWidth.rawValue): -2.0
     ]
     content.addAttributes(atts, range: r)
 
-    content.addAttribute(NSParagraphStyleAttributeName,
+    content.addAttribute(NSAttributedStringKey.paragraphStyle,
                          value:lend() {
                             (para : NSMutableParagraphStyle) in
                             para.headIndent = 10
@@ -40,15 +40,15 @@ func makeAttributedString() -> NSAttributedString {
     "upon this continent a new nation, conceived in liberty and dedicated "
     s2 = s2 + "to the proposition that all men are created equal."
     content2 = NSMutableAttributedString(string:s2, attributes: [
-        NSFontAttributeName: UIFont(name:"HoeflerText-Black", size:16)!
+        NSAttributedStringKey.font: UIFont(name:"HoeflerText-Black", size:16)!
         ])
     content2.addAttributes([
-        NSFontAttributeName: UIFont(name:"HoeflerText-Black", size:24)!,
-        NSExpansionAttributeName: 0.3,
-        NSKernAttributeName: -4 // negative kerning bug fixed in iOS 8
+        NSAttributedStringKey.font: UIFont(name:"HoeflerText-Black", size:24)!,
+        NSAttributedStringKey.expansion: 0.3,
+        NSAttributedStringKey.kern: -4 // negative kerning bug fixed in iOS 8
         ], range:NSMakeRange(0,1))
 
-    content2.addAttribute(NSParagraphStyleAttributeName,
+    content2.addAttribute(NSAttributedStringKey.paragraphStyle,
                           value:lend() {
                             (para2 : NSMutableParagraphStyle) in
                             para2.headIndent = 10

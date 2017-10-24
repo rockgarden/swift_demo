@@ -82,7 +82,7 @@ class HitTestDuringAnimationVC : UIViewController {
         anim.startAnimation()
     }
 
-    @available(iOS 10.0, *)
+    @objc @available(iOS 10.0, *)
     func pan(_ p: UIPanGestureRecognizer) {
         let v = p.view!
         let anim = self.configAnimator()
@@ -138,7 +138,7 @@ class MyView_hTDA : UIView {
         // self.v.removeGestureRecognizer(t)
     }
 
-    func tap(_ g:UIGestureRecognizer!) {
+    @objc func tap(_ g:UIGestureRecognizer!) {
         print("tap! (gesture recognizer)")
     }
 

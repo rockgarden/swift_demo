@@ -84,7 +84,7 @@ class FunctionCell: UICollectionViewCell {
 }
 
 
-//TODO: 定义FunctionModule接口
+// TODO: 定义FunctionModule接口
 // MARK: - Model
 class Function {
     
@@ -95,7 +95,7 @@ class Function {
     var index: Int
     var iconImage = UIImage() //TODO: 传送方式: ImageURL? 或 RawString Data?
     
-    //TODO: 实现 init(json: JSON)
+    // TODO: 实现 init(json: JSON)
     
     init(name:String, iconName:String, type:String, index:Int) {
         self.name = name

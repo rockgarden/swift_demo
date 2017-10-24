@@ -45,7 +45,7 @@ class AttributedStringDrawingVC : UIViewController {
                     p.allowsDefaultTighteningForTruncation = false
                     p.lineBreakMode = .byTruncatingTail
                 }
-                s2.addAttribute(NSParagraphStyleAttributeName, value: p, range: NSMakeRange(0,1))
+                s2.addAttribute(NSAttributedStringKey.paragraphStyle, value: p, range: NSMakeRange(0,1))
                 con.minimumScaleFactor = 0.5
                 s2.boundingRect(with:CGSize(CGFloat(w),10000), options: [.usesLineFragmentOrigin], context: con)
                 print(w, con.totalBounds, con.actualScaleFactor)
@@ -61,7 +61,7 @@ class AttributedStringDrawingVC : UIViewController {
                     p.allowsDefaultTighteningForTruncation = true
                     p.lineBreakMode = .byTruncatingTail
                 }
-                s2.addAttribute(NSParagraphStyleAttributeName, value: p, range: NSMakeRange(0,1))
+                s2.addAttribute(NSAttributedStringKey.paragraphStyle, value: p, range: NSMakeRange(0,1))
                 con.minimumScaleFactor = 0.5
                 s2.boundingRect(with:CGSize(CGFloat(w),10000), options: [.usesLineFragmentOrigin, .truncatesLastVisibleLine], context: con)
                 print(w, con.totalBounds, con.actualScaleFactor)

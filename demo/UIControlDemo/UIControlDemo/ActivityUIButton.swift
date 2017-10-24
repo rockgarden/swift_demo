@@ -22,7 +22,6 @@ public enum ActivityIndicatorAlignment: Int {
 open class ActivityUIButton: UIButton {
 
     // Loading state
-    @IBInspectable
     open var isLoading: Bool = false {
         didSet {
             #if !TARGET_INTERFACE_BUILDER
@@ -34,14 +33,14 @@ open class ActivityUIButton: UIButton {
     }
 
     /// Hide image when loading is visible.
-    @IBInspectable open var hideImageWhenLoading: Bool = true {
+    open var hideImageWhenLoading: Bool = true {
         didSet {
             configureControl(for: currentControlState())
         }
     }
 
     /// Hide text when loading is visible.
-    @IBInspectable open var hideTextWhenLoading: Bool = true {
+    open var hideTextWhenLoading: Bool = true {
         didSet {
             configureControl(for: currentControlState())
         }
@@ -65,13 +64,12 @@ open class ActivityUIButton: UIButton {
     }
 
     /// Color to activityIndicatorView. Default is 'nil'
-    @IBInspectable open var activityIndicatorColor: UIColor? {
+    open var activityIndicatorColor: UIColor? {
         didSet {
             self.setNeedsLayout()
         }
     }
-
-
+    
     // Internal properties
     fileprivate let activityIndicatorView = UIActivityIndicatorView(activityIndicatorStyle: UIActivityIndicatorViewStyle.gray)
 
@@ -80,7 +78,6 @@ open class ActivityUIButton: UIButton {
     fileprivate var imagens = ControlStateDictionary()
     fileprivate var titles = ControlStateDictionary()
     fileprivate var attributedTitles = ControlStateDictionary()
-
 
     // MARK: - Initializers
 
@@ -93,7 +90,7 @@ open class ActivityUIButton: UIButton {
     override init(frame: CGRect) {
         super.init(frame: frame)
 
-        self.setupActivityIndicator()
+        setupActivityIndicator()
         commonInit()
     }
 
@@ -237,6 +234,7 @@ open class ActivityUIButton: UIButton {
     }
 
     override open func title(for state: UIControlState) -> String?  {
+        // FIXME: Simultaneous accesses to 0x17dd9afc, but modification requires exclusive access.
         return getValueFrom(type: String.self, on: self.titles, for: state)
     }
 
@@ -277,7 +275,7 @@ open class ActivityUIButton: UIButton {
                 super.setAttributedTitle(nil, for: state)
                 super.titleLabel?.text = nil
             } else {
-                super.setTitle( self.title(for: state) , for: state)
+                super.setTitle(self.title(for: state) , for: state)
                 super.titleLabel?.text = self.title(for: state)
                 super.setAttributedTitle(self.attributedTitle(for: state), for: state)
             }
@@ -295,7 +293,7 @@ open class ActivityUIButton: UIButton {
     }
 
     fileprivate func frameForActivityIndicator() -> CGRect {
-        var frame:CGRect = CGRect.zero
+        var frame = CGRect.zero
         frame.size = self.activityIndicatorView.frame.size
         frame.origin.y = (self.frame.size.height - frame.size.height) / 2
 

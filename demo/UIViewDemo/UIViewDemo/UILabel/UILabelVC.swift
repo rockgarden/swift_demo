@@ -71,15 +71,15 @@ class UILabelVC: UIViewController {
         self.lab1.lineBreakMode = brk
 
         let mas = NSMutableAttributedString(string: s, attributes: [
-            NSFontAttributeName: f,
-            NSParagraphStyleAttributeName: lend {
+            NSAttributedStringKey.font: f,
+            NSAttributedStringKey.paragraphStyle: lend {
                 (para: NSMutableParagraphStyle) in
                 para.alignment = align
                 para.lineBreakMode = brk
                 para.allowsDefaultTighteningForTruncation = tighten
             }
             ])
-        mas.addAttribute(NSForegroundColorAttributeName,
+        mas.addAttribute(NSAttributedStringKey.foregroundColor,
                          value: UIColor.blue,
                          range: (s as NSString).range(of: "poltergeists"))
         self.lab2.attributedText = mas
@@ -94,7 +94,7 @@ class UILabelVC: UIViewController {
         print(lab3.lineBreakMode.rawValue)
         let color = UIColor.blue
         let s = NSMutableAttributedString(string: "This is\n a test", attributes: [
-            NSForegroundColorAttributeName: color
+            NSAttributedStringKey.foregroundColor: color
             ])
         lab3.attributedText = s
         lab3.sizeToFit()
@@ -109,7 +109,7 @@ class UILabelVC: UIViewController {
         switch showTheBug {
         case true:
             let att = self.theLabel.attributedText!.mutableCopy() as! NSMutableAttributedString
-            att.addAttribute(NSParagraphStyleAttributeName,
+            att.addAttribute(NSAttributedStringKey.paragraphStyle,
                              value: lend {
                                 (para : NSMutableParagraphStyle) in
                                 para.headIndent = 20;
@@ -147,14 +147,14 @@ class UILabelVC: UIViewController {
 
     private func makeAttributedText() -> NSAttributedString {
         let s = NSMutableAttributedString(string: s2, attributes: [
-            NSFontAttributeName: UIFont(name: "HoeflerText-Black", size: 16)!
+            NSAttributedStringKey.font: UIFont(name: "HoeflerText-Black", size: 16)!
             ])
         s.addAttributes([
-            NSFontAttributeName: UIFont(name: "HoeflerText-Black", size: 24)!,
-            NSExpansionAttributeName: 0.3,
-            NSKernAttributeName: -4
+            NSAttributedStringKey.font: UIFont(name: "HoeflerText-Black", size: 24)!,
+            NSAttributedStringKey.expansion: 0.3,
+            NSAttributedStringKey.kern: -4
             ], range: NSMakeRange(0, 1))
-        s.addAttribute(NSParagraphStyleAttributeName,
+        s.addAttribute(NSAttributedStringKey.paragraphStyle,
                               value: lend {
                                 (para: NSMutableParagraphStyle) in
                                 para.headIndent = 10
@@ -172,21 +172,21 @@ class UILabelVC: UIViewController {
     func makeSubscriptSuperscript() {
         let font = UIFont(name: "Helvetica", size:20)
         let fontSuper = UIFont(name: "Helvetica", size:10)
-        let attString = NSMutableAttributedString(string: "6.022*1023", attributes: [NSFontAttributeName:font!])
+        let attString = NSMutableAttributedString(string: "6.022*1023", attributes: [NSAttributedStringKey.font:font!])
         attString.setAttributes([
-            NSFontAttributeName: fontSuper!,
-            NSBaselineOffsetAttributeName: 10],
+            NSAttributedStringKey.font: fontSuper!,
+            NSAttributedStringKey.baselineOffset: 10],
                                 range: NSRange(location:8, length:2))
         labelVarName.attributedText = attString
     }
 
     func labelFontSizeScaling() {
         let s = NSMutableAttributedString(string:s2, attributes: [
-            NSFontAttributeName: UIFont(name:"HoeflerText-Black", size:16)!
+            NSAttributedStringKey.font: UIFont(name:"HoeflerText-Black", size:16)!
             ])
         s.addAttributes([
-            NSFontAttributeName: UIFont(name:"HoeflerText-Black", size:24)!,
-            NSKernAttributeName: -4
+            NSAttributedStringKey.font: UIFont(name:"HoeflerText-Black", size:24)!,
+            NSAttributedStringKey.kern: -4
             ], range:NSMakeRange(0,1))
 
         let lab = UILabel()

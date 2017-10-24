@@ -94,13 +94,12 @@ class ButtonVC: UIViewController {
         actBtn1.setAttributedTitle(attributedString, for: .disabled)
         //        btn1.activityIndicatorColor = .blue
 
-
         actBtn2.hideTextWhenLoading = false
         actBtn2.isLoading = false
         actBtn2.activityIndicatorAlignment = .left
         actBtn2.activityIndicatorViewStyle = UIActivityIndicatorViewStyle.gray
         actBtn2.activityIndicatorEdgeInsets = UIEdgeInsetsMake(0, 10, 0, 0)
-        actBtn2.setTitle("Loading", for: UIControlState.disabled)
+        actBtn2.setTitle("Loading", for: .disabled)
     }
     
     @IBAction func buttonPressed(sender: AnyObject) {

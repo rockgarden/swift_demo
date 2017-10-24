@@ -9,62 +9,56 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "demo/UIGestureRecognizer/UIGestureRecognizer/CheckmarkGestureRecognizer.swift"
-            timestampString = "514970627.249251"
+            filePath = "demo/UIControlDemo/UIControlDemo/ActivityUIButton.swift"
+            timestampString = "530521664.886438"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "25"
-            endingLineNumber = "25"
-            landmarkName = "touchesBegan(_:with:)"
+            startingLineNumber = "213"
+            endingLineNumber = "213"
+            landmarkName = "setTitle(_:for:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "demo/UIViewController/UIViewController/NavigationTransitioning.swift"
-            timestampString = "516600314.153407"
+            filePath = "demo/UIControlDemo/UIControlDemo/ActivityUIButton.swift"
+            timestampString = "530521664.887141"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "102"
-            endingLineNumber = "102"
-            landmarkName = "interruptibleAnimator(using:)"
+            startingLineNumber = "361"
+            endingLineNumber = "361"
+            landmarkName = "getValueFrom(type:on:for:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "demo/UIViewController/UIViewController/NavigationTransitioning.swift"
-            timestampString = "516601247.051976"
+            filePath = "demo/UIControlDemo/UIControlDemo/ActivityUIButton.swift"
+            timestampString = "530521664.887671"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "86"
-            endingLineNumber = "86"
-            landmarkName = "interruptibleAnimator(using:)"
+            startingLineNumber = "362"
+            endingLineNumber = "362"
+            landmarkName = "getValueFrom(type:on:for:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         BreakpointExtensionID = "Xcode.Breakpoint.ExceptionBreakpoint">
          <BreakpointContent
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "demo/CoreDataDemo_Mac/CoreDataDemo_Mac/CoreDataStackManager.swift"
-            timestampString = "516689441.86996"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "28"
-            endingLineNumber = "28"
-            landmarkName = "managedObjectModel"
-            landmarkType = "24">
+            scope = "0"
+            stopOnStyle = "0">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

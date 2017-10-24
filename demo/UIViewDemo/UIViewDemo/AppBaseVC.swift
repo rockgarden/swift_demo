@@ -28,7 +28,7 @@ class AppBaseVC: UIViewController {
             ])
     }
 
-    func close() {
+    @objc func close() {
         dismiss(animated: true, completion: nil)
     }
 }

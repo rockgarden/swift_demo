@@ -119,7 +119,7 @@ open class ExpandableLabel: UILabel {
 		isUserInteractionEnabled = true
 		lineBreakMode = NSLineBreakMode.byClipping
 		numberOfLines = 3
-		collapsedAttributedLink = NSAttributedString(string: "More", attributes: [NSFontAttributeName: UIFont.italicSystemFont(ofSize: font.pointSize)])
+		collapsedAttributedLink = NSAttributedString(string: "More", attributes: [NSAttributedStringKey.font: UIFont.italicSystemFont(ofSize: font.pointSize)])
 		ellipsis = NSAttributedString(string: "...")
 	}
 
@@ -164,7 +164,7 @@ open class ExpandableLabel: UILabel {
 			let lineTextWithAddedLink = NSMutableAttributedString(attributedString: lineTextWithLastWordRemoved)
 			if let ellipsis = self.ellipsis {
 				lineTextWithAddedLink.append(ellipsis)
-				lineTextWithAddedLink.append(NSAttributedString(string: " ", attributes: [NSFontAttributeName: self.font]))
+				lineTextWithAddedLink.append(NSAttributedString(string: " ", attributes: [NSAttributedStringKey.font: self.font]))
 			}
 			lineTextWithAddedLink.append(linkName)
 			let fits = self.textFitsWidth(lineTextWithAddedLink)
@@ -264,14 +264,14 @@ open class ExpandableLabel: UILabel {
 
 private extension NSAttributedString {
 	func hasFontAttribute() -> Bool {
-		let font = self.attribute(NSFontAttributeName, at: 0, effectiveRange: nil) as? UIFont
+		let font = self.attribute(NSAttributedStringKey.font, at: 0, effectiveRange: nil) as? UIFont
 		return font != nil
 	}
 
 	func copyWithAddedFontAttribute(_ font: UIFont) -> NSAttributedString {
 		if (hasFontAttribute() == false) {
 			let copy = NSMutableAttributedString(attributedString: self)
-			copy.addAttribute(NSFontAttributeName, value: font, range: NSMakeRange(0, copy.length))
+			copy.addAttribute(NSAttributedStringKey.font, value: font, range: NSMakeRange(0, copy.length))
 			return copy
 		}
 		return self.copy() as! NSAttributedString
@@ -279,12 +279,12 @@ private extension NSAttributedString {
 
 	func copyWithHighlightedColor() -> NSAttributedString {
 		let alphaComponent = CGFloat(0.5)
-		var baseColor: UIColor? = self.attribute(NSForegroundColorAttributeName, at: 0, effectiveRange: nil) as? UIColor
+		var baseColor: UIColor? = self.attribute(NSAttributedStringKey.foregroundColor, at: 0, effectiveRange: nil) as? UIColor
 		if let color = baseColor { baseColor = color.withAlphaComponent(alphaComponent) }
 		else { baseColor = UIColor.black.withAlphaComponent(alphaComponent) }
 		let highlightedCopy = NSMutableAttributedString(attributedString: self)
-		highlightedCopy.removeAttribute(NSForegroundColorAttributeName, range: NSMakeRange(0, highlightedCopy.length))
-		highlightedCopy.addAttribute(NSForegroundColorAttributeName, value: baseColor!, range: NSMakeRange(0, highlightedCopy.length))
+		highlightedCopy.removeAttribute(NSAttributedStringKey.foregroundColor, range: NSMakeRange(0, highlightedCopy.length))
+		highlightedCopy.addAttribute(NSAttributedStringKey.foregroundColor, value: baseColor!, range: NSMakeRange(0, highlightedCopy.length))
 		return highlightedCopy
 	}
 

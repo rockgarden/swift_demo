@@ -108,7 +108,7 @@ class ProgressVC: UIViewController {
         //ims[1].image = im
     }
 
-    func inc(_ t:Timer) {
+    @objc func inc(_ t:Timer) {
         var val = Float(self.prog3.value)
         val += 0.1
 

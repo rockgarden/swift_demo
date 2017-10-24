@@ -40,7 +40,7 @@
                                 <attributedString key="userComments">
                                     <fragment content="Proving that the thumbTintColor now works once again.">
                                         <attributes>
-                                            <font key="NSFont" metaFont="system" size="11"/>
+                                            <font key="NSFont" metaFont="smallSystem"/>
                                             <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
                                         </attributes>
                                     </fragment>
@@ -118,7 +118,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Segment Demo" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="0XT-CX-Ec3">
-                                                    <rect key="frame" x="16" y="0.0" width="344" height="43"/>
+                                                    <rect key="frame" x="16" y="0.0" width="344" height="43.5"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
@@ -135,7 +135,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Other" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="4cU-AB-ygL">
-                                                    <rect key="frame" x="16" y="0.0" width="344" height="43"/>
+                                                    <rect key="frame" x="16" y="0.0" width="344" height="43.5"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
@@ -155,7 +155,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Date Picker" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="JKf-Q8-mtC" userLabel="Date picker">
-                                                    <rect key="frame" x="16" y="0.0" width="344" height="43"/>
+                                                    <rect key="frame" x="16" y="0.0" width="344" height="43.5"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
@@ -175,7 +175,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="UIStepper" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="lRj-ms-VDp" userLabel="Date picker">
-                                                    <rect key="frame" x="16" y="0.0" width="344" height="43"/>
+                                                    <rect key="frame" x="16" y="0.0" width="344" height="43.5"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
@@ -195,7 +195,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="UIButton" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="EA9-aC-nZ7" userLabel="Date picker">
-                                                    <rect key="frame" x="16" y="0.0" width="344" height="43"/>
+                                                    <rect key="frame" x="16" y="0.0" width="344" height="43.5"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
@@ -215,7 +215,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="UIRefreshControl" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="hvx-aI-nIf" userLabel="Date picker">
-                                                    <rect key="frame" x="16" y="0.0" width="344" height="43"/>
+                                                    <rect key="frame" x="16" y="0.0" width="344" height="43.5"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
@@ -232,7 +232,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="TextField Sliding" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="0am-K0-qge" userLabel="Date picker">
-                                                    <rect key="frame" x="16" y="0.0" width="344" height="43"/>
+                                                    <rect key="frame" x="16" y="0.0" width="344" height="43.5"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
@@ -415,17 +415,20 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="ekp-aq-4kK">
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="ekp-aq-4kK">
                                 <rect key="frame" x="-1" y="64" width="375" height="440"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HZW-68-Zha" customClass="RoundButton" customModule="UIControlDemo" customModuleProvider="target">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HZW-68-Zha" customClass="RoundButton" customModule="UIControlDemo" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="60"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="60" id="FAy-lk-VHd"/>
+                                        </constraints>
                                         <state key="normal" title="R"/>
                                         <connections>
                                             <action selector="buttonPressedWithSender:" destination="RSF-CP-Uhu" eventType="touchUpInside" id="MpT-1o-PG7"/>
                                         </connections>
                                     </button>
-                                    <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Zwb-Ra-45b" customClass="RoundBorderedButton" customModule="UIControlDemo" customModuleProvider="target">
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Zwb-Ra-45b" customClass="RoundBorderedButton" customModule="UIControlDemo" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="60" width="375" height="60"/>
                                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <color key="tintColor" red="0.36209025979999998" green="0.66359049079999999" blue="0.82483834030000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -433,14 +436,14 @@
                                             <action selector="tappedButtonWithSender:" destination="RSF-CP-Uhu" eventType="touchUpInside" id="jWw-M7-B96"/>
                                         </connections>
                                     </view>
-                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="N3B-vK-S6A" customClass="FPButton" customModule="UIControlDemo" customModuleProvider="target">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="N3B-vK-S6A" customClass="FPButton" customModule="UIControlDemo" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="120" width="375" height="30"/>
                                         <state key="normal" title="FPButton"/>
                                         <connections>
                                             <action selector="tapButtonWithSender:" destination="RSF-CP-Uhu" eventType="touchUpInside" id="IWO-Zb-FNU"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NW8-LE-ONB" customClass="SqueezeButton" customModule="UIControlDemo" customModuleProvider="target">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NW8-LE-ONB" customClass="SqueezeButton" customModule="UIControlDemo" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="150" width="375" height="60"/>
                                         <color key="backgroundColor" red="0.48709371509999999" green="1" blue="0.5491524592" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
@@ -451,15 +454,15 @@
                                             <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="scY-GY-AyW" customClass="TransitionSubmitButton" customModule="UIControlDemo" customModuleProvider="target">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="scY-GY-AyW" customClass="TransitionSubmitButton" customModule="UIControlDemo" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="210" width="375" height="30"/>
                                         <state key="normal" title="Button"/>
                                     </button>
-                                    <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Uux-BO-dVA" customClass="ActivityButton" customModule="UIControlDemo" customModuleProvider="target">
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Uux-BO-dVA" customClass="ActivityButton" customModule="UIControlDemo" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="240" width="375" height="80"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     </view>
-                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="z3G-U2-1LY" customClass="CircleRippleButton" customModule="UIControlDemo" customModuleProvider="target">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="z3G-U2-1LY" customClass="CircleRippleButton" customModule="UIControlDemo" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="320" width="375" height="30"/>
                                         <color key="backgroundColor" red="0.96078431369999995" green="0.3921568627" blue="0.3921568627" alpha="1" colorSpace="calibratedRGB"/>
                                         <state key="normal" title="Button"/>
@@ -478,26 +481,29 @@
                                             <action selector="runCircleRipple:" destination="RSF-CP-Uhu" eventType="touchUpInside" id="VfX-EG-cy4"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KqO-Kd-CIM" customClass="ActivityUIButton" customModule="UIControlDemo" customModuleProvider="target">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KqO-Kd-CIM" customClass="ActivityUIButton" customModule="UIControlDemo" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="350" width="375" height="30"/>
                                         <state key="normal" title="Button"/>
                                         <connections>
                                             <action selector="buttonTapAction:" destination="RSF-CP-Uhu" eventType="touchUpInside" id="Aii-jc-Zhc"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1NT-Ev-P0I" customClass="ActivityUIButton" customModule="UIControlDemo" customModuleProvider="target">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1NT-Ev-P0I" customClass="ActivityUIButton" customModule="UIControlDemo" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="380" width="375" height="30"/>
                                         <state key="normal" title="Button"/>
                                         <connections>
                                             <action selector="doTap:" destination="RSF-CP-Uhu" eventType="touchUpInside" id="lA4-1k-iSg"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pd0-bY-uSk" customClass="RotatingButton" customModule="UIControlDemo" customModuleProvider="target">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pd0-bY-uSk" customClass="RotatingButton" customModule="UIControlDemo" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="410" width="375" height="30"/>
                                         <color key="tintColor" red="0.35367018880000001" green="0.36078431370000003" blue="0.71886241009999996" alpha="1" colorSpace="calibratedRGB"/>
                                         <state key="normal" image="delete"/>
                                     </button>
                                 </subviews>
+                                <constraints>
+                                    <constraint firstItem="N3B-vK-S6A" firstAttribute="top" secondItem="ekp-aq-4kK" secondAttribute="top" constant="120" id="Zsu-4z-ZIZ"/>
+                                </constraints>
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9mr-rk-yef" customClass="ShrinkLoadButton" customModule="UIControlDemo" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="504" width="375" height="30"/>
@@ -511,9 +517,11 @@
                         <constraints>
                             <constraint firstItem="DRm-V8-xfL" firstAttribute="top" secondItem="ekp-aq-4kK" secondAttribute="bottom" constant="163" id="0H6-0g-jIE"/>
                             <constraint firstItem="9mr-rk-yef" firstAttribute="top" secondItem="ekp-aq-4kK" secondAttribute="bottom" id="BXW-AA-Gf1"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="ekp-aq-4kK" secondAttribute="trailing" constant="-15" id="Kis-pk-Jo8"/>
                             <constraint firstItem="9mr-rk-yef" firstAttribute="width" secondItem="3Hp-ML-KWN" secondAttribute="width" id="SCB-S1-znx"/>
                             <constraint firstItem="9mr-rk-yef" firstAttribute="centerX" secondItem="3Hp-ML-KWN" secondAttribute="centerX" id="V3r-pm-GgM"/>
                             <constraint firstItem="ekp-aq-4kK" firstAttribute="top" secondItem="rzy-Z1-6Zy" secondAttribute="bottom" id="d7v-Rg-WHv"/>
+                            <constraint firstItem="ekp-aq-4kK" firstAttribute="leading" secondItem="3Hp-ML-KWN" secondAttribute="leadingMargin" constant="-17" id="ha5-Q5-Fgo"/>
                         </constraints>
                     </view>
                     <connections>

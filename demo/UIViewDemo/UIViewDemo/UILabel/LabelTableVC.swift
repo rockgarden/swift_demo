@@ -30,7 +30,7 @@ class LabelTableVC: UITableViewController {
             /// the rule is that the attributed text color must _match_ the textColor, if not - highlightedTextColor does not work on!
             let color = indexPath.row == 0 ? UIColor.blue : UIColor.black
             let s = NSMutableAttributedString(string: "This is\n a test", attributes: [
-                NSForegroundColorAttributeName : color
+                NSAttributedStringKey.foregroundColor : color
             ])
             lab.attributedText = s
             lab.sizeToFit()
