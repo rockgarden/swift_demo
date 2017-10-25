@@ -218,7 +218,7 @@ public class ASCollectionView: UICollectionView, UICollectionViewDataSource {
     
     // MARK: Parallax Effects
     
-    func doParallax(_ displayLink: CADisplayLink) {
+    @objc func doParallax(_ displayLink: CADisplayLink) {
         let visibleCells = self.visibleCells
         for cell in visibleCells {
             if cell.isKind(of: ASCollectionViewParallaxCell.self) {
@@ -245,7 +245,7 @@ public class ASCollectionView: UICollectionView, UICollectionViewDataSource {
     
     // MARK: Orientation
     
-    func orientationChanged(_ notification: Notification) {
+    @objc func orientationChanged(_ notification: Notification) {
         currentOrientation = UIApplication.shared.statusBarOrientation
         (self.collectionViewLayout as! ASCollectionViewLayout).currentOrientation = currentOrientation
         self.collectionViewLayout.invalidateLayout()

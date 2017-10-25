@@ -10,7 +10,7 @@ class SubclassExampleController: SCCollectionViewController {
         self.navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(named: "button_back"), style: .plain, target: self, action: #selector(SubclassExampleController.back(_:)))
     }
     
-    func back(_ sender: UIButton) {
+    @objc func back(_ sender: UIButton) {
         _ = self.navigationController?.popViewController(animated: true)
     }
     

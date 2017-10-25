@@ -125,11 +125,11 @@ class DecorationViewVC: UICollectionViewController, UICollectionViewDelegateFlow
                 shadow.shadowBlurRadius = 4
                 let check2 =
                     NSAttributedString(string:"\u{2714}", attributes:[
-                        NSFontAttributeName: UIFont(name:"ZapfDingbatsITC", size:24)!,
-                        NSForegroundColorAttributeName: UIColor.green,
-                        NSStrokeColorAttributeName: UIColor.red,
-                        NSStrokeWidthAttributeName: -4,
-                        NSShadowAttributeName: shadow
+                        NSAttributedStringKey.font: UIFont(name:"ZapfDingbatsITC", size:24)!,
+                        NSAttributedStringKey.foregroundColor: UIColor.green,
+                        NSAttributedStringKey.strokeColor: UIColor.red,
+                        NSAttributedStringKey.strokeWidth: -4,
+                        NSAttributedStringKey.shadow: shadow
                         ])
                 con.scaleBy(x:1.1, y:1)
                 check2.draw(at:CGPoint(2,0))
@@ -167,7 +167,7 @@ class DecorationViewVC: UICollectionViewController, UICollectionViewDelegateFlow
     // Switch =======================
 
     // MARK: Change layouts - can just change layouts on the fly! with built-in animation!!!
-    func doSwitch(_ sender: Any!) {
+    @objc func doSwitch(_ sender: Any!) {
         // 新的iOS 7属性collectionView.collectionViewLayout指向原始布局
         let oldLayout = self.collectionView!.collectionViewLayout as! UICollectionViewFlowLayout
         var newLayout = self.collectionViewLayout as! UICollectionViewFlowLayout
@@ -183,7 +183,7 @@ class DecorationViewVC: UICollectionViewController, UICollectionViewDelegateFlow
 
     // MARK: Deletion - really quite similar to a table view
     /// delete selected cells
-    func doDelete(_ sender: Any) {
+    @objc func doDelete(_ sender: Any) {
         guard var arr = self.collectionView!.indexPathsForSelectedItems,
             arr.count > 0 else {return}
         // sort
@@ -215,7 +215,7 @@ class DecorationViewVC: UICollectionViewController, UICollectionViewDelegateFlow
     @nonobjc private let copy = #selector(UIResponderStandardEditActions.copy)
 
     var isDrag = false
-    func doDrag(_ sender: Any!) {
+    @objc func doDrag(_ sender: Any!) {
         isDrag = !isDrag
         self.collectionView!.reloadData()
     }

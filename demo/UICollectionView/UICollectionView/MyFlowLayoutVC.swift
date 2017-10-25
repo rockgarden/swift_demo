@@ -54,7 +54,7 @@ class MyFlowLayoutVC: UICollectionViewController, UICollectionViewDelegateFlowLa
         isEdit = !isEdit
     }
 
-    func handleLongGesture(gesture: UILongPressGestureRecognizer) {
+    @objc func handleLongGesture(gesture: UILongPressGestureRecognizer) {
         if !isEdit {
             return
         }
@@ -140,11 +140,11 @@ class MyFlowLayoutVC: UICollectionViewController, UICollectionViewDelegateFlowLa
                 shadow.shadowBlurRadius = 4
                 let check2 =
                     NSAttributedString(string:"\u{2714}", attributes:[
-                        NSFontAttributeName: UIFont(name:"ZapfDingbatsITC", size:24)!,
-                        NSForegroundColorAttributeName: UIColor.green,
-                        NSStrokeColorAttributeName: UIColor.red,
-                        NSStrokeWidthAttributeName: -4,
-                        NSShadowAttributeName: shadow
+                        NSAttributedStringKey.font: UIFont(name:"ZapfDingbatsITC", size:24)!,
+                        NSAttributedStringKey.foregroundColor: UIColor.green,
+                        NSAttributedStringKey.strokeColor: UIColor.red,
+                        NSAttributedStringKey.strokeWidth: -4,
+                        NSAttributedStringKey.shadow: shadow
                         ])
                 con.scaleBy(x:1.1, y:1)
                 check2.draw(at:CGPoint(2,0))
@@ -217,7 +217,7 @@ class MyFlowLayoutVC: UICollectionViewController, UICollectionViewDelegateFlowLa
     // we get automatic overlay of the selectedBackgroundView
 
     // MARK: Change layouts - can just change layouts on the fly! with built-in animation!!!
-    func doSwitch(_ sender: Any!) { // button
+    @objc func doSwitch(_ sender: Any!) { // button
         // new iOS 7 property collectionView.collectionViewLayout points to *original* layout, which is preserved
         let oldLayout = self.collectionView!.collectionViewLayout as! UICollectionViewFlowLayout
         var newLayout = self.collectionViewLayout as! UICollectionViewFlowLayout
@@ -228,12 +228,12 @@ class MyFlowLayoutVC: UICollectionViewController, UICollectionViewDelegateFlowLa
         self.collectionView!.setCollectionViewLayout(newLayout, animated:true)
     }
 
-    func doEdit(_ sender: Any) {
+    @objc func doEdit(_ sender: Any) {
         isEdit = !isEdit
     }
 
     // MARK: Deletion - really quite similar to a table view
-    func doDelete(_ sender: Any) { // button, delete selected cells
+    @objc func doDelete(_ sender: Any) { // button, delete selected cells
         guard var items = self.collectionView!.indexPathsForSelectedItems,
             items.count > 0 else {return}
         // sort

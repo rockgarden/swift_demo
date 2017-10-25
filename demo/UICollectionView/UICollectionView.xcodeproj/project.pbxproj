@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		440E314F1FA091DF007D3552 /* AKPFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 440E314A1FA091DF007D3552 /* AKPFlowLayout.swift */; };
+		440E31501FA091DF007D3552 /* AKPFlowLayoutAttributes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 440E314B1FA091DF007D3552 /* AKPFlowLayoutAttributes.swift */; };
+		440E31511FA091DF007D3552 /* AKPFlowLayoutError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 440E314C1FA091DF007D3552 /* AKPFlowLayoutError.swift */; };
+		440E31521FA091DF007D3552 /* AKPLayoutConfigOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 440E314D1FA091DF007D3552 /* AKPLayoutConfigOptions.swift */; };
 		44226FCE1E857549003734D3 /* HorizontalFloatingHeaderLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44226FC91E857549003734D3 /* HorizontalFloatingHeaderLayout.swift */; };
 		44226FCF1E857549003734D3 /* HorizontalFloatingHeaderVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44226FCA1E857549003734D3 /* HorizontalFloatingHeaderVC.swift */; };
 		44226FD01E857549003734D3 /* HeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 44226FCB1E857549003734D3 /* HeaderView.xib */; };
@@ -127,6 +131,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		440E314A1FA091DF007D3552 /* AKPFlowLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AKPFlowLayout.swift; sourceTree = "<group>"; };
+		440E314B1FA091DF007D3552 /* AKPFlowLayoutAttributes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AKPFlowLayoutAttributes.swift; sourceTree = "<group>"; };
+		440E314C1FA091DF007D3552 /* AKPFlowLayoutError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AKPFlowLayoutError.swift; sourceTree = "<group>"; };
+		440E314D1FA091DF007D3552 /* AKPLayoutConfigOptions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AKPLayoutConfigOptions.swift; sourceTree = "<group>"; };
 		44226FC91E857549003734D3 /* HorizontalFloatingHeaderLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HorizontalFloatingHeaderLayout.swift; sourceTree = "<group>"; };
 		44226FCA1E857549003734D3 /* HorizontalFloatingHeaderVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HorizontalFloatingHeaderVC.swift; path = ../HorizontalFloatingHeaderLayout/HorizontalFloatingHeaderVC.swift; sourceTree = "<group>"; };
 		44226FCB1E857549003734D3 /* HeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HeaderView.xib; sourceTree = "<group>"; };
@@ -262,6 +270,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		440E31481FA091DF007D3552 /* AKPFlowLayout */ = {
+			isa = PBXGroup;
+			children = (
+				440E314A1FA091DF007D3552 /* AKPFlowLayout.swift */,
+				440E314B1FA091DF007D3552 /* AKPFlowLayoutAttributes.swift */,
+				440E314C1FA091DF007D3552 /* AKPFlowLayoutError.swift */,
+				440E314D1FA091DF007D3552 /* AKPLayoutConfigOptions.swift */,
+			);
+			path = AKPFlowLayout;
+			sourceTree = "<group>";
+		};
 		440E82F21EE5944000DF4718 /* support files */ = {
 			isa = PBXGroup;
 			children = (
@@ -346,6 +365,7 @@
 				443ED7951E87FE1F0095C980 /* MultiDirectionLayout.swift */,
 				44966FF71E8AB42E00222F3E /* SubclassExampleController.swift */,
 				44966FF51E8AB41500222F3E /* SCCollectionViewController.swift */,
+				440E31481FA091DF007D3552 /* AKPFlowLayout */,
 				443F52A61E8D45A500C8E029 /* ASCollectionView */,
 				C2AA3B081E110ADE00C9E438 /* SheetView */,
 				C2BC5B831DC6E87B007F23F4 /* LayoutFromScratch */,
@@ -505,6 +525,7 @@
 					C2BC5B041DC6E729007F23F4 = {
 						CreatedOnToolsVersion = 8.0;
 						DevelopmentTeam = W3MH7MTTSB;
+						LastSwiftMigration = 0900;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -625,13 +646,16 @@
 				C202C0041E13AEEC00CEC12A /* CameraCell.swift in Sources */,
 				442A3C801E1294F400DB8E17 /* FlowLayoutVC.swift in Sources */,
 				C2BC5B8F1DC6E87B007F23F4 /* LayoutFlushVC.swift in Sources */,
+				440E31521FA091DF007D3552 /* AKPLayoutConfigOptions.swift in Sources */,
 				C2BC5B8E1DC6E87B007F23F4 /* LayoutNormalVC.swift in Sources */,
 				443ED7941E87FDF00095C980 /* MultiDirectionVC.swift in Sources */,
 				446AAA1E1E12B4F0008DA395 /* SectionDemoVC.swift in Sources */,
+				440E314F1FA091DF007D3552 /* AKPFlowLayout.swift in Sources */,
 				C2BC5B0B1DC6E72A007F23F4 /* SheetViewVC.swift in Sources */,
 				44B8084F1EE6F58D004B7610 /* MyFlowLayoutCell.swift in Sources */,
 				44DCE4861E8936C3000597B0 /* CirCleLayout.swift in Sources */,
 				44966FF61E8AB41500222F3E /* SCCollectionViewController.swift in Sources */,
+				440E31511FA091DF007D3552 /* AKPFlowLayoutError.swift in Sources */,
 				44966FF11E8AAD9F00222F3E /* SectionWaterFallLayout.swift in Sources */,
 				C27C6A331E654B780066B3C8 /* HeaderDemoVC.swift in Sources */,
 				44966FF81E8AB42E00222F3E /* SubclassExampleController.swift in Sources */,
@@ -647,6 +671,7 @@
 				44DCE4841E8936C3000597B0 /* LineLayout.swift in Sources */,
 				C2BC5B8D1DC6E87B007F23F4 /* MyLayout.swift in Sources */,
 				44966FEC1E8AA49B00222F3E /* ELWaterFlowLayoutVC.swift in Sources */,
+				440E31501FA091DF007D3552 /* AKPFlowLayoutAttributes.swift in Sources */,
 				44966FF31E8AAF4000222F3E /* WCLWaterFallLayout.swift in Sources */,
 				44DCE4881E89390D000597B0 /* FlowLayoutTestVC.swift in Sources */,
 				442A3C821E12976D00DB8E17 /* MyFlowLayoutVC.swift in Sources */,
@@ -800,7 +825,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.rockgarden.UICollectionView;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
+				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
+				SWIFT_VERSION = 4.0;
 			};
 			name = Debug;
 		};
@@ -813,7 +839,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.rockgarden.UICollectionView;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
+				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
+				SWIFT_VERSION = 4.0;
 			};
 			name = Release;
 		};

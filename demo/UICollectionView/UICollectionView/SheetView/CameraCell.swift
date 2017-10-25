@@ -30,7 +30,7 @@ class CameraCell: UICollectionReusableView {
         self.addGestureRecognizer(tap)
     }
     
-    func tapped() {
+    @objc func tapped() {
         self.cellDelegate?.presentCamera()
     }
     

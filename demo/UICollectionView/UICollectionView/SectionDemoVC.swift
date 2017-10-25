@@ -77,7 +77,7 @@ class SectionDemoVC: UIViewController, UICollectionViewDelegate, UICollectionVie
     //  }
 
     fileprivate var cellCanDel = false
-    func rightBarBtnItemAction(sender: Any?){
+    @objc func rightBarBtnItemAction(sender: Any?){
         cellCanDel = !cellCanDel
         for cell in sectionCollectionView.visibleCells{
             if cell is PaperCell{

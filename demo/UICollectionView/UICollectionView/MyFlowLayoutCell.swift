@@ -27,7 +27,7 @@ class MyFlowLayoutCell: UICollectionViewCell {
         contentView.addSubview(deleteButton)
     }
 
-    func capital(_ sender: Any!) {
+    @objc func capital(_ sender: Any!) {
         // 确认 collection view
         var v : UIView = self
         repeat { v = v.superview! } while !(v is UICollectionView)
@@ -38,7 +38,7 @@ class MyFlowLayoutCell: UICollectionViewCell {
         cv.delegate?.collectionView?(cv, performAction:#selector(capital), forItemAt: ip, withSender: sender)
     }
 
-    func deleteText() {
+    @objc func deleteText() {
         deleteClosure?(lab.text!)
     }
 

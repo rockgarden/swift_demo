@@ -89,11 +89,11 @@ class LayoutNormalVC : UICollectionViewController {
                 shadow.shadowBlurRadius = 4
                 let check2 =
                     NSAttributedString(string:"\u{2714}", attributes:[
-                        NSFontAttributeName: UIFont(name:"ZapfDingbatsITC", size:24)!,
-                        NSForegroundColorAttributeName: UIColor.green,
-                        NSStrokeColorAttributeName: UIColor.red,
-                        NSStrokeWidthAttributeName: -4,
-                        NSShadowAttributeName: shadow
+                        NSAttributedStringKey.font: UIFont(name:"ZapfDingbatsITC", size:24)!,
+                        NSAttributedStringKey.foregroundColor: UIColor.green,
+                        NSAttributedStringKey.strokeColor: UIColor.red,
+                        NSAttributedStringKey.strokeWidth: -4,
+                        NSAttributedStringKey.shadow: shadow
                         ])
                 con.scaleBy(x:1.1, y:1)
                 check2.draw(at:CGPoint(2,0))
@@ -117,7 +117,7 @@ class LayoutNormalVC : UICollectionViewController {
         return cell
     }
 
-    func doPush(_ sender: Any?) {
+    @objc func doPush(_ sender: Any?) {
         self.performSegue(withIdentifier: "show", sender: self)
     }
 }

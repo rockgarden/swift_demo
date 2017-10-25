@@ -17,11 +17,11 @@ typealias CollectionViewCellConfigureBlock = (_ cell:UICollectionViewCell, _ ite
 
 class CollectionViewDataSource: NSObject, UICollectionViewDataSource {
     
-    var items: Array = []
+    var items: Array = [Any]()
     var itemIdentifier:String?
     var configureCellBlock:CollectionViewCellConfigureBlock?
     
-    init(items: Array, cellIdentifier: String, configureBlock: @escaping CollectionViewCellConfigureBlock) {
+    init(items: Array<Any>, cellIdentifier: String, configureBlock: @escaping CollectionViewCellConfigureBlock) {
         self.items = items
         self.itemIdentifier = cellIdentifier
         self.configureCellBlock = configureBlock
