@@ -4,7 +4,7 @@
 
 import UIKit
 
-class RomeCollectionViewCell: UICollectionViewCell {
+class HomeCollectionViewCell: UICollectionViewCell {
 
     @IBOutlet weak var myRomeName: UILabel!
     override func awakeFromNib() {

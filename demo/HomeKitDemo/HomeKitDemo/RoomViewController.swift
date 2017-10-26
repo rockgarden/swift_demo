@@ -77,12 +77,14 @@ class RoomViewController: UIViewController {
             })
         }
     }
+    
     @IBAction func getAllMyAccessory(_ sender: UIButton) {
         for accessory in self.myRoom.accessories {
             self.myAccessoryArr.append(accessory)
         }
         self.myCuentTableView.reloadData()
     }
+
     @IBAction func openAccessoryBtn(_ sender: UIButton) {
         for i in 0..<self.arressoryCuen.services.count {
             let mySeverce = self.arressoryCuen.services[i]

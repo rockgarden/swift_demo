@@ -8,6 +8,7 @@
 
 /*
  https://mp.weixin.qq.com/s/neSSLxBAkCIWboLzOQ3YAQ
+ https://github.com/ooper-shlab/HMCatalog-Swift3
  启用HomeKit
  1.你的App必须有签名验证，既在开发者平台配置AppID
  2.启用HomeKit在项目中，在Xcode中
@@ -16,6 +17,7 @@
  3）.点击Capabilities查看你可以添加的应用服务列表。
  4）.滑到HomeKit 所在的行并打开关。
  5）.官网上下载模拟器。
+ 6）.模拟器创建一个智能设备 New Accessory, 创建设备的服务并是指定随机特征 Add Service.
  基本概念
  1）.home（HMHome）
  home代表的是一个智能设备的住所，用户拥有Home的数据并通过自己的任何一台iOS设备访问，用户也可以和客户共享一个Home，但是客户的权限会有更多限制。在用户的所有home中，会有一个常用的home，即为primary home。被指定为primary home的home默认是Siri指令的对象，并且不能指定home，就是说primary home是只读的不能去设定。

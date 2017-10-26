@@ -15,7 +15,7 @@
 		C22788FF1FA1C9C4006B0453 /* RoomViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C22788FD1FA1C9C3006B0453 /* RoomViewController.swift */; };
 		C22789001FA1C9C4006B0453 /* RoomViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C22788FE1FA1C9C4006B0453 /* RoomViewController.xib */; };
 		C22789021FA1C9FE006B0453 /* HomeKitTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = C22789011FA1C9FE006B0453 /* HomeKitTool.swift */; };
-		C22789051FA1CA7A006B0453 /* RomeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C22789031FA1CA79006B0453 /* RomeCollectionViewCell.swift */; };
+		C22789051FA1CA7A006B0453 /* HomeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C22789031FA1CA79006B0453 /* HomeCollectionViewCell.swift */; };
 		C22789061FA1CA7A006B0453 /* RomeCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C22789041FA1CA79006B0453 /* RomeCollectionViewCell.xib */; };
 		C227890C1FA1CF81006B0453 /* HomeKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C227890B1FA1CF81006B0453 /* HomeKit.framework */; };
 /* End PBXBuildFile section */
@@ -31,7 +31,7 @@
 		C22788FD1FA1C9C3006B0453 /* RoomViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoomViewController.swift; sourceTree = "<group>"; };
 		C22788FE1FA1C9C4006B0453 /* RoomViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RoomViewController.xib; sourceTree = "<group>"; };
 		C22789011FA1C9FE006B0453 /* HomeKitTool.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeKitTool.swift; sourceTree = "<group>"; };
-		C22789031FA1CA79006B0453 /* RomeCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RomeCollectionViewCell.swift; sourceTree = "<group>"; };
+		C22789031FA1CA79006B0453 /* HomeCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeCollectionViewCell.swift; sourceTree = "<group>"; };
 		C22789041FA1CA79006B0453 /* RomeCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RomeCollectionViewCell.xib; sourceTree = "<group>"; };
 		C22789071FA1CC80006B0453 /* HomeKitDemo.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = HomeKitDemo.entitlements; sourceTree = "<group>"; };
 		C227890B1FA1CF81006B0453 /* HomeKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HomeKit.framework; path = System/Library/Frameworks/HomeKit.framework; sourceTree = SDKROOT; };
@@ -74,7 +74,7 @@
 				C22788EF1FA1C96D006B0453 /* Main.storyboard */,
 				C22788FD1FA1C9C3006B0453 /* RoomViewController.swift */,
 				C22788FE1FA1C9C4006B0453 /* RoomViewController.xib */,
-				C22789031FA1CA79006B0453 /* RomeCollectionViewCell.swift */,
+				C22789031FA1CA79006B0453 /* HomeCollectionViewCell.swift */,
 				C22789041FA1CA79006B0453 /* RomeCollectionViewCell.xib */,
 				C22789011FA1C9FE006B0453 /* HomeKitTool.swift */,
 				C22788F21FA1C96D006B0453 /* Assets.xcassets */,
@@ -176,7 +176,7 @@
 				C22788EE1FA1C96D006B0453 /* ViewController.swift in Sources */,
 				C22788EC1FA1C96D006B0453 /* AppDelegate.swift in Sources */,
 				C22789021FA1C9FE006B0453 /* HomeKitTool.swift in Sources */,
-				C22789051FA1CA7A006B0453 /* RomeCollectionViewCell.swift in Sources */,
+				C22789051FA1CA7A006B0453 /* HomeCollectionViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
