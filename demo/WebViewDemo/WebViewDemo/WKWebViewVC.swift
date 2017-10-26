@@ -14,6 +14,15 @@ enum WkWebLoadType{
     case POSTWebURLString
 }
 
+internal struct ScriptMessageName {
+    static let choose = "choose"
+    static let btnDs = "btnDs"
+    static let btnMe = "btnMe"
+    static let upload = "upload"
+    static let appModel = "AppModel"
+    static let closeWindow = "closeWindow"
+}
+
 let FuncHistoryBack = "FuncHistoryBack"
 let FuncAddHotelLike = "FuncAddHotelLike"
 let FuncClickPhoto = "FuncClickPhoto"
@@ -42,13 +51,13 @@ class WKWebViewVC: UIViewController, UIViewControllerRestoration {
     //加载类型
     fileprivate var loadWebType: WkWebLoadType?
     
-    //关闭按钮
+    /// 关闭按钮
     fileprivate lazy var closeButtonItem: UIBarButtonItem = {
         let closeButtonItem = UIBarButtonItem.init(title: "关闭", style: UIBarButtonItemStyle.plain, target: self, action: #selector(closeItemClicked))
         return closeButtonItem
     }()
     
-    //返回按钮
+    /// 返回按钮
     fileprivate lazy var customBackBarItem: UIBarButtonItem = {
         let backItemImage = UIImage.init(named: "backItemImage")
         let backItemHlImage = UIImage.init(named: "backItemImage-hl")
@@ -104,7 +113,7 @@ class WKWebViewVC: UIViewController, UIViewControllerRestoration {
     
     /// 添加 WKWebView
     fileprivate func addWkWebView() {
-        // 创建 WKWebView 实例, frame 一般为 CGRect.zero
+        /// 创建 WKWebView 实例, frame 一般为 CGRect.zero
         let wv = WKWebView(frame: .zero, configuration: makeConfig())
         wv.restorationIdentifier = "wv"
         view.restorationIdentifier = "wvcontainer"
@@ -137,18 +146,21 @@ class WKWebViewVC: UIViewController, UIViewControllerRestoration {
         
         /// 开启手势交互 take advantage of built-in "back" and "forward" swipe gestures
         wv.allowsBackForwardNavigationGestures = true
-        wv.allowsBackForwardNavigationGestures = true
         wv.isMultipleTouchEnabled = true
         
         if #available(iOS 9.0, *) {wv.allowsLinkPreview = true}
         
-        //内容自适应
+        /// 内容自适应
         wv.sizeToFit()
         
         webView = wv
     }
     
-    fileprivate func makeConfig() -> WKWebViewConfiguration {
+    /// 构造WKWebViewConfiguration
+    /// 用于初始化Web视图的属性集合。使用WKWebViewConfiguration类，您可以确定网页呈现的速度，媒体播放的处理方式，用户可以选择的项目的粒度等等。WKWebViewConfiguration仅在首次初始化Web视图时使用。 在创建Web视图的配置后，您无法使用此类来更改。
+    /// 实现 Native 和 H5 交互。
+    /// - Returns: WKWebViewConfiguration
+    private func makeConfig() -> WKWebViewConfiguration {
         // 创建一个webiview的配置项
         let config = WKWebViewConfiguration()
         
@@ -160,23 +172,39 @@ class WKWebViewVC: UIViewController, UIViewControllerRestoration {
         // 默认是不能通过JS自动打开窗口的，必须通过用户交互才能打开
         config.preferences.javaScriptCanOpenWindowsAutomatically = false
         
-        // 通过js与webview内容交互配置
-        config.userContentController = WKUserContentController()
-        
+        // 配置js与webview交互内容
+        config.userContentController = makeWKUCC()
+
+        return config
+    }
+    
+    private func makeWKUCC() -> WKUserContentController {
         // FIXME: 调用JS Crash!
         /// 添加一个JS到HTML中，这样就可以直接在JS中调用我们添加的JS方法
-//        let script = WKUserScript(
-//            source: "function showAlert() { alert('在载入WKWebview时注入的JS方法'); }",
-//            injectionTime: .atDocumentStart, //在载入时就添加JS
-//            forMainFrameOnly: true) //只添加到mainFrame中
-//        config.userContentController.addUserScript(script)
-
+        /**
+         WKUserScript
+         source 就是我们要调用的 JS 函数或者我们要执行的 JS 代码
+         injectionTime 这个参数我们需要指定一个时间，在什么时候把我们在这段 JS 注入到 WebVeiw 中，它是一个枚举值，WKUserScriptInjectionTimeAtDocumentStart 或者 WKUserScriptInjectionTimeAtDocumentEnd
+         MainFrameOnly 因为在 JS 中，一个页面可能有多个 frame，这个参数指定我们的 JS 代码是否只在 mainFrame 中生效
+         */
+        let userScript = WKUserScript(
+            source: "function showAlert() { alert('在载入WKWebview时注入的JS方法'); }",
+            injectionTime: .atDocumentStart, //在载入时就添加JS
+            forMainFrameOnly: true) //只添加到mainFrame中
+        let wkUCC = WKUserContentController()
+        wkUCC.addUserScript(userScript)
+        wkUCC.add(self, name: ScriptMessageName.choose)
+        wkUCC.add(self, name: ScriptMessageName.btnDs)
+        wkUCC.add(self, name: ScriptMessageName.btnMe)
+        wkUCC.add(self, name: ScriptMessageName.upload)
+        
         // 添加messageHandlers.name,就可以在JS通过这个名称发送消息
         // JS code: window.webkit.messageHandlers.AppModel.postMessage({body: 'xxx'})
-        config.userContentController.add(self, name: "AppModel")
+        wkUCC.add(self, name: ScriptMessageName.appModel)
         // JS code: window.webkit.messageHandlers.closeWindow.postMessage({body: 'xxx'})
-        config.userContentController.add(self, name: "closeWindow")
-        return config
+        wkUCC.add(self, name: ScriptMessageName.closeWindow)
+        
+        return wkUCC
     }
     
     override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
@@ -226,10 +254,12 @@ class WKWebViewVC: UIViewController, UIViewControllerRestoration {
         /// 完成加载时才可处理JS
         if !webView.isLoading == true {
             // FIXME: 手动调用JS代码, 导致crash
-//            let js = "callJsAlert()";
-//            webView.evaluateJavaScript(js) { (_, _) -> Void in
-//                debugPrint("call js alert")
-//            }
+            let js = "callJsAlert()"
+            /// 直接调用 JS 字符串 Evaluates a JavaScript string.
+            /// The method sends the result of the script evaluation (or an error) to the completion handler. The completion handler always runs on the main thread.
+            webView.evaluateJavaScript(js) { (_, _) -> Void in
+                debugPrint("call js alert")
+            }
         }
     }
     
@@ -249,17 +279,19 @@ class WKWebViewVC: UIViewController, UIViewControllerRestoration {
         webView.reload()
     }
     
-    // webView is weak so viewDidDisappear & deinit don't need?
+    /// webView is weak so viewDidDisappear & deinit don't need?
     override func viewDidDisappear(_ animated: Bool) {
         // with webkit, probably no need for this, but no harm done
         webView.stopLoading()
-        removeScriptMessageHandler("AppModel")
-        removeScriptMessageHandler("closeWindow")
+        
+        removeScriptMessageHandler(ScriptMessageName.appModel)
+        removeScriptMessageHandler(ScriptMessageName.closeWindow)
+        
         webView.navigationDelegate = nil
         webView.uiDelegate = nil
     }
     
-    fileprivate func removeScriptMessageHandler(_ name: String?) {
+    private func removeScriptMessageHandler(_ name: String?) {
         if name != nil {
             webView.configuration.userContentController.removeScriptMessageHandler(forName: name!)
         }
@@ -270,13 +302,19 @@ class WKWebViewVC: UIViewController, UIViewControllerRestoration {
         webView.removeObserver(self, forKeyPath: #keyPath(WKWebView.title))
         webView.removeObserver(self, forKeyPath: #keyPath(WKWebView.estimatedProgress))
         webView.stopLoading()
+        
+        let ucc = webView.configuration.userContentController
+        ucc.removeAllUserScripts()
+        ucc.removeScriptMessageHandler(forName: ScriptMessageName.choose)
+        ucc.removeScriptMessageHandler(forName: ScriptMessageName.btnDs)
+        ucc.removeScriptMessageHandler(forName: ScriptMessageName.btnMe)
     }
     
-    func goBack(_ sender: Any) {
+    @objc func goBack(_ sender: Any) {
         webView.goBack()
     }
     
-    func goForward() {
+    @objc func goForward() {
         if webView.canGoForward {
             webView.goForward()
         }
@@ -465,7 +503,7 @@ extension WKWebViewVC : WKNavigationDelegate {
         snapShotsArray = [["request": request, "snapShotView": currentSnapShotView]]
     }
     
-    fileprivate func updateNavigationItems(){
+    private func updateNavigationItems(){
         if webView.canGoBack {
             let spaceButtonItem = UIBarButtonItem.init(barButtonSystemItem: .fixedSpace, target: nil, action: nil)
             spaceButtonItem.width = -6.5
@@ -589,15 +627,16 @@ extension WKWebViewVC: WKUIDelegate {
 }
 
 
-// MARK: WKScriptMessageHandler
+// MARK: - WKScriptMessageHandler
 extension WKWebViewVC: WKScriptMessageHandler {
     
     func userContentController(_ userContentController: WKUserContentController, didReceive message: WKScriptMessage) {
         print(message.body)
-        if message.name == "AppModel" {
-            print("message name is AppModel")
+        if message.name == ScriptMessageName.appModel {
+            debugPrint("message name is" + message.name)
         }
-        if message.name == "closeWindow" {
+        if message.name == ScriptMessageName.closeWindow {
+            debugPrint("message name is" + message.name)
             _ = navigationController?.popViewController(animated: true)
         }
     }

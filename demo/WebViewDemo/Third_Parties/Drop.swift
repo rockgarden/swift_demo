@@ -3,7 +3,7 @@
 //  SwiftyDrop
 //
 //  Created by MORITANAOKI on 2015/06/18.
-//  SwiftyDrop is a lightweight pure Swift simple and beautiful dropdown message.
+//  https://github.com/morizotter/SwiftyDrop.git
 //
 
 import UIKit
@@ -66,9 +66,9 @@ public final class Drop: UIView {
     
     fileprivate var upTimer: Timer?
     fileprivate var startTop: CGFloat?
-
+    
     fileprivate var action: DropAction?
-
+    
     convenience init(duration: Double) {
         self.init(frame: CGRect.zero)
         self.duration = duration
@@ -95,7 +95,7 @@ public final class Drop: UIView {
         removeFromSuperview()
     }
     
-    func deviceOrientationDidChange(_ notification: Notification) {
+    @objc func deviceOrientationDidChange(_ notification: Notification) {
         updateHeight()
     }
     
@@ -103,7 +103,7 @@ public final class Drop: UIView {
         scheduleUpTimer(0.0)
     }
     
-    func upFromTimer(_ timer: Timer) {
+    @objc func upFromTimer(_ timer: Timer) {
         if let interval = timer.userInfo as? Double {
             Drop.up(self, interval: interval)
         }
@@ -135,27 +135,27 @@ public final class Drop: UIView {
 }
 
 extension Drop {
-    public class func down(_ status: String, state: DropState = .default, duration: Double = Drop.PRESET_DURATION, action: DropAction? = nil) {
+    public class func down(_ status: String, state: DropState = .default, duration: Double = 4.0, action: DropAction? = nil) {
         show(status, state: state, duration: duration, action: action)
     }
-
-    public class func down<T: DropStatable>(_ status: String, state: T, duration: Double = Drop.PRESET_DURATION, action: DropAction? = nil) {
+    
+    public class func down<T: DropStatable>(_ status: String, state: T, duration: Double = 4.0, action: DropAction? = nil) {
         show(status, state: state, duration: duration, action: action)
     }
-
+    
     fileprivate class func show(_ status: String, state: DropStatable, duration: Double, action: DropAction?) {
         self.upAll()
         let drop = Drop(duration: duration)
         UIApplication.shared.keyWindow?.addSubview(drop)
         guard let window = drop.window else { return }
-
+        
         let heightConstraint = NSLayoutConstraint(item: drop, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .height, multiplier: 1.0, constant: 100.0)
         drop.addConstraint(heightConstraint)
         drop.heightConstraint = heightConstraint
-
+        
         let topConstraint = NSLayoutConstraint(item: drop, attribute: .top, relatedBy: .equal, toItem: window, attribute: .top, multiplier: 1.0, constant: -heightConstraint.constant)
         drop.topConstraint = topConstraint
-
+        
         window.addConstraints(
             [
                 topConstraint,
@@ -163,7 +163,7 @@ extension Drop {
                 NSLayoutConstraint(item: drop, attribute: .right, relatedBy: .equal, toItem: window, attribute: .right, multiplier: 1.0,constant: 0.0)
             ]
         )
-
+        
         drop.setup(status, state: state)
         drop.action = action
         drop.updateHeight()
@@ -176,9 +176,9 @@ extension Drop {
             withDuration: TimeInterval(0.25),
             delay: TimeInterval(0.0),
             options: [.allowUserInteraction, .curveEaseOut],
-            animations: { _ in
+            animations: {
                 superview.layoutIfNeeded()
-            }, completion: nil
+        }, completion: nil
         )
     }
     
@@ -192,10 +192,10 @@ extension Drop {
             withDuration: interval,
             delay: TimeInterval(0.0),
             options: [.allowUserInteraction, .curveEaseIn],
-            animations: { _ in
+            animations: {
                 superview.layoutIfNeeded()
-            }) { [weak drop] finished -> Void in
-                if let drop = drop { drop.removeFromSuperview() }
+        }) { [weak drop] finished -> Void in
+            if let drop = drop { drop.removeFromSuperview() }
         }
     }
     
@@ -224,7 +224,7 @@ extension Drop {
                 NSLayoutConstraint(item: backgroundView, attribute: .top, relatedBy: .equal, toItem: self, attribute: .top, multiplier: 1.0, constant: -UIScreen.main.bounds.height),
                 NSLayoutConstraint(item: backgroundView, attribute: .right, relatedBy: .equal, toItem: self, attribute: .right, multiplier: 1.0, constant: 0.0),
                 NSLayoutConstraint(item: backgroundView, attribute: .bottom, relatedBy: .equal, toItem: self, attribute: .bottom, multiplier: 1.0, constant: 0.0),
-            ]
+                ]
         )
         
         if let blurEffect = state.blurEffect {
@@ -237,7 +237,7 @@ extension Drop {
                     NSLayoutConstraint(item: visualEffectView, attribute: .top, relatedBy: .equal, toItem: self, attribute: .top, multiplier: 1.0, constant: -UIScreen.main.bounds.height),
                     NSLayoutConstraint(item: visualEffectView, attribute: .right, relatedBy: .equal, toItem: self, attribute: .right, multiplier: 1.0, constant: 0.0),
                     NSLayoutConstraint(item: visualEffectView, attribute: .bottom, relatedBy: .equal, toItem: self, attribute: .bottom, multiplier: 1.0, constant: 0.0),
-                ]
+                    ]
             )
             
             let vibrancyEffectView = UIVisualEffectView(effect: UIVibrancyEffect(blurEffect: blurEffect))
@@ -281,12 +281,12 @@ extension Drop {
 }
 
 extension Drop {
-    func up(_ sender: AnyObject) {
+    @objc func up(_ sender: AnyObject) {
         action?()
         self.up()
     }
     
-    func pan(_ sender: AnyObject) {
+    @objc func pan(_ sender: AnyObject) {
         let pan = sender as! UIPanGestureRecognizer
         switch pan.state {
         case .began:
@@ -315,9 +315,9 @@ extension Drop {
                     withDuration: TimeInterval(0.1),
                     delay: TimeInterval(0.0),
                     options: [.allowUserInteraction, .curveEaseOut],
-                    animations: { _ in
+                    animations: {
                         superview.layoutIfNeeded()
-                    }, completion: nil
+                }, completion: nil
                 )
             }
         case .failed, .cancelled:

@@ -1,5 +1,5 @@
 //
-//  XFWKWebView.swift
+//  WKWebView.swift
 //  wkWebView
 //
 //  Created by XiaoFeng on 2016/12/26.
@@ -8,7 +8,6 @@
 
 import UIKit
 import WebKit
-
 
 class WKWebViewController: UIViewController {
     
@@ -63,7 +62,7 @@ class WKWebViewController: UIViewController {
     }()
     
     //返回按钮
-    fileprivate lazy var customBackBarItem:UIBarButtonItem = {
+    fileprivate lazy var customBackBarItem: UIBarButtonItem = {
         let backItemImage = UIImage.init(named: "backItemImage")
         let backItemHlImage = UIImage.init(named: "backItemImage-hl")
         let backButton = UIButton.init(type: .system)

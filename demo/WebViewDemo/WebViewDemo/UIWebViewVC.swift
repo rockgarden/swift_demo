@@ -94,7 +94,7 @@ class UIWebViewVC: UIViewController, UIViewControllerRestoration {
         )
     }
 
-    func swiped(_ g: UIGestureRecognizer) {
+    @objc func swiped(_ g: UIGestureRecognizer) {
         print("swiped")
     }
 
@@ -118,7 +118,7 @@ class UIWebViewVC: UIViewController, UIViewControllerRestoration {
     }
 
     var which = 1
-    func loadOther() {
+    @objc func loadOther() {
         if which < 11 {
             which += 1
         } else {
@@ -182,7 +182,7 @@ class UIWebViewVC: UIViewController, UIViewControllerRestoration {
         }
     }
 
-    func goBack(_ sender: Any) {
+    @objc func goBack(_ sender: Any) {
         if self.wv.canGoBack {
             self.wv.goBack()
         }

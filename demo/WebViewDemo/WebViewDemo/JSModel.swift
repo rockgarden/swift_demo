@@ -65,7 +65,7 @@ import JavaScriptCore
     // FIXME: 无法调用
     func showAlertMsg(_ title: String, msg: String) {
         print("js call objc method: showAlertMsg")
-        DispatchQueue.main.async { _ in
+        DispatchQueue.main.async { 
             let alert = UIAlertController(title: title, message: msg, preferredStyle: .alert)
             alert.addAction(UIAlertAction(title: "ok", style: .default, handler: nil))
             self.controller?.present(alert, animated: true, completion: nil)
@@ -94,7 +94,7 @@ import JavaScriptCore
     }
     
     func showDialog(_ title: String, message: String){
-        DispatchQueue.main.async { _ in
+        DispatchQueue.main.async { 
             let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
             alert.addAction(UIAlertAction(title: "ok", style: .default, handler: nil))
             self.controller?.present(alert, animated: true, completion: nil)

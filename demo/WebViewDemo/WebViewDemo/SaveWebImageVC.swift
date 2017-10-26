@@ -81,7 +81,7 @@ class SaveWebImageVC: UIViewController, UIWebViewDelegate {
         return true
     }
     
-    func handleLongTouch() {
+    @objc func handleLongTouch() {
         let hokusai = Hokusai()
         _ = hokusai.addButton("Save") {
             Drop.down("Saving...", state: DropState.info)

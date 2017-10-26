@@ -187,7 +187,7 @@ final public class HOKMenuView: UIView {
         shapeLayer.path = path.cgPath
     }
     
-    func tick(_ displayLink: CADisplayLink) {
+    @objc func tick(_ displayLink: CADisplayLink) {
         if let presentationLayer = layer.presentation() {
             var verticalOffset = self.layer.frame.origin.y - presentationLayer.frame.origin.y
             
@@ -252,7 +252,7 @@ final public class Hokusai: UIViewController, UIGestureRecognizerDelegate {
         NotificationCenter.default.addObserver(self, selector: #selector(Hokusai.onOrientationChange(_:)), name: NSNotification.Name.UIDeviceOrientationDidChange, object: nil)
     }
     
-    func onOrientationChange(_ notification: Notification){
+    @objc func onOrientationChange(_ notification: Notification){
 
         kButtonWidth = view.frame.width * 0.8
 
@@ -413,7 +413,7 @@ final public class Hokusai: UIViewController, UIGestureRecognizerDelegate {
     }
     
     // Dismiss the menuview
-    public func dismiss() {
+    @objc public func dismiss() {
         // Background and Menuview
         UIView.animate(withDuration: HOKConsts().animationDuration,
             delay: 0.0,
@@ -431,7 +431,7 @@ final public class Hokusai: UIViewController, UIGestureRecognizerDelegate {
     }
     
     // When the buttons are tapped, this method is called.
-    func buttonTapped(_ btn:HOKButton) {
+    @objc func buttonTapped(_ btn:HOKButton) {
         if btn.actionType == HOKAcitonType.closure {
             btn.action()
         } else if btn.actionType == HOKAcitonType.selector {

@@ -67,6 +67,7 @@ open class WKMagicBridge: NSObject, WKScriptMessageHandler {
             "  }, false);\n" +
             (isolatedContext ? "" : "window.wkutils = wkutils;\n") +
             "}) ();"
+        
         let newScript = WKUserScript(source: source, injectionTime: .atDocumentStart, forMainFrameOnly: true)
 
         let controller = webView.configuration.userContentController

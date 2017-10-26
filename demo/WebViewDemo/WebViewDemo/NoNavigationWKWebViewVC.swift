@@ -188,7 +188,7 @@ class NoNavigationWKWebViewVC: UIViewController, WKNavigationDelegate, WKScriptM
         }
     }
 
-    func swiped(_ g:UIGestureRecognizer) {
+    @objc func swiped(_ g:UIGestureRecognizer) {
         print("swiped")
     }
 
@@ -209,6 +209,7 @@ class NoNavigationWKWebViewVC: UIViewController, WKNavigationDelegate, WKScriptM
         do {
             _ = "var meta = document.createElement('meta'); meta.setAttribute('name', 'viewport'); meta.setAttribute('content', 'width=device-width, user-scalable=no'); document.getElementsByTagName('head')[0].appendChild(meta);"
             let rule = self.cssrule
+            /// <#Description#>
             let script = WKUserScript(source: rule, injectionTime: .atDocumentStart, forMainFrameOnly: true)
             let config = self.wv.configuration
             config.userContentController.addUserScript(script)
@@ -244,7 +245,7 @@ class NoNavigationWKWebViewVC: UIViewController, WKNavigationDelegate, WKScriptM
     }
 
     var which = 1
-    func loadOther() {
+    @objc func loadOther() {
         if which < 18 {
             which += 1
         } else {
@@ -318,7 +319,7 @@ class NoNavigationWKWebViewVC: UIViewController, WKNavigationDelegate, WKScriptM
     }
 
     /// showing how to inject JavaScript dynamically (as opposed to at page-load time)
-    func doDecreaseSize (_ sender: Any) {
+    @objc func doDecreaseSize (_ sender: Any) {
         self.fontsize -= 1
         if self.fontsize < 10 {
             self.fontsize = 20
@@ -371,7 +372,7 @@ class NoNavigationWKWebViewVC: UIViewController, WKNavigationDelegate, WKScriptM
         decisionHandler(.allow)
     }
 
-    func setWhichNav() {
+    @objc func setWhichNav() {
         if whichNav == 0 {
             whichNav = 1
         } else {

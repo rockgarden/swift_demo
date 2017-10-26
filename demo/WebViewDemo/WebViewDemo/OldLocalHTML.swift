@@ -101,7 +101,7 @@ class OldLocalHTML: UIViewController, UIViewControllerRestoration, WKScriptMessa
         let fileName =  String("\( ProcessInfo.processInfo.globallyUniqueString)_TestFile.html")
         
         var error: NSError?
-        let tempHtmlPath = (NSTemporaryDirectory() as NSString).appendingPathComponent(fileName!)
+        let tempHtmlPath = (NSTemporaryDirectory() as NSString).appendingPathComponent(fileName)
         do {
             try FileManager.default.removeItem(atPath: tempHtmlPath)
         } catch let error1 as NSError {
@@ -128,7 +128,7 @@ class OldLocalHTML: UIViewController, UIViewControllerRestoration, WKScriptMessa
         
         let fileName =  String("\( ProcessInfo.processInfo.globallyUniqueString)_TestFile.html")
         
-        let tempHtmlPath = (NSTemporaryDirectory() as NSString).appendingPathComponent(fileName!)
+        let tempHtmlPath = (NSTemporaryDirectory() as NSString).appendingPathComponent(fileName)
         
         if let htmlPath = mainBundle.path(forResource: "TestFile", ofType: "html") {
             do {
