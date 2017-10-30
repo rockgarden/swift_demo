@@ -134,7 +134,7 @@ extension ViewController: UICollectionViewDataSource, UICollectionViewDelegateFl
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         if indexPath.row < self.roomArr.count{
             //  跳转到对应的room中
-            let viewRoomCon = RoomViewController()
+            let viewRoomCon = RoomVC()
             let room = self.roomArr[indexPath.row]
             viewRoomCon.myRoom = room
             

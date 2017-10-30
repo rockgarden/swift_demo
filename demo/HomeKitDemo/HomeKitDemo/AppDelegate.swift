@@ -37,12 +37,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        self.window = UIWindow.init(frame: UIScreen.main.bounds)
-        let stor = UIStoryboard.init(name: "Main", bundle: nil)
-        let vac = stor.instantiateViewController(withIdentifier: "ViewController")
-        let nav = UINavigationController.init(rootViewController: vac)
-        self.window?.rootViewController = nav
-        self.window?.makeKeyAndVisible()
+//        self.window = UIWindow.init(frame: UIScreen.main.bounds)
+//        let stor = UIStoryboard.init(name: "Main", bundle: nil)
+//        let vac = stor.instantiateViewController(withIdentifier: "ViewController")
+//        let nav = UINavigationController.init(rootViewController: vac)
+//        self.window?.rootViewController = nav
+//        self.window?.makeKeyAndVisible()
         return true
     }
     

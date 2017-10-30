@@ -1,10 +1,10 @@
 //
-//  RoomViewController.swift
+//  RoomVC.swift
 //
 
 import HomeKit
 
-class RoomViewController: UIViewController {
+class RoomVC: UIViewController {
     
     @IBOutlet weak var myTableView: UITableView!
     
@@ -140,7 +140,7 @@ class RoomViewController: UIViewController {
 
 
 // MARK: - <#UITableViewDelegate,UITableViewDataSource,HMAccessoryBrowserDelegate#>
-extension RoomViewController:UITableViewDelegate,UITableViewDataSource,HMAccessoryBrowserDelegate,HMAccessoryDelegate{
+extension RoomVC:UITableViewDelegate,UITableViewDataSource,HMAccessoryBrowserDelegate,HMAccessoryDelegate{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if tableView.tag == 100{
              return self.accessoryArr.count

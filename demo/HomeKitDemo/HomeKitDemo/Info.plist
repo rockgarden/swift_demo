@@ -42,8 +42,30 @@
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
 	<key>NSHomeKitUsageDescription</key>
-	<string>The app need use  HomeKit.</string>
+	<string>The app needs access top your HomeKit devices.</string>
 	<key>NSCameraUsageDescription</key>
 	<string>The app need use Camera.</string>
+	<key>UISupportedInterfaceOrientations~ipad - 2</key>
+	<array>
+		<string>UIInterfaceOrientationPortrait</string>
+		<string>UIInterfaceOrientationPortraitUpsideDown</string>
+		<string>UIInterfaceOrientationLandscapeLeft</string>
+		<string>UIInterfaceOrientationLandscapeRight</string>
+	</array>
+	<key>UISupportedInterfaceOrientations - 2</key>
+	<array>
+		<string>UIInterfaceOrientationPortrait</string>
+		<string>UIInterfaceOrientationPortraitUpsideDown</string>
+		<string>UIInterfaceOrientationLandscapeLeft</string>
+		<string>UIInterfaceOrientationLandscapeRight</string>
+	</array>
+	<key>UIStatusBarStyle</key>
+	<string>UIStatusBarStyleDefault</string>
+	<key>UIStatusBarHidden</key>
+	<false/>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>HMCatalog needs your location to search for relevant places in your area.</string>
+	<key>UIRequiresFullscreen</key>
+	<false/>
 </dict>
 </plist>
