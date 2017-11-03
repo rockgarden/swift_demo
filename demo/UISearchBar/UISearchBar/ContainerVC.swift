@@ -83,7 +83,7 @@ class ContainerVC : AppTableVC, UISearchBarDelegate {
         self.navigationItem.rightBarButtonItem = b
     }
 
-    func doSearch(_ sender: Any) {
+    @objc func doSearch(_ sender: Any) {
 
         let src = SearchResultsController(data: self.sectionData)
         let searcher = AppSearchController(searchResultsController: src)

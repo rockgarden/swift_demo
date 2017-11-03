@@ -80,15 +80,15 @@ class UISearchBarVC: UIViewController {
                                               forLeftSegmentState:.normal, rightSegmentState:.normal)
         
         let atts = [
-            NSFontAttributeName: UIFont(name:"GillSans-Bold", size:16)!,
-            NSForegroundColorAttributeName: UIColor.white,
-            NSShadowAttributeName: lend {
+            NSAttributedStringKey.font.rawValue: UIFont(name:"GillSans-Bold", size:16)!,
+            NSAttributedStringKey.foregroundColor: UIColor.white,
+            NSAttributedStringKey.shadow: lend {
                 (shad:NSShadow) in
                 shad.shadowColor = UIColor.gray
                 shad.shadowOffset = CGSize(width: 2,height: 2)
             },
-            NSUnderlineStyleAttributeName: NSUnderlineStyle.styleDouble.rawValue
-        ] as [String : Any]
+            NSAttributedStringKey.underlineStyle: NSUnderlineStyle.styleDouble.rawValue
+        ] as! [String : Any]
         self.sb.setScopeBarButtonTitleTextAttributes(atts, for:UIControlState())
         self.sb.setScopeBarButtonTitleTextAttributes(atts, for:.selected)
     }

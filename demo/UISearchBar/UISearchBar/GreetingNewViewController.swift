@@ -46,7 +46,7 @@ class GreetingNewViewController: UIViewController, UISearchResultsUpdating, UISe
 		}
 	}
 
-	func showSearch() {
+	@objc func showSearch() {
 		self.navigationItem.rightBarButtonItem = nil
 		self.navigationItem.titleView = resultSearchController.searchBar
 		resultSearchController.searchBar.becomeFirstResponder()
