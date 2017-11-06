@@ -36,7 +36,7 @@ class ActivityIndicatorCell: UITableViewCell {
             v.startAnimating()
         } else {
             if let v = self.viewWithTag(1001) {
-                (v as UIActivityIndicatorView).stopAnimating()
+                (v as! UIActivityIndicatorView).stopAnimating()
                 v.removeFromSuperview()
             }
         }

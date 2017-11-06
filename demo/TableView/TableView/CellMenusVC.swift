@@ -54,7 +54,7 @@ class CellMenusVC : AppTableVC {
 
 private class MenuCell : UITableViewCell {
 
-    func abbrev(_ sender: Any?) {
+    @objc func abbrev(_ sender: Any?) {
         // find my table view
         var v : UIView = self
         repeat {v = v.superview!} while !(v is UITableView)

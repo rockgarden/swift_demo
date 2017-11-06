@@ -91,6 +91,7 @@
 		44C2FEF61F41DD5F00419198 /* EIRRCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44C2FEF41F41DD5F00419198 /* EIRRCell.swift */; };
 		44C2FEF71F41DD5F00419198 /* EIRRCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 44C2FEF51F41DD5F00419198 /* EIRRCell.xib */; };
 		44C858EB1F0146DA00837A89 /* VariableRowHeightsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44C858EA1F0146DA00837A89 /* VariableRowHeightsVC.swift */; };
+		44E0DB1F1FB08F59006B8966 /* CollectionViewInCellVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44E0DB1E1FB08F58006B8966 /* CollectionViewInCellVC.swift */; };
 		44FFE58E1F98FE1D005BB158 /* TableViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44FFE58D1F98FE1C005BB158 /* TableViewDataSource.swift */; };
 		44FFE5901F98FE8A005BB158 /* MultiSectionTableViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44FFE58F1F98FE8A005BB158 /* MultiSectionTableViewDataSource.swift */; };
 		C22758D01D6C29C6008C1F18 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C22758CF1D6C29C6008C1F18 /* AppDelegate.swift */; };
@@ -194,6 +195,7 @@
 		44C2FEF41F41DD5F00419198 /* EIRRCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EIRRCell.swift; sourceTree = "<group>"; };
 		44C2FEF51F41DD5F00419198 /* EIRRCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EIRRCell.xib; sourceTree = "<group>"; };
 		44C858EA1F0146DA00837A89 /* VariableRowHeightsVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VariableRowHeightsVC.swift; sourceTree = "<group>"; };
+		44E0DB1E1FB08F58006B8966 /* CollectionViewInCellVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionViewInCellVC.swift; sourceTree = "<group>"; };
 		44FFE58D1F98FE1C005BB158 /* TableViewDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewDataSource.swift; sourceTree = "<group>"; };
 		44FFE58F1F98FE8A005BB158 /* MultiSectionTableViewDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MultiSectionTableViewDataSource.swift; sourceTree = "<group>"; };
 		C22758CC1D6C29C6008C1F18 /* TableView.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TableView.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -380,6 +382,7 @@
 				44C2FEF51F41DD5F00419198 /* EIRRCell.xib */,
 				44FFE58D1F98FE1C005BB158 /* TableViewDataSource.swift */,
 				44FFE58F1F98FE8A005BB158 /* MultiSectionTableViewDataSource.swift */,
+				44E0DB1E1FB08F58006B8966 /* CollectionViewInCellVC.swift */,
 				C22758D61D6C29C6008C1F18 /* Assets.xcassets */,
 				44ABF2901EDD7338004A353A /* resources */,
 				C22758DB1D6C29C6008C1F18 /* Info.plist */,
@@ -432,7 +435,7 @@
 					C22758CB1D6C29C6008C1F18 = {
 						CreatedOnToolsVersion = 7.3;
 						DevelopmentTeam = W3MH7MTTSB;
-						LastSwiftMigration = 0810;
+						LastSwiftMigration = 0900;
 					};
 				};
 			};
@@ -564,6 +567,7 @@
 				4436C6F01EEB8A7C008DAEB3 /* CellMenusVC.swift in Sources */,
 				44ABF28F1EDD7304004A353A /* AddCellSubviewsbyXibVC.swift in Sources */,
 				C22758D01D6C29C6008C1F18 /* AppDelegate.swift in Sources */,
+				44E0DB1F1FB08F59006B8966 /* CollectionViewInCellVC.swift in Sources */,
 				44ABF2981EDD91A7004A353A /* InitCellbyCodeVC.swift in Sources */,
 				4483B2DD1D7FFF890077E75C /* RJExpandableTableViewCell.swift in Sources */,
 				C28AAB251DFE6344009DE34B /* SubTableCell.swift in Sources */,
@@ -698,7 +702,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.rockgarden.TableView;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
+				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
+				SWIFT_VERSION = 4.0;
 			};
 			name = Debug;
 		};
@@ -712,7 +717,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.rockgarden.TableView;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
+				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
+				SWIFT_VERSION = 4.0;
 			};
 			name = Release;
 		};

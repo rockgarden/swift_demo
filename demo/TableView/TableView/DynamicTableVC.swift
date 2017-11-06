@@ -86,7 +86,7 @@ class DynamicTableVC : AppTableVC {
         return h
     }
 
-    func tapped (_ g : UIGestureRecognizer) {
+    @objc func tapped (_ g : UIGestureRecognizer) {
         let v = g.view as! MyHeaderView
         let sec = v.section
         let ct = self.sectionData[sec].count

@@ -43,7 +43,7 @@ extension SearchResultsController: UISearchResultsUpdating {
 }
 
 extension SearchResultsController: UIGestureRecognizerDelegate {
-	func tap(_ g: UITapGestureRecognizer) {
+	@objc func tap(_ g: UITapGestureRecognizer) {
 		// find the UISearchController and dismiss it
 		var r: UIResponder = g.view!
 		while !(r is UISearchController) { r = r.next! }

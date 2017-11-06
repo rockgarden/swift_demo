@@ -18,7 +18,7 @@ class RowActionsVC : AppTableVC {
         }
     }
 
-    func doEdit(_ sender: Any?) {
+    @objc func doEdit(_ sender: Any?) {
         var which : UIBarButtonSystemItem
         if !self.tableView.isEditing {
             self.tableView.setEditing(true, animated:true)

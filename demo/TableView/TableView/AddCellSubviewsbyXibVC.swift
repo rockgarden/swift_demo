@@ -14,7 +14,7 @@ class AddCellSubviewsbyXibVC: UITableViewController {
         navigationItem.rightBarButtonItem = a
     }
 
-    func action() {
+    @objc func action() {
         addInNib = !addInNib
         tableView.reloadData()
     }

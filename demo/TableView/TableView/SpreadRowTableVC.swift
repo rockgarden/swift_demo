@@ -96,7 +96,7 @@ class SpreadRowTableVC: UIViewController,UITableViewDelegate,UITableViewDataSour
         //设置行间距（同样这里可以设置行号，间距，对齐方式）
         paraghStyle.lineSpacing = cell.cellTitle.font.lineHeight
         //添加属性，设置行间距
-        attributesString.addAttributes([NSParagraphStyleAttributeName : paraghStyle], range: NSMakeRange(0, content.characters.count))
+        attributesString.addAttributes([NSAttributedStringKey.paragraphStyle : paraghStyle], range: NSMakeRange(0, content.characters.count))
         cell.cellTitle.attributedText = attributesString
         cell.selectionStyle = UITableViewCellSelectionStyle.none
         return cell

@@ -9,11 +9,11 @@ import UIKit
 typealias TableViewCellConfigureBlock = (_ cell: UITableViewCell, _ item: AnyObject?) -> ()
 
 class TableViewDataSource: NSObject, UITableViewDataSource {
-    var items: Array = []
+    var items: Array = [Any]()
     var itemIdentifier: String?
     var configureCellBlock: TableViewCellConfigureBlock?
     
-    init(items: Array, cellIdentifier: String, configureBlock: @escaping TableViewCellConfigureBlock){
+    init(items: Array<Any>, cellIdentifier: String, configureBlock: @escaping TableViewCellConfigureBlock){
         self.items = items
         self.itemIdentifier = cellIdentifier
         self.configureCellBlock = configureBlock
