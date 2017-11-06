@@ -2,6 +2,9 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:demo/CommandLineToolDemo/CommandLineToolDemo.xcodeproj">
+   </FileRef>
+   <FileRef
       location = "group:demo/HomeKitDemo/HomeKitDemo.xcodeproj">
    </FileRef>
    <FileRef

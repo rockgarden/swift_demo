@@ -5,6 +5,9 @@
 //  Created by wangkan on 2017/6/28.
 //  Copyright © 2017年 rockgarden. All rights reserved.
 //
+//  Advanced Animations with UIKit
+//  https://developer.apple.com/videos/play/wwdc2017/230/
+//
 
 import UIKit
 
