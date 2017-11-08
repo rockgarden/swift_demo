@@ -178,7 +178,7 @@ open class SeamlessScrollingHeaderViewController: UIViewController, UITableViewD
         headerView.alpha = 1 - 3 * alpha
         self.navigationController?.navigationBar.setBackgroundImage(self.colorImage(navigationBarBackgroundColor.withAlphaComponent(alphaForNavBar), size: CGSize(width: 1, height: 1)), for: .default)
         self.navigationController?.navigationBar.shadowImage = self.colorImage(navigationBarShadowColor.withAlphaComponent(alphaForNavBar), size: CGSize(width: 1, height: 1))
-        self.navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: navigationBarTitleColor.withAlphaComponent(alphaForNavBar)]
+        self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedStringKey.foregroundColor: navigationBarTitleColor.withAlphaComponent(alphaForNavBar)]
     }
 
     /*! Create UIImage from UIColor

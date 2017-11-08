@@ -28,7 +28,7 @@ class Main_UIResponder: UITableViewController {
 class MyClass : NSObject {}
 
 class MyClass2 : NSObject {
-    func woohoo() {
+    @objc func woohoo() {
         print("woohoo")
     }
 }

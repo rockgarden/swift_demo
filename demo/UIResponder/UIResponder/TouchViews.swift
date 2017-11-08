@@ -83,7 +83,7 @@ class MyView2Not : UIView {
         //NSObject.cancelPreviousPerformRequests(withTarget: self, selector: #selector(MyView2Not.touchWasLong), object: nil)
     }
 
-    func touchWasLong() {
+    @objc func touchWasLong() {
         print("long")
     }
 
