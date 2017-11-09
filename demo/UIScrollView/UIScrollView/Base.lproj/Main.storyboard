@@ -1,12 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="Rs6-YA-hIo">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="Rs6-YA-hIo">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="HelveticaNeue.ttc">
+            <string>HelveticaNeue-Bold</string>
+        </array>
+    </customFonts>
     <scenes>
         <!--ScrollView-->
         <scene sceneID="t1J-BX-uHN">
@@ -27,7 +34,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="ScrollView in code" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="PdI-sM-jK0">
-                                                    <rect key="frame" x="15" y="0.0" width="345" height="43.5"/>
+                                                    <rect key="frame" x="16" y="0.0" width="343" height="43.5"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
@@ -44,7 +51,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Two Way ScrollView" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="fft-ne-Hy3">
-                                                    <rect key="frame" x="15" y="0.0" width="345" height="43.5"/>
+                                                    <rect key="frame" x="16" y="0.0" width="343" height="43.5"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
@@ -64,7 +71,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Drag in ScrollView" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="JHi-5M-McO">
-                                                    <rect key="frame" x="15" y="0.0" width="345" height="43.5"/>
+                                                    <rect key="frame" x="16" y="0.0" width="343" height="43.5"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
@@ -84,7 +91,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Parallax Header Demo" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Bfu-gr-Ka0">
-                                                    <rect key="frame" x="15" y="0.0" width="345" height="43.5"/>
+                                                    <rect key="frame" x="16" y="0.0" width="343" height="43.5"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
@@ -104,7 +111,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Dynamic Collection " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="evE-DS-lGc">
-                                                    <rect key="frame" x="15" y="0.0" width="345" height="43.5"/>
+                                                    <rect key="frame" x="16" y="0.0" width="343" height="43.5"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
@@ -124,7 +131,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="ScrollView in Nib and ContentSize Demo" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="pxs-BG-5VD">
-                                                    <rect key="frame" x="15" y="0.0" width="345" height="43.5"/>
+                                                    <rect key="frame" x="16" y="0.0" width="343" height="43.5"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
@@ -144,7 +151,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Scroll with tiling Demo" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="yxk-Hk-Ugn">
-                                                    <rect key="frame" x="15" y="0.0" width="345" height="43.5"/>
+                                                    <rect key="frame" x="16" y="0.0" width="343" height="43.5"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
@@ -161,7 +168,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Zoom centered Demo" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="JU9-pA-y9c">
-                                                    <rect key="frame" x="15" y="0.0" width="345" height="43.5"/>
+                                                    <rect key="frame" x="16" y="0.0" width="343" height="43.5"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
@@ -181,7 +188,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Zoom" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="tXy-9C-erf">
-                                                    <rect key="frame" x="15" y="0.0" width="345" height="43.5"/>
+                                                    <rect key="frame" x="16" y="0.0" width="343" height="43.5"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
@@ -334,7 +341,7 @@
             <objects>
                 <navigationController id="Rs6-YA-hIo" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="7Se-9B-to5">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
@@ -398,6 +405,13 @@
                                             <constraint firstAttribute="height" constant="128" id="roL-rT-4Jr"/>
                                         </constraints>
                                     </scrollView>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="R4L-ch-h86" customClass="MyView" customModule="UIScrollView" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="454" width="600" height="300"/>
+                                        <color key="backgroundColor" red="0.8862745098" green="0.67450980390000004" blue="0.1137254902" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="R4L-ch-h86" secondAttribute="height" multiplier="2:1" id="Go0-UR-iGg"/>
+                                        </constraints>
+                                    </view>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="img1" translatesAutoresizingMaskIntoConstraints="NO" id="Yzy-hr-p8I">
                                         <rect key="frame" x="180" y="8" width="240" height="128"/>
                                         <constraints>
@@ -406,35 +420,35 @@
                                         </constraints>
                                     </imageView>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="img2" translatesAutoresizingMaskIntoConstraints="NO" id="fVh-kp-UdX">
-                                        <rect key="frame" x="180" y="672" width="240" height="128"/>
+                                        <rect key="frame" x="180" y="1055" width="240" height="128"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="128" id="9eJ-O4-Rwf"/>
                                             <constraint firstAttribute="width" constant="240" id="uij-ub-fa0"/>
                                         </constraints>
                                     </imageView>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="img1" translatesAutoresizingMaskIntoConstraints="NO" id="l6T-nX-Eog">
-                                        <rect key="frame" x="180" y="461" width="240" height="128"/>
+                                        <rect key="frame" x="180" y="844" width="240" height="128"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="240" id="PKj-i9-Dkm"/>
                                             <constraint firstAttribute="height" constant="128" id="bjq-xA-Br8"/>
                                         </constraints>
                                     </imageView>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="img3" translatesAutoresizingMaskIntoConstraints="NO" id="qdI-kE-uI6">
-                                        <rect key="frame" x="180" y="878" width="240" height="128"/>
+                                        <rect key="frame" x="180" y="1261" width="240" height="128"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="240" id="O1P-SJ-OI3"/>
                                             <constraint firstAttribute="height" constant="128" id="kCI-XF-g4a"/>
                                         </constraints>
                                     </imageView>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="img1" translatesAutoresizingMaskIntoConstraints="NO" id="yB4-Xp-bW9">
-                                        <rect key="frame" x="180" y="1093" width="240" height="128"/>
+                                        <rect key="frame" x="180" y="1476" width="240" height="128"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="240" id="Utc-uc-Eov"/>
                                             <constraint firstAttribute="height" constant="128" id="sHU-q6-mHQ"/>
                                         </constraints>
                                     </imageView>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="img4" translatesAutoresizingMaskIntoConstraints="NO" id="6c9-i6-qcg">
-                                        <rect key="frame" x="180" y="1272" width="240" height="128"/>
+                                        <rect key="frame" x="180" y="1655" width="240" height="128"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="128" id="UyM-P9-Sxz"/>
                                             <constraint firstAttribute="width" constant="240" id="f5q-NN-ZjN"/>
@@ -442,6 +456,7 @@
                                     </imageView>
                                 </subviews>
                                 <constraints>
+                                    <constraint firstItem="l6T-nX-Eog" firstAttribute="top" secondItem="R4L-ch-h86" secondAttribute="bottom" constant="90" id="0Th-NV-fsL"/>
                                     <constraint firstItem="fVh-kp-UdX" firstAttribute="top" secondItem="l6T-nX-Eog" secondAttribute="bottom" constant="83" id="0tV-sf-6P4"/>
                                     <constraint firstItem="qdI-kE-uI6" firstAttribute="centerX" secondItem="1oa-I7-XEO" secondAttribute="centerX" id="1zi-dW-jR7"/>
                                     <constraint firstItem="d85-90-YpI" firstAttribute="top" secondItem="1oa-I7-XEO" secondAttribute="top" constant="236" id="3fa-9G-aCr"/>
@@ -450,14 +465,16 @@
                                     <constraint firstAttribute="bottom" secondItem="6c9-i6-qcg" secondAttribute="bottom" id="CIa-RB-jXv"/>
                                     <constraint firstAttribute="trailing" secondItem="d85-90-YpI" secondAttribute="trailing" id="OGE-HQ-dms"/>
                                     <constraint firstItem="qdI-kE-uI6" firstAttribute="top" secondItem="fVh-kp-UdX" secondAttribute="bottom" constant="78" id="fYQ-xK-kdZ"/>
+                                    <constraint firstItem="R4L-ch-h86" firstAttribute="top" secondItem="d85-90-YpI" secondAttribute="bottom" constant="90" id="gnH-Xa-3fJ"/>
                                     <constraint firstItem="yB4-Xp-bW9" firstAttribute="centerX" secondItem="1oa-I7-XEO" secondAttribute="centerX" id="hhG-Xb-jQB"/>
                                     <constraint firstItem="yB4-Xp-bW9" firstAttribute="top" secondItem="qdI-kE-uI6" secondAttribute="bottom" constant="87" id="hiE-ud-eSh"/>
+                                    <constraint firstItem="R4L-ch-h86" firstAttribute="width" secondItem="1oa-I7-XEO" secondAttribute="width" id="iGR-3B-duF"/>
                                     <constraint firstItem="fVh-kp-UdX" firstAttribute="centerX" secondItem="1oa-I7-XEO" secondAttribute="centerX" id="icF-I6-YIN"/>
+                                    <constraint firstItem="R4L-ch-h86" firstAttribute="centerX" secondItem="1oa-I7-XEO" secondAttribute="centerX" id="jbu-8f-bAk"/>
                                     <constraint firstItem="Yzy-hr-p8I" firstAttribute="centerX" secondItem="1oa-I7-XEO" secondAttribute="centerX" id="kub-sn-NzZ"/>
                                     <constraint firstItem="l6T-nX-Eog" firstAttribute="centerX" secondItem="1oa-I7-XEO" secondAttribute="centerX" id="mD6-eS-fc8"/>
                                     <constraint firstItem="6c9-i6-qcg" firstAttribute="top" secondItem="yB4-Xp-bW9" secondAttribute="bottom" constant="51" id="oXd-Kc-562"/>
                                     <constraint firstItem="Yzy-hr-p8I" firstAttribute="top" secondItem="1oa-I7-XEO" secondAttribute="top" constant="8" id="p9D-Lj-X1L"/>
-                                    <constraint firstItem="l6T-nX-Eog" firstAttribute="top" secondItem="d85-90-YpI" secondAttribute="bottom" constant="97" id="vam-bP-64w"/>
                                     <constraint firstItem="d85-90-YpI" firstAttribute="leading" secondItem="1oa-I7-XEO" secondAttribute="leading" id="yBa-kl-jg4"/>
                                 </constraints>
                             </scrollView>
@@ -475,6 +492,7 @@
                     <connections>
                         <outlet property="childScrollView" destination="d85-90-YpI" id="sJg-Iq-qrI"/>
                         <outlet property="parentScrollView" destination="1oa-I7-XEO" id="pxZ-FJ-XxG"/>
+                        <outlet property="viewForWeb" destination="R4L-ch-h86" id="hb3-vA-Wk9"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="px1-kU-dNH" sceneMemberID="firstResponder"/>
