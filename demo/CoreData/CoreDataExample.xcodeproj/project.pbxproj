@@ -18,6 +18,10 @@
 		440E06721DE5E02B00F175DB /* MainVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 440E06711DE5E02B00F175DB /* MainVC.swift */; };
 		C243E4831DE6B337008C9D38 /* CoreDataExample.xcdatamodel in Sources */ = {isa = PBXBuildFile; fileRef = C243E4821DE6B337008C9D38 /* CoreDataExample.xcdatamodel */; };
 		C243E4851DE6CC08008C9D38 /* SearchGroupListerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C243E4841DE6CC08008C9D38 /* SearchGroupListerVC.swift */; };
+		C2722E821FB986DF00E1B6B1 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2722E7E1FB986DF00E1B6B1 /* Model.swift */; };
+		C2722E831FB986DF00E1B6B1 /* UserDetailTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2722E7F1FB986DF00E1B6B1 /* UserDetailTVC.swift */; };
+		C2722E841FB986DF00E1B6B1 /* UserTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2722E801FB986DF00E1B6B1 /* UserTableViewCell.swift */; };
+		C2722E851FB986DF00E1B6B1 /* UserVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2722E811FB986DF00E1B6B1 /* UserVC.swift */; };
 		C2C04BEF1ECC09DB00F0A10B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2C04BEE1ECC09DB00F0A10B /* AppDelegate.swift */; };
 		C2C04BF31ECC09DC00F0A10B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C2C04BF21ECC09DC00F0A10B /* Assets.xcassets */; };
 		C2C04BF61ECC09DC00F0A10B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C2C04BF41ECC09DC00F0A10B /* Main.storyboard */; };
@@ -41,6 +45,10 @@
 		440E06711DE5E02B00F175DB /* MainVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainVC.swift; sourceTree = "<group>"; };
 		C243E4821DE6B337008C9D38 /* CoreDataExample.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CoreDataExample.xcdatamodel; sourceTree = "<group>"; };
 		C243E4841DE6CC08008C9D38 /* SearchGroupListerVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchGroupListerVC.swift; sourceTree = "<group>"; };
+		C2722E7E1FB986DF00E1B6B1 /* Model.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
+		C2722E7F1FB986DF00E1B6B1 /* UserDetailTVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserDetailTVC.swift; sourceTree = "<group>"; };
+		C2722E801FB986DF00E1B6B1 /* UserTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserTableViewCell.swift; sourceTree = "<group>"; };
+		C2722E811FB986DF00E1B6B1 /* UserVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserVC.swift; sourceTree = "<group>"; };
 		C2C04BEC1ECC09DB00F0A10B /* Quake_macOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Quake_macOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C2C04BEE1ECC09DB00F0A10B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C2C04BF21ECC09DC00F0A10B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -92,10 +100,15 @@
 		440E06531DE5DE4400F175DB /* CoreData */ = {
 			isa = PBXGroup;
 			children = (
+				C2722E7D1FB986DF00E1B6B1 /* Contact */,
 				440E06541DE5DE4400F175DB /* AppDelegate.swift */,
 				440E06581DE5DE4400F175DB /* Main.storyboard */,
 				440E06711DE5E02B00F175DB /* MainVC.swift */,
-				44B48DB11EF67B6B00CBB7D3 /* PeopleGroups */,
+				440E06661DE5DF1200F175DB /* GroupLister.swift */,
+				440E06691DE5DF1200F175DB /* PeopleLister.swift */,
+				440E066A1DE5DF1200F175DB /* PeopleLister.xib */,
+				440E066B1DE5DF1200F175DB /* PersonCell.xib */,
+				C243E4821DE6B337008C9D38 /* CoreDataExample.xcdatamodel */,
 				C243E4841DE6CC08008C9D38 /* SearchGroupListerVC.swift */,
 				440E065B1DE5DE4400F175DB /* Assets.xcassets */,
 				440E065D1DE5DE4400F175DB /* LaunchScreen.storyboard */,
@@ -104,16 +117,15 @@
 			path = CoreData;
 			sourceTree = "<group>";
 		};
-		44B48DB11EF67B6B00CBB7D3 /* PeopleGroups */ = {
+		C2722E7D1FB986DF00E1B6B1 /* Contact */ = {
 			isa = PBXGroup;
 			children = (
-				440E06661DE5DF1200F175DB /* GroupLister.swift */,
-				440E06691DE5DF1200F175DB /* PeopleLister.swift */,
-				440E066A1DE5DF1200F175DB /* PeopleLister.xib */,
-				440E066B1DE5DF1200F175DB /* PersonCell.xib */,
-				C243E4821DE6B337008C9D38 /* CoreDataExample.xcdatamodel */,
+				C2722E7E1FB986DF00E1B6B1 /* Model.swift */,
+				C2722E7F1FB986DF00E1B6B1 /* UserDetailTVC.swift */,
+				C2722E801FB986DF00E1B6B1 /* UserTableViewCell.swift */,
+				C2722E811FB986DF00E1B6B1 /* UserVC.swift */,
 			);
-			name = PeopleGroups;
+			path = Contact;
 			sourceTree = "<group>";
 		};
 		C2C04BED1ECC09DB00F0A10B /* Quake_macOS */ = {
@@ -182,6 +194,7 @@
 					440E06501DE5DE4400F175DB = {
 						CreatedOnToolsVersion = 8.1;
 						DevelopmentTeam = W3MH7MTTSB;
+						LastSwiftMigration = 0910;
 						ProvisioningStyle = Automatic;
 					};
 					C2C04BEB1ECC09DB00F0A10B = {
@@ -243,8 +256,12 @@
 				C243E4831DE6B337008C9D38 /* CoreDataExample.xcdatamodel in Sources */,
 				440E06721DE5E02B00F175DB /* MainVC.swift in Sources */,
 				440E066C1DE5DF1200F175DB /* GroupLister.swift in Sources */,
+				C2722E841FB986DF00E1B6B1 /* UserTableViewCell.swift in Sources */,
+				C2722E851FB986DF00E1B6B1 /* UserVC.swift in Sources */,
 				440E06551DE5DE4400F175DB /* AppDelegate.swift in Sources */,
+				C2722E831FB986DF00E1B6B1 /* UserDetailTVC.swift in Sources */,
 				440E066E1DE5DF1200F175DB /* PeopleLister.swift in Sources */,
+				C2722E821FB986DF00E1B6B1 /* Model.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -401,10 +418,12 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = W3MH7MTTSB;
 				INFOPLIST_FILE = CoreData/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.rockgarden.CoreDataExample;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
+				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
+				SWIFT_VERSION = 4.0;
 			};
 			name = Debug;
 		};
@@ -414,10 +433,12 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = W3MH7MTTSB;
 				INFOPLIST_FILE = CoreData/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.rockgarden.CoreDataExample;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
+				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
+				SWIFT_VERSION = 4.0;
 			};
 			name = Release;
 		};

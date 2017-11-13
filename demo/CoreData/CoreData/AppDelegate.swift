@@ -70,7 +70,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let group = Group(context: context)
         group.name = "init"
         group.uuid = NSUUID().uuidString
-        group.timestamp = NSDate()
+        group.timestamp = Date()
         do {
             try self.context.save()
         } catch {

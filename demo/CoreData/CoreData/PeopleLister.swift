@@ -68,14 +68,14 @@ class PeopleLister: UITableViewController, NSFetchedResultsControllerDelegate, U
         return cell
     }
     
-    func doAdd(_: AnyObject) {
+    @objc func doAdd(_: AnyObject) {
         self.tableView.endEditing(true)
         let context = self.frc.managedObjectContext
         let person = Person(context: context)
         person.group = self.group
         person.lastName = ""
         person.firstName = ""
-        person.timestamp = NSDate()
+        person.timestamp = Date()
         person.cars = NSSet(array: [
             Car(context: context).configured(maker: "VW", model: "Sharan", owner: person),
             Car(context: context).configured(maker: "VW", model: "Tiguan", owner: person)

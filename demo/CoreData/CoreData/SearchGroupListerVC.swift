@@ -104,7 +104,7 @@ class SearchGroupListerVC: UIViewController {
         let group = Group(context: context)
         group.name = "many"
         group.uuid = NSUUID().uuidString
-        group.timestamp = NSDate()
+        group.timestamp = Date()
         do {
             try self.context.save()
         } catch {
