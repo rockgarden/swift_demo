@@ -40,8 +40,19 @@ class WKWebViewVC: UIViewController, UIViewControllerRestoration {
     fileprivate var progressView: UIProgressView!
     fileprivate var jsContext: JSContext?
     
-    //保存的网址链接
-    fileprivate var urltring: String!
+    /// 网址链接
+    /// Urlstring 需要进行非法字符过滤，特别是加密过的 string!
+    //    func percentEncodeString(_ originalObject: Any) -> String {
+    //        if originalObject is NSNull {
+    //            return "null"
+    //        } else {
+    //            var reserved = CharacterSet.urlQueryAllowed
+    //            reserved.remove(charactersIn: ": #[]@!$&'()*+, ;=")
+    //            return String(describing: originalObject)
+    //                .addingPercentEncoding(withAllowedCharacters: reserved) ?? ""
+    //        }
+    //    }
+    fileprivate var urlString: String!
     //保存POST请求体
     fileprivate var postData: String!
     //是否是第一次加载
@@ -369,11 +380,11 @@ extension WKWebViewVC {
         if loadWebType != nil {
             switch loadWebType! {
             case .loadWebURLString :
-                let urlstr = URL.init(string: urltring!)
+                let urlstr = URL.init(string: urlString!)
                 let request = URLRequest.init(url: urlstr!)
                 webView.load(request)
             case .loadWebHTMLString:
-                loadHost(string: urltring!)
+                loadHost(string: urlString!)
             case .POSTWebURLString:
                 needLoadJSPOST = true
                 loadHost(string: "WKJSPOST")
@@ -406,7 +417,7 @@ extension WKWebViewVC {
     // 调用JS发送POST请求
     fileprivate func postRequestWithJS() {
         // 拼装成调用JavaScript的字符串 urltring请求的页面地址 postData发送POST的参数
-        let jscript = "post('\(urltring!)', {\(postData!)});"
+        let jscript = "post('\(urlString!)', {\(postData!)});"
         // 调用JS代码
         webView.evaluateJavaScript(jscript) { (object, error) in
         }
@@ -415,7 +426,7 @@ extension WKWebViewVC {
     /// 普通URL加载方式
     /// Parameter urlString: 需要加载的url字符串
     func loadUrlSting(string: String!) {
-        urltring = string
+        urlString = string
         loadWebType = .loadWebURLString
     }
     
@@ -431,7 +442,7 @@ extension WKWebViewVC {
     /// postString: post参数体 详情请搜索swift/oc转义字符（注意格式："\"username\":\"aaa\",\"password\":\"123\""）
     func loadPOSTUrlSting(string:String!,postString:String!) {
         loadWebType = .POSTWebURLString
-        urltring = string
+        urlString = string
         postData = postString
     }
     
