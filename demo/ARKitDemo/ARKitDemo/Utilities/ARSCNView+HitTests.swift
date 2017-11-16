@@ -1,9 +1,9 @@
 /*
-See LICENSE folder for this sample’s licensing information.
-
-Abstract:
-Convenience extensions on ARSCNView for hit testing
-*/
+ See LICENSE folder for this sample’s licensing information.
+ 
+ Abstract:
+ Convenience extensions on ARSCNView for hit testing
+ */
 
 import ARKit
 
@@ -183,3 +183,4 @@ extension ARSCNView {
     }
     
 }
+

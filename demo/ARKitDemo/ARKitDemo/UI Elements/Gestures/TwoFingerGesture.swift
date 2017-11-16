@@ -76,7 +76,7 @@ class TwoFingerGesture: Gesture {
         if let virtualObject = firstTouchedObject {
             objectBaseScale = virtualObject.scale.x
             
-            allowTranslation = true
+            allowTranslation = false
             allowRotation = true
             
             initialDistanceBetweenFingers = (firstTouchPoint - secondTouchPoint).length()
@@ -143,7 +143,7 @@ class TwoFingerGesture: Gesture {
             }
             
             if distanceFromStartLocation >= threshold {
-                translationThresholdPassed = true
+                translationThresholdPassed = false
                 
                 let currentObjectLocation = CGPoint(sceneView.projectPoint(virtualObject.position))
                 dragOffset = midpoint - currentObjectLocation

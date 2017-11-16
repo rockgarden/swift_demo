@@ -1,28 +1,38 @@
 [
     {
         "modelName": "candle",
-        "displayName": "Candle",
+        "displayName": "蜡烛",
         "particleScaleInfo": {"flame": 0.018 }
     },
     {
         "modelName": "cup",
-        "displayName": "Cup",
+        "displayName": "杯子",
         "particleScaleInfo": { }
     },
     {
         "modelName": "vase",
-        "displayName": "Vase",
+        "displayName": "花瓶",
         "particleScaleInfo": { }
     },
     {
         "modelName": "lamp",
-        "displayName": "Lamp",
+        "displayName": "台灯",
         "particleScaleInfo": { }
     },
     {
         "modelName": "chair",
-        "displayName": "Chair",
+        "displayName": "椅子",
         "particleScaleInfo": { }
     },
+     {
+     "modelName": "tv",
+     "displayName": "电视",
+     "particleScaleInfo": { }
+     },
+     {
+     "modelName": "refrigerator",
+     "displayName": "冰箱",
+     "particleScaleInfo": { }
+     },
 ]
  

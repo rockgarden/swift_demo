@@ -1,9 +1,9 @@
 /*
-See LICENSE folder for this sample’s licensing information.
-
-Abstract:
-Wrapper SceneKit node for virtual objects placed into the AR scene.
-*/
+ See LICENSE folder for this sample’s licensing information.
+ 
+ Abstract:
+ Wrapper SceneKit node for virtual objects placed into the AR scene.
+ */
 
 import Foundation
 import SceneKit
@@ -57,38 +57,39 @@ class VirtualObject: SCNReferenceNode, ReactsToScale {
 }
 
 extension VirtualObject {
-	
-	static func isNodePartOfVirtualObject(_ node: SCNNode) -> VirtualObject? {
-		if let virtualObjectRoot = node as? VirtualObject {
-			return virtualObjectRoot
-		}
-		
-		if node.parent != nil {
-			return isNodePartOfVirtualObject(node.parent!)
-		}
-		
-		return nil
-	}
+    
+    static func isNodePartOfVirtualObject(_ node: SCNNode) -> VirtualObject? {
+        if let virtualObjectRoot = node as? VirtualObject {
+            return virtualObjectRoot
+        }
+        
+        if node.parent != nil {
+            return isNodePartOfVirtualObject(node.parent!)
+        }
+        
+        return nil
+    }
     
 }
 
 // MARK: - Protocols for Virtual Objects
 
 protocol ReactsToScale {
-	func reactToScale()
+    func reactToScale()
 }
 
 extension SCNNode {
-	
-	func reactsToScale() -> ReactsToScale? {
-		if let canReact = self as? ReactsToScale {
-			return canReact
-		}
-		
-		if parent != nil {
-			return parent!.reactsToScale()
-		}
-		
-		return nil
-	}
+    
+    func reactsToScale() -> ReactsToScale? {
+        if let canReact = self as? ReactsToScale {
+            return canReact
+        }
+        
+        if parent != nil {
+            return parent!.reactsToScale()
+        }
+        
+        return nil
+    }
 }
+

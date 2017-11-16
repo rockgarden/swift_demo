@@ -81,22 +81,22 @@ class SingleFingerGesture: Gesture {
             return
         }
         
-        if lastUsedObject != nil {
-            // If this gesture hasn't moved the object then perform a hit test against
-            // the geometry to check if the user has tapped the object itself.
-            // - Note: If the object covers a significant
-            // percentage of the screen then we should interpret the tap as repositioning
-            // the object.
-            let isObjectHit = virtualObject(at: latestTouchLocation) != nil
-            
-            if !isObjectHit {
-                // Teleport the object to whereever the user touched the screen - as long as the
-                // drag threshold has not been reached.
-                if !translationThresholdPassed {
-                    objectManager.translate(lastUsedObject!, in: sceneView, basedOn: latestTouchLocation, instantly: true, infinitePlane: false)
-                }
-            }
-        }
+//        if lastUsedObject != nil {
+//            // If this gesture hasn't moved the object then perform a hit test against
+//            // the geometry to check if the user has tapped the object itself.
+//            // - Note: If the object covers a significant
+//            // percentage of the screen then we should interpret the tap as repositioning
+//            // the object.
+//            let isObjectHit = virtualObject(at: latestTouchLocation) != nil
+//
+//            if !isObjectHit {
+//                // Teleport the object to whereever the user touched the screen - as long as the
+//                // drag threshold has not been reached.
+//                if !translationThresholdPassed {
+//                    objectManager.translate(lastUsedObject!, in: sceneView, basedOn: latestTouchLocation, instantly: true, infinitePlane: false)
+//                }
+//            }
+//        }
     }
     
 }

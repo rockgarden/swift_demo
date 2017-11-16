@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C25184721FBD8180008B1FE9 /* GridPlane.swift in Sources */ = {isa = PBXBuildFile; fileRef = C25184711FBD8180008B1FE9 /* GridPlane.swift */; };
+		C25184751FBD81C1008B1FE9 /* grid.png in Resources */ = {isa = PBXBuildFile; fileRef = C25184741FBD81C1008B1FE9 /* grid.png */; };
 		C2E975AA1F7235AA0012D24D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2E975A91F7235AA0012D24D /* AppDelegate.swift */; };
 		C2E975AC1F7235AA0012D24D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2E975AB1F7235AA0012D24D /* ViewController.swift */; };
 		C2E975AF1F7235AA0012D24D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C2E975AD1F7235AA0012D24D /* Main.storyboard */; };
@@ -35,6 +37,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		C25184711FBD8180008B1FE9 /* GridPlane.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GridPlane.swift; sourceTree = "<group>"; };
+		C25184741FBD81C1008B1FE9 /* grid.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = grid.png; sourceTree = "<group>"; };
 		C2E975A61F7235AA0012D24D /* ARKitDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ARKitDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C2E975A91F7235AA0012D24D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C2E975AB1F7235AA0012D24D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -76,6 +80,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		C25184731FBD81C1008B1FE9 /* images */ = {
+			isa = PBXGroup;
+			children = (
+				C25184741FBD81C1008B1FE9 /* grid.png */,
+			);
+			path = images;
+			sourceTree = "<group>";
+		};
 		C2E9759D1F7235A90012D24D = {
 			isa = PBXGroup;
 			children = (
@@ -108,6 +120,7 @@
 				C2E975C81F7236780012D24D /* Utilities */,
 				C2E975D11F7236910012D24D /* UI Elements */,
 				C2E975B01F7235AA0012D24D /* Assets.xcassets */,
+				C25184731FBD81C1008B1FE9 /* images */,
 				C2E975E51F7236E70012D24D /* Models.scnassets */,
 				C2E975B21F7235AA0012D24D /* LaunchScreen.storyboard */,
 				C2E975B51F7235AA0012D24D /* Info.plist */,
@@ -139,6 +152,7 @@
 		C2E975D11F7236910012D24D /* UI Elements */ = {
 			isa = PBXGroup;
 			children = (
+				C25184711FBD8180008B1FE9 /* GridPlane.swift */,
 				C2E975D21F7236910012D24D /* Focus Squares */,
 				C2E975D51F7236910012D24D /* Gestures */,
 				C2E975D91F7236910012D24D /* Plane.swift */,
@@ -247,6 +261,7 @@
 				C2E975B11F7235AA0012D24D /* Assets.xcassets in Resources */,
 				C2E975E61F7236E70012D24D /* Models.scnassets in Resources */,
 				C2E975AF1F7235AA0012D24D /* Main.storyboard in Resources */,
+				C25184751FBD81C1008B1FE9 /* grid.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -266,6 +281,7 @@
 				C2E975E41F7236AE0012D24D /* VirtualObjectSelectionViewController.swift in Sources */,
 				C2E975D01F7236780012D24D /* Utilities.swift in Sources */,
 				C2E975DE1F7236920012D24D /* TwoFingerGesture.swift in Sources */,
+				C25184721FBD8180008B1FE9 /* GridPlane.swift in Sources */,
 				C2E975CF1F7236780012D24D /* TextManager.swift in Sources */,
 				C2E975AC1F7235AA0012D24D /* ViewController.swift in Sources */,
 				C2E975DC1F7236920012D24D /* Gesture.swift in Sources */,
@@ -413,10 +429,11 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = W3MH7MTTSB;
 				INFOPLIST_FILE = ARKitDemo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.rockgarden.ARKitDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
+				SWIFT_VERSION = 4.0;
 			};
 			name = Debug;
 		};
@@ -426,10 +443,11 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = W3MH7MTTSB;
 				INFOPLIST_FILE = ARKitDemo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.rockgarden.ARKitDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
+				SWIFT_VERSION = 4.0;
 			};
 			name = Release;
 		};

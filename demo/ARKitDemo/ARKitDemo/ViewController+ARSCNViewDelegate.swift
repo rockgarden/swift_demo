@@ -21,6 +21,7 @@ extension ViewController: ARSCNViewDelegate {
         }
     }
     
+    //检测到平时的回调
     func renderer(_ renderer: SCNSceneRenderer, didAdd node: SCNNode, for anchor: ARAnchor) {
         guard let planeAnchor = anchor as? ARPlaneAnchor else { return }
         serialQueue.async {
@@ -29,6 +30,7 @@ extension ViewController: ARSCNViewDelegate {
         }
     }
     
+    //检测的平面更新时的回调
     func renderer(_ renderer: SCNSceneRenderer, didUpdate node: SCNNode, for anchor: ARAnchor) {
         guard let planeAnchor = anchor as? ARPlaneAnchor else { return }
         serialQueue.async {
@@ -37,6 +39,7 @@ extension ViewController: ARSCNViewDelegate {
         }
     }
     
+    //检测到平面删除或合并时的回调
     func renderer(_ renderer: SCNSceneRenderer, didRemove node: SCNNode, for anchor: ARAnchor) {
         guard let planeAnchor = anchor as? ARPlaneAnchor else { return }
         serialQueue.async {
