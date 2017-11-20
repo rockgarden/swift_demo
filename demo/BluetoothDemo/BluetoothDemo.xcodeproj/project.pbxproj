@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		C21EDC101FC2C0AE00CE5C4F /* DeviceListTableViewManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C21EDC0D1FC2C0AC00CE5C4F /* DeviceListTableViewManager.swift */; };
 		C21EDC111FC2C0AE00CE5C4F /* Services.swift in Sources */ = {isa = PBXBuildFile; fileRef = C21EDC0E1FC2C0AD00CE5C4F /* Services.swift */; };
-		C21EDC121FC2C0AE00CE5C4F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C21EDC0F1FC2C0AD00CE5C4F /* ViewController.swift */; };
+		C21EDC121FC2C0AE00CE5C4F /* BeaconsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C21EDC0F1FC2C0AD00CE5C4F /* BeaconsVC.swift */; };
 		C2659BB01FC2824500854919 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2659BAF1FC2824500854919 /* AppDelegate.swift */; };
 		C2659BB51FC2824500854919 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C2659BB31FC2824500854919 /* Main.storyboard */; };
 		C2659BB71FC2824500854919 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C2659BB61FC2824500854919 /* Assets.xcassets */; };
@@ -38,7 +38,7 @@
 		C21EDC0C1FC29E6F00CE5C4F /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		C21EDC0D1FC2C0AC00CE5C4F /* DeviceListTableViewManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeviceListTableViewManager.swift; sourceTree = "<group>"; };
 		C21EDC0E1FC2C0AD00CE5C4F /* Services.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Services.swift; sourceTree = "<group>"; };
-		C21EDC0F1FC2C0AD00CE5C4F /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		C21EDC0F1FC2C0AD00CE5C4F /* BeaconsVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BeaconsVC.swift; sourceTree = "<group>"; };
 		C2659BAD1FC2824500854919 /* CoreBluetoothDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CoreBluetoothDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C2659BAF1FC2824500854919 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C2659BB41FC2824500854919 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -80,7 +80,7 @@
 				C2659BC11FC2829F00854919 /* BTLECentralViewController.swift */,
 				C2659BBF1FC2829F00854919 /* BTLEPeripheralViewController.swift */,
 				C2659BC01FC2829F00854919 /* Definitions.swift */,
-				C21EDC0F1FC2C0AD00CE5C4F /* ViewController.swift */,
+				C21EDC0F1FC2C0AD00CE5C4F /* BeaconsVC.swift */,
 				C21EDC0D1FC2C0AC00CE5C4F /* DeviceListTableViewManager.swift */,
 				C21EDC0E1FC2C0AD00CE5C4F /* Services.swift */,
 				C2659BB31FC2824500854919 /* Main.storyboard */,
@@ -167,7 +167,7 @@
 				TargetAttributes = {
 					C2659BAC1FC2824500854919 = {
 						CreatedOnToolsVersion = 9.1;
-						DevelopmentTeam = UR7J67T5FK;
+						DevelopmentTeam = W3MH7MTTSB;
 						ProvisioningStyle = Automatic;
 					};
 					C2A13ACD1ECBF265000ABB71 = {
@@ -221,7 +221,7 @@
 				C21EDC111FC2C0AE00CE5C4F /* Services.swift in Sources */,
 				C2659BC41FC282A000854919 /* BTLECentralViewController.swift in Sources */,
 				C2659BB01FC2824500854919 /* AppDelegate.swift in Sources */,
-				C21EDC121FC2C0AE00CE5C4F /* ViewController.swift in Sources */,
+				C21EDC121FC2C0AE00CE5C4F /* BeaconsVC.swift in Sources */,
 				C2659BC21FC282A000854919 /* BTLEPeripheralViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -276,7 +276,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
-				DEVELOPMENT_TEAM = UR7J67T5FK;
+				DEVELOPMENT_TEAM = W3MH7MTTSB;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
@@ -319,7 +319,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				DEVELOPMENT_TEAM = UR7J67T5FK;
+				DEVELOPMENT_TEAM = W3MH7MTTSB;
 				ENABLE_NS_ASSERTIONS = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;

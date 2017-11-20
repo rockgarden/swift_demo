@@ -90,7 +90,9 @@ extension BTLECentralViewController: CBCentralManagerDelegate {
         debugPrint("Discovered \(String(describing: peripheral.name)) at \(RSSI)")
         
         // 可以根据外设名字来过滤外设
-        if (peripheral.name?.hasPrefix("Test"))! {}
+        if peripheral.name != nil {
+            if (peripheral.name?.hasPrefix("Test"))! {}
+        }
         
         // Ok, it's in range - have we already seen it?
         
