@@ -29,6 +29,16 @@
       language = ""
       shouldUseLaunchSchemeArgsEnv = "YES">
       <Testables>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "448AC24B1EF2BF7200013F08"
+               BuildableName = "UIViewControllerUITests.xctest"
+               BlueprintName = "UIViewControllerUITests"
+               ReferencedContainer = "container:UIViewController.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
       </Testables>
       <MacroExpansion>
          <BuildableReference

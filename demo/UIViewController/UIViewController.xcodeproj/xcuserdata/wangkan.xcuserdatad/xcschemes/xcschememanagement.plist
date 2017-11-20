@@ -12,7 +12,7 @@
 		<key>UIPopoverDemo.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>87</integer>
+			<integer>89</integer>
 		</dict>
 		<key>UISplitViewControllerDemo.xcscheme</key>
 		<dict>
@@ -27,16 +27,6 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>4459BC901EE0631600717B8D</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>448AC24B1EF2BF7200013F08</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
 		<key>449D1CB21E992C57000C7446</key>
 		<dict>
 			<key>primary</key>
