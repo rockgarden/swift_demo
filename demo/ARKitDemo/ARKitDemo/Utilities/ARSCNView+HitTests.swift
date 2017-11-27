@@ -1,8 +1,14 @@
-/*
+/**
  See LICENSE folder for this sample’s licensing information.
  
  Abstract:
  Convenience extensions on ARSCNView for hit testing
+
+ ARSCNView——这是一个助手类，帮我们用 SceneKit 渲染的 3D 内容来增强实时摄像头视图。这个类做了下面几件事：
+
+ 在视图中渲染设备摄像头的实时视频流，并就其设置为 3D 场景的背景
+ ARKit 的 3D 坐标系会匹配 SceneKit 的 3D 坐标系，所以此视图渲染的对象会自动匹配增强后的 ARKit 世界视图
+ 自动移动虚拟 SceneKit 3D 摄像头来匹配 ARKit 追踪到的 3D 位置，所以不需要再写代码连接 ARKit 移动事件与 SceneKit 3D 渲染。
  */
 
 import ARKit

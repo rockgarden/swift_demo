@@ -143,7 +143,7 @@ static NSString *logTag = @"";
 
 - (NSDate *)date
 {
-    return  objc_getAssociatedObject(self, viewDidAppearTimeIntervalKey);
+    return objc_getAssociatedObject(self, viewDidAppearTimeIntervalKey);
 }
 
 - (void)setDate:(NSDate *)date

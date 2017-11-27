@@ -8,6 +8,7 @@ ARSCNViewDelegate interactions for `ViewController`.
 import ARKit
 
 extension ViewController: ARSCNViewDelegate {
+
     // MARK: - ARSCNViewDelegate
     
     func renderer(_ renderer: SCNSceneRenderer, updateAtTime time: TimeInterval) {
@@ -20,8 +21,15 @@ extension ViewController: ARSCNViewDelegate {
             sceneView.scene.enableEnvironmentMapWithIntensity(40, queue: serialQueue)
         }
     }
-    
-    //检测到平时的回调
+
+    /// 检测到平时的回调
+    /**
+     将新 node 映射到给定 anchor 时调用。
+
+     @param renderer 将会用于渲染 scene 的 renderer。
+     @param node 映射到 anchor 的 node。
+     @param anchor 新添加的 anchor。
+     */
     func renderer(_ renderer: SCNSceneRenderer, didAdd node: SCNNode, for anchor: ARAnchor) {
         guard let planeAnchor = anchor as? ARPlaneAnchor else { return }
         serialQueue.async {
@@ -30,21 +38,47 @@ extension ViewController: ARSCNViewDelegate {
         }
     }
     
-    //检测的平面更新时的回调
+    /// 检测的平面更新时的回调
+    /**
+     使用给定 anchor 的数据更新 node 时调用。
+
+     @param renderer 将会用于渲染 scene 的 renderer。
+     @param node 更新后的 node。
+     @param anchor 更新后的 anchor。
+     */
     func renderer(_ renderer: SCNSceneRenderer, didUpdate node: SCNNode, for anchor: ARAnchor) {
         guard let planeAnchor = anchor as? ARPlaneAnchor else { return }
         serialQueue.async {
+            /// anchor 更新后也需要更新 3D 几何体。例如平面检测的高度和宽度可能会改变，所以需要更新 SceneKit 几何体以匹配
             self.updatePlane(anchor: planeAnchor)
             self.virtualObjectManager.checkIfObjectShouldMoveOntoPlane(anchor: planeAnchor, planeAnchorNode: node)
         }
     }
     
-    //检测到平面删除或合并时的回调
+    /// 检测到平面删除或合并时的回调
+    /**
+     从 scene graph 中移除与给定 anchor 映射的 node 时调用。
+
+     @param renderer 将会用于渲染 scene 的 renderer。
+     @param node 被移除的 node。
+     @param anchor 被移除的 anchor。
+     */
     func renderer(_ renderer: SCNSceneRenderer, didRemove node: SCNNode, for anchor: ARAnchor) {
         guard let planeAnchor = anchor as? ARPlaneAnchor else { return }
         serialQueue.async {
+            /// 如果多个独立平面被发现共属某个大平面，此时会合并它们，并移除这些 node
             self.removePlane(anchor: planeAnchor)
         }
+    }
+
+    /**
+     将要用给定 anchor 的数据来更新时 node 调用。
+
+     @param renderer 将会用于渲染 scene 的 renderer。
+     @param node 即将更新的 node。
+     @param anchor 被更新的 anchor。
+     */
+    func renderer(_ renderer: SCNSceneRenderer, willUpdate node: SCNNode, for anchor: ARAnchor) {
     }
     
     func session(_ session: ARSession, cameraDidChangeTrackingState camera: ARCamera) {

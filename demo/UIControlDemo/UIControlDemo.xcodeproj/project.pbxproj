@@ -20,6 +20,7 @@
 		44088DC61F1126B9004E8214 /* ActivityUIButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44088DC51F1126B9004E8214 /* ActivityUIButton.swift */; };
 		443046CD1F13C3E4007DAB32 /* ShrinkLoadButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 443046CC1F13C3E4007DAB32 /* ShrinkLoadButton.swift */; };
 		444C1B891EF0181D00696852 /* TextFieldSlidingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 444C1B881EF0181D00696852 /* TextFieldSlidingVC.swift */; };
+		44910A071FC7BED000B97B06 /* UIControl+runtime.m in Sources */ = {isa = PBXBuildFile; fileRef = 44910A061FC7BED000B97B06 /* UIControl+runtime.m */; };
 		449BD9581E192470003A0762 /* MyKnob.swift in Sources */ = {isa = PBXBuildFile; fileRef = 449BD9571E192470003A0762 /* MyKnob.swift */; };
 		449BD95A1E19280C003A0762 /* MyShrinkingButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 449BD9591E19280C003A0762 /* MyShrinkingButton.swift */; };
 		449BD95C1E192CE8003A0762 /* UISegmentedControlVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 449BD95B1E192CE8003A0762 /* UISegmentedControlVC.swift */; };
@@ -64,6 +65,9 @@
 		44088DC51F1126B9004E8214 /* ActivityUIButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityUIButton.swift; sourceTree = "<group>"; };
 		443046CC1F13C3E4007DAB32 /* ShrinkLoadButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShrinkLoadButton.swift; sourceTree = "<group>"; };
 		444C1B881EF0181D00696852 /* TextFieldSlidingVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextFieldSlidingVC.swift; sourceTree = "<group>"; };
+		44910A041FC7BED000B97B06 /* UIControlDemo-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIControlDemo-Bridging-Header.h"; sourceTree = "<group>"; };
+		44910A051FC7BED000B97B06 /* UIControl+runtime.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIControl+runtime.h"; sourceTree = "<group>"; };
+		44910A061FC7BED000B97B06 /* UIControl+runtime.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIControl+runtime.m"; sourceTree = "<group>"; };
 		449BD9571E192470003A0762 /* MyKnob.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyKnob.swift; sourceTree = "<group>"; };
 		449BD9591E19280C003A0762 /* MyShrinkingButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyShrinkingButton.swift; sourceTree = "<group>"; };
 		449BD95B1E192CE8003A0762 /* UISegmentedControlVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UISegmentedControlVC.swift; sourceTree = "<group>"; };
@@ -182,6 +186,9 @@
 				449E5D941E13FC6B009F2915 /* Assets.xcassets */,
 				449E5D961E13FC6B009F2915 /* LaunchScreen.storyboard */,
 				449E5D991E13FC6B009F2915 /* Info.plist */,
+				44910A051FC7BED000B97B06 /* UIControl+runtime.h */,
+				44910A061FC7BED000B97B06 /* UIControl+runtime.m */,
+				44910A041FC7BED000B97B06 /* UIControlDemo-Bridging-Header.h */,
 			);
 			path = UIControlDemo;
 			sourceTree = "<group>";
@@ -230,7 +237,7 @@
 					449E5D891E13FC6B009F2915 = {
 						CreatedOnToolsVersion = 8.2.1;
 						DevelopmentTeam = W3MH7MTTSB;
-						LastSwiftMigration = 0900;
+						LastSwiftMigration = 0910;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -306,6 +313,7 @@
 				C29089601EC01A8A001E02FB /* ButtonVC.swift in Sources */,
 				44088DBE1F111DDA004E8214 /* StateLayer.swift in Sources */,
 				C29089711EC0393F001E02FB /* TransitionSubmitButton.swift in Sources */,
+				44910A071FC7BED000B97B06 /* UIControl+runtime.m in Sources */,
 				449BD9581E192470003A0762 /* MyKnob.swift in Sources */,
 				C29089621EC01A9A001E02FB /* FloatingButton.swift in Sources */,
 				C29089641EC01AAE001E02FB /* RoundBorderedButton.swift in Sources */,
@@ -441,12 +449,15 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				DEVELOPMENT_TEAM = W3MH7MTTSB;
 				INFOPLIST_FILE = UIControlDemo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.rockgarden.UIControlDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "UIControlDemo/UIControlDemo-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
 				SWIFT_VERSION = 4.0;
 			};
@@ -456,12 +467,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				DEVELOPMENT_TEAM = W3MH7MTTSB;
 				INFOPLIST_FILE = UIControlDemo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.rockgarden.UIControlDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "UIControlDemo/UIControlDemo-Bridging-Header.h";
 				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
 				SWIFT_VERSION = 4.0;
 			};

@@ -349,8 +349,8 @@ class VirtualObjectManager {
     }
 }
 
-// MARK: - Delegate
 
+// MARK: - Delegate
 protocol VirtualObjectManagerDelegate: class {
     func virtualObjectManager(_ manager: VirtualObjectManager, willLoad object: VirtualObject)
     func virtualObjectManager(_ manager: VirtualObjectManager, didLoad object: VirtualObject)
@@ -358,6 +358,8 @@ protocol VirtualObjectManagerDelegate: class {
     func virtualObjectManager(_ manager: VirtualObjectManager, didMoveObjectOntoNearbyPlane object: VirtualObject)
     func virtualObjectManager(_ manager: VirtualObjectManager, couldNotPlace object: VirtualObject)
 }
+
+
 // Optional protocol methods
 extension VirtualObjectManagerDelegate {
     func virtualObjectManager(_ manager: VirtualObjectManager, transformDidChangeFor object: VirtualObject) {}

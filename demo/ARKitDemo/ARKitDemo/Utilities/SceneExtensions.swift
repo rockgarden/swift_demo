@@ -30,7 +30,7 @@ extension ARSCNView {
 }
 
 // MARK: - Scene extensions
-
+/// SCNScene 是所有 3D 内容的容器，可以向其添加多个 3D 几何体，分别是不同的位置、旋转、缩放等等。
 extension SCNScene {
     func enableEnvironmentMapWithIntensity(_ intensity: CGFloat, queue: DispatchQueue) {
         queue.async {

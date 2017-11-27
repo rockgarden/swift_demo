@@ -14,7 +14,7 @@ class Plane: SCNNode {
     
     var anchor: ARPlaneAnchor
     var focusSquare: FocusSquare?
-    //    var focusSquare: GridPlane?
+    //var focusSquare: GridPlane?
     
     // MARK: - Initialization
     

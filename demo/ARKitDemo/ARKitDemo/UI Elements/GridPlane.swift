@@ -9,7 +9,8 @@
 import ARKit
 
 class GridPlane: SCNNode {
-//    var anchor: ARPlaneAnchor!
+
+    var anchor: ARPlaneAnchor!
     var planeGeometry: SCNPlane!
     
     var lastPositionOnPlane: float3?
@@ -81,7 +82,7 @@ class GridPlane: SCNNode {
         } else {
             open()
         }
-//        updateTransform(for: position, camera: camera)
+        updateTransform(for: position, camera: camera)
     }
     
     private func updateTransform(for position: float3, camera: ARCamera?) {
