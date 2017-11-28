@@ -21,7 +21,9 @@ class ViewController: UIViewController {
 
     /// ARWorldTrackingConfiguration——这个类会告诉 ARSession，在真实世界中追踪用户时需要使用六个自由度，roll、pitch、yaw 以及 X轴、Y轴、Z轴上的变换。如果不用这个类，就只能创建在同一个点旋转查看增强内容的 AR 体验。有了这个类，就可以在 3D 空间里绕着物体移动了。如果你不需要在 X轴、Y轴、Z轴上的变换，用户就会在投影增强内容时保持在固定位置，这时可以用 ARSessionConfiguration 类替代此类来初始化 ARSession 实例。
     lazy var standardConfiguration: ARWorldTrackingConfiguration = {
+        // 创建 session configuration 实例
         let configuration = ARWorldTrackingConfiguration()
+        // 明确表示需要追踪水平面。设置后 scene 被检测到时就会调用 ARSCNViewDelegate 方法
         configuration.planeDetection = .horizontal
         return configuration
     }()
@@ -56,19 +58,17 @@ class ViewController: UIViewController {
     @IBOutlet weak var settingsButton: UIButton!
     @IBOutlet weak var addObjectButton: UIButton!
     @IBOutlet weak var restartExperienceButton: UIButton!
-    
     @IBOutlet weak var touchSwitch: UISwitch!
     
-    private var isSupportTouches:Bool = true
+    private var isSupportTouches: Bool = true
+
     // MARK: - Queues
-    
     let serialQueue = DispatchQueue(label: "com.apple.arkitexample.serialSceneKitQueue")
 
     // MARK: - View Controller Life Cycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
         Setting.registerDefaults()
         setupUIControls()
         setupScene()
@@ -102,11 +102,14 @@ class ViewController: UIViewController {
 
         // set up scene view
         sceneView.setup()
+        // 设置 ARSCNViewDelegate——此协议会提供回调来处理新创建的几何体
         sceneView.delegate = self
         sceneView.session = session
         sceneView.debugOptions = [ARSCNDebugOptions.showFeaturePoints, ARSCNDebugOptions.showWorldOrigin]
 
+        // 显示统计数据（statistics）如 fps 和 时长信息
         sceneView.showsStatistics = true
+        sceneView.autoenablesDefaultLighting = true
 
         sceneView.scene.enableEnvironmentMapWithIntensity(25, queue: serialQueue)
 
@@ -137,21 +140,21 @@ class ViewController: UIViewController {
 
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         if !isSupportTouches{
-            return;
+            return
         }
         virtualObjectManager.reactToTouchesBegan(touches, with: event, in: self.sceneView)
     }
 
     override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
         if !isSupportTouches{
-            return;
+            return
         }
         virtualObjectManager.reactToTouchesMoved(touches, with: event)
     }
 
     override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
         if !isSupportTouches{
-            return;
+            return
         }
         if virtualObjectManager.virtualObjects.isEmpty {
             chooseObject(addObjectButton)
@@ -170,6 +173,8 @@ class ViewController: UIViewController {
     // MARK: - Planes
 
     var planes = [ARPlaneAnchor: Plane]()
+    var planesUUID = [UUID: Plane]() // 字典，存储场景中当前渲染的所有平面
+    var boxes = [SCNNode]() // 包含场景中渲染的所有小方格
 
     /// 检测到平面，并添加到rootNode上
     func addPlane(node: SCNNode, anchor: ARPlaneAnchor) {
@@ -185,7 +190,7 @@ class ViewController: UIViewController {
     }
 
     func updatePlane(anchor: ARPlaneAnchor) {
-        
+
         if self.virtualObjectManager.virtualObjects.count > 0{
             return
         }
@@ -202,8 +207,8 @@ class ViewController: UIViewController {
     }
 
     func resetTracking() {
+        // 运行 view 的 session
         session.run(standardConfiguration, options: [.resetTracking, .removeExistingAnchors])
-
         textManager.scheduleMessage("寻找一个平面位置用来放置物体",
                                     inSeconds: 7.5,
                                     messageType: .planeEstimation)

@@ -16,7 +16,7 @@ class VirtualObjectManager {
     
     var lastUsedObject: VirtualObject?
     
-    /// The queue with updates to the virtual objects are made on.
+    // The queue with updates to the virtual objects are made on.
     var updateQueue: DispatchQueue
     
     init(updateQueue: DispatchQueue) {
@@ -29,7 +29,7 @@ class VirtualObjectManager {
         guard let jsonURL = Bundle.main.url(forResource: "VirtualObjects", withExtension: "json") else {
             fatalError("Missing 'VirtualObjects.json' in bundle.")
         }
-        
+
         do {
             let jsonData = try Data(contentsOf: jsonURL)
             return try JSONDecoder().decode([VirtualObjectDefinition].self, from: jsonData)
