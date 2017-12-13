@@ -1,6 +1,5 @@
 //
-//  ViewControllerOld.swift
-//  ARCube
+//  ARCubeVC.swift
 //
 
 import UIKit
@@ -14,7 +13,7 @@ struct CollisionCategory {
     static let cube = CollisionCategory(rawValue: 1 << 1)
 }
 
-class ViewControllerOld: UIViewController, ARSCNViewDelegate {
+class ARCubeVC: UIViewController, ARSCNViewDelegate {
 
     @IBOutlet var sceneView: ARSCNView!
     var planes = [UUID: Plane]() // 字典，存储场景中当前渲染的所有平面
@@ -33,27 +32,15 @@ class ViewControllerOld: UIViewController, ARSCNViewDelegate {
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
-        
-        // Pause the view's session
         sceneView.session.pause()
     }
     
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Release any cached data, images, etc that aren't in use.
-    }
-    
     func setupScene() {
-        // 设置 ARSCNViewDelegate——此协议会提供回调来处理新创建的几何体
         sceneView.delegate = self
-        
-        // 显示统计数据（statistics）如 fps 和 时长信息
-        sceneView.showsStatistics = true
         sceneView.autoenablesDefaultLighting = true
-        
-        // 开启 debug 选项以查看世界原点并渲染所有 ARKit 正在追踪的特征点
         sceneView.debugOptions = [ARSCNDebugOptions.showWorldOrigin, ARSCNDebugOptions.showFeaturePoints]
-        
+
+        /// 存放所有 3D 几何体的容器
         let scene = SCNScene()
         sceneView.scene = scene
     }
@@ -80,10 +67,11 @@ class ViewControllerOld: UIViewController, ARSCNViewDelegate {
     }
     
     func insertGeometry(_ hitResult: ARHitTestResult) {
-        // 现在先插入简单的小方块，后面会让它变得更好玩，有更好的纹理和阴影
-        
+
+        // 绘制的 3D 立方体，后面会让它变得更好玩，有更好的纹理和阴影
         let dimension: CGFloat = 0.1
         let cube = SCNBox(width: dimension, height: dimension, length: dimension, chamferRadius: 0)
+        // 将几何体包装为 node 以便添加到 scene
         let node = SCNNode(geometry: cube)
         
         // physicsBody 会让 SceneKit 用物理引擎控制该几何体
@@ -111,9 +99,9 @@ class ViewControllerOld: UIViewController, ARSCNViewDelegate {
      @param anchor 新添加的 anchor。
      @return 将会映射到 anchor 的 node 或 nil。
      */
-//    func renderer(_ renderer: SCNSceneRenderer, nodeFor anchor: ARAnchor) -> SCNNode? {
-//        return nil
-//    }
+    //    func renderer(_ renderer: SCNSceneRenderer, nodeFor anchor: ARAnchor) -> SCNNode? {
+    //        return nil
+    //    }
     
     /**
      将新 node 映射到给定 anchor 时调用。
@@ -173,16 +161,13 @@ class ViewControllerOld: UIViewController, ARSCNViewDelegate {
     
     func session(_ session: ARSession, didFailWithError error: Error) {
         // Present an error message to the user
-        
     }
     
     func sessionWasInterrupted(_ session: ARSession) {
         // Inform the user that the session has been interrupted, for example, by presenting an overlay
-        
     }
     
     func sessionInterruptionEnded(_ session: ARSession) {
         // Reset tracking and/or remove existing anchors if consistent tracking is required
-        
     }
 }

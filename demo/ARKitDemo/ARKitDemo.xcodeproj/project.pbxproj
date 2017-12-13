@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		44ED14201FCC544900FD292A /* ViewControllerOld.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44ED141F1FCC544900FD292A /* ViewControllerOld.swift */; };
+		44ED14201FCC544900FD292A /* ARCubeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44ED141F1FCC544900FD292A /* ARCubeVC.swift */; };
 		C25184721FBD8180008B1FE9 /* GridPlane.swift in Sources */ = {isa = PBXBuildFile; fileRef = C25184711FBD8180008B1FE9 /* GridPlane.swift */; };
 		C25184751FBD81C1008B1FE9 /* grid.png in Resources */ = {isa = PBXBuildFile; fileRef = C25184741FBD81C1008B1FE9 /* grid.png */; };
 		C2E975AA1F7235AA0012D24D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2E975A91F7235AA0012D24D /* AppDelegate.swift */; };
@@ -38,7 +38,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		44ED141F1FCC544900FD292A /* ViewControllerOld.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewControllerOld.swift; sourceTree = "<group>"; };
+		44ED141F1FCC544900FD292A /* ARCubeVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ARCubeVC.swift; sourceTree = "<group>"; };
 		C25184711FBD8180008B1FE9 /* GridPlane.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GridPlane.swift; sourceTree = "<group>"; };
 		C25184741FBD81C1008B1FE9 /* grid.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = grid.png; sourceTree = "<group>"; };
 		C2E975A61F7235AA0012D24D /* ARKitDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ARKitDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -114,7 +114,7 @@
 				C2E975A91F7235AA0012D24D /* AppDelegate.swift */,
 				C2E975AD1F7235AA0012D24D /* Main.storyboard */,
 				C2E975AB1F7235AA0012D24D /* ViewController.swift */,
-				44ED141F1FCC544900FD292A /* ViewControllerOld.swift */,
+				44ED141F1FCC544900FD292A /* ARCubeVC.swift */,
 				C2E975BB1F7236130012D24D /* ViewController+Actions.swift */,
 				C2E975BC1F7236130012D24D /* ViewController+ARSCNViewDelegate.swift */,
 				C2E975BD1F7236130012D24D /* ViewController+ObjectSelection.swift */,
@@ -287,7 +287,7 @@
 				C25184721FBD8180008B1FE9 /* GridPlane.swift in Sources */,
 				C2E975CF1F7236780012D24D /* TextManager.swift in Sources */,
 				C2E975AC1F7235AA0012D24D /* ViewController.swift in Sources */,
-				44ED14201FCC544900FD292A /* ViewControllerOld.swift in Sources */,
+				44ED14201FCC544900FD292A /* ARCubeVC.swift in Sources */,
 				C2E975DC1F7236920012D24D /* Gesture.swift in Sources */,
 				C2E975CE1F7236780012D24D /* SceneExtensions.swift in Sources */,
 				C2E975C51F72365B0012D24D /* VirtualObject.swift in Sources */,

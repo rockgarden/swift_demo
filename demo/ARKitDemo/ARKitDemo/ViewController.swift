@@ -102,13 +102,15 @@ class ViewController: UIViewController {
 
         // set up scene view
         sceneView.setup()
-        // 设置 ARSCNViewDelegate——此协议会提供回调来处理新创建的几何体
+        // 设置 ARSCNViewDelegate——此协议会提供回调来处理新创建的AR体
         sceneView.delegate = self
         sceneView.session = session
+        // 开启 debug 选项以查看世界原点并渲染所有 ARKit 正在追踪的特征点
         sceneView.debugOptions = [ARSCNDebugOptions.showFeaturePoints, ARSCNDebugOptions.showWorldOrigin]
 
         // 显示统计数据（statistics）如 fps 和 时长信息
         sceneView.showsStatistics = true
+        // 3D 场景中添加一些默认光照以便看清AR体的边缘
         sceneView.autoenablesDefaultLighting = true
 
         sceneView.scene.enableEnvironmentMapWithIntensity(25, queue: serialQueue)
